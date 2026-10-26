@@ -1,0 +1,104 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { ArrowUpRight, Zap, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
+
+interface AgencyStatementProps {
+  onOpenBooking?: () => void;
+}
+
+export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking }) => {
+  return (
+    <section id="what-is-arkanet" className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-10 sm:py-14 select-none border-t border-slate-200/80 overflow-hidden">
+      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center gap-8 sm:gap-10">
+        
+        {/* ── 1. WIDE BALANCED SECTION HEADER (FILLS SCREEN HORIZONTALLY) ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end justify-between">
+          <div className="lg:col-span-8 xl:col-span-9">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#0b1330] leading-tight tracking-tight">
+              Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
+            </h2>
+            <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed mt-2.5 max-w-3xl">
+              We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
+            </p>
+          </div>
+
+          <div className="lg:col-span-4 xl:col-span-3 flex justify-start lg:justify-end">
+            <Link
+              href="/work"
+              className="group inline-flex items-center gap-3 bg-[#0b1330] hover:bg-[#132047] active:scale-[0.98] text-white pl-6 pr-2.5 py-2.5 rounded-full font-semibold text-sm sm:text-[15px] transition-all duration-300 shadow-[0_4px_14px_rgba(11,19,48,0.16)] hover:shadow-[0_6px_20px_rgba(11,19,48,0.22)] shrink-0"
+            >
+              <span className="tracking-tight">Explore Work</span>
+              <span className="w-8 h-8 rounded-full bg-white/12 text-[#38bdf8] flex items-center justify-center group-hover:bg-[#38bdf8] group-hover:text-[#0b1330] transition-all duration-300">
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
+            </Link>
+          </div>
+        </div>
+
+        {/* ── 2. THREE-CARD HIGHLIGHT GRID (EXPANDED TO FULL WIDTH, NO VACANT SIDES) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-stretch w-full">
+          
+          {/* CARD 1: Wide Feature Card (6 cols) — Web, Mobile & Software Development */}
+          <div className="md:col-span-12 lg:col-span-6 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 p-7 sm:p-9 flex flex-col justify-between shadow-xs relative overflow-hidden group">
+            <div>
+              <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-5 text-[#1d4ed8]">
+                <Zap className="w-5 h-5" />
+              </div>
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#0b1330] tracking-tight leading-snug">
+                Web &amp; Mobile Engineering
+              </h3>
+              <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed mt-3 max-w-xl">
+                Custom Next.js web applications, cross-platform mobile apps (iOS &amp; Android), and scalable digital platforms engineered for conversion, speed, and real enterprise scale.
+              </p>
+            </div>
+
+            <div className="pt-6 mt-6 border-t border-slate-100 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-500">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Next.js &amp; Mobile Native</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>High Performance &amp; SEO</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>100% IP Ownership</span>
+              </div>
+            </div>
+          </div>
+
+          {/* CARD 2: Dark Navy Card (3 cols) — AI & Data Intelligence (BOTTOM SENTENCE REMOVED) */}
+          <div className="md:col-span-6 lg:col-span-3 rounded-2xl sm:rounded-3xl bg-[#0b1330] text-white p-7 sm:p-8 flex flex-col justify-start shadow-md border border-slate-800">
+            <div className="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center mb-5 text-[#38bdf8]">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <h3 className="font-heading font-bold text-lg sm:text-xl text-white tracking-tight leading-snug">
+              Applied AI &amp;<br />Data Intelligence
+            </h3>
+            <p className="font-sans font-medium text-slate-300 text-xs sm:text-sm leading-relaxed mt-3">
+              Machine learning models, conversational AI agents, and intelligent automated workflows built to scale operations.
+            </p>
+          </div>
+
+          {/* CARD 3: Dark Navy Card (3 cols) — Cloud & Cybersecurity (BOTTOM SENTENCE REMOVED) */}
+          <div className="md:col-span-6 lg:col-span-3 rounded-2xl sm:rounded-3xl bg-[#0b1330] text-white p-7 sm:p-8 flex flex-col justify-start shadow-md border border-slate-800">
+            <div className="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center mb-5 text-[#38bdf8]">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <h3 className="font-heading font-bold text-lg sm:text-xl text-white tracking-tight leading-snug">
+              Cloud, DevOps &amp;<br />Cybersecurity
+            </h3>
+            <p className="font-sans font-medium text-slate-300 text-xs sm:text-sm leading-relaxed mt-3">
+              Production-grade cloud architecture with 99.9% uptime, zero memory leaks, and enterprise-grade security protocols.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+};
