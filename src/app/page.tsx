@@ -29,8 +29,8 @@ const ClientLogosSection = dynamic(
   () => import("@/components/home/ClientLogosSection").then((m) => m.ClientLogosSection),
   { ssr: true }
 );
-const WhatsNewSection = dynamic(
-  () => import("@/components/home/WhatsNewSection").then((m) => m.WhatsNewSection),
+const AboutCTA = dynamic(
+  () => import("@/components/about/AboutCTA").then((m) => m.AboutCTA),
   { ssr: true }
 );
 const Footer = dynamic(
@@ -82,8 +82,8 @@ export default function Home() {
         {/* 5b. Trusted By Client Logo Stage (Original First Model) */}
         <ClientLogosSection onOpenBooking={handleOpenBooking} />
 
-        {/* 6. Digital & AI Capabilities Slider */}
-        <WhatsNewSection onOpenBooking={handleOpenBooking} />
+        {/* 6. Closing Call to Action */}
+        <AboutCTA onOpenBooking={handleOpenBooking} />
       </main>
 
       {/* Footer */}
