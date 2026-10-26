@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Sparkles, LayoutGrid, Layers, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { AboutCTA } from "@/components/about/AboutCTA";
 import { WorkDetailModal, WorkProjectDetail } from "@/components/modals/WorkDetailModal";
 
@@ -106,15 +106,11 @@ const CATEGORIES = ["All", "Web & SaaS Platforms", "Mobile Applications", "Appli
 
 export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [activeProjectIndex, setActiveProjectIndex] = useState<number>(0);
   const [selectedProject, setSelectedProject] = useState<WorkProjectDetail | null>(null);
-  const [viewMode, setViewMode] = useState<"spotlight" | "grid">("spotlight");
 
   const filteredProjects = selectedCategory === "All"
     ? FEATURED_PROJECTS
     : FEATURED_PROJECTS.filter((p) => p.category === selectedCategory);
-
-  const activeProject = filteredProjects[activeProjectIndex] || filteredProjects[0] || FEATURED_PROJECTS[0];
 
   return (
     <section id="featured-work" className="w-full bg-[#f4f6fb] text-[#0b1330] border-t border-slate-200/80">
@@ -123,7 +119,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="space-y-3 max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#1d4ed8] text-xs font-semibold tracking-wide uppercase">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#1d4ed8] text-xs font-semibold tracking-wide uppercase">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Selected Work &amp; Case Studies</span>
             </div>
@@ -135,35 +131,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0 self-start md:self-end">
-            {/* View Mode Switcher */}
-            <div className="hidden sm:inline-flex items-center p-1 bg-white rounded-full border border-slate-200 shadow-2xs">
-              <button
-                type="button"
-                onClick={() => setViewMode("spotlight")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                  viewMode === "spotlight"
-                    ? "bg-[#0b1330] text-white shadow-2xs"
-                    : "text-slate-600 hover:text-[#0b1330]"
-                }`}
-              >
-                <Layers className="w-3.5 h-3.5" />
-                <span>Interactive View</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setViewMode("grid")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
-                  viewMode === "grid"
-                    ? "bg-[#0b1330] text-white shadow-2xs"
-                    : "text-slate-600 hover:text-[#0b1330]"
-                }`}
-              >
-                <LayoutGrid className="w-3.5 h-3.5" />
-                <span>Compact Deck</span>
-              </button>
-            </div>
-
+          <div className="shrink-0 self-start md:self-end">
             <Link
               href="/work"
               className="group inline-flex items-center gap-2 bg-[#0b1330] hover:bg-[#15234d] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer"
@@ -174,18 +142,15 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </div>
         </div>
 
-        {/* Clean Filter Chips Bar */}
-        <div className="flex flex-wrap items-center gap-2 mb-8">
+        {/* Clean Category Filter Chips Bar */}
+        <div className="flex flex-wrap items-center gap-2 mb-8 sm:mb-10">
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (
               <button
                 key={cat}
                 type="button"
-                onClick={() => {
-                  setSelectedCategory(cat);
-                  setActiveProjectIndex(0);
-                }}
+                onClick={() => setSelectedCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   isSelected
                     ? "bg-[#0b1330] text-white shadow-xs"
@@ -198,207 +163,93 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           })}
         </div>
 
-        {/* VIEW 1: Sleek Interactive Split-Screen Spotlight (Default Clean View) */}
-        {viewMode === "spotlight" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-            
-            {/* Left Column: Clean Interactive Project List */}
-            <div className="lg:col-span-7 flex flex-col gap-3.5 text-left">
-              {filteredProjects.map((project, index) => {
-                const isActive = activeProject.id === project.id;
-                return (
-                  <div
-                    key={project.id}
-                    onMouseEnter={() => setActiveProjectIndex(index)}
-                    onClick={() => {
-                      setActiveProjectIndex(index);
-                      setSelectedProject(project);
-                    }}
-                    className={`group relative p-5 sm:p-6 rounded-2xl border transition-all duration-200 cursor-pointer select-none text-left ${
-                      isActive
-                        ? "bg-white border-[#1d4ed8]/60 shadow-md ring-1 ring-[#1d4ed8]/20"
-                        : "bg-white/70 hover:bg-white border-slate-200/80 hover:border-slate-300 shadow-2xs"
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="space-y-2 flex-1 min-w-0">
-                        {/* Top row: Index, Category & Key Metric */}
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="font-mono text-xs font-bold text-slate-400">
-                            0{index + 1}
-                          </span>
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
-                            {project.category}
-                          </span>
-                          {project.detail?.impact[0] && (
-                            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-50 text-[#1d4ed8] border border-blue-100">
-                              {project.detail.impact[0]}
-                            </span>
-                          )}
-                        </div>
-
-                        {/* Title */}
-                        <h3 className={`font-heading font-bold text-base sm:text-lg transition-colors ${
-                          isActive ? "text-[#1d4ed8]" : "text-[#0b1330] group-hover:text-[#1d4ed8]"
-                        }`}>
-                          {project.title}
-                        </h3>
-
-                        {/* Description */}
-                        <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-2">
-                          {project.description}
-                        </p>
-
-                        {/* Tech tags */}
-                        <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                          {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
-                            <span
-                              key={tIdx}
-                              className="px-2 py-0.5 rounded-md text-[10.5px] font-medium bg-slate-50 text-slate-600 border border-slate-200/70"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Right Arrow Icon */}
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all ${
-                        isActive
-                          ? "bg-[#0b1330] text-white"
-                          : "bg-slate-50 text-slate-400 group-hover:bg-slate-200 group-hover:text-slate-800"
-                      }`}>
-                        <ArrowUpRight className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Right Column: Sticky Live Visual Spotlight */}
-            <div className="lg:col-span-5 lg:sticky lg:top-24">
-              <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg p-5 sm:p-6 text-left space-y-4">
-                
-                {/* Visual Preview */}
-                <div
-                  onClick={() => setSelectedProject(activeProject)}
-                  className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-slate-100 cursor-pointer group"
-                >
+        {/* TALL COMPACT DECK: 4-Column Grid with Taller Portrait Proportions (Same Width, More Height) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {filteredProjects.map((project, idx) => (
+            <div
+              key={project.id}
+              onClick={() => setSelectedProject(project)}
+              className="group bg-white rounded-3xl border border-slate-200/90 hover:border-[#1d4ed8]/50 overflow-hidden shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer text-left min-h-[520px] sm:min-h-[560px]"
+            >
+              <div className="flex flex-col flex-1">
+                {/* Taller Portrait Visual Container (Aspect 4/3 with generous vertical height) */}
+                <div className="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden shrink-0">
                   <Image
-                    src={activeProject.outerImage}
-                    alt={activeProject.title}
+                    src={project.outerImage}
+                    alt={project.title}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-bold text-[#0b1330]">
-                    {activeProject.detail?.client}
-                  </div>
-                  
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-white">
-                    {activeProject.detail?.year}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+
+                  {/* Top Category Badge */}
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10.5px] font-bold text-[#0b1330] shadow-xs">
+                    {project.category}
                   </div>
 
+                  {/* Top Year Pill */}
+                  <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-white shadow-xs">
+                    {project.detail?.year}
+                  </div>
+
+                  {/* Client Name on Bottom Overlay */}
                   <div className="absolute bottom-3 left-3 right-3 text-white">
-                    <p className="text-xs font-semibold text-sky-300">
-                      {activeProject.detail?.impact[0]}
-                    </p>
+                    <span className="text-[11px] font-medium text-slate-200 block truncate">
+                      {project.detail?.client}
+                    </span>
                   </div>
                 </div>
 
-                {/* Spotlight Details */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between gap-2">
-                    <h4 className="font-heading font-extrabold text-lg text-[#0b1330]">
-                      {activeProject.title}
-                    </h4>
-                    <span className="text-[11px] font-semibold text-slate-500">
-                      {activeProject.category}
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {activeProject.detail?.overview}
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="space-y-1.5 pt-2 border-t border-slate-100">
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
-                      Key Outcomes:
-                    </p>
-                    {activeProject.detail?.impact.slice(0, 2).map((imp, iIdx) => (
-                      <div key={iIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                        <span>{imp}</span>
+                {/* Card Body with Generous Vertical Rhythm */}
+                <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
+                  <div className="space-y-3">
+                    {/* Primary Highlight Outcome Badge */}
+                    {project.detail?.impact[0] && (
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-50 border border-blue-100 text-[#1d4ed8] text-[11px] font-bold leading-tight">
+                        <Sparkles className="w-3 h-3 text-[#1d4ed8] shrink-0" />
+                        <span className="line-clamp-1">{project.detail.impact[0]}</span>
                       </div>
-                    ))}
-                  </div>
+                    )}
 
-                  {/* CTA */}
-                  <button
-                    type="button"
-                    onClick={() => setSelectedProject(activeProject)}
-                    className="w-full mt-2 inline-flex items-center justify-center gap-2 bg-[#0b1330] hover:bg-[#15234d] text-white py-3 rounded-xl text-xs font-bold transition-all shadow-xs hover:shadow-md cursor-pointer"
-                  >
-                    <span>Read Full Case Study</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        )}
-
-        {/* VIEW 2: Clean Compact Card Deck (Structured & Proportional) */}
-        {viewMode === "grid" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {filteredProjects.map((project, idx) => (
-              <div
-                key={project.id}
-                onClick={() => setSelectedProject(project)}
-                className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-lg hover:border-[#1d4ed8]/50 transition-all duration-300 flex flex-col justify-between cursor-pointer text-left"
-              >
-                <div>
-                  <div className="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden">
-                    <Image
-                      src={project.outerImage}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 25vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      unoptimized
-                    />
-                    <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-white/95 text-[10px] font-bold text-[#0b1330] shadow-2xs">
-                      {project.category}
-                    </div>
-                  </div>
-
-                  <div className="p-4 space-y-2">
-                    <span className="inline-block text-[10.5px] font-bold text-[#1d4ed8]">
-                      {project.detail?.impact[0]}
-                    </span>
-                    <h3 className="font-heading font-bold text-sm text-[#0b1330] group-hover:text-[#1d4ed8] transition-colors line-clamp-1">
+                    {/* Title */}
+                    <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#0b1330] group-hover:text-[#1d4ed8] transition-colors leading-snug">
                       {project.title}
                     </h3>
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+
+                    {/* Description */}
+                    <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 font-medium">
                       {project.description}
                     </p>
                   </div>
-                </div>
 
-                <div className="px-4 pb-4 pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1d4ed8]">
-                  <span>Explore Specs</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  {/* Key Tech Chips */}
+                  <div className="space-y-2 pt-2 border-t border-slate-100">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="px-2 py-0.5 rounded-md text-[10.5px] font-semibold bg-slate-50 text-slate-600 border border-slate-200/80"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        )}
+
+              {/* Bottom Action Footer */}
+              <div className="px-5 sm:px-6 py-3.5 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1d4ed8] group-hover:bg-blue-50/60 transition-colors">
+                <span>View Full Case Study</span>
+                <div className="w-6 h-6 rounded-full bg-white group-hover:bg-[#1d4ed8] group-hover:text-white flex items-center justify-center text-[#1d4ed8] shadow-2xs transition-colors">
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
 
       </div>
 
