@@ -119,10 +119,6 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="space-y-3 max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#1d4ed8] text-xs font-semibold tracking-wide uppercase">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Selected Work &amp; Case Studies</span>
-            </div>
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#0b1330] tracking-tight">
               Engineered for real-world impact
             </h2>
