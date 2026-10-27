@@ -183,9 +183,7 @@ export default function CapabilityDetailPage() {
       <section className="w-full bg-[#f4f6fb] pt-32 sm:pt-36 pb-16 sm:pb-24 px-6 sm:px-10 lg:px-12 border-b border-slate-200/80 text-left">
         <div className="max-w-7xl mx-auto">
           {/* Badge & Headline */}
-          <div className="inline-block px-3 py-1 rounded-[4px] bg-[#0b1330] text-white text-[11px] font-bold uppercase tracking-wider mb-5">
-            {data.badge}
-          </div>
+          
 
           <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.1] max-w-4xl">
             {data.title} <br />

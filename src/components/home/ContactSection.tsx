@@ -60,9 +60,7 @@ export const ContactSection: React.FC = () => {
         {/* Top Hero Heading */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-7 space-y-4">
-            <div className="inline-block px-3 py-1 rounded-[4px] bg-[#0b1330] text-white text-[11px] font-bold uppercase tracking-wider">
-              Contact Us
-            </div>
+            
 
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.1] max-w-2xl">
               Something great <br />

@@ -44,9 +44,7 @@ export function AboutClients() {
         
         {/* Section Heading with Clean Typography */}
         <div className="w-full space-y-4 max-w-4xl text-left">
-          <div className="inline-block px-3 py-1 rounded-[4px] bg-[#0b1330] text-white text-[11px] font-bold uppercase tracking-wider">
-            Our Clients
-          </div>
+          
 
           <motion.h2
             initial={{ opacity: 0, y: 16 }}

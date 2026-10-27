@@ -58,9 +58,7 @@ export function AboutWhoWeAre() {
         {/* Section Heading & In-Depth Story */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-4">
-            <div className="inline-block px-3 py-1 rounded-[4px] bg-[#0b1330] text-white text-[11px] font-bold uppercase tracking-wider">
-              Our Story &amp; Purpose
-            </div>
+            
 
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#0b1330] tracking-tight leading-[1.15]">
               Engineering digital infrastructure that endures
