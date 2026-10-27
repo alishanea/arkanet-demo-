@@ -197,7 +197,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 href="/"
                 onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("home")}
-                className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
+                className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
                 {isHomeActive && (
                   <motion.div
@@ -227,7 +227,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 href="/work"
                 onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("work")}
-                className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
+                className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
                 {isWorkActive && (
                   <motion.div
@@ -257,7 +257,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 href="/about"
                 onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("about")}
-                className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
+                className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
                 {isAboutActive && (
                   <motion.div
@@ -287,7 +287,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 href="/contact"
                 onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("contact")}
-                className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
+                className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
                 {isContactActive && (
                   <motion.div
@@ -340,7 +340,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <button
                   type="button"
                   onClick={toggleCapabilities}
-                  className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none"
+                  className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none"
                 >
                   <span
                     className={`relative z-10 flex items-center gap-1.5 transition-colors duration-200 ${
@@ -413,7 +413,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-semibold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
                     isHomeActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -422,7 +422,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/capabilities"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-semibold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
                     isCapabilitiesActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -431,7 +431,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/work"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-semibold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
                     isWorkActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -440,7 +440,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/about"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-semibold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
                     isAboutActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -449,7 +449,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/contact"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-semibold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
                     isContactActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
@@ -461,7 +461,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <button
                   type="button"
                   onClick={handleCtaClick}
-                  className="w-full flex items-center justify-center gap-2 bg-[#0b1330] text-white py-3 rounded-full font-semibold text-sm shadow-md"
+                  className="w-full flex items-center justify-center gap-2 bg-[#0b1330] text-white py-3 rounded-full font-bold text-sm shadow-md"
                 >
                   <span>Start a Project</span>
                   <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
