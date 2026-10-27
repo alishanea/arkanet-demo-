@@ -98,7 +98,7 @@ export default function CapabilityDetailPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── SECTION 1: HERO SECTION WITH AUTOMATIC BACKGROUND IMAGE SLIDESHOW ── */}
-      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-between overflow-hidden bg-[#f4f6fb] text-[#0b1330] pt-28 sm:pt-36 pb-8 sm:pb-12 px-6 sm:px-10 lg:px-14 border-b border-slate-200/80 text-left">
+      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#f4f6fb] text-[#0b1330] pt-28 sm:pt-36 pb-12 sm:pb-20 px-6 sm:px-10 lg:px-14 border-b border-slate-200/80 text-left">
         {/* Background Images Changing Smoothly One by One (Every 3 seconds) */}
         <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
           <AnimatePresence mode="wait">
@@ -156,25 +156,14 @@ export default function CapabilityDetailPage() {
                   href={`/capabilities/${cap.slug}`}
                   className={`px-3.5 py-1.5 rounded-[4px] text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                     isActive
-                      ? "bg-[#0b1330] text-white border border-[#0b1330] shadow-xs"
-                      : "bg-white text-slate-600 hover:text-[#0b1330] border border-slate-200/90 shadow-xs hover:border-slate-300"
+                      ? "bg-[#202B61] text-white border border-[#202B61] shadow-xs"
+                      : "bg-white text-slate-600 hover:text-[#202B61] border border-slate-200/90 shadow-xs hover:border-slate-300"
                   }`}
                 >
                   {cap.name}
                 </Link>
               );
             })}
-          </div>
-
-          {/* Action Row */}
-          <div className="pt-6 border-t border-slate-200/80">
-            <button
-              onClick={openContact}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-[4px] bg-[#0b1330] hover:bg-[#132047] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-xs cursor-pointer"
-            >
-              <span>Discuss Your Project</span>
-              <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
-            </button>
           </div>
         </div>
       </section>
