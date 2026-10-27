@@ -127,7 +127,7 @@ export default function CapabilityDetailPage() {
         {/* Foreground Content (Headline, Subtitle, Practice Switcher) */}
         <div className="relative z-10 max-w-7xl mx-auto w-full space-y-8">
           <div className="space-y-5 w-full max-w-5xl lg:max-w-6xl">
-            <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.08]">
+            <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
               {data.title} <br />
               <span className="text-[#1d4ed8]">{data.highlightText}</span>
             </h1>
@@ -183,7 +183,7 @@ export default function CapabilityDetailPage() {
       <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 text-left bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-12 sm:mb-16 space-y-4">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#0b1330] tracking-tight leading-snug whitespace-pre-line">
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-snug whitespace-pre-line">
               {data.section2Headline}
             </h2>
             <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
@@ -211,7 +211,7 @@ export default function CapabilityDetailPage() {
                       </span>
                     </div>
 
-                    <h3 className="font-heading font-bold text-lg sm:text-xl text-[#0b1330] tracking-tight">
+                    <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61] tracking-tight">
                       {item.title}
                     </h3>
                     <p className="font-sans text-sm text-slate-600 font-normal leading-relaxed">
@@ -246,7 +246,7 @@ export default function CapabilityDetailPage() {
                     Specification {rowNumber}
                   </div>
 
-                  <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#0b1330] tracking-tight leading-snug">
+                  <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#202B61] tracking-tight leading-snug">
                     {row.title}
                   </h3>
                   <p className="font-sans text-base text-slate-600 font-normal leading-relaxed">
@@ -288,10 +288,10 @@ export default function CapabilityDetailPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 rounded-[5px] bg-white border border-slate-200/90 space-y-2">
-              <div className="font-heading font-extrabold text-3xl sm:text-4xl text-[#0b1330]">
+              <div className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61]">
                 &lt; 0.8s
               </div>
-              <div className="font-sans font-semibold text-sm text-[#0b1330]">
+              <div className="font-sans font-semibold text-sm text-[#202B61]">
                 Average First Contentful Paint
               </div>
               <p className="font-sans text-xs text-slate-500 leading-relaxed">
@@ -300,10 +300,10 @@ export default function CapabilityDetailPage() {
             </div>
 
             <div className="p-6 rounded-[5px] bg-white border border-slate-200/90 space-y-2">
-              <div className="font-heading font-extrabold text-3xl sm:text-4xl text-[#0b1330]">
+              <div className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61]">
                 +140%
               </div>
-              <div className="font-sans font-semibold text-sm text-[#0b1330]">
+              <div className="font-sans font-semibold text-sm text-[#202B61]">
                 Inbound Conversion Rate Lift
               </div>
               <p className="font-sans text-xs text-slate-500 leading-relaxed">
@@ -312,10 +312,10 @@ export default function CapabilityDetailPage() {
             </div>
 
             <div className="p-6 rounded-[5px] bg-white border border-slate-200/90 space-y-2">
-              <div className="font-heading font-extrabold text-3xl sm:text-4xl text-[#0b1330]">
+              <div className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61]">
                 100 / 100
               </div>
-              <div className="font-sans font-semibold text-sm text-[#0b1330]">
+              <div className="font-sans font-semibold text-sm text-[#202B61]">
                 SEO & Technical Best Practices
               </div>
               <p className="font-sans text-xs text-slate-500 leading-relaxed">
@@ -336,7 +336,7 @@ export default function CapabilityDetailPage() {
                   {data.techShowcase.badge || "Modern Web Architecture"}
                 </div>
 
-                <h3 className="font-heading font-bold text-3xl sm:text-4xl text-[#0b1330] tracking-tight leading-tight">
+                <h3 className="font-heading font-bold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-tight">
                   {data.techShowcase.title}
                 </h3>
 

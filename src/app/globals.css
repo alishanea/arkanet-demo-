@@ -23,7 +23,7 @@
     font-weight: 700;
     line-height: 1.12;
     letter-spacing: -0.025em;
-    color: #0b1330;
+    color: #202B61;
   }
 
   @media (min-width: 640px) {
@@ -46,7 +46,7 @@
     font-weight: 600;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: #0b1330;
+    color: #202B61;
   }
 
   h3, h4, h5, h6 {
@@ -96,7 +96,7 @@
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: #0b1330;
+    color: #202B61;
   }
 
   .bento-section-h2 {
@@ -105,7 +105,7 @@
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: #0b1330;
+    color: #202B61;
   }
 
   /* Custom section heading specifically for People-First, Problem-Solvers section */
@@ -115,7 +115,7 @@
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: #0b1330;
+    color: #202B61;
   }
 
   .section-eyebrow {
@@ -131,7 +131,7 @@
     font-size: clamp(16px, 1.8vw, 24px);
     font-weight: 500;
     line-height: 1.6;
-    color: #0b1330;
+    color: #202B61;
   }
 
   /* About statement paragraph */
@@ -151,7 +151,7 @@
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.025em;
-    color: #0b1330;
+    color: #202B61;
   }
 
   .card-h3 {

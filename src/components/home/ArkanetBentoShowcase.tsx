@@ -124,7 +124,7 @@ const ShowcaseCard: React.FC<{ project: ShowcaseProject }> = ({ project }) => {
 
         {/* Heading only by default; subtitle smoothly appears on hover without layout shift */}
         <div className="relative pt-3 sm:pt-3.5 text-left">
-          <h3 className="font-heading font-bold text-lg sm:text-xl lg:text-[21px] xl:text-[22px] tracking-tight text-[#0b1330] leading-snug">
+          <h3 className="font-heading font-bold text-lg sm:text-xl lg:text-[21px] xl:text-[22px] tracking-tight text-[#202B61] leading-snug">
             {project.title}
           </h3>
 
@@ -147,7 +147,7 @@ export const ArkanetBentoShowcase: React.FC<ArkanetBentoShowcaseProps> = () => {
         {/* Section Header (Preserved) */}
         <div className="w-full text-left space-y-2">
           <Link href="/capabilities" className="inline-block group">
-            <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl text-[#0b1330]">
+            <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl text-[#202B61]">
               What We Build
             </h2>
           </Link>

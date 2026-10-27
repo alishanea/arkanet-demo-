@@ -62,7 +62,7 @@ export const ContactSection: React.FC = () => {
           <div className="lg:col-span-7 space-y-4">
             
 
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.1] max-w-2xl">
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.1] max-w-2xl">
               Something great <br />
               <span>starts here</span>
             </h1>
@@ -134,7 +134,7 @@ export const ContactSection: React.FC = () => {
                 <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-100">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
-                <h3 className="font-heading font-extrabold text-2xl text-[#0b1330]">
+                <h3 className="font-heading font-extrabold text-2xl text-[#202B61]">
                   Thank you! Your brief has been received.
                 </h3>
                 <p className="font-sans text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
@@ -164,7 +164,7 @@ export const ContactSection: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#0b1330]">
+                  <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61]">
                     Project Inquiry &amp; Brief
                   </h3>
                   <p className="font-sans text-xs sm:text-sm text-slate-500 font-normal mt-1">

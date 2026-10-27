@@ -12,7 +12,7 @@ export const MidPageCtaBand: React.FC = () => {
           
           {/* Left Column: Headline + Live Status Pill */}
           <div className="text-left space-y-6 max-w-4xl">
-            <h3 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] tracking-tight leading-[1.05] text-[#0b1330] hover:text-[#3b82f6] transition-colors duration-500 cursor-pointer">
+            <h3 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] tracking-tight leading-[1.05] text-[#202B61] hover:text-[#3b82f6] transition-colors duration-500 cursor-pointer">
               Have a brief? Send it over , 
               <br className="hidden sm:block" />
               we&apos;ll tell you what it takes.

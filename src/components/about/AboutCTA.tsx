@@ -15,7 +15,7 @@ export function AboutCTA({ onOpenBooking }: AboutCTAProps) {
           onClick={onOpenBooking}
           tabIndex={0}
         >
-          <h2 className="hero-h1 text-[#0b1330] group-hover:text-black transition-colors duration-300">
+          <h2 className="hero-h1 text-[#202B61] group-hover:text-[#1d4ed8] transition-colors duration-300">
             <span>Let&apos;s make</span>
             {" "}
             <span className="inline-block text-[#0b1330] mx-1 sm:mx-2.5 font-normal align-middle text-[0.88em] group-hover:translate-x-3 transition-transform duration-300 ease-out">

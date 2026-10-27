@@ -52,7 +52,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  
  {/* ── 1. SECTION HEADER ── */}
  <div className="max-w-4xl">
- <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#0b1330] leading-tight tracking-tight">
+ <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
  Full-Stack Engineering &amp; Applied AI Capabilities
  </h2>
  <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed mt-2.5 max-w-3xl">
@@ -72,7 +72,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  <div className="space-y-4">
  {/* Title & Expanding Underline Bar */}
  <div className="space-y-2">
- <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#0b1330] group-hover:text-[#1d4ed8] tracking-tight leading-snug transition-colors duration-300">
+ <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] group-hover:text-[#1d4ed8] tracking-tight leading-snug transition-colors duration-300">
  {pillar.title}
  </h3>
  <div className="h-0.5 w-4 group-hover:w-14 bg-[#1d4ed8] rounded-[2px] transition-all duration-300 opacity-60 group-hover:opacity-100" />

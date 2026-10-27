@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       {/* ── HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) ── */}
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center px-4">
         {/* Clean, Majestic Editorial Headline (Plus Jakarta Sans) */}
-        <h1 className="hero-h1 text-[#0b1330] text-center max-w-4xl sm:max-w-5xl mx-auto">
+        <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
           Building Intelligent<br />
           Digital Products
         </h1>

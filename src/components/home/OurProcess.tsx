@@ -117,7 +117,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
 
           {/* Title & Description */}
           <div className="space-y-2 sm:space-y-3">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#0b1330] tracking-tight">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#202B61] tracking-tight">
               {step.title}
             </h3>
             <p className="font-sans text-[#475569] text-base sm:text-lg leading-relaxed max-w-xl font-normal">
@@ -178,7 +178,7 @@ export const OurProcess: React.FC<OurProcessProps> = () => {
       <div className="w-full space-y-8 sm:space-y-16">
         {/* Section Heading - Standardized to Brand Typography */}
         <div className="w-full text-left space-y-3">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#0b1330] tracking-tight leading-tight">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
             Our Process
           </h2>
           <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed mt-2.5 max-w-3xl">

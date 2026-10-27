@@ -118,7 +118,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
  {/* Section Header */}
  <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
  <div className="space-y-3 max-w-2xl text-left">
- <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#0b1330] tracking-tight">
+ <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
  Engineered for real-world impact
  </h2>
  <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -174,10 +174,10 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   <div className="space-y-3">
                     {/* Title with Simple Unfocused Arrow (No box, no 'view full case study' text) */}
                     <div className="flex items-start justify-between gap-3">
-                      <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#0b1330] group-hover:text-black transition-colors leading-snug">
+                      <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#202B61] group-hover:text-[#1d4ed8] transition-colors leading-snug">
                         {project.title}
                       </h3>
-                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 shrink-0 mt-0.5" />
+                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#1d4ed8] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 shrink-0 mt-0.5" />
                     </div>
 
                     {/* Description */}

@@ -33,7 +33,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
           
           {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col justify-between space-y-3 sm:space-y-4 text-left">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#0b1330] leading-[1.12] tracking-tight">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-[1.12] tracking-tight">
               Same team,<br />
               start to finish
             </h2>
