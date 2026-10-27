@@ -84,7 +84,7 @@ export default function CapabilityDetailPage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIdx((prev) => (prev + 1) % showcaseImages.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [showcaseImages.length]);
 
@@ -98,41 +98,42 @@ export default function CapabilityDetailPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── SECTION 1: HERO SECTION WITH AUTOMATIC BACKGROUND IMAGE SLIDESHOW ── */}
-      <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] flex items-center justify-start overflow-hidden bg-[#0b1330] text-white pt-36 pb-20 px-6 sm:px-10 lg:px-12 border-b border-slate-800 text-left">
-        {/* Background Images Changing Smoothly One by One */}
+      <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] flex items-center justify-start overflow-hidden bg-[#f4f6fb] text-[#0b1330] pt-36 pb-20 px-6 sm:px-10 lg:px-12 border-b border-slate-200/80 text-left">
+        {/* Background Images Changing Smoothly One by One (Every 3 seconds) */}
         <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIdx}
-              initial={{ opacity: 0, scale: 1.06 }}
-              animate={{ opacity: 0.35, scale: 1.0 }}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 0.22, scale: 1.0 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full"
             >
               <img
                 src={showcaseImages[activeIdx]}
                 alt="Background showcase"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover brightness-105 saturate-110"
               />
             </motion.div>
           </AnimatePresence>
 
-          {/* Cinematic Scrim & Gradient Overlays for High-Contrast Text Legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b1330] via-[#0b1330]/80 to-[#0b1330]/85 z-[1]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1330] via-[#0b1330]/85 to-transparent z-[1]" />
+          {/* Soft Cinematic Scrims & Ambient Glowing Overlay for Flawless Text Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb] via-[#f4f6fb]/75 to-[#f4f6fb]/95 pointer-events-none z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb] via-[#f4f6fb]/80 to-transparent pointer-events-none z-[1]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-r from-[#38bdf8]/15 via-[#1d4ed8]/10 to-transparent blur-3xl pointer-events-none z-[1]" />
         </div>
 
         {/* Foreground Content (Headline, Subtitle, Practice Switcher) */}
         <div className="relative z-10 max-w-7xl mx-auto w-full space-y-8">
           <div className="space-y-5 max-w-4xl">
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.08]">
+            <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.08]">
               {data.title} <br />
-              <span className="text-slate-200">{data.highlightText}</span>
+              <span className="text-[#1d4ed8]">{data.highlightText}</span>
             </h1>
 
             {data.subtitle && (
-              <p className="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl">
+              <p className="hero-sub font-sans text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl">
                 {data.subtitle}
               </p>
             )}
@@ -155,8 +156,8 @@ export default function CapabilityDetailPage() {
                   href={`/capabilities/${cap.slug}`}
                   className={`px-3.5 py-1.5 rounded-[4px] text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                     isActive
-                      ? "bg-white text-[#0b1330] border border-white"
-                      : "bg-white/10 hover:bg-white/20 text-white border border-white/10"
+                      ? "bg-[#0b1330] text-white border border-[#0b1330] shadow-xs"
+                      : "bg-white text-slate-600 hover:text-[#0b1330] border border-slate-200/90 shadow-xs hover:border-slate-300"
                   }`}
                 >
                   {cap.name}
@@ -166,20 +167,20 @@ export default function CapabilityDetailPage() {
           </div>
 
           {/* Action Row & Floating Background Slideshow Controller */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6 border-t border-slate-200/80">
             <div className="flex flex-wrap items-center gap-4">
               <button
                 onClick={openContact}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-[4px] bg-white text-[#0b1330] hover:bg-slate-100 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-[4px] bg-[#0b1330] hover:bg-[#132047] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-xs cursor-pointer"
               >
                 <span>Discuss Your Project</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
               </button>
             </div>
 
             {/* Minimalist Background Slideshow Controls (Bottom Corner) */}
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-[4px] border border-white/15 w-fit">
-              <span className="text-[11px] font-mono text-slate-300 uppercase tracking-wider pr-1">
+            <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-[4px] border border-slate-200/90 shadow-xs w-fit">
+              <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider pr-1">
                 Background Visual
               </span>
               <div className="flex items-center gap-1.5">
@@ -189,26 +190,26 @@ export default function CapabilityDetailPage() {
                     onClick={() => setActiveIdx(idx)}
                     aria-label={`Switch to background ${idx + 1}`}
                     className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      activeIdx === idx ? "w-6 bg-white" : "w-1.5 bg-white/40 hover:bg-white/70"
+                      activeIdx === idx ? "w-6 bg-[#0b1330]" : "w-1.5 bg-slate-300 hover:bg-slate-400"
                     }`}
                   />
                 ))}
               </div>
-              <span className="font-mono text-[11px] text-white/90 pl-1 font-semibold">
+              <span className="font-mono text-[11px] text-slate-700 pl-1 font-semibold">
                 0{activeIdx + 1} / 0{showcaseImages.length}
               </span>
-              <div className="flex items-center gap-1 pl-1 border-l border-white/20">
+              <div className="flex items-center gap-1 pl-1 border-l border-slate-200">
                 <button
                   onClick={() => setActiveIdx((prev) => (prev - 1 + showcaseImages.length) % showcaseImages.length)}
                   aria-label="Previous background visual"
-                  className="w-5 h-5 rounded-[2px] hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+                  className="w-5 h-5 rounded-[2px] hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors cursor-pointer"
                 >
                   <ChevronLeft className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setActiveIdx((prev) => (prev + 1) % showcaseImages.length)}
                   aria-label="Next background visual"
-                  className="w-5 h-5 rounded-[2px] hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+                  className="w-5 h-5 rounded-[2px] hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors cursor-pointer"
                 >
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
@@ -368,18 +369,18 @@ export default function CapabilityDetailPage() {
       {/* ── SECTION 5: TECH SHOWCASE CARD WITH INTERACTIVE CHIPS ── */}
       <section className="w-full py-16 sm:py-20 px-6 sm:px-10 lg:px-12 text-left bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="p-8 sm:p-12 lg:p-16 bg-[#0b1330] text-white rounded-[5px] border border-slate-800 shadow-none">
+          <div className="p-8 sm:p-12 lg:p-16 bg-[#f8fafc] text-[#0b1330] rounded-[5px] border border-slate-200/90 shadow-none">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div className="space-y-6">
-                <div className="inline-block px-3 py-1 rounded-[3px] bg-white/10 text-slate-200 text-xs font-bold uppercase tracking-wider">
+                <div className="inline-block px-3 py-1 rounded-[3px] bg-blue-50 border border-blue-200 text-[#1d4ed8] text-xs font-bold uppercase tracking-wider font-mono">
                   {data.techShowcase.badge || "Modern Web Architecture"}
                 </div>
 
-                <h3 className="font-heading font-bold text-3xl sm:text-4xl text-white tracking-tight leading-tight">
+                <h3 className="font-heading font-bold text-3xl sm:text-4xl text-[#0b1330] tracking-tight leading-tight">
                   {data.techShowcase.title}
                 </h3>
 
-                <p className="font-sans text-sm sm:text-base text-slate-300 font-normal leading-relaxed max-w-xl">
+                <p className="font-sans text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl">
                   {data.techShowcase.description}
                 </p>
 
@@ -397,7 +398,7 @@ export default function CapabilityDetailPage() {
                   ].map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1.5 rounded-[3px] bg-white/10 hover:bg-white/20 border border-white/10 text-white text-xs font-medium transition-colors"
+                      className="px-3 py-1.5 rounded-[3px] bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-[#0b1330] text-xs font-medium font-sans transition-colors"
                     >
                       {tech}
                     </span>
@@ -407,16 +408,16 @@ export default function CapabilityDetailPage() {
                 <div className="pt-2">
                   <button
                     onClick={openContact}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] bg-white text-[#0b1330] hover:bg-slate-100 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#0b1330] text-white hover:bg-[#132047] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs font-sans"
                   >
                     <span>Discuss Architecture</span>
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
                   </button>
                 </div>
               </div>
 
               {/* Right Image with Hover Effect */}
-              <div className="group relative aspect-[4/3] rounded-[5px] overflow-hidden border border-white/10 bg-slate-900">
+              <div className="group relative aspect-[4/3] rounded-[5px] overflow-hidden border border-slate-200 bg-slate-100 shadow-none">
                 <img
                   src={data.techShowcase.image}
                   alt={data.techShowcase.title}
