@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Zap, ShieldCheck, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 interface AgencyStatementProps {
   onOpenBooking?: () => void;
@@ -40,12 +40,9 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
         {/* ── 2. THREE-CARD HIGHLIGHT GRID (EXPANDED TO FULL WIDTH, NO VACANT SIDES) ── */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-stretch w-full">
           
-          {/* CARD 1: Wide Feature Card (6 cols) — Web, Mobile & Software Development */}
+          {/* CARD 1: Wide Feature Card (6 cols) – Web, Mobile & Software Development */}
           <div className="md:col-span-12 lg:col-span-6 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 p-7 sm:p-9 flex flex-col justify-between shadow-xs relative overflow-hidden group">
             <div>
-              <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center mb-5 text-[#1d4ed8]">
-                <Zap className="w-5 h-5" />
-              </div>
               <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#0b1330] tracking-tight leading-snug">
                 Web &amp; Mobile Engineering
               </h3>
@@ -70,11 +67,8 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
             </div>
           </div>
 
-          {/* CARD 2: Dark Navy Card (3 cols) — AI & Data Intelligence (BOTTOM SENTENCE REMOVED) */}
+          {/* CARD 2: Dark Navy Card (3 cols) – AI & Data Intelligence */}
           <div className="md:col-span-6 lg:col-span-3 rounded-2xl sm:rounded-3xl bg-[#0b1330] text-white p-7 sm:p-8 flex flex-col justify-start shadow-md border border-slate-800">
-            <div className="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center mb-5 text-[#38bdf8]">
-              <Sparkles className="w-5 h-5" />
-            </div>
             <h3 className="font-heading font-bold text-lg sm:text-xl text-white tracking-tight leading-snug">
               Applied AI &amp;<br />Data Intelligence
             </h3>
@@ -83,11 +77,8 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
             </p>
           </div>
 
-          {/* CARD 3: Dark Navy Card (3 cols) — Cloud & Cybersecurity (BOTTOM SENTENCE REMOVED) */}
+          {/* CARD 3: Dark Navy Card (3 cols) – Cloud & Cybersecurity */}
           <div className="md:col-span-6 lg:col-span-3 rounded-2xl sm:rounded-3xl bg-[#0b1330] text-white p-7 sm:p-8 flex flex-col justify-start shadow-md border border-slate-800">
-            <div className="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center mb-5 text-[#38bdf8]">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
             <h3 className="font-heading font-bold text-lg sm:text-xl text-white tracking-tight leading-snug">
               Cloud, DevOps &amp;<br />Cybersecurity
             </h3>

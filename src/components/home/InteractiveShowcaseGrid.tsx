@@ -1,14 +1,8 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Layout,
-  Brain,
-  Smartphone,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export interface InteractiveShowcaseGridProps {
   onOpenBooking?: () => void;
@@ -16,7 +10,6 @@ export interface InteractiveShowcaseGridProps {
 
 interface CapabilityPillar {
   id: string;
-  icon: React.ElementType;
   title: string;
   desc: string;
   href: string;
@@ -25,28 +18,24 @@ interface CapabilityPillar {
 const PILLARS: CapabilityPillar[] = [
   {
     id: "web-saas",
-    icon: Layout,
     title: "Web & SaaS Platforms",
     desc: "Custom Next.js web applications, client dashboards, and cloud-native digital platforms engineered for conversion, speed, and real enterprise scale.",
     href: "/capabilities/website-development",
   },
   {
     id: "applied-ai",
-    icon: Brain,
     title: "Applied AI & ML",
     desc: "Custom ML models, demand forecasting, conversational AI agents, and autonomous LLM workflows designed to streamline operations.",
     href: "/capabilities/applied-ai-ml",
   },
   {
     id: "mobile-apps",
-    icon: Smartphone,
     title: "Mobile Applications",
     desc: "High performance native iOS, Android, and cross-platform React Native apps with real-time cloud sync and offline data resilience.",
     href: "/capabilities/mobile-app-development",
   },
   {
     id: "cloud-devops",
-    icon: ShieldCheck,
     title: "Cloud & DevOps 99.9%",
     desc: "Production-ready cloud architecture on AWS, container orchestration, automated CI/CD pipelines, and enterprise security protocols.",
     href: "/capabilities/cloud-devops-hosting",
@@ -85,23 +74,16 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           </div>
         </div>
 
-        {/* ── 2. FULLY INTERACTIVE 4-COLUMN CAPABILITY GRID (EVERY BOX DYNAMICALLY REACTS ON HOVER) ── */}
+        {/* ── 2. FULLY INTERACTIVE 4-COLUMN CAPABILITY GRID ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch w-full">
           {PILLARS.map((pillar) => {
-            const Icon = pillar.icon;
-
             return (
               <Link
                 key={pillar.id}
                 href={pillar.href}
                 className="group relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between bg-white/50 hover:bg-white border border-slate-200/60 hover:border-slate-200/90 shadow-2xs hover:shadow-[0_20px_45px_rgba(11,19,48,0.09)] hover:-translate-y-2 transition-all duration-300 cursor-pointer"
               >
-                <div className="space-y-5">
-                  {/* Icon with interactive color & lift */}
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50/60 border border-blue-100/60 text-[#0b1330] group-hover:text-[#1d4ed8] group-hover:bg-blue-50 group-hover:border-blue-200 flex items-center justify-center group-hover:-translate-y-1 transition-all duration-300">
-                    <Icon className="w-6 h-6 stroke-[1.8]" />
-                  </div>
-
+                <div className="space-y-4">
                   {/* Title & Expanding Underline Bar */}
                   <div className="space-y-2">
                     <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#0b1330] group-hover:text-[#1d4ed8] tracking-tight leading-snug transition-colors duration-300">

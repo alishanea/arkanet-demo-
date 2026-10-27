@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { FEATURED_SERVICES } from "@/lib/data";
@@ -37,9 +37,6 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onOpenBookin
               className="bg-white border border-borderline hover:border-navy-mid rounded-xl p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 shadow-2xs"
             >
               <div>
-                <div className="w-12 h-12 rounded-lg bg-subtle flex items-center justify-center mb-5">
-                  {ICON_MAP[service.iconName]}
-                </div>
                 <h3 className="font-display font-bold text-xl text-navy mb-3">
                   {service.title}
                 </h3>
@@ -61,3 +58,4 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onOpenBookin
     </section>
   );
 };
+

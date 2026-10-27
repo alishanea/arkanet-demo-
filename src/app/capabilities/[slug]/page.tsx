@@ -285,10 +285,6 @@ export default function CapabilityDetailPage() {
                           key={idx}
                           className="group/item relative py-2 px-4 sm:p-6 -m-2 rounded-2xl transition-all duration-300 hover:bg-white/70 hover:shadow-sm border border-transparent hover:border-white/80 cursor-pointer space-y-3 sm:space-y-4"
                         >
-                          <div className="w-10 h-10 flex items-center justify-start text-[#0b1330] group-hover/item:text-[#3b82f6] group-hover/item:-translate-y-1 transition-all duration-300">
-                            <IconComponent className="w-7 h-7 stroke-[1.75]" />
-                          </div>
-                          
                           <div className="space-y-2">
                             <h3 className="text-xl sm:text-2xl font-bold text-[#0b1330] group-hover/item:text-[#3b82f6] transition-colors duration-300 tracking-tight">
                               {item.title}

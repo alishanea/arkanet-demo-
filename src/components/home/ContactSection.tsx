@@ -89,7 +89,7 @@ export const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 text-left space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#1d4ed8] text-xs font-semibold tracking-wide uppercase">
-              <Sparkles className="w-3.5 h-3.5" />
+              
               <span>Let&apos;s Build Together</span>
             </div>
 
@@ -108,7 +108,7 @@ export const ContactSection: React.FC = () => {
                 <span>Response within 2 hours</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 bg-white px-3.5 py-2 rounded-full border border-slate-200/80 shadow-2xs">
-                <ShieldCheck className="w-4 h-4 text-[#1d4ed8]" />
+                
                 <span>Mutual NDA Protected</span>
               </div>
             </div>

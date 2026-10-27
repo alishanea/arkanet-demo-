@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { AboutCTA } from "@/components/about/AboutCTA";
 import { WorkDetailModal, WorkProjectDetail } from "@/components/modals/WorkDetailModal";
 
@@ -203,8 +203,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   <div className="space-y-3">
                     {/* Primary Highlight Outcome Badge */}
                     {project.detail?.impact[0] && (
-                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-50 border border-blue-100 text-[#1d4ed8] text-[11px] font-bold leading-tight">
-                        <Sparkles className="w-3 h-3 text-[#1d4ed8] shrink-0" />
+                      <div className="inline-flex items-center px-2.5 py-1 rounded-lg bg-blue-50 border border-blue-100 text-[#1d4ed8] text-[11px] font-bold leading-tight">
                         <span className="line-clamp-1">{project.detail.impact[0]}</span>
                       </div>
                     )}
@@ -263,3 +262,4 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
     </section>
   );
 };
+

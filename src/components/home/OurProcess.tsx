@@ -1,21 +1,7 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Search,
-  Users,
-  Target,
-  Layout,
-  Database,
-  Network,
-  Rocket,
-  TestTube2,
-  UploadCloud,
-  Activity,
-  Cloud,
-  ShieldCheck,
-} from "lucide-react";
 
 interface OurProcessProps {
   onOpenBooking?: () => void;
@@ -23,7 +9,6 @@ interface OurProcessProps {
 
 interface Deliverable {
   label: string;
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 }
 
 interface ProcessStep {
@@ -43,9 +28,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     body: "We listen closely to your objectives, constraints, and the outcomes that matter most: discovery, not a sales conversation.",
     image: "/assets/images/undestand.webp",
     deliverables: [
-      { label: "Goals & scope, on paper", icon: Search },
-      { label: "A look at what you already have", icon: Users },
-      { label: "Who this is actually for", icon: Target },
+      { label: "Goals & scope, on paper" },
+      { label: "A look at what you already have" },
+      { label: "Who this is actually for" },
     ],
   },
   {
@@ -56,9 +41,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=900&auto=format&fit=crop",
     deliverables: [
-      { label: "Something you can click through", icon: Layout },
-      { label: "The technical decisions made upfront", icon: Database },
-      { label: "What gets built first, and why", icon: Network },
+      { label: "Something you can click through" },
+      { label: "The technical decisions made upfront" },
+      { label: "What gets built first, and why" },
     ],
   },
   {
@@ -69,9 +54,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop",
     deliverables: [
-      { label: "You see it as it's built", icon: Rocket },
-      { label: "Checked before it ships", icon: TestTube2 },
-      { label: "Live, and actually working", icon: UploadCloud },
+      { label: "You see it as it's built" },
+      { label: "Checked before it ships" },
+      { label: "Live, and actually working" },
     ],
   },
   {
@@ -82,9 +67,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     image:
       "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=900&auto=format&fit=crop",
     deliverables: [
-      { label: "We keep an eye on it", icon: Activity },
-      { label: "Room to grow", icon: Cloud },
-      { label: "Still here after launch", icon: ShieldCheck },
+      { label: "We keep an eye on it" },
+      { label: "Room to grow" },
+      { label: "Still here after launch" },
     ],
   },
 ];
@@ -148,11 +133,10 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#dbe6f0] pt-1">
               {step.deliverables.map((d, itemIdx) => {
-                const Icon = d.icon;
                 return (
                   <div
                     key={d.label}
-                    className={`flex flex-row sm:flex-col items-center sm:items-start gap-3.5 sm:gap-3 py-2.5 sm:py-0 ${
+                    className={`flex flex-col items-start gap-2 py-2.5 sm:py-0 ${
                       itemIdx === 0
                         ? "sm:pr-6 lg:pr-8 first:pt-0"
                         : itemIdx === 1
@@ -160,9 +144,6 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
                         : "sm:pl-6 lg:pl-8 last:pb-0"
                     }`}
                   >
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#e2effa] flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-[#1b4e7e]" strokeWidth={1.8} />
-                    </div>
                     <span className="text-xs sm:text-[13px] lg:text-sm font-semibold text-[#14233c] leading-snug tracking-tight sm:whitespace-pre-line">
                       {d.label}
                     </span>

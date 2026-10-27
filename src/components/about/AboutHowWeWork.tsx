@@ -81,10 +81,7 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
                     <span className="font-display text-2xl sm:text-3xl font-black text-[#070035]/20 select-none">
                       {step.step}
                     </span>
-                    <div className="w-10 h-10 rounded-xl bg-[#3b82f6]/10 text-[#3b82f6] flex items-center justify-center group-hover:bg-[#3b82f6] group-hover:text-white transition-colors duration-300">
-                      <Icon className="w-5 h-5" strokeWidth={2} />
                     </div>
-                  </div>
 
                   {/* Title */}
                   <h3 className="text-xl sm:text-2xl font-bold font-display text-[#070035] tracking-tight group-hover:text-[#3b82f6] transition-colors duration-300">

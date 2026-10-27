@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { Bot, ArrowRight, Brain, Database, Zap, Code2, Users, Sparkles } from "lucide-react";
@@ -43,9 +43,6 @@ export const AISolutions: React.FC<AISolutionsProps> = ({ onOpenBooking }) => {
                   key={idx}
                   className="bg-white border border-borderline hover:border-navy-mid rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 shadow-2xs"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-navy-bright/10 flex items-center justify-center text-navy-bright mb-4">
-                    {Icon}
-                  </div>
                   <div className="text-xs font-bold text-navy-bright uppercase tracking-wider mb-2">
                     0{idx + 1}
                   </div>

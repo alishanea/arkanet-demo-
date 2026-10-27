@@ -195,7 +195,7 @@ export const HorizontalVideoGallery: React.FC = () => {
       {/* Top Header Overlay Bar */}
       <div className="absolute top-8 left-6 sm:left-10 right-6 sm:right-10 z-30 flex items-center justify-between pointer-events-auto">
         <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-xs font-mono font-bold uppercase tracking-widest text-[#38bdf8]">
-          <Sparkles className="w-3.5 h-3.5" />
+          
           <span>GREAT WORK FOR GREAT PEOPLE • [{activeCardIndex + 1} / {ARKANET_PROJECTS.length}]</span>
         </div>
 
