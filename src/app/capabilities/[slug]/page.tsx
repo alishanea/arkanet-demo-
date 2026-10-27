@@ -66,54 +66,15 @@ export default function CapabilityDetailPage() {
   const params = useParams();
   const slug = (params?.slug as string) || "website-development";
   const [contactOpen, setContactOpen] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  
+  
 
-    // Reset slide when changing capability
-  useEffect(() => {
-    setCurrentSlide(0);
-  }, [slug]);
-
-  const openContact = () => setContactOpen(true);
-
-  // Auto-advance slideshow
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % showcaseSlides.length);
-    }, 4500);
-    return () => clearInterval(interval);
-  }, [isPaused]);
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + showcaseSlides.length) % showcaseSlides.length);
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % showcaseSlides.length);
-  };
+    const openContact = () => setContactOpen(true);
 
   // Fallback to website-development if slug not found
   const data = CAPABILITIES_DATA[slug] || CAPABILITIES_DATA["website-development"];
 
-  // Dynamically generate unique showcase slides from this specific capability's content
-  const showcaseSlides = [
-    {
-      image: data.heroImages.center,
-      title: `${data.title} ${data.highlightText}`,
-      category: data.badge || "Featured Solution",
-    },
-    ...(data.featureRows || []).map((row, idx) => ({
-      image: row.image,
-      title: row.title,
-      category: `Specification 0${idx + 1}`,
-    })),
-    {
-      image: data.techShowcase.image,
-      title: data.techShowcase.title,
-      category: data.techShowcase.badge || "Architecture & Engineering",
-    },
-  ];
+
 
   return (
     <main className="min-h-screen bg-white text-[#0b1330] selection:bg-[#0b1330] selection:text-white overflow-x-hidden font-sans">
@@ -161,84 +122,40 @@ export default function CapabilityDetailPage() {
             })}
           </div>
 
-          {/* Interactive Slideshow Showcase Banner */}
-          <div
-            className="relative w-full rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none mt-10 bg-slate-900 group"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {/* Slide Frame */}
-            <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 w-full h-full"
+          {/* Automatic Movie Track Showcase Banner */}
+          <div className="relative w-full rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none mt-10 bg-white py-5 sm:py-7">
+            {/* Left & Right Edge Fade Masks */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10" />
+
+            {/* Seamless Infinite Gliding Movie Track */}
+            <div className="animate-marquee flex items-center gap-5 sm:gap-6">
+              {[
+                data.heroImages.center,
+                data.heroImages.left,
+                data.heroImages.right,
+                ...(data.featureRows || []).map((r) => r.image),
+                data.techShowcase.image,
+                data.heroImages.center,
+                data.heroImages.left,
+                data.heroImages.right,
+                ...(data.featureRows || []).map((r) => r.image),
+                data.techShowcase.image,
+              ].map((imgSrc, idx) => (
+                <div
+                  key={idx}
+                  className="group relative w-[340px] sm:w-[480px] lg:w-[540px] aspect-[16/10] shrink-0 rounded-[5px] overflow-hidden border border-slate-200/90 bg-slate-100 hover:border-[#0b1330] transition-all duration-300 cursor-pointer"
+                  onClick={openContact}
                 >
                   <img
-                    src={showcaseSlides[currentSlide].image}
-                    alt={showcaseSlides[currentSlide].title}
-                    className="w-full h-full object-cover"
+                    src={imgSrc}
+                    alt="Capability project showcase"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  {/* Subtle Gradient Scrim for readable text */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1330]/90 via-[#0b1330]/25 to-black/30 pointer-events-none" />
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Bottom Info Bar Overlay */}
-              <div className="absolute bottom-0 inset-x-0 p-5 sm:p-7 flex flex-col sm:flex-row sm:items-end justify-between gap-4 z-20">
-                <div className="space-y-1.5 text-white">
-                  <div className="inline-block px-2.5 py-0.5 rounded-[3px] bg-white/20 backdrop-blur-md text-[11px] font-mono tracking-wider uppercase text-slate-200">
-                    {showcaseSlides[currentSlide].category}
-                  </div>
-                  <h3 className="font-heading font-bold text-xl sm:text-2xl lg:text-3xl text-white tracking-tight leading-snug">
-                    {showcaseSlides[currentSlide].title}
-                  </h3>
+                  {/* Subtle Elegant Hover Scrim without any text sentences */}
+                  <div className="absolute inset-0 bg-[#0b1330]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 </div>
-
-                {/* Slideshow Controls (Numbers, Indicator Dots & Prev/Next Arrows) */}
-                <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-                  {/* Slide Indicators / Dots */}
-                  <div className="flex items-center gap-1.5">
-                    {showcaseSlides.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentSlide(idx)}
-                        aria-label={`Go to slide ${idx + 1}`}
-                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                          currentSlide === idx ? "w-7 bg-white" : "w-2 bg-white/40 hover:bg-white/70"
-                        }`}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Counter */}
-                  <div className="font-mono text-xs text-slate-300 font-medium px-2">
-                    0{currentSlide + 1} / 0{showcaseSlides.length}
-                  </div>
-
-                  {/* Prev / Next Arrows */}
-                  <div className="flex items-center gap-1.5">
-                    <button
-                      onClick={prevSlide}
-                      aria-label="Previous slide"
-                      className="w-8 h-8 rounded-[4px] bg-white/20 hover:bg-white text-white hover:text-[#0b1330] backdrop-blur-md flex items-center justify-center transition-all cursor-pointer"
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={nextSlide}
-                      aria-label="Next slide"
-                      className="w-8 h-8 rounded-[4px] bg-white/20 hover:bg-white text-white hover:text-[#0b1330] backdrop-blur-md flex items-center justify-center transition-all cursor-pointer"
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
