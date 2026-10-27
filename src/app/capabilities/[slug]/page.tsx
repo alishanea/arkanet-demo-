@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -29,6 +30,8 @@ import {
   Smartphone,
   Shield,
   ShoppingBag,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 import { Footer } from "@/components/layout/Footer";
@@ -57,12 +60,59 @@ const ICON_MAP: Record<string, React.ElementType> = {
   ShoppingBag,
 };
 
+const SHOWCASE_SLIDES = [
+  {
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+    title: "Enterprise SaaS & B2B Web Platform",
+    category: "Next.js 15 · Edge Architecture",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1600&auto=format&fit=crop",
+    title: "High-AOV Headless eCommerce Storefront",
+    category: "Shopify Storefront API · Multi-Currency",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+    title: "Real-Time Customer Portal & Web Application",
+    category: "React · TypeScript · Interactive Dashboards",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+    title: "Corporate Authority & Internationalization",
+    category: "Bilingual Arabic (RTL) & English",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1600&auto=format&fit=crop",
+    title: "Modular Content Engine & Publishing System",
+    category: "Headless CMS · Instant Landing Pages",
+  },
+];
+
 export default function CapabilityDetailPage() {
   const params = useParams();
   const slug = (params?.slug as string) || "website-development";
   const [contactOpen, setContactOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const openContact = () => setContactOpen(true);
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SHOWCASE_SLIDES.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + SHOWCASE_SLIDES.length) % SHOWCASE_SLIDES.length);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % SHOWCASE_SLIDES.length);
+  };
 
   // Fallback to website-development if slug not found
   const data = CAPABILITIES_DATA[slug] || CAPABILITIES_DATA["website-development"];
@@ -113,67 +163,82 @@ export default function CapabilityDetailPage() {
             })}
           </div>
 
-          {/* Clean Performance Ticker Strip */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-8 mt-8 pt-6 border-t border-slate-200/80 text-xs sm:text-sm font-medium text-slate-600">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[#0b1330] font-semibold">99/100</span> Core Web Vitals
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#0b1330]" />
-              <span className="text-[#0b1330] font-semibold">&lt; 0.8s</span> Edge LCP Speed
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#0b1330]" />
-              <span>100% Mobile First Ergonomics</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#0b1330]" />
-              <span>Bespoke Engineering (Zero Templates)</span>
-            </div>
-          </div>
+          {/* Interactive Slideshow Showcase Banner */}
+          <div
+            className="relative w-full rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none mt-10 bg-slate-900 group"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Slide Frame */}
+            <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 w-full h-full"
+                >
+                  <img
+                    src={SHOWCASE_SLIDES[currentSlide].image}
+                    alt={SHOWCASE_SLIDES[currentSlide].title}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Subtle Gradient Scrim for readable text */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1330]/90 via-[#0b1330]/25 to-black/30 pointer-events-none" />
+                </motion.div>
+              </AnimatePresence>
 
-          {/* Elevated Hero Visuals Showcase Banner */}
-          <div className="relative w-full rounded-[5px] bg-[#eef2f6] p-4 sm:p-8 lg:p-10 overflow-hidden border border-slate-200/90 shadow-none mt-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-              {/* Left Mockup (Desktop / Tablet) */}
-              <div className="hidden md:block group relative aspect-[4/5] rounded-[5px] overflow-hidden border border-slate-200 shadow-none bg-white hover:border-[#0b1330]/40 transition-all duration-300">
-                <img
-                  src={data.heroImages.left}
-                  alt="Responsive web preview"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-[3px] bg-[#0b1330]/80 backdrop-blur-sm text-white text-[11px] font-mono font-medium">
-                  Responsive Viewport
+              {/* Bottom Info Bar Overlay */}
+              <div className="absolute bottom-0 inset-x-0 p-5 sm:p-7 flex flex-col sm:flex-row sm:items-end justify-between gap-4 z-20">
+                <div className="space-y-1.5 text-white">
+                  <div className="inline-block px-2.5 py-0.5 rounded-[3px] bg-white/20 backdrop-blur-md text-[11px] font-mono tracking-wider uppercase text-slate-200">
+                    {SHOWCASE_SLIDES[currentSlide].category}
+                  </div>
+                  <h3 className="font-heading font-bold text-xl sm:text-2xl lg:text-3xl text-white tracking-tight leading-snug">
+                    {SHOWCASE_SLIDES[currentSlide].title}
+                  </h3>
                 </div>
-              </div>
 
-              {/* Center Flagship Hero Mockup (Elevated) */}
-              <div className="group relative aspect-[16/10] sm:aspect-[4/5] md:aspect-[3/4] md:scale-[1.03] rounded-[5px] overflow-hidden border border-slate-300 shadow-none z-10 bg-white hover:border-[#0b1330] transition-all duration-300">
-                <img
-                  src={data.heroImages.center}
-                  alt="Primary web engineering showcase"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-[3px] bg-emerald-600/90 backdrop-blur-sm text-white text-[11px] font-mono font-medium flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                  <span>Production Live</span>
-                </div>
-                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-[3px] bg-[#0b1330]/85 backdrop-blur-md text-white flex items-center justify-between">
-                  <div className="text-xs font-semibold">Flagship Enterprise Architecture</div>
-                  <div className="text-[11px] text-slate-300 font-mono">0.68s LCP</div>
-                </div>
-              </div>
+                {/* Slideshow Controls (Numbers, Indicator Dots & Prev/Next Arrows) */}
+                <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+                  {/* Slide Indicators / Dots */}
+                  <div className="flex items-center gap-1.5">
+                    {SHOWCASE_SLIDES.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentSlide(idx)}
+                        aria-label={`Go to slide ${idx + 1}`}
+                        className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                          currentSlide === idx ? "w-7 bg-white" : "w-2 bg-white/40 hover:bg-white/70"
+                        }`}
+                      />
+                    ))}
+                  </div>
 
-              {/* Right Mockup (Clean UI Showcase) */}
-              <div className="hidden md:block group relative aspect-[4/5] rounded-[5px] overflow-hidden border border-slate-200 shadow-none bg-white hover:border-[#0b1330]/40 transition-all duration-300">
-                <img
-                  src={data.heroImages.right}
-                  alt="Customer flow preview"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-[3px] bg-[#0b1330]/80 backdrop-blur-sm text-white text-[11px] font-mono font-medium">
-                  Conversion Journey
+                  {/* Counter */}
+                  <div className="font-mono text-xs text-slate-300 font-medium px-2">
+                    0{currentSlide + 1} / 0{SHOWCASE_SLIDES.length}
+                  </div>
+
+                  {/* Prev / Next Arrows */}
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      onClick={prevSlide}
+                      aria-label="Previous slide"
+                      className="w-8 h-8 rounded-[4px] bg-white/20 hover:bg-white text-white hover:text-[#0b1330] backdrop-blur-md flex items-center justify-center transition-all cursor-pointer"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={nextSlide}
+                      aria-label="Next slide"
+                      className="w-8 h-8 rounded-[4px] bg-white/20 hover:bg-white text-white hover:text-[#0b1330] backdrop-blur-md flex items-center justify-center transition-all cursor-pointer"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
