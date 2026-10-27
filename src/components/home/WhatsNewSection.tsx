@@ -190,13 +190,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
  {/* Card Body */}
  <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
  <div className="space-y-3">
- {/* Primary Highlight Outcome Badge (Neutral slate/charcoal styling, NO light blue writing) */}
- {project.detail?.impact[0] && (
- <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-slate-100/90 border border-slate-200/90 text-[#0b1330] text-[11px] font-semibold font-sans leading-tight">
- <span className="w-1.5 h-1.5 rounded-[1px] bg-[#0b1330]/70 shrink-0" />
- <span className="line-clamp-1">{project.detail.impact[0]}</span>
- </div>
- )}
+ 
 
  {/* Title */}
  <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#0b1330] group-hover:text-black transition-colors leading-snug">
