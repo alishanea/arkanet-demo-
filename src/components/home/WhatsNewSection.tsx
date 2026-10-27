@@ -154,7 +154,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group bg-white rounded-[5px] border border-slate-200/90 hover:border-slate-400/90 overflow-hidden transition-colors duration-300 flex flex-col justify-between cursor-pointer text-left outline-none focus:outline-none focus:ring-0 active:outline-none select-none"
+              className="group bg-white hover:bg-slate-50/60 rounded-[5px] border border-slate-200/80 hover:border-slate-300/80 overflow-hidden transition-all duration-300 flex flex-col justify-between cursor-pointer text-left outline-none focus:outline-none focus:ring-0 active:outline-none select-none"
             >
               <div className="flex flex-col flex-1">
                 {/* Pure Photography Frame: Clean, No Writing, No Overlays on Image */}
