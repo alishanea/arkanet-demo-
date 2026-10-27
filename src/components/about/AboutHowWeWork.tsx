@@ -108,15 +108,15 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
           })}
         </div>
 
-        {/* CTA Button */}
+        {/* Subtle link with small arrow */}
         {onOpenBooking && (
           <div className="pt-2 flex items-center">
             <button
               onClick={onOpenBooking}
-              className="group inline-flex items-center gap-3 bg-[#070035] text-[#38bdf8] hover:bg-[#0b1330] font-bold uppercase tracking-wider text-xs sm:text-sm py-3.5 px-7 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 active:scale-95 cursor-pointer"
+              className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-[#0b1330] transition-colors cursor-pointer"
             >
               <span>Book a Free Consultation</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#0b1330]" />
             </button>
           </div>
         )}

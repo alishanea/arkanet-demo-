@@ -49,15 +49,13 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
             </div>
 
             {/* Clean CTA Button */}
-            <div className="pt-1">
+            <div className="pt-2">
               <Link
                 href="/about"
-                className="group inline-flex items-center gap-3 bg-[#0b1330] hover:bg-[#132047] active:scale-[0.98] text-white pl-5 pr-2 py-2 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 shadow-[0_4px_14px_rgba(11,19,48,0.16)] hover:shadow-[0_6px_20px_rgba(11,19,48,0.22)] shrink-0"
+                className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-[#0b1330] transition-colors"
               >
-                <span className="tracking-tight">About Us</span>
-                <span className="w-7 h-7 rounded-full bg-white/12 text-[#38bdf8] flex items-center justify-center group-hover:bg-[#38bdf8] group-hover:text-[#0b1330] transition-all duration-300">
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-                </span>
+                <span>About Us</span>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#0b1330]" />
               </Link>
             </div>
           </div>

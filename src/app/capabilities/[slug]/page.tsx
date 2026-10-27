@@ -357,10 +357,10 @@ export default function CapabilityDetailPage() {
                         <div className="pt-2">
                           <button
                             onClick={openContact}
-                            className="inline-flex items-center gap-2 bg-[#38bdf8] text-[#0b1330] hover:bg-white font-extrabold text-sm px-7 py-3.5 rounded-full transition-all duration-300 cursor-pointer shadow-md hover:scale-105"
+                            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#38bdf8] hover:text-white transition-colors cursor-pointer"
                           >
                             <span>Explore Architecture</span>
-                            <ArrowUpRight className="w-4 h-4" />
+                            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                           </button>
                         </div>
                       </div>

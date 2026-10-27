@@ -515,16 +515,16 @@ export default function BlogPage() {
 
                         {/* 4. Article Card Bottom Controls */}
                         <div className="pt-4 flex flex-wrap items-center justify-between gap-4 mt-auto">
-                          {/* Read Article Pill Button */}
+                          {/* Read Article Link */}
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               setSelectedArticle(article);
                             }}
-                            className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#0b1330] hover:bg-[#15234d] text-white text-sm sm:text-base font-bold font-sans uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
+                            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-[#0b1330] transition-colors cursor-pointer"
                           >
                             <span>Read Article</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#38bdf8]" />
+                            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#0b1330]" />
                           </button>
 
                           {/* Author Avatar, Name & Date */}

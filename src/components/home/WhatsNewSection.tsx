@@ -127,15 +127,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
             </p>
           </div>
 
-          <div className="shrink-0 self-start md:self-end">
-            <Link
-              href="/work"
-              className="group inline-flex items-center gap-2 bg-[#0b1330] hover:bg-[#15234d] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer"
-            >
-              <span>View All Projects</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </Link>
-          </div>
+
         </div>
 
         {/* Clean Category Filter Chips Bar */}

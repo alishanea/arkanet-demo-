@@ -13,28 +13,14 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
     <section id="what-is-arkanet" className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-10 sm:py-14 select-none border-t border-slate-200/80 overflow-hidden">
       <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center gap-8 sm:gap-10">
         
-        {/* ── 1. WIDE BALANCED SECTION HEADER (FILLS SCREEN HORIZONTALLY) ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end justify-between">
-          <div className="lg:col-span-8 xl:col-span-9">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#0b1330] leading-tight tracking-tight">
-              Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
-            </h2>
-            <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed mt-2.5 max-w-3xl">
-              We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
-            </p>
-          </div>
-
-          <div className="lg:col-span-4 xl:col-span-3 flex justify-start lg:justify-end">
-            <Link
-              href="/work"
-              className="group inline-flex items-center gap-3 bg-[#0b1330] hover:bg-[#132047] active:scale-[0.98] text-white pl-6 pr-2.5 py-2.5 rounded-full font-semibold text-sm sm:text-[15px] transition-all duration-300 shadow-[0_4px_14px_rgba(11,19,48,0.16)] hover:shadow-[0_6px_20px_rgba(11,19,48,0.22)] shrink-0"
-            >
-              <span className="tracking-tight">Explore Work</span>
-              <span className="w-8 h-8 rounded-full bg-white/12 text-[#38bdf8] flex items-center justify-center group-hover:bg-[#38bdf8] group-hover:text-[#0b1330] transition-all duration-300">
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </span>
-            </Link>
-          </div>
+        {/* ── 1. WIDE BALANCED SECTION HEADER ── */}
+        <div className="max-w-4xl">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#0b1330] leading-tight tracking-tight">
+            Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
+          </h2>
+          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed mt-2.5 max-w-3xl">
+            We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
+          </p>
         </div>
 
         {/* ── 2. THREE-CARD HIGHLIGHT GRID (EXPANDED TO FULL WIDTH, NO VACANT SIDES) ── */}
@@ -87,6 +73,17 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
             </p>
           </div>
 
+        </div>
+
+        {/* Subtle navigation link with small arrow */}
+        <div className="flex justify-start">
+          <Link
+            href="/work"
+            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-[#0b1330] transition-colors"
+          >
+            <span>Explore Work</span>
+            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-slate-400 group-hover:text-[#0b1330]" />
+          </Link>
         </div>
 
       </div>

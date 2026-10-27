@@ -24,15 +24,15 @@ export function AboutCTA({ onOpenBooking }: AboutCTAProps) {
           </h2>
         </div>
 
-        {/* CTA Row */}
-        <div className="pt-1 sm:pt-4 flex flex-wrap items-center gap-6">
+        {/* Subtle link with small arrow */}
+        <div className="pt-2 flex items-center">
           <button
             type="button"
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-3 bg-[#0b1330] text-white hover:bg-[#15234d] font-semibold text-sm sm:text-base py-4 px-8 rounded-full transition-colors cursor-pointer"
+            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0b1330] transition-colors cursor-pointer"
           >
             <span>Start a Project</span>
-            <ArrowRight className="w-5 h-5 text-[#38bdf8]" />
+            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-[#1d4ed8]" />
           </button>
         </div>
 
