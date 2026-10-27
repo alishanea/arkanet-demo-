@@ -176,16 +176,13 @@ export const OurProcess: React.FC<OurProcessProps> = () => {
       className="relative w-full bg-[#f4f6fb] text-[#0b1330] py-12 sm:py-16 lg:py-20 px-6 sm:px-8 lg:px-[40px] select-none"
     >
       <div className="w-full space-y-8 sm:space-y-16">
-        {/* Section Heading */}
-        <div className="w-full text-left space-y-4">
-          <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
-            <h2 className="section-h2">Our Process</h2>
-          </div>
-          <p className="hero-sub w-full max-w-5xl pt-2">
-            We build technology partnerships designed to last, not projects
-            designed to end at handoff. Every engagement is shaped around one
-            principle: the right technology environment is secure, dependable,
-            and built to your specifications.
+        {/* Section Heading - Standardized to Brand Typography */}
+        <div className="w-full text-left space-y-3">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#0b1330] tracking-tight leading-tight">
+            Our Process
+          </h2>
+          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed mt-2.5 max-w-3xl">
+            We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
           </p>
         </div>
 

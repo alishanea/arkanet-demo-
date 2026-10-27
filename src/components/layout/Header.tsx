@@ -42,7 +42,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const isCapabilitiesActive = pathname.startsWith("/capabilities") || pathname.startsWith("/services");
   const isAboutActive = pathname === "/about";
   const isWorkActive = pathname === "/work" || pathname.startsWith("/work");
-  const isInsightsActive = pathname === "/insights" || pathname.startsWith("/blog");
   const isContactActive = pathname === "/contact";
 
   const handleNavClick = () => {
@@ -285,7 +284,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 href="/work"
                 onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("work")}
-                className="relative rounded-full font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
+                className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
                 {isWorkActive && (
                   <motion.div
@@ -315,7 +314,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 href="/about"
                 onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("about")}
-                className="relative rounded-full font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
+                className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
                 {isAboutActive && (
                   <motion.div
@@ -340,42 +339,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 </span>
               </Link>
 
-              {/* Insights Link */}
-              <Link
-                href="/insights"
-                onClick={handleNavClick}
-                onMouseEnter={() => setHoveredTab("insights")}
-                className="relative rounded-full font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
-              >
-                {isInsightsActive && (
-                  <motion.div
-                    layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#0b1330] rounded-full shadow-xs"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {hoveredTab === "insights" && !isInsightsActive && (
-                  <motion.div
-                    layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-slate-100/90 rounded-full"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span
-                  className={`relative z-10 transition-colors duration-200 ${
-                    isInsightsActive ? "text-[#38bdf8]" : "text-slate-800 hover:text-slate-950"
-                  }`}
-                >
-                  Insights
-                </span>
-              </Link>
-
               {/* Contact Link */}
               <Link
                 href="/contact"
                 onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("contact")}
-                className="relative rounded-full font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
+                className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
                 {isContactActive && (
                   <motion.div
@@ -475,15 +444,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   }`}
                 >
                   About Us
-                </Link>
-                <Link
-                  href="/insights"
-                  onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-semibold text-sm ${
-                    isInsightsActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
-                  }`}
-                >
-                  Insights &amp; Blog
                 </Link>
                 <Link
                   href="/contact"
