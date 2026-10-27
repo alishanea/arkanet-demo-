@@ -191,7 +191,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             </Link>
 
             {/* 2. NAVIGATION MENU (CENTER - DESKTOP) */}
-            <nav className="hidden md:flex items-center gap-1.5 lg:gap-3">
+            <nav className="hidden md:flex items-center gap-2 lg:gap-3.5">
               {/* Home Link */}
               <Link
                 href="/"
@@ -221,49 +221,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   Home
                 </span>
               </Link>
-
-              {/* Capabilities Button with Dedicated Spacing */}
-              <div
-                className="shrink-0 relative mx-1 sm:mx-1.5"
-                onMouseEnter={() => {
-                  setHoveredTab("capabilities");
-                  handleMenuEnter("services");
-                }}
-                onMouseLeave={handleMenuLeave}
-              >
-                {hoveredTab === "capabilities" && !isCapabilitiesActive && activeMenu !== "services" && (
-                  <motion.div
-                    layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-slate-100/90 rounded-full"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                {isCapabilitiesActive && activeMenu !== "services" && (
-                  <motion.div
-                    layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#0b1330] rounded-full shadow-xs"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                <button
-                  type="button"
-                  onClick={toggleCapabilities}
-                  className={`relative z-10 flex items-center gap-1.5 rounded-full font-semibold text-xs lg:text-sm px-4.5 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 cursor-pointer select-none ${
-                    activeMenu === "services"
-                      ? "bg-[#0b1330] text-white shadow-xs font-bold"
-                      : isCapabilitiesActive
-                      ? "text-[#38bdf8] font-bold"
-                      : "text-slate-800 hover:text-slate-950"
-                  }`}
-                >
-                  <span>Capabilities</span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                      activeMenu === "services" ? "rotate-180 text-white" : isCapabilitiesActive ? "text-[#38bdf8]" : "text-slate-500"
-                    }`}
-                  />
-                </button>
-              </div>
 
               {/* Work Link */}
               <Link
@@ -356,18 +313,39 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               </Link>
             </nav>
 
-            {/* 3. RIGHT CTA PILL BUTTON */}
+            {/* 3. RIGHT SIDE: CAPABILITIES BUTTON */}
             <div className="flex items-center gap-2 shrink-0">
-              <button
-                type="button"
-                onClick={handleCtaClick}
-                className="group inline-flex items-center gap-2.5 bg-[#0b1330] hover:bg-[#132047] active:scale-95 text-white pl-4 sm:pl-5 pr-1.5 sm:pr-2 py-1.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-200 cursor-pointer shadow-xs"
+              <div
+                className="hidden md:block relative"
+                onMouseEnter={() => {
+                  setHoveredTab("capabilities");
+                  handleMenuEnter("services");
+                }}
+                onMouseLeave={handleMenuLeave}
               >
-                <span className="tracking-tight">Start a Project</span>
-                <span className="w-6 h-6 rounded-full bg-white/12 text-[#38bdf8] flex items-center justify-center group-hover:bg-[#38bdf8] group-hover:text-[#0b1330] transition-colors">
-                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
-              </button>
+                <button
+                  type="button"
+                  onClick={toggleCapabilities}
+                  className={`group inline-flex items-center gap-2 rounded-full font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 transition-all duration-200 cursor-pointer select-none ${
+                    activeMenu === "services"
+                      ? "bg-[#0b1330] text-white shadow-xs font-bold"
+                      : isCapabilitiesActive
+                      ? "bg-[#0b1330] text-white shadow-xs font-bold"
+                      : "bg-slate-100 hover:bg-slate-200/90 text-slate-800 hover:text-slate-950 border border-slate-200/80"
+                  }`}
+                >
+                  <span>Capabilities</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      activeMenu === "services"
+                        ? "rotate-180 text-white"
+                        : isCapabilitiesActive
+                        ? "text-[#38bdf8]"
+                        : "text-slate-500 group-hover:text-slate-900"
+                    }`}
+                  />
+                </button>
+              </div>
 
               {/* Mobile Hamburger Toggle */}
               <button
