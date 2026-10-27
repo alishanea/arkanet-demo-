@@ -60,33 +60,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   ShoppingBag,
 };
 
-const SHOWCASE_SLIDES = [
-  {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-    title: "Enterprise SaaS & B2B Web Platform",
-    category: "Next.js 15 · Edge Architecture",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1600&auto=format&fit=crop",
-    title: "High-AOV Headless eCommerce Storefront",
-    category: "Shopify Storefront API · Multi-Currency",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-    title: "Real-Time Customer Portal & Web Application",
-    category: "React · TypeScript · Interactive Dashboards",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
-    title: "Corporate Authority & Internationalization",
-    category: "Bilingual Arabic (RTL) & English",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1600&auto=format&fit=crop",
-    title: "Modular Content Engine & Publishing System",
-    category: "Headless CMS · Instant Landing Pages",
-  },
-];
+// Slides are generated dynamically per capability below
 
 export default function CapabilityDetailPage() {
   const params = useParams();
@@ -95,27 +69,51 @@ export default function CapabilityDetailPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+    // Reset slide when changing capability
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [slug]);
+
   const openContact = () => setContactOpen(true);
 
   // Auto-advance slideshow
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % SHOWCASE_SLIDES.length);
+      setCurrentSlide((prev) => (prev + 1) % showcaseSlides.length);
     }, 4500);
     return () => clearInterval(interval);
   }, [isPaused]);
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + SHOWCASE_SLIDES.length) % SHOWCASE_SLIDES.length);
+    setCurrentSlide((prev) => (prev - 1 + showcaseSlides.length) % showcaseSlides.length);
   };
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % SHOWCASE_SLIDES.length);
+    setCurrentSlide((prev) => (prev + 1) % showcaseSlides.length);
   };
 
   // Fallback to website-development if slug not found
   const data = CAPABILITIES_DATA[slug] || CAPABILITIES_DATA["website-development"];
+
+  // Dynamically generate unique showcase slides from this specific capability's content
+  const showcaseSlides = [
+    {
+      image: data.heroImages.center,
+      title: `${data.title} ${data.highlightText}`,
+      category: data.badge || "Featured Solution",
+    },
+    ...(data.featureRows || []).map((row, idx) => ({
+      image: row.image,
+      title: row.title,
+      category: `Specification 0${idx + 1}`,
+    })),
+    {
+      image: data.techShowcase.image,
+      title: data.techShowcase.title,
+      category: data.techShowcase.badge || "Architecture & Engineering",
+    },
+  ];
 
   return (
     <main className="min-h-screen bg-white text-[#0b1330] selection:bg-[#0b1330] selection:text-white overflow-x-hidden font-sans">
@@ -181,8 +179,8 @@ export default function CapabilityDetailPage() {
                   className="absolute inset-0 w-full h-full"
                 >
                   <img
-                    src={SHOWCASE_SLIDES[currentSlide].image}
-                    alt={SHOWCASE_SLIDES[currentSlide].title}
+                    src={showcaseSlides[currentSlide].image}
+                    alt={showcaseSlides[currentSlide].title}
                     className="w-full h-full object-cover"
                   />
                   {/* Subtle Gradient Scrim for readable text */}
@@ -194,10 +192,10 @@ export default function CapabilityDetailPage() {
               <div className="absolute bottom-0 inset-x-0 p-5 sm:p-7 flex flex-col sm:flex-row sm:items-end justify-between gap-4 z-20">
                 <div className="space-y-1.5 text-white">
                   <div className="inline-block px-2.5 py-0.5 rounded-[3px] bg-white/20 backdrop-blur-md text-[11px] font-mono tracking-wider uppercase text-slate-200">
-                    {SHOWCASE_SLIDES[currentSlide].category}
+                    {showcaseSlides[currentSlide].category}
                   </div>
                   <h3 className="font-heading font-bold text-xl sm:text-2xl lg:text-3xl text-white tracking-tight leading-snug">
-                    {SHOWCASE_SLIDES[currentSlide].title}
+                    {showcaseSlides[currentSlide].title}
                   </h3>
                 </div>
 
@@ -205,7 +203,7 @@ export default function CapabilityDetailPage() {
                 <div className="flex items-center gap-3 sm:gap-4 shrink-0">
                   {/* Slide Indicators / Dots */}
                   <div className="flex items-center gap-1.5">
-                    {SHOWCASE_SLIDES.map((_, idx) => (
+                    {showcaseSlides.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setCurrentSlide(idx)}
@@ -219,7 +217,7 @@ export default function CapabilityDetailPage() {
 
                   {/* Counter */}
                   <div className="font-mono text-xs text-slate-300 font-medium px-2">
-                    0{currentSlide + 1} / 0{SHOWCASE_SLIDES.length}
+                    0{currentSlide + 1} / 0{showcaseSlides.length}
                   </div>
 
                   {/* Prev / Next Arrows */}
