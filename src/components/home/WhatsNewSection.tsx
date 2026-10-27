@@ -148,13 +148,13 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           })}
         </div>
 
-        {/* 4-Column Grid with Original Size & Hover Color Transition with Tech Stack */}
+        {/* 4-Column Grid: Original Compact Size & Hover Color Transitions (No lower box) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group bg-white hover:bg-slate-50/70 rounded-[5px] border border-slate-200/90 hover:border-[#1d4ed8] overflow-hidden transition-colors duration-300 flex flex-col justify-between cursor-pointer text-left min-h-[500px] sm:min-h-[540px]"
+              className="group bg-white hover:bg-slate-50/50 rounded-[5px] border border-slate-200/90 hover:border-[#1d4ed8] overflow-hidden transition-all duration-300 flex flex-col justify-between cursor-pointer text-left"
             >
               <div className="flex flex-col flex-1">
                 {/* Visual Container (Aspect 4/3, rounded-t-[4px], NO zoom) */}
@@ -167,10 +167,10 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     className="object-cover"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-85 group-hover:opacity-70 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-85 group-hover:opacity-75 transition-opacity duration-300" />
 
-                  {/* Top Category Badge */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-[3px] bg-white/95 backdrop-blur-md text-[10px] font-bold font-sans uppercase tracking-wider text-[#0b1330] group-hover:text-[#1d4ed8] transition-colors">
+                  {/* Top Category Badge - Transitions to Blue on Hover */}
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-[3px] bg-white/95 backdrop-blur-md text-[10px] font-bold font-sans uppercase tracking-wider text-[#0b1330] group-hover:bg-[#1d4ed8] group-hover:text-white transition-colors duration-300">
                     {project.category}
                   </div>
 
@@ -187,13 +187,18 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   </div>
                 </div>
 
-                {/* Card Body */}
+                {/* Card Content Body */}
                 <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
                   <div className="space-y-2.5">
-                    {/* Title with Smooth Color-Changing on Hover */}
-                    <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#0b1330] group-hover:text-[#1d4ed8] transition-colors leading-snug">
-                      {project.title}
-                    </h3>
+                    {/* Title with Inline Indicator Arrow - Dynamic Color Transition on Hover */}
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#0b1330] group-hover:text-[#1d4ed8] transition-colors duration-300 leading-snug">
+                        {project.title}
+                      </h3>
+                      <div className="w-6 h-6 rounded-[3px] bg-slate-100 group-hover:bg-[#1d4ed8] text-slate-500 group-hover:text-white flex items-center justify-center transition-colors duration-300 shrink-0 mt-0.5">
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </div>
+                    </div>
 
                     {/* Description */}
                     <p className="font-sans text-xs text-slate-600 leading-relaxed line-clamp-3 font-normal">
@@ -201,30 +206,22 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     </p>
                   </div>
 
-                  {/* Tech Stack Chips: Cleanly Highlighted on Hover */}
-                  <div className="pt-3 border-t border-slate-100/90 transition-all duration-300">
-                    <div className="text-[10px] font-bold font-sans uppercase tracking-wider text-slate-400 group-hover:text-[#1d4ed8] mb-1.5 transition-colors">
+                  {/* Tech Stack Chips: Clean Color Highlighting on Hover */}
+                  <div className="pt-3 border-t border-slate-100/90 transition-colors duration-300">
+                    <div className="text-[10px] font-bold font-sans uppercase tracking-wider text-slate-400 group-hover:text-[#1d4ed8] mb-1.5 transition-colors duration-300">
                       Tech Stack
                     </div>
                     <div className="flex flex-wrap items-center gap-1.5">
                       {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-2 py-0.5 rounded-[3px] text-[10.5px] font-semibold font-sans bg-slate-50 group-hover:bg-white text-slate-600 group-hover:text-[#0b1330] border border-slate-200/80 group-hover:border-[#1d4ed8]/30 transition-colors"
+                          className="px-2 py-0.5 rounded-[3px] text-[10.5px] font-semibold font-sans bg-slate-50 text-slate-600 border border-slate-200/80 group-hover:bg-blue-50/90 group-hover:text-[#1d4ed8] group-hover:border-[#1d4ed8]/30 transition-all duration-300"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Bottom Action Footer with Color Transition */}
-              <div className="px-5 sm:px-6 py-3.5 bg-slate-50/90 group-hover:bg-[#0b1330] border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-[#0b1330] group-hover:text-white transition-colors duration-300 font-sans">
-                <span>View Full Case Study</span>
-                <div className="w-6 h-6 rounded-[4px] bg-white group-hover:bg-[#1d4ed8] text-[#0b1330] group-hover:text-white flex items-center justify-center border border-slate-200/80 group-hover:border-[#1d4ed8] transition-colors">
-                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </div>
               </div>
             </div>
