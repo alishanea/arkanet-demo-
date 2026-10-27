@@ -73,7 +73,6 @@ export function AboutTestimonials() {
     );
   }, [active, goTo]);
 
-  // Auto-scroll
   useEffect(() => {
     if (!hasMultiple) return;
 
@@ -92,29 +91,24 @@ export function AboutTestimonials() {
   const testimonial = testimonials[active];
 
   return (
-    <section className="pt-4 sm:pt-6 lg:pt-8 pb-4 sm:pb-6 lg:pb-8 px-6 sm:px-8 lg:px-[40px] bg-[#f4f6fb] select-none">
-      <div className="w-full">
-        {/* Muted Slate Blue Hero Card */}
-        <div className="relative w-full bg-[#7299a9] text-white rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] p-10 sm:p-14 lg:p-16 2xl:p-20 shadow-[0_20px_50px_-12px_rgba(114,153,169,0.35)] overflow-hidden flex flex-col justify-between h-[560px] sm:h-[480px] lg:h-[520px]">
+    <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 bg-white border-t border-slate-200/80 text-left">
+      <div className="max-w-7xl mx-auto">
+        <div className="relative w-full bg-[#0b1330] text-white rounded-[5px] p-8 sm:p-12 lg:p-16 border border-slate-800 shadow-none flex flex-col justify-between min-h-[380px] sm:min-h-[400px]">
           
-          {/* Subtle Ambient Glow inside card */}
-          <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-white/10 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-white/5 rounded-full blur-[100px] pointer-events-none" />
-
-          {/* Top Quote Content with Fixed Height CSS Grid Stack (Zero jumping/shifting) */}
-          <div className="relative z-10 w-full max-w-5xl my-auto">
-            <div className="grid grid-cols-1 grid-rows-1 items-center h-[260px] sm:h-[220px] lg:h-[240px]">
+          {/* Top Quote Content */}
+          <div className="relative z-10 w-full max-w-4xl my-auto">
+            <div className="grid grid-cols-1 grid-rows-1 items-center min-h-[160px] sm:min-h-[180px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
                   initial={{
                     opacity: 0,
-                    x: direction === "right" ? 24 : -24,
+                    x: direction === "right" ? 20 : -20,
                   }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{
                     opacity: 0,
-                    x: direction === "right" ? -24 : 24,
+                    x: direction === "right" ? -20 : 20,
                   }}
                   transition={{
                     duration: 0.35,
@@ -122,60 +116,47 @@ export function AboutTestimonials() {
                   }}
                   className="col-start-1 row-start-1 w-full"
                 >
-                  <h2 className="font-display font-medium text-[clamp(22px,3.2vw,48px)] leading-[1.24] tracking-[-0.025em] text-white">
+                  <h3 className="font-heading font-medium text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-white">
                     &#8220;{testimonial.quote}&#8221;
-                  </h2>
+                  </h3>
                 </motion.div>
               </AnimatePresence>
             </div>
           </div>
 
-          {/* Bottom Footer: Author Details on Left + Pill Navigation Controls on Right */}
-          <div className="relative z-10 pt-10 sm:pt-14 lg:pt-16 mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            
-            {/* Left: Frosted Quote Badge + Author Details */}
-            <div className="flex items-center gap-3.5 sm:gap-4">
-              {/* Sleek Frosted Quote Icon Badge */}
-              <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-white shrink-0 shadow-inner">
-                <Quote className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-white text-white rotate-180" />
-              </div>
-
-              {/* Author and Subtitle */}
-              <div className="flex flex-col text-left">
-                <div className="flex items-center gap-2">
-                  <span className="text-white text-[9px] sm:text-[10px]">●</span>
-                  <span className="text-sm sm:text-base font-bold text-white leading-tight">
-                    {testimonial.author}
-                  </span>
-                </div>
-                <span className="text-xs sm:text-sm text-white/80 font-normal pl-4">
-                  {testimonial.role ? `${testimonial.role} · ${testimonial.company}` : testimonial.company}
-                </span>
-              </div>
+          {/* Bottom Footer: Author Details + Controls */}
+          <div className="relative z-10 pt-8 sm:pt-10 mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-white/10">
+            {/* Author */}
+            <div className="flex flex-col text-left">
+              <span className="font-heading font-bold text-base sm:text-lg text-white">
+                {testimonial.author}
+              </span>
+              <span className="font-sans text-xs sm:text-sm text-slate-400 font-normal mt-0.5">
+                {testimonial.role ? `${testimonial.role} · ${testimonial.company}` : testimonial.company}
+              </span>
             </div>
 
-            {/* Right: Frosted Pill Arrow Controls */}
+            {/* Arrow Controls */}
             {hasMultiple && (
-              <div className="flex items-center bg-white/20 backdrop-blur-md rounded-full p-1 sm:p-1.5 border border-white/25 shadow-inner">
+              <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={previousTestimonial}
                   aria-label="Previous testimonial"
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-white hover:bg-white/25 active:scale-95 transition-all duration-200 cursor-pointer"
+                  className="w-10 h-10 rounded-[4px] border border-white/20 flex items-center justify-center text-white hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer"
                 >
-                  <ArrowLeft className="w-5 h-5" strokeWidth={2.2} />
+                  <ArrowLeft className="w-4 h-4" />
                 </button>
                 <button
                   type="button"
                   onClick={nextTestimonial}
                   aria-label="Next testimonial"
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-white hover:bg-white/25 active:scale-95 transition-all duration-200 cursor-pointer"
+                  className="w-10 h-10 rounded-[4px] border border-white/20 flex items-center justify-center text-white hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer"
                 >
-                  <ArrowRight className="w-5 h-5" strokeWidth={2.2} />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             )}
-
           </div>
 
         </div>

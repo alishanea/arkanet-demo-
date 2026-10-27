@@ -463,10 +463,10 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
             animate={{ y: "0%" }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className={`fixed bottom-0 z-50 bg-white text-[#0b1330] shadow-[0_-20px_80px_rgba(0,0,0,0.3)] flex flex-col overflow-hidden font-sans transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`fixed bottom-0 z-50 bg-white text-[#0b1330] border-t border-slate-200 shadow-none flex flex-col overflow-hidden font-sans transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled
                 ? "inset-x-0 top-0 rounded-t-none"
-                : "inset-x-0 sm:inset-x-6 xl:inset-x-[32px] top-[30px] sm:top-[60px] lg:top-[80px] rounded-t-[28px] sm:rounded-t-[44px]"
+                : "inset-x-0 sm:inset-x-6 xl:inset-x-[32px] top-[30px] sm:top-[60px] lg:top-[80px] rounded-t-[5px]"
             }`}
           >
             <MagneticCloseButton onClick={onClose} />

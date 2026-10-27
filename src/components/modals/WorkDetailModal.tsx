@@ -167,10 +167,10 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
               duration: 0.5,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className={`fixed bottom-0 z-50 bg-[#121212] text-white shadow-[0_-20px_80px_rgba(0,0,0,0.4)] flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`fixed bottom-0 z-50 bg-[#121212] text-white border-t border-slate-700 shadow-none flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled
                 ? "inset-x-0 top-0 rounded-t-none"
-                : "inset-x-0 sm:inset-x-8 xl:inset-x-[40px] top-[80px] sm:top-[140px] lg:top-[180px] rounded-t-[5px] sm:rounded-t-[48px]"
+                : "inset-x-0 sm:inset-x-8 xl:inset-x-[40px] top-[80px] sm:top-[140px] lg:top-[180px] rounded-t-[5px] sm:rounded-t-[5px]"
             }`}
           >
             {/* Close (X) Button */}
@@ -195,7 +195,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                         className="w-full h-full object-cover brightness-90"
                       />
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-6">
-                        <div className="relative w-[80%] h-[75%] rounded-[4px] overflow-hidden shadow-2xl border border-white/20">
+                        <div className="relative w-[80%] h-[75%] rounded-[4px] overflow-hidden border border-white/20 shadow-none">
                           <img
                             src={currentProject.innerImage}
                             alt={`${currentProject.title} detail`}

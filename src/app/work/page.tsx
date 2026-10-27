@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 import { Footer } from "@/components/layout/Footer";
@@ -14,11 +14,9 @@ interface WorkProject {
   category: "Websites" | "Mobile Apps & Portals" | "AI & Automation" | "Cloud & Platforms";
   title: string;
   description: string;
-  aspectX: number;
-  aspectY: number;
-  outerImage: string;
-  innerImage: string;
-  staggerDelay?: number;
+  image: string;
+  year?: string;
+  services?: string[];
 }
 
 const PROJECT_DETAILS_MAP: Record<string, {
@@ -43,13 +41,13 @@ const PROJECT_DETAILS_MAP: Record<string, {
       "3.4x Faster contract closing cycle for commercial clients",
       "99.8% System uptime under heavy international traffic",
     ],
-    techStack: ["Next.js", "TypeScript", "Three.js / WebGL", "Tailwind CSS", "Shopify Plus API", "AWS CloudFront"],
+    techStack: ["Next.js", "TypeScript", "Three.js / WebGL", "Tailwind CSS", "Shopify Storefront API", "Vercel"],
   },
   "careflow-health": {
-    client: "CareFlow Healthcare Group",
+    client: "CareFlow Health Systems",
     year: "2025",
-    services: ["Mobile App", "Patient Portal", "HIPAA Compliance", "Telehealth UI"],
-    overview: "CareFlow is a multi-specialty clinical network aiming to replace fragmented patient phone queues with a unified mobile health app and clinical admin dashboard.",
+    services: ["Mobile App Development", "Telehealth", "HIPAA Compliance", "Doctor Portal"],
+    overview: "CareFlow provides continuous care management and digital patient encounters for multi-specialty healthcare networks.",
     challenge: "High patient drop-off during appointment scheduling and delayed access to lab diagnostics led to operational overhead.",
     solution: "Built a native iOS and Android application paired with a real-time doctor portal, supporting video consultations, automated prescription notifications, and instant lab report downloads.",
     impact: [
@@ -179,241 +177,99 @@ const WORK_PROJECTS: WorkProject[] = [
     category: "Websites",
     title: "Marble Tile & Stone",
     description: "Luxury e-commerce and interactive showroom platform designed for high-conversion architect and consumer sales.",
-    aspectX: 1452,
-    aspectY: 890,
-    outerImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop",
-    staggerDelay: 0,
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+    year: "2025",
+    services: ["E-Commerce", "3D Room Visualizer"],
   },
   {
     id: "careflow-health",
     category: "Mobile Apps & Portals",
     title: "CareFlow Health Systems",
     description: "Patient portal and telehealth app streamlining clinical workflows, appointment booking, and instant record access.",
-    aspectX: 710,
-    aspectY: 890,
-    outerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
-    staggerDelay: 0,
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
+    year: "2025",
+    services: ["Mobile App", "Telehealth"],
   },
-{
-      id: "neuraldesk-ai",
-      category: "AI & Automation",
-      title: "NeuralDesk AI Assistant",
-      description: "Enterprise document processing and conversational AI platform connected directly into customer support and operations.",
-      aspectX: 710,
-      aspectY: 890,
-      outerImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
-      innerImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800&auto=format&fit=crop",
-      staggerDelay: 0.1,
-    },
+  {
+    id: "neuraldesk-ai",
+    category: "AI & Automation",
+    title: "NeuralDesk AI Assistant",
+    description: "Enterprise document processing and conversational AI platform connected directly into customer support and operations.",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
+    year: "2026",
+    services: ["Conversational AI", "RAG Pipeline"],
+  },
   {
     id: "aerologistics-cloud",
     category: "Cloud & Platforms",
     title: "AeroLogistics Global Cloud",
     description: "Real-time freight tracking and automated supply chain portal supporting multi-country logistics monitoring.",
-    aspectX: 1452,
-    aspectY: 890,
-    outerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-    staggerDelay: 0,
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
+    year: "2025",
+    services: ["Cloud Architecture", "IoT Tracking"],
   },
   {
     id: "solara-energy",
     category: "Websites",
     title: "Solara Smart Grid",
     description: "Clean energy analytics dashboard and consumer web platform driving commercial solar adoption.",
-    aspectX: 710,
-    aspectY: 890,
-    outerImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
-    staggerDelay: 0,
+    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop",
+    year: "2025",
+    services: ["Web Application", "Solar Analytics"],
   },
   {
     id: "pulsefit-coaching",
     category: "Mobile Apps & Portals",
     title: "PulseFit AI Coach",
     description: "Next gen wellness and fitness mobile application with personalized training feedback and biometric sync.",
-    aspectX: 710,
-    aspectY: 890,
-    outerImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=800&auto=format&fit=crop",
-    staggerDelay: 0.1,
+    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop",
+    year: "2026",
+    services: ["Mobile App", "Biometrics"],
   },
   {
     id: "vesper-timepieces",
     category: "Websites",
     title: "Vesper Luxury Watches",
     description: "Interactive 3D e-commerce showcase featuring real-time product configurators and concierge booking.",
-    aspectX: 1452,
-    aspectY: 890,
-    outerImage: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1600&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1000&auto=format&fit=crop",
-    staggerDelay: 0,
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1600&auto=format&fit=crop",
+    year: "2025",
+    services: ["3D WebGL", "Luxury E-Commerce"],
   },
   {
     id: "fintech-sentinel",
     category: "AI & Automation",
     title: "FinTech Sentinel",
     description: "Automated fraud detection engine and compliance audit dashboard for scaling financial institutions.",
-    aspectX: 710,
-    aspectY: 890,
-    outerImage: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop",
-    staggerDelay: 0,
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop",
+    year: "2026",
+    services: ["Fraud Analytics", "AI Automation"],
   },
-{
-      id: "kratos-cybervision",
-      category: "Cloud & Platforms",
-      title: "Kratos CyberVision",
-      description: "Next generation cloud security and threat intelligence platform with automated anomaly resolution and live telemetry.",
-      aspectX: 710,
-      aspectY: 890,
-      outerImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
-      innerImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
-      staggerDelay: 0,
-    },
-    {
-      id: "dummy-project",
-      category: "Websites",
-      title: "Project Nexus",
-      description: "A modular design system and component library enabling rapid UI development across multiple product lines.",
-      aspectX: 1452,
-      aspectY: 890,
-      outerImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop",
-      innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-      staggerDelay: 0,
-    },
-  ];
+  {
+    id: "kratos-cybervision",
+    category: "Cloud & Platforms",
+    title: "Kratos CyberVision",
+    description: "Next generation cloud security and threat intelligence platform with automated anomaly resolution and live telemetry.",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
+    year: "2026",
+    services: ["Cloud Platform", "Threat Intel"],
+  },
+  {
+    id: "dummy-project",
+    category: "Websites",
+    title: "Project Nexus",
+    description: "A modular design system and component library enabling rapid UI development across multiple product lines.",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop",
+    year: "2026",
+    services: ["Design System", "Component Library"],
+  },
+];
 
 const CATEGORIES = ["All", "Websites", "Mobile Apps & Portals", "AI & Automation", "Cloud & Platforms"] as const;
-
-interface WorkCardProps {
-  project: WorkProject;
-  onSelect: () => void;
-}
-
-const WorkCard: React.FC<WorkCardProps> = ({ project, onSelect }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start end", "end start"],
-  });
-
-  const parallaxY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    isMobile ? ["0%", "0%"] : ["-12%", "12%"]
-  );
-
-  return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 35 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{
-        duration: 0.7,
-        delay: project.staggerDelay || 0,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      onClick={onSelect}
-      style={
-        {
-          "--aspect-x": project.aspectX,
-          "--aspect-y": project.aspectY,
-          aspectRatio: "var(--aspect-x) / var(--aspect-y)",
-        } as React.CSSProperties
-      }
-      className="group relative w-full rounded-[24px] sm:rounded-[36px] overflow-hidden cursor-pointer bg-stone-950 shadow-xl border border-white/10 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(7,0,53,0.3)] select-none"
-    >
-      {/* Layer 1: Parallax Background Photo */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.img
-          src={project.outerImage}
-          alt={`${project.title} background`}
-          loading="lazy"
-          decoding="async"
-          style={{
-            y: parallaxY,
-            height: isMobile ? "100%" : "130%",
-            top: isMobile ? "0%" : "-15%",
-          }}
-          className="w-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out brightness-90"
-        />
-        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-500" />
-      </div>
-
-      {/* Layer 2: Centered Foreground Mockup Layer */}
-      <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-12 md:p-14 pointer-events-none z-10">
-        <div className="relative w-[82%] h-[74%] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-white/20 group-hover:scale-[1.02] transition-transform duration-500">
-          <img
-            src={project.innerImage}
-            alt={`${project.title} detail`}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-transparent to-white/15" />
-        </div>
-      </div>
-
-      {/* Gradient Overlay & Text Content (Navy & Purple Theme) */}
-      <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/95 via-black/70 to-transparent pt-24 pb-8 px-6 sm:pb-12 sm:px-12 flex flex-col justify-end text-left pointer-events-none space-y-2">
-        <div className="flex items-start justify-between gap-4">
-          <div className="space-y-1.5 max-w-3xl">
-            <h3 className="card-h3 text-white group-hover:text-[#38bdf8] transition-colors duration-300">
-              {project.title}
-            </h3>
-            <p className="body-main text-white/90">
-              {project.description}
-            </p>
-          </div>
-          
-          <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-[#38bdf8] text-[#0b1330] flex items-center justify-center group-hover:scale-110 transition-all duration-300 shrink-0 shadow-xl mt-1">
-            <ArrowUpRight className="w-5 h-5 sm:w-7 sm:h-7 transition-transform duration-300 group-hover:rotate-45" />
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
 
 export default function WorkPage() {
   const [contactOpen, setContactOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<typeof CATEGORIES[number]>("All");
   const [selectedProject, setSelectedProject] = useState<WorkProject | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
-  const spacerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 640);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Scroll progress for the sticky pinned container transition
-  const { scrollYProgress } = useScroll({
-    target: spacerRef,
-    offset: ["start start", "end start"],
-  });
-
-  // Animated outer side margin: stays 0px across top & middle -> expands smoothly to 40px (12px mobile) as you reach the last card
-  const outerSideMargin = useTransform(
-    scrollYProgress,
-    [0, 0.65, 1],
-    isMobile ? [0, 0, 12] : [0, 0, 40]
-  );
 
   const openContact = () => setContactOpen(true);
 
@@ -424,111 +280,143 @@ export default function WorkPage() {
   const selectedProjectDetails = selectedProject
     ? {
         ...selectedProject,
+        aspectX: 16,
+        aspectY: 10,
+        outerImage: selectedProject.image,
+        innerImage: selectedProject.image,
         detail: PROJECT_DETAILS_MAP[selectedProject.id],
       }
     : null;
 
   return (
     <main className="min-h-screen bg-white text-[#0b1330] selection:bg-[#0b1330] selection:text-white overflow-x-hidden font-sans">
-
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* WORK HERO & GRID SHOWCASE STICKY CONTAINER */}
-      <div className="relative w-full select-none bg-white">
-        <div ref={spacerRef} className="relative min-h-[140vh] sm:min-h-[150vh]">
-          
-          <motion.div
-            style={{ paddingLeft: outerSideMargin, paddingRight: outerSideMargin }}
-            className="sticky top-0 z-10 w-full bg-white pt-0"
-          >
-            {/* Light Container Block matching Homepage Hero Model */}
-            <div className="w-full bg-[#f4f6fb] text-[#0b1330] pt-28 lg:pt-36 pb-8 sm:pb-12 rounded-t-none rounded-b-[40px] sm:rounded-b-[64px] shadow-sm border-none overflow-hidden px-6 sm:px-8 lg:px-[40px] relative">
-              {/* Soft Navy-to-Blue Radial Ambient Glow */}
-              <div className="absolute top-0 right-1/4 w-[600px] h-[400px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
-              
-              {/* Headline */}
-              <div className="w-full mb-4 relative z-10 text-left">
-                <h1 className="hero-h1 text-left block">
-                  Real work, <br />
-                  <span>engineered to perform</span>
-                </h1>
-                <p className="mt-5 text-lg sm:text-xl md:text-2xl text-[#0b1330] font-medium leading-relaxed max-w-3xl">
-                  Explore our recent web applications, mobile platforms, and AI systems built for ambitious brands.
-                </p>
-              </div>
+      {/* HEADER SECTION WITH GENEROUS BREATHING ROOM */}
+      <section className="w-full bg-[#f4f6fb] pt-32 sm:pt-36 pb-16 sm:pb-20 px-6 sm:px-10 lg:px-12 border-b border-slate-200/80">
+        <div className="max-w-7xl mx-auto text-left">
+          <div className="inline-block px-3 py-1 rounded-[4px] bg-[#0b1330] text-white text-[11px] font-bold uppercase tracking-wider mb-5">
+            Portfolio
+          </div>
 
-              {/* Filter Pills */}
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 mt-8 mb-6 relative z-10">
-                {CATEGORIES.map((cat) => {
-                  const isActive = activeCategory === cat;
-                  return (
-                    <button
-                      key={cat}
-                      onClick={() => setActiveCategory(cat)}
-                      className={`px-5 py-2.5 rounded-full font-sans text-xs sm:text-sm tracking-wide transition-all duration-300 cursor-pointer ${
-                        isActive
-                          ? "bg-[#0b1330] text-[#38bdf8] shadow-md font-bold uppercase tracking-wider"
-                          : "bg-white text-[#0b1330] hover:bg-slate-50 font-medium shadow-sm hover:shadow-md border border-black/5"
-                      }`}
-                    >
-                      {cat}
-                    </button>
-                  );
-                })}
-              </div>
+          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.1] max-w-4xl">
+            Real work, engineered to perform
+          </h1>
 
-              {/* WORK GRID SHOWCASE */}
-              <div className="space-y-6 sm:space-y-8">
-                {filteredProjects.length === 0 ? (
-                  <div className="py-20 text-center text-[#526a83] text-lg font-medium">
-                    No projects found for &quot;{activeCategory}&quot;.
-                  </div>
-                ) : (
-                  /* Staggered Grid Render */
-                  <div className="space-y-6 sm:space-y-8">
-                    {filteredProjects.map((project, idx) => {
-                      const isFullWidth = idx % 3 === 0;
-                      const isFirstInPair = idx % 3 === 1;
+          <p className="mt-5 text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl">
+            Explore our recent web applications, mobile platforms, and AI systems built for ambitious brands worldwide.
+          </p>
 
-                      if (isFullWidth) {
-                        return (
-                          <div key={project.id} className="w-full">
-                            <WorkCard project={project} onSelect={() => setSelectedProject(project)} />
-                          </div>
-                        );
-                      }
-
-                      if (isFirstInPair) {
-                        const nextProject = filteredProjects[idx + 1];
-                        return (
-                          <div key={project.id} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                            <WorkCard project={project} onSelect={() => setSelectedProject(project)} />
-                            {nextProject && (
-                              <WorkCard project={nextProject} onSelect={() => setSelectedProject(nextProject)} />
-                            )}
-                          </div>
-                        );
-                      }
-
-                      return null;
-                    })}
-                  </div>
-                )}
-              </div>
-
-            </div>
-          </motion.div>
-
+          {/* Clean minimal category filter bar */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-10">
+            {CATEGORIES.map((cat) => {
+              const isActive = activeCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-2 rounded-[4px] text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+                    isActive
+                      ? "bg-[#0b1330] text-white border border-[#0b1330]"
+                      : "bg-white text-slate-600 hover:text-[#0b1330] border border-slate-200/90 hover:border-slate-300"
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* PROJECT DETAIL MODAL (Matching ArticleDetailModal layout) */}
+      {/* COMPACT & ELEGANT WORK GRID */}
+      <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          {filteredProjects.length === 0 ? (
+            <div className="py-24 text-center text-slate-500 text-base font-normal">
+              No projects found for &quot;{activeCategory}&quot;.
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+              {filteredProjects.map((project, idx) => (
+                <motion.article
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: idx * 0.05 }}
+                  onClick={() => setSelectedProject(project)}
+                  className="group rounded-[5px] border border-slate-200/90 bg-white overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
+                >
+                  {/* Clean Photography Frame */}
+                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-100">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                    />
+                  </div>
+
+                  {/* Editorial Content Below Image */}
+                  <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between text-left space-y-4">
+                    <div>
+                      <div className="flex items-center justify-between text-xs uppercase tracking-wider font-semibold text-slate-500 mb-2">
+                        <span>{project.category}</span>
+                        <span>{project.year || "2025"}</span>
+                      </div>
+
+                      <div className="flex items-start justify-between gap-4">
+                        <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#0b1330] group-hover:text-slate-700 transition-colors leading-snug">
+                          {project.title}
+                        </h2>
+                        <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-[#0b1330] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200 shrink-0 mt-1" />
+                      </div>
+
+                      <p className="font-sans text-sm text-slate-600 leading-relaxed mt-2.5">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    {/* Clean Tech/Service Tags */}
+                    {project.services && project.services.length > 0 && (
+                      <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+                        {project.services.map((srv, sIdx) => (
+                          <span
+                            key={sIdx}
+                            className="font-sans text-[11px] font-medium text-slate-600 bg-slate-50 px-2.5 py-1 rounded-[3px] border border-slate-200/60"
+                          >
+                            {srv}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* PROJECT DETAIL MODAL */}
       <WorkDetailModal
         isOpen={!!selectedProject}
         onClose={() => setSelectedProject(null)}
         project={selectedProjectDetails}
-        allProjects={WORK_PROJECTS.map((p) => ({ ...p, detail: PROJECT_DETAILS_MAP[p.id] }))}
-        onSelectProject={(proj) => setSelectedProject(WORK_PROJECTS.find((p) => p.id === proj.id) || null)}
+        allProjects={WORK_PROJECTS.map((p) => ({
+          ...p,
+          aspectX: 16,
+          aspectY: 10,
+          outerImage: p.image,
+          innerImage: p.image,
+          detail: PROJECT_DETAILS_MAP[p.id],
+        }))}
+        onSelectProject={(proj) => {
+          const match = WORK_PROJECTS.find((p) => p.id === proj.id);
+          if (match) setSelectedProject(match);
+        }}
       />
 
       {/* CLOSING CTA SECTION */}

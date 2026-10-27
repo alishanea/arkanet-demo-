@@ -111,10 +111,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
               duration: 0.5,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className={`fixed bottom-0 z-50 bg-white text-[#0b1330] shadow-[0_-20px_80px_rgba(0,0,0,0.4)] flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`fixed bottom-0 z-50 bg-white text-[#0b1330] border-t border-slate-200 shadow-none flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled
                 ? "inset-x-0 top-0 rounded-t-none"
-                : "inset-x-0 sm:inset-x-8 xl:inset-x-[40px] top-[80px] sm:top-[140px] lg:top-[180px] rounded-t-[28px] sm:rounded-t-[48px]"
+                : "inset-x-0 sm:inset-x-8 xl:inset-x-[40px] top-[80px] sm:top-[140px] lg:top-[180px] rounded-t-[5px]"
             }`}
           >
             {/* Close (X) Button */}
@@ -146,7 +146,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                           placeholder="e.g. Sarah Jenkins"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#38bdf8] rounded-2xl text-base outline-none bg-slate-50 transition-colors"
+                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#38bdf8] rounded-[4px] text-base outline-none bg-slate-50 transition-colors"
                         />
                       </div>
 
@@ -160,7 +160,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                           placeholder="sarah@company.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#38bdf8] rounded-2xl text-base outline-none bg-slate-50 transition-colors"
+                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#38bdf8] rounded-[4px] text-base outline-none bg-slate-50 transition-colors"
                         />
                       </div>
 
@@ -173,7 +173,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                           placeholder="Tell us briefly what you're looking to build..."
                           value={formData.brief}
                           onChange={(e) => setFormData({ ...formData, brief: e.target.value })}
-                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#38bdf8] rounded-2xl text-base outline-none bg-slate-50 transition-colors"
+                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#38bdf8] rounded-[4px] text-base outline-none bg-slate-50 transition-colors"
                         />
                       </div>
 
