@@ -157,7 +157,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
               className="group bg-white hover:bg-slate-50/50 rounded-[5px] border border-slate-200/90 hover:border-[#1d4ed8] overflow-hidden transition-all duration-300 flex flex-col justify-between cursor-pointer text-left"
             >
               <div className="flex flex-col flex-1">
-                {/* Visual Container (Aspect 4/3, rounded-t-[4px], NO zoom) */}
+                {/* Pure Photography Frame: Clean, No Overlays, No Text */}
                 <div className="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden shrink-0 rounded-t-[4px]">
                   <Image
                     src={project.outerImage}
@@ -167,24 +167,6 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     className="object-cover"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-85 group-hover:opacity-75 transition-opacity duration-300" />
-
-                  {/* Top Category Badge - Transitions to Blue on Hover */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-[3px] bg-white/95 backdrop-blur-md text-[10px] font-bold font-sans uppercase tracking-wider text-[#0b1330] group-hover:bg-[#1d4ed8] group-hover:text-white transition-colors duration-300">
-                    {project.category}
-                  </div>
-
-                  {/* Top Year Pill */}
-                  <div className="absolute top-3 right-3 px-2 py-0.5 rounded-[3px] bg-black/65 backdrop-blur-md text-[10px] font-bold font-sans text-white">
-                    {project.detail?.year}
-                  </div>
-
-                  {/* Client Name on Bottom Overlay */}
-                  <div className="absolute bottom-3 left-3 right-3 text-white">
-                    <span className="text-[11px] font-medium font-sans text-slate-200 block truncate">
-                      {project.detail?.client}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Card Content Body */}
