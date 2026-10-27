@@ -206,16 +206,16 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     </p>
                   </div>
 
-                  {/* Tech Stack Chips: Clean Color Highlighting on Hover */}
-                  <div className="pt-3 border-t border-slate-100/90 transition-colors duration-300">
-                    <div className="text-[10px] font-bold font-sans uppercase tracking-wider text-slate-400 group-hover:text-[#1d4ed8] mb-1.5 transition-colors duration-300">
+                  {/* Tech Stack: Hidden by default, smoothly reveals on cursor hover */}
+                  <div className="transition-all duration-300 ease-out overflow-hidden max-h-0 opacity-0 border-t border-transparent pt-0 group-hover:max-h-36 group-hover:opacity-100 group-hover:pt-3 group-hover:border-slate-100/90">
+                    <div className="text-[10px] font-bold font-sans uppercase tracking-wider text-[#1d4ed8] mb-1.5">
                       Tech Stack
                     </div>
                     <div className="flex flex-wrap items-center gap-1.5">
                       {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-2 py-0.5 rounded-[3px] text-[10.5px] font-semibold font-sans bg-slate-50 text-slate-600 border border-slate-200/80 group-hover:bg-blue-50/90 group-hover:text-[#1d4ed8] group-hover:border-[#1d4ed8]/30 transition-all duration-300"
+                          className="px-2 py-0.5 rounded-[3px] text-[10.5px] font-semibold font-sans bg-blue-50/90 text-[#1d4ed8] border border-[#1d4ed8]/30"
                         >
                           {tech}
                         </span>
