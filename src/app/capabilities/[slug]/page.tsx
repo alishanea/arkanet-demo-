@@ -60,22 +60,18 @@ const ICON_MAP: Record<string, React.ElementType> = {
   ShoppingBag,
 };
 
-// Slides are generated dynamically per capability below
-
 export default function CapabilityDetailPage() {
   const params = useParams();
   const slug = (params?.slug as string) || "website-development";
   const [contactOpen, setContactOpen] = useState(false);
   const [activeIdx, setActiveIdx] = useState(0);
-  
-  
 
-    const openContact = () => setContactOpen(true);
+  const openContact = () => setContactOpen(true);
 
   // Fallback to website-development if slug not found
   const data = CAPABILITIES_DATA[slug] || CAPABILITIES_DATA["website-development"];
 
-  // Unique showcase images for this capability
+  // Unique showcase images for this capability (used in hero background slideshow & sections)
   const showcaseImages = [
     data.heroImages.center,
     data.heroImages.left,
@@ -84,42 +80,66 @@ export default function CapabilityDetailPage() {
     data.techShowcase.image,
   ];
 
-  // Auto-advance picture one by one every 3.5 seconds
+  // Auto-advance background image one by one every 4 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIdx((prev) => (prev + 1) % showcaseImages.length);
-    }, 3500);
+    }, 4000);
     return () => clearInterval(timer);
   }, [showcaseImages.length]);
 
-  // Reset to first picture when slug changes
+  // Reset to first image when slug changes
   useEffect(() => {
     setActiveIdx(0);
   }, [slug]);
-
-
 
   return (
     <main className="min-h-screen bg-white text-[#0b1330] selection:bg-[#0b1330] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── SECTION 1: HERO SECTION ── */}
-      <section className="w-full bg-[#f4f6fb] pt-32 sm:pt-36 pb-16 sm:pb-24 px-6 sm:px-10 lg:px-12 border-b border-slate-200/80 text-left">
-        <div className="max-w-7xl mx-auto">
-          {/* Main Headline */}
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.08] max-w-4xl">
-            {data.title} <br />
-            <span>{data.highlightText}</span>
-          </h1>
+      {/* ── SECTION 1: HERO SECTION WITH AUTOMATIC BACKGROUND IMAGE SLIDESHOW ── */}
+      <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] flex items-center justify-start overflow-hidden bg-[#0b1330] text-white pt-36 pb-20 px-6 sm:px-10 lg:px-12 border-b border-slate-800 text-left">
+        {/* Background Images Changing Smoothly One by One */}
+        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIdx}
+              initial={{ opacity: 0, scale: 1.06 }}
+              animate={{ opacity: 0.35, scale: 1.0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <img
+                src={showcaseImages[activeIdx]}
+                alt="Background showcase"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
 
-          {data.subtitle && (
-            <p className="mt-5 text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl">
-              {data.subtitle}
-            </p>
-          )}
+          {/* Cinematic Scrim & Gradient Overlays for High-Contrast Text Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b1330] via-[#0b1330]/80 to-[#0b1330]/85 z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1330] via-[#0b1330]/85 to-transparent z-[1]" />
+        </div>
+
+        {/* Foreground Content (Headline, Subtitle, Practice Switcher) */}
+        <div className="relative z-10 max-w-7xl mx-auto w-full space-y-8">
+          <div className="space-y-5 max-w-4xl">
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.08]">
+              {data.title} <br />
+              <span className="text-slate-200">{data.highlightText}</span>
+            </h1>
+
+            {data.subtitle && (
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl">
+                {data.subtitle}
+              </p>
+            )}
+          </div>
 
           {/* Quick Capability Practice Switcher */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-8">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
             {[
               { name: "Web & SaaS", slug: "website-development" },
               { name: "Mobile Apps", slug: "mobile-app-development" },
@@ -135,8 +155,8 @@ export default function CapabilityDetailPage() {
                   href={`/capabilities/${cap.slug}`}
                   className={`px-3.5 py-1.5 rounded-[4px] text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                     isActive
-                      ? "bg-[#0b1330] text-white border border-[#0b1330]"
-                      : "bg-white text-slate-600 hover:text-[#0b1330] border border-slate-200/90 hover:border-slate-300"
+                      ? "bg-white text-[#0b1330] border border-white"
+                      : "bg-white/10 hover:bg-white/20 text-white border border-white/10"
                   }`}
                 >
                   {cap.name}
@@ -145,58 +165,49 @@ export default function CapabilityDetailPage() {
             })}
           </div>
 
-          {/* Clean One-by-One Automatic Slideshow */}
-          <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none mt-10 bg-slate-900 group">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIdx}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="absolute inset-0 w-full h-full"
+          {/* Action Row & Floating Background Slideshow Controller */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6 border-t border-white/10">
+            <div className="flex flex-wrap items-center gap-4">
+              <button
+                onClick={openContact}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-[4px] bg-white text-[#0b1330] hover:bg-slate-100 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
               >
-                <img
-                  src={showcaseImages[activeIdx]}
-                  alt="Capability showcase preview"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            </AnimatePresence>
+                <span>Discuss Your Project</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
 
-            {/* Clean Floating Minimal Controls (Bottom Right - No text sentences) */}
-            <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center gap-3 bg-[#0b1330]/75 backdrop-blur-md px-3.5 py-2 rounded-[4px] border border-white/10 z-20">
-              {/* Indicator Dots */}
+            {/* Minimalist Background Slideshow Controls (Bottom Corner) */}
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-[4px] border border-white/15 w-fit">
+              <span className="text-[11px] font-mono text-slate-300 uppercase tracking-wider pr-1">
+                Background Visual
+              </span>
               <div className="flex items-center gap-1.5">
                 {showcaseImages.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveIdx(idx)}
-                    aria-label={`Go to image ${idx + 1}`}
+                    aria-label={`Switch to background ${idx + 1}`}
                     className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                       activeIdx === idx ? "w-6 bg-white" : "w-1.5 bg-white/40 hover:bg-white/70"
                     }`}
                   />
                 ))}
               </div>
-
-              {/* Counter */}
-              <div className="font-mono text-[11px] text-white/80 font-medium pl-1">
+              <span className="font-mono text-[11px] text-white/90 pl-1 font-semibold">
                 0{activeIdx + 1} / 0{showcaseImages.length}
-              </div>
-
-              {/* Prev / Next Arrows */}
+              </span>
               <div className="flex items-center gap-1 pl-1 border-l border-white/20">
                 <button
                   onClick={() => setActiveIdx((prev) => (prev - 1 + showcaseImages.length) % showcaseImages.length)}
-                  aria-label="Previous image"
+                  aria-label="Previous background visual"
                   className="w-5 h-5 rounded-[2px] hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
                 >
                   <ChevronLeft className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setActiveIdx((prev) => (prev + 1) % showcaseImages.length)}
-                  aria-label="Next image"
+                  aria-label="Next background visual"
                   className="w-5 h-5 rounded-[2px] hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
                 >
                   <ChevronRight className="w-3.5 h-3.5" />
@@ -208,7 +219,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 2: OPEN HIGHLIGHTS GRID WITH HOVER EFFECTS ── */}
-      <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 text-left">
+      <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 text-left bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mb-12 sm:mb-16 space-y-4">
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#0b1330] tracking-tight leading-snug whitespace-pre-line">
@@ -257,7 +268,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 3: FEATURE ROWS WITH ALTERNATING POSITIONS & HOVER EFFECTS ── */}
-      <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 border-t border-slate-200/80 text-left">
+      <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 border-t border-slate-200/80 text-left bg-white">
         <div className="max-w-7xl mx-auto space-y-24 sm:space-y-32">
           {data.featureRows.map((row, idx) => {
             const rowNumber = `0${idx + 1}`;
@@ -355,7 +366,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 5: TECH SHOWCASE CARD WITH INTERACTIVE CHIPS ── */}
-      <section className="w-full py-16 sm:py-20 px-6 sm:px-10 lg:px-12 text-left">
+      <section className="w-full py-16 sm:py-20 px-6 sm:px-10 lg:px-12 text-left bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="p-8 sm:p-12 lg:p-16 bg-[#0b1330] text-white rounded-[5px] border border-slate-800 shadow-none">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-center">
