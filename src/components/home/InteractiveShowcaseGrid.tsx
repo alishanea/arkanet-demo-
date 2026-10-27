@@ -87,7 +87,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  {/* Bottom Action Prompt with Small Arrow */}
  <div className="pt-4 mt-4 border-t border-slate-100 group-hover:border-slate-200 flex items-center gap-1.5 text-xs font-semibold font-sans text-slate-400 group-hover:text-[#1d4ed8] transition-colors duration-300">
  <span className="tracking-tight">Explore Capability</span>
- <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 " />
+ <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
  </div>
  </Link>
  );
@@ -101,7 +101,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#0b1330] transition-colors"
  >
  <span>All Capabilities</span>
- <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 text-slate-400 group-hover:text-[#0b1330]" />
+ <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#0b1330]" />
  </Link>
  </div>
 
