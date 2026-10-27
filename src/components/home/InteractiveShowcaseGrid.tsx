@@ -67,7 +67,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
               <Link
                 key={pillar.id}
                 href={pillar.href}
-                className="group relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between bg-white/50 hover:bg-white border border-slate-200/60 hover:border-slate-200/90 shadow-2xs hover:shadow-[0_20px_45px_rgba(11,19,48,0.09)] hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+                className="group relative rounded-[5px] p-6 sm:p-8 flex flex-col justify-between bg-white/50 hover:bg-white border border-slate-200/60 hover:border-slate-200/90 shadow-2xs hover:shadow-[0_20px_45px_rgba(11,19,48,0.09)] hover:-translate-y-2 transition-all duration-300 cursor-pointer"
               >
                 <div className="space-y-4">
                   {/* Title & Expanding Underline Bar */}
@@ -75,7 +75,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                     <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#0b1330] group-hover:text-[#1d4ed8] tracking-tight leading-snug transition-colors duration-300">
                       {pillar.title}
                     </h3>
-                    <div className="h-0.5 w-4 group-hover:w-12 bg-[#1d4ed8] rounded-full transition-all duration-300 opacity-60 group-hover:opacity-100" />
+                    <div className="h-0.5 w-4 group-hover:w-12 bg-[#1d4ed8] rounded-[2px] transition-all duration-300 opacity-60 group-hover:opacity-100" />
                   </div>
 
                   {/* Description */}

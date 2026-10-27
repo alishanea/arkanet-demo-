@@ -101,7 +101,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
     >
       <motion.div
         style={{ scale: cardScale }}
-        className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-6 lg:gap-10 xl:gap-12 items-center rounded-2xl sm:rounded-3xl bg-white text-[#0b1330] p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-sm origin-top"
+        className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-6 lg:gap-10 xl:gap-12 items-center rounded-[5px] bg-white text-[#0b1330] p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-sm origin-top"
       >
         {/* Left Column */}
         <motion.div
@@ -155,7 +155,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
         </motion.div>
 
         {/* Right Column: Image */}
-        <div className="relative aspect-[16/11] lg:aspect-[4/3] w-full overflow-hidden rounded-xl sm:rounded-2xl bg-slate-100 shadow-sm border border-slate-100">
+        <div className="relative aspect-[16/11] lg:aspect-[4/3] w-full overflow-hidden rounded-[4px] bg-slate-100 shadow-sm border border-slate-100">
           <img
             src={step.image}
             alt={step.title}

@@ -1,9 +1,8 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { AboutCTA } from "@/components/about/AboutCTA";
 import { WorkDetailModal, WorkProjectDetail } from "@/components/modals/WorkDetailModal";
 
@@ -17,8 +16,8 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     category: "Web & SaaS Platforms",
     title: "Marble Tile & Stone",
     description: "High-conversion digital showroom and real-time 3D room visualization platform engineered with Next.js and WebGL for interior architects.",
-    outerImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop",
+    outerImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
+    innerImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "Marble Tile & Stone Ltd.",
       year: "2025",
@@ -39,8 +38,8 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     category: "Mobile Applications",
     title: "CareFlow Health Systems",
     description: "Unified iOS and Android telehealth application paired with a real-time clinician portal, automated prescriptions, and lab report sync.",
-    outerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
+    outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "CareFlow Healthcare Group",
       year: "2025",
@@ -61,8 +60,8 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     category: "Applied AI & Automation",
     title: "NeuralDesk AI Assistant",
     description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected directly into customer helpdesks, resolving technical inquiries in seconds.",
-    outerImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800&auto=format&fit=crop",
+    outerImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
+    innerImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "NeuralDesk Technologies",
       year: "2026",
@@ -83,8 +82,8 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     category: "Cloud & DevOps",
     title: "AeroLogistics Global Cloud",
     description: "Cloud-native event-driven platform utilizing IoT satellite telemetry and automated customs compliance for international cargo tracking.",
-    outerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+    outerImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1600&auto=format&fit=crop",
+    innerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "AeroLogistics Global Inc.",
       year: "2025",
@@ -126,11 +125,9 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
               Explore how we design and engineer scalable web platforms, high-performance mobile applications, and custom AI systems for forward-thinking organizations.
             </p>
           </div>
-
-
         </div>
 
-        {/* Clean Category Filter Chips Bar */}
+        {/* Clean Category Filter Chips Bar (Cap radius to <= 5px) */}
         <div className="flex flex-wrap items-center gap-2 mb-8 sm:mb-10">
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat;
@@ -139,10 +136,10 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-[4px] text-xs font-semibold font-sans transition-all cursor-pointer ${
                   isSelected
                     ? "bg-[#0b1330] text-white shadow-xs"
-                    : "bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:text-[#0b1330]"
+                    : "bg-white text-slate-600 border border-slate-200/90 hover:border-slate-300 hover:text-[#0b1330]"
                 }`}
               >
                 {cat}
@@ -151,62 +148,63 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           })}
         </div>
 
-        {/* TALL COMPACT DECK: 4-Column Grid with Taller Portrait Proportions (Same Width, More Height) */}
+        {/* 4-Column Grid with Precision <=5px Edge Architecture */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-          {filteredProjects.map((project, idx) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group bg-white rounded-3xl border border-slate-200/90 hover:border-[#1d4ed8]/50 overflow-hidden shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer text-left min-h-[520px] sm:min-h-[560px]"
+              className="group bg-white rounded-[5px] border border-slate-200/90 hover:border-slate-400/90 overflow-hidden shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer text-left min-h-[520px] sm:min-h-[560px]"
             >
               <div className="flex flex-col flex-1">
-                {/* Taller Portrait Visual Container (Aspect 4/3 with generous vertical height) */}
-                <div className="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden shrink-0">
+                {/* Visual Container (Aspect 4/3, rounded-t-[4px]) */}
+                <div className="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden shrink-0 rounded-t-[4px]">
                   <Image
                     src={project.outerImage}
                     alt={project.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-85 group-hover:opacity-70 transition-opacity" />
 
                   {/* Top Category Badge */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10.5px] font-bold text-[#0b1330] shadow-xs">
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-[3px] bg-white/95 backdrop-blur-md text-[10px] font-bold font-sans uppercase tracking-wider text-[#0b1330] shadow-xs">
                     {project.category}
                   </div>
 
                   {/* Top Year Pill */}
-                  <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-white shadow-xs">
+                  <div className="absolute top-3 right-3 px-2 py-0.5 rounded-[3px] bg-black/65 backdrop-blur-md text-[10px] font-bold font-sans text-white shadow-xs">
                     {project.detail?.year}
                   </div>
 
                   {/* Client Name on Bottom Overlay */}
                   <div className="absolute bottom-3 left-3 right-3 text-white">
-                    <span className="text-[11px] font-medium text-slate-200 block truncate">
+                    <span className="text-[11px] font-medium font-sans text-slate-200 block truncate">
                       {project.detail?.client}
                     </span>
                   </div>
                 </div>
 
-                {/* Card Body with Generous Vertical Rhythm */}
+                {/* Card Body */}
                 <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
                   <div className="space-y-3">
-                    {/* Primary Highlight Outcome Badge */}
+                    {/* Primary Highlight Outcome Badge (Neutral slate/charcoal styling, NO light blue writing) */}
                     {project.detail?.impact[0] && (
-                      <div className="inline-flex items-center px-2.5 py-1 rounded-lg bg-blue-50 border border-blue-100 text-[#1d4ed8] text-[11px] font-bold leading-tight">
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-slate-100/90 border border-slate-200/90 text-[#0b1330] text-[11px] font-semibold font-sans leading-tight">
+                        <span className="w-1.5 h-1.5 rounded-[1px] bg-[#0b1330]/70 shrink-0" />
                         <span className="line-clamp-1">{project.detail.impact[0]}</span>
                       </div>
                     )}
 
                     {/* Title */}
-                    <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#0b1330] group-hover:text-[#1d4ed8] transition-colors leading-snug">
+                    <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#0b1330] group-hover:text-black transition-colors leading-snug">
                       {project.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 font-medium">
+                    <p className="font-sans text-xs text-slate-600 leading-relaxed line-clamp-3 font-normal">
                       {project.description}
                     </p>
                   </div>
@@ -217,7 +215,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                       {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-2 py-0.5 rounded-md text-[10.5px] font-semibold bg-slate-50 text-slate-600 border border-slate-200/80"
+                          className="px-2 py-0.5 rounded-[3px] text-[10.5px] font-semibold font-sans bg-slate-50 text-slate-600 border border-slate-200/80"
                         >
                           {tech}
                         </span>
@@ -227,10 +225,10 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 </div>
               </div>
 
-              {/* Bottom Action Footer */}
-              <div className="px-5 sm:px-6 py-3.5 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1d4ed8] group-hover:bg-blue-50/60 transition-colors">
+              {/* Bottom Action Footer (Clean dark text, NO light blue writing) */}
+              <div className="px-5 sm:px-6 py-3.5 bg-slate-50/90 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-[#0b1330] group-hover:text-black group-hover:bg-slate-100/90 transition-colors font-sans">
                 <span>View Full Case Study</span>
-                <div className="w-6 h-6 rounded-full bg-white group-hover:bg-[#1d4ed8] group-hover:text-white flex items-center justify-center text-[#1d4ed8] shadow-2xs transition-colors">
+                <div className="w-6 h-6 rounded-[4px] bg-white group-hover:bg-[#0b1330] group-hover:text-white flex items-center justify-center text-[#0b1330] border border-slate-200/80 shadow-2xs transition-colors">
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </div>
               </div>
@@ -254,4 +252,3 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
     </section>
   );
 };
-

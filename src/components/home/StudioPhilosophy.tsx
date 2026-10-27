@@ -62,7 +62,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
 
           {/* Right Column: Clean Image */}
           <div className="lg:col-span-6 w-full flex justify-end">
-            <div className="relative aspect-[16/10] max-h-[220px] sm:max-h-[240px] lg:max-h-[260px] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 bg-slate-100 shadow-md">
+            <div className="relative aspect-[16/10] max-h-[220px] sm:max-h-[240px] lg:max-h-[260px] w-full rounded-[5px] overflow-hidden border border-slate-200/90 bg-slate-100 shadow-md">
               <img
                 src="https://images.pexels.com/photos/3182834/pexels-photo-3182834.jpeg"
                 alt="People in creative office workspace"

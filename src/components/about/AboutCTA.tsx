@@ -13,10 +13,10 @@ export function AboutCTA({ onOpenBooking }: AboutCTAProps) {
       <div className="space-y-4 sm:space-y-8">
         
         <div className="group cursor-pointer inline-block" onClick={onOpenBooking}>
-          <h2 className="hero-h1 text-[#0b1330] group-hover:text-[#1d4ed8] transition-colors duration-500">
+          <h2 className="hero-h1 text-[#0b1330] group-hover:text-black transition-colors duration-500">
             <span>Let&apos;s make</span>
             {" "}
-            <span className="inline-block text-[#1d4ed8] mx-1 sm:mx-2.5 font-normal align-middle text-[0.88em] group-hover:translate-x-3 transition-transform duration-500 ease-out">
+            <span className="inline-block text-[#0b1330] mx-1 sm:mx-2.5 font-normal align-middle text-[0.88em] group-hover:translate-x-3 transition-transform duration-500 ease-out">
               →
             </span>
             <br />
@@ -29,10 +29,10 @@ export function AboutCTA({ onOpenBooking }: AboutCTAProps) {
           <button
             type="button"
             onClick={onOpenBooking}
-            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#0b1330] transition-colors cursor-pointer"
+            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-sans font-semibold text-slate-600 hover:text-[#0b1330] transition-colors cursor-pointer"
           >
             <span>Start a Project</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-[#1d4ed8]" />
+            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-[#0b1330]" />
           </button>
         </div>
 

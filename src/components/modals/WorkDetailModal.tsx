@@ -39,7 +39,7 @@ function MagneticCloseButton({ onClick }: { onClick: () => void }) {
       onMouseLeave={handleMouseLeave}
       style={{ x: springX, y: springY }}
       whileTap={{ scale: 0.88 }}
-      className="group absolute top-6 right-6 sm:top-8 sm:right-8 z-50 w-11 h-11 rounded-full bg-[#282828] hover:bg-[#383838] flex items-center justify-center cursor-pointer transition-all duration-300 overflow-hidden shrink-0 shadow-lg border border-white/10"
+      className="group absolute top-6 right-6 sm:top-8 sm:right-8 z-50 w-11 h-11 rounded-[4px] bg-[#282828] hover:bg-[#383838] flex items-center justify-center cursor-pointer transition-all duration-300 overflow-hidden shrink-0 shadow-lg border border-white/10"
       aria-label="Close modal"
     >
       <motion.div
@@ -170,7 +170,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
             className={`fixed bottom-0 z-50 bg-[#121212] text-white shadow-[0_-20px_80px_rgba(0,0,0,0.4)] flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled
                 ? "inset-x-0 top-0 rounded-t-none"
-                : "inset-x-0 sm:inset-x-8 xl:inset-x-[40px] top-[80px] sm:top-[140px] lg:top-[180px] rounded-t-[28px] sm:rounded-t-[48px]"
+                : "inset-x-0 sm:inset-x-8 xl:inset-x-[40px] top-[80px] sm:top-[140px] lg:top-[180px] rounded-t-[5px] sm:rounded-t-[48px]"
             }`}
           >
             {/* Close (X) Button */}
@@ -185,7 +185,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
               {/* DARK HERO SECTION matching ArticleDetailModal */}
               <div className="px-5 sm:px-8 lg:px-10 pt-5 sm:pt-8 lg:pt-[60px] pb-0 lg:pb-[40px]">
                 <div className="max-w-[1350px] mx-auto">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#1a1a1a]">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 rounded-[5px] overflow-hidden bg-[#1a1a1a]">
                     
                     {/* Left: Project Hero Mockup Image */}
                     <div className="relative w-full aspect-[4/3] sm:aspect-auto sm:min-h-[340px] lg:min-h-[440px] overflow-hidden bg-slate-900">
@@ -195,7 +195,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                         className="w-full h-full object-cover brightness-90"
                       />
                       <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-6">
-                        <div className="relative w-[80%] h-[75%] rounded-xl overflow-hidden shadow-2xl border border-white/20">
+                        <div className="relative w-[80%] h-[75%] rounded-[4px] overflow-hidden shadow-2xl border border-white/20">
                           <img
                             src={currentProject.innerImage}
                             alt={`${currentProject.title} detail`}
@@ -216,7 +216,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                       {/* Category ✳ Year */}
                       <div className="flex items-center gap-2 text-sm sm:text-base font-medium text-white/60">
                         <span className="font-bold text-white">{currentProject.category}</span>
-                        <span className="text-[#38bdf8] text-lg">✳</span>
+                        
                         <span>{details.year}</span>
                       </div>
 
@@ -227,7 +227,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
 
                       {/* Client info badge */}
                       <div className="flex items-center gap-3 pt-2">
-                        <div className="w-8 h-8 rounded-full bg-[#38bdf8] flex items-center justify-center text-[#0b1330] font-bold text-xs shrink-0">
+                        <div className="w-8 h-8 rounded-[4px] bg-[#0b1330] text-white flex items-center justify-center text-[#0b1330] font-bold text-xs shrink-0">
                           {details.client.charAt(0)}
                         </div>
                         <div className="text-xs sm:text-sm">
@@ -281,7 +281,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
 {/* ═══════════════════════════════════════════════════════════════
     ✨ IMPACT & RESULTS, White, Minimal, Clean
 ═══════════════════════════════════════════════════════════════ */}
-<div className="my-6 rounded-[28px] sm:rounded-[36px] bg-white border border-[#e5ecf3]">
+<div className="my-6 rounded-[5px] bg-white border border-[#e5ecf3]">
   <div className="p-8 sm:p-10 lg:p-14">
     {/* ─── Header ─── */}
     <div className="mb-12 sm:mb-14">
@@ -337,7 +337,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                       {details.techStack.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="bg-white text-[#0b1330] text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-[#d8e5f0] shadow-2xs"
+                          className="bg-white text-[#0b1330] text-xs sm:text-sm font-bold px-4 py-2 rounded-[4px] border border-[#d8e5f0] shadow-2xs"
                         >
                           {tech}
                         </span>
@@ -350,10 +350,10 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                     <div className="pt-10 border-t border-[#d8e5f0] flex justify-end">
                       <button
                         onClick={handleNextProject}
-                        className="group inline-flex items-center gap-3 bg-[#0b1330] text-[#38bdf8] hover:bg-[#15234d] px-8 py-4 rounded-full font-extrabold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 cursor-pointer shadow-md hover:shadow-xl hover:-translate-y-0.5"
+                        className="group inline-flex items-center gap-3 bg-[#0b1330] text-[#0b1330] hover:bg-[#15234d] px-8 py-4 rounded-[4px] font-extrabold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 cursor-pointer shadow-md hover:shadow-xl hover:-translate-y-0.5"
                       >
                         <span>Next Project: {nextProject.title}</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#38bdf8]" />
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#0b1330]" />
                       </button>
                     </div>
                   )}
