@@ -166,55 +166,15 @@ export default function CapabilityDetailPage() {
             })}
           </div>
 
-          {/* Action Row & Floating Background Slideshow Controller */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6 border-t border-slate-200/80">
-            <div className="flex flex-wrap items-center gap-4">
-              <button
-                onClick={openContact}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-[4px] bg-[#0b1330] hover:bg-[#132047] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-xs cursor-pointer"
-              >
-                <span>Discuss Your Project</span>
-                <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
-              </button>
-            </div>
-
-            {/* Minimalist Background Slideshow Controls (Bottom Corner) */}
-            <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-[4px] border border-slate-200/90 shadow-xs w-fit">
-              <span className="text-[11px] font-sans text-slate-500 uppercase tracking-wider pr-1">
-                Background Visual
-              </span>
-              <div className="flex items-center gap-1.5">
-                {showcaseImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveIdx(idx)}
-                    aria-label={`Switch to background ${idx + 1}`}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      activeIdx === idx ? "w-6 bg-[#0b1330]" : "w-1.5 bg-slate-300 hover:bg-slate-400"
-                    }`}
-                  />
-                ))}
-              </div>
-              <span className="font-sans text-[11px] text-slate-700 pl-1 font-semibold">
-                0{activeIdx + 1} / 0{showcaseImages.length}
-              </span>
-              <div className="flex items-center gap-1 pl-1 border-l border-slate-200">
-                <button
-                  onClick={() => setActiveIdx((prev) => (prev - 1 + showcaseImages.length) % showcaseImages.length)}
-                  aria-label="Previous background visual"
-                  className="w-5 h-5 rounded-[2px] hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors cursor-pointer"
-                >
-                  <ChevronLeft className="w-3.5 h-3.5" />
-                </button>
-                <button
-                  onClick={() => setActiveIdx((prev) => (prev + 1) % showcaseImages.length)}
-                  aria-label="Next background visual"
-                  className="w-5 h-5 rounded-[2px] hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors cursor-pointer"
-                >
-                  <ChevronRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
+          {/* Action Row */}
+          <div className="pt-6 border-t border-slate-200/80">
+            <button
+              onClick={openContact}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-[4px] bg-[#0b1330] hover:bg-[#132047] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-xs cursor-pointer"
+            >
+              <span>Discuss Your Project</span>
+              <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
+            </button>
           </div>
         </div>
       </section>
