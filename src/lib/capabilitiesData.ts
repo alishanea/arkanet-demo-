@@ -159,9 +159,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "Built with purpose,\nnot just polish.",
     section2Subtitle: "A site that performs is one built with a purpose behind every page, optimised for both search engines and real visitors, where layout, content, and code all serve the same goal: getting the right person to take the next step.",
     heroImages: {
-      left: "/assets/images/webdevelopmenttwo.webp",
-      center: "/assets/images/webdevelopmentone.webp",
-      right: "/assets/images/webdevelopmentthree.webp",
+      left: "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=1200&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
       {
@@ -187,27 +187,27 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     ],
     featureRows: [
       {
-        title: "Websites built for performance",
-        description: "High-speed corporate sites and campaign landing pages designed with responsive layouts, Core Web Vitals optimization, and clean semantic code.",
-        image: "/assets/images/website.webp",
+        title: "Websites built for performance & speed",
+        description: "High-speed corporate sites and campaign landing pages engineered with sub-second Edge delivery, Core Web Vitals optimization, and clean semantic code.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Web applications & customer dashboards",
         description: "Interactive web applications built on React and Next.js, featuring real-time data visualization, user authentication, and smooth micro-animations.",
-        image: "/assets/images/webdevelopmentone.webp",
+        image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "CMS builds with editor-friendly models",
         description: "Custom content management systems enabling marketing teams to create, edit, and publish content quickly without developer intervention.",
-        image: "/assets/images/webdevelopmentthree.webp",
+        image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Multilingual & RTL-ready builds",
         description: "Full Arabic right-to-left layout support and multi-currency internationalization built directly into the site architecture.",
-        image: "/assets/images/webdevelopmenttwo.webp",
+        image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -241,7 +241,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "PRODUCTION WEB PLATFORMS",
       title: "Fast, Accessible Websites That Convert",
       description: "From corporate sites to complex web applications, we build responsive, SEO-ready experiences that load fast on real-world connections.",
-      image: "/assets/images/website.webp",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build a website that converts →",
   },
