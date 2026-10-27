@@ -150,87 +150,64 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
 
  {/* 4-Column Grid with Precision <=5px Edge Architecture */}
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
- {filteredProjects.map((project) => (
- <div
- key={project.id}
- onClick={() => setSelectedProject(project)}
- className="group bg-white rounded-[5px] border border-slate-200/90 hover:border-slate-400/90 overflow-hidden transition-colors duration-300 flex flex-col justify-between cursor-pointer text-left min-h-[520px] sm:min-h-[560px]"
- >
- <div className="flex flex-col flex-1">
- {/* Visual Container (Aspect 4/3, rounded-t-[4px]) */}
- <div className="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden shrink-0 rounded-t-[4px]">
- <Image
- src={project.outerImage}
- alt={project.title}
- fill
- sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
- className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
- unoptimized
- />
- <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent opacity-85 group-hover:opacity-70 transition-opacity" />
+          {filteredProjects.map((project) => (
+            <div
+              key={project.id}
+              onClick={() => setSelectedProject(project)}
+              className="group bg-white rounded-[5px] border border-slate-200/90 hover:border-slate-400/90 overflow-hidden transition-colors duration-300 flex flex-col justify-between cursor-pointer text-left outline-none focus:outline-none focus:ring-0 active:outline-none select-none"
+            >
+              <div className="flex flex-col flex-1">
+                {/* Pure Photography Frame: Clean, No Writing, No Overlays on Image */}
+                <div className="relative w-full aspect-[4/3] bg-slate-100 overflow-hidden shrink-0 rounded-t-[4px]">
+                  <Image
+                    src={project.outerImage}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
 
- {/* Top Category Badge */}
- <div className="absolute top-3 left-3 px-2.5 py-1 rounded-[3px] bg-white/95 backdrop-blur-md text-[10px] font-bold font-sans uppercase tracking-wider text-[#0b1330] ">
- {project.category}
- </div>
+                {/* Card Body: Title with Simple Arrow, Description, Tech Chips */}
+                <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
+                  <div className="space-y-3">
+                    {/* Title with Simple Unfocused Arrow (No box, no 'view full case study' text) */}
+                    <div className="flex items-start justify-between gap-3">
+                      <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#0b1330] group-hover:text-black transition-colors leading-snug">
+                        {project.title}
+                      </h3>
+                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 shrink-0 mt-0.5" />
+                    </div>
 
- {/* Top Year Pill */}
- <div className="absolute top-3 right-3 px-2 py-0.5 rounded-[3px] bg-black/65 backdrop-blur-md text-[10px] font-bold font-sans text-white ">
- {project.detail?.year}
- </div>
+                    {/* Description */}
+                    <p className="font-sans text-xs text-slate-600 leading-relaxed line-clamp-3 font-normal">
+                      {project.description}
+                    </p>
+                  </div>
 
- {/* Client Name on Bottom Overlay */}
- <div className="absolute bottom-3 left-3 right-3 text-white">
- <span className="text-[11px] font-medium font-sans text-slate-200 block truncate">
- {project.detail?.client}
- </span>
- </div>
- </div>
-
- {/* Card Body */}
- <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-4">
- <div className="space-y-3">
- 
-
- {/* Title */}
- <h3 className="font-heading font-extrabold text-base sm:text-lg text-[#0b1330] group-hover:text-black transition-colors leading-snug">
- {project.title}
- </h3>
-
- {/* Description */}
- <p className="font-sans text-xs text-slate-600 leading-relaxed line-clamp-3 font-normal">
- {project.description}
- </p>
- </div>
-
- {/* Key Tech Chips */}
- <div className="space-y-2 pt-2 border-t border-slate-100">
- <div className="flex flex-wrap items-center gap-1.5">
- {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
- <span
- key={tIdx}
- className="px-2 py-0.5 rounded-[3px] text-[10.5px] font-semibold font-sans bg-slate-50 text-slate-600 border border-slate-200/80"
- >
- {tech}
- </span>
- ))}
- </div>
- </div>
- </div>
- </div>
-
-              {/* Bottom Action Footer: Clean neutral text and unfocused simple arrow */}
-              <div className="px-5 sm:px-6 py-3.5 bg-slate-50/90 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-[#0b1330] group-hover:text-black group-hover:bg-slate-100/90 transition-colors font-sans">
-                <span>View Full Case Study</span>
-                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
+                  {/* Key Tech Chips */}
+                  <div className="space-y-2 pt-2 border-t border-slate-100">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="px-2 py-0.5 rounded-[3px] text-[10.5px] font-semibold font-sans bg-slate-50 text-slate-600 border border-slate-200/80"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
- </div>
- ))}
- </div>
+            </div>
+          ))}
+        </div>
 
- </div>
+      </div>
 
- {/* ROTATING-WORD CLOSING HEADLINE */}
+      {/* ROTATING-WORD CLOSING HEADLINE */}
  <AboutCTA onOpenBooking={() => onOpenBooking?.()} />
 
  {/* Interactive Case Study Modal */}
