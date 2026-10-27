@@ -154,7 +154,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group bg-white rounded-[5px] border border-slate-200/90 hover:border-[#0b1330] p-5 sm:p-6 transition-colors duration-200 flex flex-col justify-between cursor-pointer text-left"
+              className="group bg-white hover:bg-slate-50/70 rounded-[5px] border border-slate-200/90 hover:border-[#1d4ed8] p-5 sm:p-6 transition-colors duration-200 flex flex-col justify-between cursor-pointer text-left"
             >
               <div className="space-y-4">
                 {/* Pure Clean Photography Frame (No overlays, no pill badges on image) */}
@@ -164,14 +164,14 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500 ease-out"
+                    className="object-cover"
                     unoptimized
                   />
                 </div>
 
                 {/* Metadata & Headline Row */}
                 <div className="space-y-2 pt-1">
-                  <div className="flex items-center justify-between text-[11px] font-semibold font-sans uppercase tracking-wider text-slate-500">
+                  <div className="flex items-center justify-between text-[11px] font-semibold font-sans uppercase tracking-wider text-slate-500 group-hover:text-[#1d4ed8] transition-colors">
                     <span>{project.category}</span>
                     <span>{project.detail?.year}</span>
                   </div>
@@ -180,7 +180,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#0b1330] group-hover:text-[#1d4ed8] transition-colors leading-tight">
                       {project.title}
                     </h3>
-                    <div className="w-7 h-7 rounded-[4px] bg-slate-50 group-hover:bg-[#0b1330] text-slate-500 group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+                    <div className="w-7 h-7 rounded-[4px] bg-slate-100 group-hover:bg-[#1d4ed8] text-slate-500 group-hover:text-white flex items-center justify-center transition-colors shrink-0">
                       <ArrowUpRight className="w-4 h-4" />
                     </div>
                   </div>
