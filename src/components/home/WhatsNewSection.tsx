@@ -219,13 +219,11 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
  </div>
  </div>
 
- {/* Bottom Action Footer (Clean dark text, NO light blue writing) */}
- <div className="px-5 sm:px-6 py-3.5 bg-slate-50/90 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-[#0b1330] group-hover:text-black group-hover:bg-slate-100/90 transition-colors font-sans">
- <span>View Full Case Study</span>
- <div className="w-6 h-6 rounded-[4px] bg-white group-hover:bg-[#0b1330] group-hover:text-white flex items-center justify-center text-[#0b1330] border border-slate-200/80 transition-colors">
- <ArrowUpRight className="w-3.5 h-3.5" />
- </div>
- </div>
+              {/* Bottom Action Footer: Clean neutral text and unfocused simple arrow */}
+              <div className="px-5 sm:px-6 py-3.5 bg-slate-50/90 border-t border-slate-200/80 flex items-center justify-between text-xs font-semibold text-[#0b1330] group-hover:text-black group-hover:bg-slate-100/90 transition-colors font-sans">
+                <span>View Full Case Study</span>
+                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
+              </div>
  </div>
  ))}
  </div>
