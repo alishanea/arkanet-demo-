@@ -191,7 +191,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             </Link>
 
             {/* 2. NAVIGATION MENU (CENTER - DESKTOP) */}
-            <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+            <nav className="hidden md:flex items-center gap-1.5 lg:gap-3">
               {/* Home Link */}
               <Link
                 href="/"
@@ -222,9 +222,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 </span>
               </Link>
 
-              {/* Capabilities Dropdown */}
+              {/* Capabilities Button with Dedicated Spacing */}
               <div
-                className="shrink-0 relative"
+                className="shrink-0 relative mx-1 sm:mx-1.5"
                 onMouseEnter={() => {
                   setHoveredTab("capabilities");
                   handleMenuEnter("services");
@@ -238,45 +238,31 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
+                {isCapabilitiesActive && activeMenu !== "services" && (
+                  <motion.div
+                    layoutId="active-nav-pill"
+                    className="absolute inset-0 bg-[#0b1330] rounded-full shadow-xs"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
                 <button
                   type="button"
                   onClick={toggleCapabilities}
-                  className={`relative z-10 flex items-center gap-1 rounded-full font-semibold text-xs lg:text-sm px-4 py-2 transition-all duration-200 cursor-pointer select-none ${
+                  className={`relative z-10 flex items-center gap-1.5 rounded-full font-semibold text-xs lg:text-sm px-4.5 sm:px-5 py-2 sm:py-2.5 transition-all duration-200 cursor-pointer select-none ${
                     activeMenu === "services"
-                      ? "bg-slate-100/90 text-slate-950 font-bold"
+                      ? "bg-[#0b1330] text-white shadow-xs font-bold"
+                      : isCapabilitiesActive
+                      ? "text-[#38bdf8] font-bold"
                       : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
-                  Capabilities
+                  <span>Capabilities</span>
                   <ChevronDown
-                    className={`w-3.5 h-3.5 text-slate-500 transition-transform duration-200 ${
-                      activeMenu === "services" ? "rotate-180 text-slate-900" : ""
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                      activeMenu === "services" ? "rotate-180 text-white" : isCapabilitiesActive ? "text-[#38bdf8]" : "text-slate-500"
                     }`}
                   />
                 </button>
-
-                {/* Mega-Menu Dropdown Panel */}
-                <AnimatePresence>
-                  {activeMenu === "services" && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                      transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                      onMouseEnter={() => handleMenuEnter("services")}
-                      onMouseLeave={handleMenuLeave}
-                      className="absolute top-full pt-3 z-50 left-1/2 -translate-x-1/2 w-[92vw] max-w-[820px] pointer-events-auto"
-                    >
-                      <div className="w-full bg-white rounded-3xl border border-slate-200/90 shadow-[0_20px_50px_rgba(0,0,0,0.12)] p-6 lg:p-7 text-left">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
-                          {renderColumn("Engineering", engineeringItems)}
-                          {renderColumn("Artificial Intelligence", aiItems)}
-                          {renderColumn("Design & Growth", designItems)}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
 
               {/* Work Link */}
@@ -395,6 +381,31 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             </div>
           </div>
         </LayoutGroup>
+
+        {/* ── DESKTOP CAPABILITIES MEGA-MENU (PERFECTLY CENTERED ON SCREEN & NAVBAR) ── */}
+        <AnimatePresence>
+          {activeMenu === "services" && (
+            <div
+              className="w-full flex justify-center pt-2 sm:pt-3 pointer-events-auto"
+              onMouseEnter={() => handleMenuEnter("services")}
+              onMouseLeave={handleMenuLeave}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="w-[94vw] max-w-[840px] bg-white rounded-[5px] border border-slate-200/90 shadow-[0_20px_50px_rgba(11,19,48,0.12)] p-6 lg:p-7 text-left"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
+                  {renderColumn("Engineering", engineeringItems)}
+                  {renderColumn("Artificial Intelligence", aiItems)}
+                  {renderColumn("Design & Growth", designItems)}
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* ── MOBILE MENU DRAWER ── */}
