@@ -62,9 +62,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "When off-the-shelf software fails,\nwe build your own.",
     section2Subtitle: "Every build starts with a discovery phase that maps your actual operational workflow before a line of code is written, ensuring software that holds up under real production load.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "/assets/images/webdevelopmenttwo.webp",
+      center: "/assets/images/webdevelopmentone.webp",
+      right: "/assets/images/webdevelopmentthree.webp",
     },
     highlights: [
       {
@@ -159,9 +159,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "Built with purpose,\nnot just polish.",
     section2Subtitle: "A site that performs is one built with a purpose behind every page, optimised for both search engines and real visitors, where layout, content, and code all serve the same goal: getting the right person to take the next step.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "/assets/images/webdevelopmenttwo.webp",
+      center: "/assets/images/webdevelopmentone.webp",
+      right: "/assets/images/webdevelopmentthree.webp",
     },
     highlights: [
       {
@@ -189,25 +189,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Websites built for performance",
         description: "High-speed corporate sites and campaign landing pages designed with responsive layouts, Core Web Vitals optimization, and clean semantic code.",
-        image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/website.webp",
         imagePosition: "left",
       },
       {
         title: "Web applications & customer dashboards",
         description: "Interactive web applications built on React and Next.js, featuring real-time data visualization, user authentication, and smooth micro-animations.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/webdevelopmentone.webp",
         imagePosition: "right",
       },
       {
         title: "CMS builds with editor-friendly models",
         description: "Custom content management systems enabling marketing teams to create, edit, and publish content quickly without developer intervention.",
-        image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/webdevelopmentthree.webp",
         imagePosition: "left",
       },
       {
         title: "Multilingual & RTL-ready builds",
         description: "Full Arabic right-to-left layout support and multi-currency internationalization built directly into the site architecture.",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/webdevelopmenttwo.webp",
         imagePosition: "right",
       },
     ],
@@ -241,7 +241,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "PRODUCTION WEB PLATFORMS",
       title: "Fast, Accessible Websites That Convert",
       description: "From corporate sites to complex web applications, we build responsive, SEO-ready experiences that load fast on real-world connections.",
-      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/website.webp",
     },
     finalCtaText: "Let's build a website that converts →",
   },
@@ -353,9 +353,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "SaaS architecture solved\nfrom day one.",
     section2Subtitle: "Whether you're launching a new software platform or rebuilding one that's buckling under scale, we bring proven SaaS architectural patterns that protect security and revenue.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "/assets/images/webdevelopmenttwo.webp",
+      center: "/assets/images/webdevelopmentone.webp",
+      right: "/assets/images/webdevelopmentthree.webp",
     },
     highlights: [
       {
@@ -547,9 +547,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "End-to-end multi-vendor\nplatform engineering.",
     section2Subtitle: "Whether building a retail marketplace, service directory, or property listing platform, we build the vendor verification, escrow, search, and payout tools needed to succeed.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "/assets/images/webdevelopmenttwo.webp",
+      center: "/assets/images/webdevelopmentone.webp",
+      right: "/assets/images/webdevelopmentthree.webp",
     },
     highlights: [
       {
@@ -838,9 +838,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "Zero-downtime CI/CD\nand auto-scaling infrastructure.",
     section2Subtitle: "We build continuous integration pipelines, automated monitoring, and backup strategies from day one, auditing and hardening your existing servers.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "/assets/images/webdevelopmenttwo.webp",
+      center: "/assets/images/webdevelopmentone.webp",
+      right: "/assets/images/webdevelopmentthree.webp",
     },
     highlights: [
       {
@@ -1619,9 +1619,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "Data you can\nactually rely on.",
     section2Subtitle: "The only thing worse than no data is data you can't trust. We build systems with quality checks and governance built in, so your reports work from a single source of truth.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "/assets/images/webdevelopmenttwo.webp",
+      center: "/assets/images/webdevelopmentone.webp",
+      right: "/assets/images/webdevelopmentthree.webp",
     },
     highlights: [
       {
@@ -1915,9 +1915,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "Bridging the gaps\nbetween your software.",
     section2Subtitle: "A new lead in your CRM triggers the onboarding sequence, updates the finance system, and notifies the account manager automatically with full monitoring.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "/assets/images/webdevelopmenttwo.webp",
+      center: "/assets/images/webdevelopmentone.webp",
+      right: "/assets/images/webdevelopmentthree.webp",
     },
     highlights: [
       {
@@ -2405,9 +2405,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "Configured around how your business\nactually runs.",
     section2Subtitle: "We build bespoke ERP systems where needed and extend established platforms like Odoo or SAP, configuring software to fit your operational reality.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "/assets/images/webdevelopmenttwo.webp",
+      center: "/assets/images/webdevelopmentone.webp",
+      right: "/assets/images/webdevelopmentthree.webp",
     },
     highlights: [
       {
@@ -2798,9 +2798,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "A brand system built to outlast\na single campaign.",
     section2Subtitle: "We produce the real collateral your team needs to use day to day: pitch decks, social media templates, marketing collateral, packaging, and digital guidelines.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "/assets/images/webdevelopmenttwo.webp",
+      center: "/assets/images/webdevelopmentone.webp",
+      right: "/assets/images/webdevelopmentthree.webp",
     },
     highlights: [
       {
