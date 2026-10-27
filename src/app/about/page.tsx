@@ -8,7 +8,6 @@ import { AboutHero } from "@/components/about/AboutHero";
 import { AboutWhoWeAre } from "@/components/about/AboutWhoWeAre";
 import { AboutClients } from "@/components/about/AboutClients";
 import { AboutTestimonials } from "@/components/about/AboutTestimonials";
-import { AboutTeam } from "@/components/about/AboutTeam";
 import { AboutCTA } from "@/components/about/AboutCTA";
 
 export default function AboutPage() {
@@ -24,7 +23,6 @@ export default function AboutPage() {
       <AboutWhoWeAre />
       <AboutClients />
       <AboutTestimonials />
-      <AboutTeam />
       <AboutCTA onOpenBooking={openContact} />
 
       <Footer onOpenBooking={openContact} bgColor="bg-white" />

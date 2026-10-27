@@ -10,8 +10,7 @@ import {
   ShieldCheck, 
   CheckCircle2, 
   Send,
-  Building2,
-  HelpCircle
+  Building2
 } from "lucide-react";
 
 const SERVICES_LIST = [
@@ -29,25 +28,6 @@ const BUDGET_OPTIONS = [
   "$15k - $30k",
   "$30k - $50k",
   "$50k+"
-];
-
-const FAQS = [
-  {
-    q: "How quickly can we kick off a new project?",
-    a: "Following an initial discovery call and requirements review, we typically assemble the engineering team and begin Sprint 0 within 5 to 7 business days."
-  },
-  {
-    q: "Do you sign Non-Disclosure Agreements (NDAs)?",
-    a: "Yes, absolutely. We treat intellectual property and project concepts with strict confidentiality and execute mutual NDAs prior to in-depth technical discussions."
-  },
-  {
-    q: "What engagement models do you offer?",
-    a: "We offer fixed-scope milestone deliverables for defined projects, as well as dedicated agile engineering pods (monthly sprint retainer) for evolving products."
-  },
-  {
-    q: "Can you audit or modernize an existing codebase?",
-    a: "Yes. Our team conducts architectural code audits, performance profiling, and cloud optimization to refactor legacy stacks into modern Next.js, mobile, and cloud environments."
-  }
 ];
 
 export const ContactSection: React.FC = () => {
@@ -337,7 +317,7 @@ export const ContactSection: React.FC = () => {
             )}
           </div>
 
-          {/* Right Column: Physical Offices & FAQ */}
+          {/* Right Column: Physical Offices */}
           <div className="lg:col-span-5 space-y-6 text-left">
             
             {/* Dubai HQ Card */}
@@ -408,24 +388,7 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Quick FAQ Box */}
-            <div className="bg-white rounded-[5px] border border-slate-200/90 shadow-none p-6 space-y-4">
-              <div className="flex items-center gap-2 text-[#0b1330]">
-                <HelpCircle className="w-4 h-4 text-slate-700" />
-                <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-slate-700">
-                  Frequently Asked Questions
-                </h4>
-              </div>
-
-              <div className="space-y-3">
-                {FAQS.map((faq, fIdx) => (
-                  <div key={fIdx} className="space-y-1 text-xs">
-                    <p className="font-bold text-[#0b1330]">{faq.q}</p>
-                    <p className="font-sans text-slate-600 leading-relaxed font-normal">{faq.a}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            
 
           </div>
 
