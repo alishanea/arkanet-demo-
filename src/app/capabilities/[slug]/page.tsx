@@ -180,7 +180,7 @@ export default function CapabilityDetailPage() {
 
             {/* Minimalist Background Slideshow Controls (Bottom Corner) */}
             <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-[4px] border border-slate-200/90 shadow-xs w-fit">
-              <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider pr-1">
+              <span className="text-[11px] font-sans text-slate-500 uppercase tracking-wider pr-1">
                 Background Visual
               </span>
               <div className="flex items-center gap-1.5">
@@ -195,7 +195,7 @@ export default function CapabilityDetailPage() {
                   />
                 ))}
               </div>
-              <span className="font-mono text-[11px] text-slate-700 pl-1 font-semibold">
+              <span className="font-sans text-[11px] text-slate-700 pl-1 font-semibold">
                 0{activeIdx + 1} / 0{showcaseImages.length}
               </span>
               <div className="flex items-center gap-1 pl-1 border-l border-slate-200">
@@ -246,7 +246,7 @@ export default function CapabilityDetailPage() {
                       <div className="w-10 h-10 rounded-[4px] bg-[#0b1330] text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                         <IconComp className="w-5 h-5" />
                       </div>
-                      <span className="font-mono text-xs font-bold text-slate-400 group-hover:text-[#0b1330] transition-colors">
+                      <span className="font-sans text-xs font-bold text-slate-400 group-hover:text-[#0b1330] transition-colors">
                         {indexFormatted}
                       </span>
                     </div>
@@ -282,7 +282,7 @@ export default function CapabilityDetailPage() {
               >
                 {/* Text Side */}
                 <div className="space-y-5">
-                  <div className="font-mono text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  <div className="font-sans text-xs font-bold text-slate-400 uppercase tracking-wider">
                     Specification {rowNumber}
                   </div>
 
@@ -312,7 +312,7 @@ export default function CapabilityDetailPage() {
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0b1330]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <span className="text-white text-xs font-mono font-medium">
+                    <span className="text-white text-xs font-sans font-medium">
                       Engineered for high availability & speed
                     </span>
                   </div>
@@ -372,7 +372,7 @@ export default function CapabilityDetailPage() {
           <div className="p-8 sm:p-12 lg:p-16 bg-[#f8fafc] text-[#0b1330] rounded-[5px] border border-slate-200/90 shadow-none">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div className="space-y-6">
-                <div className="inline-block px-3 py-1 rounded-[3px] bg-blue-50 border border-blue-200 text-[#1d4ed8] text-xs font-bold uppercase tracking-wider font-mono">
+                <div className="inline-block px-3 py-1 rounded-[3px] bg-blue-50 border border-blue-200 text-[#1d4ed8] text-xs font-bold uppercase tracking-wider font-sans">
                   {data.techShowcase.badge || "Modern Web Architecture"}
                 </div>
 

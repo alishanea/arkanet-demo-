@@ -25,7 +25,8 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
         heading: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
-        sans: ["var(--font-sans)", "Inter", "sans-serif"],
+        sans: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
+        mono: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
       },
       borderRadius: {
         xl: "12px",
