@@ -110,24 +110,24 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
         >
           {/* Top: Large Step Number */}
           <div>
-            <span className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[#94a3b8] select-none leading-none tracking-tight block">
+            <span className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#94a3b8] select-none leading-none tracking-tight block">
               {step.stepNumber}
             </span>
           </div>
 
           {/* Title & Description */}
           <div className="space-y-2 sm:space-y-3">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-display text-[#0b1330] tracking-tight">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#0b1330] tracking-tight">
               {step.title}
             </h3>
-            <p className="text-[#475569] text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+            <p className="font-sans text-[#475569] text-base sm:text-lg leading-relaxed max-w-xl font-normal">
               {step.body}
             </p>
           </div>
 
           {/* Key Deliverables Section */}
           <div className="space-y-3.5 pt-3 sm:pt-5">
-            <span className="text-[12px] sm:text-[13px] font-bold uppercase tracking-[0.14em] text-[#3377a2] block">
+            <span className="font-sans text-[12px] sm:text-[13px] font-bold uppercase tracking-[0.14em] text-[#3377a2] block">
               KEY DELIVERABLES
             </span>
 
@@ -144,7 +144,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
                         : "sm:pl-6 lg:pl-8 last:pb-0"
                     }`}
                   >
-                    <span className="text-xs sm:text-[13px] lg:text-sm font-semibold text-[#14233c] leading-snug tracking-tight sm:whitespace-pre-line">
+                    <span className="font-sans text-xs sm:text-[13px] lg:text-sm font-semibold text-[#14233c] leading-snug tracking-tight sm:whitespace-pre-line">
                       {d.label}
                     </span>
                   </div>

@@ -309,7 +309,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
           >
             {stat ? (
               <>
-                <div className="font-display text-5xl sm:text-6xl lg:text-[68px] font-bold text-[#0b1330] tracking-[-0.03em] leading-[0.95] mb-5">
+                <div className="font-heading text-5xl sm:text-6xl lg:text-[68px] font-bold text-[#0b1330] tracking-[-0.03em] leading-[0.95] mb-5">
                   {stat}
                 </div>
                 <p className="text-sm text-[#526a83] leading-relaxed max-w-[240px]">

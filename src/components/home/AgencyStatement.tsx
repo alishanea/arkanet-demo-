@@ -29,7 +29,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
  {/* CARD 1: Wide Feature Card (6 cols) – Web, Mobile & Software Development */}
  <div className="md:col-span-12 lg:col-span-6 rounded-[5px] bg-white border border-slate-200/90 p-7 sm:p-9 flex flex-col justify-between relative overflow-hidden group">
  <div>
- <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#0b1330] tracking-tight leading-snug">
+ <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#0b1330] tracking-tight leading-snug">
  Web &amp; Mobile Engineering
  </h3>
  <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed mt-3 max-w-xl">
@@ -37,7 +37,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
  </p>
  </div>
 
- <div className="pt-6 mt-6 border-t border-slate-100 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-500">
+ <div className="pt-6 mt-6 border-t border-slate-100 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold font-sans text-slate-500">
  <div className="flex items-center gap-1.5">
  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
  <span>Next.js &amp; Mobile Native</span>
@@ -55,7 +55,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
 
  {/* CARD 2: Dark Navy Card (3 cols) – AI & Data Intelligence */}
  <div className="md:col-span-6 lg:col-span-3 rounded-[5px] bg-[#0b1330] text-white p-7 sm:p-8 flex flex-col justify-start border border-slate-800">
- <h3 className="font-heading font-bold text-lg sm:text-xl text-white tracking-tight leading-snug">
+ <h3 className="font-heading font-extrabold text-lg sm:text-xl text-white tracking-tight leading-snug">
  Applied AI &amp;<br />Data Intelligence
  </h3>
  <p className="font-sans font-medium text-slate-300 text-xs sm:text-sm leading-relaxed mt-3">
@@ -65,7 +65,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
 
  {/* CARD 3: Dark Navy Card (3 cols) – Cloud & Cybersecurity */}
  <div className="md:col-span-6 lg:col-span-3 rounded-[5px] bg-[#0b1330] text-white p-7 sm:p-8 flex flex-col justify-start border border-slate-800">
- <h3 className="font-heading font-bold text-lg sm:text-xl text-white tracking-tight leading-snug">
+ <h3 className="font-heading font-extrabold text-lg sm:text-xl text-white tracking-tight leading-snug">
  Cloud, DevOps &amp;<br />Cybersecurity
  </h3>
  <p className="font-sans font-medium text-slate-300 text-xs sm:text-sm leading-relaxed mt-3">
@@ -79,7 +79,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
  <div className="flex justify-start">
  <Link
  href="/work"
- className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-[#0b1330] transition-colors"
+ className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#0b1330] transition-colors"
  >
  <span>Explore Work</span>
  <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-slate-400 group-hover:text-[#0b1330]" />

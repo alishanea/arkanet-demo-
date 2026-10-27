@@ -52,7 +52,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
             <div className="pt-2">
               <Link
                 href="/about"
-                className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-[#0b1330] transition-colors"
+                className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#0b1330] transition-colors"
               >
                 <span>About Us</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#0b1330]" />
@@ -79,7 +79,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-8 pt-4 sm:pt-5 border-t border-slate-200/90 max-w-full">
           {STATS_DATA.map((stat, idx) => (
             <div key={idx} className="flex items-center gap-3.5 sm:gap-4">
-              <div className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl leading-none text-[#0b1330] tracking-tight shrink-0">
+              <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl leading-none text-[#0b1330] tracking-tight shrink-0">
                 {stat.number}
               </div>
               <div className="font-sans font-medium text-xs sm:text-sm leading-snug text-slate-600 text-left flex-1 max-w-[240px]">

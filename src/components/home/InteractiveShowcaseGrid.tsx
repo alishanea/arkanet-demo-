@@ -72,7 +72,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  <div className="space-y-4">
  {/* Title & Expanding Underline Bar */}
  <div className="space-y-2">
- <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#0b1330] group-hover:text-[#1d4ed8] tracking-tight leading-snug transition-colors duration-300">
+ <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#0b1330] group-hover:text-[#1d4ed8] tracking-tight leading-snug transition-colors duration-300">
  {pillar.title}
  </h3>
  <div className="h-0.5 w-4 group-hover:w-14 bg-[#1d4ed8] rounded-[2px] transition-all duration-300 opacity-60 group-hover:opacity-100" />
@@ -85,7 +85,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  </div>
 
  {/* Bottom Action Prompt with Small Arrow */}
- <div className="pt-4 mt-4 border-t border-slate-100 group-hover:border-slate-200 flex items-center gap-1.5 text-xs font-semibold text-slate-400 group-hover:text-[#1d4ed8] transition-colors duration-300">
+ <div className="pt-4 mt-4 border-t border-slate-100 group-hover:border-slate-200 flex items-center gap-1.5 text-xs font-semibold font-sans text-slate-400 group-hover:text-[#1d4ed8] transition-colors duration-300">
  <span className="tracking-tight">Explore Capability</span>
  <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
  </div>
@@ -98,7 +98,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  <div className="flex justify-start">
  <Link
  href="/capabilities"
- className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-[#0b1330] transition-colors"
+ className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#0b1330] transition-colors"
  >
  <span>All Capabilities</span>
  <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#0b1330]" />
