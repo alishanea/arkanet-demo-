@@ -66,6 +66,7 @@ export default function CapabilityDetailPage() {
   const params = useParams();
   const slug = (params?.slug as string) || "website-development";
   const [contactOpen, setContactOpen] = useState(false);
+  const [activeIdx, setActiveIdx] = useState(0);
   
   
 
@@ -73,6 +74,28 @@ export default function CapabilityDetailPage() {
 
   // Fallback to website-development if slug not found
   const data = CAPABILITIES_DATA[slug] || CAPABILITIES_DATA["website-development"];
+
+  // Unique showcase images for this capability
+  const showcaseImages = [
+    data.heroImages.center,
+    data.heroImages.left,
+    data.heroImages.right,
+    ...(data.featureRows || []).map((r) => r.image),
+    data.techShowcase.image,
+  ];
+
+  // Auto-advance picture one by one every 3.5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % showcaseImages.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, [showcaseImages.length]);
+
+  // Reset to first picture when slug changes
+  useEffect(() => {
+    setActiveIdx(0);
+  }, [slug]);
 
 
 
@@ -122,40 +145,63 @@ export default function CapabilityDetailPage() {
             })}
           </div>
 
-          {/* Automatic Movie Track Showcase Banner */}
-          <div className="relative w-full rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none mt-10 bg-white py-5 sm:py-7">
-            {/* Left & Right Edge Fade Masks */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10" />
+          {/* Clean One-by-One Automatic Slideshow */}
+          <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none mt-10 bg-slate-900 group">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIdx}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full"
+              >
+                <img
+                  src={showcaseImages[activeIdx]}
+                  alt="Capability showcase preview"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </AnimatePresence>
 
-            {/* Seamless Infinite Gliding Movie Track */}
-            <div className="animate-marquee flex items-center gap-5 sm:gap-6">
-              {[
-                data.heroImages.center,
-                data.heroImages.left,
-                data.heroImages.right,
-                ...(data.featureRows || []).map((r) => r.image),
-                data.techShowcase.image,
-                data.heroImages.center,
-                data.heroImages.left,
-                data.heroImages.right,
-                ...(data.featureRows || []).map((r) => r.image),
-                data.techShowcase.image,
-              ].map((imgSrc, idx) => (
-                <div
-                  key={idx}
-                  className="group relative w-[340px] sm:w-[480px] lg:w-[540px] aspect-[16/10] shrink-0 rounded-[5px] overflow-hidden border border-slate-200/90 bg-slate-100 hover:border-[#0b1330] transition-all duration-300 cursor-pointer"
-                  onClick={openContact}
-                >
-                  <img
-                    src={imgSrc}
-                    alt="Capability project showcase"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            {/* Clean Floating Minimal Controls (Bottom Right - No text sentences) */}
+            <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center gap-3 bg-[#0b1330]/75 backdrop-blur-md px-3.5 py-2 rounded-[4px] border border-white/10 z-20">
+              {/* Indicator Dots */}
+              <div className="flex items-center gap-1.5">
+                {showcaseImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveIdx(idx)}
+                    aria-label={`Go to image ${idx + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      activeIdx === idx ? "w-6 bg-white" : "w-1.5 bg-white/40 hover:bg-white/70"
+                    }`}
                   />
-                  {/* Subtle Elegant Hover Scrim without any text sentences */}
-                  <div className="absolute inset-0 bg-[#0b1330]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Counter */}
+              <div className="font-mono text-[11px] text-white/80 font-medium pl-1">
+                0{activeIdx + 1} / 0{showcaseImages.length}
+              </div>
+
+              {/* Prev / Next Arrows */}
+              <div className="flex items-center gap-1 pl-1 border-l border-white/20">
+                <button
+                  onClick={() => setActiveIdx((prev) => (prev - 1 + showcaseImages.length) % showcaseImages.length)}
+                  aria-label="Previous image"
+                  className="w-5 h-5 rounded-[2px] hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  onClick={() => setActiveIdx((prev) => (prev + 1) % showcaseImages.length)}
+                  aria-label="Next image"
+                  className="w-5 h-5 rounded-[2px] hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+                >
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
