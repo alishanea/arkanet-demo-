@@ -98,7 +98,7 @@ export default function CapabilityDetailPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── SECTION 1: HERO SECTION WITH AUTOMATIC BACKGROUND IMAGE SLIDESHOW ── */}
-      <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] flex items-center justify-start overflow-hidden bg-[#f4f6fb] text-[#0b1330] pt-36 pb-20 px-6 sm:px-10 lg:px-12 border-b border-slate-200/80 text-left">
+      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-between overflow-hidden bg-[#f4f6fb] text-[#0b1330] pt-28 sm:pt-36 pb-8 sm:pb-12 px-6 sm:px-10 lg:px-14 border-b border-slate-200/80 text-left">
         {/* Background Images Changing Smoothly One by One (Every 3 seconds) */}
         <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
           <AnimatePresence mode="wait">
@@ -126,14 +126,14 @@ export default function CapabilityDetailPage() {
 
         {/* Foreground Content (Headline, Subtitle, Practice Switcher) */}
         <div className="relative z-10 max-w-7xl mx-auto w-full space-y-8">
-          <div className="space-y-5 max-w-4xl">
+          <div className="space-y-5 w-full max-w-5xl lg:max-w-6xl">
             <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.08]">
               {data.title} <br />
               <span className="text-[#1d4ed8]">{data.highlightText}</span>
             </h1>
 
             {data.subtitle && (
-              <p className="hero-sub font-sans text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl">
+              <p className="hero-sub font-sans text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-4xl">
                 {data.subtitle}
               </p>
             )}

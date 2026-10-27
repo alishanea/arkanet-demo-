@@ -373,7 +373,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -6, scale: 0.98 }}
                 transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="w-[94vw] max-w-[840px] bg-white rounded-[5px] border border-slate-200/90 shadow-[0_20px_50px_rgba(11,19,48,0.12)] p-6 lg:p-7 text-left"
+                className="w-[96vw] max-w-[960px] bg-white rounded-[5px] border border-slate-200/90 shadow-[0_20px_50px_rgba(11,19,48,0.12)] p-6 lg:p-8 text-left"
               >
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
                   {renderColumn("Engineering", engineeringItems)}
