@@ -9,6 +9,10 @@
 }
 
 @layer base {
+  button, input, select, textarea {
+    font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  }
+
   html {
     font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   }

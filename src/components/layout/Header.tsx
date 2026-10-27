@@ -197,7 +197,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 href="/"
                 onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("home")}
-                className="relative px-4 py-2 rounded-full text-xs lg:text-sm font-semibold shrink-0 transition-colors flex items-center justify-center"
+                className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
                 {isHomeActive && (
                   <motion.div
@@ -316,34 +316,46 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             {/* 3. RIGHT SIDE: CAPABILITIES BUTTON */}
             <div className="flex items-center gap-2 shrink-0">
               <div
-                className="hidden md:block relative"
+                className="hidden md:block relative shrink-0"
                 onMouseEnter={() => {
                   setHoveredTab("capabilities");
                   handleMenuEnter("services");
                 }}
                 onMouseLeave={handleMenuLeave}
               >
+                {(activeMenu === "services" || isCapabilitiesActive) && (
+                  <motion.div
+                    layoutId="active-nav-pill"
+                    className="absolute inset-0 bg-[#0b1330] rounded-full shadow-xs"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {hoveredTab === "capabilities" && activeMenu !== "services" && !isCapabilitiesActive && (
+                  <motion.div
+                    layoutId="hover-nav-pill"
+                    className="absolute inset-0 bg-slate-100/90 rounded-full"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
                 <button
                   type="button"
                   onClick={toggleCapabilities}
-                  className={`group inline-flex items-center gap-2 rounded-full font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 transition-all duration-200 cursor-pointer select-none ${
-                    activeMenu === "services"
-                      ? "bg-[#0b1330] text-white shadow-xs font-bold"
-                      : isCapabilitiesActive
-                      ? "bg-[#0b1330] text-white shadow-xs font-bold"
-                      : "bg-slate-100 hover:bg-slate-200/90 text-slate-800 hover:text-slate-950 border border-slate-200/80"
-                  }`}
+                  className="relative rounded-full font-sans font-semibold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none"
                 >
-                  <span>Capabilities</span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                      activeMenu === "services"
-                        ? "rotate-180 text-white"
-                        : isCapabilitiesActive
+                  <span
+                    className={`relative z-10 flex items-center gap-1.5 transition-colors duration-200 ${
+                      activeMenu === "services" || isCapabilitiesActive
                         ? "text-[#38bdf8]"
-                        : "text-slate-500 group-hover:text-slate-900"
+                        : "text-slate-800 hover:text-slate-950"
                     }`}
-                  />
+                  >
+                    <span>Capabilities</span>
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        activeMenu === "services" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </span>
                 </button>
               </div>
 
