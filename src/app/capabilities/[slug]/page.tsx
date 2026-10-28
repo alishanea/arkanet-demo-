@@ -138,33 +138,6 @@ export default function CapabilityDetailPage() {
               </p>
             )}
           </div>
-
-          {/* Quick Capability Practice Switcher */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
-            {[
-              { name: "Web & SaaS", slug: "website-development" },
-              { name: "Mobile Apps", slug: "mobile-app-development" },
-              { name: "Applied AI", slug: "applied-ai-ml" },
-              { name: "Cloud & DevOps", slug: "cloud-devops-hosting" },
-              { name: "UI/UX Design", slug: "graphic-design" },
-              { name: "Business Systems", slug: "erp-business-management" },
-            ].map((cap) => {
-              const isActive = slug === cap.slug;
-              return (
-                <Link
-                  key={cap.slug}
-                  href={`/capabilities/${cap.slug}`}
-                  className={`px-3.5 py-1.5 rounded-[4px] text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
-                    isActive
-                      ? "bg-[#202B61] text-white border border-[#202B61] shadow-xs"
-                      : "bg-white text-slate-600 hover:text-[#202B61] border border-slate-200/90 shadow-xs hover:border-slate-300"
-                  }`}
-                >
-                  {cap.name}
-                </Link>
-              );
-            })}
-          </div>
         </div>
       </section>
 
