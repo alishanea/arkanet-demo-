@@ -75,11 +75,11 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
   }, []);
 
   return (
-    <section id="trusted-by" className="relative w-full bg-white text-[#0b1330] select-none py-16 sm:py-20 lg:py-24 border-t border-b border-slate-200/80 overflow-hidden">
+    <section id="trusted-by" className="relative w-full bg-white text-[#202B61] select-none py-16 sm:py-20 lg:py-24 border-t border-b border-slate-200/80 overflow-hidden">
       <div className="w-full px-6 sm:px-12 lg:px-20 max-w-[1400px] mx-auto">
         {/* Eyebrow */}
         <div className="text-center mb-10 sm:mb-14">
-          <span className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-[0.22em] text-[#0b1330]/75 font-heading uppercase">
+          <span className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-[0.22em] text-[#202B61]/75 font-heading uppercase">
             Trusted By
           </span>
         </div>

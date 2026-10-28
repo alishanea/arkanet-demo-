@@ -290,7 +290,7 @@ export default function WorkPage() {
     : null;
 
   return (
-    <main className="min-h-screen bg-[#f4f6fb] text-[#0b1330] selection:bg-[#0b1330] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. ARCHITECTURAL HERO HEADER (FULL PAGE SCREEN) ── */}
@@ -323,7 +323,7 @@ export default function WorkPage() {
                     onClick={() => setActiveCategory(cat)}
                     className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                       isActive
-                        ? "bg-[#0b1330] text-white shadow-2xs"
+                        ? "bg-[#202B61] text-white shadow-2xs"
                         : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300 shadow-2xs"
                     }`}
                   >

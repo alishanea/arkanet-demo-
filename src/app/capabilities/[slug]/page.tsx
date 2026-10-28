@@ -94,11 +94,11 @@ export default function CapabilityDetailPage() {
   }, [slug]);
 
   return (
-    <main className="min-h-screen bg-white text-[#0b1330] selection:bg-[#0b1330] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── SECTION 1: HERO SECTION WITH AUTOMATIC BACKGROUND IMAGE SLIDESHOW ── */}
-      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#f4f6fb] text-[#0b1330] pt-28 sm:pt-36 pb-12 sm:pb-20 px-6 sm:px-10 lg:px-14 border-b border-slate-200/80 text-left">
+      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-28 sm:pt-36 pb-12 sm:pb-20 px-6 sm:px-10 lg:px-14 border-b border-slate-200/80 text-left">
         {/* Background Images Changing Smoothly One by One (Every 3 seconds) */}
         <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
           <AnimatePresence mode="wait">
@@ -188,14 +188,14 @@ export default function CapabilityDetailPage() {
               return (
                 <div
                   key={idx}
-                  className="group relative p-7 rounded-[5px] bg-[#f8fafc] border border-slate-200/90 hover:border-[#0b1330] hover:bg-white hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-5"
+                  className="group relative p-7 rounded-[5px] bg-[#f8fafc] border border-slate-200/90 hover:border-[#202B61] hover:bg-white hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-5"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-[4px] bg-[#0b1330] text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                      <div className="w-10 h-10 rounded-[4px] bg-[#202B61] text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                         <IconComp className="w-5 h-5" />
                       </div>
-                      <span className="font-sans text-xs font-bold text-slate-400 group-hover:text-[#0b1330] transition-colors">
+                      <span className="font-sans text-xs font-bold text-slate-400 group-hover:text-[#202B61] transition-colors">
                         {indexFormatted}
                       </span>
                     </div>
@@ -209,7 +209,7 @@ export default function CapabilityDetailPage() {
                   </div>
 
                   {/* Subtle Accent Bottom Line */}
-                  <div className="h-[2px] w-8 bg-slate-200 group-hover:w-full group-hover:bg-[#0b1330] transition-all duration-300 rounded-full" />
+                  <div className="h-[2px] w-8 bg-slate-200 group-hover:w-full group-hover:bg-[#202B61] transition-all duration-300 rounded-full" />
                 </div>
               );
             })}
@@ -241,7 +241,7 @@ export default function CapabilityDetailPage() {
                   <div className="pt-2">
                     <button
                       onClick={openContact}
-                      className="group inline-flex items-center gap-2 text-xs font-bold text-[#0b1330] hover:text-slate-700 uppercase tracking-wider transition-colors cursor-pointer"
+                      className="group inline-flex items-center gap-2 text-xs font-bold text-[#202B61] hover:text-slate-700 uppercase tracking-wider transition-colors cursor-pointer"
                     >
                       <span>Consult on This Architecture</span>
                       <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -250,13 +250,13 @@ export default function CapabilityDetailPage() {
                 </div>
 
                 {/* Image Side with Clean Zoom Hover Effect */}
-                <div className="group relative aspect-[16/10] rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none bg-slate-100 hover:border-[#0b1330]/50 transition-all duration-500">
+                <div className="group relative aspect-[16/10] rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none bg-slate-100 hover:border-[#202B61]/50 transition-all duration-500">
                   <img
                     src={row.image}
                     alt={row.title}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1330]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#202B61]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <span className="text-white text-xs font-sans font-medium">
                       Engineered for high availability & speed
                     </span>
@@ -314,7 +314,7 @@ export default function CapabilityDetailPage() {
       {/* ── SECTION 5: TECH SHOWCASE CARD WITH INTERACTIVE CHIPS ── */}
       <section className="w-full py-16 sm:py-20 px-6 sm:px-10 lg:px-12 text-left bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="p-8 sm:p-12 lg:p-16 bg-[#f8fafc] text-[#0b1330] rounded-[5px] border border-slate-200/90 shadow-none">
+          <div className="p-8 sm:p-12 lg:p-16 bg-[#f8fafc] text-[#202B61] rounded-[5px] border border-slate-200/90 shadow-none">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div className="space-y-6">
                 <h3 className="font-heading font-bold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-tight">
@@ -339,7 +339,7 @@ export default function CapabilityDetailPage() {
                   ].map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1.5 rounded-[3px] bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-[#0b1330] text-xs font-medium font-sans transition-colors"
+                      className="px-3 py-1.5 rounded-[3px] bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-[#202B61] text-xs font-medium font-sans transition-colors"
                     >
                       {tech}
                     </span>
@@ -349,7 +349,7 @@ export default function CapabilityDetailPage() {
                 <div className="pt-2">
                   <button
                     onClick={openContact}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#0b1330] text-white hover:bg-[#132047] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs font-sans"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#202B61] text-white hover:bg-[#1d4ed8] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs font-sans"
                   >
                     <span>Discuss Architecture</span>
                     <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />

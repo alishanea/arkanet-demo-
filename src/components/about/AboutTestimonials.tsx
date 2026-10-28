@@ -93,7 +93,7 @@ export function AboutTestimonials() {
   return (
     <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 bg-white border-t border-slate-200/80 text-left">
       <div className="max-w-7xl mx-auto">
-        <div className="relative w-full bg-[#0b1330] text-white rounded-[5px] p-8 sm:p-12 lg:p-16 border border-slate-800 shadow-none flex flex-col justify-between min-h-[380px] sm:min-h-[400px]">
+        <div className="relative w-full bg-[#202B61] text-white rounded-[5px] p-8 sm:p-12 lg:p-16 border border-slate-800 shadow-none flex flex-col justify-between min-h-[380px] sm:min-h-[400px]">
           
           {/* Top Quote Content */}
           <div className="relative z-10 w-full max-w-4xl my-auto">

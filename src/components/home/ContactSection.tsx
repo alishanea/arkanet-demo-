@@ -52,7 +52,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full bg-[#f4f6fb] text-[#0b1330] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-12 selection:bg-[#0b1330] selection:text-white">
+    <section className="relative w-full bg-[#f4f6fb] text-[#202B61] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-12 selection:bg-[#202B61] selection:text-white">
       <div className="max-w-[1400px] mx-auto space-y-12 sm:space-y-16">
         
         {/* ── 1. UNIFIED EDITORIAL HERO HEADER ── */}
@@ -134,7 +134,7 @@ export const ContactSection: React.FC = () => {
                           onClick={() => setFormData({ ...formData, service: srv })}
                           className={`px-3 py-2.5 rounded-xl text-xs font-semibold text-left transition-all cursor-pointer border flex items-center justify-between ${
                             isSelected
-                              ? "bg-[#0b1330] text-white border-[#0b1330] shadow-2xs"
+                              ? "bg-[#202B61] text-white border-[#202B61] shadow-2xs"
                               : "bg-[#f8fafc] hover:bg-white text-slate-700 border-slate-200/90 hover:border-slate-300"
                           }`}
                         >
@@ -162,7 +162,7 @@ export const ContactSection: React.FC = () => {
                         placeholder="e.g. Alexander Vance"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
+                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#202B61] focus:ring-1 focus:ring-[#202B61] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
                       />
                     </div>
 
@@ -176,7 +176,7 @@ export const ContactSection: React.FC = () => {
                         placeholder="alexander@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
+                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#202B61] focus:ring-1 focus:ring-[#202B61] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
                       />
                     </div>
 
@@ -189,7 +189,7 @@ export const ContactSection: React.FC = () => {
                         placeholder="+971 50 123 4567"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
+                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#202B61] focus:ring-1 focus:ring-[#202B61] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
                       />
                     </div>
 
@@ -202,7 +202,7 @@ export const ContactSection: React.FC = () => {
                         placeholder="e.g. Nova Logistics"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
+                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#202B61] focus:ring-1 focus:ring-[#202B61] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
                       />
                     </div>
                   </div>
@@ -223,7 +223,7 @@ export const ContactSection: React.FC = () => {
                           onClick={() => setFormData({ ...formData, budget: bg })}
                           className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
                             isSelected
-                              ? "bg-[#0b1330] text-white border-[#0b1330] shadow-2xs"
+                              ? "bg-[#202B61] text-white border-[#202B61] shadow-2xs"
                               : "bg-[#f8fafc] hover:bg-white text-slate-700 border-slate-200 hover:border-slate-300"
                           }`}
                         >
@@ -245,7 +245,7 @@ export const ContactSection: React.FC = () => {
                     placeholder="Describe your project, target audience, primary deliverables, and desired launch timeline..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all resize-none placeholder:text-slate-400 leading-relaxed"
+                    className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#202B61] focus:ring-1 focus:ring-[#202B61] outline-none text-xs sm:text-sm text-slate-900 transition-all resize-none placeholder:text-slate-400 leading-relaxed"
                   />
                 </div>
 
@@ -254,7 +254,7 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0b1330] hover:bg-[#162758] text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg disabled:opacity-70"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#202B61] hover:bg-[#1d4ed8] text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg disabled:opacity-70"
                   >
                     <span>{isSubmitting ? "Submitting Brief..." : "Submit Project Brief"}</span>
                     <Send className="w-3.5 h-3.5 text-[#38bdf8]" />
@@ -337,7 +337,7 @@ export const ContactSection: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-[#202B61]" />
-                    <h4 className="font-heading font-bold text-sm text-[#0b1330]">
+                    <h4 className="font-heading font-bold text-sm text-[#202B61]">
                       Dubai Headquarters (HQ)
                     </h4>
                   </div>
@@ -364,7 +364,7 @@ export const ContactSection: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Building2 className="w-4 h-4 text-[#202B61]" />
-                    <h4 className="font-heading font-bold text-sm text-[#0b1330]">
+                    <h4 className="font-heading font-bold text-sm text-[#202B61]">
                       India Engineering &amp; Delivery Hub
                     </h4>
                   </div>

@@ -94,7 +94,7 @@ export const HeroShowcaseScroll: React.FC<HeroShowcaseScrollProps> = () => {
   if (isMobile) {
     return (
       <div className="w-full px-6 pt-3 pb-8 select-none" id="cinematic-showcase">
-        <div className="relative w-full aspect-[16/11] rounded-[28px] overflow-hidden bg-[#0b1330] shadow-[0_20px_45px_rgba(0,0,0,0.18)] flex flex-col justify-end p-5">
+        <div className="relative w-full aspect-[16/11] rounded-[28px] overflow-hidden bg-[#202B61] shadow-[0_20px_45px_rgba(0,0,0,0.18)] flex flex-col justify-end p-5">
           <video
             ref={videoRef}
             autoPlay
@@ -163,7 +163,7 @@ export const HeroShowcaseScroll: React.FC<HeroShowcaseScrollProps> = () => {
                   boxShadow: `0 25px 60px -10px rgba(0, 0, 0, ${shadowOpacity.get()})`,
                 }
           }
-          className="relative overflow-hidden bg-[#0b1330] shadow-2xl flex items-center justify-center transition-shadow duration-300"
+          className="relative overflow-hidden bg-[#202B61] shadow-2xl flex items-center justify-center transition-shadow duration-300"
         >
           <video
             ref={videoRef}
@@ -178,7 +178,7 @@ export const HeroShowcaseScroll: React.FC<HeroShowcaseScrollProps> = () => {
             Your browser does not support HTML5 video.
           </video>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b1330]/90 via-[#0b1330]/40 to-[#0b1330]/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#202B61]/90 via-[#202B61]/40 to-[#202B61]/60 pointer-events-none" />
 
           <div className="relative z-20 text-center px-4 sm:px-6 max-w-4xl space-y-3 sm:space-y-4 pointer-events-none mx-auto">
             <h2 className="showcase-heading text-white text-center max-w-4xl mx-auto">

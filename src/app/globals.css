@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -9,6 +9,10 @@
 }
 
 @layer base {
+  *, *::before, *::after {
+    font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
   button, input, select, textarea {
     font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
   }
@@ -18,11 +22,12 @@
   }
 
   body {
-    @apply bg-[#f4f6fb] text-navy font-sans antialiased selection:bg-navy-bright selection:text-white;
+    @apply bg-[#f4f6fb] text-[#202B61] font-sans antialiased selection:bg-[#1d4ed8] selection:text-white;
+    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   h1 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: 1.875rem; /* 30px - text-3xl */
     font-weight: 700;
     line-height: 1.12;
@@ -45,7 +50,7 @@
   }
 
   h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(22px, 3vw, 40px);
     font-weight: 600;
     line-height: 1.1;
@@ -54,20 +59,21 @@
   }
 
   h3, h4, h5, h6 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
-    @apply tracking-tight text-navy font-bold;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+    @apply tracking-tight font-bold;
+    color: #202B61;
   }
 }
 
 @layer components {
   /* Homepage Hero H1 style set globally for all page hero titles */
   .hero-h1 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: 1.875rem; /* 30px - text-3xl */
     font-weight: 800;
     line-height: 1.12;
     letter-spacing: -0.025em;
-    color: inherit;
+    color: #202B61;
   }
 
   @media (min-width: 640px) {
@@ -86,16 +92,16 @@
 
   /* Dedicated Showcase Video Headline Style (independent from hero-h1) */
   .showcase-heading {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(29px, 4.57vw, 95px);
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: -0.025em;
-    color: inherit;
+    color: #202B61;
   }
 
   .section-h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(22px, 3vw, 40px);
     font-weight: 700;
     line-height: 1.1;
@@ -104,7 +110,7 @@
   }
 
   .bento-section-h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(22px, 3vw, 40px);
     font-weight: 700;
     line-height: 1.1;
@@ -114,7 +120,7 @@
 
   /* Custom section heading specifically for People-First, Problem-Solvers section */
   .philosophy-h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(22px, 3vw, 40px);
     font-weight: 700;
     line-height: 1.1;
@@ -127,7 +133,7 @@
     font-size: clamp(12px, 1.2vw, 15px);
     font-weight: 800;
     letter-spacing: 0.22em;
-    color: #0284c7;
+    color: #1d4ed8;
   }
 
   .hero-sub {
@@ -145,12 +151,12 @@
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: -0.015em;
-    color: #1e293b;
+    color: #202B61;
   }
 
   /* About section titles */
   .about-h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(19px, 3.16vw, 45px);
     font-weight: 700;
     line-height: 1.05;
@@ -159,20 +165,22 @@
   }
 
   .card-h3 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(22px, 3vw, 40px);
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
+    color: #202B61;
   }
 
   /* Capability Carousel Cards Typography (WhatsNewSection) */
   .capability-card-title {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(20px, 2.2vw, 32px);
     font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.02em;
+    color: #202B61;
   }
 
   .capability-card-desc {
@@ -198,11 +206,12 @@
 
   /* Global Modal Shared Typography Tokens */
   .modal-hero-h1 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(30px, 4vw, 62px);
     font-weight: 700;
     line-height: 1.06;
     letter-spacing: -0.025em;
+    color: #202B61;
   }
 
   .modal-hero-sub {
@@ -213,11 +222,12 @@
   }
 
   .modal-section-h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(21px, 3.15vw, 40px);
     font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.025em;
+    color: #202B61;
   }
 
   .modal-body-p {
@@ -239,6 +249,9 @@
     font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif !important;
   }
   .font-mono {
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif !important;
+  }
+  .font-serif {
     font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif !important;
   }
   .no-scrollbar {

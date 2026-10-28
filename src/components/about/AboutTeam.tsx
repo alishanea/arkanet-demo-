@@ -10,7 +10,7 @@ export function AboutTeam() {
         
         {/* Section Header */}
         <div className="space-y-4 max-w-3xl">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#0b1330] tracking-tight leading-snug">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-snug">
             One team, start to finish
           </h2>
           <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
@@ -37,7 +37,7 @@ export function AboutTeam() {
 
               {/* Text Information Below */}
               <div className="p-4 sm:p-5 text-left border-t border-slate-100">
-                <h3 className="font-heading font-bold text-base sm:text-lg text-[#0b1330] leading-tight">
+                <h3 className="font-heading font-bold text-base sm:text-lg text-[#202B61] leading-tight">
                   {member.name}
                 </h3>
                 <p className="font-sans text-xs sm:text-sm text-slate-500 font-medium mt-1">

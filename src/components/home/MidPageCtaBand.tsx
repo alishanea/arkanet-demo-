@@ -19,8 +19,8 @@ export const MidPageCtaBand: React.FC = () => {
             </h3>
             
             {/* Response Status Pill */}
-            <div className="inline-flex items-center gap-2.5 bg-[#0b1330] border border-[#0b1330] rounded-full px-4 py-2 shadow-sm group/pill hover:bg-[#070035] transition-colors duration-300 cursor-pointer">
-              <Clock className="w-4 h-4 text-[#38bdf8] group-hover/pill:rotate-12 group-hover/pill:scale-110 transition-transform duration-300 shrink-0" />
+            <div className="inline-flex items-center gap-2.5 bg-[#202B61] border border-[#202B61] rounded-full px-4 py-2 shadow-sm group/pill hover:bg-[#161e47] transition-colors duration-300 cursor-pointer">
+              <Clock className="w-4 h-4 text-[#1d4ed8] group-hover/pill:rotate-12 group-hover/pill:scale-110 transition-transform duration-300 shrink-0" />
               <p className="font-sans text-xs sm:text-sm text-white font-medium tracking-normal">
                 Usually reply in under 15 min <span className="text-white/30 mx-1.5">|</span> 9 AM, 10 PM IST
               </p>
@@ -34,18 +34,18 @@ export const MidPageCtaBand: React.FC = () => {
               href="https://wa.me/919074104372"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-3.5 bg-[#0b1330] hover:bg-[#070035] text-white hover:text-[#38bdf8] font-sans text-base sm:text-lg font-extrabold py-3.5 px-8 sm:py-4 sm:px-9 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 active:translate-y-0 active:scale-95 cursor-pointer w-full sm:w-auto"
+              className="group inline-flex items-center justify-center gap-3.5 bg-[#202B61] hover:bg-[#161e47] text-white hover:text-[#1d4ed8] font-sans text-base sm:text-lg font-extrabold py-3.5 px-8 sm:py-4 sm:px-9 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 active:translate-y-0 active:scale-95 cursor-pointer w-full sm:w-auto"
             >
-              <MessageSquare className="w-5 h-5 text-[#38bdf8] group-hover:scale-110 transition-all duration-300" />
+              <MessageSquare className="w-5 h-5 text-[#1d4ed8] group-hover:scale-110 transition-all duration-300" />
               <span>WhatsApp</span>
             </a>
 
             {/* Call Button */}
             <a
               href="tel:+919074104372"
-              className="group inline-flex items-center justify-center gap-3.5 bg-white border-2 border-[#0b1330]/15 hover:border-[#0b1330] hover:bg-[#0b1330] text-[#0b1330] hover:text-white font-sans text-base sm:text-lg font-extrabold py-3.5 px-8 sm:py-4 sm:px-9 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 active:scale-95 cursor-pointer w-full sm:w-auto"
+              className="group inline-flex items-center justify-center gap-3.5 bg-white border-2 border-[#202B61]/15 hover:border-[#202B61] hover:bg-[#202B61] text-[#202B61] hover:text-white font-sans text-base sm:text-lg font-extrabold py-3.5 px-8 sm:py-4 sm:px-9 rounded-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 active:scale-95 cursor-pointer w-full sm:w-auto"
             >
-              <Phone className="w-5 h-5 text-[#0b1330] group-hover:text-[#38bdf8] group-hover:rotate-12 transition-all duration-300" />
+              <Phone className="w-5 h-5 text-[#202B61] group-hover:text-[#1d4ed8] group-hover:rotate-12 transition-all duration-300" />
               <span>Call us</span>
             </a>
           </div>

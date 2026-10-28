@@ -202,7 +202,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {isHomeActive && (
                   <motion.div
                     layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#0b1330] rounded-full shadow-xs"
+                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -215,7 +215,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 )}
                 <span
                   className={`relative z-10 transition-colors duration-200 ${
-                    isHomeActive ? "text-[#38bdf8]" : "text-slate-800 hover:text-slate-950"
+                    isHomeActive ? "text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
                   Home
@@ -232,7 +232,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {isWorkActive && (
                   <motion.div
                     layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#0b1330] rounded-full shadow-xs"
+                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -245,7 +245,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 )}
                 <span
                   className={`relative z-10 transition-colors duration-200 ${
-                    isWorkActive ? "text-[#38bdf8]" : "text-slate-800 hover:text-slate-950"
+                    isWorkActive ? "text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
                   Work
@@ -262,7 +262,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {isAboutActive && (
                   <motion.div
                     layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#0b1330] rounded-full shadow-xs"
+                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -275,7 +275,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 )}
                 <span
                   className={`relative z-10 transition-colors duration-200 ${
-                    isAboutActive ? "text-[#38bdf8]" : "text-slate-800 hover:text-slate-950"
+                    isAboutActive ? "text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
                   About
@@ -292,7 +292,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {isContactActive && (
                   <motion.div
                     layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#0b1330] rounded-full shadow-xs"
+                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -305,7 +305,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 )}
                 <span
                   className={`relative z-10 transition-colors duration-200 ${
-                    isContactActive ? "text-[#38bdf8]" : "text-slate-800 hover:text-slate-950"
+                    isContactActive ? "text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
                   Contact
@@ -326,7 +326,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {(activeMenu === "services" || isCapabilitiesActive) && (
                   <motion.div
                     layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#0b1330] rounded-full shadow-xs"
+                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -345,7 +345,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   <span
                     className={`relative z-10 flex items-center gap-1.5 transition-colors duration-200 ${
                       activeMenu === "services" || isCapabilitiesActive
-                        ? "text-[#38bdf8]"
+                        ? "text-white"
                         : "text-slate-800 hover:text-slate-950"
                     }`}
                   >
@@ -414,7 +414,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/"
                   onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isHomeActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
+                    isHomeActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
                   Home
@@ -423,7 +423,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/capabilities"
                   onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isCapabilitiesActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
+                    isCapabilitiesActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
                   Capabilities &amp; Services
@@ -432,7 +432,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/work"
                   onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isWorkActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
+                    isWorkActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
                   Work &amp; Case Studies
@@ -441,7 +441,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/about"
                   onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isAboutActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
+                    isAboutActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
                   About Us
@@ -450,7 +450,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/contact"
                   onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isContactActive ? "bg-[#0b1330] text-[#38bdf8]" : "text-slate-800 hover:bg-slate-50"
+                    isContactActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
                   Contact
@@ -461,10 +461,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <button
                   type="button"
                   onClick={handleCtaClick}
-                  className="w-full flex items-center justify-center gap-2 bg-[#0b1330] text-white py-3 rounded-full font-bold text-sm shadow-md"
+                  className="w-full flex items-center justify-center gap-2 bg-[#202B61] text-white py-3 rounded-full font-bold text-sm shadow-md"
                 >
                   <span>Start a Project</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
+                  <ArrowUpRight className="w-4 h-4 text-white" />
                 </button>
               </div>
             </div>

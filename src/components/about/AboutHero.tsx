@@ -6,11 +6,11 @@ export function AboutHero() {
   return (
     <>
       {/* ══ HERO SECTION ══ */}
-      <section className="w-full bg-[#f4f6fb] text-[#0b1330] pt-32 sm:pt-36 pb-12 sm:pb-16 px-6 sm:px-10 lg:px-12 text-left">
+      <section className="w-full bg-[#f4f6fb] text-[#202B61] pt-32 sm:pt-36 pb-12 sm:pb-16 px-6 sm:px-10 lg:px-12 text-left">
         <div className="max-w-7xl mx-auto">
           
 
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.1] max-w-4xl">
+          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.1] max-w-4xl">
             Powerful products, <br />
             <span>genuine impact</span>
           </h1>

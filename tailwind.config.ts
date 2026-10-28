@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: "#0b1f3a",
-          dark: "#071527",
-          mid: "#16345f",
+          DEFAULT: "#202B61",
+          dark: "#161e47",
+          mid: "#2a3980",
           bright: "#1d4ed8",
           hover: "#1740b3",
           faint: "#8891a3",
@@ -27,6 +27,7 @@ const config: Config = {
         heading: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
         sans: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
         mono: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
+        serif: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
       },
       borderRadius: {
         xl: "12px",

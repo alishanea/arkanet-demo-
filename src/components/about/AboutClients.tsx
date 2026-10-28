@@ -51,7 +51,7 @@ export function AboutClients() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#0b1330] tracking-tight leading-[1.1]"
+            className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.1]"
           >
             Trusted by ambitious businesses across the UAE &amp; India
           </motion.h2>
@@ -80,7 +80,7 @@ export function AboutClients() {
           {[...TRACK_1, ...TRACK_1].map((logo, idx) => (
             <div
               key={`t1-${logo.id}-${idx}`}
-              className="w-[240px] sm:w-[280px] h-[120px] sm:h-[135px] rounded-[5px] bg-white border border-slate-200/90 flex items-center justify-center p-6 group hover:border-[#0b1330] hover:scale-[1.02] transition-all duration-300 shadow-none shrink-0"
+              className="w-[240px] sm:w-[280px] h-[120px] sm:h-[135px] rounded-[5px] bg-white border border-slate-200/90 flex items-center justify-center p-6 group hover:border-[#202B61] hover:scale-[1.02] transition-all duration-300 shadow-none shrink-0"
             >
               <img
                 src={logo.src}
@@ -98,7 +98,7 @@ export function AboutClients() {
           {[...TRACK_2, ...TRACK_2].map((logo, idx) => (
             <div
               key={`t2-${logo.id}-${idx}`}
-              className="w-[240px] sm:w-[280px] h-[120px] sm:h-[135px] rounded-[5px] bg-white border border-slate-200/90 flex items-center justify-center p-6 group hover:border-[#0b1330] hover:scale-[1.02] transition-all duration-300 shadow-none shrink-0"
+              className="w-[240px] sm:w-[280px] h-[120px] sm:h-[135px] rounded-[5px] bg-white border border-slate-200/90 flex items-center justify-center p-6 group hover:border-[#202B61] hover:scale-[1.02] transition-all duration-300 shadow-none shrink-0"
             >
               <img
                 src={logo.src}

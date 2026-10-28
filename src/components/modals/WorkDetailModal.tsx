@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
-import { X, CheckCircle2, Sparkles, Layers, Calendar, UserCheck, ArrowRight } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 
 function MagneticCloseButton({ onClick }: { onClick: () => void }) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -39,13 +39,13 @@ function MagneticCloseButton({ onClick }: { onClick: () => void }) {
       onMouseLeave={handleMouseLeave}
       style={{ x: springX, y: springY }}
       whileTap={{ scale: 0.88 }}
-      className="group absolute top-6 right-6 sm:top-8 sm:right-8 z-50 w-11 h-11 rounded-[4px] bg-[#282828] hover:bg-[#383838] flex items-center justify-center cursor-pointer transition-all duration-300 overflow-hidden shrink-0 shadow-lg border border-white/10"
+      className="group absolute top-5 right-5 sm:top-7 sm:right-7 z-50 w-10 h-10 rounded-xl bg-white hover:bg-slate-100 flex items-center justify-center cursor-pointer transition-all duration-200 overflow-hidden shrink-0 shadow-md border border-slate-200/90"
       aria-label="Close modal"
     >
       <motion.div
         animate={{ rotate: isHovered ? 90 : 0 }}
         transition={{ type: "spring", stiffness: 260, damping: 18 }}
-        className="text-white transition-colors duration-300"
+        className="text-slate-600 group-hover:text-[#202B61] transition-colors duration-200"
       >
         <X className="w-4 h-4" strokeWidth={2.5} />
       </motion.div>
@@ -147,33 +147,33 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col justify-end">
+        <div className="fixed inset-0 z-50 flex flex-col justify-end font-sans">
           {/* Backdrop Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 cursor-pointer"
+            className="fixed inset-0 bg-[#202B61]/40 backdrop-blur-xs z-40 cursor-pointer"
           />
 
-          {/* Slide-Up Panel, matching ArticleDetailModal shell */}
+          {/* Slide-Up Panel in Brand Palette (Ice-blue background, pristine white cards) */}
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: "0%" }}
             exit={{ y: "100%" }}
             transition={{
-              duration: 0.5,
+              duration: 0.45,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className={`fixed bottom-0 z-50 bg-[#121212] text-white border-t border-slate-700 shadow-none flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`fixed bottom-0 z-50 bg-[#f4f6fb] text-[#202B61] border-t border-slate-200/90 shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled
                 ? "inset-x-0 top-0 rounded-t-none"
-                : "inset-x-0 sm:inset-x-8 xl:inset-x-[40px] top-[80px] sm:top-[140px] lg:top-[180px] rounded-t-[5px] sm:rounded-t-[5px]"
+                : "inset-x-0 sm:inset-x-6 xl:inset-x-[36px] top-[70px] sm:top-[100px] lg:top-[120px] rounded-t-2xl sm:rounded-t-3xl"
             }`}
           >
-            {/* Close (X) Button */}
+            {/* Magnetic Close (X) Button */}
             <MagneticCloseButton onClick={onClose} />
 
             {/* Scrollable Content Body */}
@@ -182,57 +182,51 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
               onScroll={handleScroll}
               className="flex-1 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             >
-              {/* DARK HERO SECTION matching ArticleDetailModal */}
-              <div className="px-5 sm:px-8 lg:px-10 pt-5 sm:pt-8 lg:pt-[60px] pb-0 lg:pb-[40px]">
+              {/* TOP HERO SHOWCASE CARD */}
+              <div className="px-5 sm:px-8 lg:px-12 pt-6 sm:pt-10 lg:pt-12 pb-0">
                 <div className="max-w-[1350px] mx-auto">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 rounded-[5px] overflow-hidden bg-[#1a1a1a]">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 rounded-2xl overflow-hidden bg-white border border-slate-200/90 shadow-2xs">
                     
-                    {/* Left: Project Hero Mockup Image */}
-                    <div className="relative w-full aspect-[4/3] sm:aspect-auto sm:min-h-[340px] lg:min-h-[440px] overflow-hidden bg-slate-900">
+                    {/* Left: Project Hero Mockup Image (5 Columns) */}
+                    <div className="lg:col-span-5 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto min-h-[280px] lg:min-h-[420px] overflow-hidden bg-slate-100">
                       <img
                         src={currentProject.outerImage}
                         alt={currentProject.title}
-                        className="w-full h-full object-cover brightness-90"
+                        className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-6">
-                        <div className="relative w-[80%] h-[75%] rounded-[4px] overflow-hidden border border-white/20 shadow-none">
-                          <img
-                            src={currentProject.innerImage}
-                            alt={`${currentProject.title} detail`}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </div>
                     </div>
 
-                    {/* Right: Title + Category/Year + Description */}
-                    <div className="flex flex-col justify-center gap-5 bg-[#1a1a1a] px-7 sm:px-10 lg:px-12 py-9 sm:py-10 lg:py-14">
+                    {/* Right: Title, Category, Year, Overview & Client (7 Columns) */}
+                    <div className="lg:col-span-7 flex flex-col justify-center gap-5 p-7 sm:p-10 lg:p-12 bg-white">
                       
+                      {/* Category & Year */}
+                      <div className="flex items-center gap-2.5">
+                        <span className="font-semibold text-xs text-[#1d4ed8] bg-blue-50 border border-blue-100 px-3 py-1 rounded-md">
+                          {currentProject.category}
+                        </span>
+                        <span className="text-slate-400 font-medium text-xs font-sans">
+                          {details.year}
+                        </span>
+                      </div>
+
                       {/* Title */}
-                      <h1 className="modal-hero-h1 text-white">
+                      <h1 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
                         {currentProject.title}
                       </h1>
 
-                      {/* Category ✳ Year */}
-                      <div className="flex items-center gap-2 text-sm sm:text-base font-medium text-white/60">
-                        <span className="font-bold text-white">{currentProject.category}</span>
-                        
-                        <span>{details.year}</span>
-                      </div>
-
                       {/* Description */}
-                      <p className="modal-hero-sub text-white/80">
+                      <p className="font-sans text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
                         {currentProject.description}
                       </p>
 
-                      {/* Client info badge */}
-                      <div className="flex items-center gap-3 pt-2">
-                        <div className="w-8 h-8 rounded-[4px] bg-[#0b1330] text-white flex items-center justify-center text-[#0b1330] font-bold text-xs shrink-0">
+                      {/* Client Info Pill */}
+                      <div className="flex items-center gap-3 pt-2 p-3 rounded-xl bg-[#f8fafc] border border-slate-200/80 max-w-md">
+                        <div className="w-9 h-9 rounded-lg bg-[#202B61] text-white flex items-center justify-center font-heading font-bold text-xs shrink-0 shadow-2xs">
                           {details.client.charAt(0)}
                         </div>
                         <div className="text-xs sm:text-sm">
-                          <p className="font-bold text-white">{details.client}</p>
-                          <p className="text-white/50">{details.services.join(" • ")}</p>
+                          <p className="font-bold text-[#202B61]">{details.client}</p>
+                          <p className="text-slate-500 font-sans text-xs">{details.services.join(" • ")}</p>
                         </div>
                       </div>
 
@@ -241,103 +235,95 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                 </div>
               </div>
 
-              {/* LIGHT CONTENT CONTAINER, matching site theme model */}
-              <div className="mt-8 lg:mt-12 bg-[#f4f6fb] text-[#070035] px-5 sm:px-8 lg:px-10 py-12 sm:py-16">
-                <div className="max-w-[1350px] mx-auto space-y-12">
+              {/* BODY CONTENT SECTIONS */}
+              <div className="px-5 sm:px-8 lg:px-12 py-8 sm:py-12">
+                <div className="max-w-[1350px] mx-auto space-y-8 sm:space-y-10">
                   
-                  {/* OVERVIEW & CHALLENGE GRID */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    <div className="space-y-4">
-                      <h3 className="modal-section-h2 text-[#070035]">
-                        Project Overview
-                      </h3>
-                      <p className="modal-body-p text-[#526a83]">
-                        {details.overview}
-                      </p>
+                  {/* OVERVIEW & CHALLENGE CARD */}
+                  <div className="bg-white rounded-2xl border border-slate-200/90 p-7 sm:p-10 lg:p-12 shadow-2xs space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                      <div className="space-y-3">
+                        <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
+                          Project Overview
+                        </h3>
+                        <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                          {details.overview}
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
+                          The Challenge
+                        </h3>
+                        <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                          {details.challenge}
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="space-y-4">
-                      <h3 className="modal-section-h2 text-[#070035]">
-                        The Challenge
+                    {/* ENGINEERING STRATEGY & SOLUTION */}
+                    <div className="space-y-3 pt-6 border-t border-slate-100">
+                      <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
+                        Engineering Strategy &amp; Solution
                       </h3>
-                      <p className="modal-body-p text-[#526a83]">
-                        {details.challenge}
+                      <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-4xl">
+                        {details.solution}
                       </p>
                     </div>
                   </div>
 
-                  {/* ENGINEERING & SOLUTION */}
-                  <div className="space-y-4 pt-6 border-t border-[#d8e5f0]">
-                    <h3 className="modal-section-h2 text-[#070035]">
-                      Engineering Strategy &amp; Solution
-                    </h3>
-                    <p className="modal-body-p text-[#526a83] max-w-4xl">
-                      {details.solution}
-                    </p>
+                  {/* IMPACT & RESULTS CARD */}
+                  <div className="bg-white rounded-2xl border border-slate-200/90 p-7 sm:p-10 lg:p-12 shadow-2xs space-y-8">
+                    <div>
+                      <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
+                        Key Business Impact
+                      </h3>
+                    </div>
+
+                    {/* Metrics Divider Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
+                      {details.impact.map((item, idx) => {
+                        const parts = item.match(/^([\$\+]?[\d\.\,\%\/\★]+[a-zA-Z\+]?)\s+(.*)$/);
+                        const stat = parts ? parts[1] : null;
+                        const label = parts ? parts[2] : item;
+
+                        return (
+                          <div
+                            key={idx}
+                            className={`flex flex-col md:px-8 first:md:pl-0 ${
+                              idx !== 0 ? "md:border-l md:border-slate-100" : ""
+                            }`}
+                          >
+                            {stat ? (
+                              <>
+                                <div className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-none mb-3">
+                                  {stat}
+                                </div>
+                                <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                  {label}
+                                </p>
+                              </>
+                            ) : (
+                              <p className="font-sans text-sm font-semibold text-[#202B61] leading-relaxed">
+                                {item}
+                              </p>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-{/* ═══════════════════════════════════════════════════════════════
-    ✨ IMPACT & RESULTS, White, Minimal, Skilled
-═══════════════════════════════════════════════════════════════ */}
-{/* ═══════════════════════════════════════════════════════════════
-    ✨ IMPACT & RESULTS, White, Minimal, Clean
-═══════════════════════════════════════════════════════════════ */}
-<div className="my-6 rounded-[5px] bg-white border border-[#e5ecf3]">
-  <div className="p-8 sm:p-10 lg:p-14">
-    {/* ─── Header ─── */}
-    <div className="mb-12 sm:mb-14">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0b1330] mb-4">
-        Impact &amp; Results
-      </p>
-      <h3 className="modal-section-h2 text-[#070035]">
-        Key Business Impact
-      </h3>
-    </div>
 
-    {/* ─── Metrics, Divider layout ─── */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0">
-      {details.impact.map((item, idx) => {
-        const parts = item.match(/^([\$\+]?[\d\.\,\%\/\★]+[a-zA-Z\+]?)\s+(.*)$/);
-        const stat = parts ? parts[1] : null;
-        const label = parts ? parts[2] : item;
-
-        return (
-          <div
-            key={idx}
-            className={`flex flex-col md:px-8 first:md:pl-0 ${
-              idx !== 0 ? "md:border-l md:border-[#0b1330]/10" : ""
-            }`}
-          >
-            {stat ? (
-              <>
-                <div className="font-heading text-5xl sm:text-6xl lg:text-[68px] font-bold text-[#0b1330] tracking-[-0.03em] leading-[0.95] mb-5">
-                  {stat}
-                </div>
-                <p className="text-sm text-[#526a83] leading-relaxed max-w-[240px]">
-                  {label}
-                </p>
-              </>
-            ) : (
-              <p className="text-sm font-medium text-[#0b1330] leading-relaxed">
-                {item}
-              </p>
-            )}
-          </div>
-        );
-      })}
-    </div>
-  </div>
-</div>
-
-                  {/* TECHNOLOGIES USED */}
-                  <div className="space-y-4 pt-2">
-                    <h4 className="text-xs font-extrabold uppercase tracking-widest text-[#526a83]">
+                  {/* TECH STACK CARD */}
+                  <div className="bg-white rounded-2xl border border-slate-200/90 p-7 sm:p-10 shadow-2xs space-y-4">
+                    <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-slate-500">
                       Tech Stack &amp; Architecture
                     </h4>
-                    <div className="flex flex-wrap gap-2.5">
+                    <div className="flex flex-wrap gap-2">
                       {details.techStack.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="bg-white text-[#0b1330] text-xs sm:text-sm font-bold px-4 py-2 rounded-[4px] border border-[#d8e5f0] shadow-2xs"
+                          className="bg-[#f8fafc] text-slate-700 text-xs sm:text-sm font-medium font-sans px-3.5 py-1.5 rounded-lg border border-slate-200/80 hover:border-[#202B61] transition-colors"
                         >
                           {tech}
                         </span>
@@ -347,13 +333,14 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
 
                   {/* NEXT PROJECT FOOTER BUTTON */}
                   {nextProject && (
-                    <div className="pt-10 border-t border-[#d8e5f0] flex justify-end">
+                    <div className="pt-6 flex justify-end">
                       <button
+                        type="button"
                         onClick={handleNextProject}
-                        className="group inline-flex items-center gap-3 bg-[#0b1330] text-[#0b1330] hover:bg-[#15234d] px-8 py-4 rounded-[4px] font-extrabold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 cursor-pointer shadow-md hover:shadow-xl hover:-translate-y-0.5"
+                        className="group inline-flex items-center gap-3 bg-[#202B61] hover:bg-[#1d4ed8] text-white px-7 py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg"
                       >
                         <span>Next Project: {nextProject.title}</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#0b1330]" />
+                        <ArrowRight className="w-4 h-4 text-[white] group-hover:translate-x-1 transition-transform" />
                       </button>
                     </div>
                   )}

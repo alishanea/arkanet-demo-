@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${plusJakartaSans.variable}`}>
-      <body className="font-sans min-h-screen flex flex-col antialiased">
+      <body className={`${plusJakartaSans.className} font-sans min-h-screen flex flex-col antialiased`}>
         <Header />
         <PageTransition>{children}</PageTransition>
       </body>

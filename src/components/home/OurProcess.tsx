@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -101,7 +101,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
     >
       <motion.div
         style={{ scale: cardScale }}
-        className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-6 lg:gap-10 xl:gap-12 items-center rounded-[5px] bg-white text-[#0b1330] p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-sm origin-top"
+        className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-6 lg:gap-10 xl:gap-12 items-center rounded-[5px] bg-white text-[#202B61] p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-sm origin-top"
       >
         {/* Left Column */}
         <motion.div
@@ -173,7 +173,7 @@ export const OurProcess: React.FC<OurProcessProps> = () => {
   return (
     <section
       id="our-process"
-      className="relative w-full bg-[#f4f6fb] text-[#0b1330] py-12 sm:py-16 lg:py-20 px-6 sm:px-8 lg:px-[40px] select-none"
+      className="relative w-full bg-[#f4f6fb] text-[#202B61] py-12 sm:py-16 lg:py-20 px-6 sm:px-8 lg:px-[40px] select-none"
     >
       <div className="w-full space-y-8 sm:space-y-16">
         {/* Section Heading - Standardized to Brand Typography */}

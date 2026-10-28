@@ -151,7 +151,7 @@ export const ArkanetBentoShowcase: React.FC<ArkanetBentoShowcaseProps> = () => {
               What We Build
             </h2>
           </Link>
-          <p className="hero-sub max-w-2xl text-[#0b1330]/80 text-sm sm:text-base">
+          <p className="hero-sub max-w-2xl text-[#202B61]/80 text-sm sm:text-base">
             Digital products designed to grow your business, engage your users,
             and scale with your vision.
           </p>

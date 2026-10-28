@@ -60,7 +60,7 @@ export function AboutWhoWeAre() {
           <div className="lg:col-span-5 space-y-4">
             
 
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#0b1330] tracking-tight leading-[1.15]">
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-[1.15]">
               Engineering digital infrastructure that endures
             </h2>
           </div>
@@ -72,7 +72,7 @@ export function AboutWhoWeAre() {
             <p>
               We operate across 6 specialized practices — custom web platforms, native mobile applications, applied artificial intelligence, cloud architecture, UI/UX systems, and business process automation. By unifying strategic advisory in Dubai with deep technical craftsmanship in India, we deliver software built around your exact commercial realities.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm font-semibold text-[#0b1330]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm font-semibold text-[#202B61]">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>End-to-end technical accountability</span>
@@ -109,10 +109,10 @@ export function AboutWhoWeAre() {
               className="bg-[#f8fafc] rounded-[5px] p-6 sm:p-8 border border-slate-200/90 shadow-none flex flex-col justify-between text-left space-y-3"
             >
               <div>
-                <div className="font-heading font-extrabold text-4xl sm:text-5xl text-[#0b1330] tracking-tight mb-2">
+                <div className="font-heading font-extrabold text-4xl sm:text-5xl text-[#202B61] tracking-tight mb-2">
                   {stat.number}
                 </div>
-                <h3 className="font-heading font-bold text-base text-[#0b1330] leading-snug">
+                <h3 className="font-heading font-bold text-base text-[#202B61] leading-snug">
                   {stat.label}
                 </h3>
               </div>
@@ -126,7 +126,7 @@ export function AboutWhoWeAre() {
         {/* 4 Operating Pillars */}
         <div className="space-y-8 pt-4 border-t border-slate-100">
           <div className="max-w-3xl space-y-3 text-left">
-            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#0b1330] tracking-tight">
+            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight">
               Our Core Operating Principles
             </h3>
             <p className="font-sans text-base text-slate-600 leading-relaxed font-normal">
@@ -142,10 +142,10 @@ export function AboutWhoWeAre() {
                   key={idx}
                   className="rounded-[5px] p-7 sm:p-8 border border-slate-200/90 bg-[#f8fafc] space-y-3.5 text-left shadow-none"
                 >
-                  <div className="w-10 h-10 rounded-[4px] bg-[#0b1330] text-white flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-[4px] bg-[#202B61] text-white flex items-center justify-center">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h4 className="font-heading font-bold text-lg sm:text-xl text-[#0b1330]">
+                  <h4 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
                     {pillar.title}
                   </h4>
                   <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal">

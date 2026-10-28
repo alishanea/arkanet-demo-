@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Volume2, VolumeX, Sparkles, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Volume2, VolumeX, ArrowRight, ArrowUpRight } from "lucide-react";
 
 interface ArkanetProjectCard {
   id: string;
@@ -33,7 +33,7 @@ const ARKANET_PROJECTS: ArkanetProjectCard[] = [
     ctaText: "Our Process",
     videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-code-animation-on-a-computer-screen-41544-large.mp4",
     poster: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-    bgGradient: "from-[#1b2545] to-[#0b1330]",
+    bgGradient: "from-[#1b2545] to-[#202B61]",
   },
   {
     id: "sussex-taps",
@@ -49,7 +49,7 @@ const ARKANET_PROJECTS: ArkanetProjectCard[] = [
     ctaText: "Explore Collection",
     videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-circuit-board-loop-animation-41545-large.mp4",
     poster: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop",
-    bgGradient: "from-[#241a3a] to-[#0b1330]",
+    bgGradient: "from-[#241a3a] to-[#202B61]",
   },
   {
     id: "chaleit",
@@ -65,7 +65,7 @@ const ARKANET_PROJECTS: ArkanetProjectCard[] = [
     ctaText: "Discover Retreat",
     videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-41546-large.mp4",
     poster: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop",
-    bgGradient: "from-[#1e3448] to-[#0b1330]",
+    bgGradient: "from-[#1e3448] to-[#202B61]",
   },
   {
     id: "exposing-surveillance",
@@ -81,7 +81,7 @@ const ARKANET_PROJECTS: ArkanetProjectCard[] = [
     ctaText: "Explore Data Map",
     videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-smartphone-with-green-screen-41547-large.mp4",
     poster: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-    bgGradient: "from-[#2b2545] to-[#0b1330]",
+    bgGradient: "from-[#2b2545] to-[#202B61]",
   },
 ];
 
@@ -189,22 +189,21 @@ export const HorizontalVideoGallery: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#0b1330] text-white overflow-hidden select-none"
+      className="relative w-full bg-[#202B61] text-white overflow-hidden select-none font-sans"
       id="horizontal-video-gallery"
     >
       {/* Top Header Overlay Bar */}
       <div className="absolute top-8 left-6 sm:left-10 right-6 sm:right-10 z-30 flex items-center justify-between pointer-events-auto">
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-xs font-mono font-bold uppercase tracking-widest text-[#38bdf8]">
-          
+        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#202B61]/80 backdrop-blur-md border border-white/20 text-xs font-sans font-bold uppercase tracking-widest text-white shadow-sm">
           <span>GREAT WORK FOR GREAT PEOPLE • [{activeCardIndex + 1} / {ARKANET_PROJECTS.length}]</span>
         </div>
 
         <button
           onClick={toggleMute}
-          className="p-3 rounded-full bg-black/60 hover:bg-black/80 border border-white/20 backdrop-blur-md transition-all text-white"
+          className="p-3 rounded-full bg-black/50 hover:bg-black/70 border border-white/20 backdrop-blur-md transition-all text-white cursor-pointer"
           aria-label={isMuted ? "Unmute videos" : "Mute videos"}
         >
-          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-[#38bdf8]" />}
+          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-white" />}
         </button>
       </div>
 
@@ -242,22 +241,22 @@ export const HorizontalVideoGallery: React.FC = () => {
                 </video>
 
                 {/* Dark Vignette Overlay */}
-                <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+                <div className="absolute inset-0 bg-[#202B61]/40 pointer-events-none" />
 
-                {/* Signature White Floating Mockup Card (Matches Image 1 screenshot) */}
-                <div className="relative z-20 w-full max-w-4xl bg-[#f4f2eb] text-[#1a1a1a] rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-10 flex flex-col justify-between border border-white/40">
+                {/* Signature Brand White Card */}
+                <div className="relative z-20 w-full max-w-4xl bg-white text-[#202B61] rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-10 flex flex-col justify-between border border-slate-200/90 font-sans">
                   
                   {/* Top Bar of Floating Card */}
-                  <div className="flex items-center justify-between pb-6 border-b border-black/10 text-xs font-mono font-bold tracking-widest text-[#1a1a1a]">
+                  <div className="flex items-center justify-between pb-6 border-b border-slate-200 text-xs font-sans font-bold tracking-widest text-[#202B61]">
                     <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-sm bg-[#1a1a1a]" />
-                      <span>MENU</span>
+                      <div className="w-2.5 h-2.5 rounded-sm bg-[#202B61]" />
+                      <span>FEATURED CASE</span>
                     </div>
-                    <span className="font-display font-black text-xl sm:text-2xl tracking-tighter uppercase text-[#1a1a1a]">
+                    <span className="font-heading font-black text-xl sm:text-2xl tracking-tight uppercase text-[#202B61]">
                       {project.title}
                     </span>
-                    <div className="flex items-center gap-1">
-                      <span>◀ CONTACT</span>
+                    <div className="flex items-center gap-1 text-slate-500">
+                      <span>ARKANET</span>
                     </div>
                   </div>
 
@@ -266,10 +265,10 @@ export const HorizontalVideoGallery: React.FC = () => {
                     
                     {/* Left Column: Headline & Specifications */}
                     <div className="md:col-span-6 space-y-4 text-left">
-                      <h3 className="font-serif font-normal text-3xl sm:text-4xl text-[#1a1a1a] tracking-tight leading-tight">
+                      <h3 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-tight">
                         {project.headline}
                       </h3>
-                      <p className="text-xs sm:text-sm text-[#1a1a1a]/75 leading-relaxed font-sans">
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans font-normal">
                         {project.description}
                       </p>
 
@@ -277,10 +276,10 @@ export const HorizontalVideoGallery: React.FC = () => {
                       <div className="space-y-3 pt-2">
                         {project.features.map((feat, fIdx) => (
                           <div key={fIdx} className="flex items-start gap-2.5 text-xs text-left">
-                            <span className="w-2.5 h-2.5 rounded-xs bg-[#3b82f6] shrink-0 mt-1" />
+                            <span className="w-2.5 h-2.5 rounded-xs bg-[#1d4ed8] shrink-0 mt-1" />
                             <div>
-                              <span className="font-bold text-[#1a1a1a] block">{feat.label}</span>
-                              <span className="text-[#1a1a1a]/70 font-sans">{feat.detail}</span>
+                              <span className="font-heading font-bold text-[#202B61] block">{feat.label}</span>
+                              <span className="text-slate-600 font-sans">{feat.detail}</span>
                             </div>
                           </div>
                         ))}
@@ -288,7 +287,7 @@ export const HorizontalVideoGallery: React.FC = () => {
 
                       {/* Action Pill Button */}
                       <div className="pt-3">
-                        <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#e8e4d8] hover:bg-[#1a1a1a] text-[#1a1a1a] hover:text-white border border-black/10 text-xs font-sans font-semibold transition-colors duration-300 shadow-sm">
+                        <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#202B61] hover:bg-[#1d4ed8] text-white text-xs font-sans font-bold transition-colors duration-200 shadow-sm cursor-pointer">
                           <span>{project.ctaText}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
@@ -297,15 +296,15 @@ export const HorizontalVideoGallery: React.FC = () => {
 
                     {/* Right Column: High-Def Interior UI Media Box */}
                     <div className="md:col-span-6">
-                      <div className="relative aspect-4/3 rounded-xl overflow-hidden shadow-lg border border-black/10 group">
+                      <div className="relative aspect-4/3 rounded-xl overflow-hidden shadow-lg border border-slate-200/90 group bg-slate-100">
                         <img
                           src={project.poster}
                           alt={project.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute bottom-3 right-3 bg-black/75 backdrop-blur-md text-white text-[10px] font-mono px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                          <span>HIGH-RES SHOWCASE</span>
-                          <ArrowUpRight className="w-3 h-3 text-[#38bdf8]" />
+                        <div className="absolute bottom-3 right-3 bg-[#202B61]/85 backdrop-blur-md text-white text-[10px] font-sans font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                          <span>SHOWCASE</span>
+                          <ArrowUpRight className="w-3 h-3 text-[#1d4ed8]" />
                         </div>
                       </div>
                     </div>
@@ -314,9 +313,9 @@ export const HorizontalVideoGallery: React.FC = () => {
 
                 </div>
 
-                {/* Signature Cyan Badge Pill in Bottom-Left Corner */}
+                {/* Signature Brand Badge Pill in Bottom-Left Corner */}
                 <div className="absolute bottom-8 left-8 z-30 pointer-events-auto">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#38bdf8] text-[#0b1330] font-mono font-black text-xs uppercase tracking-wider shadow-lg">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#202B61] text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg border border-white/20">
                     <span>{project.badgeLabel}</span>
                   </div>
                 </div>

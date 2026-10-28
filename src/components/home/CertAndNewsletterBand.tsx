@@ -27,13 +27,13 @@ export const CertAndNewsletterBand: React.FC = () => {
               ISO Certified Standards
             </h3>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="bg-white border border-borderline px-3.5 py-2 rounded-lg font-mono font-bold text-xs text-navy shadow-2xs">
+              <span className="bg-white border border-borderline px-3.5 py-2 rounded-lg font-sans font-bold text-xs text-navy shadow-2xs">
                 ISO 9001:2015
               </span>
-              <span className="bg-white border border-borderline px-3.5 py-2 rounded-lg font-mono font-bold text-xs text-navy shadow-2xs">
+              <span className="bg-white border border-borderline px-3.5 py-2 rounded-lg font-sans font-bold text-xs text-navy shadow-2xs">
                 IAF ACCREDITED
               </span>
-              <span className="bg-white border border-borderline px-3.5 py-2 rounded-lg font-mono font-bold text-xs text-navy shadow-2xs">
+              <span className="bg-white border border-borderline px-3.5 py-2 rounded-lg font-sans font-bold text-xs text-navy shadow-2xs">
                 EGAC CERTIFIED
               </span>
             </div>

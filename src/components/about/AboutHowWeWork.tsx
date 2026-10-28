@@ -49,11 +49,11 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
       <div className="w-full space-y-8 sm:space-y-12">
         {/* Section Heading & Sub-Content */}
         <div className="w-full text-left space-y-4">
-          <h2 className="section-h2">
+          <h2 className="section-h2 text-[#202B61]">
             How We Work
           </h2>
 
-          <p className="hero-sub text-[#0b1330]/80 max-w-5xl pt-1">
+          <p className="hero-sub text-slate-600 max-w-5xl pt-1">
             We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
           </p>
         </div>
@@ -61,7 +61,6 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
         {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {STEPS.map((step, idx) => {
-            const Icon = step.icon;
             return (
               <motion.div
                 key={step.title}
@@ -73,33 +72,33 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
                   delay: idx * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.06)] hover:shadow-[0_20px_40px_-8px_rgba(7,0,53,0.14)] hover:-translate-y-1 transition-all duration-300 border border-slate-200/80 flex flex-col justify-between"
+                className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-slate-200/80 flex flex-col justify-between"
               >
                 <div className="space-y-4">
-                  {/* Top row: step number + icon */}
+                  {/* Top row: step number */}
                   <div className="flex items-center justify-between">
-                    <span className="font-display text-2xl sm:text-3xl font-black text-[#070035]/20 select-none">
+                    <span className="font-heading text-2xl sm:text-3xl font-black text-[#202B61]/25 select-none">
                       {step.step}
                     </span>
-                    </div>
+                  </div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold font-display text-[#070035] tracking-tight group-hover:text-[#3b82f6] transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#202B61] tracking-tight group-hover:text-[#1d4ed8] transition-colors duration-300">
                     {step.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-[#526a83] font-normal leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 font-sans font-normal leading-relaxed">
                     {step.description}
                   </p>
                 </div>
 
                 {/* Key Deliverable Footer */}
                 <div className="pt-4 mt-6 border-t border-slate-100">
-                  <p className="text-[10px] font-extrabold uppercase tracking-wider text-[#3b82f6] mb-1">
+                  <p className="text-[10px] font-heading font-extrabold uppercase tracking-wider text-[#1d4ed8] mb-1">
                     Key Outcome
                   </p>
-                  <p className="text-xs font-semibold text-[#070035] leading-snug">
+                  <p className="text-xs font-heading font-semibold text-[#202B61] leading-snug">
                     {step.deliverable}
                   </p>
                 </div>
@@ -113,10 +112,10 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
           <div className="pt-2 flex items-center">
             <button
               onClick={onOpenBooking}
-              className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-[#0b1330] transition-colors cursor-pointer"
+              className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#202B61] transition-colors cursor-pointer"
             >
               <span>Book a Free Consultation</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#0b1330]" />
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#202B61]" />
             </button>
           </div>
         )}

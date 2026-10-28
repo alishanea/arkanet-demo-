@@ -112,7 +112,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
  : FEATURED_PROJECTS.filter((p) => p.category === selectedCategory);
 
  return (
- <section id="featured-work" className="w-full bg-[#f4f6fb] text-[#0b1330] border-t border-slate-200/80">
+ <section id="featured-work" className="w-full bg-[#f4f6fb] text-[#202B61] border-t border-slate-200/80">
  <div className="w-full max-w-[1400px] xl:max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 pt-16 sm:pt-24 pb-12 sm:pb-16">
  
  {/* Section Header */}
@@ -138,8 +138,8 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
  onClick={() => setSelectedCategory(cat)}
  className={`px-3.5 py-1.5 rounded-[4px] text-xs font-semibold font-sans transition-all cursor-pointer ${
  isSelected
- ? "bg-[#0b1330] text-white "
- : "bg-white text-slate-600 border border-slate-200/90 hover:border-slate-300 hover:text-[#0b1330]"
+ ? "bg-[#202B61] text-white "
+ : "bg-white text-slate-600 border border-slate-200/90 hover:border-slate-300 hover:text-[#202B61]"
  }`}
  >
  {cat}

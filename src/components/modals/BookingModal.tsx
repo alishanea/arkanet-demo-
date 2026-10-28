@@ -39,15 +39,15 @@ function MagneticCloseButton({ onClick }: { onClick: () => void }) {
       onMouseLeave={handleMouseLeave}
       style={{ x: springX, y: springY }}
       whileTap={{ scale: 0.88 }}
-      className="group absolute top-6 right-6 sm:top-8 sm:right-8 z-30 w-11 h-11 rounded-full bg-slate-100 hover:bg-[#0b1330] flex items-center justify-center cursor-pointer transition-colors duration-300 overflow-hidden shrink-0 shadow-md"
+      className="group absolute top-5 right-5 sm:top-7 sm:right-7 z-30 w-10 h-10 rounded-xl bg-slate-100 hover:bg-[#202B61] flex items-center justify-center cursor-pointer transition-colors duration-200 overflow-hidden shrink-0 shadow-md border border-slate-200/90"
       aria-label="Close booking modal"
     >
       <motion.div
         animate={{ rotate: isHovered ? 90 : 0 }}
         transition={{ type: "spring", stiffness: 260, damping: 18 }}
-        className="text-[#0b1330] group-hover:text-white transition-colors duration-300"
+        className="text-[#202B61] group-hover:text-white transition-colors duration-200"
       >
-        <X className="w-[18px] h-[18px]" strokeWidth={2.5} />
+        <X className="w-4 h-4" strokeWidth={2.5} />
       </motion.div>
     </motion.button>
   );
@@ -91,15 +91,15 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col justify-end">
+        <div className="fixed inset-0 z-50 flex flex-col justify-end font-sans">
           {/* Backdrop Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 cursor-pointer"
+            className="fixed inset-0 bg-[#202B61]/40 backdrop-blur-xs z-40 cursor-pointer"
           />
 
           {/* Slide-Up Panel Shell */}
@@ -108,13 +108,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             animate={{ y: "0%" }}
             exit={{ y: "100%" }}
             transition={{
-              duration: 0.5,
+              duration: 0.45,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className={`fixed bottom-0 z-50 bg-white text-[#0b1330] border-t border-slate-200 shadow-none flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`fixed bottom-0 z-50 bg-white text-[#202B61] border-t border-slate-200 shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled
                 ? "inset-x-0 top-0 rounded-t-none"
-                : "inset-x-0 sm:inset-x-8 xl:inset-x-[40px] top-[80px] sm:top-[140px] lg:top-[180px] rounded-t-[5px]"
+                : "inset-x-0 sm:inset-x-6 xl:inset-x-[36px] top-[70px] sm:top-[100px] lg:top-[120px] rounded-t-2xl sm:rounded-t-3xl"
             }`}
           >
             {/* Close (X) Button */}
@@ -128,16 +128,16 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
               <div className="max-w-2xl mx-auto text-left space-y-6">
                 {!submitted ? (
                   <div>
-                    <h3 className="font-display font-extrabold text-3xl sm:text-5xl text-[#0b1330] mb-3 tracking-tight">
+                    <h3 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] mb-3 tracking-tight">
                       Book a Free Scope Call
                     </h3>
-                    <p className="text-base sm:text-lg text-slate-600 mb-8 font-medium">
+                    <p className="font-sans text-base sm:text-lg text-slate-600 mb-8 font-medium">
                       Select a time for a 15-minute technical discovery call with our engineering team.
                     </p>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div>
-                        <label className="block text-xs font-extrabold text-[#0b1330] uppercase tracking-wider mb-2">
+                        <label className="block text-xs font-heading font-extrabold text-[#202B61] uppercase tracking-wider mb-2">
                           Full Name
                         </label>
                         <input
@@ -146,12 +146,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                           placeholder="e.g. Sarah Jenkins"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#38bdf8] rounded-[4px] text-base outline-none bg-slate-50 transition-colors"
+                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#202B61] rounded-xl text-sm outline-none bg-slate-50 transition-colors"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-extrabold text-[#0b1330] uppercase tracking-wider mb-2">
+                        <label className="block text-xs font-heading font-extrabold text-[#202B61] uppercase tracking-wider mb-2">
                           Work Email
                         </label>
                         <input
@@ -160,12 +160,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                           placeholder="sarah@company.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#38bdf8] rounded-[4px] text-base outline-none bg-slate-50 transition-colors"
+                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#202B61] rounded-xl text-sm outline-none bg-slate-50 transition-colors"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-extrabold text-[#0b1330] uppercase tracking-wider mb-2">
+                        <label className="block text-xs font-heading font-extrabold text-[#202B61] uppercase tracking-wider mb-2">
                           Project Summary
                         </label>
                         <textarea
@@ -173,13 +173,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                           placeholder="Tell us briefly what you're looking to build..."
                           value={formData.brief}
                           onChange={(e) => setFormData({ ...formData, brief: e.target.value })}
-                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#38bdf8] rounded-[4px] text-base outline-none bg-slate-50 transition-colors"
+                          className="w-full px-5 py-3.5 border-2 border-slate-200 focus:border-[#202B61] rounded-xl text-sm outline-none bg-slate-50 transition-colors resize-none"
                         />
                       </div>
 
                       <button
                         type="submit"
-                        className="w-full bg-[#0b1330] hover:bg-[#15234d] text-[#38bdf8] font-extrabold text-base sm:text-lg py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-xl cursor-pointer"
+                        className="w-full bg-[#202B61] hover:bg-[#1d4ed8] text-white font-heading font-bold text-base py-4 px-8 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
                       >
                         Submit Request
                       </button>
@@ -187,16 +187,16 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   </div>
                 ) : (
                   <div className="text-center py-12 space-y-4">
-                    <CheckCircle2 className="w-16 h-16 text-[#38bdf8] mx-auto mb-2" />
-                    <h4 className="font-display font-bold text-2xl sm:text-3xl text-[#0b1330]">
+                    <CheckCircle2 className="w-16 h-16 text-emerald-600 mx-auto mb-2" />
+                    <h4 className="font-heading font-bold text-2xl sm:text-3xl text-[#202B61]">
                       Request Received!
                     </h4>
-                    <p className="text-base text-slate-600 max-w-md mx-auto">
+                    <p className="font-sans text-base text-slate-600 max-w-md mx-auto">
                       We will review your brief and follow up via email within 2 business hours.
                     </p>
                     <button
                       onClick={onClose}
-                      className="mt-6 bg-[#0b1330] text-[#38bdf8] font-bold py-3 px-8 rounded-full cursor-pointer"
+                      className="mt-6 bg-[#202B61] hover:bg-[#1d4ed8] text-white font-heading font-bold py-3 px-8 rounded-xl cursor-pointer transition-colors"
                     >
                       Close
                     </button>

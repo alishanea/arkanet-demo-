@@ -47,7 +47,7 @@ const MagneticCloseButton: React.FC<{ onClick: () => void }> = ({ onClick }) => 
       onMouseLeave={handleMouseLeave}
       style={{ x: springX, y: springY }}
       whileTap={{ scale: 0.88 }}
-      className="group absolute top-4 right-4 sm:top-8 sm:right-8 z-30 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-slate-100 hover:bg-[#0b1330] flex items-center justify-center cursor-pointer transition-colors duration-300 overflow-hidden shrink-0 shadow-md"
+      className="group absolute top-4 right-4 sm:top-8 sm:right-8 z-30 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-slate-100 hover:bg-[#202B61] flex items-center justify-center cursor-pointer transition-colors duration-300 overflow-hidden shrink-0 shadow-md"
       aria-label="Close modal"
     >
       <motion.div
@@ -87,7 +87,7 @@ const FloatingLabelField: React.FC<{
           animate={{
             y: isFloating ? 0 : 20,
             scale: isFloating ? 0.85 : 1,
-            color: focused ? "#4A6FCF" : isFloating ? "#0b1330" : "#94a3b8",
+            color: focused ? "#202B61" : isFloating ? "#202B61" : "#94a3b8",
             fontWeight: isFloating ? 700 : 500,
           }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
@@ -107,7 +107,7 @@ const FloatingLabelField: React.FC<{
             onChange={(e) => onChange(e.target.value)}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
-            className="peer w-full bg-transparent text-base sm:text-lg text-[#0b1330] focus:outline-none font-medium pt-1 pb-1 caret-[#4A6FCF] resize-none"
+            className="peer w-full bg-transparent text-base sm:text-lg text-[#202B61] focus:outline-none font-medium pt-1 pb-1 caret-[#202B61] resize-none"
           />
         ) : (
           <input
@@ -117,7 +117,7 @@ const FloatingLabelField: React.FC<{
             onChange={(e) => onChange(e.target.value)}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
-            className="peer w-full bg-transparent text-base sm:text-lg text-[#0b1330] focus:outline-none font-medium pt-1 pb-1 caret-[#4A6FCF]"
+            className="peer w-full bg-transparent text-base sm:text-lg text-[#202B61] focus:outline-none font-medium pt-1 pb-1 caret-[#202B61]"
           />
         )}
 
@@ -131,7 +131,7 @@ const FloatingLabelField: React.FC<{
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           style={{
             transformOrigin: "left",
-            background: "linear-gradient(90deg, #4A6FCF 0%, #6b8dd6 100%)",
+            background: "linear-gradient(90deg, #202B61 0%, #1d4ed8 100%)",
           }}
           className="absolute left-0 right-0 bottom-0 h-[2px] rounded-full"
         />
@@ -144,7 +144,7 @@ const FloatingLabelField: React.FC<{
               animate={{ opacity: 1, scale: 1, x: 0 }}
               exit={{ opacity: 0, scale: 0 }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute right-0 bottom-[-3px] w-2 h-2 rounded-full bg-[#4A6FCF]"
+              className="absolute right-0 bottom-[-3px] w-2 h-2 rounded-full bg-[#202B61]"
               style={{ boxShadow: "0 0 10px rgba(74, 111, 207, 0.7)" }}
             />
           )}
@@ -182,8 +182,8 @@ const ChipToggle: React.FC<{
     transition={{ type: "spring", stiffness: 400, damping: 17 }}
     className={`relative overflow-hidden px-4 py-2 rounded-full text-sm font-semibold border transition-colors duration-300 cursor-pointer select-none ${
       active
-        ? "border-[#4A6FCF] bg-[#4A6FCF] text-white"
-        : "border-slate-200 bg-white text-slate-700 hover:border-slate-400 hover:text-[#0b1330]"
+        ? "border-[#202B61] bg-[#202B61] text-white"
+        : "border-slate-200 bg-white text-slate-700 hover:border-slate-400 hover:text-[#202B61]"
     }`}
   >
     <span className="relative z-10 flex items-center gap-1.5">
@@ -216,7 +216,7 @@ const SubmitButton: React.FC<{ submitting: boolean }> = ({ submitting }) => (
     whileHover={!submitting ? { scale: 1.03, y: -1 } : {}}
     whileTap={!submitting ? { scale: 0.97 } : {}}
     transition={{ type: "spring", stiffness: 400, damping: 22 }}
-    className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-80 bg-[#0b1330] hover:bg-[#151c3a] text-white font-semibold text-sm px-8 py-3.5 min-w-[180px] transition-colors duration-300"
+    className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-80 bg-[#202B61] hover:bg-[#1d4ed8] text-white font-semibold text-sm px-8 py-3.5 min-w-[180px] transition-colors duration-300"
   >
     <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[900ms] ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12" />
     <span className="relative z-10 flex items-center gap-2">
@@ -264,7 +264,7 @@ const DoneButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
     transition={{ delay: 0.35, type: "spring", stiffness: 260, damping: 20 }}
     whileHover={{ scale: 1.04 }}
     whileTap={{ scale: 0.96 }}
-    className="group inline-flex items-center gap-2 bg-[#0b1330] hover:bg-[#151c3a] text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-colors cursor-pointer"
+    className="group inline-flex items-center gap-2 bg-[#202B61] hover:bg-[#1d4ed8] text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-colors cursor-pointer"
   >
     Done
     <ArrowRight
@@ -298,7 +298,7 @@ const FloatingLabelTextarea: React.FC<{
           animate={{
             y: isFloating ? 0 : 20,
             scale: isFloating ? 0.85 : 1,
-            color: focused ? "#4A6FCF" : isFloating ? "#0b1330" : "#94a3b8",
+            color: focused ? "#202B61" : isFloating ? "#202B61" : "#94a3b8",
             fontWeight: isFloating ? 700 : 500,
           }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
@@ -317,7 +317,7 @@ const FloatingLabelTextarea: React.FC<{
           onChange={(e) => onChange(e.target.value)}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className="peer w-full bg-transparent text-base sm:text-lg text-[#0b1330] focus:outline-none font-medium pt-1 pb-1 caret-[#4A6FCF] resize-none"
+          className="peer w-full bg-transparent text-base sm:text-lg text-[#202B61] focus:outline-none font-medium pt-1 pb-1 caret-[#202B61] resize-none"
         />
 
         {/* Base underline */}
@@ -330,7 +330,7 @@ const FloatingLabelTextarea: React.FC<{
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           style={{
             transformOrigin: "left",
-            background: "linear-gradient(90deg, #4A6FCF 0%, #6b8dd6 100%)",
+            background: "linear-gradient(90deg, #202B61 0%, #1d4ed8 100%)",
           }}
           className="absolute left-0 right-0 bottom-0 h-[2px] rounded-full"
         />
@@ -343,7 +343,7 @@ const FloatingLabelTextarea: React.FC<{
               animate={{ opacity: 1, scale: 1, x: 0 }}
               exit={{ opacity: 0, scale: 0 }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute right-0 bottom-[-3px] w-2 h-2 rounded-full bg-[#4A6FCF]"
+              className="absolute right-0 bottom-[-3px] w-2 h-2 rounded-full bg-[#202B61]"
               style={{ boxShadow: "0 0 10px rgba(74, 111, 207, 0.7)" }}
             />
           )}
@@ -463,7 +463,7 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
             animate={{ y: "0%" }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className={`fixed bottom-0 z-50 bg-white text-[#0b1330] border-t border-slate-200 shadow-none flex flex-col overflow-hidden font-sans transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`fixed bottom-0 z-50 bg-white text-[#202B61] border-t border-slate-200 shadow-none flex flex-col overflow-hidden font-sans transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled
                 ? "inset-x-0 top-0 rounded-t-none"
                 : "inset-x-0 sm:inset-x-6 xl:inset-x-[32px] top-[30px] sm:top-[60px] lg:top-[80px] rounded-t-[5px]"
@@ -483,11 +483,11 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
                   >
                     {/* ── Headline ── */}
                     <div className="space-y-3 mb-8 sm:mb-14">
-                      <h1 className="hero-h1 font-extrabold text-3xl sm:text-6xl lg:text-[104px] leading-[1.05] sm:leading-[0.98] tracking-tight text-left text-[#0b1330]">
+                      <h1 className="hero-h1 font-extrabold text-3xl sm:text-6xl lg:text-[104px] leading-[1.05] sm:leading-[0.98] tracking-tight text-left text-[#202B61]">
                         Let&apos;s get started.
                       </h1>
                       <div className="pt-2 sm:pt-4 space-y-1 text-sm sm:text-xl">
-                        <p className="font-bold text-[#0b1330]">
+                        <p className="font-bold text-[#202B61]">
                           Tell us about your project. We&apos;ll respond within 24 hours.
                         </p>
                         <p className="text-slate-400 font-medium">
@@ -498,7 +498,7 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
 
                     {/* ── Section 1: Tell us about yourself ── */}
                     <div className="space-y-4 sm:space-y-6">
-                      <p className="text-lg sm:text-2xl font-bold text-[#0b1330]">
+                      <p className="text-lg sm:text-2xl font-bold text-[#202B61]">
                         Tell us about yourself
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-14">
@@ -523,7 +523,7 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
 
                     {/* ── Section 2: How shall we contact you? ── */}
                     <div className="space-y-4 sm:space-y-6 pt-3 sm:pt-6">
-                      <p className="text-lg sm:text-2xl font-bold text-[#0b1330]">
+                      <p className="text-lg sm:text-2xl font-bold text-[#202B61]">
                         How shall we contact you?
                         <span className="text-red-500 ml-1">*</span>
                       </p>
@@ -550,7 +550,7 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
 
                     {/* ── Section 3: Type of project ── */}
                     <div className="space-y-3 pt-3 sm:pt-6">
-                      <label className="block text-lg sm:text-2xl font-bold text-[#0b1330]">
+                      <label className="block text-lg sm:text-2xl font-bold text-[#202B61]">
                         Type of project
                       </label>
                       <p className="text-xs sm:text-base text-slate-400 font-medium">
@@ -570,7 +570,7 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
 
                     {/* ── Section 4: Tell us about the project ── */}
                     <div className="space-y-3 pt-3 sm:pt-6">
-                      <label className="block text-lg sm:text-2xl font-bold text-[#0b1330]">
+                      <label className="block text-lg sm:text-2xl font-bold text-[#202B61]">
                         Tell us about the project
                       </label>
                       <FloatingLabelTextarea
@@ -600,7 +600,7 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
                         damping: 14,
                         delay: 0.1,
                       }}
-                      className="w-20 h-20 rounded-full bg-[#4A6FCF]/10 border-2 border-[#4A6FCF] flex items-center justify-center mx-auto text-[#4A6FCF]"
+                      className="w-20 h-20 rounded-full bg-[#202B61]/10 border-2 border-[#202B61] flex items-center justify-center mx-auto text-[#202B61]"
                     >
                       <CheckCircle2 className="w-12 h-12" strokeWidth={2} />
                     </motion.div>
@@ -609,7 +609,7 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.22 }}
-                      className="font-extrabold text-3xl sm:text-4xl text-[#0b1330]"
+                      className="font-extrabold text-3xl sm:text-4xl text-[#202B61]"
                     >
                       Thank you!
                     </motion.h3>

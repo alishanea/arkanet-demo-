@@ -40,7 +40,7 @@ function MagneticCloseButton({ onClick }: { onClick: () => void }) {
       onMouseLeave={handleMouseLeave}
       style={{ x: springX, y: springY }}
       whileTap={{ scale: 0.88 }}
-      className="group absolute top-4 right-4 z-30 w-9 h-9 rounded-full bg-slate-100 hover:bg-[#0b1330] flex items-center justify-center cursor-pointer transition-colors duration-300 overflow-hidden shrink-0 shadow-sm"
+      className="group absolute top-4 right-4 z-30 w-9 h-9 rounded-full bg-slate-100 hover:bg-[#202B61] flex items-center justify-center cursor-pointer transition-colors duration-300 overflow-hidden shrink-0 shadow-sm"
       aria-label="Close search"
     >
       <motion.div

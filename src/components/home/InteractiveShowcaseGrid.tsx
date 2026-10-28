@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -50,7 +50,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  >
  <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center gap-10 sm:gap-14">
  
- {/* ── 1. SECTION HEADER ── */}
+ {/* -- 1. SECTION HEADER -- */}
  <div className="max-w-4xl">
  <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
  Full-Stack Engineering &amp; Applied AI Capabilities
@@ -60,7 +60,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  </p>
  </div>
 
- {/* ── 2. FULLY INTERACTIVE 4-COLUMN CAPABILITY GRID ── */}
+ {/* -- 2. FULLY INTERACTIVE 4-COLUMN CAPABILITY GRID -- */}
  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch w-full">
  {PILLARS.map((pillar) => {
  return (
@@ -79,7 +79,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  </div>
 
  {/* Description */}
- <p className="font-sans font-medium text-slate-600 group-hover:text-[#0b1330] text-xs sm:text-sm leading-relaxed transition-colors duration-300">
+ <p className="font-sans font-medium text-slate-600 group-hover:text-[#202B61] text-xs sm:text-sm leading-relaxed transition-colors duration-300">
  {pillar.desc}
  </p>
  </div>
@@ -98,10 +98,10 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
  <div className="flex justify-start">
  <Link
  href="/capabilities"
- className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#0b1330] transition-colors"
+ className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#202B61] transition-colors"
  >
  <span>All Capabilities</span>
- <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#0b1330]" />
+ <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#202B61]" />
  </Link>
  </div>
 

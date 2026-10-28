@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({
 
   return (
     <footer
-      className={`relative text-[#0b1330] pt-12 sm:pt-16 pb-10 overflow-hidden select-none border-t border-slate-200/80 ${
+      className={`relative text-[#202B61] pt-12 sm:pt-16 pb-10 overflow-hidden select-none border-t border-slate-200/80 ${
         bgColor && bgColor !== "bg-white" ? bgColor : "bg-[#f4f6fb]"
       }`}
     >
@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({
             
             {/* Column 1: Brand & Global Reach (Span 4) */}
             <div className="lg:col-span-4 space-y-4">
-              <Link href="/" className="inline-flex items-center gap-2.5 font-display font-black text-xl text-[#0b1330] tracking-tight hover:opacity-85 transition-opacity">
+              <Link href="/" className="inline-flex items-center gap-2.5 font-display font-black text-xl text-[#202B61] tracking-tight hover:opacity-85 transition-opacity">
                 <img
                   src="/assets/images/arkanet-icon.png"
                   alt="Arkanet"
@@ -99,7 +99,7 @@ export const Footer: React.FC<FooterProps> = ({
               
               {/* Dubai */}
               <div className="space-y-1 text-xs sm:text-sm text-slate-600">
-                <span className="font-bold text-[#0b1330] block">Dubai (HQ)</span>
+                <span className="font-bold text-[#202B61] block">Dubai (HQ)</span>
                 <p className="leading-relaxed">
                   Capital Golden Tower, Suite 308,<br />
                   Business Bay, Dubai, UAE
@@ -111,7 +111,7 @@ export const Footer: React.FC<FooterProps> = ({
 
               {/* India */}
               <div className="space-y-1 text-xs sm:text-sm text-slate-600 pt-1">
-                <span className="font-bold text-[#0b1330] block">India Office</span>
+                <span className="font-bold text-[#202B61] block">India Office</span>
                 <p className="leading-relaxed">
                   Room No. 227K, Benny Complex,<br />
                   Kelakam, Kannur Dt, Kerala
@@ -135,17 +135,17 @@ export const Footer: React.FC<FooterProps> = ({
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="w-full inline-flex items-center justify-center gap-1.5 bg-[#0b1330] hover:bg-[#15234d] text-white text-xs font-bold py-2.5 px-4 rounded-xl transition-all shadow-2xs hover:shadow-md cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 bg-[#202B61] hover:bg-[#1d4ed8] text-white text-xs font-bold py-2.5 px-4 rounded-xl transition-all shadow-2xs hover:shadow-md cursor-pointer"
                 >
                   <span>Submit a Brief</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#38bdf8]" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#1d4ed8]" />
                 </button>
 
                 <a
                   href="https://wa.me/919074104372?text=Hi%20Arkanet%20Team,%20I'd%20like%20to%20discuss%20a%20project!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 bg-white hover:bg-slate-50 text-[#0b1330] text-xs font-bold py-2.5 px-4 rounded-xl border border-slate-200 transition-all cursor-pointer shadow-2xs"
+                  className="w-full inline-flex items-center justify-center gap-1.5 bg-white hover:bg-slate-50 text-[#202B61] text-xs font-bold py-2.5 px-4 rounded-xl border border-slate-200 transition-all cursor-pointer shadow-2xs"
                 >
                   <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
                   <span>WhatsApp Chat</span>
@@ -187,7 +187,7 @@ export const Footer: React.FC<FooterProps> = ({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 hover:text-[#1d4ed8] transition-colors group"
             >
-              <Twitter className="w-3.5 h-3.5 text-[#38bdf8] group-hover:scale-110 transition-transform shrink-0" />
+              <Twitter className="w-3.5 h-3.5 text-[#1d4ed8] group-hover:scale-110 transition-transform shrink-0" />
               <span>Twitter X</span>
             </a>
             <a
@@ -196,7 +196,7 @@ export const Footer: React.FC<FooterProps> = ({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 hover:text-[#1d4ed8] transition-colors group"
             >
-              <Instagram className="w-3.5 h-3.5 text-[#38bdf8] group-hover:scale-110 transition-transform shrink-0" />
+              <Instagram className="w-3.5 h-3.5 text-[#1d4ed8] group-hover:scale-110 transition-transform shrink-0" />
               <span>Instagram</span>
             </a>
             <a
@@ -205,7 +205,7 @@ export const Footer: React.FC<FooterProps> = ({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 hover:text-[#1d4ed8] transition-colors group"
             >
-              <Linkedin className="w-3.5 h-3.5 text-[#38bdf8] group-hover:scale-110 transition-transform shrink-0" />
+              <Linkedin className="w-3.5 h-3.5 text-[#1d4ed8] group-hover:scale-110 transition-transform shrink-0" />
               <span>LinkedIn</span>
             </a>
             <a
@@ -214,7 +214,7 @@ export const Footer: React.FC<FooterProps> = ({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 hover:text-[#1d4ed8] transition-colors group"
             >
-              <Github className="w-3.5 h-3.5 text-[#38bdf8] group-hover:scale-110 transition-transform shrink-0" />
+              <Github className="w-3.5 h-3.5 text-[#1d4ed8] group-hover:scale-110 transition-transform shrink-0" />
               <span>GitHub</span>
             </a>
           </div>
