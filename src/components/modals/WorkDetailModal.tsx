@@ -57,6 +57,8 @@ export interface WorkProjectDetail {
   id: string;
   category: string;
   title: string;
+  titleLine1?: string;
+  titleLine2?: string;
   description: string;
   outerImage: string;
   innerImage: string;
