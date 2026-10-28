@@ -10,9 +10,6 @@ export function AboutTeam() {
         
         {/* Section Header */}
         <div className="space-y-4 max-w-3xl">
-          <div className="inline-block px-3 py-1 rounded-[4px] bg-[#0b1330] text-white text-[11px] font-bold uppercase tracking-wider">
-            Our Team
-          </div>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#0b1330] tracking-tight leading-snug">
             One team, start to finish
           </h2>

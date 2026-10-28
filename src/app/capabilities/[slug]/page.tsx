@@ -231,10 +231,6 @@ export default function CapabilityDetailPage() {
               >
                 {/* Text Side */}
                 <div className="space-y-5">
-                  <div className="font-sans text-xs font-bold text-slate-400 uppercase tracking-wider">
-                    Specification {rowNumber}
-                  </div>
-
                   <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#202B61] tracking-tight leading-snug">
                     {row.title}
                   </h3>
@@ -321,10 +317,6 @@ export default function CapabilityDetailPage() {
           <div className="p-8 sm:p-12 lg:p-16 bg-[#f8fafc] text-[#0b1330] rounded-[5px] border border-slate-200/90 shadow-none">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div className="space-y-6">
-                <div className="inline-block px-3 py-1 rounded-[3px] bg-blue-50 border border-blue-200 text-[#1d4ed8] text-xs font-bold uppercase tracking-wider font-sans">
-                  {data.techShowcase.badge || "Modern Web Architecture"}
-                </div>
-
                 <h3 className="font-heading font-bold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-tight">
                   {data.techShowcase.title}
                 </h3>
