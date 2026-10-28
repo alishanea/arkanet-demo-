@@ -34,13 +34,13 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
     >
       <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center space-y-8 sm:space-y-10 lg:space-y-12">
         
-        {/* ── 1. SECTION HEADER ── */}
-        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
-          <div className="max-w-4xl space-y-3 text-left">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
+        {/* ── 1. DARK COLOR BANNER WITH HEADING (CLEAN, MINIMAL) ── */}
+        <div className="w-full bg-[#202B61] text-white rounded-2xl p-8 sm:p-10 lg:p-12 text-left border border-[#161e47] relative overflow-hidden">
+          <div className="max-w-4xl space-y-3 relative z-10">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white leading-tight tracking-tight">
               Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
             </h2>
-            <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
+            <p className="font-sans font-normal text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
               We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
             </p>
           </div>
