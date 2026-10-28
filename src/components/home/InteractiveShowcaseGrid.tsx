@@ -94,16 +94,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           })}
         </div>
 
-        {/* Navigation arrow on right side - no text, size change on hover/touch */}
-        <div className="flex justify-end pt-2">
-          <Link
-            href="/capabilities"
-            aria-label="Explore Capabilities"
-            className="group inline-flex items-center justify-center p-2 text-slate-400 hover:text-[#202B61] transition-colors"
-          >
-            <ArrowUpRight className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-active:scale-110" />
-          </Link>
-        </div>
+
 
       </div>
     </section>
