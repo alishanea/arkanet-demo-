@@ -4,36 +4,36 @@ import React from "react";
 
 export function AboutHero() {
   return (
-    <>
-      {/* ══ HERO SECTION ══ */}
-      <section className="w-full bg-[#f4f6fb] text-[#202B61] pt-32 sm:pt-36 pb-12 sm:pb-16 px-6 sm:px-10 lg:px-12 text-left">
-        <div className="max-w-7xl mx-auto">
-          
+    <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 overflow-hidden">
+      
+      {/* -- CINEMATIC AMBIENT BACKGROUND -- */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2400&q=85"
+          alt="Arkanet Team & Engineering Workspace"
+          className="w-full h-full object-cover opacity-25 brightness-105 saturate-110"
+          loading="eager"
+        />
 
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.1] max-w-4xl">
-            Powerful products, <br />
-            <span>genuine impact</span>
-          </h1>
+        {/* Multi-layered soft vignette and legibility masks */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/95 via-[#f4f4f8]/75 to-[#f4f6fb] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-r from-[#202B61]/10 via-[#202B61]/5 to-transparent blur-3xl pointer-events-none" />
+      </div>
 
-          <p className="mt-5 text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl">
-            Passionate tech enthusiasts and engineers crafting websites, applications, and AI systems built for real performance.
-          </p>
-        </div>
-      </section>
+      {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center px-4">
+        {/* Clean, Majestic Editorial Headline */}
+        <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
+          Powerful Products,<br />
+          Genuine Impact
+        </h1>
 
-      {/* ══ SINGLE FULL-WIDTH HERO IMAGE BANNER ══ */}
-      <section className="w-full bg-[#f4f6fb] px-6 sm:px-10 lg:px-12 pb-16 sm:pb-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="w-full relative aspect-[16/9] sm:aspect-[21/9] lg:aspect-[24/9] min-h-[260px] sm:min-h-[380px] lg:min-h-[440px] rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none group bg-slate-100">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2400&q=85"
-              alt="Arkanet Team & Engineering Workspace"
-              loading="eager"
-              className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-            />
-          </div>
-        </div>
-      </section>
-    </>
+        {/* Balanced Descriptive Subtitle */}
+        <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6">
+          Passionate tech enthusiasts and engineers crafting websites, applications, and AI systems built for real performance.
+        </p>
+      </div>
+
+    </section>
   );
 }

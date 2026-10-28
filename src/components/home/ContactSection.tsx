@@ -28,7 +28,11 @@ const BUDGET_OPTIONS = [
   "$100k+"
 ];
 
-export const ContactSection: React.FC = () => {
+interface ContactSectionProps {
+  hideHeroHeader?: boolean;
+}
+
+export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeroHeader = false }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -56,16 +60,18 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
         {/* ── 1. UNIFIED EDITORIAL HERO HEADER ── */}
-        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8 max-w-4xl space-y-3 text-left">
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
-            Let&apos;s build something <br className="hidden sm:inline" />
-            <span className="text-[#202B61]">exceptional together</span>
-          </h1>
+        {!hideHeroHeader && (
+          <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8 max-w-4xl space-y-3 text-left">
+            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
+              Let&apos;s build something <br className="hidden sm:inline" />
+              <span className="text-[#202B61]">exceptional together</span>
+            </h1>
 
-          <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
-            Have a product concept, an architectural challenge, or a business system to scale? Share your requirements with our engineering leadership or connect with our teams in Dubai and India.
-          </p>
-        </div>
+            <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
+              Have a product concept, an architectural challenge, or a business system to scale? Share your requirements with our engineering leadership or connect with our teams in Dubai and India.
+            </p>
+          </div>
+        )}
 
         {/* ── 2. BALANCED 2-COLUMN MAIN STAGE ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start text-left">

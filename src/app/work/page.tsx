@@ -294,53 +294,64 @@ export default function WorkPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. ARCHITECTURAL HERO HEADER (FULL PAGE SCREEN) ── */}
-      <section className="w-full min-h-screen min-h-[100dvh] flex flex-col justify-between bg-[#f4f6fb] pt-32 sm:pt-40 lg:pt-44 pb-10 sm:pb-14 px-6 sm:px-10 lg:px-14 border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto w-full my-auto text-left space-y-8 sm:space-y-10">
+      <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 overflow-hidden">
+        
+        {/* -- CINEMATIC AMBIENT BACKGROUND -- */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop"
+            alt="Arkanet Engineering Case Studies"
+            className="w-full h-full object-cover opacity-25 brightness-105 saturate-110"
+            loading="eager"
+          />
 
-          <div className="space-y-5 sm:space-y-6 max-w-4xl">
-            <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl text-[#202B61] tracking-tight leading-[1.06]">
-              Selected Work &amp; <br className="hidden sm:inline" />
-              <span>Engineering Case Studies</span>
-            </h1>
-
-            <p className="font-sans text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl">
-              A curated index of production web platforms, mobile ecosystems, cloud architectures, and applied AI systems engineered for real-world traffic and business outcomes.
-            </p>
-          </div>
-
-          {/* ── 2. FILTER & LAYOUT VIEW CONTROLS ── */}
-          <div className="pt-6 sm:pt-8 border-t border-slate-200/70">
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-              {CATEGORIES.map((cat) => {
-                const isActive = activeCategory === cat;
-                const count = cat === "All"
-                  ? WORK_PROJECTS.length
-                  : WORK_PROJECTS.filter((p) => p.category === cat).length;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 ${
-                      isActive
-                        ? "bg-[#202B61] text-white "
-                        : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300 "
-                    }`}
-                  >
-                    <span>{cat}</span>
-                    <span className={`text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full ${
-                      isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
-                    }`}>
-                      {count}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
+          {/* Multi-layered soft vignette and legibility masks */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/95 via-[#f4f4f8]/75 to-[#f4f6fb] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-r from-[#202B61]/10 via-[#202B61]/5 to-transparent blur-3xl pointer-events-none" />
         </div>
 
+        {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
+        <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center px-4">
+          <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
+            Selected Work &amp;<br />
+            Engineering Case Studies
+          </h1>
+
+          <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6">
+            A curated index of production web platforms, mobile ecosystems, cloud architectures, and applied AI systems engineered for real-world traffic.
+          </p>
+        </div>
+
+      </section>
+
+      {/* ── 2. FILTER & LAYOUT VIEW CONTROLS ── */}
+      <section className="w-full bg-[#f4f6fb] pt-10 sm:pt-14 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80">
+        <div className="max-w-[1400px] mx-auto pb-8 flex flex-wrap items-center gap-2 sm:gap-3">
+          {CATEGORIES.map((cat) => {
+            const isActive = activeCategory === cat;
+            const count = cat === "All"
+              ? WORK_PROJECTS.length
+              : WORK_PROJECTS.filter((p) => p.category === cat).length;
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+                  isActive
+                    ? "bg-[#202B61] text-white"
+                    : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300"
+                }`}
+              >
+                <span>{cat}</span>
+                <span className={`text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full ${
+                  isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
+                }`}>
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </section>
 
       {/* ── 3. WORK SHOWCASE STAGE ── */}
