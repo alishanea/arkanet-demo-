@@ -174,24 +174,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             onMouseLeave={() => setHoveredTab(null)}
             className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-full px-4 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between gap-4 w-full"
           >
-            {/* 1. BRAND LOGO & NAME (LEFT) */}
-            <Link
-              href="/"
-              onClick={handleNavClick}
-              className="flex items-center gap-2.5 shrink-0 group select-none"
-            >
-              <img
-                src="/assets/images/arkanet-icon.png"
-                alt="Arkanet Logo"
-                className="w-7 h-7 sm:w-8 sm:h-8 object-contain group-hover:scale-105 transition-transform"
-              />
-              <span className="font-display font-black text-lg sm:text-xl text-[#202B61] tracking-tight group-hover:text-[#202B61] transition-colors">
-                ARKANET
-              </span>
-            </Link>
+                        {/* 1. BRAND LOGO & NAME (LEFT) */}
+            <div className="flex items-center flex-1">
+              <Link
+                href="/"
+                onClick={handleNavClick}
+                className="flex items-center gap-2.5 shrink-0 group select-none"
+              >
+                <img
+                  src="/assets/images/arkanet-icon.png"
+                  alt="Arkanet Logo"
+                  className="w-7 h-7 sm:w-8 sm:h-8 object-contain group-hover:scale-105 transition-transform"
+                />
+                <span className="font-display font-black text-lg sm:text-xl text-[#202B61] tracking-tight group-hover:text-[#202B61] transition-colors">
+                  ARKANET
+                </span>
+              </Link>
+            </div>
 
-            {/* 2. NAVIGATION MENU (CENTER - DESKTOP) */}
-            <nav className="hidden md:flex items-center gap-2 lg:gap-3.5">
+            {/* 2. NAVIGATION MENU (CENTER - ALL BUTTONS TOGETHER) */}
+            <nav className="hidden md:flex items-center justify-center gap-1.5 lg:gap-2.5">
               {/* Home Link */}
               <Link
                 href="/"
@@ -221,6 +223,51 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   Home
                 </span>
               </Link>
+
+              {/* Capabilities Button (Immediately after Home) */}
+              <div
+                className="relative shrink-0"
+                onMouseEnter={() => {
+                  setHoveredTab("capabilities");
+                  handleMenuEnter("services");
+                }}
+                onMouseLeave={handleMenuLeave}
+              >
+                {(activeMenu === "services" || isCapabilitiesActive) && (
+                  <motion.div
+                    layoutId="active-nav-pill"
+                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {hoveredTab === "capabilities" && activeMenu !== "services" && !isCapabilitiesActive && (
+                  <motion.div
+                    layoutId="hover-nav-pill"
+                    className="absolute inset-0 bg-slate-100/90 rounded-full"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <button
+                  type="button"
+                  onClick={toggleCapabilities}
+                  className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none"
+                >
+                  <span
+                    className={`relative z-10 flex items-center gap-1.5 transition-colors duration-200 ${
+                      activeMenu === "services" || isCapabilitiesActive
+                        ? "text-white"
+                        : "text-slate-800 hover:text-slate-950"
+                    }`}
+                  >
+                    <span>Capabilities</span>
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        activeMenu === "services" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </span>
+                </button>
+              </div>
 
               {/* Work Link */}
               <Link
@@ -313,52 +360,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               </Link>
             </nav>
 
-            {/* 3. RIGHT SIDE: CAPABILITIES BUTTON */}
-            <div className="flex items-center gap-2 shrink-0">
-              <div
-                className="hidden md:block relative shrink-0"
-                onMouseEnter={() => {
-                  setHoveredTab("capabilities");
-                  handleMenuEnter("services");
-                }}
-                onMouseLeave={handleMenuLeave}
-              >
-                {(activeMenu === "services" || isCapabilitiesActive) && (
-                  <motion.div
-                    layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {hoveredTab === "capabilities" && activeMenu !== "services" && !isCapabilitiesActive && (
-                  <motion.div
-                    layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-slate-100/90 rounded-full"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <button
-                  type="button"
-                  onClick={toggleCapabilities}
-                  className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none"
-                >
-                  <span
-                    className={`relative z-10 flex items-center gap-1.5 transition-colors duration-200 ${
-                      activeMenu === "services" || isCapabilitiesActive
-                        ? "text-white"
-                        : "text-slate-800 hover:text-slate-950"
-                    }`}
-                  >
-                    <span>Capabilities</span>
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        activeMenu === "services" ? "rotate-180" : ""
-                      }`}
-                    />
-                  </span>
-                </button>
-              </div>
-
+            {/* 3. RIGHT SIDE: EMPTY ON DESKTOP, MOBILE TOGGLE ON MOBILE */}
+            <div className="flex items-center justify-end flex-1">
               {/* Mobile Hamburger Toggle */}
               <button
                 type="button"
@@ -366,7 +369,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 className="md:hidden p-2 rounded-full text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>
