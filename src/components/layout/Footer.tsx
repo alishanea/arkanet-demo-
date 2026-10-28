@@ -59,22 +59,22 @@ export const Footer: React.FC<FooterProps> = ({
               </h4>
               <ul className="space-y-2 text-xs sm:text-sm font-medium text-slate-600">
                 <li>
-                  <Link href="/capabilities/web-development" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/capabilities/website-development" className="hover:text-[#1d4ed8] transition-colors">
                     Web &amp; SaaS Platforms
                   </Link>
                 </li>
                 <li>
-                  <Link href="/capabilities/app-development" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/capabilities/mobile-app-development" className="hover:text-[#1d4ed8] transition-colors">
                     Mobile Applications
                   </Link>
                 </li>
                 <li>
-                  <Link href="/capabilities/ai-solutions" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/capabilities/applied-ai-ml" className="hover:text-[#1d4ed8] transition-colors">
                     Applied AI &amp; Automation
                   </Link>
                 </li>
                 <li>
-                  <Link href="/capabilities/cloud-solutions" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/capabilities/cloud-devops-hosting" className="hover:text-[#1d4ed8] transition-colors">
                     Cloud &amp; DevOps Engineering
                   </Link>
                 </li>

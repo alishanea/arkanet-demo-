@@ -18,11 +18,12 @@ export default function ContactPage() {
       {/* Hero Contact Content */}
       <ContactSection />
 
-      {/* Contact Page Footer displaying physical office addresses */}
+      {/* Contact Page Clean Footer (Offices are prominently featured in the main contact stage) */}
       <Footer
         onOpenBooking={() => setContactModalOpen(true)}
-        bgColor="bg-white"
-        showAddresses={true}
+        bgColor="bg-[#f4f6fb]"
+        hideTopColumns={true}
+        showAddresses={false}
       />
 
       {/* Standalone Full-Screen Slide-Up Brief Modal */}

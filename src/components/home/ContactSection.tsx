@@ -3,14 +3,12 @@
 import React, { useState } from "react";
 import { 
   MessageCircle, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
   ShieldCheck, 
   CheckCircle2, 
   Send,
-  Building2
+  Building2,
+  Check,
+  Globe2
 } from "lucide-react";
 
 const SERVICES_LIST = [
@@ -18,16 +16,16 @@ const SERVICES_LIST = [
   "Mobile Applications",
   "Applied AI & Automation",
   "Cloud & DevOps",
-  "UI/UX & Design Systems",
-  "Custom Enterprise Software"
+  "Custom Software",
+  "UI/UX & Product Design"
 ];
 
 const BUDGET_OPTIONS = [
-  "< $5,000",
-  "$5k - $15k",
-  "$15k - $30k",
-  "$30k - $50k",
-  "$50k+"
+  "< $10,000",
+  "$10k - $25k",
+  "$25k - $50k",
+  "$50k - $100k",
+  "$100k+"
 ];
 
 export const ContactSection: React.FC = () => {
@@ -37,7 +35,7 @@ export const ContactSection: React.FC = () => {
     phone: "",
     company: "",
     service: "Web & SaaS Platforms",
-    budget: "$15k - $30k",
+    budget: "$25k - $50k",
     message: ""
   });
 
@@ -50,96 +48,43 @@ export const ContactSection: React.FC = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-    }, 800);
+    }, 600);
   };
 
   return (
-    <div className="w-full bg-[#f4f6fb] text-[#0b1330] pt-32 sm:pt-36 pb-20 sm:pb-28 px-6 sm:px-10 lg:px-12 select-none text-left">
-      <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
+    <section className="relative w-full bg-[#f4f6fb] text-[#0b1330] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-12 selection:bg-[#0b1330] selection:text-white">
+      <div className="max-w-[1400px] mx-auto space-y-12 sm:space-y-16">
         
-        {/* Top Hero Heading */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          <div className="lg:col-span-7 space-y-4">
-            
+        {/* ── 1. UNIFIED EDITORIAL HERO HEADER ── */}
+        <div className="max-w-4xl space-y-4 text-left">
+          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
+            Let&apos;s build something <br className="hidden sm:inline" />
+            <span className="text-[#1d4ed8]">exceptional together</span>
+          </h1>
 
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.1] max-w-2xl">
-              Something great <br />
-              <span>starts here</span>
-            </h1>
-
-            <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl pt-1">
-              Have a project brief, an architectural challenge, or a business problem to solve? Share your requirements below, chat with our engineering team on WhatsApp, or connect with our offices in Dubai and India.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-3 pt-3">
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-white px-3.5 py-2 rounded-[4px] border border-slate-200/90 shadow-none">
-                <Clock className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Response within 2 hours</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-white px-3.5 py-2 rounded-[4px] border border-slate-200/90 shadow-none">
-                <ShieldCheck className="w-3.5 h-3.5 text-slate-600" />
-                <span>Mutual NDA Protected</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Direct Callout Card */}
-          <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="w-full rounded-[5px] border border-slate-200/90 bg-white p-6 sm:p-7 space-y-4 text-left shadow-none">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                  <span className="font-sans text-xs font-bold uppercase tracking-wider text-slate-700">Direct Connect</span>
-                </div>
-                <span className="font-sans text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-[3px]">
-                  Online Now
-                </span>
-              </div>
-
-              <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                Want immediate answers regarding team availability, tech stack suitability, or ballpark estimates? Chat with our solutions engineer directly on WhatsApp.
-              </p>
-
-              <a
-                href="https://wa.me/919074104372?text=Hi%20Arkanet%20Team,%20I'd%20like%20to%20discuss%20a%20project!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm py-3 px-5 rounded-[4px] transition-all cursor-pointer shadow-none"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>Chat on WhatsApp (+91 90741 04372)</span>
-              </a>
-
-              <div className="pt-2 flex flex-col gap-2 text-xs text-slate-600 border-t border-slate-100">
-                <a href="mailto:info@arkanet.ae" className="flex items-center gap-2 hover:text-[#0b1330] font-medium">
-                  <Mail className="w-3.5 h-3.5 text-slate-400" />
-                  <span>General: info@arkanet.ae</span>
-                </a>
-                <a href="mailto:sales@arkanet.ae" className="flex items-center gap-2 hover:text-[#0b1330] font-medium">
-                  <Mail className="w-3.5 h-3.5 text-slate-400" />
-                  <span>Middle East Sales: sales@arkanet.ae</span>
-                </a>
-              </div>
-            </div>
-          </div>
+          <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
+            Have a product concept, an architectural challenge, or a business system to scale? Share your requirements with our engineering leadership or connect with our teams in Dubai and India.
+          </p>
         </div>
 
-        {/* Main Section: Interactive Form + Global Office Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        {/* ── 2. BALANCED 2-COLUMN MAIN STAGE ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start text-left">
           
-          {/* Left Form: In-Page Full Brief Submission */}
-          <div className="lg:col-span-7 bg-white rounded-[5px] border border-slate-200/90 shadow-none p-6 sm:p-10 text-left">
+          {/* ── LEFT COLUMN: PROJECT BRIEF FORM (Span 7) ── */}
+          <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-10 shadow-sm transition-all">
             {submitted ? (
-              <div className="py-12 sm:py-16 text-center space-y-4">
-                <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-100">
-                  <CheckCircle2 className="w-7 h-7" />
+              <div className="py-14 sm:py-20 text-center space-y-5">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200 shadow-2xs">
+                  <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="font-heading font-extrabold text-2xl text-[#202B61]">
-                  Thank you! Your brief has been received.
-                </h3>
-                <p className="font-sans text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                  Our solutions director will review your project requirements and email you back within 2 hours to coordinate next steps.
-                </p>
+                <div className="space-y-2">
+                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61]">
+                    Project Brief Received!
+                  </h3>
+                  <p className="font-sans text-sm sm:text-base text-slate-600 max-w-md mx-auto leading-relaxed">
+                    Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Our solutions director is reviewing your brief and will get back to you at <span className="font-semibold text-[#1d4ed8]">{formData.email}</span> within 2 hours.
+                  </p>
+                </div>
                 <div className="pt-4">
                   <button
                     type="button"
@@ -151,33 +96,35 @@ export const ContactSection: React.FC = () => {
                         phone: "",
                         company: "",
                         service: "Web & SaaS Platforms",
-                        budget: "$15k - $30k",
+                        budget: "$25k - $50k",
                         message: ""
                       });
                     }}
-                    className="inline-flex items-center gap-2 text-xs font-bold text-[#0b1330] hover:underline cursor-pointer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-800 transition-colors cursor-pointer"
                   >
-                    <span>Submit another inquiry &rarr;</span>
+                    <span>Submit another inquiry</span>
                   </button>
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61]">
-                    Project Inquiry &amp; Brief
-                  </h3>
-                  <p className="font-sans text-xs sm:text-sm text-slate-500 font-normal mt-1">
-                    Fill out the details below and we&apos;ll get back to you with timelines and feasibility.
+              <form onSubmit={handleSubmit} className="space-y-8">
+                
+                {/* Section Header */}
+                <div className="space-y-1.5 border-b border-slate-100 pb-5">
+                  <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61]">
+                    Project Inquiry &amp; Architecture Brief
+                  </h2>
+                  <p className="font-sans text-xs sm:text-sm text-slate-500">
+                    Tell us what you need and we will provide architecture feasibility and timelines.
                   </p>
                 </div>
 
-                {/* Service Interest Chips */}
-                <div className="space-y-2">
-                  <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-600">
-                    What service do you need?
+                {/* 1. Service Selection */}
+                <div className="space-y-3">
+                  <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-700">
+                    1. What are you looking to engineer? <span className="text-rose-500">*</span>
                   </label>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                     {SERVICES_LIST.map((srv) => {
                       const isSelected = formData.service === srv;
                       return (
@@ -185,80 +132,86 @@ export const ContactSection: React.FC = () => {
                           key={srv}
                           type="button"
                           onClick={() => setFormData({ ...formData, service: srv })}
-                          className={`px-3 py-1.5 rounded-[3px] text-xs font-semibold transition-all cursor-pointer ${
+                          className={`px-3 py-2.5 rounded-xl text-xs font-semibold text-left transition-all cursor-pointer border flex items-center justify-between ${
                             isSelected
-                              ? "bg-[#0b1330] text-white"
-                              : "bg-slate-50 text-slate-600 border border-slate-200 hover:border-slate-300"
+                              ? "bg-[#0b1330] text-white border-[#0b1330] shadow-2xs"
+                              : "bg-[#f8fafc] hover:bg-white text-slate-700 border-slate-200/90 hover:border-slate-300"
                           }`}
                         >
-                          {srv}
+                          <span className="truncate">{srv}</span>
+                          {isSelected && <Check className="w-3.5 h-3.5 text-white shrink-0 ml-1.5" />}
                         </button>
                       );
                     })}
                   </div>
                 </div>
 
-                {/* Inputs Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1.5">
-                    <label className="font-sans text-xs font-bold text-slate-700">
-                      Your Name <span className="text-rose-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Sarah Jenkins"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-[4px] border border-slate-300 focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm transition-all"
-                    />
-                  </div>
+                {/* 2. Contact Fields */}
+                <div className="space-y-3">
+                  <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-700">
+                    2. About you &amp; your organisation
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <label className="font-sans text-xs font-semibold text-slate-700">
+                        Your Full Name <span className="text-rose-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Alexander Vance"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
+                      />
+                    </div>
 
-                  <div className="space-y-1.5">
-                    <label className="font-sans text-xs font-bold text-slate-700">
-                      Work Email <span className="text-rose-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="sarah@company.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-[4px] border border-slate-300 focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm transition-all"
-                    />
-                  </div>
+                    <div className="space-y-1.5">
+                      <label className="font-sans text-xs font-semibold text-slate-700">
+                        Work Email <span className="text-rose-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="alexander@company.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
+                      />
+                    </div>
 
-                  <div className="space-y-1.5">
-                    <label className="font-sans text-xs font-bold text-slate-700">
-                      Phone / WhatsApp Number
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="+971 50 123 4567"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-[4px] border border-slate-300 focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm transition-all"
-                    />
-                  </div>
+                    <div className="space-y-1.5">
+                      <label className="font-sans text-xs font-semibold text-slate-700">
+                        Phone / WhatsApp
+                      </label>
+                      <input
+                        type="tel"
+                        placeholder="+971 50 123 4567"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
+                      />
+                    </div>
 
-                  <div className="space-y-1.5">
-                    <label className="font-sans text-xs font-bold text-slate-700">
-                      Company / Organization
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. Acme Corp"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-[4px] border border-slate-300 focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm transition-all"
-                    />
+                    <div className="space-y-1.5">
+                      <label className="font-sans text-xs font-semibold text-slate-700">
+                        Company / Brand Name
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="e.g. Nova Logistics"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all placeholder:text-slate-400"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                {/* Estimated Budget Chips */}
-                <div className="space-y-2">
-                  <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-600">
-                    Estimated Project Budget (USD)
+                {/* 3. Budget Range */}
+                <div className="space-y-3">
+                  <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-700">
+                    3. Estimated Project Budget (USD)
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {BUDGET_OPTIONS.map((bg) => {
@@ -268,10 +221,10 @@ export const ContactSection: React.FC = () => {
                           key={bg}
                           type="button"
                           onClick={() => setFormData({ ...formData, budget: bg })}
-                          className={`px-3 py-1.5 rounded-[3px] text-xs font-semibold transition-all cursor-pointer ${
+                          className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
                             isSelected
-                              ? "bg-[#0b1330] text-white"
-                              : "bg-slate-50 text-slate-600 border border-slate-200 hover:border-slate-300"
+                              ? "bg-[#0b1330] text-white border-[#0b1330] shadow-2xs"
+                              : "bg-[#f8fafc] hover:bg-white text-slate-700 border-slate-200 hover:border-slate-300"
                           }`}
                         >
                           {bg}
@@ -281,118 +234,163 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Project Details */}
-                <div className="space-y-1.5">
-                  <label className="font-sans text-xs font-bold text-slate-700">
-                    Project Goals &amp; Scope Overview <span className="text-rose-500">*</span>
+                {/* 4. Project Details */}
+                <div className="space-y-2">
+                  <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-700">
+                    4. Project Goals &amp; Scope Overview <span className="text-rose-500">*</span>
                   </label>
                   <textarea
                     required
                     rows={4}
-                    placeholder="Tell us about the product you want to build, existing challenges, target timeline, or reference links..."
+                    placeholder="Describe your project, target audience, primary deliverables, and desired launch timeline..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-[4px] border border-slate-300 focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-slate-200 focus:bg-white focus:border-[#0b1330] focus:ring-1 focus:ring-[#0b1330] outline-none text-xs sm:text-sm text-slate-900 transition-all resize-none placeholder:text-slate-400 leading-relaxed"
                   />
                 </div>
 
-                {/* Submit Action */}
-                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                {/* 5. Submit Action */}
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-100">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0b1330] hover:bg-[#15234d] text-white font-bold text-xs uppercase tracking-wider px-7 py-3 rounded-[4px] transition-all cursor-pointer shadow-none"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0b1330] hover:bg-[#162758] text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg disabled:opacity-70"
                   >
-                    <span>{isSubmitting ? "Sending..." : "Submit Project Brief"}</span>
-                    <Send className="w-3.5 h-3.5" />
+                    <span>{isSubmitting ? "Submitting Brief..." : "Submit Project Brief"}</span>
+                    <Send className="w-3.5 h-3.5 text-[#38bdf8]" />
                   </button>
 
-                  <span className="font-sans text-xs text-slate-500 font-normal text-center sm:text-right">
-                    Guaranteed response within 2 business hours.
-                  </span>
+                  <div className="flex items-center gap-2 text-xs text-slate-500">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                    <span>Protected by strict confidentiality &amp; NDA</span>
+                  </div>
                 </div>
+
               </form>
             )}
           </div>
 
-          {/* Right Column: Physical Offices */}
-          <div className="lg:col-span-5 space-y-6 text-left">
+          {/* ── RIGHT COLUMN: UNIFIED GLOBAL REACH & DIRECT CONNECT (Span 5) ── */}
+          <div className="lg:col-span-5 space-y-6">
             
-            {/* Dubai HQ Card */}
-            <div className="bg-white rounded-[5px] border border-slate-200/90 shadow-none p-6 space-y-3">
-              <div className="flex items-center gap-2.5 text-[#0b1330]">
-                <Building2 className="w-5 h-5 text-slate-700" />
-                <h4 className="font-heading font-extrabold text-base sm:text-lg">
-                  Dubai Headquarters (UAE)
-                </h4>
+            {/* CARD 1: Instant WhatsApp Direct Engineering Line */}
+            <div className="rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-7 space-y-4 shadow-sm text-left">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  </span>
+                  <span className="font-heading font-bold text-xs uppercase tracking-wider text-slate-800">
+                    Direct Solutions Line
+                  </span>
+                </div>
+                <span className="font-sans text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                  Online Now
+                </span>
               </div>
 
-              <div className="space-y-2 text-xs sm:text-sm text-slate-600 font-normal">
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
-                  <span>The Binary by Omniyat, Business Bay, Dubai, United Arab Emirates</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-slate-400 shrink-0" />
-                  <a href="tel:+97142406789" className="text-[#0b1330] font-semibold hover:underline">
-                    +971 4 240 6789
+              <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Prefer immediate technical discussion? Connect directly with our lead solutions engineer on WhatsApp for tech feasibility, team availability, or ballpark guidance.
+              </p>
+
+              <a
+                href="https://wa.me/919074104372?text=Hi%20Arkanet%20Team,%20I'd%20like%20to%20discuss%20a%20project!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm py-3 px-5 rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-md"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Chat on WhatsApp (+91 90741 04372)</span>
+              </a>
+
+              <div className="pt-2 flex flex-col gap-2.5 text-xs text-slate-600 border-t border-slate-100">
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-500">General Enquiries:</span>
+                  <a href="mailto:info@arkanet.in" className="font-semibold text-slate-900 hover:text-[#1d4ed8]">
+                    info@arkanet.in
                   </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-slate-400 shrink-0" />
-                  <a href="mailto:sales@arkanet.ae" className="text-[#0b1330] font-semibold hover:underline">
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-500">Middle East Sales:</span>
+                  <a href="mailto:sales@arkanet.ae" className="font-semibold text-slate-900 hover:text-[#1d4ed8]">
                     sales@arkanet.ae
                   </a>
                 </div>
               </div>
-
-              <div className="pt-2 text-[11px] font-medium text-slate-400 border-t border-slate-100 flex items-center justify-between">
-                <span>Working Hours: Mon - Fri</span>
-                <span>09:00 AM - 06:00 PM GST</span>
-              </div>
             </div>
 
-            {/* India Delivery Hub Card */}
-            <div className="bg-white rounded-[5px] border border-slate-200/90 shadow-none p-6 space-y-3">
-              <div className="flex items-center gap-2.5 text-[#0b1330]">
-                <Building2 className="w-5 h-5 text-slate-700" />
-                <h4 className="font-heading font-extrabold text-base sm:text-lg">
-                  India Delivery &amp; R&amp;D Hub
-                </h4>
+            {/* CARD 2: Physical Office Hubs */}
+            <div className="rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-7 space-y-6 shadow-sm text-left">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div className="flex items-center gap-2">
+                  <Globe2 className="w-4 h-4 text-blue-600" />
+                  <span className="font-heading font-bold text-xs uppercase tracking-wider text-slate-800">
+                    Physical Presence
+                  </span>
+                </div>
+                <span className="text-xs font-semibold text-slate-500">Dubai &amp; India</span>
               </div>
 
-              <div className="space-y-2 text-xs sm:text-sm text-slate-600 font-normal">
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
-                  <span>Infopark Kochi &amp; Cyberpark Calicut, Kerala, India</span>
+              {/* Dubai HQ */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-[#202B61]" />
+                    <h4 className="font-heading font-bold text-sm text-[#0b1330]">
+                      Dubai Headquarters (HQ)
+                    </h4>
+                  </div>
+                  <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
+                    GST (UTC+4)
+                  </span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-slate-400 shrink-0" />
-                  <a href="tel:+919074104372" className="text-[#0b1330] font-semibold hover:underline">
+                
+                <p className="text-xs text-slate-600 leading-relaxed pl-6">
+                  Capital Golden Tower, Suite 308,<br />
+                  Business Bay, Dubai, United Arab Emirates
+                </p>
+                <div className="pl-6 flex items-center gap-4 text-xs font-semibold pt-0.5">
+                  <a href="tel:+97145572716" className="text-slate-800 hover:text-[#1d4ed8]">
+                    +971 4 557 2716
+                  </a>
+                </div>
+              </div>
+
+              <div className="border-t border-slate-100" />
+
+              {/* India Delivery Hub */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-[#202B61]" />
+                    <h4 className="font-heading font-bold text-sm text-[#0b1330]">
+                      India Engineering &amp; Delivery Hub
+                    </h4>
+                  </div>
+                  <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
+                    IST (UTC+5:30)
+                  </span>
+                </div>
+                
+                <p className="text-xs text-slate-600 leading-relaxed pl-6">
+                  Room No. 227K, Benny Complex,<br />
+                  Kelakam, Kannur Dt, Kerala, India
+                </p>
+                <div className="pl-6 flex items-center gap-4 text-xs font-semibold pt-0.5">
+                  <a href="tel:+919074104372" className="text-slate-800 hover:text-[#1d4ed8]">
                     +91 90741 04372
                   </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-slate-400 shrink-0" />
-                  <a href="mailto:info@arkanet.ae" className="text-[#0b1330] font-semibold hover:underline">
-                    info@arkanet.ae
-                  </a>
-                </div>
               </div>
 
-              <div className="pt-2 text-[11px] font-medium text-slate-400 border-t border-slate-100 flex items-center justify-between">
-                <span>Working Hours: Mon - Sat</span>
-                <span>09:00 AM - 06:00 PM IST</span>
-              </div>
             </div>
-
-            
 
           </div>
 
         </div>
 
       </div>
-    </div>
+    </section>
   );
 };
