@@ -394,7 +394,7 @@ export default function WorkPage() {
                               #{indexFormatted}
                             </span>
                             <span className="h-3 w-[1px] bg-slate-200" />
-                            <span className="font-semibold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-md text-[11px]">
+                            <span className="font-semibold text-[#1d4ed8] text-[11px]">
                               {project.category}
                             </span>
                           </div>
@@ -474,7 +474,7 @@ export default function WorkPage() {
                     <div className="space-y-2.5 flex-1 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center justify-between text-[11px] text-slate-500 mb-1.5">
-                          <span className="font-semibold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-md">
+                          <span className="font-semibold text-[#1d4ed8] text-[11px]">
                             {project.category}
                           </span>
                           <span className="font-medium">{project.year || "2025"}</span>
