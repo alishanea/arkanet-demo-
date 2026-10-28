@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
@@ -173,7 +175,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                       <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight">
                         {project.title}
                       </h3>
-                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 shrink-0 mt-1" />
+                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0 mt-1" />
                     </div>
 
                     {/* Exact 16 words in all 4 cards */}
@@ -199,6 +201,16 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           ))}
         </div>
 
+        {/* Navigation arrow on right side - no text, size change on hover/touch */}
+        <div className="flex justify-end pt-2">
+          <Link
+            href="/work"
+            aria-label="Explore Work"
+            className="group inline-flex items-center justify-center p-2 text-slate-400 hover:text-[#202B61] transition-colors"
+          >
+            <ArrowUpRight className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-active:scale-110" />
+          </Link>
+        </div>
       </div>
 
       {/* ROTATING-WORD CLOSING HEADLINE */}

@@ -409,9 +409,7 @@ export default function WorkPage() {
                             <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] group-hover:text-[#202B61] transition-colors leading-tight">
                               {project.title}
                             </h2>
-                            <div className="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-[#202B61] group-hover:text-white text-slate-400 flex items-center justify-center transition-all duration-200 shrink-0">
-                              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                            </div>
+                            <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0" />
                           </div>
 
                           <p className="font-sans text-xs sm:text-sm text-slate-600 font-normal leading-relaxed max-w-2xl line-clamp-2 sm:line-clamp-3">
@@ -484,7 +482,7 @@ export default function WorkPage() {
                           <h3 className="font-heading font-bold text-lg text-[#202B61] group-hover:text-[#202B61] transition-colors leading-snug">
                             {project.title}
                           </h3>
-                          <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0 mt-0.5" />
+                          <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0 mt-0.5" />
                         </div>
 
                         <p className="font-sans text-xs text-slate-600 line-clamp-2 leading-relaxed mt-1.5">

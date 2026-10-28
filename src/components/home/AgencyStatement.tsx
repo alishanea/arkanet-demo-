@@ -73,14 +73,14 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
           ))}
         </div>
 
-        {/* Subtle navigation link with small arrow */}
-        <div className="flex justify-start">
+        {/* Navigation arrow on right side - no text, size change on hover/touch */}
+        <div className="flex justify-end pt-2">
           <Link
             href="/work"
-            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#202B61] transition-colors"
+            aria-label="Explore Work"
+            className="group inline-flex items-center justify-center p-2 text-slate-400 hover:text-[#202B61] transition-colors"
           >
-            <span>Explore Work</span>
-            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-slate-400 group-hover:text-[#202B61]" />
+            <ArrowUpRight className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-active:scale-110" />
           </Link>
         </div>
 
