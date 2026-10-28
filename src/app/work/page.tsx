@@ -341,11 +341,6 @@ export default function WorkPage() {
 
         </div>
 
-        {/* Scroll Cue at bottom of the full screen */}
-        <div className="max-w-[1400px] mx-auto w-full pt-6 flex items-center justify-between text-xs text-slate-400 font-sans border-t border-slate-200/60">
-          <span>Scroll down to explore case studies</span>
-          <span className="text-slate-500 font-mono">10 Projects ↓</span>
-        </div>
       </section>
 
       {/* ── 3. WORK SHOWCASE STAGE ── */}
