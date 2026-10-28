@@ -15,9 +15,6 @@ export const FaqAccordion: React.FC = () => {
     <section id="faq" className="py-20 bg-subtle">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-borderline text-xs font-semibold text-navy mb-2">
-            Clear Answers
-          </div>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy">
             Frequently Asked Questions
           </h2>

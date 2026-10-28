@@ -11,9 +11,6 @@ export const PricingTeaser: React.FC<PricingTeaserProps> = ({ onOpenBooking }) =
     <section id="pricing-teaser" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-subtle border border-borderline rounded-2xl p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-2xs">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-borderline text-xs font-semibold text-navy mb-3">
-            Transparent Value
-          </div>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-4">
             Pay for a partner, not a project quote.
           </h2>

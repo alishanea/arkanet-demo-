@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Globe, Twitter, Instagram, Linkedin, Github, ArrowUpRight, MessageCircle } from "lucide-react";
+import { Twitter, Instagram, Linkedin, Github, ArrowUpRight, MessageCircle } from "lucide-react";
 
 interface FooterProps {
   onOpenBooking?: () => void;
@@ -46,10 +46,6 @@ export const Footer: React.FC<FooterProps> = ({
                 Engineering high-performance web platforms, mobile applications, and intelligent AI automation systems for ambitious brands across the UAE, India, and worldwide.
               </p>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 shadow-2xs">
-                <Globe className="w-3.5 h-3.5 text-blue-600" />
-                <span>Operating Globally (Dubai &amp; India)</span>
-              </div>
             </div>
 
             {/* Column 2: Capabilities & Quick Links (Span 3) */}

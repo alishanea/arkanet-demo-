@@ -194,9 +194,6 @@ export const HorizontalVideoGallery: React.FC = () => {
     >
       {/* Top Header Overlay Bar */}
       <div className="absolute top-8 left-6 sm:left-10 right-6 sm:right-10 z-30 flex items-center justify-between pointer-events-auto">
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#202B61]/80 backdrop-blur-md border border-white/20 text-xs font-sans font-bold uppercase tracking-widest text-white shadow-sm">
-          <span>GREAT WORK FOR GREAT PEOPLE • [{activeCardIndex + 1} / {ARKANET_PROJECTS.length}]</span>
-        </div>
 
         <button
           onClick={toggleMute}
@@ -248,10 +245,7 @@ export const HorizontalVideoGallery: React.FC = () => {
                   
                   {/* Top Bar of Floating Card */}
                   <div className="flex items-center justify-between pb-6 border-b border-slate-200 text-xs font-sans font-bold tracking-widest text-[#202B61]">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-sm bg-[#202B61]" />
-                      <span>FEATURED CASE</span>
-                    </div>
+                    <div />
                     <span className="font-heading font-black text-xl sm:text-2xl tracking-tight uppercase text-[#202B61]">
                       {project.title}
                     </span>
@@ -313,12 +307,6 @@ export const HorizontalVideoGallery: React.FC = () => {
 
                 </div>
 
-                {/* Signature Brand Badge Pill in Bottom-Left Corner */}
-                <div className="absolute bottom-8 left-8 z-30 pointer-events-auto">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#202B61] text-white font-heading font-bold text-xs uppercase tracking-wider shadow-lg border border-white/20">
-                    <span>{project.badgeLabel}</span>
-                  </div>
-                </div>
 
               </div>
             </div>

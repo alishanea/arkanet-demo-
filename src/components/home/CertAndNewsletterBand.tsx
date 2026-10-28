@@ -20,9 +20,6 @@ export const CertAndNewsletterBand: React.FC = () => {
         <div className="bg-subtle border border-borderline rounded-2xl p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Certification Stack */}
           <div>
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-borderline text-xs font-semibold text-navy mb-3">
-              Quality Certified
-            </div>
             <h3 className="font-display font-bold text-2xl text-navy mb-4">
               ISO Certified Standards
             </h3>

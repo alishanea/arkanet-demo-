@@ -95,9 +95,6 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
 
                 {/* Key Deliverable Footer */}
                 <div className="pt-4 mt-6 border-t border-slate-100">
-                  <p className="text-[10px] font-heading font-extrabold uppercase tracking-wider text-[#1d4ed8] mb-1">
-                    Key Outcome
-                  </p>
                   <p className="text-xs font-heading font-semibold text-[#202B61] leading-snug">
                     {step.deliverable}
                   </p>

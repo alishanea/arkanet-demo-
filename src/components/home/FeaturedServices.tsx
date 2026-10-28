@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { FEATURED_SERVICES } from "@/lib/data";
@@ -22,10 +22,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onOpenBookin
     <section id="featured-services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-subtle border border-borderline text-xs font-semibold text-navy mb-3">
-            Services Overview
-          </div>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#202B61]">
             Featured Engineering &amp; Growth Services
           </h2>
         </div>
@@ -37,7 +34,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onOpenBookin
               className="bg-white border border-borderline hover:border-navy-mid rounded-xl p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 shadow-2xs"
             >
               <div>
-                <h3 className="font-display font-bold text-xl text-navy mb-3">
+                <h3 className="font-heading font-bold text-xl text-[#202B61] mb-3">
                   {service.title}
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed mb-6">
@@ -47,9 +44,10 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onOpenBookin
 
               <button
                 onClick={onOpenBooking}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy-bright hover:text-navy-hover transition-colors group"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1d4ed8] hover:text-[#1740b3] transition-colors group cursor-pointer"
               >
-                Learn More <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <span>Learn more</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
           ))}
@@ -58,4 +56,3 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onOpenBookin
     </section>
   );
 };
-

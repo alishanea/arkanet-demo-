@@ -127,9 +127,6 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
 
           {/* Key Deliverables Section */}
           <div className="space-y-3.5 pt-3 sm:pt-5">
-            <span className="font-sans text-[12px] sm:text-[13px] font-bold uppercase tracking-[0.14em] text-[#3377a2] block">
-              KEY DELIVERABLES
-            </span>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#dbe6f0] pt-1">
               {step.deliverables.map((d, itemIdx) => {

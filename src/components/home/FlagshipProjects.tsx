@@ -108,9 +108,6 @@ export const FlagshipProjects: React.FC<FlagshipProjectsProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-14">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white border border-borderline text-xs font-semibold text-navy mb-3">
-            Featured Flagship Projects
-          </div>
           <h2 className="font-display font-bold text-3xl text-navy max-w-xl">
             Production Proof &amp; Selected Work
           </h2>

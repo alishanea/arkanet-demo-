@@ -8,9 +8,6 @@ export const IndustriesWeServe: React.FC = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-subtle border border-borderline text-xs font-semibold text-navy mb-2">
-            Domain Expertise
-          </div>
           <h2 className="font-display font-bold text-3xl text-navy">Industries We Serve</h2>
         </div>
 
