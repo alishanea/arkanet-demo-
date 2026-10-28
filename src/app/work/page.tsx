@@ -2,11 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  ArrowUpRight, 
-  LayoutGrid, 
-  Rows3
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { Footer } from "@/components/layout/Footer";
 import { ContactFormModal } from "@/components/modals/ContactFormModal";
@@ -342,38 +338,6 @@ export default function WorkPage() {
                 );
               })}
             </div>
-
-            {/* View Mode Toggle: Side-by-Side Detailed vs Compact Grid */}
-            <div className="hidden sm:inline-flex items-center p-1 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
-              <button
-                type="button"
-                onClick={() => setViewMode("detailed")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-                  viewMode === "detailed"
-                    ? "bg-[#0b1330] text-white shadow-xs"
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
-                title="Detailed Side-by-Side View"
-              >
-                <Rows3 className="w-3.5 h-3.5" />
-                <span>Detailed Rows</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setViewMode("compact")}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-                  viewMode === "compact"
-                    ? "bg-[#0b1330] text-white shadow-xs"
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
-                title="Compact Grid View"
-              >
-                <LayoutGrid className="w-3.5 h-3.5" />
-                <span>Compact Grid</span>
-              </button>
-            </div>
-
           </div>
 
         </div>
