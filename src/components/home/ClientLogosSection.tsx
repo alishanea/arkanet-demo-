@@ -44,12 +44,12 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
   return (
     <section
       id="trusted-by"
-      className="relative w-full bg-[#edf2f9] text-[#202B61] select-none py-10 sm:py-12 lg:py-14 border-t border-b border-slate-200/90 overflow-hidden"
+      className="relative w-full bg-[#edf2f9] text-[#202B61] select-none py-12 sm:py-14 lg:py-16 border-t border-b border-slate-200/90 overflow-hidden"
     >
       <div className="w-full">
-        {/* Small Subtle Label */}
-        <div className="text-center mb-6 sm:mb-7">
-          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#202B61]/55 font-sans">
+        {/* Subtle Section Label */}
+        <div className="text-center mb-7 sm:mb-8">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#202B61]/70 font-sans">
             Our Clients
           </p>
         </div>
@@ -57,7 +57,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
         {/* Trailing Marquee Container with Soft Fade Edges */}
         <div className="relative w-full overflow-hidden flex items-center group">
           {/* Left Trailing Gradient Fade Mask */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 lg:w-40 bg-gradient-to-r from-[#edf2f9] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 lg:w-48 bg-gradient-to-r from-[#edf2f9] to-transparent z-10 pointer-events-none" />
 
           {/* Continuous Trailing Track */}
           <div
@@ -67,21 +67,21 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
             {trailingLogos.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
-                className="mx-6 sm:mx-8 lg:mx-10 shrink-0 flex items-center justify-center transition-transform duration-300 hover:scale-105"
+                className="mx-7 sm:mx-10 lg:mx-12 shrink-0 flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
                   loading="eager"
                   style={{ mixBlendMode: "multiply" }}
-                  className="h-7 sm:h-8 lg:h-9 max-h-8 sm:max-h-9 max-w-[110px] sm:max-w-[130px] w-auto object-contain grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                  className="h-11 sm:h-12 lg:h-14 max-h-12 sm:max-h-14 lg:max-h-16 max-w-[150px] sm:max-w-[180px] lg:max-w-[200px] w-auto object-contain opacity-85 hover:opacity-100 transition-all duration-300 filter contrast-105"
                 />
               </div>
             ))}
           </div>
 
           {/* Right Trailing Gradient Fade Mask */}
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 lg:w-40 bg-gradient-to-l from-[#edf2f9] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 lg:w-48 bg-gradient-to-l from-[#edf2f9] to-transparent z-10 pointer-events-none" />
         </div>
       </div>
     </section>

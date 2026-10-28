@@ -85,7 +85,7 @@ export function AboutClients() {
                 alt={logo.alt}
                 loading="eager"
                 style={{ mixBlendMode: "multiply" }}
-                className="max-h-11 sm:max-h-13 max-w-[160px] w-auto h-auto object-contain grayscale opacity-60 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-300"
+                className="max-h-11 sm:max-h-13 max-w-[160px] w-auto h-auto object-contain opacity-85 group-hover/card:opacity-100 filter contrast-105 transition-all duration-300"
               />
             </div>
           ))}
