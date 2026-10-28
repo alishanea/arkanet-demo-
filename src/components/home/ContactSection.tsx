@@ -74,7 +74,7 @@ export const ContactSection: React.FC = () => {
           <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-10 shadow-sm transition-all">
             {submitted ? (
               <div className="py-14 sm:py-20 text-center space-y-5">
-                <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200 shadow-2xs">
+                <div className="w-16 h-16 rounded-full bg-slate-100 text-[#202B61] flex items-center justify-center mx-auto border border-slate-200 shadow-2xs">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <div className="space-y-2">
@@ -261,7 +261,7 @@ export const ContactSection: React.FC = () => {
                   </button>
 
                   <div className="flex items-center gap-2 text-xs text-slate-500">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                    <ShieldCheck className="w-4 h-4 text-[#202B61]" />
                     <span>Protected by strict confidentiality &amp; NDA</span>
                   </div>
                 </div>
@@ -278,14 +278,14 @@ export const ContactSection: React.FC = () => {
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                 <div className="flex items-center gap-2">
                   <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#202B61] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#202B61]"></span>
                   </span>
                   <span className="font-heading font-bold text-xs uppercase tracking-wider text-slate-800">
                     Direct Solutions Line
                   </span>
                 </div>
-                <span className="font-sans text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                <span className="font-sans text-[11px] font-semibold text-[#202B61] bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200/80">
                   Online Now
                 </span>
               </div>

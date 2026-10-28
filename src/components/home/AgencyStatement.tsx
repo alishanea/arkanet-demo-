@@ -66,7 +66,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
               </div>
 
               <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-500">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
                 <span>{item.tag}</span>
               </div>
             </div>

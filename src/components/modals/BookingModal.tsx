@@ -187,7 +187,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   </div>
                 ) : (
                   <div className="text-center py-12 space-y-4">
-                    <CheckCircle2 className="w-16 h-16 text-emerald-600 mx-auto mb-2" />
+                    <CheckCircle2 className="w-16 h-16 text-[#202B61] mx-auto mb-2" />
                     <h4 className="font-heading font-bold text-2xl sm:text-3xl text-[#202B61]">
                       Request Received!
                     </h4>

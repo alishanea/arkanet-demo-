@@ -63,8 +63,8 @@ export const CertAndNewsletterBand: React.FC = () => {
                 </button>
               </form>
             ) : (
-              <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm bg-emerald-50 border border-emerald-200 p-3 rounded-xl">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+              <div className="flex items-center gap-2 text-[#202B61] font-semibold text-sm bg-slate-50 border border-slate-200 p-3 rounded-xl">
+                <CheckCircle2 className="w-5 h-5 text-[#202B61]" />
                 <span>Thanks for subscribing! You are on the list.</span>
               </div>
             )}

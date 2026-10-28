@@ -72,19 +72,19 @@ export function AboutWhoWeAre() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm font-semibold text-[#202B61]">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
                 <span>End-to-end technical accountability</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
                 <span>Zero legacy vendor lock-in</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
                 <span>Continuous post-launch maintenance</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
                 <span>Dedicated agile engineering squads</span>
               </div>
             </div>

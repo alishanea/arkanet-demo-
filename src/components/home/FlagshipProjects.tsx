@@ -133,7 +133,7 @@ export const FlagshipProjects: React.FC<FlagshipProjectsProps> = ({
                   text-3xl sm:text-5xl lg:text-6xl transition-all duration-300
                   ${
                     activeIndex === idx
-                      ? "text-emerald-700 translate-x-3"
+                      ? "text-[#202B61] translate-x-3"
                       : activeIndex === null
                       ? "text-navy"
                       : "text-stone-300"
@@ -148,7 +148,7 @@ export const FlagshipProjects: React.FC<FlagshipProjectsProps> = ({
                 className={`w-6 h-6 sm:w-8 sm:h-8 shrink-0 transition-all duration-300
                   ${
                     activeIndex === idx
-                      ? "opacity-100 translate-x-0 translate-y-0 text-emerald-700"
+                      ? "opacity-100 translate-x-0 translate-y-0 text-[#202B61]"
                       : "opacity-0 -translate-x-2 translate-y-2 text-navy"
                   }`}
               />
