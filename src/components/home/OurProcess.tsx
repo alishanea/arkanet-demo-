@@ -7,18 +7,13 @@ interface OurProcessProps {
   onOpenBooking?: () => void;
 }
 
-interface Deliverable {
-  line1: string;
-  line2: string;
-}
-
 interface ProcessStep {
   key: string;
   stepNumber: string;
   title: string;
   body: string;
   image: string;
-  deliverables: Deliverable[];
+  deliverables: string[];
 }
 
 const PROCESS_STEPS: ProcessStep[] = [
@@ -29,9 +24,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     body: "We listen closely to your commercial objectives, technical constraints, and key user outcomes before writing any line of code.",
     image: "/assets/images/undestand.webp",
     deliverables: [
-      { line1: "Project Goals & Scope", line2: "Documented on Paper" },
-      { line1: "Current Architecture", line2: "And Systems Baseline" },
-      { line1: "Target User Audience", line2: "And Product Journeys" },
+      "Goals & Scope Baseline",
+      "Technical Architecture",
+      "User Journey Mapping",
     ],
   },
   {
@@ -42,9 +37,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=900&auto=format&fit=crop",
     deliverables: [
-      { line1: "Interactive Wireframes", line2: "And Prototype Flows" },
-      { line1: "Technical Specifications", line2: "And Systems Roadmap" },
-      { line1: "Sprint Milestones", line2: "And Delivery Schedule" },
+      "Interactive Wireframes",
+      "System Specifications",
+      "Delivery Roadmap",
     ],
   },
   {
@@ -55,9 +50,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop",
     deliverables: [
-      { line1: "Live Preview Builds", line2: "In Continuous Sprints" },
-      { line1: "Automated QA Testing", line2: "And Code Verification" },
-      { line1: "Production Deployment", line2: "With Zero Downtime" },
+      "Live Preview Builds",
+      "Automated QA Testing",
+      "Zero-Downtime Launch",
     ],
   },
   {
@@ -68,9 +63,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     image:
       "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=900&auto=format&fit=crop",
     deliverables: [
-      { line1: "24/7 Live Telemetry", line2: "And System Monitoring" },
-      { line1: "Infrastructure Scaling", line2: "And Security Updates" },
-      { line1: "Dedicated Engineering", line2: "Ongoing Team Support" },
+      "24/7 Live Monitoring",
+      "Infrastructure Scale",
+      "Continuous Support",
     ],
   },
 ];
@@ -126,25 +121,24 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
             </p>
           </div>
 
-          {/* Key Deliverables Section (Strict 2-Line Typographic Symmetry) */}
+          {/* Key Deliverables Section (Guaranteed Single-Line Symmetry) */}
           <div className="space-y-3.5 pt-3 sm:pt-5">
             <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/80 pt-1">
-              {step.deliverables.map((d, itemIdx) => {
+              {step.deliverables.map((item, itemIdx) => {
                 return (
                   <div
                     key={itemIdx}
-                    className={`flex flex-col items-start justify-start py-2.5 sm:py-0 ${
+                    className={`flex items-center py-2.5 sm:py-0 ${
                       itemIdx === 0
-                        ? "sm:pr-6 lg:pr-8 first:pt-0"
+                        ? "sm:pr-4 lg:pr-6 first:pt-0"
                         : itemIdx === 1
-                        ? "sm:px-6 lg:px-8"
-                        : "sm:pl-6 lg:pl-8 last:pb-0"
+                        ? "sm:px-4 lg:px-6"
+                        : "sm:pl-4 lg:pl-6 last:pb-0"
                     }`}
                   >
-                    <div className="font-sans text-xs sm:text-sm font-semibold text-[#202B61] leading-snug tracking-tight min-h-[2.5rem] sm:min-h-[2.75rem] flex flex-col justify-start">
-                      <span className="block">{d.line1}</span>
-                      <span className="block">{d.line2}</span>
-                    </div>
+                    <span className="font-sans text-xs sm:text-[13px] lg:text-sm font-semibold text-[#202B61] leading-none tracking-tight whitespace-nowrap overflow-hidden text-ellipsis block">
+                      {item}
+                    </span>
                   </div>
                 );
               })}
