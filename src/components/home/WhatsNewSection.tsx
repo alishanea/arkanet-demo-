@@ -101,23 +101,16 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
 ];
 
-const CATEGORIES = ["All", "Web & SaaS Platforms", "Mobile Applications", "Applied AI & Automation", "Cloud & DevOps"];
-
 export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedProject, setSelectedProject] = useState<WorkProjectDetail | null>(null);
-
-  const filteredProjects = selectedCategory === "All"
-    ? FEATURED_PROJECTS
-    : FEATURED_PROJECTS.filter((p) => p.category === selectedCategory);
 
   return (
     <section className="relative w-full bg-[#f4f6fb] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80">
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
-        {/* ── 1. SECTION HEADER & CATEGORY FILTER ── */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-slate-200/80 pb-6 sm:pb-8">
-          <div className="space-y-3 max-w-3xl">
+        {/* ── 1. SECTION HEADER ── */}
+        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
+          <div className="space-y-3 max-w-3xl text-left">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
               Selected Work &amp; Case Studies
             </h2>
@@ -125,29 +118,11 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
               Explore how we design, build, and deploy production digital systems that solve real operational friction.
             </p>
           </div>
-
-          {/* Minimal Category Selector */}
-          <div className="flex flex-wrap items-center gap-2">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold font-sans transition-all duration-200 cursor-pointer ${
-                  selectedCategory === cat
-                    ? "bg-[#202B61] text-white shadow-xs"
-                    : "bg-white text-slate-600 hover:text-[#202B61] border border-slate-200/80"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* ── 2. 4-COLUMN BALANCED PROJECT GRID (PERFECT SYMMETRY WITH NATURAL PHOTOGRAPHY) ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch w-full">
-          {filteredProjects.map((project) => (
+          {FEATURED_PROJECTS.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
