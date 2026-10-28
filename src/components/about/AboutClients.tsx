@@ -9,7 +9,7 @@ interface ClientLogo {
   alt: string;
 }
 
-const TRACK_1: ClientLogo[] = [
+const CLIENT_LOGOS: ClientLogo[] = [
   { id: "1", src: "/assets/clinet-logo/1.png", alt: "Al Ras General Trading" },
   { id: "2", src: "/assets/clinet-logo/2.png", alt: "Arbitralis Legal" },
   { id: "3", src: "/assets/clinet-logo/3.png", alt: "B&G Store" },
@@ -20,21 +20,18 @@ const TRACK_1: ClientLogo[] = [
   { id: "8", src: "/assets/clinet-logo/8.png", alt: "MCH Global" },
   { id: "9", src: "/assets/clinet-logo/9.png", alt: "Filipino Institute" },
   { id: "10", src: "/assets/clinet-logo/10.png", alt: "GDS Prestige" },
-  { id: "11", src: "/assets/clinet-logo/11.png", alt: "Partner 11" },
-];
-
-const TRACK_2: ClientLogo[] = [
-  { id: "12", src: "/assets/clinet-logo/12.png", alt: "Horizon Maritime" },
-  { id: "13", src: "/assets/clinet-logo/13.png", alt: "Al Futtaim Partner Entity" },
-  { id: "14", src: "/assets/clinet-logo/14.png", alt: "Apex Medical Systems" },
-  { id: "15", src: "/assets/clinet-logo/15.png", alt: "Lumina Technologies" },
-  { id: "1-1", src: "/assets/clinet-logo/1-1.png", alt: "Precision Diagnostics" },
-  { id: "2-1", src: "/assets/clinet-logo/2-1.png", alt: "Solara Clean Energy" },
-  { id: "3-1", src: "/assets/clinet-logo/3-1.png", alt: "Vesper Horology Paris" },
-  { id: "4-1", src: "/assets/clinet-logo/4-1.png", alt: "AeroLogistics Global" },
-  { id: "5-1", src: "/assets/clinet-logo/5-1.png", alt: "CareFlow Health" },
-  { id: "6-1", src: "/assets/clinet-logo/6-1.png", alt: "PulseFit Labs" },
-  { id: "7-1", src: "/assets/clinet-logo/7-1.png", alt: "Kratos Security" },
+  { id: "11", src: "/assets/clinet-logo/11.png", alt: "Ikon Petroleum" },
+  { id: "12", src: "/assets/clinet-logo/12.png", alt: "International Gemological Institute" },
+  { id: "13", src: "/assets/clinet-logo/13.png", alt: "Client Partner 13" },
+  { id: "14", src: "/assets/clinet-logo/14.png", alt: "Client Partner 14" },
+  { id: "15", src: "/assets/clinet-logo/15.png", alt: "Client Partner 15" },
+  { id: "1-1", src: "/assets/clinet-logo/1-1.png", alt: "Client Partner 16" },
+  { id: "2-1", src: "/assets/clinet-logo/2-1.png", alt: "Client Partner 17" },
+  { id: "3-1", src: "/assets/clinet-logo/3-1.png", alt: "Client Partner 18" },
+  { id: "4-1", src: "/assets/clinet-logo/4-1.png", alt: "Client Partner 19" },
+  { id: "5-1", src: "/assets/clinet-logo/5-1.png", alt: "Client Partner 20" },
+  { id: "6-1", src: "/assets/clinet-logo/6-1.png", alt: "Client Partner 21" },
+  { id: "7-1", src: "/assets/clinet-logo/7-1.png", alt: "Client Partner 22" },
 ];
 
 export function AboutClients() {
@@ -44,8 +41,6 @@ export function AboutClients() {
         
         {/* Section Heading with Clean Typography */}
         <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8 space-y-3 max-w-4xl text-left">
-          
-
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,43 +64,28 @@ export function AboutClients() {
 
       </div>
 
-      {/* ── 2-LEVEL MOVIE TRACK / MARQUEE TICKER ── */}
-      <div className="relative w-full mt-12 sm:mt-16 py-4 overflow-hidden">
-        {/* Soft edge gradient masks for luxury editorial depth */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-[#f4f6fb] to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-[#f4f6fb] to-transparent z-20" />
+      {/* ── SINGLE CONTINUOUS TRAILING TRACK ── */}
+      <div className="relative w-full mt-10 sm:mt-14 py-4 overflow-hidden group">
+        {/* Soft edge gradient masks */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-44 bg-gradient-to-r from-[#f4f6fb] to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-44 bg-gradient-to-l from-[#f4f6fb] to-transparent z-20" />
 
-        {/* Level 1 Track: Smooth Left Glide */}
-        <div className="flex space-x-6 animate-marquee py-2">
-          {[...TRACK_1, ...TRACK_1].map((logo, idx) => (
+        {/* Single Track: Continuous Smooth Left Glide with Pause on Hover */}
+        <div
+          className="flex space-x-6 animate-marquee py-2 group-hover:[animation-play-state:paused]"
+          style={{ animationDuration: "38s" }}
+        >
+          {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, idx) => (
             <div
-              key={`t1-${logo.id}-${idx}`}
-              className="w-[240px] sm:w-[280px] h-[120px] sm:h-[135px] rounded-[5px] bg-white border border-slate-200/90 flex items-center justify-center p-6 group hover:scale-[1.02] transition-all duration-300 shadow-none shrink-0"
+              key={`about-client-${logo.id}-${idx}`}
+              className="w-[220px] sm:w-[260px] h-[110px] sm:h-[125px] rounded-[5px] bg-white border border-slate-200/90 flex items-center justify-center p-6 group/card hover:scale-[1.02] transition-all duration-300 shadow-none shrink-0"
             >
               <img
                 src={logo.src}
                 alt={logo.alt}
                 loading="eager"
                 style={{ mixBlendMode: "multiply" }}
-                className="max-h-12 sm:max-h-14 max-w-[170px] w-auto h-auto object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Level 2 Track: Smooth Reverse Right Glide */}
-        <div className="flex space-x-6 animate-marquee-reverse py-2 mt-4">
-          {[...TRACK_2, ...TRACK_2].map((logo, idx) => (
-            <div
-              key={`t2-${logo.id}-${idx}`}
-              className="w-[240px] sm:w-[280px] h-[120px] sm:h-[135px] rounded-[5px] bg-white border border-slate-200/90 flex items-center justify-center p-6 group hover:scale-[1.02] transition-all duration-300 shadow-none shrink-0"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                loading="eager"
-                style={{ mixBlendMode: "multiply" }}
-                className="max-h-12 sm:max-h-14 max-w-[170px] w-auto h-auto object-contain grayscale opacity-65 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                className="max-h-11 sm:max-h-13 max-w-[160px] w-auto h-auto object-contain grayscale opacity-60 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-300"
               />
             </div>
           ))}

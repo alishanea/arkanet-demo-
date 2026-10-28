@@ -301,13 +301,13 @@ export default function WorkPage() {
           <img
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop"
             alt="Arkanet Engineering Case Studies"
-            className="w-full h-full object-cover opacity-25 brightness-105 saturate-110"
+            className="w-full h-full object-cover opacity-55 brightness-105 saturate-110"
             loading="eager"
           />
 
           {/* Multi-layered soft vignette and legibility masks */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/95 via-[#f4f4f8]/75 to-[#f4f6fb] pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-r from-[#202B61]/10 via-[#202B61]/5 to-transparent blur-3xl pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/80 via-[#f4f4f8]/45 to-[#f4f6fb]/85 pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#f4f6fb]/75 backdrop-blur-[2px] rounded-full blur-3xl pointer-events-none" />
         </div>
 
         {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
