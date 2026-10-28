@@ -15,7 +15,7 @@ export const IndustriesWeServe: React.FC = () => {
           {INDUSTRIES.map((ind, idx) => (
             <div
               key={idx}
-              className="bg-white border border-borderline hover:border-navy-mid rounded-xl p-4 text-center font-display font-semibold text-sm sm:text-base text-navy transition-all duration-200 hover:-translate-y-0.5 shadow-2xs flex items-center justify-center min-h-[70px]"
+              className="bg-white border border-borderline rounded-xl p-4 text-center font-display font-semibold text-sm sm:text-base text-navy transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center min-h-[70px]"
             >
               {ind}
             </div>

@@ -323,8 +323,8 @@ export default function WorkPage() {
                     onClick={() => setActiveCategory(cat)}
                     className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                       isActive
-                        ? "bg-[#202B61] text-white shadow-2xs"
-                        : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300 shadow-2xs"
+                        ? "bg-[#202B61] text-white "
+                        : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300 "
                     }`}
                   >
                     <span>{cat}</span>
@@ -369,7 +369,7 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: idx * 0.04 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group relative rounded-2xl bg-white border border-slate-200/90 hover:border-[#202B61]/40 shadow-2xs hover:shadow-md transition-all duration-300 p-5 sm:p-7 cursor-pointer overflow-hidden text-left"
+                    className="group relative rounded-2xl bg-white border border-slate-200/90 transition-all duration-300 p-5 sm:p-7 cursor-pointer overflow-hidden text-left"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
@@ -455,7 +455,7 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-30px" }}
                     transition={{ duration: 0.4, delay: idx * 0.03 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group rounded-2xl bg-white border border-slate-200/90 hover:border-[#202B61]/40 shadow-2xs hover:shadow-md transition-all duration-300 p-4 sm:p-5 cursor-pointer flex flex-col justify-between space-y-4 text-left"
+                    className="group rounded-2xl bg-white border border-slate-200/90 transition-all duration-300 p-4 sm:p-5 cursor-pointer flex flex-col justify-between space-y-4 text-left"
                   >
                     {/* Compact Image Frame (Clean, No Text Overlay) */}
                     <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 border border-slate-200/70">

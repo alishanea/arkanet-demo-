@@ -104,7 +104,7 @@ export function AboutWhoWeAre() {
                 delay: idx * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="bg-[#f8fafc] rounded-xl p-6 sm:p-8 border border-slate-200/90 shadow-2xs hover:border-[#202B61]/40 transition-all duration-300 flex flex-col justify-between h-full text-left space-y-4"
+              className="bg-[#f8fafc] rounded-xl p-6 sm:p-8 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between h-full text-left space-y-4"
             >
               <div>
                 <div className="font-heading font-extrabold text-4xl sm:text-5xl text-[#202B61] tracking-tight mb-2">
@@ -138,7 +138,7 @@ export function AboutWhoWeAre() {
               return (
                 <div
                   key={idx}
-                  className="rounded-xl p-7 sm:p-8 border border-slate-200/90 bg-[#f8fafc] flex flex-col justify-between h-full space-y-4 text-left shadow-2xs hover:border-[#202B61]/40 transition-all duration-300"
+                  className="rounded-xl p-7 sm:p-8 border border-slate-200/90 bg-[#f8fafc] flex flex-col justify-between h-full space-y-4 text-left transition-all duration-300"
                 >
                   <div className="space-y-3.5">
                     <div className="w-10 h-10 rounded-lg bg-[#202B61] text-white flex items-center justify-center">

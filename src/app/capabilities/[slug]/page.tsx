@@ -250,7 +250,7 @@ export default function CapabilityDetailPage() {
                 </div>
 
                 {/* Image Side with Clean Zoom Hover Effect */}
-                <div className="group relative aspect-[16/10] rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none bg-slate-100 hover:border-[#202B61]/50 transition-all duration-500">
+                <div className="group relative aspect-[16/10] rounded-[5px] overflow-hidden border border-slate-200/90 shadow-none bg-slate-100 transition-all duration-500">
                   <img
                     src={row.image}
                     alt={row.title}

@@ -45,7 +45,7 @@ export const AISolutions: React.FC<AISolutionsProps> = ({ onOpenBooking }) => {
               return (
                 <div
                   key={idx}
-                  className="bg-white border border-borderline hover:border-navy-mid rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 shadow-2xs"
+                  className="bg-white border border-borderline rounded-xl p-6 transition-all duration-200 hover:-translate-y-1"
                 >
                   <h3 className="font-heading font-bold text-xl text-[#202B61] mb-3">
                     {cap.title}

@@ -153,7 +153,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group bg-white hover:bg-slate-50/80 rounded-xl border border-slate-200/90 hover:border-[#202B61]/40 hover:shadow-md overflow-hidden transition-all duration-300 flex flex-col justify-between h-full cursor-pointer text-left outline-none"
+              className="group bg-white hover:bg-slate-50/80 rounded-xl border border-slate-200/90 overflow-hidden transition-all duration-300 flex flex-col justify-between h-full cursor-pointer text-left outline-none"
             >
               <div className="flex flex-col flex-1">
                 {/* Clean Aspect Ratio Image */}

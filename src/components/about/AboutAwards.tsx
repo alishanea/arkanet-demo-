@@ -17,7 +17,7 @@ export function AboutAwards() {
           {awards.map((award) => (
             <div
               key={award.name}
-              className="bg-white rounded-xl p-6 h-36 sm:h-40 shadow-2xs hover:shadow-md hover:border-[#202B61]/40 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-xl p-6 h-36 sm:h-40 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between group"
             >
               <div className="text-2xl sm:text-3xl font-heading font-extrabold text-[#202B61]">
                 {award.name}

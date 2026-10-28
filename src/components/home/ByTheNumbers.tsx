@@ -43,7 +43,7 @@ export const ByTheNumbers: React.FC = () => {
           {STATS.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-200/90 hover:border-[#202B61]/40 rounded-xl p-6 sm:p-8 shadow-2xs transition-all duration-300 flex flex-col justify-between h-full space-y-4"
+              className="bg-white border border-slate-200/90 rounded-xl p-6 sm:p-8 transition-all duration-300 flex flex-col justify-between h-full space-y-4"
             >
               <div>
                 <div className="font-heading font-extrabold text-4xl lg:text-5xl text-[#202B61] mb-2 tracking-tight">

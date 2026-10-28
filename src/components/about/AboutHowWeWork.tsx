@@ -72,7 +72,7 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
                   delay: idx * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group relative bg-white rounded-xl p-6 sm:p-8 border border-slate-200/90 shadow-2xs hover:border-[#202B61]/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full"
+                className="group relative bg-white rounded-xl p-6 sm:p-8 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between h-full"
               >
                 <div className="space-y-4">
                   {/* Top row: step number */}

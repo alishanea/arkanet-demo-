@@ -23,7 +23,7 @@ export function AboutTeam() {
           {team.map((member) => (
             <div
               key={member.name}
-              className="rounded-xl overflow-hidden bg-white border border-slate-200/90 shadow-2xs hover:border-[#202B61]/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full group"
+              className="rounded-xl overflow-hidden bg-white border border-slate-200/90 transition-all duration-300 flex flex-col justify-between h-full group"
             >
               {/* Photo Frame */}
               <div className="relative w-full aspect-[4/5] overflow-hidden bg-slate-100">

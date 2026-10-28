@@ -17,7 +17,7 @@ export const DigitalCapabilities: React.FC = () => {
           {AI_CAPABILITIES.map((cap, idx) => (
             <div
               key={idx}
-              className="bg-white border border-borderline hover:border-navy-mid rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 shadow-2xs"
+              className="bg-white border border-borderline rounded-xl p-6 transition-all duration-200 hover:-translate-y-1"
             >
               <h3 className="font-display font-bold text-xl text-navy mb-3">
                 {cap.title}

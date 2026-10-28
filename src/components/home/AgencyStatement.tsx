@@ -49,7 +49,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
           {STATEMENTS.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-xl bg-white border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between h-full hover:border-[#202B61]/40 hover:shadow-md transition-all duration-300 group"
+              className="rounded-xl bg-white border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between h-full transition-all duration-300 group"
             >
               <div className="space-y-4">
                 <div className="space-y-2">

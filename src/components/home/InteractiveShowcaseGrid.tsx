@@ -67,7 +67,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
               <Link
                 key={pillar.id}
                 href={pillar.href}
-                className="group relative rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full bg-white hover:bg-slate-50/80 border border-slate-200/90 hover:border-[#202B61]/40 hover:shadow-md transition-all duration-300 cursor-pointer"
+                className="group relative rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full bg-white hover:bg-slate-50/80 border border-slate-200/90 transition-all duration-300 cursor-pointer"
               >
                 <div className="space-y-4">
                   {/* Title & Expanding Underline Bar */}

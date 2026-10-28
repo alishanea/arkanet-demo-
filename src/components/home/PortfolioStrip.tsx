@@ -26,7 +26,7 @@ export const PortfolioStrip: React.FC<PortfolioStripProps> = ({ onOpenBooking })
             <div
               key={item.id}
               onClick={onOpenBooking}
-              className="group cursor-pointer bg-white border border-slate-200/90 hover:border-[#202B61]/40 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 shadow-2xs flex flex-col justify-between h-full"
+              className="group cursor-pointer bg-white border border-slate-200/90 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between h-full"
             >
               <div>
                 <div className="relative aspect-[16/10] rounded-lg overflow-hidden border border-slate-200/80 mb-4 bg-slate-50">
