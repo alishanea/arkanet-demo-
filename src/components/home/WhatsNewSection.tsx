@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { AboutCTA } from "@/components/about/AboutCTA";
 import { WorkDetailModal, WorkProjectDetail } from "@/components/modals/WorkDetailModal";
@@ -14,8 +15,6 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "marble-tile-stone",
     category: "Web & SaaS Platforms",
     title: "Marble Tile & Stone",
-    titleLine1: "Marble Tile & Stone",
-    titleLine2: "Showroom Platform",
     description: "High-conversion digital showroom and real-time 3D room visualizer engineered with WebGL for modern interior architects.",
     outerImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop",
@@ -38,8 +37,6 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "careflow-health",
     category: "Mobile Applications",
     title: "CareFlow Health Systems",
-    titleLine1: "CareFlow Health",
-    titleLine2: "Telehealth Systems",
     description: "Unified mobile telehealth application paired with clinician portal, automated prescription alerts, and instant lab report downloads.",
     outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
@@ -62,11 +59,9 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "neuraldesk-ai",
     category: "Applied AI & Automation",
     title: "NeuralDesk AI Assistant",
-    titleLine1: "NeuralDesk AI",
-    titleLine2: "Enterprise Assistant",
     description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected to customer helpdesks, resolving complex technical inquiries instantly.",
-    outerImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+    outerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+    innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "NeuralDesk Technologies",
       year: "2026",
@@ -86,8 +81,6 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "aerologistics-cloud",
     category: "Cloud & DevOps",
     title: "AeroLogistics Global Cloud",
-    titleLine1: "AeroLogistics Global",
-    titleLine2: "Cloud Fleet Platform",
     description: "Cloud-native event-driven platform utilizing IoT satellite telemetry and automated customs compliance for global freight fleets.",
     outerImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop",
@@ -152,52 +145,55 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </div>
         </div>
 
-        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID (PERFECT SYMMETRY, NO IMAGE THEME) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch w-full">
+        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID (PERFECT SYMMETRY WITH NATURAL PHOTOGRAPHY) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch w-full">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full bg-white hover:bg-slate-50/80 border border-slate-200/90 transition-all duration-300 cursor-pointer text-left outline-none"
+              className="group bg-white hover:bg-slate-50/80 rounded-xl border border-slate-200/90 overflow-hidden transition-all duration-300 flex flex-col justify-between h-full cursor-pointer text-left outline-none"
             >
-              <div className="space-y-5 flex-1 flex flex-col">
-                {/* Category Pill Tag */}
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]/80 bg-[#202B61]/5 px-2.5 py-1 rounded-md w-fit font-sans">
-                    {project.category}
-                  </span>
+              <div className="flex flex-col flex-1">
+                {/* Clean Aspect Ratio Image (Natural Photography, No Glowing/Highlight Theme) */}
+                <div className="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden shrink-0 border-b border-slate-100">
+                  <Image
+                    src={project.outerImage}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    unoptimized
+                  />
                 </div>
 
-                {/* Title & Expanding Underline Bar (Guaranteed identical 2-line height) */}
-                <div className="space-y-2.5">
-                  <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug min-h-[3.25rem] sm:min-h-[3.75rem] flex flex-col justify-start">
-                    <span className="block">{project.titleLine1 || project.title}</span>
-                    <span className="block">{project.titleLine2 || ""}</span>
-                  </h3>
-                  <div className="h-0.5 w-6 group-hover:w-14 bg-[#202B61] rounded-full transition-all duration-300 opacity-60 group-hover:opacity-100" />
-                </div>
+                {/* Card Body: Title, Description, Tech Chips */}
+                <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
+                  <div className="space-y-2.5">
+                    {/* Symmetrical Title Row */}
+                    <div className="flex items-start justify-between gap-3 min-h-[3rem] sm:min-h-[3.25rem]">
+                      <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight">
+                        {project.title}
+                      </h3>
+                      <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:translate-x-1 shrink-0 mt-1" />
+                    </div>
 
-                {/* Description (Guaranteed identical height & word count across all 4 cards) */}
-                <p className="font-sans font-medium text-slate-600 text-xs sm:text-sm leading-relaxed min-h-[5.25rem] sm:min-h-[5.5rem] flex-1 flex items-start">
-                  {project.description}
-                </p>
-              </div>
+                    {/* Exact 16 words in all 4 cards - Uniform Height */}
+                    <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed font-normal min-h-[4.5rem] sm:min-h-[4.75rem] flex items-start">
+                      {project.description}
+                    </p>
+                  </div>
 
-              {/* Bottom Action Prompt with 3 Tech Chips & Right-Facing Arrow */}
-              <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between">
-                <div className="flex flex-wrap items-center gap-1.5">
-                  {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-slate-600"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="text-slate-400 group-hover:text-[#202B61] transition-colors duration-200 shrink-0 ml-2">
-                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5" />
+                  {/* 3 Balanced Tech Chips */}
+                  <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-1.5 min-h-[32px]">
+                    {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-slate-600"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
