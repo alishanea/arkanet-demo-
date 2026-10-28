@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { Footer } from "@/components/layout/Footer";
 import { ContactFormModal } from "@/components/modals/ContactFormModal";
@@ -355,7 +355,7 @@ export default function WorkPage() {
             /* ═══════════════════════════════════════════════════════════════
                LAYOUT A: DETAILED SIDE-BY-SIDE ROWS (Clean, not big bulky boxes)
             ═══════════════════════════════════════════════════════════════ */
-            <div className="divide-y divide-slate-200/90 w-full">
+            <div className="space-y-6 sm:space-y-8">
               {filteredProjects.map((project, idx) => {
                 const indexFormatted = String(idx + 1).padStart(2, "0");
                 const details = PROJECT_DETAILS_MAP[project.id];
@@ -369,7 +369,7 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: idx * 0.04 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group relative transition-all duration-300 py-8 sm:py-10 cursor-pointer overflow-hidden text-left first:pt-2"
+                    className="group relative rounded-2xl bg-white border border-slate-200/90 transition-all duration-300 p-5 sm:p-7 cursor-pointer overflow-hidden text-left"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
@@ -409,7 +409,7 @@ export default function WorkPage() {
                             <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] group-hover:text-[#202B61] transition-colors leading-tight">
                               {project.title}
                             </h2>
-                            <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0" />
+                            <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0" />
                           </div>
 
                           <p className="font-sans text-xs sm:text-sm text-slate-600 font-normal leading-relaxed max-w-2xl line-clamp-2 sm:line-clamp-3">
@@ -440,9 +440,9 @@ export default function WorkPage() {
           ) : (
 
             /* ═══════════════════════════════════════════════════════════════
-               LAYOUT B: COMPACT 3-COLUMN GRID (Clean, No Boxes, Line Separation)
+               LAYOUT B: COMPACT 3-COLUMN PROFESSIONAL GRID (Clean Proportions)
             ═══════════════════════════════════════════════════════════════ */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200/90 w-full pt-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
               {filteredProjects.map((project, idx) => {
                 const details = PROJECT_DETAILS_MAP[project.id];
                 const techChips = details?.techStack?.slice(0, 3) || project.services?.slice(0, 3) || [];
@@ -455,13 +455,7 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-30px" }}
                     transition={{ duration: 0.4, delay: idx * 0.03 }}
                     onClick={() => setSelectedProject(project)}
-                    className={`group transition-all duration-300 py-6 md:py-0 cursor-pointer flex flex-col justify-between space-y-4 text-left ${
-                      idx % 3 === 0
-                        ? "md:pr-6 lg:pr-8"
-                        : idx % 3 === 2
-                        ? "md:pl-6 lg:pl-8"
-                        : "md:px-6 lg:px-8"
-                    }`}
+                    className="group rounded-2xl bg-white border border-slate-200/90 transition-all duration-300 p-4 sm:p-5 cursor-pointer flex flex-col justify-between space-y-4 text-left"
                   >
                     {/* Compact Image Frame (Clean, No Text Overlay) */}
                     <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 border border-slate-200/70">
@@ -488,7 +482,7 @@ export default function WorkPage() {
                           <h3 className="font-heading font-bold text-lg text-[#202B61] group-hover:text-[#202B61] transition-colors leading-snug">
                             {project.title}
                           </h3>
-                          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0 mt-0.5" />
+                          <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0 mt-0.5" />
                         </div>
 
                         <p className="font-sans text-xs text-slate-600 line-clamp-2 leading-relaxed mt-1.5">

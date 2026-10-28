@@ -132,15 +132,13 @@ export function AboutWhoWeAre() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200/90 w-full pt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
             {PILLARS.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
                 <div
                   key={idx}
-                  className={`flex flex-col justify-between py-6 md:py-0 space-y-4 text-left transition-all duration-300 ${
-                    idx % 2 === 0 ? "md:pr-8 lg:pr-10" : "md:pl-8 lg:pl-10"
-                  }`}
+                  className="rounded-xl p-7 sm:p-8 border border-slate-200/90 bg-[#f8fafc] flex flex-col justify-between h-full space-y-4 text-left transition-all duration-300"
                 >
                   <div className="space-y-3.5">
                     <div className="w-10 h-10 rounded-lg bg-[#202B61] text-white flex items-center justify-center">

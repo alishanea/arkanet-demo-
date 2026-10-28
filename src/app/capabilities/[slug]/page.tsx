@@ -182,21 +182,15 @@ export default function CapabilityDetailPage() {
             </div>
           </div>
 
-          {/* 4-Column Minimalist Grid (Clean, No Boxes, Line Separation) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/90 w-full pt-2">
+          {/* 4-Column Minimalist Grid with Dynamic Hover Lift & Index Badges */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {data.highlights.map((item, idx) => {
               const IconComp = ICON_MAP[item.icon] || Award;
               const indexFormatted = `0${idx + 1}`;
               return (
                 <div
                   key={idx}
-                  className={`group relative flex flex-col justify-between py-6 sm:py-0 transition-all duration-300 ${
-                    idx === 0
-                      ? "sm:pr-6 lg:pr-8"
-                      : idx === 3
-                      ? "sm:pl-6 lg:pl-8"
-                      : "sm:px-6 lg:px-8"
-                  }`}
+                  className="group relative p-7 rounded-[5px] bg-[#f8fafc] border border-slate-200/90 hover:border-[#202B61] hover:bg-white hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-5"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
@@ -217,7 +211,7 @@ export default function CapabilityDetailPage() {
                   </div>
 
                   {/* Subtle Accent Bottom Line */}
-                  <div className="h-[2px] w-8 bg-slate-200 group-hover:w-full group-hover:bg-[#202B61] transition-all duration-300 rounded-full mt-6" />
+                  <div className="h-[2px] w-8 bg-slate-200 group-hover:w-full group-hover:bg-[#202B61] transition-all duration-300 rounded-full" />
                 </div>
               );
             })}
@@ -252,7 +246,7 @@ export default function CapabilityDetailPage() {
                       className="group inline-flex items-center gap-2 text-xs font-bold text-[#202B61] hover:text-slate-700 uppercase tracking-wider transition-colors cursor-pointer"
                     >
                       <span>Consult on This Architecture</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </button>
                   </div>
                 </div>
@@ -278,9 +272,9 @@ export default function CapabilityDetailPage() {
 
       {/* ── SECTION 4: 3-COLUMN METRICS IMPACT STRIP ── */}
       <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f8fafc] border-y border-slate-200/80 text-left">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200/90">
-            <div className="py-6 md:py-0 md:pr-8 lg:pr-10 space-y-2">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-[5px] bg-white border border-slate-200/90 space-y-2">
               <div className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61]">
                 &lt; 0.8s
               </div>
@@ -292,7 +286,7 @@ export default function CapabilityDetailPage() {
               </p>
             </div>
 
-            <div className="py-6 md:py-0 md:px-8 lg:px-10 space-y-2">
+            <div className="p-6 rounded-[5px] bg-white border border-slate-200/90 space-y-2">
               <div className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61]">
                 +140%
               </div>
@@ -304,7 +298,7 @@ export default function CapabilityDetailPage() {
               </p>
             </div>
 
-            <div className="py-6 md:py-0 md:pl-8 lg:pl-10 space-y-2">
+            <div className="p-6 rounded-[5px] bg-white border border-slate-200/90 space-y-2">
               <div className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61]">
                 100 / 100
               </div>
@@ -319,10 +313,11 @@ export default function CapabilityDetailPage() {
         </div>
       </section>
 
-      {/* ── SECTION 5: TECH SHOWCASE (CLEAN, NO BOXES, EDITORIAL) ── */}
+      {/* ── SECTION 5: TECH SHOWCASE CARD WITH INTERACTIVE CHIPS ── */}
       <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left bg-white border-t border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto">
+          <div className="p-8 sm:p-12 lg:p-16 bg-[#f8fafc] text-[#202B61] rounded-[5px] border border-slate-200/90 shadow-none">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div className="space-y-6">
                 <h3 className="font-heading font-bold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-tight">
                   {data.techShowcase.title}
@@ -359,13 +354,13 @@ export default function CapabilityDetailPage() {
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#202B61] text-white hover:bg-[#161e47] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs font-sans"
                   >
                     <span>Discuss Architecture</span>
-                    <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-white" />
                   </button>
                 </div>
               </div>
 
               {/* Right Image with Hover Effect */}
-              <div className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-slate-200/80 bg-slate-100 shadow-none">
+              <div className="group relative aspect-[4/3] rounded-[5px] overflow-hidden border border-slate-200 bg-slate-100 shadow-none">
                 <img
                   src={data.techShowcase.image}
                   alt={data.techShowcase.title}
@@ -373,6 +368,7 @@ export default function CapabilityDetailPage() {
                 />
               </div>
             </div>
+          </div>
         </div>
       </section>
 

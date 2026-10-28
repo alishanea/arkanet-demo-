@@ -64,7 +64,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
 
           {/* Right Column: Clean Image */}
           <div className="lg:col-span-6 w-full flex justify-end">
-            <div className="relative aspect-[16/10] max-h-[300px] sm:max-h-[340px] w-full rounded-xl overflow-hidden border border-slate-200/90 bg-slate-100 shadow-none">
+            <div className="relative aspect-[16/10] max-h-[300px] sm:max-h-[340px] w-full rounded-xl overflow-hidden border border-slate-200/90 bg-slate-100 shadow-md">
               <img
                 src="https://images.pexels.com/photos/3182834/pexels-photo-3182834.jpeg"
                 alt="People in creative office workspace"
@@ -78,11 +78,9 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
         </div>
 
         {/* Bottom: 3-Column Stats Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/90 pt-8 border-t border-slate-200/90 max-w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 pt-8 border-t border-slate-200/90 max-w-full">
           {STATS_DATA.map((stat, idx) => (
-            <div key={idx} className={`flex items-center gap-4 py-4 sm:py-0 ${
-              idx === 0 ? "sm:pr-6 lg:pr-8" : idx === 2 ? "sm:pl-6 lg:pl-8" : "sm:px-6 lg:px-8"
-            }`}>
+            <div key={idx} className="flex items-center gap-4">
               <div className="font-heading font-extrabold text-3xl sm:text-4xl leading-none text-[#202B61] tracking-tight shrink-0">
                 {stat.number}
               </div>

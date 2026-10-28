@@ -58,8 +58,8 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
           </p>
         </div>
 
-        {/* 4 Columns (Clean, No Boxes, Line Separation) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/90 w-full pt-2">
+        {/* 4 Cards Grid (Equal Word Length: exactly 17 words description & 6 words deliverable) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {STEPS.map((step, idx) => {
             return (
               <motion.div
@@ -72,13 +72,7 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
                   delay: idx * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className={`group relative flex flex-col justify-between py-6 sm:py-0 transition-all duration-300 ${
-                  idx === 0
-                    ? "sm:pr-6 lg:pr-8"
-                    : idx === 3
-                    ? "sm:pl-6 lg:pl-8"
-                    : "sm:px-6 lg:px-8"
-                }`}
+                className="group relative bg-white rounded-xl p-6 sm:p-8 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between h-full"
               >
                 <div className="space-y-4">
                   {/* Top row: step number */}
@@ -100,7 +94,7 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
                 </div>
 
                 {/* Key Deliverable Footer (Exact 6 words in each card) */}
-                <div className="pt-4 mt-6 border-t border-slate-200/70">
+                <div className="pt-4 mt-6 border-t border-slate-100">
                   <p className="text-xs font-heading font-semibold text-[#202B61] leading-snug">
                     {step.deliverable}
                   </p>
