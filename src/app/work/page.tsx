@@ -280,56 +280,55 @@ export default function WorkPage() {
 
   const selectedProjectDetails = selectedProject
     ? {
-        ...selectedProject,
-        aspectX: 16,
-        aspectY: 10,
-        outerImage: selectedProject.image,
-        innerImage: selectedProject.image,
-        detail: PROJECT_DETAILS_MAP[selectedProject.id],
-      }
+      ...selectedProject,
+      aspectX: 16,
+      aspectY: 10,
+      outerImage: selectedProject.image,
+      innerImage: selectedProject.image,
+      detail: PROJECT_DETAILS_MAP[selectedProject.id],
+    }
     : null;
 
   return (
     <main className="min-h-screen bg-[#f4f6fb] text-[#0b1330] selection:bg-[#0b1330] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. ARCHITECTURAL HERO HEADER ── */}
-      <section className="w-full bg-[#f4f6fb] pt-28 sm:pt-36 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto text-left space-y-6">
-          
-          <div className="space-y-4 max-w-4xl">
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
+      {/* ── 1. ARCHITECTURAL HERO HEADER (FULL PAGE SCREEN) ── */}
+      <section className="w-full min-h-screen min-h-[100dvh] flex flex-col justify-between bg-[#f4f6fb] pt-32 sm:pt-40 lg:pt-44 pb-10 sm:pb-14 px-6 sm:px-10 lg:px-14 border-b border-slate-200/80">
+        <div className="max-w-[1400px] mx-auto w-full my-auto text-left space-y-8 sm:space-y-10">
+
+          <div className="space-y-5 sm:space-y-6 max-w-4xl">
+            <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl text-[#202B61] tracking-tight leading-[1.06]">
               Selected Work &amp; <br className="hidden sm:inline" />
               <span className="text-[#1d4ed8]">Engineering Case Studies</span>
             </h1>
 
-            <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
+            <p className="font-sans text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl">
               A curated index of production web platforms, mobile ecosystems, cloud architectures, and applied AI systems engineered for real-world traffic and business outcomes.
             </p>
           </div>
 
           {/* ── 2. FILTER & LAYOUT VIEW CONTROLS ── */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-4 border-t border-slate-200/60">
-            
+          <div className="pt-6 sm:pt-8 border-t border-slate-200/70">
             {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {CATEGORIES.map((cat) => {
                 const isActive = activeCategory === cat;
-                const count = cat === "All" 
-                  ? WORK_PROJECTS.length 
+                const count = cat === "All"
+                  ? WORK_PROJECTS.length
                   : WORK_PROJECTS.filter((p) => p.category === cat).length;
                 return (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+                    className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                       isActive
                         ? "bg-[#0b1330] text-white shadow-2xs"
-                        : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300"
+                        : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300 shadow-2xs"
                     }`}
                   >
                     <span>{cat}</span>
-                    <span className={`text-[10px] font-bold px-1.5 py-0.2 rounded-full ${
+                    <span className={`text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full ${
                       isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
                     }`}>
                       {count}
@@ -341,6 +340,12 @@ export default function WorkPage() {
           </div>
 
         </div>
+
+        {/* Scroll Cue at bottom of the full screen */}
+        <div className="max-w-[1400px] mx-auto w-full pt-6 flex items-center justify-between text-xs text-slate-400 font-sans border-t border-slate-200/60">
+          <span>Scroll down to explore case studies</span>
+          <span className="text-slate-500 font-mono">10 Projects ↓</span>
+        </div>
       </section>
 
       {/* ── 3. WORK SHOWCASE STAGE ── */}
@@ -351,7 +356,7 @@ export default function WorkPage() {
               No projects found for category &quot;{activeCategory}&quot;.
             </div>
           ) : viewMode === "detailed" ? (
-            
+
             /* ═══════════════════════════════════════════════════════════════
                LAYOUT A: DETAILED SIDE-BY-SIDE ROWS (Clean, not big bulky boxes)
             ═══════════════════════════════════════════════════════════════ */
@@ -372,7 +377,7 @@ export default function WorkPage() {
                     className="group relative rounded-2xl bg-white border border-slate-200/90 hover:border-[#1d4ed8]/50 shadow-2xs hover:shadow-md transition-all duration-300 p-5 sm:p-7 cursor-pointer overflow-hidden text-left"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-                      
+
                       {/* Left Side: Crisp Photography Thumbnail (Span 5 - Clean, No Text Overlay) */}
                       <div className="lg:col-span-5 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80 shrink-0">
                         <img
@@ -386,7 +391,7 @@ export default function WorkPage() {
 
                       {/* Right Side: Editorial Architecture & Metadata (Span 7) */}
                       <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
-                        
+
                         {/* Meta Header Row */}
                         <div className="flex items-center justify-between text-xs">
                           <div className="flex items-center gap-2.5">
