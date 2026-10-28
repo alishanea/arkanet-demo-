@@ -46,15 +46,21 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
           </div>
         </div>
 
-        {/* ── 2. THREE EQUAL BALANCED HIGHLIGHT CARDS ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch w-full">
+        {/* ── 2. THREE EQUAL BALANCED HIGHLIGHT COLUMNS (CLEAN, NO BOXES, LINE SEPARATION) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200/90 w-full pt-2">
           {STATEMENTS.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-xl bg-white border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between h-full transition-all duration-300 group"
+              className={`flex flex-col justify-between py-6 md:py-0 transition-all duration-300 group ${
+                idx === 0
+                  ? "md:pr-8 lg:pr-10"
+                  : idx === 1
+                  ? "md:px-8 lg:px-10"
+                  : "md:pl-8 lg:pl-10"
+              }`}
             >
               <div className="space-y-4">
-                <div className="space-y-2">
+                <div className="space-y-2.5">
                   <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug">
                     {item.title}
                   </h3>
@@ -67,7 +73,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-500">
+              <div className="pt-6 mt-6 border-t border-slate-200/70 flex items-center gap-2 text-xs font-semibold text-slate-500">
                 <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
                 <span>{item.tag}</span>
               </div>

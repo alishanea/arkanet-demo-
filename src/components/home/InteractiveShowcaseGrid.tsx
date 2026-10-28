@@ -67,16 +67,22 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           </div>
         </div>
 
-        {/* ── 2. FULLY INTERACTIVE 4-COLUMN CAPABILITY GRID (PERFECT SYMMETRY) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch w-full">
-          {PILLARS.map((pillar) => {
+        {/* ── 2. FULLY INTERACTIVE 4-COLUMN CAPABILITY GRID (CLEAN, NO BOXES, LINE SEPARATION) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/90 w-full pt-2">
+          {PILLARS.map((pillar, idx) => {
             return (
               <Link
                 key={pillar.id}
                 href={pillar.href}
-                className="group relative rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full bg-white hover:bg-slate-50/80 border border-slate-200/90 transition-all duration-300 cursor-pointer text-left"
+                className={`group relative flex flex-col justify-between py-6 sm:py-0 transition-all duration-300 cursor-pointer text-left ${
+                  idx === 0
+                    ? "sm:pr-6 lg:pr-8"
+                    : idx === 3
+                    ? "sm:pl-6 lg:pl-8"
+                    : "sm:px-6 lg:px-8"
+                }`}
               >
-                <div className="space-y-5 flex-1 flex flex-col">
+                <div className="space-y-4 flex-1 flex flex-col">
                   {/* Title & Expanding Underline Bar (Guaranteed identical 2-line height) */}
                   <div className="space-y-2.5">
                     <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug min-h-[3.25rem] sm:min-h-[3.75rem] flex flex-col justify-start">
@@ -93,7 +99,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                 </div>
 
                 {/* Bottom Action Prompt - right-facing arrow with line */}
-                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-end text-slate-400 group-hover:text-[#202B61] transition-colors duration-200">
+                <div className="pt-4 mt-6 border-t border-slate-200/70 flex items-center justify-end text-slate-400 group-hover:text-[#202B61] transition-colors duration-200">
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5" />
                 </div>
               </Link>

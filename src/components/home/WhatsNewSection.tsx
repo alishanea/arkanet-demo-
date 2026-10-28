@@ -145,17 +145,23 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </div>
         </div>
 
-        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID (PERFECT SYMMETRY WITH NATURAL PHOTOGRAPHY) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch w-full">
-          {filteredProjects.map((project) => (
+        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID (CLEAN, NO BOXES, LINE SEPARATION) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/90 w-full pt-2">
+          {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group bg-white hover:bg-slate-50/80 rounded-xl border border-slate-200/90 overflow-hidden transition-all duration-300 flex flex-col justify-between h-full cursor-pointer text-left outline-none"
+              className={`group flex flex-col justify-between py-6 sm:py-0 transition-all duration-300 cursor-pointer text-left outline-none ${
+                idx === 0
+                  ? "sm:pr-6 lg:pr-8"
+                  : idx === 3
+                  ? "sm:pl-6 lg:pl-8"
+                  : "sm:px-6 lg:px-8"
+              }`}
             >
-              <div className="flex flex-col flex-1">
-                {/* Clean Aspect Ratio Image (Natural Photography, No Glowing/Highlight Theme) */}
-                <div className="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden shrink-0 border-b border-slate-100">
+              <div className="flex flex-col flex-1 space-y-4">
+                {/* Clean Aspect Ratio Image Frame */}
+                <div className="relative w-full aspect-[16/10] rounded-xl bg-slate-100 overflow-hidden shrink-0 border border-slate-200/80">
                   <Image
                     src={project.outerImage}
                     alt={project.title}
@@ -166,35 +172,30 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   />
                 </div>
 
-                {/* Card Body: Title, Description, Tech Chips */}
-                <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
-                  <div className="space-y-2.5">
-                    {/* Symmetrical Title Row */}
-                    <div className="flex items-start justify-between gap-3 min-h-[3rem] sm:min-h-[3.25rem]">
-                      <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight">
-                        {project.title}
-                      </h3>
-                      <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:translate-x-1 shrink-0 mt-1" />
-                    </div>
-
-                    {/* Exact 16 words in all 4 cards - Uniform Height */}
-                    <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed font-normal min-h-[4.5rem] sm:min-h-[4.75rem] flex items-start">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* 3 Balanced Tech Chips */}
-                  <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-1.5 min-h-[32px]">
-                    {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-slate-600"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                {/* Symmetrical Title Row */}
+                <div className="flex items-start justify-between gap-3 min-h-[3rem] sm:min-h-[3.25rem] pt-1">
+                  <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight">
+                    {project.title}
+                  </h3>
+                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:translate-x-1 shrink-0 mt-1" />
                 </div>
+
+                {/* Exact 16 words in all 4 cards - Uniform Height */}
+                <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed font-normal min-h-[4.5rem] sm:min-h-[4.75rem] flex items-start">
+                  {project.description}
+                </p>
+              </div>
+
+              {/* 3 Balanced Tech Chips */}
+              <div className="pt-4 mt-6 border-t border-slate-200/70 flex flex-wrap items-center gap-1.5 min-h-[32px]">
+                {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-200/60 text-slate-600"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
