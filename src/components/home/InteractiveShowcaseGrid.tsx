@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export interface InteractiveShowcaseGridProps {
   onOpenBooking?: () => void;
@@ -84,10 +84,9 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                   </p>
                 </div>
 
-                {/* Bottom Action Prompt with Small Arrow */}
-                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold font-sans text-slate-400 group-hover:text-[#202B61] transition-colors duration-200">
-                  <span className="tracking-tight">Explore Capability</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:scale-125" />
+                {/* Bottom Action Prompt - right-facing arrow with line */}
+                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-end text-slate-400 group-hover:text-[#202B61] transition-colors duration-200">
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5" />
                 </div>
               </Link>
             );
