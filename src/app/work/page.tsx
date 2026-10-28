@@ -419,23 +419,16 @@ export default function WorkPage() {
                           </p>
                         </div>
 
-                        {/* Tech Stack Chips & Action Link */}
-                        <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            {techChips.map((tech, tIdx) => (
-                              <span
-                                key={tIdx}
-                                className="font-sans text-[11px] font-medium text-slate-600 bg-slate-100/80 px-2.5 py-0.5 rounded-md"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-
-                          <span className="text-xs font-semibold text-[#1d4ed8] group-hover:underline inline-flex items-center gap-1">
-                            <span>View Case Study</span>
-                            <ArrowUpRight className="w-3.5 h-3.5" />
-                          </span>
+                        {/* Tech Stack Chips */}
+                        <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center gap-1.5 text-xs">
+                          {techChips.map((tech, tIdx) => (
+                            <span
+                              key={tIdx}
+                              className="font-sans text-[11px] font-medium text-slate-600 bg-slate-100/80 px-2.5 py-0.5 rounded-md"
+                            >
+                              {tech}
+                            </span>
+                          ))}
                         </div>
 
                       </div>
