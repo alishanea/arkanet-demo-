@@ -22,14 +22,14 @@
   }
 
   body {
-    @apply bg-[#f4f6fb] text-[#202B61] font-sans antialiased selection:bg-[#1d4ed8] selection:text-white;
+    @apply bg-[#f4f6fb] text-[#202B61] font-sans antialiased selection:bg-[#202B61] selection:text-white;
     font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   h1 {
     font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.875rem; /* 30px - text-3xl */
-    font-weight: 700;
+    font-size: 1.875rem;
+    font-weight: 800;
     line-height: 1.12;
     letter-spacing: -0.025em;
     color: #202B61;
@@ -37,23 +37,23 @@
 
   @media (min-width: 640px) {
     h1 {
-      font-size: 3rem; /* 48px - sm:text-5xl - slightly reduced */
+      font-size: 3rem;
       line-height: 1.05;
     }
   }
 
   @media (min-width: 1024px) {
     h1 {
-      font-size: 82px; /* lg:text-[82px] - slightly reduced */
+      font-size: 76px;
       line-height: 1.02;
     }
   }
 
   h2 {
     font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(22px, 3vw, 40px);
-    font-weight: 600;
-    line-height: 1.1;
+    font-size: clamp(24px, 3.2vw, 42px);
+    font-weight: 800;
+    line-height: 1.15;
     letter-spacing: -0.02em;
     color: #202B61;
   }
@@ -66,10 +66,23 @@
 }
 
 @layer components {
-  /* Homepage Hero H1 style set globally for all page hero titles */
+  /* Unified Section Header Style across the entire website */
+  .section-h2,
+  .bento-section-h2,
+  .philosophy-h2,
+  .about-h2 {
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(24px, 3.2vw, 42px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #202B61;
+  }
+
+  /* Unified Hero Title */
   .hero-h1 {
     font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.875rem; /* 30px - text-3xl */
+    font-size: 1.875rem;
     font-weight: 800;
     line-height: 1.12;
     letter-spacing: -0.025em;
@@ -78,163 +91,74 @@
 
   @media (min-width: 640px) {
     .hero-h1 {
-      font-size: 3rem; /* 48px - sm:text-5xl - slightly reduced */
+      font-size: 3rem;
       line-height: 1.05;
     }
   }
 
   @media (min-width: 1024px) {
     .hero-h1 {
-      font-size: 82px; /* lg:text-[82px] - slightly reduced */
+      font-size: 76px;
       line-height: 1.02;
     }
   }
 
-  /* Dedicated Showcase Video Headline Style (independent from hero-h1) */
-  .showcase-heading {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(29px, 4.57vw, 95px);
-    font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: -0.025em;
-    color: #202B61;
-  }
-
-  .section-h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(22px, 3vw, 40px);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: #202B61;
-  }
-
-  .bento-section-h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(22px, 3vw, 40px);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: #202B61;
-  }
-
-  /* Custom section heading specifically for People-First, Problem-Solvers section */
-  .philosophy-h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(22px, 3vw, 40px);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: #202B61;
-  }
-
-  .section-eyebrow {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(12px, 1.2vw, 15px);
-    font-weight: 800;
-    letter-spacing: 0.22em;
-    color: #1d4ed8;
-  }
-
+  /* Unified Hero Subtitle */
   .hero-sub {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(16px, 1.8vw, 24px);
+    font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(15px, 1.6vw, 20px);
     font-weight: 500;
     line-height: 1.6;
     color: #202B61;
   }
 
-  /* About statement paragraph */
-  .about-statement {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(21px, 2.5vw, 30px);
-    font-weight: 500;
-    line-height: 1.4;
+  /* Unified Card Title */
+  .card-h3,
+  .capability-card-title {
+    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(18px, 1.8vw, 22px);
+    font-weight: 700;
+    line-height: 1.25;
     letter-spacing: -0.015em;
     color: #202B61;
   }
 
-  /* About section titles */
-  .about-h2 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(19px, 3.16vw, 45px);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-    color: #202B61;
-  }
-
-  .card-h3 {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(22px, 3vw, 40px);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: #202B61;
-  }
-
-  /* Capability Carousel Cards Typography (WhatsNewSection) */
-  .capability-card-title {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(20px, 2.2vw, 32px);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: #202B61;
-  }
-
-  .capability-card-desc {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(16px, 1.2vw, 18px);
-    font-weight: 400;
-    line-height: 1.5;
-  }
-
+  /* Unified Card Body Text */
+  .card-body,
+  .capability-card-desc,
   .body-main {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(14px, 1.25vw, 18px);
+    font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(13px, 1.1vw, 15px);
     font-weight: 400;
-    line-height: 1.65;
+    line-height: 1.6;
+    color: #475569;
   }
 
   .body-sm {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(12px, 1vw, 14px);
+    font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(12px, 1vw, 13px);
     font-weight: 400;
     line-height: 1.5;
+    color: #64748b;
   }
 
-  /* Global Modal Shared Typography Tokens */
+  /* Unified Modal Typography */
   .modal-hero-h1 {
     font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(30px, 4vw, 62px);
-    font-weight: 700;
-    line-height: 1.06;
+    font-size: clamp(28px, 3.8vw, 54px);
+    font-weight: 800;
+    line-height: 1.1;
     letter-spacing: -0.025em;
     color: #202B61;
-  }
-
-  .modal-hero-sub {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(16px, 1.8vw, 20px);
-    font-weight: 400;
-    line-height: 1.6;
   }
 
   .modal-section-h2 {
     font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
-    font-size: clamp(21px, 3.15vw, 40px);
+    font-size: clamp(20px, 2.5vw, 32px);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.025em;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
     color: #202B61;
-  }
-
-  .modal-body-p {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(16px, 1.6vw, 20px);
-    font-weight: 400;
-    line-height: 1.65;
   }
 }
 

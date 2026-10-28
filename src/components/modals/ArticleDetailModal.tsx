@@ -171,7 +171,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                 {/* ── HEADER & META ── */}
                 <div className="space-y-4">
                   {/* Category & Read Time (Unboxed clean text) */}
-                  <div className="flex items-center gap-2 text-sm font-semibold text-[#1d4ed8]">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#202B61]">
                     <span>{currentArticle.category}</span>
                     <span className="text-slate-300">•</span>
                     <span className="text-slate-500 font-normal">{currentArticle.readTime}</span>
@@ -260,7 +260,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                       </div>
 
                       <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-xs font-semibold text-[#1d4ed8]">
+                        <div className="flex items-center gap-2 text-xs font-semibold text-[#202B61]">
                           <span>{nextArticle.category}</span>
                           <span className="text-slate-300">•</span>
                           <span className="text-slate-500 font-normal">{nextArticle.readTime}</span>
@@ -278,7 +278,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                           <button
                             type="button"
                             onClick={handleNextArticle}
-                            className="group inline-flex items-center gap-2 bg-[#202B61] hover:bg-[#1d4ed8] text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-sm"
+                            className="group inline-flex items-center gap-2 bg-[#202B61] hover:bg-[#161e47] text-white px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-sm"
                           >
                             <span>Read Next Article</span>
                             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

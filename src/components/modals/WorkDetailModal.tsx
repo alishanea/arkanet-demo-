@@ -173,7 +173,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                 {/* ── HEADER & META ── */}
                 <div className="space-y-4">
                   {/* Category & Year (Unboxed clean text) */}
-                  <div className="flex items-center gap-2 text-sm font-semibold text-[#1d4ed8]">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-[#202B61]">
                     <span>{currentProject.category}</span>
                     <span className="text-slate-300">•</span>
                     <span className="text-slate-500 font-normal">{details.year}</span>
@@ -300,7 +300,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                     <button
                       type="button"
                       onClick={handleNextProject}
-                      className="group inline-flex items-center gap-3 bg-[#202B61] hover:bg-[#1d4ed8] text-white px-7 py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg"
+                      className="group inline-flex items-center gap-3 bg-[#202B61] hover:bg-[#161e47] text-white px-7 py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg"
                     >
                       <span>Next Project: {nextProject.title}</span>
                       <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />

@@ -179,7 +179,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
 
                       <button
                         type="submit"
-                        className="w-full bg-[#202B61] hover:bg-[#1d4ed8] text-white font-heading font-bold text-base py-4 px-8 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
+                        className="w-full bg-[#202B61] hover:bg-[#161e47] text-white font-heading font-bold text-base py-4 px-8 rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
                       >
                         Submit Request
                       </button>
@@ -196,7 +196,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                     </p>
                     <button
                       onClick={onClose}
-                      className="mt-6 bg-[#202B61] hover:bg-[#1d4ed8] text-white font-heading font-bold py-3 px-8 rounded-xl cursor-pointer transition-colors"
+                      className="mt-6 bg-[#202B61] hover:bg-[#161e47] text-white font-heading font-bold py-3 px-8 rounded-xl cursor-pointer transition-colors"
                     >
                       Close
                     </button>

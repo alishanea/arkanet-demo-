@@ -5,25 +5,25 @@ import { team } from "@/lib/aboutData";
 
 export function AboutTeam() {
   return (
-    <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 bg-[#f4f6fb] border-t border-slate-200/80 text-left">
-      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
+    <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-t border-slate-200/80 text-left">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         
         {/* Section Header */}
-        <div className="space-y-4 max-w-3xl">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-snug">
+        <div className="space-y-3 max-w-3xl">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-tight">
             One team, start to finish
           </h2>
-          <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed">
             Arkanet is a team of engineers, designers, and strategists working across web, mobile, AI, and digital infrastructure — one cohesive team, not fragmented handoffs between disparate vendors.
           </p>
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 items-stretch">
           {team.map((member) => (
             <div
               key={member.name}
-              className="rounded-[5px] overflow-hidden bg-white border border-slate-200/90 shadow-none flex flex-col justify-between group"
+              className="rounded-xl overflow-hidden bg-white border border-slate-200/90 shadow-2xs hover:border-[#202B61]/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full group"
             >
               {/* Photo Frame */}
               <div className="relative w-full aspect-[4/5] overflow-hidden bg-slate-100">
@@ -36,7 +36,7 @@ export function AboutTeam() {
               </div>
 
               {/* Text Information Below */}
-              <div className="p-4 sm:p-5 text-left border-t border-slate-100">
+              <div className="p-5 text-left border-t border-slate-100">
                 <h3 className="font-heading font-bold text-base sm:text-lg text-[#202B61] leading-tight">
                   {member.name}
                 </h3>

@@ -74,7 +74,7 @@ export const AISolutions: React.FC<AISolutionsProps> = ({ onOpenBooking }) => {
 
               <button
                 onClick={onOpenBooking}
-                className="inline-flex items-center gap-2 bg-[#1d4ed8] hover:bg-[#1740b3] text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md hover:-translate-y-0.5 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#202B61] hover:bg-[#161e47] text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md hover:-translate-y-0.5 cursor-pointer"
               >
                 Request Chatbot Demo <ArrowRight className="w-4 h-4" />
               </button>

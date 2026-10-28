@@ -87,28 +87,28 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   }, [mobileMenuOpen]);
 
   const engineeringItems = [
-    { label: "Website Development", href: "/capabilities/website-development", icon: Layout, color: "text-cyan-500", glow: "rgba(6,182,212,0.35)" },
-    { label: "Mobile App Development", href: "/capabilities/mobile-app-development", icon: Smartphone, color: "text-sky-500", glow: "rgba(14,165,233,0.35)" },
-    { label: "SaaS Product Dev", href: "/capabilities/saas-product-development", icon: Layers, color: "text-blue-500", glow: "rgba(59,130,246,0.35)" },
-    { label: "E-Commerce & Shopify", href: "/capabilities/ecommerce-shopify-development", icon: ShoppingBag, color: "text-emerald-500", glow: "rgba(16,185,129,0.35)" },
-    { label: "Portal Development", href: "/capabilities/portal-development", icon: ShieldCheck, color: "text-teal-500", glow: "rgba(20,184,166,0.35)" },
-    { label: "Cloud & DevOps", href: "/capabilities/cloud-devops-hosting", icon: Cloud, color: "text-cyan-600", glow: "rgba(8,145,178,0.35)" },
+    { label: "Website Development", href: "/capabilities/website-development", icon: Layout, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "Mobile App Development", href: "/capabilities/mobile-app-development", icon: Smartphone, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "SaaS Product Dev", href: "/capabilities/saas-product-development", icon: Layers, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "E-Commerce & Shopify", href: "/capabilities/ecommerce-shopify-development", icon: ShoppingBag, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "Portal Development", href: "/capabilities/portal-development", icon: ShieldCheck, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "Cloud & DevOps", href: "/capabilities/cloud-devops-hosting", icon: Cloud, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
   ];
 
   const aiItems = [
-    { label: "Applied AI & ML", href: "/capabilities/applied-ai-ml", icon: Brain, color: "text-violet-500", glow: "rgba(139,92,246,0.35)" },
-    { label: "Conversational AI & Agents", href: "/capabilities/ai-chatbot-automation", icon: Bot, color: "text-fuchsia-500", glow: "rgba(217,70,239,0.35)" },
-    { label: "Multilingual AI Solutions", href: "/capabilities/multilingual-ai-solutions", icon: Globe, color: "text-purple-500", glow: "rgba(168,85,247,0.35)" },
-    { label: "Data Engineering", href: "/capabilities/data-engineering", icon: Database, color: "text-indigo-500", glow: "rgba(99,102,241,0.35)" },
-    { label: "Voice AI & IVR Systems", href: "/capabilities/voice-ai-ivr-systems", icon: PhoneCall, color: "text-indigo-600", glow: "rgba(79,70,229,0.35)" },
+    { label: "Applied AI & ML", href: "/capabilities/applied-ai-ml", icon: Brain, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "Conversational AI & Agents", href: "/capabilities/ai-chatbot-automation", icon: Bot, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "Multilingual AI Solutions", href: "/capabilities/multilingual-ai-solutions", icon: Globe, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "Data Engineering", href: "/capabilities/data-engineering", icon: Database, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "Voice AI & IVR Systems", href: "/capabilities/voice-ai-ivr-systems", icon: PhoneCall, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
   ];
 
   const designItems = [
-    { label: "UI/UX & Graphic Design", href: "/capabilities/graphic-design", icon: Palette, color: "text-pink-500", glow: "rgba(236,72,153,0.35)" },
-    { label: "Digital Marketing", href: "/capabilities/digital-marketing", icon: TrendingUp, color: "text-rose-500", glow: "rgba(244,63,94,0.35)" },
-    { label: "Business Process Automation", href: "/capabilities/business-automation", icon: Cpu, color: "text-amber-500", glow: "rgba(245,158,11,0.35)" },
-    { label: "WhatsApp Commerce", href: "/capabilities/whatsapp-social-commerce-automation", icon: MessageCircle, color: "text-emerald-500", glow: "rgba(16,185,129,0.35)" },
-    { label: "ERP & Business Systems", href: "/capabilities/erp-business-management", icon: Boxes, color: "text-orange-500", glow: "rgba(249,115,22,0.35)" },
+    { label: "UI/UX & Graphic Design", href: "/capabilities/graphic-design", icon: Palette, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "Digital Marketing", href: "/capabilities/digital-marketing", icon: TrendingUp, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "Business Process Automation", href: "/capabilities/business-automation", icon: Cpu, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "WhatsApp Commerce", href: "/capabilities/whatsapp-social-commerce-automation", icon: MessageCircle, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
+    { label: "ERP & Business Systems", href: "/capabilities/erp-business-management", icon: Boxes, color: "text-[#202B61]", glow: "rgba(32,43,97,0.12)" },
   ];
 
   const renderColumn = (
@@ -185,7 +185,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 alt="Arkanet Logo"
                 className="w-7 h-7 sm:w-8 sm:h-8 object-contain group-hover:scale-105 transition-transform"
               />
-              <span className="font-display font-black text-lg sm:text-xl text-[#202B61] tracking-tight group-hover:text-[#1d4ed8] transition-colors">
+              <span className="font-display font-black text-lg sm:text-xl text-[#202B61] tracking-tight group-hover:text-[#202B61] transition-colors">
                 ARKANET
               </span>
             </Link>

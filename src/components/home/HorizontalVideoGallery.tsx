@@ -270,7 +270,7 @@ export const HorizontalVideoGallery: React.FC = () => {
                       <div className="space-y-3 pt-2">
                         {project.features.map((feat, fIdx) => (
                           <div key={fIdx} className="flex items-start gap-2.5 text-xs text-left">
-                            <span className="w-2.5 h-2.5 rounded-xs bg-[#1d4ed8] shrink-0 mt-1" />
+                            <span className="w-2.5 h-2.5 rounded-xs bg-[#202B61] shrink-0 mt-1" />
                             <div>
                               <span className="font-heading font-bold text-[#202B61] block">{feat.label}</span>
                               <span className="text-slate-600 font-sans">{feat.detail}</span>
@@ -281,7 +281,7 @@ export const HorizontalVideoGallery: React.FC = () => {
 
                       {/* Action Pill Button */}
                       <div className="pt-3">
-                        <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#202B61] hover:bg-[#1d4ed8] text-white text-xs font-sans font-bold transition-colors duration-200 shadow-sm cursor-pointer">
+                        <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#202B61] hover:bg-[#202B61] text-white text-xs font-sans font-bold transition-colors duration-200 shadow-sm cursor-pointer">
                           <span>{project.ctaText}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
@@ -298,7 +298,7 @@ export const HorizontalVideoGallery: React.FC = () => {
                         />
                         <div className="absolute bottom-3 right-3 bg-[#202B61]/85 backdrop-blur-md text-white text-[10px] font-sans font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5">
                           <span>SHOWCASE</span>
-                          <ArrowUpRight className="w-3 h-3 text-[#1d4ed8]" />
+                          <ArrowUpRight className="w-3 h-3 text-[#202B61]" />
                         </div>
                       </div>
                     </div>

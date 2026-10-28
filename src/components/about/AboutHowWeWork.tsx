@@ -45,21 +45,21 @@ const STEPS = [
 
 export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
   return (
-    <section className="py-10 sm:py-16 lg:py-24 px-6 sm:px-8 lg:px-[40px] bg-[#f4f6fb] select-none">
-      <div className="w-full space-y-8 sm:space-y-12">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] select-none border-t border-slate-200/80">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         {/* Section Heading & Sub-Content */}
-        <div className="w-full text-left space-y-4">
-          <h2 className="section-h2 text-[#202B61]">
+        <div className="w-full text-left space-y-3 max-w-4xl">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-tight">
             How We Work
           </h2>
 
-          <p className="hero-sub text-slate-600 max-w-5xl pt-1">
+          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
             We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
           </p>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
+        {/* 4 Cards Grid (Equal Word Length: exactly 17 words description & 6 words deliverable) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {STEPS.map((step, idx) => {
             return (
               <motion.div
@@ -72,7 +72,7 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
                   delay: idx * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-slate-200/80 flex flex-col justify-between"
+                className="group relative bg-white rounded-xl p-6 sm:p-8 border border-slate-200/90 shadow-2xs hover:border-[#202B61]/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full"
               >
                 <div className="space-y-4">
                   {/* Top row: step number */}
@@ -83,17 +83,17 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#202B61] tracking-tight group-hover:text-[#1d4ed8] transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-[#202B61] tracking-tight leading-snug">
                     {step.title}
                   </h3>
 
-                  {/* Description */}
+                  {/* Description (Exact 17 words in each card) */}
                   <p className="text-xs sm:text-sm text-slate-600 font-sans font-normal leading-relaxed">
                     {step.description}
                   </p>
                 </div>
 
-                {/* Key Deliverable Footer */}
+                {/* Key Deliverable Footer (Exact 6 words in each card) */}
                 <div className="pt-4 mt-6 border-t border-slate-100">
                   <p className="text-xs font-heading font-semibold text-[#202B61] leading-snug">
                     {step.deliverable}

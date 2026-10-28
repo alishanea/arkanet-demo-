@@ -34,7 +34,7 @@ export const TopAnnouncementBar: React.FC<TopAnnouncementBarProps> = ({ onOpenBo
         <span className="text-slate-200">Now booking Q1 project slots, get a free scope call</span>
         <button
           onClick={onOpenBooking}
-          className="inline-flex items-center gap-1 font-semibold text-white underline hover:text-blue-300 transition-colors"
+          className="inline-flex items-center gap-1 font-semibold text-white underline hover:text-white/80 transition-colors"
         >
           Book Scope Call <ArrowRight className="w-3.5 h-3.5" />
         </button>

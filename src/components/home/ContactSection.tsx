@@ -59,7 +59,7 @@ export const ContactSection: React.FC = () => {
         <div className="max-w-4xl space-y-4 text-left">
           <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
             Let&apos;s build something <br className="hidden sm:inline" />
-            <span className="text-[#1d4ed8]">exceptional together</span>
+            <span className="text-[#202B61]">exceptional together</span>
           </h1>
 
           <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
@@ -82,7 +82,7 @@ export const ContactSection: React.FC = () => {
                     Project Brief Received!
                   </h3>
                   <p className="font-sans text-sm sm:text-base text-slate-600 max-w-md mx-auto leading-relaxed">
-                    Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Our solutions director is reviewing your brief and will get back to you at <span className="font-semibold text-[#1d4ed8]">{formData.email}</span> within 2 hours.
+                    Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Our solutions director is reviewing your brief and will get back to you at <span className="font-semibold text-[#202B61]">{formData.email}</span> within 2 hours.
                   </p>
                 </div>
                 <div className="pt-4">
@@ -254,10 +254,10 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#202B61] hover:bg-[#1d4ed8] text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg disabled:opacity-70"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#202B61] hover:bg-[#161e47] text-white font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl transition-all cursor-pointer shadow-md hover:shadow-lg disabled:opacity-70"
                   >
                     <span>{isSubmitting ? "Submitting Brief..." : "Submit Project Brief"}</span>
-                    <Send className="w-3.5 h-3.5 text-[#38bdf8]" />
+                    <Send className="w-3.5 h-3.5 text-white/80" />
                   </button>
 
                   <div className="flex items-center gap-2 text-xs text-slate-500">
@@ -307,13 +307,13 @@ export const ContactSection: React.FC = () => {
               <div className="pt-2 flex flex-col gap-2.5 text-xs text-slate-600 border-t border-slate-100">
                 <div className="flex items-center justify-between">
                   <span className="text-slate-500">General Enquiries:</span>
-                  <a href="mailto:info@arkanet.in" className="font-semibold text-slate-900 hover:text-[#1d4ed8]">
+                  <a href="mailto:info@arkanet.in" className="font-semibold text-slate-900 hover:text-[#202B61]">
                     info@arkanet.in
                   </a>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-500">Middle East Sales:</span>
-                  <a href="mailto:sales@arkanet.ae" className="font-semibold text-slate-900 hover:text-[#1d4ed8]">
+                  <a href="mailto:sales@arkanet.ae" className="font-semibold text-slate-900 hover:text-[#202B61]">
                     sales@arkanet.ae
                   </a>
                 </div>
@@ -324,7 +324,7 @@ export const ContactSection: React.FC = () => {
             <div className="rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-7 space-y-6 shadow-sm text-left">
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                 <div className="flex items-center gap-2">
-                  <Globe2 className="w-4 h-4 text-blue-600" />
+                  <Globe2 className="w-4 h-4 text-[#202B61]" />
                   <span className="font-heading font-bold text-xs uppercase tracking-wider text-slate-800">
                     Physical Presence
                   </span>
@@ -351,7 +351,7 @@ export const ContactSection: React.FC = () => {
                   Business Bay, Dubai, United Arab Emirates
                 </p>
                 <div className="pl-6 flex items-center gap-4 text-xs font-semibold pt-0.5">
-                  <a href="tel:+97145572716" className="text-slate-800 hover:text-[#1d4ed8]">
+                  <a href="tel:+97145572716" className="text-slate-800 hover:text-[#202B61]">
                     +971 4 557 2716
                   </a>
                 </div>
@@ -378,7 +378,7 @@ export const ContactSection: React.FC = () => {
                   Kelakam, Kannur Dt, Kerala, India
                 </p>
                 <div className="pl-6 flex items-center gap-4 text-xs font-semibold pt-0.5">
-                  <a href="tel:+919074104372" className="text-slate-800 hover:text-[#1d4ed8]">
+                  <a href="tel:+919074104372" className="text-slate-800 hover:text-[#202B61]">
                     +91 90741 04372
                   </a>
                 </div>

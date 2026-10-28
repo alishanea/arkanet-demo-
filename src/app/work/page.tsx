@@ -300,7 +300,7 @@ export default function WorkPage() {
           <div className="space-y-5 sm:space-y-6 max-w-4xl">
             <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl text-[#202B61] tracking-tight leading-[1.06]">
               Selected Work &amp; <br className="hidden sm:inline" />
-              <span className="text-[#1d4ed8]">Engineering Case Studies</span>
+              <span>Engineering Case Studies</span>
             </h1>
 
             <p className="font-sans text-base sm:text-lg md:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl">
@@ -369,7 +369,7 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: idx * 0.04 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group relative rounded-2xl bg-white border border-slate-200/90 hover:border-[#1d4ed8]/50 shadow-2xs hover:shadow-md transition-all duration-300 p-5 sm:p-7 cursor-pointer overflow-hidden text-left"
+                    className="group relative rounded-2xl bg-white border border-slate-200/90 hover:border-[#202B61]/40 shadow-2xs hover:shadow-md transition-all duration-300 p-5 sm:p-7 cursor-pointer overflow-hidden text-left"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
@@ -394,7 +394,7 @@ export default function WorkPage() {
                               #{indexFormatted}
                             </span>
                             <span className="h-3 w-[1px] bg-slate-200" />
-                            <span className="font-semibold text-[#1d4ed8] text-[11px]">
+                            <span className="font-semibold text-[#202B61] text-[11px]">
                               {project.category}
                             </span>
                           </div>
@@ -406,10 +406,10 @@ export default function WorkPage() {
                         {/* Title and Direct Click Prompt */}
                         <div className="space-y-2">
                           <div className="flex items-start justify-between gap-4">
-                            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] group-hover:text-[#1d4ed8] transition-colors leading-tight">
+                            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] group-hover:text-[#202B61] transition-colors leading-tight">
                               {project.title}
                             </h2>
-                            <div className="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-[#1d4ed8] group-hover:text-white text-slate-400 flex items-center justify-center transition-all duration-200 shrink-0">
+                            <div className="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-[#202B61] group-hover:text-white text-slate-400 flex items-center justify-center transition-all duration-200 shrink-0">
                               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                             </div>
                           </div>
@@ -457,7 +457,7 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-30px" }}
                     transition={{ duration: 0.4, delay: idx * 0.03 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group rounded-2xl bg-white border border-slate-200/90 hover:border-[#1d4ed8]/50 shadow-2xs hover:shadow-md transition-all duration-300 p-4 sm:p-5 cursor-pointer flex flex-col justify-between space-y-4 text-left"
+                    className="group rounded-2xl bg-white border border-slate-200/90 hover:border-[#202B61]/40 shadow-2xs hover:shadow-md transition-all duration-300 p-4 sm:p-5 cursor-pointer flex flex-col justify-between space-y-4 text-left"
                   >
                     {/* Compact Image Frame (Clean, No Text Overlay) */}
                     <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 border border-slate-200/70">
@@ -474,17 +474,17 @@ export default function WorkPage() {
                     <div className="space-y-2.5 flex-1 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center justify-between text-[11px] text-slate-500 mb-1.5">
-                          <span className="font-semibold text-[#1d4ed8] text-[11px]">
+                          <span className="font-semibold text-[#202B61] text-[11px]">
                             {project.category}
                           </span>
                           <span className="font-medium">{project.year || "2025"}</span>
                         </div>
 
                         <div className="flex items-start justify-between gap-2">
-                          <h3 className="font-heading font-bold text-lg text-[#202B61] group-hover:text-[#1d4ed8] transition-colors leading-snug">
+                          <h3 className="font-heading font-bold text-lg text-[#202B61] group-hover:text-[#202B61] transition-colors leading-snug">
                             {project.title}
                           </h3>
-                          <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#1d4ed8] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0 mt-0.5" />
+                          <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0 mt-0.5" />
                         </div>
 
                         <p className="font-sans text-xs text-slate-600 line-clamp-2 leading-relaxed mt-1.5">

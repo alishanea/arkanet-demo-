@@ -55,32 +55,32 @@ export const Footer: React.FC<FooterProps> = ({
               </h4>
               <ul className="space-y-2 text-xs sm:text-sm font-medium text-slate-600">
                 <li>
-                  <Link href="/capabilities/website-development" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/capabilities/website-development" className="hover:text-[#202B61] transition-colors">
                     Web &amp; SaaS Platforms
                   </Link>
                 </li>
                 <li>
-                  <Link href="/capabilities/mobile-app-development" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/capabilities/mobile-app-development" className="hover:text-[#202B61] transition-colors">
                     Mobile Applications
                   </Link>
                 </li>
                 <li>
-                  <Link href="/capabilities/applied-ai-ml" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/capabilities/applied-ai-ml" className="hover:text-[#202B61] transition-colors">
                     Applied AI &amp; Automation
                   </Link>
                 </li>
                 <li>
-                  <Link href="/capabilities/cloud-devops-hosting" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/capabilities/cloud-devops-hosting" className="hover:text-[#202B61] transition-colors">
                     Cloud &amp; DevOps Engineering
                   </Link>
                 </li>
                 <li>
-                  <Link href="/work" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/work" className="hover:text-[#202B61] transition-colors">
                     Featured Case Studies
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="hover:text-[#1d4ed8] transition-colors">
+                  <Link href="/about" className="hover:text-[#202B61] transition-colors">
                     About Our Team
                   </Link>
                 </li>
@@ -100,7 +100,7 @@ export const Footer: React.FC<FooterProps> = ({
                   Capital Golden Tower, Suite 308,<br />
                   Business Bay, Dubai, UAE
                 </p>
-                <a href="tel:+97145572716" className="text-slate-700 hover:text-[#1d4ed8] block font-semibold pt-0.5">
+                <a href="tel:+97145572716" className="text-slate-700 hover:text-[#202B61] block font-semibold pt-0.5">
                   +971 4 557 2716
                 </a>
               </div>
@@ -112,7 +112,7 @@ export const Footer: React.FC<FooterProps> = ({
                   Room No. 227K, Benny Complex,<br />
                   Kelakam, Kannur Dt, Kerala
                 </p>
-                <a href="tel:+919074104372" className="text-slate-700 hover:text-[#1d4ed8] block font-semibold pt-0.5">
+                <a href="tel:+919074104372" className="text-slate-700 hover:text-[#202B61] block font-semibold pt-0.5">
                   +91 90741 04372
                 </a>
               </div>
@@ -131,10 +131,10 @@ export const Footer: React.FC<FooterProps> = ({
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="w-full inline-flex items-center justify-center gap-1.5 bg-[#202B61] hover:bg-[#1d4ed8] text-white text-xs font-bold py-2.5 px-4 rounded-xl transition-all shadow-2xs hover:shadow-md cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 bg-[#202B61] hover:bg-[#161e47] text-white text-xs font-bold py-2.5 px-4 rounded-xl transition-all shadow-2xs hover:shadow-md cursor-pointer"
                 >
                   <span>Submit a Brief</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#1d4ed8]" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#202B61]" />
                 </button>
 
                 <a
@@ -149,7 +149,7 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
 
               <div className="pt-1">
-                <a href="mailto:info@arkanet.in" className="text-xs font-semibold text-[#1d4ed8] hover:underline block">
+                <a href="mailto:info@arkanet.in" className="text-xs font-semibold text-[#202B61] hover:underline block">
                   info@arkanet.in
                 </a>
               </div>
@@ -167,10 +167,10 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Left: Brand, Copyright, Blog & Privacy */}
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs">
             <span>© {currentYear} Arkanet Technologies. All rights reserved.</span>
-            <Link href="/blog" className="text-slate-700 hover:text-[#1d4ed8] font-semibold transition-colors">
+            <Link href="/blog" className="text-slate-700 hover:text-[#202B61] font-semibold transition-colors">
               Blog &amp; Insights
             </Link>
-            <Link href="/contact" className="text-slate-700 hover:text-[#1d4ed8] font-semibold transition-colors">
+            <Link href="/contact" className="text-slate-700 hover:text-[#202B61] font-semibold transition-colors">
               Contact
             </Link>
           </div>
@@ -181,36 +181,36 @@ export const Footer: React.FC<FooterProps> = ({
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-[#1d4ed8] transition-colors group"
+              className="inline-flex items-center gap-1.5 hover:text-[#202B61] transition-colors group"
             >
-              <Twitter className="w-3.5 h-3.5 text-[#1d4ed8] group-hover:scale-110 transition-transform shrink-0" />
+              <Twitter className="w-3.5 h-3.5 text-[#202B61] group-hover:scale-110 transition-transform shrink-0" />
               <span>Twitter X</span>
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-[#1d4ed8] transition-colors group"
+              className="inline-flex items-center gap-1.5 hover:text-[#202B61] transition-colors group"
             >
-              <Instagram className="w-3.5 h-3.5 text-[#1d4ed8] group-hover:scale-110 transition-transform shrink-0" />
+              <Instagram className="w-3.5 h-3.5 text-[#202B61] group-hover:scale-110 transition-transform shrink-0" />
               <span>Instagram</span>
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-[#1d4ed8] transition-colors group"
+              className="inline-flex items-center gap-1.5 hover:text-[#202B61] transition-colors group"
             >
-              <Linkedin className="w-3.5 h-3.5 text-[#1d4ed8] group-hover:scale-110 transition-transform shrink-0" />
+              <Linkedin className="w-3.5 h-3.5 text-[#202B61] group-hover:scale-110 transition-transform shrink-0" />
               <span>LinkedIn</span>
             </a>
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-[#1d4ed8] transition-colors group"
+              className="inline-flex items-center gap-1.5 hover:text-[#202B61] transition-colors group"
             >
-              <Github className="w-3.5 h-3.5 text-[#1d4ed8] group-hover:scale-110 transition-transform shrink-0" />
+              <Github className="w-3.5 h-3.5 text-[#202B61] group-hover:scale-110 transition-transform shrink-0" />
               <span>GitHub</span>
             </a>
           </div>

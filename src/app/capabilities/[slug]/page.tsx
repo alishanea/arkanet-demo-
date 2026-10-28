@@ -121,7 +121,7 @@ export default function CapabilityDetailPage() {
           {/* Soft Cinematic Scrims & Ambient Glowing Overlay for Flawless Text Legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb] via-[#f4f6fb]/75 to-[#f4f6fb]/95 pointer-events-none z-[1]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb] via-[#f4f6fb]/80 to-transparent pointer-events-none z-[1]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-r from-[#38bdf8]/15 via-[#1d4ed8]/10 to-transparent blur-3xl pointer-events-none z-[1]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-r from-[#202B61]/10 via-[#202B61]/5 to-transparent blur-3xl pointer-events-none z-[1]" />
         </div>
 
         {/* Foreground Content (Headline, Subtitle, Practice Switcher) */}
@@ -129,7 +129,7 @@ export default function CapabilityDetailPage() {
           <div className="space-y-5 w-full max-w-5xl lg:max-w-6xl">
             <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
               {data.title} <br />
-              <span className="text-[#1d4ed8]">{data.highlightText}</span>
+              <span className="text-[#202B61]">{data.highlightText}</span>
             </h1>
 
             {data.subtitle && (
@@ -349,10 +349,10 @@ export default function CapabilityDetailPage() {
                 <div className="pt-2">
                   <button
                     onClick={openContact}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#202B61] text-white hover:bg-[#1d4ed8] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs font-sans"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[4px] bg-[#202B61] text-white hover:bg-[#161e47] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs font-sans"
                   >
                     <span>Discuss Architecture</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
+                    <ArrowUpRight className="w-4 h-4 text-white" />
                   </button>
                 </div>
               </div>

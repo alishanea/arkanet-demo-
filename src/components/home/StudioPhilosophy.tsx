@@ -15,36 +15,38 @@ const STATS_DATA = [
   },
   {
     number: "1000+",
-    label: "Digital products & projects delivered",
+    label: "Production digital software releases delivered",
   },
   {
     number: "100%",
-    label: "Dedicated in-house engineering team",
+    label: "Dedicated in-house full-stack engineering team",
   },
 ];
 
 export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
   return (
-    <section id="studio-philosophy" className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none px-4 sm:px-8 lg:px-12 py-6 sm:py-8 lg:py-10 border-t border-slate-200/80 overflow-hidden">
-      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center gap-5 sm:gap-6 lg:gap-7">
+    <section
+      id="studio-philosophy"
+      className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-slate-200/80 overflow-hidden"
+    >
+      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center gap-8 sm:gap-12">
         
         {/* Top 2-Column Split: Headline + Narrative on Left, Clean Image on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center text-left">
           
           {/* Left Column */}
-          <div className="lg:col-span-6 flex flex-col justify-between space-y-3 sm:space-y-4 text-left">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-[1.12] tracking-tight">
-              Same team,<br />
-              start to finish
+          <div className="lg:col-span-6 flex flex-col justify-between space-y-4 text-left">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
+              Same team, start to finish
             </h2>
 
             {/* Paragraph Copy */}
-            <div className="text-slate-600 font-sans font-medium text-xs sm:text-sm lg:text-[15px] leading-relaxed max-w-xl space-y-2.5">
+            <div className="text-slate-600 font-sans font-medium text-sm sm:text-base leading-relaxed max-w-xl space-y-3">
               <p>
-                Arkanet is a team of engineers, designers, and strategists working across web, mobile, AI, and digital marketing: one team, not four separate specialists handed off between projects.
+                Arkanet is a team of engineers, designers, and strategists working across web, mobile, AI, and digital infrastructure: one cohesive unit, not four separate specialists handed off between projects.
               </p>
               <p>
-                We measure success the way our clients do, not by what shipped, but by what kept working. That&apos;s why our engagement doesn&apos;t end at launch. Ongoing support, monitoring, and optimisation are part of how we work, not an upsell after the fact.
+                We measure success the way our clients do — not by what shipped, but by what kept working under real production load. Ongoing support, proactive monitoring, and performance tuning are built into how we work.
               </p>
             </div>
 
@@ -62,7 +64,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
 
           {/* Right Column: Clean Image */}
           <div className="lg:col-span-6 w-full flex justify-end">
-            <div className="relative aspect-[16/10] max-h-[220px] sm:max-h-[240px] lg:max-h-[260px] w-full rounded-[5px] overflow-hidden border border-slate-200/90 bg-slate-100 shadow-md">
+            <div className="relative aspect-[16/10] max-h-[300px] sm:max-h-[340px] w-full rounded-xl overflow-hidden border border-slate-200/90 bg-slate-100 shadow-md">
               <img
                 src="https://images.pexels.com/photos/3182834/pexels-photo-3182834.jpeg"
                 alt="People in creative office workspace"
@@ -76,12 +78,13 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
         </div>
 
         {/* Bottom: 3-Column Stats Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 lg:gap-8 pt-4 sm:pt-5 border-t border-slate-200/90 max-w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 pt-8 border-t border-slate-200/90 max-w-full">
           {STATS_DATA.map((stat, idx) => (
-            <div key={idx} className="flex items-center gap-3.5 sm:gap-4">
-              <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl leading-none text-[#202B61] tracking-tight shrink-0">
+            <div key={idx} className="flex items-center gap-4">
+              <div className="font-heading font-extrabold text-3xl sm:text-4xl leading-none text-[#202B61] tracking-tight shrink-0">
                 {stat.number}
               </div>
+              {/* Exact 5 words each */}
               <div className="font-sans font-medium text-xs sm:text-sm leading-snug text-slate-600 text-left flex-1 max-w-[240px]">
                 {stat.label}
               </div>

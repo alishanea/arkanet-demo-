@@ -459,7 +459,7 @@ export default function BlogPage() {
               {/* Hero Header matching Homepage Hero model */}
               <div className="relative w-full pt-28 lg:pt-36 pb-8 sm:pb-12 px-6 sm:px-8 lg:px-[40px] overflow-hidden select-none">
                 {/* Soft Navy-to-Blue Radial Ambient Glow */}
-                <div className="absolute top-0 right-1/4 w-[600px] h-[400px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
+                <div className="absolute top-0 right-1/4 w-[600px] h-[400px] bg-[#202B61]/5 rounded-full blur-[140px] pointer-events-none" />
 
                 <div className="w-full relative z-10 text-left">
                   <h1 className="hero-h1 text-left block">
@@ -551,7 +551,7 @@ export default function BlogPage() {
                   <div className="mt-12 text-center">
                     <button
                       onClick={handleLoadMore}
-                      className="bg-[#202B61] hover:bg-[#1d4ed8] text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all cursor-pointer inline-flex items-center gap-2"
+                      className="bg-[#202B61] hover:bg-[#161e47] text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all cursor-pointer inline-flex items-center gap-2"
                     >
                       <span>Load more</span>
                     </button>

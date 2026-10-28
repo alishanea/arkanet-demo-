@@ -131,7 +131,7 @@ const FloatingLabelField: React.FC<{
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           style={{
             transformOrigin: "left",
-            background: "linear-gradient(90deg, #202B61 0%, #1d4ed8 100%)",
+            background: "#202B61",
           }}
           className="absolute left-0 right-0 bottom-0 h-[2px] rounded-full"
         />
@@ -216,7 +216,7 @@ const SubmitButton: React.FC<{ submitting: boolean }> = ({ submitting }) => (
     whileHover={!submitting ? { scale: 1.03, y: -1 } : {}}
     whileTap={!submitting ? { scale: 0.97 } : {}}
     transition={{ type: "spring", stiffness: 400, damping: 22 }}
-    className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-80 bg-[#202B61] hover:bg-[#1d4ed8] text-white font-semibold text-sm px-8 py-3.5 min-w-[180px] transition-colors duration-300"
+    className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-80 bg-[#202B61] hover:bg-[#161e47] text-white font-semibold text-sm px-8 py-3.5 min-w-[180px] transition-colors duration-300"
   >
     <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[900ms] ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12" />
     <span className="relative z-10 flex items-center gap-2">
@@ -264,7 +264,7 @@ const DoneButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
     transition={{ delay: 0.35, type: "spring", stiffness: 260, damping: 20 }}
     whileHover={{ scale: 1.04 }}
     whileTap={{ scale: 0.96 }}
-    className="group inline-flex items-center gap-2 bg-[#202B61] hover:bg-[#1d4ed8] text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-colors cursor-pointer"
+    className="group inline-flex items-center gap-2 bg-[#202B61] hover:bg-[#161e47] text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-colors cursor-pointer"
   >
     Done
     <ArrowRight
@@ -330,7 +330,7 @@ const FloatingLabelTextarea: React.FC<{
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           style={{
             transformOrigin: "left",
-            background: "linear-gradient(90deg, #202B61 0%, #1d4ed8 100%)",
+            background: "#202B61",
           }}
           className="absolute left-0 right-0 bottom-0 h-[2px] rounded-full"
         />

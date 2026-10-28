@@ -44,7 +44,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onOpenBookin
 
               <button
                 onClick={onOpenBooking}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1d4ed8] hover:text-[#1740b3] transition-colors group cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#202B61] hover:text-[#161e47] transition-colors group cursor-pointer"
               >
                 <span>Learn more</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

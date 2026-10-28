@@ -2,28 +2,28 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Shield, Cpu, Zap, Layers, Globe, CheckCircle2 } from "lucide-react";
+import { Shield, Cpu, Zap, Layers, CheckCircle2 } from "lucide-react";
 
 const STATS = [
   {
     number: "20+",
     label: "Years Combined Leadership",
-    detail: "Decades of engineering, product design, and cloud architecture experience.",
+    detail: "Decades of engineering leadership, product design, and cloud architecture expertise.",
   },
   {
     number: "1000+",
     label: "Projects & Releases Delivered",
-    detail: "From high-scale consumer mobile apps to enterprise workflow automation.",
+    detail: "Successful releases delivered from consumer mobile apps to enterprise workflow automation.",
   },
   {
     number: "99.8%",
     label: "SLA Uptime & Reliability",
-    detail: "Engineered with redundancy, automated failovers, and robust cloud monitoring.",
+    detail: "Engineered with multi-region redundancy, automated failovers, and continuous telemetry monitoring.",
   },
   {
     number: "100%",
     label: "In-House Engineering",
-    detail: "Zero third-party sub-contracting; one unified team owns your entire code base.",
+    detail: "Zero third-party contracting with one unified in-house team owning your entire codebase.",
   },
 ];
 
@@ -31,35 +31,33 @@ const PILLARS = [
   {
     icon: Layers,
     title: "Dual-Hub Engineering Synergy",
-    desc: "We combine strategic client advisory and discovery at our Dubai headquarters (Business Bay) with the rapid velocity of our dedicated engineering and R&D centers in India (Infopark Kochi & Cyberpark Calicut).",
+    desc: "We combine strategic client discovery at our Dubai headquarters with the rapid velocity of our dedicated engineering and R&D centers located in India.",
   },
   {
     icon: Cpu,
     title: "Applied AI & Automation",
-    desc: "We don't treat AI as a gimmick. We build production-ready RAG pipelines, fine-tuned domain models, intelligent document extraction, and autonomous agent workflows that directly integrate into your core databases.",
+    desc: "We build production-ready retrieval pipelines, fine-tuned domain models, intelligent document extraction, and autonomous workflows that integrate directly into your core enterprise databases.",
   },
   {
     icon: Zap,
     title: "Speed with Production Rigor",
-    desc: "Two-week agile sprints, continuous integration/continuous deployment (CI/CD), strict TypeScript typing, and automated preview environments ensure fast delivery without technical debt.",
+    desc: "Two-week agile sprints, continuous integration and deployment pipelines, strict TypeScript typing, and automated preview environments guarantee fast delivery without compounding any technical debt.",
   },
   {
     icon: Shield,
-    title: "Enterprise Security & IP Ownership",
-    desc: "All client intellectual property belongs 100% to you. We enforce mutual NDAs, encrypted credentials, SOC2 compliance guidelines, and HIPAA-ready vaults for healthcare workloads.",
+    title: "Enterprise Security & IP",
+    desc: "All client intellectual property belongs entirely to you. We enforce mutual non-disclosure agreements, encrypted credential vaults, SOC2 guidelines, and HIPAA-ready infrastructure.",
   },
 ];
 
 export function AboutWhoWeAre() {
   return (
-    <section className="w-full py-20 sm:py-28 px-6 sm:px-10 lg:px-12 bg-white border-t border-slate-200/80 text-left">
+    <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-t border-slate-200/80 text-left">
       <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Section Heading & In-Depth Story */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-4">
-            
-
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-[1.15]">
               Engineering digital infrastructure that endures
             </h2>
@@ -93,8 +91,8 @@ export function AboutWhoWeAre() {
           </div>
         </div>
 
-        {/* 4 Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4 Stats Grid (Equal Word Length: exactly 10 words each) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {STATS.map((stat, idx) => (
             <motion.div
               key={stat.label}
@@ -106,7 +104,7 @@ export function AboutWhoWeAre() {
                 delay: idx * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="bg-[#f8fafc] rounded-[5px] p-6 sm:p-8 border border-slate-200/90 shadow-none flex flex-col justify-between text-left space-y-3"
+              className="bg-[#f8fafc] rounded-xl p-6 sm:p-8 border border-slate-200/90 shadow-2xs hover:border-[#202B61]/40 transition-all duration-300 flex flex-col justify-between h-full text-left space-y-4"
             >
               <div>
                 <div className="font-heading font-extrabold text-4xl sm:text-5xl text-[#202B61] tracking-tight mb-2">
@@ -123,8 +121,8 @@ export function AboutWhoWeAre() {
           ))}
         </div>
 
-        {/* 4 Operating Pillars */}
-        <div className="space-y-8 pt-4 border-t border-slate-100">
+        {/* 4 Operating Pillars (Equal Word Length: exactly 24 words each) */}
+        <div className="space-y-8 pt-6 border-t border-slate-100">
           <div className="max-w-3xl space-y-3 text-left">
             <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight">
               Our Core Operating Principles
@@ -134,20 +132,22 @@ export function AboutWhoWeAre() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
             {PILLARS.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
                 <div
                   key={idx}
-                  className="rounded-[5px] p-7 sm:p-8 border border-slate-200/90 bg-[#f8fafc] space-y-3.5 text-left shadow-none"
+                  className="rounded-xl p-7 sm:p-8 border border-slate-200/90 bg-[#f8fafc] flex flex-col justify-between h-full space-y-4 text-left shadow-2xs hover:border-[#202B61]/40 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-[4px] bg-[#202B61] text-white flex items-center justify-center">
-                    <Icon className="w-5 h-5" />
+                  <div className="space-y-3.5">
+                    <div className="w-10 h-10 rounded-lg bg-[#202B61] text-white flex items-center justify-center">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h4 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
+                      {pillar.title}
+                    </h4>
                   </div>
-                  <h4 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
-                    {pillar.title}
-                  </h4>
                   <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                     {pillar.desc}
                   </p>

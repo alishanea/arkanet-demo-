@@ -3,22 +3,22 @@ import { services } from "@/lib/aboutData";
 
 export function AboutCapabilities() {
   return (
-    <section className="py-10 sm:py-14 lg:py-20 px-6 sm:px-10 lg:px-[60px] bg-[#f4f6fb]">
-      <div className="max-w-[1500px] mx-auto">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-t border-slate-200/80">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-14">
 
-        <div className="max-w-[1240px] mb-[clamp(40px,5.5vw,112px)]">
-          <h2 className="about-h2">
-            Our <span className="text-[#1d4ed8]">capabilities</span> span engineering, AI, and design, end to end, under one roof. We work across the full stack, so every project is delivered to the highest standard.
+        <div className="max-w-3xl space-y-3">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-tight">
+            Our capabilities span engineering, AI, and design, end to end, under one roof. We work across the full stack, so every project is delivered to the highest standard.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[clamp(32px,4.5vw,96px)] gap-y-[clamp(40px,4.5vw,80px)]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
           {services.map((service) => (
-            <div key={service.category}>
-              <h3 className="text-[clamp(18px,1.55vw,28px)] font-heading font-bold text-[#202B61] mb-[clamp(16px,1.8vw,32px)] leading-tight">
+            <div key={service.category} className="space-y-4">
+              <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug">
                 {service.category}
               </h3>
-              <ul className="space-y-[clamp(10px,1vw,20px)]">
+              <ul className="space-y-3">
                 {service.items.map((item) => {
                   const itemName = typeof item === "string" ? item : item.name;
                   const itemHref = typeof item === "string" ? "#" : item.href;
@@ -27,7 +27,7 @@ export function AboutCapabilities() {
                     <li key={itemName}>
                       <Link
                         href={itemHref}
-                        className="text-[clamp(13px,1.06vw,19px)] font-sans font-medium text-[#202B61]/80 hover:text-[#1d4ed8] transition-colors leading-snug inline-block"
+                        className="font-sans font-medium text-sm sm:text-base text-slate-600 hover:text-[#202B61] transition-colors leading-snug inline-block"
                       >
                         {itemName}
                       </Link>
