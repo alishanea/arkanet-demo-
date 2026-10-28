@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 interface AgencyStatementProps {
   onOpenBooking?: () => void;
@@ -30,13 +29,13 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden"
+      className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#202B61] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-b border-[#1b2452] overflow-hidden"
     >
-      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center space-y-8 sm:space-y-10 lg:space-y-12">
+      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center space-y-10 sm:space-y-12 lg:space-y-14">
         
-        {/* ── 1. DARK COLOR BANNER WITH HEADING (CLEAN, MINIMAL) ── */}
-        <div className="w-full bg-[#202B61] text-white rounded-2xl p-8 sm:p-10 lg:p-12 text-left border border-[#161e47] relative overflow-hidden">
-          <div className="max-w-4xl space-y-3 relative z-10">
+        {/* ── 1. FULL-WIDTH DARK HERO STATEMENT ── */}
+        <div className="w-full border-b border-white/15 pb-6 sm:pb-8">
+          <div className="max-w-4xl space-y-3 text-left">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white leading-tight tracking-tight">
               Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
             </h2>
@@ -46,8 +45,8 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
           </div>
         </div>
 
-        {/* ── 2. THREE EQUAL BALANCED HIGHLIGHT COLUMNS (CLEAN, NO BOXES, LINE SEPARATION) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200/90 w-full pt-2">
+        {/* ── 2. THREE BALANCED HIGHLIGHT COLUMNS (SEAMLESS LINE SEPARATION ON DARK NAVY) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/15 w-full pt-2">
           {STATEMENTS.map((item, idx) => (
             <div
               key={idx}
@@ -61,27 +60,25 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
             >
               <div className="space-y-4">
                 <div className="space-y-2.5">
-                  <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug">
+                  <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-white tracking-tight leading-snug">
                     {item.title}
                   </h3>
-                  <div className="h-0.5 w-6 group-hover:w-14 bg-[#202B61] rounded-full transition-all duration-300 opacity-60 group-hover:opacity-100" />
+                  <div className="h-0.5 w-6 group-hover:w-14 bg-white/70 rounded-full transition-all duration-300 opacity-60 group-hover:opacity-100" />
                 </div>
 
                 {/* Exactly 16 words each */}
-                <p className="font-sans font-medium text-slate-600 text-xs sm:text-sm leading-relaxed">
+                <p className="font-sans font-normal text-slate-300 text-xs sm:text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-slate-200/70 flex items-center gap-2 text-xs font-semibold text-slate-500">
-                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
+              <div className="pt-6 mt-6 border-t border-white/15 flex items-center gap-2 text-xs font-semibold text-slate-300">
+                <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
                 <span>{item.tag}</span>
               </div>
             </div>
           ))}
         </div>
-
-
 
       </div>
     </section>
