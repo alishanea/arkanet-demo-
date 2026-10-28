@@ -101,7 +101,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
     >
       <motion.div
         style={{ scale: cardScale }}
-        className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-6 lg:gap-10 xl:gap-12 items-center rounded-2xl bg-white text-[#202B61] p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-sm origin-top"
+        className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-6 lg:gap-10 xl:gap-12 items-center rounded-xl bg-white text-[#202B61] p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-none origin-top"
       >
         {/* Left Column */}
         <motion.div
@@ -110,7 +110,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
         >
           {/* Top: Large Step Number */}
           <div>
-            <span className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#94a3b8] select-none leading-none tracking-tight block">
+            <span className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#202B61]/25 select-none leading-none tracking-tight block">
               {step.stepNumber}
             </span>
           </div>
@@ -120,14 +120,14 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#202B61] tracking-tight">
               {step.title}
             </h3>
-            <p className="font-sans text-[#475569] text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+            <p className="font-sans text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
               {step.body}
             </p>
           </div>
 
           {/* Key Deliverables Section (Exact 5 words each) */}
           <div className="space-y-3.5 pt-3 sm:pt-5">
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#dbe6f0] pt-1">
+            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/80 pt-1">
               {step.deliverables.map((d, itemIdx) => {
                 return (
                   <div
@@ -140,7 +140,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
                         : "sm:pl-6 lg:pl-8 last:pb-0"
                     }`}
                   >
-                    <span className="font-sans text-xs sm:text-[13px] lg:text-sm font-semibold text-[#14233c] leading-snug tracking-tight sm:whitespace-pre-line">
+                    <span className="font-sans text-xs sm:text-sm font-semibold text-[#202B61] leading-snug tracking-tight sm:whitespace-pre-line">
                       {d.label}
                     </span>
                   </div>
@@ -151,7 +151,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
         </motion.div>
 
         {/* Right Column: Image */}
-        <div className="relative aspect-[16/11] lg:aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100 shadow-sm border border-slate-100">
+        <div className="relative aspect-[16/11] lg:aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100 border border-slate-200/80">
           <img
             src={step.image}
             alt={step.title}
@@ -178,7 +178,7 @@ export const OurProcess: React.FC<OurProcessProps> = () => {
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
               Our Process
             </h2>
-            <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
+            <p className="font-sans font-normal text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
               We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
             </p>
           </div>
