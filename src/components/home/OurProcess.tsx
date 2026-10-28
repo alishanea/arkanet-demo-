@@ -8,7 +8,8 @@ interface OurProcessProps {
 }
 
 interface Deliverable {
-  label: string;
+  line1: string;
+  line2: string;
 }
 
 interface ProcessStep {
@@ -28,9 +29,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     body: "We listen closely to your commercial objectives, technical constraints, and key user outcomes before writing any line of code.",
     image: "/assets/images/undestand.webp",
     deliverables: [
-      { label: "Goals and scope, on paper" },
-      { label: "Current technical architecture and baseline" },
-      { label: "Target audience and user journeys" },
+      { line1: "Project Goals & Scope", line2: "Documented on Paper" },
+      { line1: "Current Architecture", line2: "And Systems Baseline" },
+      { line1: "Target User Audience", line2: "And Product Journeys" },
     ],
   },
   {
@@ -41,9 +42,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=900&auto=format&fit=crop",
     deliverables: [
-      { label: "Interactive wireframes and prototype flows" },
-      { label: "Complete architectural and technical specifications" },
-      { label: "Clear milestones and delivery roadmap" },
+      { line1: "Interactive Wireframes", line2: "And Prototype Flows" },
+      { line1: "Technical Specifications", line2: "And Systems Roadmap" },
+      { line1: "Sprint Milestones", line2: "And Delivery Schedule" },
     ],
   },
   {
@@ -54,9 +55,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop",
     deliverables: [
-      { label: "Continuous live preview sprint builds" },
-      { label: "Strict automated testing and verification" },
-      { label: "Production deployment and zero downtime" },
+      { line1: "Live Preview Builds", line2: "In Continuous Sprints" },
+      { line1: "Automated QA Testing", line2: "And Code Verification" },
+      { line1: "Production Deployment", line2: "With Zero Downtime" },
     ],
   },
   {
@@ -67,9 +68,9 @@ const PROCESS_STEPS: ProcessStep[] = [
     image:
       "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=900&auto=format&fit=crop",
     deliverables: [
-      { label: "Continuous 24/7 telemetry performance monitoring" },
-      { label: "Infrastructure scaling and security patches" },
-      { label: "Dedicated long-term technical ongoing support" },
+      { line1: "24/7 Live Telemetry", line2: "And System Monitoring" },
+      { line1: "Infrastructure Scaling", line2: "And Security Updates" },
+      { line1: "Dedicated Engineering", line2: "Ongoing Team Support" },
     ],
   },
 ];
@@ -125,14 +126,14 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
             </p>
           </div>
 
-          {/* Key Deliverables Section (Exact 5 words each) */}
+          {/* Key Deliverables Section (Strict 2-Line Typographic Symmetry) */}
           <div className="space-y-3.5 pt-3 sm:pt-5">
             <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/80 pt-1">
               {step.deliverables.map((d, itemIdx) => {
                 return (
                   <div
-                    key={d.label}
-                    className={`flex flex-col items-start gap-2 py-2.5 sm:py-0 ${
+                    key={itemIdx}
+                    className={`flex flex-col items-start justify-start py-2.5 sm:py-0 ${
                       itemIdx === 0
                         ? "sm:pr-6 lg:pr-8 first:pt-0"
                         : itemIdx === 1
@@ -140,9 +141,10 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
                         : "sm:pl-6 lg:pl-8 last:pb-0"
                     }`}
                   >
-                    <span className="font-sans text-xs sm:text-sm font-semibold text-[#202B61] leading-snug tracking-tight sm:whitespace-pre-line">
-                      {d.label}
-                    </span>
+                    <div className="font-sans text-xs sm:text-sm font-semibold text-[#202B61] leading-snug tracking-tight min-h-[2.5rem] sm:min-h-[2.75rem] flex flex-col justify-start">
+                      <span className="block">{d.line1}</span>
+                      <span className="block">{d.line2}</span>
+                    </div>
                   </div>
                 );
               })}
