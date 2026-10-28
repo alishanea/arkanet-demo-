@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, List, LayoutGrid } from "lucide-react";
 
 import { Footer } from "@/components/layout/Footer";
 import { ContactFormModal } from "@/components/modals/ContactFormModal";
@@ -325,48 +325,68 @@ export default function WorkPage() {
       </section>
 
       {/* ── 2. FILTER & LAYOUT VIEW CONTROLS ── */}
-      <section className="w-full bg-[#f4f6fb] pt-10 sm:pt-14 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto pb-8 flex flex-wrap items-center gap-2 sm:gap-3">
-          {CATEGORIES.map((cat) => {
-            const isActive = activeCategory === cat;
-            const count = cat === "All"
-              ? WORK_PROJECTS.length
-              : WORK_PROJECTS.filter((p) => p.category === cat).length;
-            return (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 ${
-                  isActive
-                    ? "bg-[#202B61] text-white"
-                    : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300"
-                }`}
-              >
-                <span>{cat}</span>
-                <span className={`text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full ${
-                  isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
-                }`}>
-                  {count}
-                </span>
-              </button>
-            );
-          })}
+      <section className="w-full bg-[#f4f6fb] pt-8 sm:pt-10 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80">
+        <div className="max-w-[1140px] mx-auto pb-6 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+            {CATEGORIES.map((cat) => {
+              const isActive = activeCategory === cat;
+              const count = cat === "All"
+                ? WORK_PROJECTS.length
+                : WORK_PROJECTS.filter((p) => p.category === cat).length;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+                    isActive
+                      ? "bg-[#202B61] text-white"
+                      : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300"
+                  }`}
+                >
+                  <span>{cat}</span>
+                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
+                    isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
+                  }`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* View Mode Toggle Controls */}
+          <div className="flex items-center gap-1 bg-white border border-slate-200/90 rounded-xl p-1 shrink-0">
+            <button
+              onClick={() => setViewMode("detailed")}
+              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "detailed" ? "bg-[#202B61] text-white" : "text-slate-500 hover:text-slate-900"}`}
+              title="Detailed List View"
+            >
+              <List className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => setViewMode("compact")}
+              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "compact" ? "bg-[#202B61] text-white" : "text-slate-500 hover:text-slate-900"}`}
+              title="Compact Grid View"
+            >
+              <LayoutGrid className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </section>
 
       {/* ── 3. WORK SHOWCASE STAGE ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80">
+        <div className="max-w-[1140px] mx-auto">
           {filteredProjects.length === 0 ? (
-            <div className="py-24 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-sm">
+            <div className="py-20 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-sm">
               No projects found for category &quot;{activeCategory}&quot;.
             </div>
           ) : viewMode === "detailed" ? (
 
             /* ═══════════════════════════════════════════════════════════════
-               LAYOUT A: DETAILED SIDE-BY-SIDE ROWS (Clean, not big bulky boxes)
+               LAYOUT A: COMPACT ROWS (Slightly reduced size, soft transparent image)
             ═══════════════════════════════════════════════════════════════ */
-            <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-4 sm:space-y-5">
               {filteredProjects.map((project, idx) => {
                 const indexFormatted = String(idx + 1).padStart(2, "0");
                 const details = PROJECT_DETAILS_MAP[project.id];
@@ -378,30 +398,31 @@ export default function WorkPage() {
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.4, delay: idx * 0.04 }}
+                    transition={{ duration: 0.4, delay: idx * 0.03 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group relative rounded-2xl bg-white border border-slate-200/90 transition-all duration-300 p-5 sm:p-7 cursor-pointer overflow-hidden text-left"
+                    className="group relative rounded-xl bg-white/95 hover:bg-white border border-slate-200/90 hover:border-slate-300 transition-all duration-300 p-4 sm:p-5 lg:p-5 cursor-pointer overflow-hidden text-left shadow-[0_2px_8px_-4px_rgba(0,0,0,0.03)] hover:shadow-md"
                   >
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-center">
 
-                      {/* Left Side: Crisp Photography Thumbnail (Span 5 - Clean, No Text Overlay) */}
-                      <div className="lg:col-span-5 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80 shrink-0">
+                      {/* Left Side: Soft Transparent Thumbnail (Span 4 - Reduced compact size) */}
+                      <div className="lg:col-span-4 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] max-h-[190px] sm:max-h-[210px] rounded-lg overflow-hidden bg-slate-100 border border-slate-200/70 shrink-0">
                         <img
                           src={project.image}
                           alt={project.title}
                           loading="lazy"
                           decoding="async"
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                          className="w-full h-full object-cover opacity-80 sm:opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 ease-out"
                         />
+                        <div className="absolute inset-0 bg-slate-900/[0.04] group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
                       </div>
 
-                      {/* Right Side: Editorial Architecture & Metadata (Span 7) */}
-                      <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
+                      {/* Right Side: Editorial Architecture & Metadata (Span 8) */}
+                      <div className="lg:col-span-8 flex flex-col justify-between space-y-3">
 
                         {/* Meta Header Row */}
                         <div className="flex items-center justify-between text-xs">
-                          <div className="flex items-center gap-2.5">
-                            <span className="font-heading font-black text-slate-400 text-sm">
+                          <div className="flex items-center gap-2">
+                            <span className="font-heading font-black text-slate-400 text-xs sm:text-sm">
                               #{indexFormatted}
                             </span>
                             <span className="h-3 w-[1px] bg-slate-200" />
@@ -409,31 +430,31 @@ export default function WorkPage() {
                               {project.category}
                             </span>
                           </div>
-                          <span className="text-slate-400 font-medium text-xs">
+                          <span className="text-slate-400 font-medium text-[11px] sm:text-xs">
                             {project.year || "2025"}
                           </span>
                         </div>
 
-                        {/* Title and Direct Click Prompt */}
-                        <div className="space-y-2">
-                          <div className="flex items-start justify-between gap-4">
-                            <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] group-hover:text-[#202B61] transition-colors leading-tight">
+                        {/* Title and Arrow */}
+                        <div className="space-y-1.5">
+                          <div className="flex items-start justify-between gap-3">
+                            <h2 className="font-heading font-bold text-lg sm:text-xl text-[#202B61] group-hover:text-[#202B61] transition-colors leading-snug">
                               {project.title}
                             </h2>
-                            <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0" />
+                            <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0" />
                           </div>
 
-                          <p className="font-sans text-xs sm:text-sm text-slate-600 font-normal leading-relaxed max-w-2xl line-clamp-2 sm:line-clamp-3">
+                          <p className="font-sans text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed max-w-2xl line-clamp-2">
                             {project.description}
                           </p>
                         </div>
 
                         {/* Tech Stack Chips */}
-                        <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center gap-1.5 text-xs">
+                        <div className="pt-2 border-t border-slate-100/90 flex flex-wrap items-center gap-1.5 text-xs">
                           {techChips.map((tech, tIdx) => (
                             <span
                               key={tIdx}
-                              className="font-sans text-[11px] font-medium text-slate-600 bg-slate-100/80 px-2.5 py-0.5 rounded-md"
+                              className="font-sans text-[10px] sm:text-[11px] font-medium text-slate-600 bg-slate-100/80 px-2 py-0.5 rounded-md"
                             >
                               {tech}
                             </span>
@@ -453,7 +474,7 @@ export default function WorkPage() {
             /* ═══════════════════════════════════════════════════════════════
                LAYOUT B: COMPACT 3-COLUMN PROFESSIONAL GRID (Clean Proportions)
             ═══════════════════════════════════════════════════════════════ */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
               {filteredProjects.map((project, idx) => {
                 const details = PROJECT_DETAILS_MAP[project.id];
                 const techChips = details?.techStack?.slice(0, 3) || project.services?.slice(0, 3) || [];
@@ -466,43 +487,44 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-30px" }}
                     transition={{ duration: 0.4, delay: idx * 0.03 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group rounded-2xl bg-white border border-slate-200/90 transition-all duration-300 p-4 sm:p-5 cursor-pointer flex flex-col justify-between space-y-4 text-left"
+                    className="group rounded-xl bg-white/95 hover:bg-white border border-slate-200/90 hover:border-slate-300 transition-all duration-300 p-4 cursor-pointer flex flex-col justify-between space-y-3 text-left shadow-[0_2px_8px_-4px_rgba(0,0,0,0.03)] hover:shadow-md"
                   >
-                    {/* Compact Image Frame (Clean, No Text Overlay) */}
-                    <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 border border-slate-200/70">
+                    {/* Compact Image Frame */}
+                    <div className="relative aspect-[16/10] max-h-[180px] rounded-lg overflow-hidden bg-slate-100 border border-slate-200/70">
                       <img
                         src={project.image}
                         alt={project.title}
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                        className="w-full h-full object-cover opacity-80 sm:opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 ease-out"
                       />
+                      <div className="absolute inset-0 bg-slate-900/[0.04] group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
                     </div>
 
                     {/* Metadata & Description */}
-                    <div className="space-y-2.5 flex-1 flex flex-col justify-between">
+                    <div className="space-y-2 flex-1 flex flex-col justify-between">
                       <div>
-                        <div className="flex items-center justify-between text-[11px] text-slate-500 mb-1.5">
+                        <div className="flex items-center justify-between text-[11px] text-slate-500 mb-1">
                           <span className="font-semibold text-[#202B61] text-[11px]">
                             {project.category}
                           </span>
-                          <span className="font-medium">{project.year || "2025"}</span>
+                          <span className="font-medium text-[11px]">{project.year || "2025"}</span>
                         </div>
 
                         <div className="flex items-start justify-between gap-2">
-                          <h3 className="font-heading font-bold text-lg text-[#202B61] group-hover:text-[#202B61] transition-colors leading-snug">
+                          <h3 className="font-heading font-bold text-base sm:text-lg text-[#202B61] group-hover:text-[#202B61] transition-colors leading-snug">
                             {project.title}
                           </h3>
                           <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0 mt-0.5" />
                         </div>
 
-                        <p className="font-sans text-xs text-slate-600 line-clamp-2 leading-relaxed mt-1.5">
+                        <p className="font-sans text-xs text-slate-600 line-clamp-2 leading-relaxed mt-1">
                           {project.description}
                         </p>
                       </div>
 
                       {/* Tech Stack Chips */}
-                      <div className="pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
+                      <div className="pt-2 border-t border-slate-100 flex flex-wrap gap-1">
                         {techChips.map((tech, tIdx) => (
                           <span
                             key={tIdx}
