@@ -53,16 +53,18 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
       id="showcase"
       className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden"
     >
-      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center gap-8 sm:gap-10">
+      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center space-y-8 sm:space-y-10 lg:space-y-12">
         
         {/* ── 1. SECTION HEADER ── */}
-        <div className="max-w-4xl space-y-3">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
-            Full-Stack Engineering &amp; Applied AI Capabilities
-          </h2>
-          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
-            We identify where modern technology and AI create genuine value in your operation, then engineer scalable digital products built to perform.
-          </p>
+        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
+          <div className="max-w-4xl space-y-3 text-left">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
+              Full-Stack Engineering &amp; Applied AI Capabilities
+            </h2>
+            <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
+              We identify where modern technology and AI create genuine value in your operation, then engineer scalable digital products built to perform.
+            </p>
+          </div>
         </div>
 
         {/* ── 2. FULLY INTERACTIVE 4-COLUMN CAPABILITY GRID (PERFECT SYMMETRY) ── */}

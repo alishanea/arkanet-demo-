@@ -344,7 +344,7 @@ export default function WorkPage() {
       </section>
 
       {/* ── 3. WORK SHOWCASE STAGE ── */}
-      <section className="w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-12">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80">
         <div className="max-w-[1400px] mx-auto">
           {filteredProjects.length === 0 ? (
             <div className="py-24 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-sm">

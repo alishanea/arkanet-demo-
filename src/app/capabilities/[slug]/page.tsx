@@ -169,15 +169,17 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 2: OPEN HIGHLIGHTS GRID WITH HOVER EFFECTS ── */}
-      <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 text-left bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-12 sm:mb-16 space-y-4">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left bg-white border-t border-slate-200/80">
+        <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
+          <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
+            <div className="max-w-3xl space-y-3">
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-snug whitespace-pre-line">
               {data.section2Headline}
             </h2>
             <p className="font-sans text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
               {data.section2Subtitle}
             </p>
+            </div>
           </div>
 
           {/* 4-Column Minimalist Grid with Dynamic Hover Lift & Index Badges */}
@@ -218,7 +220,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 3: FEATURE ROWS WITH ALTERNATING POSITIONS & HOVER EFFECTS ── */}
-      <section className="w-full py-16 sm:py-24 px-6 sm:px-10 lg:px-12 border-t border-slate-200/80 text-left bg-white">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80 text-left bg-white">
         <div className="max-w-7xl mx-auto space-y-24 sm:space-y-32">
           {data.featureRows.map((row, idx) => {
             const rowNumber = `0${idx + 1}`;
@@ -269,7 +271,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 4: 3-COLUMN METRICS IMPACT STRIP ── */}
-      <section className="w-full py-12 px-6 sm:px-10 lg:px-12 bg-[#f8fafc] border-y border-slate-200/80 text-left">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f8fafc] border-y border-slate-200/80 text-left">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 rounded-[5px] bg-white border border-slate-200/90 space-y-2">
@@ -312,7 +314,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 5: TECH SHOWCASE CARD WITH INTERACTIVE CHIPS ── */}
-      <section className="w-full py-16 sm:py-20 px-6 sm:px-10 lg:px-12 text-left bg-white">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left bg-white border-t border-slate-200/80">
         <div className="max-w-7xl mx-auto">
           <div className="p-8 sm:p-12 lg:p-16 bg-[#f8fafc] text-[#202B61] rounded-[5px] border border-slate-200/90 shadow-none">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-center">

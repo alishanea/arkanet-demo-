@@ -76,12 +76,17 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
 
   return (
     <section id="trusted-by" className="relative w-full bg-white text-[#202B61] select-none py-16 sm:py-20 lg:py-24 border-t border-b border-slate-200/80 overflow-hidden">
-      <div className="w-full px-6 sm:px-12 lg:px-20 max-w-[1400px] mx-auto">
+      <div className="w-full px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto">
         {/* Section Heading */}
-        <div className="text-center mb-10 sm:mb-14">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
-            Trusted by Ambitious Brands
-          </h2>
+        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8 mb-8 sm:mb-10 lg:mb-12">
+          <div className="text-center max-w-4xl mx-auto space-y-3">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
+              Trusted by Ambitious Brands
+            </h2>
+            <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed">
+              Powering fast-growth startups and established regional enterprises across India, UAE, and global markets.
+            </p>
+          </div>
         </div>
 
         {/* Pure Minimal Logo Stage */}

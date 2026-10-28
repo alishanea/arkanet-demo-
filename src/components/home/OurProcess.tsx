@@ -171,19 +171,21 @@ export const OurProcess: React.FC<OurProcessProps> = () => {
       id="our-process"
       className="relative w-full bg-[#f4f6fb] text-[#202B61] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80"
     >
-      <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
+      <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         {/* Section Heading */}
-        <div className="w-full text-left space-y-3 max-w-4xl">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
-            Our Process
-          </h2>
-          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
-            We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
-          </p>
+        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
+          <div className="w-full text-left space-y-3 max-w-4xl">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
+              Our Process
+            </h2>
+            <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
+              We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
+            </p>
+          </div>
         </div>
 
         {/* Stacked Cards Container */}
-        <div className="mt-8 sm:mt-14 flex flex-col gap-6 sm:gap-14 relative">
+        <div className="flex flex-col gap-6 sm:gap-10 relative">
           {PROCESS_STEPS.map((step, index) => (
             <ProcessCard
               key={step.key}

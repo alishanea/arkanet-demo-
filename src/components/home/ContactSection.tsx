@@ -52,11 +52,11 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full bg-[#f4f6fb] text-[#202B61] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-12 selection:bg-[#202B61] selection:text-white">
-      <div className="max-w-[1400px] mx-auto space-y-12 sm:space-y-16">
+    <section className="relative w-full bg-[#f4f6fb] text-[#202B61] pt-28 sm:pt-36 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-8 lg:px-12 selection:bg-[#202B61] selection:text-white">
+      <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
         {/* ── 1. UNIFIED EDITORIAL HERO HEADER ── */}
-        <div className="max-w-4xl space-y-4 text-left">
+        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8 max-w-4xl space-y-3 text-left">
           <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
             Let&apos;s build something <br className="hidden sm:inline" />
             <span className="text-[#202B61]">exceptional together</span>

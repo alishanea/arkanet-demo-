@@ -39,11 +39,11 @@ const TRACK_2: ClientLogo[] = [
 
 export function AboutClients() {
   return (
-    <section className="w-full py-20 sm:py-28 lg:py-36 bg-[#f4f6fb] border-t border-slate-200/80 text-left select-none overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 space-y-6 sm:space-y-8">
+    <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#f4f6fb] border-t border-slate-200/80 text-left select-none overflow-hidden px-4 sm:px-8 lg:px-12">
+      <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
         {/* Section Heading with Clean Typography */}
-        <div className="w-full space-y-4 max-w-4xl text-left">
+        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8 space-y-3 max-w-4xl text-left">
           
 
           <motion.h2
