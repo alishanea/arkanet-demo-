@@ -326,7 +326,7 @@ export default function WorkPage() {
 
       {/* ── 2. FILTER & LAYOUT VIEW CONTROLS ── */}
       <section className="w-full bg-[#f4f6fb] pt-8 sm:pt-10 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80">
-        <div className="max-w-[1140px] mx-auto pb-6 flex flex-wrap items-center justify-between gap-3">
+        <div className="max-w-[1400px] mx-auto pb-6 flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat;
@@ -376,7 +376,7 @@ export default function WorkPage() {
 
       {/* ── 3. WORK SHOWCASE STAGE ── */}
       <section className="w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80">
-        <div className="max-w-[1140px] mx-auto">
+        <div className="max-w-[1400px] mx-auto">
           {filteredProjects.length === 0 ? (
             <div className="py-20 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-sm">
               No projects found for category &quot;{activeCategory}&quot;.
@@ -386,7 +386,7 @@ export default function WorkPage() {
             /* ═══════════════════════════════════════════════════════════════
                LAYOUT A: COMPACT ROWS (Slightly reduced size, soft transparent image)
             ═══════════════════════════════════════════════════════════════ */
-            <div className="space-y-4 sm:space-y-5">
+            <div className="space-y-5 sm:space-y-6">
               {filteredProjects.map((project, idx) => {
                 const indexFormatted = String(idx + 1).padStart(2, "0");
                 const details = PROJECT_DETAILS_MAP[project.id];
@@ -400,12 +400,12 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: idx * 0.03 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group relative rounded-xl bg-white/95 hover:bg-white border border-slate-200/90 hover:border-slate-300 transition-all duration-300 p-4 sm:p-5 lg:p-5 cursor-pointer overflow-hidden text-left shadow-[0_2px_8px_-4px_rgba(0,0,0,0.03)] hover:shadow-md"
+                    className="group relative rounded-xl bg-white/95 hover:bg-white border border-slate-200/90 hover:border-slate-300 transition-all duration-300 p-5 sm:p-6 lg:p-7 cursor-pointer overflow-hidden text-left shadow-[0_2px_8px_-4px_rgba(0,0,0,0.03)] hover:shadow-md w-full"
                   >
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
                       {/* Left Side: Soft Transparent Thumbnail (Span 4 - Reduced compact size) */}
-                      <div className="lg:col-span-4 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] max-h-[190px] sm:max-h-[210px] rounded-lg overflow-hidden bg-slate-100 border border-slate-200/70 shrink-0">
+                      <div className="lg:col-span-4 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] max-h-[220px] rounded-xl overflow-hidden bg-slate-100 border border-slate-200/70 shrink-0">
                         <img
                           src={project.image}
                           alt={project.title}
