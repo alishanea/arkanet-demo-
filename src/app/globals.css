@@ -4,26 +4,26 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: var(--font-sans, "Plus Jakarta Sans"), "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: var(--font-sans, "Plus Jakarta Sans"), "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @layer base {
   *, *::before, *::after {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
   }
 
   button, input, select, textarea {
-    font-family: var(--font-heading), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
   }
 
   html {
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
   }
 
   body {
     @apply bg-[#f4f6fb] text-[#202B61] font-sans antialiased selection:bg-[#202B61] selection:text-white;
-    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
   }
 
   h1 {

@@ -23,11 +23,11 @@ const config: Config = {
         arkanet: "#202B61",
       },
       fontFamily: {
-        display: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
-        heading: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
-        sans: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
-        mono: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
-        serif: ["var(--font-heading)", "Plus Jakarta Sans", "sans-serif"],
+        display: ["var(--font-sans)", "Plus Jakarta Sans", "sans-serif"],
+        heading: ["var(--font-sans)", "Plus Jakarta Sans", "sans-serif"],
+        sans: ["var(--font-sans)", "Plus Jakarta Sans", "sans-serif"],
+        mono: ["var(--font-sans)", "Plus Jakarta Sans", "sans-serif"],
+        serif: ["var(--font-sans)", "Plus Jakarta Sans", "sans-serif"],
       },
       borderRadius: {
         xl: "12px",
