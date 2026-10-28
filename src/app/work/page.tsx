@@ -337,7 +337,7 @@ export default function WorkPage() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+                  className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 outline-none focus:outline-none focus:ring-0 select-none ${
                     isActive
                       ? "bg-[#202B61] text-white"
                       : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300"
@@ -400,7 +400,7 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: idx * 0.03 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group relative rounded-xl bg-white/95 hover:bg-white border border-slate-200/90 hover:border-slate-300 transition-all duration-300 p-5 sm:p-6 lg:p-7 cursor-pointer overflow-hidden text-left shadow-[0_2px_8px_-4px_rgba(0,0,0,0.03)] hover:shadow-md w-full"
+                    className="group relative rounded-xl bg-white border border-slate-200/90 transition-all duration-300 p-5 sm:p-6 lg:p-7 cursor-pointer overflow-hidden text-left shadow-none hover:shadow-none focus:outline-none focus:ring-0 active:outline-none select-none w-full"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
@@ -487,7 +487,7 @@ export default function WorkPage() {
                     viewport={{ once: true, margin: "-30px" }}
                     transition={{ duration: 0.4, delay: idx * 0.03 }}
                     onClick={() => setSelectedProject(project)}
-                    className="group rounded-xl bg-white/95 hover:bg-white border border-slate-200/90 hover:border-slate-300 transition-all duration-300 p-4 cursor-pointer flex flex-col justify-between space-y-3 text-left shadow-[0_2px_8px_-4px_rgba(0,0,0,0.03)] hover:shadow-md"
+                    className="group rounded-xl bg-white border border-slate-200/90 transition-all duration-300 p-4 cursor-pointer flex flex-col justify-between space-y-3 text-left shadow-none hover:shadow-none focus:outline-none focus:ring-0 active:outline-none select-none"
                   >
                     {/* Compact Image Frame */}
                     <div className="relative aspect-[16/10] max-h-[180px] rounded-lg overflow-hidden bg-slate-100 border border-slate-200/70">

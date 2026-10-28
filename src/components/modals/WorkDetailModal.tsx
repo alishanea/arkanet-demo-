@@ -199,7 +199,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                 </div>
 
                 {/* ── HERO IMAGE (Clean frame, not enclosed in a white card box) ── */}
-                <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/70 shadow-sm">
+                <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/70 shadow-none">
                   <img
                     src={currentProject.outerImage}
                     alt={currentProject.title}
@@ -302,7 +302,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                     <button
                       type="button"
                       onClick={handleNextProject}
-                      className="group inline-flex items-center gap-3 bg-[#202B61] hover:bg-[#161e47] text-white px-7 py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg"
+                      className="group inline-flex items-center gap-3 bg-[#202B61] hover:bg-[#161e47] text-white px-7 py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs transition-all duration-200 cursor-pointer shadow-none hover:shadow-none"
                     >
                       <span>Next Project: {nextProject.title}</span>
                       <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
