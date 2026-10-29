@@ -21,11 +21,11 @@ export const Footer: React.FC<FooterProps> = ({
 
   return (
     <footer
-      className={`relative text-[#202B61] pt-12 sm:pt-16 pb-10 overflow-hidden select-none border-t border-slate-200/80 ${
+      className={`relative text-[#202B61] py-16 sm:py-20 overflow-hidden select-none border-t border-slate-200/80 ${
         bgColor && bgColor !== "bg-white" ? bgColor : "bg-[#f4f6fb]"
       }`}
     >
-      <div className="w-full max-w-[1400px] xl:max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10 text-left">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10 text-left font-sans">
         
         {/* Top Info Columns */}
         {!hideTopColumns && showAddresses && (
@@ -42,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <span>ARKANET</span>
               </Link>
               
-              <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed font-medium max-w-sm">
+              <p className="font-sans text-xs sm:text-sm text-[#202B61]/75 leading-relaxed font-medium max-w-sm">
                 Engineering high-performance web platforms, mobile applications, and intelligent AI automation systems for ambitious brands across the UAE, India, and worldwide.
               </p>
 
@@ -50,10 +50,10 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Column 2: Capabilities & Quick Links (Span 3) */}
             <div className="lg:col-span-3 space-y-3">
-              <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-800">
+              <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-[#202B61]">
                 Capabilities
               </h4>
-              <ul className="space-y-2 text-xs sm:text-sm font-medium text-slate-600">
+              <ul className="space-y-2 text-xs sm:text-sm font-medium text-[#202B61]/75">
                 <li>
                   <Link href="/capabilities/website-development" className="hover:text-[#202B61] transition-colors">
                     Web &amp; SaaS Platforms
@@ -89,30 +89,30 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Column 3: Dubai & India Offices (Span 3) */}
             <div className="lg:col-span-3 space-y-4">
-              <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-800">
+              <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-[#202B61]">
                 Offices
               </h4>
               
               {/* Dubai */}
-              <div className="space-y-1 text-xs sm:text-sm text-slate-600">
+              <div className="space-y-1 text-xs sm:text-sm text-[#202B61]/75">
                 <span className="font-bold text-[#202B61] block">Dubai (HQ)</span>
                 <p className="leading-relaxed">
                   Capital Golden Tower, Suite 308,<br />
                   Business Bay, Dubai, UAE
                 </p>
-                <a href="tel:+97145572716" className="text-slate-700 hover:text-[#202B61] block font-semibold pt-0.5">
+                <a href="tel:+97145572716" className="text-[#202B61]/85 hover:text-[#202B61] block font-semibold pt-0.5">
                   +971 4 557 2716
                 </a>
               </div>
 
               {/* India */}
-              <div className="space-y-1 text-xs sm:text-sm text-slate-600 pt-1">
+              <div className="space-y-1 text-xs sm:text-sm text-[#202B61]/75 pt-1">
                 <span className="font-bold text-[#202B61] block">India Office</span>
                 <p className="leading-relaxed">
                   Room No. 227K, Benny Complex,<br />
                   Kelakam, Kannur Dt, Kerala
                 </p>
-                <a href="tel:+919074104372" className="text-slate-700 hover:text-[#202B61] block font-semibold pt-0.5">
+                <a href="tel:+919074104372" className="text-[#202B61]/85 hover:text-[#202B61] block font-semibold pt-0.5">
                   +91 90741 04372
                 </a>
               </div>
@@ -120,10 +120,10 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Column 4: Start a Project (Span 2) */}
             <div className="lg:col-span-2 space-y-3">
-              <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-800">
+              <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-[#202B61]">
                 Engage
               </h4>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+              <p className="text-xs text-[#202B61]/75 leading-relaxed font-medium">
                 Ready to engineer your next digital solution?
               </p>
               
@@ -162,21 +162,21 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="w-full border-t border-slate-200/80 my-4" />
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-slate-600 pt-2">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-[#202B61]/75 pt-2">
           
           {/* Left: Brand, Copyright, Blog & Privacy */}
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs">
             <span>© {currentYear} Arkanet Technologies. All rights reserved.</span>
-            <Link href="/blog" className="text-slate-700 hover:text-[#202B61] font-semibold transition-colors">
+            <Link href="/blog" className="text-[#202B61]/85 hover:text-[#202B61] font-semibold transition-colors">
               Blog &amp; Insights
             </Link>
-            <Link href="/contact" className="text-slate-700 hover:text-[#202B61] font-semibold transition-colors">
+            <Link href="/contact" className="text-[#202B61]/85 hover:text-[#202B61] font-semibold transition-colors">
               Contact
             </Link>
           </div>
 
           {/* Right: Clean Social Links with Cyan Icons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-700">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-[#202B61]/85">
             <a
               href="https://twitter.com"
               target="_blank"

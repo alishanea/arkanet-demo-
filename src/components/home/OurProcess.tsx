@@ -116,7 +116,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#202B61] tracking-tight">
               {step.title}
             </h3>
-            <p className="font-sans text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+            <p className="section-desc max-w-xl">
               {step.body}
             </p>
           </div>
@@ -171,10 +171,10 @@ export const OurProcess: React.FC<OurProcessProps> = () => {
         {/* Section Heading */}
         <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
           <div className="w-full text-left space-y-3 max-w-4xl">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
+            <h2 className="section-h2">
               Our Process
             </h2>
-            <p className="font-sans font-normal text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
+            <p className="section-desc max-w-3xl">
               We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
             </p>
           </div>

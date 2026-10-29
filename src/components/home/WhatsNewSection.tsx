@@ -111,10 +111,10 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
         {/* ── 1. CLEAN EDITORIAL SECTION HEADER (WITH "SEE ALL WORK" LINK) ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 sm:pb-8 border-b border-slate-200/80">
           <div className="space-y-2 max-w-2xl text-left">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-[#202B61] leading-tight tracking-tight">
+            <h2 className="section-h2">
               Selected Work &amp; Case Studies
             </h2>
-            <p className="font-sans font-medium text-[#202B61]/70 text-sm sm:text-base leading-relaxed">
+            <p className="section-desc max-w-2xl">
               Explore how we design, build, and deploy production digital systems that solve real operational friction.
             </p>
           </div>

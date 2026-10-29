@@ -27,21 +27,21 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
   return (
     <section
       id="studio-philosophy"
-      className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-slate-200/80 overflow-hidden"
+      className="relative w-full bg-[#f4f6fb] text-[#202B61] select-none px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-slate-200/80 overflow-hidden font-sans"
     >
-      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center gap-8 sm:gap-12">
+      <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
         {/* Top 2-Column Split: Headline + Narrative on Left, Clean Image on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center text-left">
           
           {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col justify-between space-y-4 text-left">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
+            <h2 className="section-h2">
               Same team, start to finish
             </h2>
 
             {/* Paragraph Copy */}
-            <div className="text-slate-600 font-sans font-medium text-sm sm:text-base leading-relaxed max-w-xl space-y-3">
+            <div className="section-desc max-w-xl space-y-3">
               <p>
                 Arkanet is a team of engineers, designers, and strategists working across web, mobile, AI, and digital infrastructure: one cohesive unit, not four separate specialists handed off between projects.
               </p>
@@ -54,7 +54,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
             <div className="pt-2">
               <Link
                 href="/about"
-                className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#202B61] transition-colors"
+                className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-[#202B61] hover:text-[#202B61]/80 transition-colors"
               >
                 <span>About Us</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#202B61]" />
@@ -85,7 +85,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
                 {stat.number}
               </div>
               {/* Exact 5 words each */}
-              <div className="font-sans font-medium text-xs sm:text-sm leading-snug text-slate-600 text-left flex-1 max-w-[240px]">
+              <div className="font-sans font-normal text-xs sm:text-sm leading-snug text-[#202B61]/75 text-left flex-1 max-w-[240px]">
                 {stat.label}
               </div>
             </div>

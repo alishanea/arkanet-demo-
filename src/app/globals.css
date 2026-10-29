@@ -42,9 +42,9 @@
 
   h2 {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: clamp(24px, 3.4vw, 44px) !important;
+    font-size: clamp(24px, 3vw, 36px) !important;
     font-weight: 800 !important;
-    line-height: 1.25 !important;
+    line-height: 1.22 !important;
     letter-spacing: -0.02em !important;
     color: #202B61 !important;
   }
@@ -79,11 +79,20 @@
   .philosophy-h2,
   .about-h2 {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: clamp(24px, 3.4vw, 44px) !important;
+    font-size: clamp(24px, 3vw, 36px) !important;
     font-weight: 800 !important;
-    line-height: 1.25 !important;
+    line-height: 1.22 !important;
     letter-spacing: -0.02em !important;
     color: #202B61 !important;
+  }
+
+  /* Unified Section Subtitle across the entire website */
+  .section-desc {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: clamp(14px, 1.15vw, 16px) !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+    color: rgba(32, 43, 97, 0.75) !important;
   }
 
   /* Unified Hero Title */

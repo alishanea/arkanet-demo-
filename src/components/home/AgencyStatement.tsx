@@ -99,16 +99,16 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full bg-transparent px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none overflow-hidden font-sans"
+      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-16">
+      <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
         {/* ── 1. EXACT ORIGINAL STATEMENT HEADLINE & DESCRIPTION ── */}
-        <div className="space-y-4 max-w-4xl text-left">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[44px] text-[#202B61] leading-[1.2] tracking-tight">
+        <div className="space-y-3 max-w-4xl text-left">
+          <h2 className="section-h2">
             Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
           </h2>
-          <p className="font-sans font-medium text-[#202B61]/75 text-base sm:text-lg leading-relaxed max-w-3xl">
+          <p className="section-desc max-w-3xl">
             We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
           </p>
         </div>
@@ -127,12 +127,12 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
               </div>
 
               {/* Title (No arrows) */}
-              <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug group-hover:text-[#202B61]/80 transition-colors">
+              <h3 className="card-h3 group-hover:text-[#202B61]/80 transition-colors">
                 {item.title}
               </h3>
 
               {/* Exact Original Description */}
-              <p className="font-sans font-normal text-sm sm:text-[15px] text-[#202B61]/70 leading-relaxed mt-2.5">
+              <p className="font-sans font-normal text-sm text-[#202B61]/70 leading-relaxed mt-2.5">
                 {item.desc}
               </p>
             </Link>

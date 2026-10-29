@@ -98,15 +98,15 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
   return (
     <section
       id="showcase"
-      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 select-none border-t border-slate-200/80 overflow-hidden font-sans"
+      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans"
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         {/* ── 1. STRUCTURED PAGE SECTION HEADER ── */}
-        <div className="max-w-3xl space-y-2.5 text-left">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-[#202B61] leading-[1.2] tracking-tight">
+        <div className="max-w-3xl space-y-3 text-left">
+          <h2 className="section-h2">
             Full–Stack Engineering &amp; Applied AI Capabilities
           </h2>
-          <p className="font-sans font-medium text-[#202B61]/70 text-sm sm:text-[15px] leading-relaxed max-w-2xl">
+          <p className="section-desc max-w-2xl">
             We identify where modern technology and AI create genuine value in your operation, then engineer scalable digital products built to perform.
           </p>
         </div>
