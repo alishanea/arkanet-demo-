@@ -58,7 +58,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "neuraldesk-ai",
     category: "Applied AI & Automation",
-    title: "NeuralDesk AI Assistant",
+    title: "NeuralDesk AI Enterprise Assistant",
     description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected to helpdesks, resolving technical inquiries instantly.",
     outerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
@@ -139,27 +139,27 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
               className="group bg-white hover:bg-slate-50/80 rounded-xl border border-slate-200/90 overflow-hidden transition-all duration-300 flex flex-col justify-between h-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-2"
             >
               <div className="flex flex-col flex-1">
-                {/* Image (16:10 aspect ratio with modern responsive optimization) */}
+                {/* Image */}
                 <div className="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden shrink-0 border-b border-slate-100">
                   <Image
                     src={project.outerImage}
-                    alt={`${project.title} project showcase`}
+                    alt={project.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                 </div>
 
-                {/* Card Body with Flexible Baseline Symmetry */}
+                {/* Card Body with Pixel-Perfect Symmetry Across All 4 Cards */}
                 <div className="p-6 flex flex-col justify-between flex-1">
                   <div className="space-y-3">
-                    {/* Title: Flexible 2-line container without arbitrary text clipping */}
-                    <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight line-clamp-2 min-h-[3.25rem] sm:min-h-[3.5rem] flex items-start">
+                    {/* Title: Unclipped 2-line container with full descender clearance */}
+                    <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-[1.3] tracking-tight min-h-[3.6rem] sm:min-h-[3.75rem] flex items-start pb-1">
                       {project.title}
                     </h3>
 
-                    {/* Description: Consistent 3-line presentation */}
-                    <p className="font-sans text-xs sm:text-sm text-[#202B61]/75 leading-relaxed font-normal line-clamp-3 min-h-[4.25rem] sm:min-h-[4.5rem] flex items-start">
+                    {/* Description: Consistent 3-line baseline across all 4 cards */}
+                    <p className="font-sans text-xs sm:text-sm text-[#202B61]/75 leading-relaxed font-normal min-h-[4.5rem] sm:min-h-[4.75rem] flex items-start">
                       {project.description}
                     </p>
                   </div>

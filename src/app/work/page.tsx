@@ -193,7 +193,7 @@ const WORK_PROJECTS: WorkProject[] = [
   {
     id: "neuraldesk-ai",
     category: "AI & Automation",
-    title: "NeuralDesk AI Assistant",
+    title: "NeuralDesk AI Enterprise Assistant",
     description: "Enterprise RAG document intelligence pipeline and fine-tuned LLM assistant connected directly into customer helpdesk operations.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
     year: "2026",
