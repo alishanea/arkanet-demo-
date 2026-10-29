@@ -144,13 +144,10 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 {/* Card Body with Pixel-Perfect Symmetry Across All 4 Cards */}
                 <div className="p-6 flex flex-col justify-between flex-1">
                   <div className="space-y-3">
-                    {/* Title Row: Locked 2-line height (h-14) with Arrow */}
-                    <div className="flex items-start justify-between gap-3 h-14">
-                      <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight line-clamp-2">
-                        {project.title}
-                      </h3>
-                      <ArrowRight className="w-4 h-4 text-[#202B61]/40 group-hover:text-[#202B61] transition-transform duration-200 group-hover:translate-x-1 shrink-0 mt-1" />
-                    </div>
+                    {/* Title: Full-width locked 2-line height (h-14) */}
+                    <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight line-clamp-2 h-14 flex items-start">
+                      {project.title}
+                    </h3>
 
                     {/* Description: Locked 3-line height across all 4 cards */}
                     <p className="font-sans text-xs sm:text-sm text-[#202B61]/70 leading-relaxed font-normal h-[4.25rem] sm:h-[4.5rem] line-clamp-3 flex items-start">
@@ -158,9 +155,9 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     </p>
                   </div>
 
-                  {/* Tech Chips: Sits on identical horizontal baseline across all 4 cards */}
-                  <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between">
-                    <div className="flex flex-wrap items-center gap-1.5 min-h-[26px]">
+                  {/* Card Footer: Tech Chips on Left, Symmetrical Action Button on Right */}
+                  <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-center gap-1.5 min-h-[28px]">
                       {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
                         <span
                           key={tIdx}
@@ -169,6 +166,10 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                           {tech}
                         </span>
                       ))}
+                    </div>
+
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100/90 border border-slate-200/80 flex items-center justify-center text-[#202B61]/70 group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61] transition-all duration-200 shrink-0">
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </div>
                 </div>
