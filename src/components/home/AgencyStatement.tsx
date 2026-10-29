@@ -113,20 +113,20 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
           </p>
         </div>
 
-        {/* ── 2. EDITORIAL 3-COLUMN CAPABILITY GRID (CLEAN, SOLID, NO COLOR SHIFTS) ── */}
+        {/* ── 2. EDITORIAL 3-COLUMN CAPABILITY GRID (NO HOVER EFFECTS, COMPLETELY STABLE) ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full text-left">
           {STATEMENTS.map((item) => (
             <Link
               key={item.id}
               href={item.href}
-              className="group flex flex-col items-start cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-sm"
+              className="flex flex-col items-start outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-sm"
             >
               {/* Minimalist Linear Icon */}
               <div className="mb-4 sm:mb-5">
                 {item.renderIcon()}
               </div>
 
-              {/* Title (Consistent Brand Navy) */}
+              {/* Title (Consistent Brand Navy, No Hover Change) */}
               <h3 className="card-h3 text-[#202B61]">
                 {item.title}
               </h3>
