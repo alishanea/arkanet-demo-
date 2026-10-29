@@ -39,7 +39,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
           
           {/* Left Side: Statement Heading & Narrative in Signature #202B61 Plus Jakarta Sans */}
           <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] text-[#202B61] leading-[1.08] tracking-tight">
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] text-[#202B61] leading-[1.24] tracking-tight">
               Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
             </h2>
 
@@ -59,7 +59,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="space-y-2 flex-1 pr-4">
-                      <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] group-hover:opacity-85 transition-opacity leading-snug">
+                      <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] group-hover:opacity-85 transition-opacity leading-[1.32]">
                         {item.title}
                       </h3>
                       <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed max-w-xl">
