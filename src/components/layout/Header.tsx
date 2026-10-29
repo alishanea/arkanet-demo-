@@ -50,6 +50,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
     setMobileMenuOpen(false);
   };
 
+  const handleWorkClick = (e) => {
+    setActiveMenu(null);
+    setMobileMenuOpen(false);
+    if (pathname === "/") {
+      e.preventDefault();
+      const el = document.getElementById("work");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+  };
+
   const handleCtaClick = () => {
     if (onOpenBooking) {
       onOpenBooking();
@@ -216,7 +229,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   />
                 )}
                 <span
-                  className={`relative z-10 transition-colors duration-200 ${
+                  className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
                     isHomeActive ? "text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
@@ -253,7 +266,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none"
                 >
                   <span
-                    className={`relative z-10 flex items-center gap-1.5 transition-colors duration-200 ${
+                    className={`relative z-10 flex items-center gap-1.5 font-bold text-sm tracking-tight transition-colors duration-200 ${
                       activeMenu === "services" || isCapabilitiesActive
                         ? "text-white"
                         : "text-slate-800 hover:text-slate-950"
@@ -272,7 +285,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               {/* Work Link */}
               <Link
                 href="/work"
-                onClick={handleNavClick}
+                onClick={handleWorkClick}
                 onMouseEnter={() => setHoveredTab("work")}
                 className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
@@ -291,7 +304,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   />
                 )}
                 <span
-                  className={`relative z-10 transition-colors duration-200 ${
+                  className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
                     isWorkActive ? "text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
@@ -321,7 +334,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   />
                 )}
                 <span
-                  className={`relative z-10 transition-colors duration-200 ${
+                  className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
                     isAboutActive ? "text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
@@ -351,7 +364,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   />
                 )}
                 <span
-                  className={`relative z-10 transition-colors duration-200 ${
+                  className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
                     isContactActive ? "text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
@@ -433,7 +446,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 </Link>
                 <Link
                   href="/work"
-                  onClick={handleNavClick}
+                  onClick={handleWorkClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
                     isWorkActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
                   }`}
