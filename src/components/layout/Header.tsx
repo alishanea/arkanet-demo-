@@ -250,10 +250,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <button
                   type="button"
                   onClick={toggleCapabilities}
-                  aria-expanded={activeMenu === "services"}
-                  aria-haspopup="menu"
-                  aria-label="Toggle capabilities dropdown menu"
-                  className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-2"
+                  className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none"
                 >
                   <span
                     className={`relative z-10 flex items-center gap-1.5 transition-colors duration-200 ${
@@ -369,9 +366,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 rounded-full text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-2"
-                aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-                aria-expanded={mobileMenuOpen}
+                className="md:hidden p-2 rounded-full text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
+                aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
