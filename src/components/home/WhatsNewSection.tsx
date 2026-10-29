@@ -14,8 +14,8 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "marble-tile-stone",
     category: "Web & SaaS Platforms",
-    title: "Marble Tile & Stone",
-    description: "High-conversion digital showroom and real-time 3D room visualizer engineered with WebGL for modern interior architects.",
+    title: "Marble Tile & Stone Showroom",
+    description: "High-conversion digital showroom and real-time 3D visualizer engineered with WebGL for modern architects.",
     outerImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -37,7 +37,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "careflow-health",
     category: "Mobile Applications",
     title: "CareFlow Health Systems",
-    description: "Unified mobile telehealth application paired with clinician portal, automated prescription alerts, and instant lab report downloads.",
+    description: "Unified mobile telehealth platform paired with clinician portal, automated prescription alerts, and lab report sync.",
     outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -59,7 +59,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "neuraldesk-ai",
     category: "Applied AI & Automation",
     title: "NeuralDesk AI Assistant",
-    description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected to customer helpdesks, resolving complex technical inquiries instantly.",
+    description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected to helpdesks, resolving technical inquiries instantly.",
     outerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -81,7 +81,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "aerologistics-cloud",
     category: "Cloud & DevOps",
     title: "AeroLogistics Global Cloud",
-    description: "Cloud-native event-driven platform utilizing IoT satellite telemetry and automated customs compliance for global freight fleets.",
+    description: "Cloud-native event-driven platform utilizing IoT satellite telemetry and automated compliance for freight fleets.",
     outerImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -141,32 +141,35 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   />
                 </div>
 
-                {/* Card Body */}
-                <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
-                  <div className="space-y-2.5">
-                    {/* Title Row */}
-                    <div className="flex items-start justify-between gap-3 min-h-[3rem] sm:min-h-[3.25rem]">
-                      <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight">
+                {/* Card Body with Pixel-Perfect Symmetry Across All 4 Cards */}
+                <div className="p-6 flex flex-col justify-between flex-1">
+                  <div className="space-y-3">
+                    {/* Title Row: Locked 2-line height (h-14) with Arrow */}
+                    <div className="flex items-start justify-between gap-3 h-14">
+                      <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight line-clamp-2">
                         {project.title}
                       </h3>
                       <ArrowRight className="w-4 h-4 text-[#202B61]/40 group-hover:text-[#202B61] transition-transform duration-200 group-hover:translate-x-1 shrink-0 mt-1" />
                     </div>
 
-                    <p className="font-sans text-xs sm:text-sm text-[#202B61]/70 leading-relaxed font-normal min-h-[4.5rem] sm:min-h-[4.75rem] flex items-start">
+                    {/* Description: Locked 3-line height across all 4 cards */}
+                    <p className="font-sans text-xs sm:text-sm text-[#202B61]/70 leading-relaxed font-normal h-[4.25rem] sm:h-[4.5rem] line-clamp-3 flex items-start">
                       {project.description}
                     </p>
                   </div>
 
-                  {/* Tech Chips */}
-                  <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-1.5 min-h-[32px]">
-                    {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-[#202B61]/70"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  {/* Tech Chips: Sits on identical horizontal baseline across all 4 cards */}
+                  <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between">
+                    <div className="flex flex-wrap items-center gap-1.5 min-h-[26px]">
+                      {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-[#202B61]/70"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

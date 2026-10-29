@@ -32,7 +32,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
       id="what-is-arkanet"
       className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans"
     >
-      <div className="max-w-6xl w-full mx-auto my-auto flex flex-col justify-center">
+      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center">
         
         {/* ── 2-COLUMN BALANCED EDITORIAL LAYOUT ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-start text-left">
