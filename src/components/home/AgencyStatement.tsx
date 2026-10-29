@@ -26,7 +26,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-[#202B61]/80 group-hover:text-[#202B61] transition-colors"
+        className="w-10 h-10 stroke-[1.25] text-white/90 group-hover:text-white transition-colors"
         aria-hidden="true"
       >
         <rect x="6" y="8" width="36" height="28" rx="3" />
@@ -52,7 +52,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-[#202B61]/80 group-hover:text-[#202B61] transition-colors"
+        className="w-10 h-10 stroke-[1.25] text-white/90 group-hover:text-white transition-colors"
         aria-hidden="true"
       >
         <circle cx="24" cy="24" r="8" />
@@ -80,7 +80,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-[#202B61]/80 group-hover:text-[#202B61] transition-colors"
+        className="w-10 h-10 stroke-[1.25] text-white/90 group-hover:text-white transition-colors"
         aria-hidden="true"
       >
         <circle cx="24" cy="24" r="16" />
@@ -99,28 +99,28 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans"
+      className="relative w-full bg-[#1b2454] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none overflow-hidden font-sans border-t border-slate-700/50"
     >
       {/* ── ARCHITECTURAL ENGINEERING DOT GRID BACKGROUND LAYER ── */}
       <div 
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(rgba(32, 43, 97, 0.12) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
-          maskImage: "radial-gradient(ellipse 80% 65% at 50% 50%, black 35%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 65% at 50% 50%, black 35%, transparent 100%)",
+          maskImage: "radial-gradient(ellipse 80% 65% at 50% 50%, black 40%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 80% 65% at 50% 50%, black 40%, transparent 100%)",
         }}
       />
 
-      {/* ── SUBTLE AMBIENT LUMINOUS GLOW ── */}
+      {/* ── AMBIENT LUMINOUS GLOWS IN DEEP BRAND CYANGEL & INDIGO ── */}
       <div 
         aria-hidden="true"
-        className="absolute -top-32 right-1/4 w-[500px] h-[350px] bg-[#202B61]/4 rounded-full blur-3xl pointer-events-none"
+        className="absolute -top-32 right-1/4 w-[500px] h-[350px] bg-sky-400/10 rounded-full blur-3xl pointer-events-none"
       />
       <div 
         aria-hidden="true"
-        className="absolute -bottom-32 left-10 w-[420px] h-[300px] bg-[#202B61]/3 rounded-full blur-3xl pointer-events-none"
+        className="absolute -bottom-32 left-10 w-[420px] h-[300px] bg-indigo-400/10 rounded-full blur-3xl pointer-events-none"
       />
 
       {/* ── SECTION CONTENT ── */}
@@ -128,10 +128,10 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
         
         {/* ── 1. EXACT ORIGINAL STATEMENT HEADLINE & DESCRIPTION ── */}
         <div className="space-y-3 max-w-4xl text-left">
-          <h2 className="section-h2">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] text-white leading-[1.22] tracking-tight">
             Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
           </h2>
-          <p className="section-desc max-w-3xl">
+          <p className="font-sans font-normal text-white/80 text-sm sm:text-base leading-relaxed max-w-3xl">
             We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
           </p>
         </div>
@@ -142,7 +142,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
             <Link
               key={item.id}
               href={item.href}
-              className="group flex flex-col items-start cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-sm"
+              className="group flex flex-col items-start cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-4 rounded-sm"
             >
               {/* Minimalist Linear Icon */}
               <div className="mb-4 sm:mb-5">
@@ -150,12 +150,12 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
               </div>
 
               {/* Title (No arrows) */}
-              <h3 className="card-h3 group-hover:text-[#202B61]/80 transition-colors">
+              <h3 className="font-heading font-bold text-lg sm:text-xl text-white tracking-tight leading-snug group-hover:text-white/85 transition-colors">
                 {item.title}
               </h3>
 
               {/* Exact Original Description */}
-              <p className="font-sans font-normal text-sm text-[#202B61]/70 leading-relaxed mt-2.5">
+              <p className="font-sans font-normal text-sm text-white/70 leading-relaxed mt-2.5">
                 {item.desc}
               </p>
             </Link>
