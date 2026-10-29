@@ -26,7 +26,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-white/90 group-hover:text-white transition-colors"
+        className="w-10 h-10 stroke-[1.3] text-[#202B61] group-hover:text-[#202B61]/80 transition-colors"
         aria-hidden="true"
       >
         <rect x="6" y="8" width="36" height="28" rx="3" />
@@ -52,7 +52,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-white/90 group-hover:text-white transition-colors"
+        className="w-10 h-10 stroke-[1.3] text-[#202B61] group-hover:text-[#202B61]/80 transition-colors"
         aria-hidden="true"
       >
         <circle cx="24" cy="24" r="8" />
@@ -80,7 +80,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-white/90 group-hover:text-white transition-colors"
+        className="w-10 h-10 stroke-[1.3] text-[#202B61] group-hover:text-[#202B61]/80 transition-colors"
         aria-hidden="true"
       >
         <circle cx="24" cy="24" r="16" />
@@ -99,63 +99,40 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full bg-[#1b2454] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none overflow-hidden font-sans border-t border-slate-700/50"
+      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 font-sans"
     >
-      {/* ── ARCHITECTURAL ENGINEERING DOT GRID BACKGROUND LAYER ── */}
-      <div 
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          maskImage: "radial-gradient(ellipse 80% 65% at 50% 50%, black 40%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 65% at 50% 50%, black 40%, transparent 100%)",
-        }}
-      />
-
-      {/* ── AMBIENT LUMINOUS GLOWS IN DEEP BRAND CYANGEL & INDIGO ── */}
-      <div 
-        aria-hidden="true"
-        className="absolute -top-32 right-1/4 w-[500px] h-[350px] bg-sky-400/10 rounded-full blur-3xl pointer-events-none"
-      />
-      <div 
-        aria-hidden="true"
-        className="absolute -bottom-32 left-10 w-[420px] h-[300px] bg-indigo-400/10 rounded-full blur-3xl pointer-events-none"
-      />
-
-      {/* ── SECTION CONTENT ── */}
-      <div className="relative z-10 max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
+      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12 lg:space-y-14">
         
         {/* ── 1. EXACT ORIGINAL STATEMENT HEADLINE & DESCRIPTION ── */}
         <div className="space-y-3 max-w-4xl text-left">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] text-white leading-[1.22] tracking-tight">
+          <h2 className="section-h2 text-[#202B61]">
             Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
           </h2>
-          <p className="font-sans font-normal text-white/80 text-sm sm:text-base leading-relaxed max-w-3xl">
+          <p className="section-desc max-w-3xl">
             We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
           </p>
         </div>
 
-        {/* ── 2. OPEN 3-COLUMN CAPABILITY GRID (EXACT ORIGINAL 3 STATEMENTS, NO ARROWS, CLEAN AESTHETIC) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 w-full text-left">
+        {/* ── 2. EDITORIAL 3-COLUMN CAPABILITY GRID (CLEAN, MAXIMUM LEGIBILITY, NO ARROWS) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full text-left">
           {STATEMENTS.map((item) => (
             <Link
               key={item.id}
               href={item.href}
-              className="group flex flex-col items-start cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-4 rounded-sm"
+              className="group flex flex-col items-start cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-sm"
             >
               {/* Minimalist Linear Icon */}
               <div className="mb-4 sm:mb-5">
                 {item.renderIcon()}
               </div>
 
-              {/* Title (No arrows) */}
-              <h3 className="font-heading font-bold text-lg sm:text-xl text-white tracking-tight leading-snug group-hover:text-white/85 transition-colors">
+              {/* Title */}
+              <h3 className="card-h3 text-[#202B61] group-hover:text-[#202B61]/80 transition-colors">
                 {item.title}
               </h3>
 
-              {/* Exact Original Description */}
-              <p className="font-sans font-normal text-sm text-white/70 leading-relaxed mt-2.5">
+              {/* Description */}
+              <p className="font-sans font-normal text-sm sm:text-[15px] text-[#202B61]/70 leading-relaxed mt-2.5">
                 {item.desc}
               </p>
             </Link>
