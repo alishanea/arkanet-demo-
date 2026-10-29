@@ -9,10 +9,6 @@ const AgencyStatement = dynamic(
   () => import("@/components/home/AgencyStatement").then((m) => m.AgencyStatement),
   { ssr: true }
 );
-const ArkanetBentoShowcase = dynamic(
-  () => import("@/components/home/ArkanetBentoShowcase").then((m) => m.ArkanetBentoShowcase),
-  { ssr: true }
-);
 const InteractiveShowcaseGrid = dynamic(
   () => import("@/components/home/InteractiveShowcaseGrid").then((m) => m.InteractiveShowcaseGrid),
   { ssr: true }
