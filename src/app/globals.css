@@ -37,7 +37,7 @@
     font-weight: 800 !important;
     line-height: 1.2 !important;
     letter-spacing: -0.025em !important;
-    color: #202B61 !important;
+    color: #202B61;
   }
 
   h2 {
@@ -46,7 +46,7 @@
     font-weight: 800 !important;
     line-height: 1.22 !important;
     letter-spacing: -0.02em !important;
-    color: #202B61 !important;
+    color: #202B61;
   }
 
   h3 {
@@ -55,7 +55,7 @@
     font-weight: 700 !important;
     line-height: 1.35 !important;
     letter-spacing: -0.015em !important;
-    color: #202B61 !important;
+    color: #202B61;
   }
 
   h4, h5, h6 {
@@ -63,7 +63,7 @@
     font-weight: 700 !important;
     line-height: 1.4 !important;
     letter-spacing: -0.01em !important;
-    color: #202B61 !important;
+    color: #202B61;
   }
 
   p {
@@ -83,7 +83,7 @@
     font-weight: 800 !important;
     line-height: 1.22 !important;
     letter-spacing: -0.02em !important;
-    color: #202B61 !important;
+    color: #202B61;
   }
 
   /* Unified Section Subtitle across the entire website */
@@ -92,7 +92,7 @@
     font-size: clamp(14px, 1.15vw, 16px) !important;
     font-weight: 400 !important;
     line-height: 1.65 !important;
-    color: rgba(32, 43, 97, 0.75) !important;
+    color: rgba(32, 43, 97, 0.75);
   }
 
   /* Unified Hero Title */
@@ -102,7 +102,7 @@
     font-weight: 800 !important;
     line-height: 1.2 !important;
     letter-spacing: -0.025em !important;
-    color: #202B61 !important;
+    color: #202B61;
   }
 
   /* Unified Hero Subtitle */
@@ -111,7 +111,7 @@
     font-size: clamp(15px, 1.6vw, 18px) !important;
     font-weight: 500 !important;
     line-height: 1.65 !important;
-    color: #202B61 !important;
+    color: #202B61;
     opacity: 0.85;
   }
 
@@ -123,7 +123,7 @@
     font-weight: 700 !important;
     line-height: 1.35 !important;
     letter-spacing: -0.015em !important;
-    color: #202B61 !important;
+    color: #202B61;
   }
 
   /* Unified Card Body Text */
@@ -154,7 +154,7 @@
     font-weight: 800 !important;
     line-height: 1.2 !important;
     letter-spacing: -0.02em !important;
-    color: #202B61 !important;
+    color: #202B61;
   }
 
   .modal-section-h2 {
@@ -163,7 +163,7 @@
     font-weight: 700 !important;
     line-height: 1.28 !important;
     letter-spacing: -0.015em !important;
-    color: #202B61 !important;
+    color: #202B61;
   }
 }
 
