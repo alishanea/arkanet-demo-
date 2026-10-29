@@ -50,14 +50,14 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
               </p>
             </div>
 
-            {/* Clean CTA Button */}
+            {/* Clean CTA Button with Accessible Contrast */}
             <div className="pt-2">
               <Link
                 href="/about"
-                className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#202B61] transition-colors"
+                className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-[#202B61]/80 hover:text-[#202B61] transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-2"
               >
                 <span>About Us</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#202B61]" />
+                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-[#202B61]/60 group-hover:text-[#202B61]" />
               </Link>
             </div>
           </div>

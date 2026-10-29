@@ -125,50 +125,62 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           {FEATURED_PROJECTS.map((project) => (
             <div
               key={project.id}
+              role="button"
+              tabIndex={0}
+              aria-haspopup="dialog"
+              aria-label={`View case study: ${project.title}`}
               onClick={() => setSelectedProject(project)}
-              className="group bg-white hover:bg-slate-50/80 rounded-xl border border-slate-200/90 overflow-hidden transition-all duration-300 flex flex-col justify-between h-full cursor-pointer text-left outline-none"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setSelectedProject(project);
+                }
+              }}
+              className="group bg-white hover:bg-slate-50/80 rounded-xl border border-slate-200/90 overflow-hidden transition-all duration-300 flex flex-col justify-between h-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-2"
             >
               <div className="flex flex-col flex-1">
-                {/* Image */}
+                {/* Image (16:10 aspect ratio with modern responsive optimization) */}
                 <div className="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden shrink-0 border-b border-slate-100">
                   <Image
                     src={project.outerImage}
-                    alt={project.title}
+                    alt={`${project.title} project showcase`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                    unoptimized
                   />
                 </div>
 
-                {/* Card Body with Pixel-Perfect Symmetry Across All 4 Cards */}
+                {/* Card Body with Flexible Baseline Symmetry */}
                 <div className="p-6 flex flex-col justify-between flex-1">
                   <div className="space-y-3">
-                    {/* Title: Full-width locked 2-line height (h-14) */}
-                    <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight line-clamp-2 h-14 flex items-start">
+                    {/* Title: Flexible 2-line container without arbitrary text clipping */}
+                    <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight line-clamp-2 min-h-[3.25rem] sm:min-h-[3.5rem] flex items-start">
                       {project.title}
                     </h3>
 
-                    {/* Description: Locked 3-line height across all 4 cards */}
-                    <p className="font-sans text-xs sm:text-sm text-[#202B61]/70 leading-relaxed font-normal h-[4.25rem] sm:h-[4.5rem] line-clamp-3 flex items-start">
+                    {/* Description: Consistent 3-line presentation */}
+                    <p className="font-sans text-xs sm:text-sm text-[#202B61]/75 leading-relaxed font-normal line-clamp-3 min-h-[4.25rem] sm:min-h-[4.5rem] flex items-start">
                       {project.description}
                     </p>
                   </div>
 
-                  {/* Card Footer: Tech Chips on Left, Symmetrical Action Button on Right */}
-                  <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between gap-2">
+                  {/* Card Footer: Tech Chips on Left, Symmetrical Action Button on Right (Pinned via mt-auto) */}
+                  <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between gap-2 mt-auto">
                     <div className="flex flex-wrap items-center gap-1.5 min-h-[28px]">
                       {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-[#202B61]/70"
+                          className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-[#202B61]/80"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
 
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100/90 border border-slate-200/80 flex items-center justify-center text-[#202B61]/70 group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61] transition-all duration-200 shrink-0">
+                    <div
+                      aria-hidden="true"
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100/90 border border-slate-200/80 flex items-center justify-center text-[#202B61]/70 group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61] transition-all duration-200 shrink-0"
+                    >
                       <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </div>

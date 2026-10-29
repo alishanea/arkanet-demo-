@@ -60,26 +60,26 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           </p>
         </div>
 
-        {/* ── 2. CLEAN OPEN 4-COLUMN ALIGNMENT (ONLY PAGE SEPARATION LINE, NO INNER DIVIDERS) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 items-stretch w-full">
+        {/* ── 2. CLEAN OPEN 4-COLUMN ALIGNMENT (BALANCED RESPONSIVE GAPS) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-8 xl:gap-12 items-stretch w-full">
           {PILLARS.map((pillar) => (
             <Link
               key={pillar.id}
               href={pillar.href}
-              className="group flex flex-col justify-between text-left cursor-pointer transition-transform duration-200"
+              className="group flex flex-col justify-between text-left cursor-pointer transition-transform duration-200 rounded-lg p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4"
             >
               <div className="space-y-3">
                 <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug min-h-[3.25rem] sm:min-h-[3.5rem] flex items-start">
                   {pillar.title}
                 </h3>
-                <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed">
+                <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/75 leading-relaxed">
                   {pillar.desc}
                 </p>
               </div>
 
               {/* Bottom Right: ONLY the arrow */}
-              <div className="pt-6 sm:pt-8 flex justify-end">
-                <ArrowRight className="w-5 h-5 text-[#202B61]/50 group-hover:text-[#202B61] group-hover:translate-x-1.5 transition-all" />
+              <div className="pt-6 sm:pt-8 flex justify-end mt-auto">
+                <ArrowRight className="w-5 h-5 text-[#202B61]/60 group-hover:text-[#202B61] group-hover:translate-x-1.5 transition-all" />
               </div>
             </Link>
           ))}

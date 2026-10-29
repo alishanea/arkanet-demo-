@@ -104,19 +104,23 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
           style={{ y: textY }}
           className="flex flex-col justify-between space-y-5 sm:space-y-7"
         >
-          {/* Top: Large Step Number */}
+          {/* Top: Large Step Number (Accessible Semantic Association) */}
           <div>
-            <span className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#202B61]/25 select-none leading-none tracking-tight block">
+            <span
+              aria-hidden="true"
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#202B61]/35 select-none leading-none tracking-tight block"
+            >
               {step.stepNumber}
             </span>
           </div>
 
-          {/* Title & Description (Exact 18 words each) */}
+          {/* Title & Description */}
           <div className="space-y-2 sm:space-y-3">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#202B61] tracking-tight">
+              <span className="sr-only">Step {step.stepNumber}: </span>
               {step.title}
             </h3>
-            <p className="font-sans text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+            <p className="font-sans text-slate-700 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
               {step.body}
             </p>
           </div>
