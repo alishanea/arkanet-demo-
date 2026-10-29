@@ -101,7 +101,30 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
       id="what-is-arkanet"
       className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
+      {/* ── ARCHITECTURAL ENGINEERING DOT GRID BACKGROUND LAYER ── */}
+      <div 
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(rgba(32, 43, 97, 0.12) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+          maskImage: "radial-gradient(ellipse 80% 65% at 50% 50%, black 35%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 80% 65% at 50% 50%, black 35%, transparent 100%)",
+        }}
+      />
+
+      {/* ── SUBTLE AMBIENT LUMINOUS GLOW ── */}
+      <div 
+        aria-hidden="true"
+        className="absolute -top-32 right-1/4 w-[500px] h-[350px] bg-[#202B61]/4 rounded-full blur-3xl pointer-events-none"
+      />
+      <div 
+        aria-hidden="true"
+        className="absolute -bottom-32 left-10 w-[420px] h-[300px] bg-[#202B61]/3 rounded-full blur-3xl pointer-events-none"
+      />
+
+      {/* ── SECTION CONTENT ── */}
+      <div className="relative z-10 max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
         {/* ── 1. EXACT ORIGINAL STATEMENT HEADLINE & DESCRIPTION ── */}
         <div className="space-y-3 max-w-4xl text-left">
