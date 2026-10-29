@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 
 interface AgencyStatementProps {
   onOpenBooking?: () => void;
@@ -27,7 +26,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-[#202B61]/75 group-hover:text-[#202B61] transition-colors"
+        className="w-10 h-10 stroke-[1.25] text-[#202B61]/80 group-hover:text-[#202B61] transition-colors"
         aria-hidden="true"
       >
         <rect x="6" y="8" width="36" height="28" rx="3" />
@@ -53,7 +52,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-[#202B61]/75 group-hover:text-[#202B61] transition-colors"
+        className="w-10 h-10 stroke-[1.25] text-[#202B61]/80 group-hover:text-[#202B61] transition-colors"
         aria-hidden="true"
       >
         <circle cx="24" cy="24" r="8" />
@@ -81,7 +80,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-[#202B61]/75 group-hover:text-[#202B61] transition-colors"
+        className="w-10 h-10 stroke-[1.25] text-[#202B61]/80 group-hover:text-[#202B61] transition-colors"
         aria-hidden="true"
       >
         <circle cx="24" cy="24" r="16" />
@@ -100,13 +99,13 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-24 lg:py-28 select-none border-t border-slate-200/80 overflow-hidden font-sans"
+      className="relative w-full bg-transparent px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none overflow-hidden font-sans"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-16 lg:space-y-20">
+      <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-16">
         
         {/* ── 1. EXACT ORIGINAL STATEMENT HEADLINE & DESCRIPTION ── */}
         <div className="space-y-4 max-w-4xl text-left">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[46px] xl:text-[48px] text-[#202B61] leading-[1.18] tracking-tight">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[44px] text-[#202B61] leading-[1.2] tracking-tight">
             Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
           </h2>
           <p className="font-sans font-medium text-[#202B61]/75 text-base sm:text-lg leading-relaxed max-w-3xl">
@@ -114,29 +113,26 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
           </p>
         </div>
 
-        {/* ── 2. OPEN 3-COLUMN CAPABILITY GRID (EXACT ORIGINAL 3 STATEMENTS) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full text-left">
+        {/* ── 2. OPEN 3-COLUMN CAPABILITY GRID (EXACT ORIGINAL 3 STATEMENTS, NO ARROWS, CLEAN AESTHETIC) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 w-full text-left">
           {STATEMENTS.map((item) => (
             <Link
               key={item.id}
               href={item.href}
-              className="group flex flex-col items-start cursor-pointer transition-transform duration-200 outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-8 rounded-lg"
+              className="group flex flex-col items-start cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-sm"
             >
               {/* Minimalist Linear Icon */}
               <div className="mb-4 sm:mb-5">
                 {item.renderIcon()}
               </div>
 
-              {/* Title & Subtle Chevron Arrow */}
-              <div className="flex items-center justify-between gap-3 w-full">
-                <h3 className="font-heading font-semibold text-xl sm:text-2xl lg:text-[24px] text-[#202B61] tracking-tight leading-snug group-hover:text-[#202B61]/85 transition-colors">
-                  {item.title}
-                </h3>
-                <ChevronRight className="w-5 h-5 text-[#202B61]/40 group-hover:text-[#202B61] group-hover:translate-x-1.5 transition-all shrink-0 stroke-[1.5]" />
-              </div>
+              {/* Title (No arrows) */}
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug group-hover:text-[#202B61]/80 transition-colors">
+                {item.title}
+              </h3>
 
               {/* Exact Original Description */}
-              <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed mt-2.5 max-w-sm">
+              <p className="font-sans font-normal text-sm sm:text-[15px] text-[#202B61]/70 leading-relaxed mt-2.5">
                 {item.desc}
               </p>
             </Link>
