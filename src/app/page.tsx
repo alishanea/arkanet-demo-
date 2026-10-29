@@ -9,12 +9,12 @@ const AgencyStatement = dynamic(
   () => import("@/components/home/AgencyStatement").then((m) => m.AgencyStatement),
   { ssr: true }
 );
-const SprintEstimatorWidget = dynamic(
-  () => import("@/components/home/SprintEstimatorWidget").then((m) => m.SprintEstimatorWidget),
+const ArkanetBentoShowcase = dynamic(
+  () => import("@/components/home/ArkanetBentoShowcase").then((m) => m.ArkanetBentoShowcase),
   { ssr: true }
 );
-const WiseBentoCapabilities = dynamic(
-  () => import("@/components/home/WiseBentoCapabilities").then((m) => m.WiseBentoCapabilities),
+const InteractiveShowcaseGrid = dynamic(
+  () => import("@/components/home/InteractiveShowcaseGrid").then((m) => m.InteractiveShowcaseGrid),
   { ssr: true }
 );
 const OurProcess = dynamic(
@@ -61,6 +61,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#f4f6fb]">
 
+
       {/* Main Homepage Flow */}
       <main className="flex-1">
         {/* 1. Hero Title */}
@@ -69,22 +70,19 @@ export default function Home() {
         {/* 1b. Agency Statement */}
         <AgencyStatement onOpenBooking={handleOpenBooking} />
 
-        {/* 2. Interactive Architecture & Sprint Estimator (Wise-Style Instant Utility) */}
-        <SprintEstimatorWidget onOpenBooking={handleOpenBooking} />
+        {/* 2. Full-Stack Engineering & AI Capabilities (Interactive 4-Pillar Grid) */}
+        <InteractiveShowcaseGrid onOpenBooking={handleOpenBooking} />
 
-        {/* 3. Full-Stack Engineering & AI Capabilities (Wise-Style Modular Bento Grid) */}
-        <WiseBentoCapabilities onOpenBooking={handleOpenBooking} />
-
-        {/* 4. Engineering Process */}
+        {/* 3. Engineering Process */}
         <OurProcess onOpenBooking={handleOpenBooking} />
 
         {/* 5. Studio Philosophy & Team Stats */}
         <StudioPhilosophy onOpenBooking={handleOpenBooking} />
 
-        {/* 5b. Trusted By Client Logo Stage */}
+        {/* 5b. Trusted By Client Logo Stage (Original First Model) */}
         <ClientLogosSection onOpenBooking={handleOpenBooking} />
 
-        {/* 6. Selected Work & Case Studies */}
+        {/* 6. Selected Work & Case Studies (Tall Compact Deck) */}
         <WhatsNewSection onOpenBooking={handleOpenBooking} />
       </main>
 
