@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { AboutCTA } from "@/components/about/AboutCTA";
 import { WorkDetailModal, WorkProjectDetail } from "@/components/modals/WorkDetailModal";
 
 interface WhatsNewSectionProps {
@@ -106,7 +105,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
   const [selectedProject, setSelectedProject] = useState<WorkProjectDetail | null>(null);
 
   return (
-    <section className="relative w-full bg-[#f4f6fb] py-14 sm:py-18 lg:py-22 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80 font-sans">
+    <section className="relative w-full bg-[#f4f6fb] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80 font-sans">
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
         {/* ── 1. CLEAN EDITORIAL SECTION HEADER (WITH "SEE ALL WORK" LINK) ── */}
@@ -128,7 +127,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </Link>
         </div>
 
-        {/* ── 2. 4-COLUMN CLEAN EDITORIAL CARD GRID (NO CLUTTERED MICRO-ELEMENTS) ── */}
+        {/* ── 2. 4-COLUMN CLEAN EDITORIAL CARD GRID ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8 items-start w-full">
           {FEATURED_PROJECTS.map((project) => (
             <div
@@ -157,21 +156,21 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 />
               </div>
 
-              {/* Clean Typography Stack (Category -> Title -> Metadata) */}
+              {/* Clean Typography Stack (Category -> Title -> 2-Line Description) */}
               <div className="pt-4 sm:pt-5 space-y-2 flex-1 flex flex-col">
                 {/* Category Label */}
                 <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#202B61]/75 font-sans">
                   {project.category}
                 </p>
 
-                {/* Project Headline */}
-                <h3 className="font-heading font-bold text-base sm:text-lg lg:text-[18px] text-[#202B61] leading-snug tracking-tight group-hover:text-[#202B61]/80 transition-colors">
+                {/* Project Headline (consistent 2-line height for horizontal symmetry) */}
+                <h3 className="font-heading font-bold text-base sm:text-lg lg:text-[18px] text-[#202B61] leading-snug tracking-tight group-hover:text-[#202B61]/80 transition-colors min-h-[2.8rem] sm:min-h-[3.2rem] flex items-start">
                   {project.title}
                 </h3>
 
-                {/* Clean Metadata Line */}
-                <p className="text-[11px] sm:text-xs font-medium text-slate-500 font-sans pt-1 mt-auto">
-                  Case study · {project.detail?.year || "2025"}
+                {/* 2-Line Description */}
+                <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/70 leading-relaxed font-normal line-clamp-2">
+                  {project.description}
                 </p>
               </div>
             </div>
@@ -179,9 +178,6 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
         </div>
 
       </div>
-
-      {/* ROTATING-WORD CLOSING HEADLINE */}
-      <AboutCTA onOpenBooking={() => onOpenBooking?.()} />
 
       {/* Interactive Case Study Modal */}
       <WorkDetailModal

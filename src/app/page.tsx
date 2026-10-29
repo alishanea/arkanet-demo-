@@ -33,6 +33,10 @@ const WhatsNewSection = dynamic(
   () => import("@/components/home/WhatsNewSection").then((m) => m.WhatsNewSection),
   { ssr: true }
 );
+const AboutCTA = dynamic(
+  () => import("@/components/about/AboutCTA").then((m) => m.AboutCTA),
+  { ssr: true }
+);
 const Footer = dynamic(
   () => import("@/components/layout/Footer").then((m) => m.Footer),
   { ssr: true }
@@ -84,6 +88,9 @@ export default function Home() {
 
         {/* 6. Selected Work & Case Studies (Tall Compact Deck) */}
         <WhatsNewSection onOpenBooking={handleOpenBooking} />
+
+        {/* 7. Closing Headline CTA */}
+        <AboutCTA onOpenBooking={handleOpenBooking} />
       </main>
 
       {/* Footer */}
