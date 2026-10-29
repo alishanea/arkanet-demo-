@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AboutCTA } from "@/components/about/AboutCTA";
 import { WorkDetailModal, WorkProjectDetail } from "@/components/modals/WorkDetailModal";
@@ -13,9 +14,9 @@ interface WhatsNewSectionProps {
 const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "marble-tile-stone",
-    category: "Web & SaaS Platforms",
+    category: "E-Commerce & 3D WebGL",
     title: "Marble Tile & Stone Showroom",
-    description: "High-conversion digital showroom and real-time 3D visualizer engineered with WebGL for modern architects.",
+    description: "High-conversion digital showroom and real-time 3D room visualizer engineered with WebGL for modern architects.",
     outerImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -35,7 +36,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "careflow-health",
-    category: "Mobile Applications",
+    category: "Healthcare & Mobile Systems",
     title: "CareFlow Health Systems",
     description: "Unified mobile telehealth platform paired with clinician portal, automated prescription alerts, and lab report sync.",
     outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
@@ -79,7 +80,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "aerologistics-cloud",
-    category: "Cloud & DevOps",
+    category: "Cloud & DevOps Architecture",
     title: "AeroLogistics Global Cloud",
     description: "Cloud-native event-driven platform utilizing IoT satellite telemetry and automated compliance for freight fleets.",
     outerImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1600&auto=format&fit=crop",
@@ -105,23 +106,30 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
   const [selectedProject, setSelectedProject] = useState<WorkProjectDetail | null>(null);
 
   return (
-    <section className="relative w-full bg-[#f4f6fb] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80 font-sans">
+    <section className="relative w-full bg-[#f4f6fb] py-14 sm:py-18 lg:py-22 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80 font-sans">
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
-        {/* ── 1. SECTION HEADER ── */}
-        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
-          <div className="space-y-3 max-w-3xl text-left">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
+        {/* ── 1. CLEAN EDITORIAL SECTION HEADER (WITH "SEE ALL WORK" LINK) ── */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 sm:pb-8 border-b border-slate-200/80">
+          <div className="space-y-2 max-w-2xl text-left">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-[#202B61] leading-tight tracking-tight">
               Selected Work &amp; Case Studies
             </h2>
-            <p className="font-sans font-medium text-[#202B61]/75 text-sm sm:text-base leading-relaxed">
+            <p className="font-sans font-medium text-[#202B61]/70 text-sm sm:text-base leading-relaxed">
               Explore how we design, build, and deploy production digital systems that solve real operational friction.
             </p>
           </div>
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#202B61] hover:text-[#202B61]/75 transition-colors shrink-0 group self-start sm:self-end pb-1"
+          >
+            <span>See all work</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
 
-        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch w-full">
+        {/* ── 2. 4-COLUMN CLEAN EDITORIAL CARD GRID (NO CLUTTERED MICRO-ELEMENTS) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8 items-start w-full">
           {FEATURED_PROJECTS.map((project) => (
             <div
               key={project.id}
@@ -136,55 +144,35 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   setSelectedProject(project);
                 }
               }}
-              className="group bg-white hover:bg-slate-50/80 rounded-xl border border-slate-200/90 overflow-hidden transition-all duration-300 flex flex-col justify-between h-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-2"
+              className="group flex flex-col cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-xl transition-transform duration-200"
             >
-              <div className="flex flex-col flex-1">
-                {/* Image */}
-                <div className="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden shrink-0 border-b border-slate-100">
-                  <Image
-                    src={project.outerImage}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
-                </div>
+              {/* Frameless Image with Rounded Corners & Smooth Hover Scale */}
+              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+                <Image
+                  src={project.outerImage}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                />
+              </div>
 
-                {/* Card Body with Pixel-Perfect Symmetry Across All 4 Cards */}
-                <div className="p-6 flex flex-col justify-between flex-1">
-                  <div className="space-y-3">
-                    {/* Title: Unclipped 2-line container with full descender clearance */}
-                    <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-[1.3] tracking-tight min-h-[3.6rem] sm:min-h-[3.75rem] flex items-start pb-1">
-                      {project.title}
-                    </h3>
+              {/* Clean Typography Stack (Category -> Title -> Metadata) */}
+              <div className="pt-4 sm:pt-5 space-y-2 flex-1 flex flex-col">
+                {/* Category Label */}
+                <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#202B61]/75 font-sans">
+                  {project.category}
+                </p>
 
-                    {/* Description: Consistent 3-line baseline across all 4 cards */}
-                    <p className="font-sans text-xs sm:text-sm text-[#202B61]/75 leading-relaxed font-normal min-h-[4.5rem] sm:min-h-[4.75rem] flex items-start">
-                      {project.description}
-                    </p>
-                  </div>
+                {/* Project Headline */}
+                <h3 className="font-heading font-bold text-base sm:text-lg lg:text-[18px] text-[#202B61] leading-snug tracking-tight group-hover:text-[#202B61]/80 transition-colors">
+                  {project.title}
+                </h3>
 
-                  {/* Card Footer: Tech Chips on Left, Symmetrical Action Button on Right (Pinned via mt-auto) */}
-                  <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between gap-2 mt-auto">
-                    <div className="flex flex-wrap items-center gap-1.5 min-h-[28px]">
-                      {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-[#202B61]/80"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div
-                      aria-hidden="true"
-                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100/90 border border-slate-200/80 flex items-center justify-center text-[#202B61]/70 group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61] transition-all duration-200 shrink-0"
-                    >
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 transition-transform" />
-                    </div>
-                  </div>
-                </div>
+                {/* Clean Metadata Line */}
+                <p className="text-[11px] sm:text-xs font-medium text-slate-500 font-sans pt-1 mt-auto">
+                  Case study · {project.detail?.year || "2025"}
+                </p>
               </div>
             </div>
           ))}
