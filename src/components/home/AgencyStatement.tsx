@@ -32,24 +32,24 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
       id="what-is-arkanet"
       className="relative w-full min-h-[100vh] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans"
     >
-      <div className="max-w-[1400px] w-full mx-auto my-auto flex flex-col justify-center">
+      <div className="max-w-6xl w-full mx-auto my-auto flex flex-col justify-center">
         
-        {/* ── 2-COLUMN EDITORIAL LAYOUT ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-start text-left">
+        {/* ── 2-COLUMN BALANCED EDITORIAL LAYOUT ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-start text-left">
           
           {/* Left Side: Statement Heading & Narrative in Signature #202B61 Plus Jakarta Sans */}
-          <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] text-[#202B61] leading-[1.24] tracking-tight">
+          <div className="lg:col-span-6 space-y-5 lg:sticky lg:top-28">
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] xl:text-[44px] text-[#202B61] leading-[1.24] tracking-tight">
               Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
             </h2>
 
-            <p className="font-sans font-medium text-[#202B61]/80 text-sm sm:text-base leading-relaxed">
+            <p className="font-sans font-medium text-[#202B61]/80 text-sm sm:text-base leading-relaxed max-w-lg">
               We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
             </p>
           </div>
 
-          {/* Right Side: 3 Items with Single Line Separation, No Boxes, No Numbers, No Micro-Elements */}
-          <div className="lg:col-span-7 flex flex-col">
+          {/* Right Side: 3 Items with Single Line Separation, Arrows Paired Directly with Titles */}
+          <div className="lg:col-span-6 flex flex-col">
             <div className="divide-y divide-slate-200/80 border-t border-b lg:border-t-0 border-slate-200/80">
               {STATEMENTS.map((item, idx) => (
                 <Link
@@ -57,25 +57,22 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
                   href={item.href}
                   className="group block py-7 sm:py-8 transition-colors cursor-pointer"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="space-y-2 flex-1 pr-4">
+                  <div className="space-y-2">
+                    <div className="inline-flex items-center gap-2">
                       <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] group-hover:opacity-85 transition-opacity leading-[1.32]">
                         {item.title}
                       </h3>
-                      <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed max-w-xl">
-                        {item.desc}
-                      </p>
+                      <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#202B61]/50 group-hover:text-[#202B61] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
                     </div>
-
-                    <div className="pt-1 shrink-0">
-                      <ArrowUpRight className="w-5 h-5 text-[#202B61]/40 group-hover:text-[#202B61] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                    </div>
+                    <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </Link>
               ))}
             </div>
 
-            {/* Bottom Right: Clean Arrow ONLY (No circle, No line around or below it) */}
+            {/* Bottom Right: Clean Arrow ONLY (Aligned naturally with the content column) */}
             <div className="pt-6 flex justify-end">
               <Link
                 href="/capabilities"
