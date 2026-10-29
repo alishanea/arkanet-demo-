@@ -15,7 +15,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "marble-tile-stone",
     category: "Web & SaaS Platforms",
     title: "Marble Tile & Stone Showroom",
-    description: "High-conversion digital showroom and real-time 3D room visualizer engineered with WebGL for modern architects.",
+    description: "High-conversion digital showroom and real-time 3D room visualizer engineered with WebGL for architectural surface approvals.",
     outerImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -37,7 +37,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "careflow-health",
     category: "Mobile Applications",
     title: "CareFlow Health Systems",
-    description: "Unified mobile telehealth platform paired with clinician portal, automated prescription alerts, and lab report sync.",
+    description: "Unified mobile telehealth platform paired with a clinician portal, automated prescription alerts, and instant lab report sync.",
     outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -59,7 +59,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "neuraldesk-ai",
     category: "Applied AI & Automation",
     title: "NeuralDesk AI Assistant",
-    description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected to helpdesks, resolving technical inquiries instantly.",
+    description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected directly to helpdesks to automate technical query resolution.",
     outerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -81,7 +81,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     id: "aerologistics-cloud",
     category: "Cloud & DevOps",
     title: "AeroLogistics Global Cloud",
-    description: "Cloud-native event-driven platform utilizing IoT satellite telemetry and automated compliance for freight fleets.",
+    description: "Cloud-native event-driven platform utilizing satellite IoT telemetry and automated compliance monitoring for global cargo fleets.",
     outerImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -172,9 +172,9 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   </h3>
                 </div>
 
-                {/* 2-Line Description (enforced 2-line baseline) */}
-                <div className="h-[2.6rem] sm:h-[2.85rem] flex items-start">
-                  <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/70 leading-relaxed font-normal line-clamp-2">
+                {/* 3-Line Description (enforced 3-line baseline without ellipsis) */}
+                <div className="h-[3.9rem] sm:h-[4.25rem] flex items-start">
+                  <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/70 leading-relaxed font-normal line-clamp-3">
                     {project.description}
                   </p>
                 </div>
