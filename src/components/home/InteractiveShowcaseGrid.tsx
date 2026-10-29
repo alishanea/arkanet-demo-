@@ -98,53 +98,53 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
   return (
     <section
       id="showcase"
-      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans"
+      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 select-none border-t border-slate-200/80 overflow-hidden font-sans"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12 lg:space-y-14">
-        {/* ── 1. SECTION HEADER ── */}
-        <div className="max-w-4xl space-y-3 text-left">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
-            Full-Stack Engineering &amp; Applied AI Capabilities
+      <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
+        {/* ── 1. STRUCTURED PAGE SECTION HEADER ── */}
+        <div className="max-w-3xl space-y-2.5 text-left">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-[#202B61] leading-[1.2] tracking-tight">
+            Full–Stack Engineering &amp; Applied AI Capabilities
           </h2>
-          <p className="font-sans font-medium text-[#202B61]/75 text-sm sm:text-base leading-relaxed max-w-3xl">
+          <p className="font-sans font-medium text-[#202B61]/70 text-sm sm:text-[15px] leading-relaxed max-w-2xl">
             We identify where modern technology and AI create genuine value in your operation, then engineer scalable digital products built to perform.
           </p>
         </div>
 
-        {/* ── 2. 8-CARD INTERACTIVE GRID (4 COLUMNS × 2 ROWS) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 w-full">
+        {/* ── 2. 8-CARD TIGHT ARCHITECTURAL GRID (RADIUS < 5PX, REFINED PROPORTIONS) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4 w-full">
           {CAPABILITY_CARDS.map((card) => {
             const Icon = card.icon;
             return (
               <Link
                 key={card.id}
                 href={card.href}
-                className="group relative flex flex-col justify-between h-[215px] sm:h-[225px] lg:h-[235px] p-6 sm:p-7 rounded-xl bg-white border border-slate-200/90 hover:border-slate-300 hover:bg-[#edf2f8] hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]/30 focus-visible:ring-offset-2 transition-all duration-300 cursor-pointer overflow-hidden text-left"
+                className="group relative flex flex-col justify-between h-[180px] sm:h-[190px] lg:h-[195px] p-5 sm:p-5.5 lg:p-6 rounded-[4px] bg-white border border-slate-200/90 hover:border-slate-300 hover:bg-[#edf2f8] hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]/30 focus-visible:ring-offset-2 transition-all duration-200 cursor-pointer overflow-hidden text-left"
               >
-                {/* Top Area: Crossfade between Title (default) and Value Proposition (hover) */}
+                {/* Top Area: Smooth crossfade between Title (default) and Value Proposition (hover) */}
                 <div className="relative w-full flex-1">
-                  {/* Default State: Title */}
-                  <div className="transition-all duration-300 ease-out group-hover:opacity-0 group-hover:-translate-y-1 group-focus-visible:opacity-0">
-                    <h3 className="font-heading font-extrabold text-lg sm:text-[19px] lg:text-xl text-[#202B61] tracking-tight leading-snug">
+                  {/* Default State: Clean, Refined Headline */}
+                  <div className="transition-all duration-200 ease-out group-hover:opacity-0 group-hover:-translate-y-1 group-focus-visible:opacity-0">
+                    <h3 className="font-heading font-bold text-[15px] sm:text-[16px] text-[#202B61] tracking-tight leading-snug">
                       {card.title}
                     </h3>
                   </div>
 
-                  {/* Hover State: Value Proposition / Technical Impact Description */}
-                  <div className="absolute inset-0 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 transition-all duration-300 ease-out pointer-events-none group-hover:pointer-events-auto">
-                    <p className="font-sans font-medium text-xs sm:text-[13.5px] text-[#202B61]/90 leading-relaxed line-clamp-5">
+                  {/* Hover State: Technical Value Proposition */}
+                  <div className="absolute inset-0 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto">
+                    <p className="font-sans font-medium text-[12.5px] sm:text-[13px] text-[#202B61]/90 leading-relaxed line-clamp-4">
                       {card.description}
                     </p>
                   </div>
                 </div>
 
-                {/* Bottom Row: Linear Icon on Left, Clean Arrow on Right */}
-                <div className="flex items-end justify-between w-full pt-4 mt-auto">
-                  <div className="text-[#202B61]/70 group-hover:text-[#202B61] transition-colors duration-300">
-                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.35]" />
+                {/* Bottom Row: Linear Icon on Left, Clean Subtle Arrow on Right */}
+                <div className="flex items-end justify-between w-full pt-3 mt-auto">
+                  <div className="text-[#202B61]/70 group-hover:text-[#202B61] transition-colors duration-200">
+                    <Icon className="w-6 h-6 stroke-[1.3]" />
                   </div>
-                  <div className="text-[#202B61]/60 group-hover:text-[#202B61] group-hover:translate-x-1.5 transition-all duration-300">
-                    <ArrowRight className="w-5 h-5 stroke-[1.8]" />
+                  <div className="text-[#202B61]/60 group-hover:text-[#202B61] group-hover:translate-x-1 transition-all duration-200">
+                    <ArrowRight className="w-4.5 h-4.5 stroke-[1.6]" />
                   </div>
                 </div>
               </Link>
