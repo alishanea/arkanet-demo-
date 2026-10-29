@@ -13,7 +13,7 @@ interface WhatsNewSectionProps {
 const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "marble-tile-stone",
-    category: "E-Commerce & 3D WebGL",
+    category: "Web & SaaS Platforms",
     title: "Marble Tile & Stone Showroom",
     description: "High-conversion digital showroom and real-time 3D room visualizer engineered with WebGL for modern architects.",
     outerImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
@@ -35,9 +35,9 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "careflow-health",
-    category: "Healthcare & Telehealth",
-    title: "CareFlow Health Telehealth Platform",
-    description: "Unified mobile telehealth application paired with clinician portal, automated prescription alerts, and lab report sync.",
+    category: "Mobile Applications",
+    title: "CareFlow Health Systems",
+    description: "Unified mobile telehealth platform paired with clinician portal, automated prescription alerts, and lab report sync.",
     outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -58,7 +58,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "neuraldesk-ai",
     category: "Applied AI & Automation",
-    title: "NeuralDesk AI Enterprise Assistant",
+    title: "NeuralDesk AI Assistant",
     description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected to helpdesks, resolving technical inquiries instantly.",
     outerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
@@ -79,8 +79,8 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "aerologistics-cloud",
-    category: "Cloud & DevOps Infrastructure",
-    title: "AeroLogistics Global Freight Cloud",
+    category: "Cloud & DevOps",
+    title: "AeroLogistics Global Cloud",
     description: "Cloud-native event-driven platform utilizing IoT satellite telemetry and automated compliance for freight fleets.",
     outerImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1600&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop",

@@ -16,11 +16,11 @@ interface CapabilityItem {
   renderIcon: () => React.ReactNode;
 }
 
-const CAPABILITIES: CapabilityItem[] = [
+const STATEMENTS: CapabilityItem[] = [
   {
-    id: "web-platforms",
-    title: "Web & SaaS Platforms",
-    desc: "Custom Next.js web applications, client portals, and multi-tenant platforms engineered for speed, enterprise scale, and conversion.",
+    id: "web-mobile",
+    title: "Web & Mobile Engineering",
+    desc: "Custom Next.js web applications, cross-platform mobile apps, and scalable digital platforms engineered for conversion, speed, and performance.",
     href: "/capabilities/website-development",
     renderIcon: () => (
       <svg
@@ -45,8 +45,8 @@ const CAPABILITIES: CapabilityItem[] = [
   },
   {
     id: "applied-ai",
-    title: "Applied AI & Autonomous Systems",
-    desc: "Production-ready machine learning models, custom RAG pipelines, and conversational AI agents built to scale business operations.",
+    title: "Applied AI & Automation",
+    desc: "Production-ready machine learning models, conversational AI agents, and intelligent automated workflows built to scale enterprise business operations.",
     href: "/capabilities/applied-ai-ml",
     renderIcon: () => (
       <svg
@@ -72,32 +72,9 @@ const CAPABILITIES: CapabilityItem[] = [
     ),
   },
   {
-    id: "mobile-apps",
-    title: "Native Mobile & App Ecosystems",
-    desc: "High-performance iOS, Android, and cross-platform mobile apps with real-time cloud sync, offline caching, and 99.9% crash-free sessions.",
-    href: "/capabilities/mobile-app-development",
-    renderIcon: () => (
-      <svg
-        viewBox="0 0 48 48"
-        fill="none"
-        stroke="currentColor"
-        className="w-10 h-10 stroke-[1.25] text-[#202B61]/75 group-hover:text-[#202B61] transition-colors"
-        aria-hidden="true"
-      >
-        <rect x="14" y="6" width="20" height="36" rx="4" />
-        <line x1="21" y1="11" x2="27" y2="11" />
-        <circle cx="24" cy="37" r="1.5" fill="currentColor" />
-        <path d="M7 20l4 4-4 4" />
-        <path d="M41 20l-4 4 4 4" />
-        <line x1="11" y1="24" x2="14" y2="24" />
-        <line x1="34" y1="24" x2="37" y2="24" />
-      </svg>
-    ),
-  },
-  {
     id: "cloud-devops",
     title: "Cloud & DevOps Architecture",
-    desc: "Production-grade cloud architecture with continuous uptime monitoring, automated deployment pipelines, and zero technical debt.",
+    desc: "Production-grade cloud architecture with continuous uptime monitoring, zero technical debt, and enterprise-grade security protocols across all workloads.",
     href: "/capabilities/cloud-devops-hosting",
     renderIcon: () => (
       <svg
@@ -127,7 +104,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-16 lg:space-y-20">
         
-        {/* ── 1. AUTHORITATIVE HERO STATEMENT ── */}
+        {/* ── 1. EXACT ORIGINAL STATEMENT HEADLINE & DESCRIPTION ── */}
         <div className="space-y-4 max-w-4xl text-left">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[46px] xl:text-[48px] text-[#202B61] leading-[1.18] tracking-tight">
             Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
@@ -137,9 +114,9 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
           </p>
         </div>
 
-        {/* ── 2. OPEN 2-COLUMN CAPABILITY GRID (MATCHING REFERENCE EDITORIAL LAYOUT) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-12 lg:gap-y-16 w-full text-left">
-          {CAPABILITIES.map((item) => (
+        {/* ── 2. OPEN 3-COLUMN CAPABILITY GRID (EXACT ORIGINAL 3 STATEMENTS) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full text-left">
+          {STATEMENTS.map((item) => (
             <Link
               key={item.id}
               href={item.href}
@@ -151,15 +128,15 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
               </div>
 
               {/* Title & Subtle Chevron Arrow */}
-              <div className="flex items-center justify-between gap-4 w-full">
-                <h3 className="font-heading font-semibold text-2xl sm:text-[26px] lg:text-[28px] text-[#202B61] tracking-tight leading-snug group-hover:text-[#202B61]/85 transition-colors">
+              <div className="flex items-center justify-between gap-3 w-full">
+                <h3 className="font-heading font-semibold text-xl sm:text-2xl lg:text-[24px] text-[#202B61] tracking-tight leading-snug group-hover:text-[#202B61]/85 transition-colors">
                   {item.title}
                 </h3>
-                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#202B61]/40 group-hover:text-[#202B61] group-hover:translate-x-2 transition-all shrink-0 stroke-[1.5]" />
+                <ChevronRight className="w-5 h-5 text-[#202B61]/40 group-hover:text-[#202B61] group-hover:translate-x-1.5 transition-all shrink-0 stroke-[1.5]" />
               </div>
 
-              {/* Refined Description */}
-              <p className="font-sans font-normal text-sm sm:text-[15px] text-[#202B61]/70 leading-relaxed mt-2.5 max-w-lg">
+              {/* Exact Original Description */}
+              <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed mt-2.5 max-w-sm">
                 {item.desc}
               </p>
             </Link>
