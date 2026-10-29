@@ -105,7 +105,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
   const [selectedProject, setSelectedProject] = useState<WorkProjectDetail | null>(null);
 
   return (
-    <section className="relative w-full bg-[#f4f6fb] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80">
+    <section className="relative w-full bg-[#f4f6fb] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80 font-sans">
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
         {/* ── 1. SECTION HEADER ── */}
@@ -114,13 +114,13 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] leading-tight tracking-tight">
               Selected Work &amp; Case Studies
             </h2>
-            <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sans font-medium text-[#202B61]/75 text-sm sm:text-base leading-relaxed">
               Explore how we design, build, and deploy production digital systems that solve real operational friction.
             </p>
           </div>
         </div>
 
-        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID (PERFECT SYMMETRY WITH NATURAL PHOTOGRAPHY) ── */}
+        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch w-full">
           {FEATURED_PROJECTS.map((project) => (
             <div
@@ -129,7 +129,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
               className="group bg-white hover:bg-slate-50/80 rounded-xl border border-slate-200/90 overflow-hidden transition-all duration-300 flex flex-col justify-between h-full cursor-pointer text-left outline-none"
             >
               <div className="flex flex-col flex-1">
-                {/* Clean Aspect Ratio Image (Natural Photography, No Glowing/Highlight Theme) */}
+                {/* Image */}
                 <div className="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden shrink-0 border-b border-slate-100">
                   <Image
                     src={project.outerImage}
@@ -141,29 +141,28 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   />
                 </div>
 
-                {/* Card Body: Title, Description, Tech Chips */}
+                {/* Card Body */}
                 <div className="p-6 flex flex-col justify-between flex-1 space-y-4">
                   <div className="space-y-2.5">
-                    {/* Symmetrical Title Row */}
+                    {/* Title Row */}
                     <div className="flex items-start justify-between gap-3 min-h-[3rem] sm:min-h-[3.25rem]">
                       <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug tracking-tight">
                         {project.title}
                       </h3>
-                      <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:translate-x-1 shrink-0 mt-1" />
+                      <ArrowRight className="w-4 h-4 text-[#202B61]/40 group-hover:text-[#202B61] transition-transform duration-200 group-hover:translate-x-1 shrink-0 mt-1" />
                     </div>
 
-                    {/* Exact 16 words in all 4 cards - Uniform Height */}
-                    <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed font-normal min-h-[4.5rem] sm:min-h-[4.75rem] flex items-start">
+                    <p className="font-sans text-xs sm:text-sm text-[#202B61]/70 leading-relaxed font-normal min-h-[4.5rem] sm:min-h-[4.75rem] flex items-start">
                       {project.description}
                     </p>
                   </div>
 
-                  {/* 3 Balanced Tech Chips */}
+                  {/* Tech Chips */}
                   <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-1.5 min-h-[32px]">
                     {project.detail?.techStack.slice(0, 3).map((tech, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-slate-600"
+                        className="px-2 py-0.5 rounded-md text-[11px] font-medium font-sans bg-slate-100 text-[#202B61]/70"
                       >
                         {tech}
                       </span>
