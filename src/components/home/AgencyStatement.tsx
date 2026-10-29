@@ -26,7 +26,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.3] text-[#202B61]"
+        className="w-10 h-10 stroke-[1.35] text-white"
         aria-hidden="true"
       >
         <rect x="6" y="8" width="36" height="28" rx="3" />
@@ -52,7 +52,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.3] text-[#202B61]"
+        className="w-10 h-10 stroke-[1.35] text-white"
         aria-hidden="true"
       >
         <circle cx="24" cy="24" r="8" />
@@ -80,7 +80,7 @@ const STATEMENTS: CapabilityItem[] = [
         viewBox="0 0 48 48"
         fill="none"
         stroke="currentColor"
-        className="w-10 h-10 stroke-[1.3] text-[#202B61]"
+        className="w-10 h-10 stroke-[1.35] text-white"
         aria-hidden="true"
       >
         <circle cx="24" cy="24" r="16" />
@@ -99,40 +99,40 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 font-sans"
+      className="relative w-full bg-[#151E48] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-[#253272] font-sans overflow-hidden"
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12 lg:space-y-14">
         
-        {/* ── 1. EXACT ORIGINAL STATEMENT HEADLINE & DESCRIPTION ── */}
+        {/* ── 1. EXACT ORIGINAL STATEMENT HEADLINE & DESCRIPTION (CRISP, BRIGHT, MAXIMUM CONTRAST) ── */}
         <div className="space-y-3 max-w-4xl text-left">
-          <h2 className="section-h2 text-[#202B61]">
+          <h2 className="section-h2 !text-white font-extrabold tracking-tight">
             Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
           </h2>
-          <p className="section-desc max-w-3xl">
+          <p className="section-desc !text-slate-200/90 text-base sm:text-lg leading-relaxed max-w-3xl">
             We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
           </p>
         </div>
 
-        {/* ── 2. EDITORIAL 3-COLUMN CAPABILITY GRID (NO HOVER EFFECTS, COMPLETELY STABLE) ── */}
+        {/* ── 2. EDITORIAL 3-COLUMN CAPABILITY GRID (100% VISIBLE, CRISP, NO ARROWS) ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full text-left">
           {STATEMENTS.map((item) => (
             <Link
               key={item.id}
               href={item.href}
-              className="flex flex-col items-start outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-sm"
+              className="group flex flex-col items-start cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#151E48] rounded-sm"
             >
               {/* Minimalist Linear Icon */}
               <div className="mb-4 sm:mb-5">
                 {item.renderIcon()}
               </div>
 
-              {/* Title (Consistent Brand Navy, No Hover Change) */}
-              <h3 className="card-h3 text-[#202B61]">
+              {/* Title (Crisp Pure White, No Hover Color Change) */}
+              <h3 className="card-h3 !text-white">
                 {item.title}
               </h3>
 
-              {/* Description */}
-              <p className="font-sans font-normal text-sm sm:text-[15px] text-[#202B61]/70 leading-relaxed mt-2.5">
+              {/* Description (High Contrast Soft Slate White) */}
+              <p className="font-sans font-normal text-sm sm:text-[15px] !text-slate-300/90 leading-relaxed mt-2.5">
                 {item.desc}
               </p>
             </Link>
