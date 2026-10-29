@@ -99,40 +99,40 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full bg-[#151E48] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-[#253272] font-sans overflow-hidden"
+      className="relative w-full bg-[#151E48] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-[#253272] font-sans antialiased overflow-hidden"
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12 lg:space-y-14">
         
-        {/* ── 1. EXACT ORIGINAL STATEMENT HEADLINE & DESCRIPTION (CRISP, BRIGHT, MAXIMUM CONTRAST) ── */}
-        <div className="space-y-3 max-w-4xl text-left">
-          <h2 className="section-h2 !text-white font-extrabold tracking-tight">
+        {/* ── 1. AUTHORITATIVE STATEMENT HEADLINE & DESCRIPTION (PRECISION TYPOGRAPHY) ── */}
+        <div className="space-y-4 max-w-4xl text-left">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[40px] text-white leading-[1.18] tracking-[-0.025em]">
             Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
           </h2>
-          <p className="section-desc !text-slate-200/90 text-base sm:text-lg leading-relaxed max-w-3xl">
+          <p className="font-sans font-normal text-base sm:text-[17px] lg:text-[18px] text-white/80 leading-[1.65] max-w-3xl">
             We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
           </p>
         </div>
 
-        {/* ── 2. EDITORIAL 3-COLUMN CAPABILITY GRID (100% VISIBLE, CRISP, NO ARROWS) ── */}
+        {/* ── 2. EDITORIAL 3-COLUMN CAPABILITY GRID (MAXIMUM LEGIBILITY & COMFORT) ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full text-left">
           {STATEMENTS.map((item) => (
             <Link
               key={item.id}
               href={item.href}
-              className="group flex flex-col items-start cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#151E48] rounded-sm"
+              className="group flex flex-col items-start outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#151E48] rounded-sm"
             >
               {/* Minimalist Linear Icon */}
               <div className="mb-4 sm:mb-5">
                 {item.renderIcon()}
               </div>
 
-              {/* Title (Crisp Pure White, No Hover Color Change) */}
-              <h3 className="card-h3 !text-white">
+              {/* Title (Crisp, High-Presence Lettering) */}
+              <h3 className="font-heading font-bold text-xl sm:text-[22px] text-white tracking-[-0.015em] leading-snug">
                 {item.title}
               </h3>
 
-              {/* Description (High Contrast Soft Slate White) */}
-              <p className="font-sans font-normal text-sm sm:text-[15px] !text-slate-300/90 leading-relaxed mt-2.5">
+              {/* Description (Natural, Pure White Opacity) */}
+              <p className="font-sans font-normal text-sm sm:text-[14.5px] text-white/75 leading-[1.65] mt-3">
                 {item.desc}
               </p>
             </Link>
