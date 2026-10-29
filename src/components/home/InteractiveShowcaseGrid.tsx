@@ -1,52 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Cpu, Globe, Smartphone, Cloud, CheckCircle2, Zap, Shield, Terminal } from "lucide-react";
+import { ArrowRight, Cpu, Globe, Smartphone, Cloud } from "lucide-react";
 
 export interface InteractiveShowcaseGridProps {
   onOpenBooking?: () => void;
 }
 
-interface AIQueryPreset {
-  id: string;
-  label: string;
-  query: string;
-  response: string;
-  latency: string;
-  metric: string;
-}
-
-const AI_PRESETS: AIQueryPreset[] = [
-  {
-    id: "rag",
-    label: "Enterprise RAG Pipeline",
-    query: "Extract customs transit clauses and verify supplier SLA compliance...",
-    response: "Processed 1,420 regulatory pages. 0 discrepancies detected. Automated clearance token issued.",
-    latency: "38ms vector retrieval",
-    metric: "99.8% precision",
-  },
-  {
-    id: "agent",
-    label: "Autonomous Business Agents",
-    query: "Synthesize weekly telemetry logs and schedule preventive maintenance...",
-    response: "Port telemetry analyzed across 18 vessels. 2 maintenance alerts routed to engineering teams.",
-    latency: "64ms task resolution",
-    metric: "Sub-2s end-to-end",
-  },
-  {
-    id: "doc",
-    label: "Document Intelligence",
-    query: "Parse commercial invoice batches and auto-reconcile ERP entries...",
-    response: "500 invoices validated against purchase orders. 100% field extraction match with zero errors.",
-    latency: "12ms OCR latency",
-    metric: "Zero manual data entry",
-  },
-];
-
 export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = () => {
-  const [activePreset, setActivePreset] = useState<AIQueryPreset>(AI_PRESETS[0]);
-
   return (
     <section
       id="showcase"
@@ -66,324 +28,168 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           </div>
         </div>
 
-        {/* ── 2. ASYMMETRIC BENTO GRID (WISE & STRIPE STYLE) ── */}
+        {/* ── 2. ASYMMETRIC BENTO GRID (CLEAN, NO MICRO-ELEMENTS OR NESTED BOXES) ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch w-full">
           
           {/* ═══════════════════════════════════════════════════════════════
-             CARD 1: APPLIED AI & AUTOMATION (Large 7-Col Anchor Card)
+             CARD 1: APPLIED AI & AUTOMATION (7-Col Feature Card)
           ═══════════════════════════════════════════════════════════════ */}
-          <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between space-y-6 text-left transition-all duration-300 shadow-none hover:shadow-xs">
-            <div className="space-y-4">
-              
-              {/* Header Row */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#202B61]/5 flex items-center justify-center text-[#202B61]">
-                    <Cpu className="w-4 h-4" />
-                  </div>
-                  <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/60">
-                    Intelligent Systems
-                  </span>
-                </div>
-
-                <Link
-                  href="/capabilities/applied-ai-ml"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[#202B61] hover:text-[#161e47] transition-colors"
-                >
-                  <span>Explore AI</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
+          <Link
+            href="/capabilities/applied-ai-ml"
+            className="group lg:col-span-7 bg-white rounded-2xl border border-slate-200/90 p-7 sm:p-9 flex flex-col justify-between space-y-6 text-left transition-all duration-300 shadow-none hover:border-slate-300"
+          >
+            <div className="space-y-5">
+              <div className="w-10 h-10 rounded-xl bg-[#202B61]/5 flex items-center justify-center text-[#202B61]">
+                <Cpu className="w-5 h-5" />
               </div>
 
-              {/* Title & Description */}
               <div className="space-y-2">
                 <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight leading-snug">
                   Applied AI &amp; Automation Systems
                 </h3>
-                <p className="font-sans font-medium text-xs sm:text-sm text-[#202B61]/70 leading-relaxed max-w-xl">
-                  Custom machine learning models, document intelligence, conversational agents, and automated LLM workflows engineered to eliminate manual operational drag.
+                <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed max-w-xl">
+                  Custom machine learning models, document intelligence, conversational AI agents, and automated LLM workflows to scale operations.
                 </p>
               </div>
 
-              {/* Interactive AI Query Simulator Widget */}
-              <div className="pt-2 space-y-3">
-                {/* Preset Chips */}
-                <div className="flex flex-wrap items-center gap-2">
-                  {AI_PRESETS.map((preset) => {
-                    const isSelected = activePreset.id === preset.id;
-                    return (
-                      <button
-                        key={preset.id}
-                        type="button"
-                        onClick={() => setActivePreset(preset)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold font-sans transition-all cursor-pointer border ${
-                          isSelected
-                            ? "bg-[#202B61] text-white border-[#202B61]"
-                            : "bg-[#f8fafc] text-[#202B61]/80 border-slate-200/80 hover:bg-slate-100"
-                        }`}
-                      >
-                        {preset.label}
-                      </button>
-                    );
-                  })}
+              {/* Clean Output Highlight */}
+              <div className="rounded-xl bg-[#f8fafc] border border-slate-200/80 p-4 sm:p-5 flex items-center justify-between">
+                <div>
+                  <p className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61]">Sub-2s</p>
+                  <p className="text-xs text-[#202B61]/70 font-medium pt-0.5">RAG Query Latency</p>
                 </div>
-
-                {/* Simulated Console Stream Box */}
-                <div className="rounded-xl bg-[#0b1330] p-4 sm:p-5 text-white font-mono text-xs space-y-3 border border-slate-800">
-                  <div className="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800/80 pb-2">
-                    <div className="flex items-center gap-2">
-                      <Terminal className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>RAG Runtime Kernel</span>
-                    </div>
-                    <span className="text-emerald-400 font-sans font-semibold">{activePreset.latency}</span>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <p className="text-slate-400">
-                      <span className="text-emerald-400 font-bold">&gt;</span> {activePreset.query}
-                    </p>
-                    <p className="text-white font-sans font-medium text-xs sm:text-sm leading-relaxed pt-1">
-                      {activePreset.response}
-                    </p>
-                  </div>
-
-                  <div className="pt-2 flex items-center justify-between text-[11px] font-sans text-slate-400 border-t border-slate-800/80">
-                    <div className="flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-slate-300">{activePreset.metric}</span>
-                    </div>
-                    <span>Zero Data Leakage / SOC2</span>
-                  </div>
+                <div className="text-right text-xs text-[#202B61]/70 space-y-0.5">
+                  <p className="font-bold text-[#202B61]">99.8% Precision</p>
+                  <p>Zero Data Leakage</p>
                 </div>
-
               </div>
             </div>
 
-            {/* Bottom Footer Note */}
-            <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-[#202B61]/60">
-              <span>Fine-tuned LLMs &amp; Vector Databases</span>
-              <span className="font-semibold text-[#202B61]">FastAPI • PyTorch • LangChain</span>
+            <div className="pt-2 flex items-center justify-between text-xs font-semibold text-[#202B61]/60 group-hover:text-[#202B61] transition-colors">
+              <span>View AI Capabilities</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
-          </div>
+          </Link>
 
           {/* ═══════════════════════════════════════════════════════════════
-             CARD 2: WEB APPLICATIONS & SAAS (5-Col Performance Card)
+             CARD 2: WEB APPLICATIONS & SAAS (5-Col Card)
           ═══════════════════════════════════════════════════════════════ */}
-          <div className="lg:col-span-5 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between space-y-6 text-left transition-all duration-300 shadow-none hover:shadow-xs">
-            <div className="space-y-4">
-              
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#202B61]/5 flex items-center justify-center text-[#202B61]">
-                    <Globe className="w-4 h-4" />
-                  </div>
-                  <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/60">
-                    SaaS &amp; Web Platforms
-                  </span>
-                </div>
-
-                <Link
-                  href="/capabilities/website-development"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[#202B61] hover:text-[#161e47] transition-colors"
-                >
-                  <span>Explore Web</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
+          <Link
+            href="/capabilities/website-development"
+            className="group lg:col-span-5 bg-white rounded-2xl border border-slate-200/90 p-7 sm:p-9 flex flex-col justify-between space-y-6 text-left transition-all duration-300 shadow-none hover:border-slate-300"
+          >
+            <div className="space-y-5">
+              <div className="w-10 h-10 rounded-xl bg-[#202B61]/5 flex items-center justify-center text-[#202B61]">
+                <Globe className="w-5 h-5" />
               </div>
 
               <div className="space-y-2">
-                <h3 className="font-heading font-extrabold text-2xl text-[#202B61] tracking-tight leading-snug">
+                <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug">
                   Web Applications &amp; SaaS
                 </h3>
-                <p className="font-sans font-medium text-xs sm:text-sm text-[#202B61]/70 leading-relaxed">
-                  Next.js enterprise portals, customer dashboards, and high-conversion e-commerce engines engineered for speed and conversion.
+                <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed">
+                  Custom Next.js web applications, client portals, and cloud platforms engineered for conversion, speed, and enterprise scale.
                 </p>
               </div>
 
-              {/* Lighthouse Speed & Architecture Widget */}
-              <div className="rounded-xl bg-[#f8fafc] border border-slate-200/90 p-4 space-y-3.5">
-                <div className="flex items-center justify-between pb-2 border-b border-slate-200/60">
-                  <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-emerald-600" />
-                    <span className="text-xs font-bold font-heading text-[#202B61]">Performance Benchmark</span>
-                  </div>
-                  <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800">
-                    100 / 100
-                  </span>
+              {/* Clean Metric Highlight */}
+              <div className="rounded-xl bg-[#f8fafc] border border-slate-200/80 p-4 sm:p-5 flex items-center justify-between">
+                <div>
+                  <p className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61]">100<span className="text-xs font-normal text-[#202B61]/60">/100</span></p>
+                  <p className="text-xs text-[#202B61]/70 font-medium pt-0.5">Lighthouse Score</p>
                 </div>
-
-                <div className="grid grid-cols-3 gap-2 text-center">
-                  <div className="bg-white p-2.5 rounded-lg border border-slate-200/70">
-                    <p className="text-[10px] uppercase font-bold text-slate-400">FCP</p>
-                    <p className="text-sm font-black font-heading text-[#202B61]">0.4s</p>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-lg border border-slate-200/70">
-                    <p className="text-[10px] uppercase font-bold text-slate-400">LCP</p>
-                    <p className="text-sm font-black font-heading text-[#202B61]">0.8s</p>
-                  </div>
-                  <div className="bg-white p-2.5 rounded-lg border border-slate-200/70">
-                    <p className="text-[10px] uppercase font-bold text-slate-400">CLS</p>
-                    <p className="text-sm font-black font-heading text-[#202B61]">0.00</p>
-                  </div>
+                <div className="text-right text-xs text-[#202B61]/70 space-y-0.5">
+                  <p className="font-bold text-[#202B61]">Sub-second TTFB</p>
+                  <p>Next.js Edge Runtime</p>
                 </div>
-
-                <p className="text-[11px] text-[#202B61]/70 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Next.js App Router • Edge APIs • Sub-second TTFB</span>
-                </p>
               </div>
-
             </div>
 
-            <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-[#202B61]/60">
-              <span>Stack: Next.js 15 • TypeScript • Three.js</span>
-              <ArrowRight className="w-4 h-4 text-[#202B61]" />
+            <div className="pt-2 flex items-center justify-between text-xs font-semibold text-[#202B61]/60 group-hover:text-[#202B61] transition-colors">
+              <span>View Web Engineering</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
-          </div>
+          </Link>
 
           {/* ═══════════════════════════════════════════════════════════════
              CARD 3: NATIVE MOBILE PLATFORMS (5-Col Card)
           ═══════════════════════════════════════════════════════════════ */}
-          <div className="lg:col-span-5 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between space-y-6 text-left transition-all duration-300 shadow-none hover:shadow-xs">
-            <div className="space-y-4">
-              
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#202B61]/5 flex items-center justify-center text-[#202B61]">
-                    <Smartphone className="w-4 h-4" />
-                  </div>
-                  <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/60">
-                    iOS &amp; Android
-                  </span>
-                </div>
-
-                <Link
-                  href="/capabilities/mobile-app-development"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[#202B61] hover:text-[#161e47] transition-colors"
-                >
-                  <span>Explore Mobile</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
+          <Link
+            href="/capabilities/mobile-app-development"
+            className="group lg:col-span-5 bg-white rounded-2xl border border-slate-200/90 p-7 sm:p-9 flex flex-col justify-between space-y-6 text-left transition-all duration-300 shadow-none hover:border-slate-300"
+          >
+            <div className="space-y-5">
+              <div className="w-10 h-10 rounded-xl bg-[#202B61]/5 flex items-center justify-center text-[#202B61]">
+                <Smartphone className="w-5 h-5" />
               </div>
 
               <div className="space-y-2">
-                <h3 className="font-heading font-extrabold text-2xl text-[#202B61] tracking-tight leading-snug">
+                <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight leading-snug">
                   Native Mobile Platforms
                 </h3>
-                <p className="font-sans font-medium text-xs sm:text-sm text-[#202B61]/70 leading-relaxed">
-                  Smooth iOS and Android mobile applications featuring offline-first data sync, hardware telemetry, and native UI responsiveness.
+                <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed">
+                  High performance native iOS, Android, and React Native applications with real-time cloud sync and offline data support.
                 </p>
               </div>
 
-              {/* Mobile Capability Highlights */}
-              <div className="rounded-xl bg-[#f8fafc] border border-slate-200/90 p-4 space-y-2.5">
-                <div className="flex items-center justify-between text-xs font-semibold text-[#202B61] pb-1.5 border-b border-slate-200/60">
-                  <span>Architecture Highlights</span>
-                  <span className="text-[11px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60 font-bold">
-                    60 FPS Guaranteed
-                  </span>
+              {/* Clean Metric Highlight */}
+              <div className="rounded-xl bg-[#f8fafc] border border-slate-200/80 p-4 sm:p-5 flex items-center justify-between">
+                <div>
+                  <p className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61]">60 <span className="text-xs font-normal text-[#202B61]/60">FPS</span></p>
+                  <p className="text-xs text-[#202B61]/70 font-medium pt-0.5">Native UI Thread</p>
                 </div>
-
-                <div className="space-y-1.5 text-xs text-[#202B61]/80">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#202B61]" />
-                    <span>Cross-platform sync: React Native &amp; Swift</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#202B61]" />
-                    <span>Offline-first SQLite local store caching</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#202B61]" />
-                    <span>Biometric FaceID &amp; push alert automation</span>
-                  </div>
+                <div className="text-right text-xs text-[#202B61]/70 space-y-0.5">
+                  <p className="font-bold text-[#202B61]">Offline SQLite Sync</p>
+                  <p>iOS &amp; Android</p>
                 </div>
               </div>
-
             </div>
 
-            <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-[#202B61]/60">
-              <span>React Native • Swift • Kotlin</span>
-              <ArrowRight className="w-4 h-4 text-[#202B61]" />
+            <div className="pt-2 flex items-center justify-between text-xs font-semibold text-[#202B61]/60 group-hover:text-[#202B61] transition-colors">
+              <span>View Mobile Engineering</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
-          </div>
+          </Link>
 
           {/* ═══════════════════════════════════════════════════════════════
              CARD 4: CLOUD & DEVOPS INFRASTRUCTURE (7-Col Card)
           ═══════════════════════════════════════════════════════════════ */}
-          <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between space-y-6 text-left transition-all duration-300 shadow-none hover:shadow-xs">
-            <div className="space-y-4">
-              
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#202B61]/5 flex items-center justify-center text-[#202B61]">
-                    <Cloud className="w-4 h-4" />
-                  </div>
-                  <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/60">
-                    Infrastructure &amp; Scale
-                  </span>
-                </div>
-
-                <Link
-                  href="/capabilities/cloud-devops-hosting"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[#202B61] hover:text-[#161e47] transition-colors"
-                >
-                  <span>Explore Cloud</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
+          <Link
+            href="/capabilities/cloud-devops-hosting"
+            className="group lg:col-span-7 bg-white rounded-2xl border border-slate-200/90 p-7 sm:p-9 flex flex-col justify-between space-y-6 text-left transition-all duration-300 shadow-none hover:border-slate-300"
+          >
+            <div className="space-y-5">
+              <div className="w-10 h-10 rounded-xl bg-[#202B61]/5 flex items-center justify-center text-[#202B61]">
+                <Cloud className="w-5 h-5" />
               </div>
 
               <div className="space-y-2">
                 <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight leading-snug">
                   Cloud &amp; DevOps System Architecture
                 </h3>
-                <p className="font-sans font-medium text-xs sm:text-sm text-[#202B61]/70 leading-relaxed max-w-xl">
-                  Resilient cloud topology with continuous uptime telemetry, container orchestration, zero-downtime CI/CD deployments, and enterprise security.
+                <p className="font-sans font-normal text-xs sm:text-sm text-[#202B61]/70 leading-relaxed max-w-xl">
+                  Production-ready AWS cloud architectures, container orchestration, automated deployment pipelines, and strict security.
                 </p>
               </div>
 
-              {/* Live Infrastructure Telemetry Console */}
-              <div className="rounded-xl bg-[#f8fafc] border border-slate-200/90 p-4 space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-                    </span>
-                    <span className="text-xs font-bold font-heading text-[#202B61]">All Workload Clusters Operational</span>
-                  </div>
-                  <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60">
-                    99.99% SLA
-                  </span>
+              {/* Clean Metric Highlight */}
+              <div className="rounded-xl bg-[#f8fafc] border border-slate-200/80 p-4 sm:p-5 flex items-center justify-between">
+                <div>
+                  <p className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61]">99.99%</p>
+                  <p className="text-xs text-[#202B61]/70 font-medium pt-0.5">Uptime Availability</p>
                 </div>
-
-                {/* Pipeline Progression Steps */}
-                <div className="grid grid-cols-3 gap-2 text-xs pt-1">
-                  <div className="p-2 rounded-lg bg-white border border-slate-200/70 text-center">
-                    <p className="text-[10px] text-slate-400 font-bold uppercase">Automated CI/CD</p>
-                    <p className="font-bold text-[#202B61] text-xs">Zero Downtime</p>
-                  </div>
-                  <div className="p-2 rounded-lg bg-white border border-slate-200/70 text-center">
-                    <p className="text-[10px] text-slate-400 font-bold uppercase">Edge Latency</p>
-                    <p className="font-bold text-[#202B61] text-xs">&lt; 18ms Global</p>
-                  </div>
-                  <div className="p-2 rounded-lg bg-white border border-slate-200/70 text-center">
-                    <p className="text-[10px] text-slate-400 font-bold uppercase">Compliance</p>
-                    <p className="font-bold text-[#202B61] text-xs">SOC2 &amp; HIPAA</p>
-                  </div>
+                <div className="text-right text-xs text-[#202B61]/70 space-y-0.5">
+                  <p className="font-bold text-[#202B61]">Zero-Downtime Deploy</p>
+                  <p>AWS &amp; Kubernetes</p>
                 </div>
               </div>
-
             </div>
 
-            <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-[#202B61]/60">
-              <div className="flex items-center gap-2">
-                <Shield className="w-3.5 h-3.5 text-[#202B61]" />
-                <span>AWS ECS • Docker • Kubernetes • Terraform</span>
-              </div>
-              <ArrowRight className="w-4 h-4 text-[#202B61]" />
+            <div className="pt-2 flex items-center justify-between text-xs font-semibold text-[#202B61]/60 group-hover:text-[#202B61] transition-colors">
+              <span>View Cloud Architecture</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
-          </div>
+          </Link>
 
         </div>
 
