@@ -308,7 +308,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                     isWorkActive ? "text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
-                  Work
+                  Works
                 </span>
               </Link>
 
@@ -451,7 +451,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                     isWorkActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
                   }`}
                 >
-                  Work &amp; Case Studies
+                  Works &amp; Case Studies
                 </Link>
                 <Link
                   href="/about"
