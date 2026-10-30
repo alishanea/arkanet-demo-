@@ -98,7 +98,7 @@ export function AboutTestimonials() {
           {/* Top Quote Content */}
           <div className="relative z-10 w-full max-w-4xl my-auto">
             <div className="grid grid-cols-1 grid-rows-1 items-center min-h-[160px] sm:min-h-[180px]">
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={active}
                   initial={{
@@ -116,9 +116,9 @@ export function AboutTestimonials() {
                   }}
                   className="col-start-1 row-start-1 w-full"
                 >
-                  <h3 className="font-heading font-medium text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-white">
+                  <blockquote className="font-heading font-medium text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-white !text-white">
                     &#8220;{testimonial.quote}&#8221;
-                  </h3>
+                  </blockquote>
                 </motion.div>
               </AnimatePresence>
             </div>
