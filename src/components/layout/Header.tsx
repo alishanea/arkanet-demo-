@@ -129,7 +129,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
     items: { label: string; href: string; icon: React.ElementType; color: string; glow: string }[]
   ) => (
     <div className="space-y-0.5">
-      <div className="text-[11px] font-bold tracking-[0.16em] uppercase text-slate-400 mb-2 sm:mb-3.5 px-2.5">
+      <div className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#202B61]/50 mb-2 sm:mb-3.5 px-2.5">
         {title}
       </div>
       {items.map(({ label, href, icon: Icon, color, glow }) => (
@@ -137,7 +137,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           key={label}
           href={href}
           onClick={handleNavClick}
-          className="group relative flex items-center gap-3 px-2 sm:px-2.5 py-2 rounded-xl overflow-hidden transition-colors duration-300 hover:bg-slate-50"
+          className="group relative flex items-center gap-3 px-2 sm:px-2.5 py-2 rounded-xl overflow-hidden transition-colors duration-300 hover:bg-[#202B61]/5"
         >
           <span className="relative flex items-center justify-center w-5 h-5 shrink-0">
             <span
@@ -151,7 +151,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             />
           </span>
 
-          <span className="relative flex-1 text-[13.5px] font-semibold text-slate-800 group-hover:text-slate-950 transition-all duration-300 group-hover:translate-x-0.5">
+          <span className="relative flex-1 text-[13.5px] font-semibold text-[#202B61] group-hover:text-[#202B61] transition-all duration-300 group-hover:translate-x-0.5">
             {label}
           </span>
 
@@ -224,13 +224,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {hoveredTab === "home" && !isHomeActive && (
                   <motion.div
                     layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-slate-100/90 rounded-full"
+                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
                 <span
                   className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
-                    isHomeActive ? "text-white" : "text-slate-800 hover:text-slate-950"
+                    isHomeActive ? "text-white" : "text-[#202B61] hover:text-[#202B61]"
                   }`}
                 >
                   Home
@@ -256,7 +256,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {hoveredTab === "capabilities" && activeMenu !== "services" && !isCapabilitiesActive && (
                   <motion.div
                     layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-slate-100/90 rounded-full"
+                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -269,7 +269,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                     className={`relative z-10 flex items-center gap-1.5 font-bold text-sm tracking-tight transition-colors duration-200 ${
                       activeMenu === "services" || isCapabilitiesActive
                         ? "text-white"
-                        : "text-slate-800 hover:text-slate-950"
+                        : "text-[#202B61] hover:text-[#202B61]"
                     }`}
                   >
                     <span>Capabilities</span>
@@ -299,13 +299,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {hoveredTab === "work" && !isWorkActive && (
                   <motion.div
                     layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-slate-100/90 rounded-full"
+                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
                 <span
                   className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
-                    isWorkActive ? "text-white" : "text-slate-800 hover:text-slate-950"
+                    isWorkActive ? "text-white" : "text-[#202B61] hover:text-[#202B61]"
                   }`}
                 >
                   Works
@@ -329,13 +329,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {hoveredTab === "about" && !isAboutActive && (
                   <motion.div
                     layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-slate-100/90 rounded-full"
+                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
                 <span
                   className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
-                    isAboutActive ? "text-white" : "text-slate-800 hover:text-slate-950"
+                    isAboutActive ? "text-white" : "text-[#202B61] hover:text-[#202B61]"
                   }`}
                 >
                   About
@@ -359,13 +359,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 {hoveredTab === "contact" && !isContactActive && (
                   <motion.div
                     layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-slate-100/90 rounded-full"
+                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
                 <span
                   className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
-                    isContactActive ? "text-white" : "text-slate-800 hover:text-slate-950"
+                    isContactActive ? "text-white" : "text-[#202B61] hover:text-[#202B61]"
                   }`}
                 >
                   Contact
@@ -379,7 +379,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 rounded-full text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
+                className="md:hidden p-2 rounded-full text-[#202B61] hover:bg-[#202B61]/5 transition-colors cursor-pointer"
                 aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -430,7 +430,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/"
                   onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isHomeActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
+                    isHomeActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
                   Home
@@ -439,7 +439,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/capabilities"
                   onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isCapabilitiesActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
+                    isCapabilitiesActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
                   Capabilities &amp; Services
@@ -448,7 +448,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/work"
                   onClick={handleWorkClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isWorkActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
+                    isWorkActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
                   Works &amp; Case Studies
@@ -457,7 +457,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/about"
                   onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isAboutActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
+                    isAboutActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
                   About Us
@@ -466,7 +466,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   href="/contact"
                   onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
-                    isContactActive ? "bg-[#202B61] text-white" : "text-slate-800 hover:bg-slate-50"
+                    isContactActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
                   Contact
