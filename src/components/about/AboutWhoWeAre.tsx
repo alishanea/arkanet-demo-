@@ -86,7 +86,7 @@ export function AboutWhoWeAre() {
                 delay: idx * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-                            className="bg-[#f8fafc] rounded-[4px] border border-slate-200/90 shadow-none p-6 sm:p-7 flex flex-col justify-between h-full text-left space-y-4"
+                            className="bg-[#f8fafc] rounded-[4px] shadow-none p-6 sm:p-7 flex flex-col justify-between h-full text-left space-y-4"
             >
               <div className="space-y-2">
                 <div className="font-heading font-extrabold text-4xl sm:text-5xl text-[#202B61] tracking-tight">
@@ -124,7 +124,7 @@ export function AboutWhoWeAre() {
               return (
                 <div
                   key={idx}
-                  className="rounded-[4px] p-7 sm:p-8 border border-slate-200/90 shadow-none bg-[#f8fafc] flex flex-col justify-between h-full space-y-4 text-left transition-all duration-300"
+                  className="rounded-[4px] p-7 sm:p-8 shadow-none bg-[#f8fafc] flex flex-col justify-between h-full space-y-4 text-left transition-all duration-300"
                 >
                   <div className="space-y-3.5">
                     <div className="w-10 h-10 rounded-[4px] bg-[#202B61] text-white flex items-center justify-center">
