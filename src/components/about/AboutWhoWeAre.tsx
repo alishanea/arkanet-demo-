@@ -46,7 +46,7 @@ const PILLARS = [
   {
     icon: Shield,
     title: "Enterprise Security & IP",
-    desc: "All client intellectual property belongs entirely to you. We enforce mutual confidentiality agreements, encrypted credential vaults, and SOC2-ready protocols.",
+    desc: "All client intellectual property belongs entirely to you. We enforce mutual confidentiality, encrypted credential vaults, and SOC2-ready protocols.",
   },
 ];
 
