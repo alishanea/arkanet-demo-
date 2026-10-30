@@ -22,7 +22,7 @@ export function AboutAwards() {
               <div className="text-2xl sm:text-3xl font-heading font-extrabold text-[#202B61]">
                 {award.name}
               </div>
-              <div className="text-xs font-sans font-bold uppercase tracking-wider text-slate-500">
+              <div className="text-xs font-sans font-bold uppercase tracking-wider text-[#202B61]/75">
                 {award.label}
               </div>
             </div>

@@ -68,25 +68,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "FileSearch",
-        title: "Requirements Discovery",
-        desc: "We map your actual business workflows and technical specifications before writing code, so the architecture fits your operational reality.",
+        icon: "Compass",
+        title: "Discovery Phase",
+        desc: "Operational workflow mapping and requirements validation before engineering begins, ensuring software built to fit.",
       },
       {
         icon: "Database",
-        title: "Architecture & Data Modeling",
-        desc: "Robust database schemas and scalable micro-service architectures designed for today's load and 3-year growth projections.",
+        title: "Architecture Design",
+        desc: "Clean domain-driven schemas, relational databases, and decoupled service architectures built for heavy concurrency.",
       },
       {
-        icon: "Code",
-        title: "Full-Stack Engineering",
-        desc: "Built with modern, maintainable frameworks (React, Next.js, Node.js, Python) following strict clean code principles.",
+        icon: "Layers",
+        title: "Full-Stack Build",
+        desc: "Modern, maintainable stacks using Next.js, Node.js, and TypeScript, delivering robust APIs with intuitive interfaces.",
       },
       {
-        icon: "CheckCircle2",
-        title: "Automated QA & Delivery",
-        desc: "End-to-end automated testing, continuous integration, full documentation, and seamless team handover.",
-      },
+        icon: "ShieldCheck",
+        title: "Automated QA",
+        desc: "End-to-end automated testing, continuous integration pipelines, and monitored rollouts ensuring stable releases.",
+      }
     ],
     featureRows: [
       {
@@ -167,23 +167,23 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         icon: "Award",
         title: "Expertise",
-        desc: "We are experts in web development. Our team comprises skilled professionals with years of experience, ensuring that your website is crafted with precision and expertise from the first wireframe onward.",
+        desc: "Full-stack engineering delivering high-performance corporate websites and digital platforms built to scale.",
       },
       {
         icon: "Settings",
         title: "Customization",
-        desc: "We offer tailored web development solutions. We'll work closely with you to create a website that perfectly aligns with your brand and goals, no generic templates, no compromises.",
+        desc: "Bespoke web architectures tailored to your business workflows and brand identity with zero generic templates.",
       },
       {
         icon: "UserCheck",
-        title: "User-Centric Design",
-        desc: "Our focus is on user-friendly design. Your website will not only look appealing but also provide an intuitive and seamless experience for your visitors, resulting in higher engagement and conversion.",
+        title: "User Experience",
+        desc: "Interfaces structured around frictionless user journeys and proven conversion funnels to maximize retention.",
       },
       {
         icon: "Search",
         title: "SEO Optimization",
-        desc: "We build websites with search engines in mind. We implement SEO best practices to help your site rank higher in search results, driving organic traffic and potential customers straight to your pages.",
-      },
+        desc: "Built with clean semantic markup, fast Core Web Vitals, and technical SEO foundations for organic reach.",
+      }
     ],
     featureRows: [
       {
@@ -262,25 +262,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Lightbulb",
-        title: "Innovative Solutions",
-        desc: "We stay at the forefront of innovation, building apps that incorporate the latest technologies and trends, so your business stays ahead of the competition instead of catching up to it.",
+        icon: "Smartphone",
+        title: "Modern Platforms",
+        desc: "Native iOS, Android, and cross-platform apps built with modern frameworks to keep your product ahead.",
       },
       {
-        icon: "Users",
-        title: "User-Centered Approach",
-        desc: "Our development process prioritizes the end-user. Every screen is meticulously designed to be easy to navigate, ensuring your customers have a delightful experience from the first tap onward.",
+        icon: "Sparkles",
+        title: "Intuitive UX",
+        desc: "Frictionless mobile flows engineered around core customer tasks for higher daily engagement and retention.",
       },
       {
-        icon: "ShieldCheck",
+        icon: "Shield",
         title: "Robust Security",
-        desc: "Security is paramount in the digital age. Every app we build ships with robust security measures baked into the architecture, protecting user data and safeguarding your brand's reputation.",
+        desc: "Enterprise-grade encryption, secure token storage, and biometric authentication safeguarding user privacy.",
       },
       {
         icon: "TrendingUp",
-        title: "Scalability",
-        desc: "As your business grows, your app should too. We build scalable solutions that adapt to your changing needs, saving you the hassle and cost of frequent redevelopment down the line.",
-      },
+        title: "High Scalability",
+        desc: "Cloud-connected mobile architectures engineered to support growing concurrency with zero performance loss.",
+      }
     ],
     featureRows: [
       {
@@ -359,25 +359,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Shield",
-        title: "Multi-Tenant Isolation",
-        desc: "Database isolation and data privacy architectures ensuring multi-tenant security and zero cross-tenant leakage.",
+        icon: "Server",
+        title: "Tenant Isolation",
+        desc: "Complete multi-tenant database isolation, custom workspace domains, and enterprise security boundaries.",
       },
       {
         icon: "CreditCard",
-        title: "Subscription Billing",
-        desc: "Integrated Stripe, Merchant of Record, usage-based metering, tier management, and automated invoicing.",
+        title: "Billing & Payments",
+        desc: "Integrated Stripe and Merchant-of-Record billing with recurring subscriptions and automated invoicing.",
       },
       {
         icon: "Lock",
-        title: "Role-Based Access Control",
-        desc: "Granular permission models, admin dashboards, SSO (SAM/OAuth), and audit logs out of the box.",
+        title: "Role Permissions",
+        desc: "Granular role-based access control, fine-grained team permissions, and detailed organization administration.",
       },
       {
         icon: "BarChart3",
-        title: "Analytics & Usage Metering",
-        desc: "Real-time usage tracking, tenant analytics, customer health metrics, and automated onboarding flows.",
-      },
+        title: "Usage Analytics",
+        desc: "Real-time tenant usage tracking, automated metered billing triggers, and comprehensive platform telemetry.",
+      }
     ],
     featureRows: [
       {
@@ -456,25 +456,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "ShoppingBag",
-        title: "Headless & Custom Themes",
-        desc: "Custom Shopify Liquid themes and Next.js headless storefronts built for lightning sub-second page loads.",
+        icon: "Layout",
+        title: "Custom Storefronts",
+        desc: "Custom Shopify Liquid and headless storefronts engineered for fast catalog browsing, checkout ease, and sales.",
       },
       {
-        icon: "DollarSign",
+        icon: "Zap",
         title: "Checkout Tuning",
-        desc: "Conversion-optimized cart flows, 1-click checkouts, and regional multi-currency payment gateways (Tabby, Tamara, Telr, Stripe).",
+        desc: "Optimized single-page checkout flows, localized multi-currency support, regional gateways, and cart recovery.",
       },
       {
-        icon: "Layers",
-        title: "Inventory & ERP Sync",
-        desc: "Seamless synchronization between storefront inventory, warehouse ERPs, and fulfillment logistics.",
+        icon: "RefreshCw",
+        title: "Inventory & ERP",
+        desc: "Seamless real-time synchronization between digital storefronts, multi-warehouse stock levels, and POS systems.",
       },
       {
-        icon: "TrendingUp",
-        title: "SEO Data Preservation",
-        desc: "Platform migrations with 100% SEO equity preservation, redirect mapping, and order history retention.",
-      },
+        icon: "Search",
+        title: "Catalog Migration",
+        desc: "Frictionless platform migrations preserving historical customer records, product catalogs, and SEO ranking.",
+      }
     ],
     featureRows: [
       {
@@ -486,7 +486,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Product catalogue & inventory architecture",
         description: "Scalable variant structures, complex matrix bundling, dynamic pricing rules, and real-time multi-warehouse stock management.",
-        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
@@ -553,25 +553,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "UserCheck",
-        title: "Vendor Onboarding & Dashboards",
-        desc: "Streamlined vendor registration, KYC verification, product listing management, and sales performance dashboards.",
+        icon: "Users",
+        title: "Vendor Portals",
+        desc: "Streamlined vendor registration, self-serve catalog management, automated verification, and dedicated portals.",
       },
       {
-        icon: "Split",
-        title: "Commission & Split Payouts",
-        desc: "Automated split payments via Stripe Connect, commission calculation, escrow holding, and multi-currency merchant payouts.",
+        icon: "CreditCard",
+        title: "Commission Payouts",
+        desc: "Automated multi-party split payouts, platform commission calculations, escrow handling, and tax engines.",
       },
       {
         icon: "MapPin",
-        title: "Search, Filter & Geolocation",
-        desc: "Lightning-fast elastic search, dynamic filtering, map discovery, and location-based vendor matching.",
+        title: "Advanced Discovery",
+        desc: "Lightning-fast elastic search, multi-facet product filtering, interactive map geolocation, and instant queries.",
       },
       {
-        icon: "ShieldAlert",
-        title: "Moderation & Reviews",
-        desc: "Automated review moderation, dispute resolution flows, rating systems, and admin fraud detection.",
-      },
+        icon: "ShieldCheck",
+        title: "Trust & Moderation",
+        desc: "Automated dispute resolution workflows, verified customer reviews, fraud detection rules, and quality control.",
+      }
     ],
     featureRows: [
       {
@@ -651,24 +651,24 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "Shield",
-        title: "Role-Based Security",
-        desc: "Role-level access controls, multi-factor authentication, and Single Sign-On (SSO) integration for enterprise compliance.",
+        title: "Granular Access",
+        desc: "Zero-trust authentication, multi-factor verification, and strict role permissions protecting sensitive files.",
       },
       {
         icon: "Users",
-        title: "Multi-Stakeholder Portals",
-        desc: "Dedicated user views for customers, vendors, distributors, and internal employees within a unified platform.",
+        title: "Unified Hubs",
+        desc: "Dedicated user views for customers, external suppliers, and internal staff consolidating inquiries and tickets.",
       },
       {
-        icon: "FileCheck",
-        title: "Workflows & E-Signatures",
-        desc: "Document uploading, automated multi-tier approval chains, and digital e-signature capabilities.",
+        icon: "FileText",
+        title: "Digital Workflows",
+        desc: "Self-service document uploads, automated digital signature workflows, and instant task alerts for users.",
       },
       {
-        icon: "Activity",
-        title: "Audit Logging & Reporting",
-        desc: "Complete audit trails, compliance-ready reporting, and self-service analytics dashboards.",
-      },
+        icon: "History",
+        title: "Compliance Trails",
+        desc: "Complete immutable audit trails, comprehensive activity logging, and exportable regulatory reporting suites.",
+      }
     ],
     featureRows: [
       {
@@ -747,25 +747,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Share2",
-        title: "API Design & Documentation",
-        desc: "Clean REST and GraphQL API endpoints engineered with OpenAPI/Swagger specifications for third-party developer integration.",
+        icon: "Code",
+        title: "API Engineering",
+        desc: "RESTful and GraphQL API architectures built with clean OpenAPI specs, strict type validation, and docs.",
       },
       {
-        icon: "Layers",
-        title: "ERP & CRM Bridges",
-        desc: "Bi-directional data sync between Salesforce, HubSpot, Zoho, SAP, Oracle, and custom internal SQL databases.",
+        icon: "Network",
+        title: "System Bridges",
+        desc: "Bi-directional data synchronization between modern web apps, legacy ERPs, payment gateways, and third-party tools.",
       },
       {
         icon: "Zap",
-        title: "Event-Driven Pipelines",
-        desc: "High-throughput webhook infrastructure and message queues (Kafka, RabbitMQ, Redis) handling real-time data events.",
+        title: "Event Pipelines",
+        desc: "High-throughput webhook infrastructure, message queue brokers, and asynchronous event streams for real-time sync.",
       },
       {
-        icon: "RefreshCw",
-        title: "Data Reconciliation",
-        desc: "Automated data validation, conflict resolution logic, and reconciliation monitoring to prevent data drift.",
-      },
+        icon: "CheckCircle",
+        title: "Data Integrity",
+        desc: "Automated payload validation, schema consistency checks, robust retry policies, and scheduled reconciliations.",
+      }
     ],
     featureRows: [
       {
@@ -846,46 +846,46 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         icon: "Cloud",
         title: "Cloud Architecture",
-        desc: "Scalable cloud provisioning on AWS, Google Cloud, and Azure using Infrastructure-as-Code (Terraform/Docker).",
+        desc: "Scalable cloud provisioning on AWS, Google Cloud, and Azure using Infrastructure-as-Code for rapid deployment.",
       },
       {
         icon: "GitBranch",
         title: "CI/CD Pipelines",
-        desc: "Automated build, test, and release pipelines ensuring zero-downtime production deployments.",
+        desc: "Automated build, test, and release pipelines ensuring zero-downtime rollouts and continuous delivery cycles.",
       },
       {
         icon: "Activity",
-        title: "Monitoring & Alerting",
-        desc: "Real-time metrics, server health monitoring, log aggregation, and automated incident response alerts.",
+        title: "System Monitoring",
+        desc: "Real-time metrics, server health telemetry, log aggregation, and automated incident alerts keeping sites up.",
       },
       {
-        icon: "ShieldAlert",
+        icon: "Shield",
         title: "Disaster Recovery",
-        desc: "Automated database backups, failover strategies, security hardening, and cloud cost optimization.",
-      },
+        desc: "Automated database backups, multi-region failover strategies, and ongoing cloud cost optimization reviews.",
+      }
     ],
     featureRows: [
       {
         title: "Multi-cloud architecture & provisioning",
-        description: "Cloud setup tailored for performance and cost efficiency across AWS, GCP, Azure, and bare-metal environments.",
+        description: "Cloud infrastructure setup tailored for performance and cost efficiency across AWS, Google Cloud, and Azure environments.",
         image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Automated CI/CD & container deployments",
-        description: "Docker containerization, Kubernetes orchestration, and GitHub Actions pipelines that deploy updates reliably.",
+        description: "Docker containerization, Kubernetes orchestration, and automated CI/CD pipelines deploying production updates safely.",
         image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Real-time monitoring & log aggregation",
-        description: "Centralized logging, APM performance tracking, and instant alerts that catch bottlenecks before users do.",
+        description: "Centralized logging, APM telemetry tracking, and automated alerts catching performance bottlenecks before users do.",
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Security hardening & cost optimization",
-        description: "Cloud security audits, DDoS mitigation, compliance hardening, and infrastructure cost reduction strategies.",
+        description: "Comprehensive cloud security audits, DDoS mitigation, compliance hardening, and infrastructure cost optimization.",
         image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
@@ -941,25 +941,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "FileCode",
-        title: "Codebase Assessment",
-        desc: "In-depth code and database audits identifying technical debt, security vulnerabilities, and refactoring priorities.",
+        icon: "Search",
+        title: "System Audit",
+        desc: "In-depth legacy codebase and database auditing identifying architecture bottlenecks and technical debt.",
       },
       {
-        icon: "GitPullRequest",
-        title: "Phased Migration Roadmaps",
-        desc: "Step-by-step modular migration strategies with zero business interruption and full rollback safeguards.",
+        icon: "GitCommit",
+        title: "Phased Roadmaps",
+        desc: "Step-by-step modular migration strategies replacing legacy core services incrementally with zero downtime.",
       },
       {
         icon: "Database",
-        title: "Data Migration & Validation",
-        desc: "ETL migration scripts, schema cleanup, and data validation ensuring 100% data integrity during transition.",
+        title: "Data Migration",
+        desc: "Reliable ETL migration scripts, automated data transformation pipelines, and thorough integrity audits.",
       },
       {
         icon: "Smartphone",
-        title: "Modern UI & Mobile Enablement",
-        desc: "Creating modern web and mobile user interfaces on top of existing backend database engines.",
-      },
+        title: "Modern Frontends",
+        desc: "Creating intuitive web and mobile interfaces that unlock legacy database potential with modern usability.",
+      }
     ],
     featureRows: [
       {
@@ -1043,25 +1043,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Target",
-        title: "Feasibility Assessment",
-        desc: "We analyze your datasets and business metrics upfront so you know the ROI before committing to model development.",
+        icon: "LineChart",
+        title: "Feasibility Study",
+        desc: "Analyzing your datasets and business metrics upfront so you understand the exact ROI before model development.",
       },
       {
-        icon: "TrendingUp",
-        title: "Predictive Analytics",
-        desc: "Custom ML models for demand forecasting, customer churn prediction, credit risk scoring, and anomaly detection.",
+        icon: "Brain",
+        title: "Predictive Models",
+        desc: "Custom machine learning models for demand forecasting, customer churn prediction, and anomaly detection.",
       },
       {
         icon: "Eye",
-        title: "Computer Vision & OCR",
-        desc: "Document classification, automated image inspection, and OCR extraction pipelines processing structured data.",
+        title: "Computer Vision",
+        desc: "Document classification, automated image inspection, and high-speed OCR pipelines processing business data.",
       },
       {
-        icon: "RefreshCw",
-        title: "Model MLOps & Retraining",
-        desc: "Continuous model monitoring, drift detection, and automated retraining pipelines running in production.",
-      },
+        icon: "Cpu",
+        title: "Production MLOps",
+        desc: "Continuous telemetry monitoring, concept drift detection, and automated retraining pipelines in production.",
+      }
     ],
     featureRows: [
       {
@@ -1140,25 +1140,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Database",
-        title: "RAG Knowledge Base",
-        desc: "Retrieval-Augmented Generation grounded in your company's actual PDF manuals, documents, and product knowledge.",
+        icon: "BookOpen",
+        title: "RAG Architecture",
+        desc: "Retrieval-Augmented Generation indexing your entire internal product library, PDFs, and documentation accurately.",
       },
       {
         icon: "Bot",
-        title: "Tool-Using Autonomous Agents",
-        desc: "Agents connected to live APIs capable of executing actions like booking appointments, creating orders, or updating CRMs.",
+        title: "Autonomous Agents",
+        desc: "Task-oriented AI agents capable of querying live databases, looking up order statuses, and scheduling bookings.",
       },
       {
-        icon: "MessageSquare",
-        title: "Multi-Channel Deployment",
-        desc: "Deployed seamlessly across Web, WhatsApp Business, Instagram DMs, Microsoft Teams, and internal portals.",
+        icon: "Share2",
+        title: "Omnichannel Deploy",
+        desc: "Seamless deployment across web chat widgets, mobile apps, WhatsApp Business, and internal Slack channels.",
       },
       {
-        icon: "ShieldCheck",
-        title: "Guardrails & Human Handoff",
-        desc: "Strict safety controls, hallucination prevention, and instant handoff to human agents when sentiment or value requires.",
-      },
+        icon: "ShieldAlert",
+        title: "Human Escalation",
+        desc: "Strict conversational guardrails, automated hallucination detection, and smooth real-time handoff to staff.",
+      }
     ],
     featureRows: [
       {
@@ -1238,30 +1238,30 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "ShoppingBag",
-        title: "Catalogue-Aware Discovery",
-        desc: "Deep integration with your product database for natural-language product search, sizing advice, and guided selling.",
+        title: "Catalog Discovery",
+        desc: "Deep catalog integration enabling natural language product recommendations, compatibility checks, and search.",
       },
       {
         icon: "HelpCircle",
-        title: "Instant Objection Handling",
-        desc: "Answers customer questions on fit, shipping policies, returns, and compatibility in real time right on the PDP.",
+        title: "Objection Handling",
+        desc: "Accurate, instant answers regarding shipping timelines, return policies, sizing dimensions, and payment options.",
       },
       {
-        icon: "ShoppingCart",
-        title: "Cart Recovery & Upselling",
-        desc: "Intelligent abandoned cart recovery prompts and personalized product bundle recommendations.",
+        icon: "Zap",
+        title: "Checkout Recovery",
+        desc: "Intelligent abandoned cart recovery prompts, timely stock alerts, and personalized incentives boosting orders.",
       },
       {
         icon: "Globe",
-        title: "Multilingual Shopping",
-        desc: "Fluent shopping assistance in Arabic, English, Malayalam, Hindi, and regional languages.",
-      },
+        title: "Global Shopping",
+        desc: "Fluent multi-language shopping guidance across English, Arabic, and regional dialects for all shoppers.",
+      }
     ],
     featureRows: [
       {
         title: "Catalogue-aware product discovery",
         description: "Natural-language product discovery engines that understand customer preferences and recommend exact product matches.",
-        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
@@ -1334,25 +1334,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Bot",
-        title: "AI First-Response Routing",
-        desc: "Confidence-based routing resolving tier-1 repetitive tickets automatically 24/7.",
+        icon: "Route",
+        title: "Intelligent Triage",
+        desc: "Confidence-based query routing resolving repetitive customer inquiries instantly while escalating complex tickets.",
       },
       {
         icon: "UserCheck",
-        title: "Seamless Human Handoff",
-        desc: "Instant handoff to human support agents with complete chat summary, sentiment, and user context.",
+        title: "Human Handoff",
+        desc: "Instant transition to human support agents complete with full transcripts, detected sentiment, and summaries.",
       },
       {
-        icon: "Zap",
-        title: "Agent Copilot Assist",
-        desc: "AI suggested replies, automated ticket tagging, and instant knowledge lookup inside agent dashboards.",
+        icon: "Sparkles",
+        title: "Agent Copilot",
+        desc: "Real-time AI suggested replies, auto-generated ticket summaries, and relevant knowledge base lookup for agents.",
       },
       {
         icon: "Inbox",
-        title: "Unified Support Inbox",
-        desc: "Unified inbox consolidating Web, WhatsApp, Email, and Social Media inquiries into one desk.",
-      },
+        title: "Unified Inbox",
+        desc: "Consolidated customer service hub streaming incoming email, web chat, WhatsApp, and social media tickets.",
+      }
     ],
     featureRows: [
       {
@@ -1431,25 +1431,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "FileText",
-        title: "Automated OCR Extraction",
-        desc: "Extract structured data from scanned invoices, receipts, contracts, and handwritten documents with high precision.",
+        icon: "FileSearch",
+        title: "OCR Extraction",
+        desc: "High-accuracy text and tabular data extraction from invoices, purchase orders, IDs, and scanned compliance files.",
       },
       {
-        icon: "Printer",
-        title: "Dynamic Proposal Generation",
-        desc: "Automatically produce pixel-perfect, branded PDF proposals and reports from your live CRM and database data.",
+        icon: "FileText",
+        title: "Document Creation",
+        desc: "Produce pixel-perfect PDF agreements, proposals, invoices, and certificates populated directly from records.",
       },
       {
         icon: "CheckSquare",
-        title: "Data Verification & Validation",
-        desc: "Validation rules that cross-check extracted document numbers against your accounting or ERP database.",
+        title: "Data Verification",
+        desc: "Automated business logic rules cross-checking tax numbers, signature lines, mathematical totals, and fields.",
       },
       {
         icon: "Clock",
-        title: "Scheduled Reporting Pipelines",
-        desc: "Automated daily/monthly PDF report generation typeset and emailed to stakeholders on schedule.",
-      },
+        title: "Automated Reports",
+        desc: "Scheduled daily, weekly, and monthly PDF analytical summaries generated and distributed automatically to teams.",
+      }
     ],
     featureRows: [
       {
@@ -1528,25 +1528,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Globe",
-        title: "Arabic RTL & Bilingual Design",
-        desc: "Flawless right-to-left layout rendering, typography handling, and bilingual web/app UI experiences.",
+        icon: "AlignRight",
+        title: "Bilingual Design",
+        desc: "Native Arabic right-to-left layout engineering, bidirectional font optimization, and cultural alignment for Gulf.",
       },
       {
         icon: "Languages",
-        title: "Indian Regional Languages",
-        desc: "Malayalam, Hindi, Tamil, and regional Indian language AI text processing and conversational models.",
+        title: "Regional Support",
+        desc: "Comprehensive localization and natural language processing across Hindi, Malayalam, Tamil, and Asian tongues.",
       },
       {
-        icon: "MessageSquare",
-        title: "Multilingual AI Chatbots",
-        desc: "Chatbots and voice assistants that converse naturally in regional dialects without breaking context.",
+        icon: "Bot",
+        title: "Multilingual Chat",
+        desc: "AI assistants capable of seamlessly switching between languages mid-conversation while maintaining accuracy.",
       },
       {
-        icon: "Sparkles",
-        title: "Culturally Adapted Content",
-        desc: "AI content generation pipelines tuned for regional cultural context, tone, and local market nuances.",
-      },
+        icon: "Globe",
+        title: "Content Adaptation",
+        desc: "Culturally nuanced copy adaptation, localized currency formatting, and region-specific regulatory adherence.",
+      }
     ],
     featureRows: [
       {
@@ -1625,25 +1625,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Target",
-        title: "Built for Your Questions",
-        desc: "We design each system around the questions your team actually asks, so every metric tracked has a business reason to exist.",
+        icon: "HelpCircle",
+        title: "Discovery Scoping",
+        desc: "Identifying core business questions and operational KPIs first to architect clean, purposeful data pipelines.",
       },
       {
-        icon: "GitBranch",
-        title: "ETL & ELT Pipelines",
-        desc: "Automated collection, cleanup, and loading pipelines keeping data fresh across warehouses without manual handoffs.",
+        icon: "GitCommit",
+        title: "ETL/ELT Pipelines",
+        desc: "Automated extraction and transformation pipelines streaming data from databases, SaaS tools, and APIs reliably.",
       },
       {
-        icon: "Server",
-        title: "Data Lakehouse Architecture",
-        desc: "Cloud data warehouses (Snowflake, BigQuery, PostgreSQL) configured for security, speed, and cost efficiency.",
+        icon: "Database",
+        title: "Modern Lakehouse",
+        desc: "Centralized, query-optimized storage architectures supporting both real-time analytical reporting and AI models.",
       },
       {
         icon: "BarChart3",
-        title: "BI Dashboards & Real-time AI",
-        desc: "Custom PowerBI and Metabase dashboards plugging directly into your machine learning models.",
-      },
+        title: "Executive Reports",
+        desc: "Interactive business intelligence dashboards providing live metrics, trend projections, and automated alerts.",
+      }
     ],
     featureRows: [
       {
@@ -1724,23 +1724,23 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         icon: "PhoneCall",
         title: "Conversational IVR",
-        desc: "Natural speech recognition replacing frustrating press-button IVR menus with instant conversational understanding.",
+        desc: "Replace rigid touch-tone phone trees with natural voice interactions understanding spoken intent and context.",
       },
       {
-        icon: "Languages",
-        title: "Multilingual Voice AI",
-        desc: "Voice handling in English, Arabic, Malayalam, and regional dialects with natural voice synthesis.",
+        icon: "Mic",
+        title: "Multilingual Voice",
+        desc: "Accurate voice synthesis and recognition in natural English, Arabic, and regional dialects with brand tone.",
       },
       {
-        icon: "Headphones",
-        title: "Intelligent Call Routing",
-        desc: "Smart callback scheduling, queue management, and context-rich routing to human agents.",
+        icon: "GitFork",
+        title: "Smart Call Routing",
+        desc: "Intelligent routing that directs high-priority callers to specialized agents while resolving common inquiries.",
       },
       {
         icon: "FileText",
-        title: "CRM Auto Call Logging",
-        desc: "Automatic call transcription, sentiment analysis, and instant logging into your CRM or helpdesk.",
-      },
+        title: "CRM Auto-Logging",
+        desc: "Automated call recording, transcription, key takeaway summaries, and direct CRM ticket updates post-call.",
+      }
     ],
     featureRows: [
       {
@@ -1824,25 +1824,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "ClipboardList",
-        title: "Map Before You Build",
-        desc: "We document the actual current workflow, every handoff, every manual step, before proposing anything, so the automation replaces the real process.",
+        icon: "Map",
+        title: "Process Discovery",
+        desc: "Comprehensive workflow mapping before development begins, identifying manual bottlenecks and automation areas.",
       },
       {
-        icon: "Layers",
-        title: "One Team, Entire Stack",
-        desc: "Triggers, pipeline logic, and integrations with your existing tools, handled end to end by a single team.",
+        icon: "Users",
+        title: "End-to-End Build",
+        desc: "One dedicated engineering team handling database architecture, integrations, user interfaces, and notifications.",
       },
       {
-        icon: "Settings",
-        title: "Right Tool, Not One Tool",
-        desc: "We build with whatever automation platform or custom code fits the job, not one preferred tool applied to everything.",
+        icon: "Wrench",
+        title: "Best-Fit Tooling",
+        desc: "Purpose-built combinations of custom code, enterprise webhooks, and robust queue workers designed for stability.",
       },
       {
-        icon: "RefreshCw",
-        title: "Wired Into What You Already Use",
-        desc: "Automations that live inside your existing CRM, email, or internal systems, instead of adding another app your team has to remember to check.",
-      },
+        icon: "Cpu",
+        title: "Ecosystem Wiring",
+        desc: "Seamless integration into your existing email systems, ERPs, accounting platforms, and databases smoothly.",
+      }
     ],
     featureRows: [
       {
@@ -1922,24 +1922,24 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "Zap",
-        title: "Cross-App Triggers",
-        desc: "Automated event handoffs triggering multi-tool sequences across CRM, finance, and support tools.",
+        title: "Automated Triggers",
+        desc: "Event-driven workflows linking marketing platforms, sales funnels, and customer databases into automated operations.",
       },
       {
-        icon: "Link",
-        title: "Deep CRM & ERP Wiring",
-        desc: "Connecting HubSpot, Zoho, Salesforce, QuickBooks, and Xero with custom webhook middleware.",
+        icon: "Network",
+        title: "Deep System Wiring",
+        desc: "Bi-directional data sync bridging Salesforce, HubSpot, SAP, NetSuite, and internal databases with sub-second speed.",
       },
       {
-        icon: "AlertCircle",
-        title: "Failure Alerting & Retries",
-        desc: "Built-in error handling, automatic retry logic, and instant Slack/Email alerts if an API call fails.",
+        icon: "AlertTriangle",
+        title: "Failure Resilience",
+        desc: "Automated exception handling, intelligent retry policies, and real-time engineer alerting preventing lost records.",
       },
       {
         icon: "Activity",
-        title: "Centralized Flow Monitoring",
-        desc: "Centralized monitoring dashboard tracking execution logs, data volume, and time-saved metrics.",
-      },
+        title: "Flow Monitoring",
+        desc: "Centralized execution telemetry dashboard displaying transaction volumes, processing latencies, and statuses.",
+      }
     ],
     featureRows: [
       {
@@ -2014,29 +2014,29 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     heroImages: {
       left: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop",
       center: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1200&auto=format&fit=crop",
+      right: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
       {
-        icon: "MessageSquare",
-        title: "WhatsApp API Verification",
-        desc: "Official Meta WhatsApp Business API setup, green tick verification, and multi-agent inbox configuration.",
+        icon: "CheckCircle",
+        title: "Meta Verification",
+        desc: "Official WhatsApp Business API provisioning, green checkmark verification support, and template management.",
       },
       {
         icon: "ShoppingBag",
-        title: "In-Chat Catalogue & Checkout",
-        desc: "Browsing product catalogues, selecting items, and completing payments via local links right inside WhatsApp.",
+        title: "In-Chat Commerce",
+        desc: "Interactive product catalogs, instant cart creation, and secure in-chat payment links enabling quick checkout.",
       },
       {
         icon: "Bell",
-        title: "Automated Tracking & Notifications",
-        desc: "Instant automated order confirmations, delivery tracking updates, and appointment reminders.",
+        title: "Delivery Updates",
+        desc: "Automated order confirmations, real-time shipment tracking alerts, and scheduled reminder messages on mobile.",
       },
       {
-        icon: "Users",
-        title: "DM Automation & Broadcasts",
-        desc: "Instagram & Facebook DM automation, segmented broadcast campaigns, and automated re-engagement flows.",
-      },
+        icon: "Send",
+        title: "Audience Broadcasts",
+        desc: "Targeted marketing broadcasts, automated customer support funnels, and lead qualification sequences for high open rates.",
+      }
     ],
     featureRows: [
       {
@@ -2054,7 +2054,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Automated order confirmation & delivery updates",
         description: "Triggering automated shipping alerts, tracking links, and feedback requests when orders update in your ERP.",
-        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
@@ -2121,24 +2121,24 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "BookOpen",
-        title: "Curriculum & Course Authoring",
-        desc: "Flexible course authoring, video lesson hosting, structured curriculum modules, and downloadable resource libraries.",
+        title: "Course Authoring",
+        desc: "Intuitive video lesson builders, structured curriculum modules, rich multimedia embeds, and resource downloads.",
       },
       {
         icon: "Video",
-        title: "Live Virtual Classrooms",
-        desc: "Interactive live classes with WebRTC video, screen sharing, interactive whiteboards, and cloud recording.",
+        title: "Virtual Classrooms",
+        desc: "Embedded WebRTC live video classrooms, collaborative whiteboards, breakout rooms, and presentation suites.",
       },
       {
-        icon: "FileCheck2",
-        title: "Assignments & Proctored Exams",
-        desc: "Automated grading, timed quizzes, assignment submission, and AI-assisted proctored online examination tools.",
+        icon: "FileText",
+        title: "Testing & Exams",
+        desc: "Automated quiz grading, randomized question banks, timed examination windows, and anti-cheating protocols.",
       },
       {
         icon: "Award",
-        title: "Certificates & Parent Portals",
-        desc: "Automated PDF certificate issuance, attendance tracking, fee collection, and dedicated parent visibility dashboards.",
-      },
+        title: "Student Portals",
+        desc: "Automated course certificate generation, gamified progress tracking, grade reports, and parent communications.",
+      }
     ],
     featureRows: [
       {
@@ -2218,24 +2218,24 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "Video",
-        title: "White-Label Meeting Rooms",
-        desc: "Custom-branded video meeting rooms carrying your logo, domain, and custom access permissions.",
+        title: "Custom Video Rooms",
+        desc: "Fully branded, zero-install WebRTC video meeting spaces running seamlessly on web browsers and mobile apps.",
+      },
+      {
+        icon: "Monitor",
+        title: "Collaboration Tools",
+        desc: "HD screen sharing, shared digital whiteboards, private chat threads, cloud recording, and breakout rooms.",
       },
       {
         icon: "Users",
-        title: "Screen Sharing & Breakouts",
-        desc: "HD video, screen sharing, cloud recording, breakout rooms, and in-call interactive chat.",
+        title: "Large Webinars",
+        desc: "High-capacity streaming architecture supporting thousands of concurrent attendees with polls and Q&A tools.",
       },
       {
-        icon: "Radio",
-        title: "Webinar & Large Audience Mode",
-        desc: "Webinar streaming for thousands of concurrent attendees with moderation and Q&A controls.",
-      },
-      {
-        icon: "Server",
-        title: "Self-Hosted Data Residency",
-        desc: "Deploy on your private cloud or on-premise servers for 100% data sovereignty and compliance.",
-      },
+        icon: "Shield",
+        title: "Data Sovereignty",
+        desc: "Deployable on dedicated private cloud clusters or on-premise servers ensuring complete data residency control.",
+      }
     ],
     featureRows: [
       {
@@ -2314,25 +2314,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Ticket",
-        title: "Tiered Ticketing & Promo Codes",
-        desc: "Custom ticket sales tiers, early-bird promo discounts, group seat reservations, and instant PDF ticket generation.",
+        icon: "Tag",
+        title: "Tiered Ticketing",
+        desc: "Custom ticket sales tiers, dynamic early-bird discounts, promotional codes, and instant digital PDF deliveries.",
       },
       {
         icon: "QrCode",
-        title: "QR & NFC Offline Check-In",
-        desc: "High-speed mobile QR code and NFC gate check-in app with offline sync capability during internet dropouts.",
+        title: "Fast QR Check-In",
+        desc: "High-speed mobile QR scanning apps with offline syncing capability, eliminating venue entrance bottlenecks.",
       },
       {
         icon: "Printer",
-        title: "Badge Printing Kiosks",
-        desc: "Self-service badge printing kiosk software for instant attendee registration and physical badge printing.",
+        title: "Badge Printing",
+        desc: "Self-service kiosk integrations providing automated attendee badge printing and fast-track admissions easily.",
       },
       {
         icon: "BarChart3",
-        title: "Live Attendance Dashboards",
-        desc: "Real-time gate scan metrics, capacity tracking, exhibitor lead retrieval, and post-event analytics.",
-      },
+        title: "Live Analytics",
+        desc: "Real-time gate scan telemetry, attendee demographic breakdowns, capacity tracking, and post-event reports.",
+      }
     ],
     featureRows: [
       {
@@ -2411,48 +2411,48 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "FileSpreadsheet",
-        title: "VAT-Compliant Accounting",
-        desc: "Integrated general ledger, automated invoicing, tax compliance, and multi-currency financial reporting.",
+        icon: "FileText",
+        title: "Financial Accounts",
+        desc: "Integrated general ledger, automated invoicing, regional tax compliance, and multi-currency reporting.",
       },
       {
         icon: "Boxes",
-        title: "Multi-Warehouse Stock Control",
-        desc: "Real-time inventory tracking, multi-branch stock transfers, reorder triggers, and SKU management.",
+        title: "Inventory Control",
+        desc: "Real-time stock tracking, multi-branch transfers, automated reorder triggers, and centralized SKU control.",
       },
       {
         icon: "Briefcase",
-        title: "Procurement & Purchase Approvals",
-        desc: "Vendor management, purchase order approvals, multi-tier authorization workflows, and bill matching.",
+        title: "Procurement Flows",
+        desc: "Comprehensive vendor management, automated purchase orders, approval workflows, and invoice matching.",
       },
       {
-        icon: "PieChart",
-        title: "Role-Based Management Dashboards",
-        desc: "Executive KPI dashboards providing real-time visibility into revenue, margins, and operational workloads.",
-      },
+        icon: "Clock",
+        title: "Executive Reports",
+        desc: "Real-time KPI dashboards providing leadership visibility into operational revenue, margins, and workloads.",
+      }
     ],
     featureRows: [
       {
         title: "Accounting & VAT-compliant invoicing",
-        description: "Automated billing pipelines tailored for UAE/GCC VAT regulations and regional tax requirements.",
+        description: "Automated billing pipelines tailored for UAE/GCC VAT regulations, multi-currency invoicing, and regional tax compliance.",
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Multi-branch inventory & warehouse control",
-        description: "Tracking stock movements across multiple warehouses with barcode scanning and low-stock alerts.",
+        description: "Real-time inventory tracking across multiple warehouses with barcode scanning, reorder triggers, and stock transfer logs.",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Procurement & vendor approval workflows",
-        description: "Streamlining purchase requisitions, vendor scorecards, and multi-level approval hierarchies.",
+        description: "Comprehensive procurement workflows with vendor scorecards, automated purchase orders, and multi-tier approval rules.",
         image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Sales CRM & customer account management",
-        description: "Unifying lead pipelines, quotation generation, and order processing into one central system.",
+        description: "Centralized sales CRM unifying lead funnels, quotation generation, automated contracts, and customer account records.",
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
@@ -2509,24 +2509,24 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "Fingerprint",
-        title: "Biometric & Face Recognition",
-        desc: "Hardware integration with RFID, fingerprint, and face-recognition turnstiles and attendance terminals.",
+        title: "Biometric Tracking",
+        desc: "Hardware integration with biometric fingerprint scanners, face recognition terminals, and RFID keycards.",
       },
       {
-        icon: "Clock",
-        title: "Shift Rostering & Overtime",
-        desc: "Automated shift planning, rotas, grace-period rules, overtime calculation, and leave management.",
+        icon: "Calendar",
+        title: "Shift Rostering",
+        desc: "Automated shift planning, rotational schedule management, overtime approvals, and employee mobile leave flows.",
       },
       {
-        icon: "Shield",
-        title: "Door Access Control",
-        desc: "Zone-based security access permissions, time-restricted entry, and visitor check-in management.",
+        icon: "Lock",
+        title: "Access Control",
+        desc: "Zone-based security access permissions, automated visitor badge logs, emergency evacuation lists, and controls.",
       },
       {
-        icon: "FileSpreadsheet",
-        title: "Statutory Payroll Integration",
-        desc: "Direct calculation of attendance hours, leave deductions, overtime pay, and WPS-compliant payroll files.",
-      },
+        icon: "CreditCard",
+        title: "Payroll Processing",
+        desc: "Direct calculation of attendance records, overtime hours, leave deductions, and statutory compliance for payroll.",
+      }
     ],
     featureRows: [
       {
@@ -2606,24 +2606,24 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "Camera",
-        title: "AI CCTV Footfall Analytics",
-        desc: "AI video analytics tracking store footfall, dwell time, queue lengths, and crowd density alerts.",
+        title: "Footfall Analytics",
+        desc: "AI computer vision analytics tracking shopper foot traffic patterns, dwell times, and peak hours across malls.",
       },
       {
-        icon: "Package",
-        title: "Shelf-Gap & Stock-Out Alerts",
-        desc: "Automated visual camera detection of empty shelves and planogram non-compliance.",
+        icon: "Eye",
+        title: "Stock-Out Alerts",
+        desc: "Automated camera shelf monitoring detecting missing merchandise, inventory stock-outs, and misplaced goods.",
       },
       {
-        icon: "Monitor",
-        title: "Wayfinding & Ordering Kiosks",
-        desc: "Interactive self-service mall wayfinding, store directory, and product ordering touchscreen kiosks.",
+        icon: "Compass",
+        title: "Interactive Kiosks",
+        desc: "Interactive 3D digital mall wayfinding directories, self-service food court ordering, and promotional screens.",
       },
       {
-        icon: "Smartphone",
-        title: "AI Floor-Manager Alerts",
-        desc: "Instant mobile alerts to store floor managers when queues build up or cash registers need staffing.",
-      },
+        icon: "Bell",
+        title: "Floor Management",
+        desc: "Instant mobile notifications dispatching retail floor managers, customer service associates, and restock crews.",
+      }
     ],
     featureRows: [
       {
@@ -2707,48 +2707,48 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Compass",
-        title: "User Research & Personas",
-        desc: "In-depth user research, customer journey mapping, and usability testing guiding every UI decision.",
+        icon: "Users",
+        title: "User Research",
+        desc: "In-depth user research, customer journey mapping, and usability testing guiding every single UI decision.",
       },
       {
         icon: "Layout",
-        title: "Wireframes & Prototypes",
-        desc: "Interactive Figma wireframes and clickable prototypes that allow rapid testing before writing code.",
+        title: "Rapid Wireframing",
+        desc: "Interactive Figma wireframes and clickable prototypes allowing rapid stakeholder testing before coding.",
       },
       {
         icon: "Palette",
-        title: "Design Systems & Tokens",
-        desc: "Comprehensive component libraries, color design tokens, and typography systems built for React.",
+        title: "Design Systems",
+        desc: "Comprehensive component libraries, shared color tokens, and modular typography systems built for React.",
       },
       {
-        icon: "CheckCircle2",
-        title: "WCAG Accessibility Review",
-        desc: "Strict adherence to WCAG 2.1 AA contrast and accessibility standards ensuring inclusive design.",
-      },
+        icon: "CheckCircle",
+        title: "WCAG Compliance",
+        desc: "Strict adherence to WCAG 2.1 AA contrast and accessibility standards ensuring inclusive user experiences.",
+      }
     ],
     featureRows: [
       {
         title: "User research & journey mapping",
-        description: "Understanding your users' core goals through persona creation, interview insights, and clickpath mapping.",
+        description: "Understanding user behavior through persona creation, stakeholder interview insights, and customer clickpath mapping.",
         image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Interactive Figma prototypes & testing",
-        description: "Clickable prototypes that test user flows and validate conversion hypothesis before engineering begins.",
+        description: "Interactive Figma prototypes that test user journeys and validate conversion hypotheses before engineering begins.",
         image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Production design systems & component libraries",
-        description: "Figma design systems mapped directly to Tailwind CSS tokens for 1:1 developer implementation.",
+        description: "Comprehensive design systems mapped directly to modular Tailwind CSS tokens for 1:1 production developer handoffs.",
         image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Developer-ready specs & WCAG reviews",
-        description: "Pixel-perfect handoffs with spacing rules, interactive states, micro-animations, and accessibility compliance.",
+        description: "Pixel-perfect handoffs with strict spacing rules, responsive breakpoints, micro-animations, and WCAG accessibility.",
         image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
@@ -2805,24 +2805,24 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "Palette",
-        title: "Logo & Visual Identity",
-        desc: "Distinctive logo design, brand mark exploration, color palette creation, and typography pairing systems.",
+        title: "Visual Identity",
+        desc: "Memorable logo design, customized typography rules, color psychology palettes, and style guides for brands.",
       },
       {
         icon: "BookOpen",
-        title: "Comprehensive Brand Guidelines",
-        desc: "Detailed brand guidelines covering logo usage, spacing rules, font scales, and brand tone of voice.",
+        title: "Brand Guidelines",
+        desc: "Comprehensive brand book covering logo usage boundaries, typography hierarchies, photographic art, and tone.",
       },
       {
-        icon: "Presentation",
-        title: "Marketing Decks & Collateral",
-        desc: "Investor pitch decks, sales collateral, print materials, and digital presentation templates.",
+        icon: "FileText",
+        title: "Marketing Decks",
+        desc: "Executive pitch decks, corporate sales presentations, case study layouts, and digital brochures built to sell.",
       },
       {
         icon: "Share2",
-        title: "Social & Packaging Assets",
-        desc: "Social media post templates, campaign creative, signage, and product packaging design.",
-      },
+        title: "Digital Collateral",
+        desc: "Social media design kits, print collateral, trade show booth graphics, and premium product packaging designs.",
+      }
     ],
     featureRows: [
       {
@@ -2901,25 +2901,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Award",
-        title: "Proven Results",
-        desc: "Data-driven strategies that deliver measurable revenue growth, lead generation, and verified ROI.",
+        icon: "TrendingUp",
+        title: "Data Strategies",
+        desc: "Performance marketing strategies driven by verified analytics, high-intent audience segmentation, and testing.",
       },
       {
         icon: "Layers",
-        title: "Comprehensive Spectrum",
-        desc: "Paid search, paid social, SEO, and email marketing managed as one integrated campaign system.",
+        title: "Full-Funnel Reach",
+        desc: "Multi-channel advertising campaigns across Google Search, Meta, LinkedIn, and display networks built for ROI.",
       },
       {
         icon: "Target",
-        title: "Targeted Audience Campaigns",
-        desc: "Hyper-targeted campaigns reaching decision-makers on Google, LinkedIn, Meta, and regional platforms.",
+        title: "Targeted Campaigns",
+        desc: "Hyper-focused audience targeting reaching decision-makers, qualified B2B buyers, and high-lifetime customers.",
       },
       {
         icon: "BarChart3",
-        title: "Real-Time Attribution",
-        desc: "Transparent multi-touch attribution dashboards tracking every ad dollar spent to revenue won.",
-      },
+        title: "Live Attribution",
+        desc: "Transparent multi-touch attribution dashboards connecting ad expenditure directly to customer conversions.",
+      }
     ],
     featureRows: [
       {
@@ -2999,24 +2999,24 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "Search",
-        title: "Technical SEO Audits",
-        desc: "Fixing crawlability, indexation, Core Web Vitals, site architecture, and structured Schema markup.",
+        title: "Technical Audits",
+        desc: "Resolving crawlability bottlenecks, Core Web Vitals performance, XML sitemaps, structured schemas, and indexing.",
       },
       {
-        icon: "FileText",
-        title: "High-Intent Keyword Strategy",
-        desc: "Researching high-buyer-intent keywords that turn organic search visitors into qualified sales inquiries.",
+        icon: "Key",
+        title: "Keyword Strategy",
+        desc: "Researching high-converting, commercially viable keywords capturing qualified customer search intent online.",
       },
       {
-        icon: "Globe",
-        title: "Local & Multilingual SEO",
-        desc: "Local search optimization for Dubai/GCC and regional Indian markets, with multi-region hreflang setup.",
+        icon: "MapPin",
+        title: "Localized Search",
+        desc: "Google Business Profile optimization, local citation building, and multi-region search rankings capturing local intent.",
       },
       {
-        icon: "Link",
-        title: "Authority & Link Building",
-        desc: "High-authority digital PR, link building, and monthly search engine ranking performance reporting.",
-      },
+        icon: "Link2",
+        title: "Authority Building",
+        desc: "High-authority editorial link acquisition, thought leadership content placement, and brand mentions building trust.",
+      }
     ],
     featureRows: [
       {
@@ -3100,25 +3100,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "Lightbulb",
-        title: "Discovery Workshops",
-        desc: "Interactive requirements workshops mapping user journeys, business goals, and technical scope.",
-      },
-      {
-        icon: "FileSearch",
-        title: "Technical Feasibility Audit",
-        desc: "Evaluating technical feasibility, architecture risks, and selecting the optimal technology stack.",
+        icon: "Compass",
+        title: "Product Discovery",
+        desc: "Structured stakeholder workshops translating complex business concepts into prioritized feature roadmaps.",
       },
       {
         icon: "CheckSquare",
-        title: "MVP Scoping & Roadmaps",
-        desc: "Scoping minimum viable products and phased release roadmaps so you launch early and iterate.",
+        title: "Feasibility Audits",
+        desc: "Evaluating technical feasibility, system architecture risks, third-party API dependencies, and bottlenecks.",
+      },
+      {
+        icon: "Map",
+        title: "MVP Roadmapping",
+        desc: "Defining lean Minimum Viable Products that balance rapid speed-to-market with core feature functionality and UX.",
       },
       {
         icon: "DollarSign",
-        title: "Cost & Timeline Estimation",
-        desc: "Realistic cost estimation, timeline projections, and vendor evaluation to keep projects on track.",
-      },
+        title: "Cost Estimation",
+        desc: "Transparent infrastructure cost projections, sprint schedules, resource allocations, and realistic milestones.",
+      }
     ],
     featureRows: [
       {
@@ -3197,25 +3197,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     },
     highlights: [
       {
-        icon: "ShieldCheck",
-        title: "Proactive Monitoring & Uptime",
-        desc: "24/7 server monitoring, uptime tracking, and instant alerts catching server issues before users notice.",
+        icon: "Activity",
+        title: "Uptime Monitoring",
+        desc: "24/7 automated server telemetry monitoring, health checks, and rapid incident response protocols for uptime.",
       },
       {
-        icon: "Lock",
-        title: "Security & Dependency Patching",
-        desc: "Regular security audits, framework updates, dependency vulnerability patching, and SSL management.",
+        icon: "Shield",
+        title: "Security Patching",
+        desc: "Scheduled framework updates, vulnerability scanning, security audits, and zero-day dependency patching.",
       },
       {
         icon: "Wrench",
-        title: "Bug Fixes & Incremental Work",
-        desc: "Dedicated developer hours each month for bug fixes, performance tuning, and new feature enhancements.",
+        title: "Feature Updates",
+        desc: "Dedicated monthly engineering hours for feature iterations, performance tuning, UI refinements, and updates.",
       },
       {
         icon: "Clock",
-        title: "Defined SLAs & Priority Tiers",
-        desc: "Guaranteed SLA response times (down to 15 mins for critical outages) with transparent ticket tracking.",
-      },
+        title: "SLA Guarantees",
+        desc: "Strict contractual response times, priority support ticketing, dedicated technical account leads, and reviews.",
+      }
     ],
     featureRows: [
       {

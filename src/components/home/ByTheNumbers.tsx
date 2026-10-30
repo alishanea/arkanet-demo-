@@ -33,7 +33,7 @@ export const ByTheNumbers: React.FC = () => {
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight">
             By the Numbers
           </h2>
-          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed">
+          <p className="font-sans font-medium text-[#202B61]/80 text-sm sm:text-base leading-relaxed">
             Measurable engineering reliability, velocity, and proven commercial outcomes across engagements.
           </p>
         </div>
@@ -53,7 +53,7 @@ export const ByTheNumbers: React.FC = () => {
                   {stat.title}
                 </div>
               </div>
-              <p className="font-sans text-xs sm:text-sm text-slate-500 font-medium">
+              <p className="font-sans text-xs sm:text-sm text-[#202B61]/80 font-medium">
                 {stat.desc}
               </p>
             </div>

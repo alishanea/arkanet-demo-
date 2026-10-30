@@ -37,7 +37,7 @@ export const FeaturedServices: React.FC<FeaturedServicesProps> = ({ onOpenBookin
                 <h3 className="font-heading font-bold text-xl text-[#202B61] mb-3">
                   {service.title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                <p className="text-sm text-[#202B61]/80 leading-relaxed mb-6">
                   {service.description}
                 </p>
               </div>

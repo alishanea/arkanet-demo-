@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Shield, Cpu, Zap, Layers, CheckCircle2 } from "lucide-react";
+import { Shield, Cpu, Zap, Layers } from "lucide-react";
 
 const STATS = [
   {
@@ -31,22 +31,22 @@ const PILLARS = [
   {
     icon: Layers,
     title: "Dual-Hub Engineering Synergy",
-    desc: "We combine strategic client discovery at our Dubai headquarters with the rapid velocity of our dedicated engineering and R&D centers located in India.",
+    desc: "We combine strategic client discovery at our Dubai headquarters with the rapid velocity of our dedicated engineering and R&D centers located across India.",
   },
   {
     icon: Cpu,
     title: "Applied AI & Automation",
-    desc: "We build production-ready retrieval pipelines, fine-tuned domain models, intelligent document extraction, and autonomous workflows that integrate directly into your core enterprise databases.",
+    desc: "We build production-ready retrieval pipelines, fine-tuned domain models, and intelligent workflows that integrate directly into core enterprise databases.",
   },
   {
     icon: Zap,
     title: "Speed with Production Rigor",
-    desc: "Two-week agile sprints, continuous integration and deployment pipelines, strict TypeScript typing, and automated preview environments guarantee fast delivery without compounding any technical debt.",
+    desc: "Two-week agile sprints, continuous integration pipelines, strict TypeScript typing, and preview environments guarantee fast delivery with zero technical debt.",
   },
   {
     icon: Shield,
     title: "Enterprise Security & IP",
-    desc: "All client intellectual property belongs entirely to you. We enforce mutual non-disclosure agreements, encrypted credential vaults, SOC2 guidelines, and HIPAA-ready infrastructure.",
+    desc: "All client intellectual property belongs entirely to you. We enforce mutual confidentiality agreements, encrypted credential vaults, and SOC2-ready protocols.",
   },
 ];
 
@@ -63,31 +63,13 @@ export function AboutWhoWeAre() {
             </h2>
           </div>
 
-          <div className="lg:col-span-7 space-y-5 text-slate-600 font-sans text-base sm:text-lg leading-relaxed font-normal">
+          <div className="lg:col-span-7 space-y-5 text-[#202B61]/80 font-sans text-base sm:text-lg leading-relaxed font-normal">
             <p>
               Arkanet Technologies was founded with a singular conviction: businesses deserve technology partners who think like software owners, not disconnected outsourced agencies. Too many digital initiatives stumble because discovery, design, development, and hosting are fragmented across disparate vendors.
             </p>
             <p>
               We operate across 6 specialized practices — custom web platforms, native mobile applications, applied artificial intelligence, cloud architecture, UI/UX systems, and business process automation. By unifying strategic advisory in Dubai with deep technical craftsmanship in India, we deliver software built around your exact commercial realities.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm font-semibold text-[#202B61]">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
-                <span>End-to-end technical accountability</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
-                <span>Zero legacy vendor lock-in</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
-                <span>Continuous post-launch maintenance</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#202B61] shrink-0" />
-                <span>Dedicated agile engineering squads</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -104,7 +86,7 @@ export function AboutWhoWeAre() {
                 delay: idx * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="bg-[#f8fafc] rounded-xl p-6 sm:p-8 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between h-full text-left space-y-4"
+              className="bg-[#f8fafc] rounded-xl p-6 sm:p-8 transition-all duration-300 flex flex-col justify-between h-full text-left space-y-4"
             >
               <div>
                 <div className="font-heading font-extrabold text-4xl sm:text-5xl text-[#202B61] tracking-tight mb-2">
@@ -114,7 +96,7 @@ export function AboutWhoWeAre() {
                   {stat.label}
                 </h3>
               </div>
-              <p className="font-sans text-xs sm:text-sm text-slate-500 font-normal leading-relaxed">
+              <p className="font-sans text-sm text-[#202B61]/80 font-normal leading-relaxed">
                 {stat.detail}
               </p>
             </motion.div>
@@ -127,7 +109,7 @@ export function AboutWhoWeAre() {
             <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight">
               Our Core Operating Principles
             </h3>
-            <p className="font-sans text-base text-slate-600 leading-relaxed font-normal">
+            <p className="font-sans text-base text-[#202B61]/80 leading-relaxed font-normal">
               How we approach every architectural decision, engineering sprint, and client commitment.
             </p>
           </div>
@@ -148,7 +130,7 @@ export function AboutWhoWeAre() {
                       {pillar.title}
                     </h4>
                   </div>
-                  <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                  <p className="font-sans text-sm sm:text-base text-[#202B61]/80 leading-relaxed font-normal">
                     {pillar.desc}
                   </p>
                 </div>

@@ -131,7 +131,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                     <h3 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] mb-3 tracking-tight">
                       Book a Free Scope Call
                     </h3>
-                    <p className="font-sans text-base sm:text-lg text-slate-600 mb-8 font-medium">
+                    <p className="font-sans text-base sm:text-lg text-[#202B61]/80 mb-8 font-medium">
                       Select a time for a 15-minute technical discovery call with our engineering team.
                     </p>
 
@@ -191,7 +191,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                     <h4 className="font-heading font-bold text-2xl sm:text-3xl text-[#202B61]">
                       Request Received!
                     </h4>
-                    <p className="font-sans text-base text-slate-600 max-w-md mx-auto">
+                    <p className="font-sans text-base text-[#202B61]/80 max-w-md mx-auto">
                       We will review your brief and follow up via email within 2 business hours.
                     </p>
                     <button

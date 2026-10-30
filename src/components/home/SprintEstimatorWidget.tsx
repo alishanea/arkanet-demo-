@@ -183,7 +183,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
               Instant Scope, Timeline &amp; Tech Stack Estimator
             </h2>
-            <p className="font-sans text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+            <p className="font-sans text-xs sm:text-sm text-[#202B61]/80 font-normal leading-relaxed">
               Explore delivery timelines, team composition, and production-ready tech stacks for your next digital product.
             </p>
           </div>
@@ -382,7 +382,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
                     Key Architectural Scope
                   </span>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-[#202B61]/80 leading-relaxed">
                     {currentSpec.deliverables}
                   </p>
                 </div>

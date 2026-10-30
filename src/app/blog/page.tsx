@@ -508,7 +508,7 @@ export default function BlogPage() {
                           </div>
 
                           {/* 3. Excerpt Description */}
-                          <p className="body-main text-[#202B61]/70 pt-1 line-clamp-4">
+                          <p className="body-main text-[#202B61]/80 pt-1 line-clamp-4">
                             {article.description}
                           </p>
                         </div>
@@ -521,14 +521,14 @@ export default function BlogPage() {
                               e.stopPropagation();
                               setSelectedArticle(article);
                             }}
-                            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-[#202B61] transition-colors cursor-pointer"
+                            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#202B61]/80 hover:text-[#202B61] transition-colors cursor-pointer"
                           >
                             <span>Read Article</span>
                             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#202B61]" />
                           </button>
 
                           {/* Author Avatar, Name & Date */}
-                          <div className="flex items-center gap-3 text-sm sm:text-base lg:text-[16px] font-medium text-[#202B61]/75">
+                          <div className="flex items-center gap-3 text-sm sm:text-base lg:text-[16px] font-medium text-[#202B61]/80">
                             <div className="w-8 h-8 rounded-full overflow-hidden relative bg-slate-300 shrink-0">
                               <Image
                                 src={article.avatar}

@@ -45,7 +45,7 @@ function MagneticCloseButton({ onClick }: { onClick: () => void }) {
       <motion.div
         animate={{ rotate: isHovered ? 90 : 0 }}
         transition={{ type: "spring", stiffness: 260, damping: 18 }}
-        className="text-slate-600 group-hover:text-[#202B61] transition-colors duration-200"
+        className="text-[#202B61]/80 group-hover:text-[#202B61] transition-colors duration-200"
       >
         <X className="w-5 h-5" strokeWidth={2.5} />
       </motion.div>
@@ -178,7 +178,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                   <div className="flex items-center gap-2 text-sm font-semibold text-[#202B61]">
                     <span>{currentProject.category}</span>
                     <span className="text-slate-300">•</span>
-                    <span className="text-slate-500 font-normal">{details.year}</span>
+                    <span className="text-[#202B61]/80 font-normal">{details.year}</span>
                   </div>
 
                   {/* Title */}
@@ -187,14 +187,14 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                   </h1>
 
                   {/* Description */}
-                  <p className="font-sans text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-3xl pt-2">
+                  <p className="font-sans text-lg sm:text-xl text-[#202B61]/80 font-normal leading-relaxed max-w-3xl pt-2">
                     {currentProject.description}
                   </p>
 
                   {/* Client Info (Unboxed clean text) */}
                   <div className="pt-2 text-sm space-y-0.5">
                     <p className="font-bold text-[#202B61]">{details.client}</p>
-                    <p className="text-slate-500 font-sans text-xs sm:text-sm">{details.services.join(" • ")}</p>
+                    <p className="text-[#202B61]/80 font-sans text-xs sm:text-sm">{details.services.join(" • ")}</p>
                   </div>
                 </div>
 
@@ -214,7 +214,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                       <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61]">
                         Project Overview
                       </h3>
-                      <p className="font-sans text-base text-slate-600 leading-relaxed font-normal">
+                      <p className="font-sans text-base text-[#202B61]/80 leading-relaxed font-normal">
                         {details.overview}
                       </p>
                     </div>
@@ -223,7 +223,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                       <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61]">
                         The Challenge
                       </h3>
-                      <p className="font-sans text-base text-slate-600 leading-relaxed font-normal">
+                      <p className="font-sans text-base text-[#202B61]/80 leading-relaxed font-normal">
                         {details.challenge}
                       </p>
                     </div>
@@ -234,7 +234,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                     <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61]">
                       Engineering Strategy &amp; Solution
                     </h3>
-                    <p className="font-sans text-base text-slate-600 leading-relaxed font-normal max-w-4xl">
+                    <p className="font-sans text-base text-[#202B61]/80 leading-relaxed font-normal max-w-4xl">
                       {details.solution}
                     </p>
                   </div>
@@ -264,7 +264,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                               <div className="font-heading font-extrabold text-4xl sm:text-5xl text-[#202B61] tracking-tight leading-none mb-3">
                                 {stat}
                               </div>
-                              <p className="font-sans text-sm text-slate-600 leading-relaxed">
+                              <p className="font-sans text-sm text-[#202B61]/80 leading-relaxed">
                                 {label}
                               </p>
                             </>
@@ -281,7 +281,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
 
                 {/* ── TECH STACK & ARCHITECTURE (Clean inline list) ── */}
                 <div className="pt-10 border-t border-slate-200/80 space-y-4">
-                  <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-500">
+                  <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-[#202B61]/80">
                     Tech Stack &amp; Architecture
                   </h4>
                   <div className="flex flex-wrap gap-2">

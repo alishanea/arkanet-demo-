@@ -128,7 +128,7 @@ const ShowcaseCard: React.FC<{ project: ShowcaseProject }> = ({ project }) => {
             {project.title}
           </h3>
 
-          <p className="absolute top-full left-0 right-0 pt-1 text-xs sm:text-sm text-slate-500 font-normal leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none line-clamp-2">
+          <p className="absolute top-full left-0 right-0 pt-1 text-xs sm:text-sm text-[#202B61]/80 font-normal leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none line-clamp-2">
             {project.subtitle}
           </p>
         </div>

@@ -53,7 +53,7 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
             How We Work
           </h2>
 
-          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
+          <p className="font-sans font-normal text-[#202B61]/80 text-sm sm:text-base leading-relaxed max-w-3xl">
             We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
           </p>
         </div>
@@ -88,7 +88,7 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
                   </h3>
 
                   {/* Description (Exact 17 words in each card) */}
-                  <p className="text-xs sm:text-sm text-slate-600 font-sans font-normal leading-relaxed">
+                  <p className="text-sm text-[#202B61]/80 font-sans font-normal leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
           <div className="pt-2 flex items-center">
             <button
               onClick={onOpenBooking}
-              className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-slate-500 hover:text-[#202B61] transition-colors cursor-pointer"
+              className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold font-sans text-[#202B61]/75 hover:text-[#202B61] transition-colors cursor-pointer"
             >
               <span>Book a Free Consultation</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1 text-slate-400 group-hover:text-[#202B61]" />

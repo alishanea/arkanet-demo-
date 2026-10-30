@@ -56,7 +56,7 @@ export function AboutClients() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.55, delay: 0.1 }}
-            className="font-sans text-base sm:text-lg md:text-xl text-slate-600 max-w-4xl pt-1 leading-relaxed font-normal"
+            className="font-sans text-base sm:text-lg md:text-xl text-[#202B61]/80 max-w-4xl pt-1 leading-relaxed font-normal"
           >
             Businesses across Kerala, India, and the Gulf trust us to build, modernise, and scale their digital systems and platforms.
           </motion.p>
@@ -72,20 +72,21 @@ export function AboutClients() {
 
         {/* Single Track: Continuous Smooth Left Glide with Pause on Hover */}
         <div
-          className="flex space-x-6 animate-marquee py-2 group-hover:[animation-play-state:paused]"
+          className="flex shrink-0 items-center animate-marquee py-4 group-hover:[animation-play-state:paused]"
           style={{ animationDuration: "38s" }}
         >
           {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, idx) => (
             <div
               key={`about-client-${logo.id}-${idx}`}
-              className="w-[220px] sm:w-[260px] h-[110px] sm:h-[125px] rounded-[5px] bg-white border border-slate-200/90 flex items-center justify-center p-6 group/card hover:scale-[1.02] transition-all duration-300 shadow-none shrink-0"
+              className="mx-8 sm:mx-12 lg:mx-14 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+              title={logo.alt}
             >
               <img
                 src={logo.src}
                 alt={logo.alt}
                 loading="eager"
                 style={{ mixBlendMode: "multiply" }}
-                className="max-h-11 sm:max-h-13 max-w-[160px] w-auto h-auto object-contain opacity-85 group-hover/card:opacity-100 filter contrast-105 transition-all duration-300"
+                className="h-14 sm:h-16 lg:h-20 max-h-20 max-w-[180px] sm:max-w-[220px] lg:max-w-[260px] w-auto object-contain opacity-80 hover:opacity-100 filter contrast-105 transition-all duration-300"
               />
             </div>
           ))}

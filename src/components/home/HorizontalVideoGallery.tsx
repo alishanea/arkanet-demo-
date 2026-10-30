@@ -249,7 +249,7 @@ export const HorizontalVideoGallery: React.FC = () => {
                     <span className="font-heading font-black text-xl sm:text-2xl tracking-tight uppercase text-[#202B61]">
                       {project.title}
                     </span>
-                    <div className="flex items-center gap-1 text-slate-500">
+                    <div className="flex items-center gap-1 text-[#202B61]/80">
                       <span>ARKANET</span>
                     </div>
                   </div>
@@ -262,7 +262,7 @@ export const HorizontalVideoGallery: React.FC = () => {
                       <h3 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-tight">
                         {project.headline}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans font-normal">
+                      <p className="text-xs sm:text-sm text-[#202B61]/80 leading-relaxed font-sans font-normal">
                         {project.description}
                       </p>
 
@@ -273,7 +273,7 @@ export const HorizontalVideoGallery: React.FC = () => {
                             <span className="w-2.5 h-2.5 rounded-xs bg-[#202B61] shrink-0 mt-1" />
                             <div>
                               <span className="font-heading font-bold text-[#202B61] block">{feat.label}</span>
-                              <span className="text-slate-600 font-sans">{feat.detail}</span>
+                              <span className="text-[#202B61]/80 font-sans">{feat.detail}</span>
                             </div>
                           </div>
                         ))}

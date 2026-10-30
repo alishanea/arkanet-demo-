@@ -41,7 +41,7 @@ export const CertAndNewsletterBand: React.FC = () => {
             <h3 className="font-display font-bold text-xl text-navy mb-2">
               Join Our Newsletter
             </h3>
-            <p className="text-sm text-slate-600 mb-4">
+            <p className="text-sm text-[#202B61]/80 mb-4">
               Get occasional insights on software engineering, AI deployment, and tech roadmaps.
             </p>
 

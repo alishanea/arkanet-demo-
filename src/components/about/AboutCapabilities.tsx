@@ -27,7 +27,7 @@ export function AboutCapabilities() {
                     <li key={itemName}>
                       <Link
                         href={itemHref}
-                        className="font-sans font-medium text-sm sm:text-base text-slate-600 hover:text-[#202B61] transition-colors leading-snug inline-block"
+                        className="font-sans font-normal text-sm sm:text-base text-[#202B61]/80 hover:text-[#202B61] transition-colors leading-snug inline-block"
                       >
                         {itemName}
                       </Link>

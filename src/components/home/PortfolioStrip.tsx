@@ -16,7 +16,7 @@ export const PortfolioStrip: React.FC<PortfolioStripProps> = ({ onOpenBooking })
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight">
             Production Proof &amp; Selected Work
           </h2>
-          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl">
+          <p className="font-sans font-medium text-[#202B61]/80 text-sm sm:text-base leading-relaxed max-w-3xl">
             Shipped digital products, web platforms, and mobile applications operating reliably at commercial scale.
           </p>
         </div>
@@ -40,7 +40,7 @@ export const PortfolioStrip: React.FC<PortfolioStripProps> = ({ onOpenBooking })
                   {item.title}
                 </h3>
               </div>
-              <p className="text-xs font-medium text-slate-500 mt-2">
+              <p className="text-xs font-medium text-[#202B61]/80 mt-2">
                 {item.result}
               </p>
             </div>

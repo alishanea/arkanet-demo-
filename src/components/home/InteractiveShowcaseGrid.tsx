@@ -132,7 +132,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
 
                   {/* Hover State: Technical Value Proposition */}
                   <div className="absolute inset-0 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto">
-                    <p className="font-sans font-medium text-[12.5px] sm:text-[13px] text-[#202B61]/90 leading-relaxed line-clamp-4">
+                    <p className="font-sans font-normal text-sm text-[#202B61]/80 leading-relaxed line-clamp-4">
                       {card.description}
                     </p>
                   </div>

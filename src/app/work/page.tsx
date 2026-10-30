@@ -340,12 +340,12 @@ export default function WorkPage() {
                   className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 outline-none focus:outline-none focus:ring-0 select-none ${
                     isActive
                       ? "bg-[#202B61] text-white"
-                      : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200/90 hover:border-slate-300"
+                      : "bg-white text-[#202B61]/80 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
                   }`}
                 >
                   <span>{cat}</span>
                   <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
-                    isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
+                    isActive ? "bg-white/20 text-white" : "bg-slate-100 text-[#202B61]/70"
                   }`}>
                     {count}
                   </span>
@@ -358,14 +358,14 @@ export default function WorkPage() {
           <div className="flex items-center gap-1 bg-white border border-slate-200/90 rounded-xl p-1 shrink-0">
             <button
               onClick={() => setViewMode("detailed")}
-              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "detailed" ? "bg-[#202B61] text-white" : "text-slate-500 hover:text-slate-900"}`}
+              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "detailed" ? "bg-[#202B61] text-white" : "text-[#202B61]/70 hover:text-[#202B61]"}`}
               title="Detailed List View"
             >
               <List className="w-4 h-4" />
             </button>
             <button
               onClick={() => setViewMode("compact")}
-              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "compact" ? "bg-[#202B61] text-white" : "text-slate-500 hover:text-slate-900"}`}
+              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "compact" ? "bg-[#202B61] text-white" : "text-[#202B61]/70 hover:text-[#202B61]"}`}
               title="Compact Grid View"
             >
               <LayoutGrid className="w-4 h-4" />
@@ -444,7 +444,7 @@ export default function WorkPage() {
                             <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0" />
                           </div>
 
-                          <p className="font-sans text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed max-w-2xl line-clamp-2">
+                          <p className="font-sans text-sm text-[#202B61]/80 font-normal leading-relaxed max-w-2xl line-clamp-2">
                             {project.description}
                           </p>
                         </div>
@@ -454,7 +454,7 @@ export default function WorkPage() {
                           {techChips.map((tech, tIdx) => (
                             <span
                               key={tIdx}
-                              className="font-sans text-[10px] sm:text-[11px] font-medium text-slate-600 bg-slate-100/80 px-2 py-0.5 rounded-md"
+                              className="font-sans text-[10px] sm:text-[11px] font-medium text-[#202B61]/80 bg-slate-100/80 px-2 py-0.5 rounded-md"
                             >
                               {tech}
                             </span>
@@ -504,7 +504,7 @@ export default function WorkPage() {
                     {/* Metadata & Description */}
                     <div className="space-y-2 flex-1 flex flex-col justify-between">
                       <div>
-                        <div className="flex items-center justify-between text-[11px] text-slate-500 mb-1">
+                        <div className="flex items-center justify-between text-[11px] text-[#202B61]/70 mb-1">
                           <span className="font-semibold text-[#202B61] text-[11px]">
                             {project.category}
                           </span>
@@ -518,7 +518,7 @@ export default function WorkPage() {
                           <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0 mt-0.5" />
                         </div>
 
-                        <p className="font-sans text-xs text-slate-600 line-clamp-2 leading-relaxed mt-1">
+                        <p className="font-sans text-sm text-[#202B61]/80 line-clamp-2 leading-relaxed mt-1">
                           {project.description}
                         </p>
                       </div>
@@ -528,7 +528,7 @@ export default function WorkPage() {
                         {techChips.map((tech, tIdx) => (
                           <span
                             key={tIdx}
-                            className="font-sans text-[10px] font-medium text-slate-600 bg-slate-50 border border-slate-200/60 px-2 py-0.5 rounded-md"
+                            className="font-sans text-[10px] font-medium text-[#202B61]/80 bg-slate-50 border border-slate-200/60 px-2 py-0.5 rounded-md"
                           >
                             {tech}
                           </span>

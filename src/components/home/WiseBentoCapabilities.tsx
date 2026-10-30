@@ -38,7 +38,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
               Architected for Speed.<br />
               Engineered for Enterprise Scale.
             </h2>
-            <p className="font-sans text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+            <p className="font-sans text-sm sm:text-base text-[#202B61]/80 font-normal leading-relaxed">
               We eliminate technical bloat. Delivering production-ready web platforms, native mobile ecosystems, applied AI systems, and cloud architectures.
             </p>
           </div>
@@ -51,7 +51,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
               className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 activeTab === "all"
                   ? "bg-[#202B61] text-white shadow-xs"
-                  : "text-slate-600 hover:text-slate-900"
+                  : "text-[#202B61]/80 hover:text-[#202B61]"
               }`}
             >
               All Capabilities
@@ -62,7 +62,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
               className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 activeTab === "startups"
                   ? "bg-[#202B61] text-white shadow-xs"
-                  : "text-slate-600 hover:text-slate-900"
+                  : "text-[#202B61]/80 hover:text-[#202B61]"
               }`}
             >
               Startups &amp; MVPs
@@ -73,7 +73,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
               className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 activeTab === "enterprise"
                   ? "bg-[#202B61] text-white shadow-xs"
-                  : "text-slate-600 hover:text-slate-900"
+                  : "text-[#202B61]/80 hover:text-[#202B61]"
               }`}
             >
               Enterprise Systems
@@ -106,7 +106,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
                 <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61]">
                   Web Applications &amp; SaaS Platforms
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+                <p className="font-sans text-sm text-[#202B61]/80 leading-relaxed max-w-xl">
                   High-performance web applications, client portals, and multi-tenant SaaS platforms engineered with Next.js 15, TypeScript, and edge-distributed caching.
                 </p>
               </div>
@@ -150,7 +150,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
                 <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61]">
                   Native Mobile Platforms
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sans text-sm text-[#202B61]/80 leading-relaxed">
                   Smooth iOS and Android mobile applications built with React Native and Swift/Kotlin, featuring offline-first local SQLite sync and instant biometric login.
                 </p>
               </div>
@@ -195,8 +195,8 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
                 <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61]">
                   Applied AI &amp; LLM Automation
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Enterprise document intelligence, autonomous workflow agents, and custom fine-tuned models that automate repetitive back-office operations.
+                <p className="font-sans text-sm text-[#202B61]/80 leading-relaxed">
+                  Enterprise document intelligence, autonomous workflow agents, and custom fine-tuned models that automate repetitive back-office operations across systems.
                 </p>
               </div>
             </div>
@@ -244,7 +244,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
                 <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61]">
                   Cloud Architectures &amp; DevOps
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+                <p className="font-sans text-sm text-[#202B61]/80 leading-relaxed max-w-xl">
                   Enterprise AWS and multi-cloud infrastructure managed with Terraform, Docker containers, automated CI/CD pipelines, and zero-downtime rolling deployments.
                 </p>
               </div>

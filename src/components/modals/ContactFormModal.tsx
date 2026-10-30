@@ -618,7 +618,7 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.28 }}
-                      className="text-lg text-slate-600 max-w-md mx-auto leading-relaxed"
+                      className="text-lg text-[#202B61]/80 max-w-md mx-auto leading-relaxed"
                     >
                       We have received your message. Our team will review your
                       project details and respond in one business day.

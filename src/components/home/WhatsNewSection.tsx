@@ -173,8 +173,8 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 </div>
 
                 {/* 3-Line Description (enforced 3-line baseline without ellipsis) */}
-                <div className="h-[3.9rem] sm:h-[4.25rem] flex items-start">
-                  <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/70 leading-relaxed font-normal line-clamp-3">
+                <div className="h-[4.2rem] sm:h-[4.5rem] flex items-start">
+                  <p className="font-sans text-sm text-[#202B61]/80 leading-relaxed font-normal line-clamp-3">
                     {project.description}
                   </p>
                 </div>

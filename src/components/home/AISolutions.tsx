@@ -35,7 +35,7 @@ export const AISolutions: React.FC<AISolutionsProps> = ({ onOpenBooking }) => {
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#202B61] mb-4">
               AI Solutions Built for Real Work
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-[#202B61]/80 max-w-2xl mx-auto leading-relaxed">
               From custom ML models to conversational agents that actually understand context. We design, build, and deploy AI systems that integrate with your stack, learn from your data, and deliver measurable ROI, not demos.
             </p>
           </div>
@@ -50,7 +50,7 @@ export const AISolutions: React.FC<AISolutionsProps> = ({ onOpenBooking }) => {
                   <h3 className="font-heading font-bold text-xl text-[#202B61] mb-3">
                     {cap.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm text-[#202B61]/80 leading-relaxed">
                     {cap.desc}
                   </p>
                 </div>

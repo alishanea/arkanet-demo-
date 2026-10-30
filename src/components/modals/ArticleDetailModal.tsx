@@ -46,7 +46,7 @@ function MagneticCloseButton({ onClick }: { onClick: () => void }) {
       <motion.div
         animate={{ rotate: isHovered ? 90 : 0 }}
         transition={{ type: "spring", stiffness: 260, damping: 18 }}
-        className="text-slate-600 group-hover:text-[#202B61] transition-colors duration-200"
+        className="text-[#202B61]/80 group-hover:text-[#202B61] transition-colors duration-200"
       >
         <X className="w-5 h-5" strokeWidth={2.5} />
       </motion.div>
@@ -174,7 +174,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                   <div className="flex items-center gap-2 text-sm font-semibold text-[#202B61]">
                     <span>{currentArticle.category}</span>
                     <span className="text-slate-300">•</span>
-                    <span className="text-slate-500 font-normal">{currentArticle.readTime}</span>
+                    <span className="text-[#202B61]/80 font-normal">{currentArticle.readTime}</span>
                   </div>
 
                   {/* Title */}
@@ -183,7 +183,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                   </h1>
 
                   {/* Description Excerpt */}
-                  <p className="font-sans text-lg sm:text-xl text-slate-600 font-normal leading-relaxed pt-2">
+                  <p className="font-sans text-lg sm:text-xl text-[#202B61]/80 font-normal leading-relaxed pt-2">
                     {currentArticle.description}
                   </p>
 
@@ -199,7 +199,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                     </div>
                     <div className="text-sm">
                       <p className="font-bold text-[#202B61]">{currentArticle.author}</p>
-                      <p className="text-slate-500 font-sans text-xs">{currentArticle.date}</p>
+                      <p className="text-[#202B61]/80 font-sans text-xs">{currentArticle.date}</p>
                     </div>
                   </div>
                 </div>
@@ -217,7 +217,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                 {/* ── ARTICLE BODY CONTENT (Seamless typography, no card boxes) ── */}
                 <div className="pt-6 border-t border-slate-200/80 space-y-8">
                   {/* Intro paragraphs */}
-                  <div className="space-y-5 font-sans text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                  <div className="space-y-5 font-sans text-base sm:text-lg text-[#202B61]/80 leading-relaxed font-normal">
                     {(currentArticle.content?.intro ?? [currentArticle.description]).map((paragraph) => (
                       <p key={paragraph}>{renderParagraph(paragraph)}</p>
                     ))}
@@ -228,7 +228,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                       <h2 className="font-heading font-bold text-2xl sm:text-3xl text-[#202B61]">
                         {section.heading}
                       </h2>
-                      <div className="space-y-4 font-sans text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                      <div className="space-y-4 font-sans text-base sm:text-lg text-[#202B61]/80 leading-relaxed font-normal">
                         {section.paragraphs.map((paragraph) => (
                           <p key={paragraph}>{renderParagraph(paragraph)}</p>
                         ))}
@@ -244,7 +244,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                       <h2 className="font-heading font-bold text-2xl text-[#202B61]">
                         Up Next
                       </h2>
-                      <p className="font-sans text-sm text-slate-500">
+                      <p className="font-sans text-sm text-[#202B61]/80">
                         Continue exploring perspectives from our engineering leadership.
                       </p>
                     </div>
@@ -263,14 +263,14 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                         <div className="flex items-center gap-2 text-xs font-semibold text-[#202B61]">
                           <span>{nextArticle.category}</span>
                           <span className="text-slate-300">•</span>
-                          <span className="text-slate-500 font-normal">{nextArticle.readTime}</span>
+                          <span className="text-[#202B61]/80 font-normal">{nextArticle.readTime}</span>
                         </div>
 
                         <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61] leading-snug">
                           {nextArticle.title}
                         </h3>
 
-                        <p className="font-sans text-sm text-slate-600 line-clamp-2 leading-relaxed">
+                        <p className="font-sans text-sm text-[#202B61]/80 line-clamp-2 leading-relaxed">
                           {nextArticle.description}
                         </p>
 

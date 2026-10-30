@@ -13,7 +13,7 @@ export function AboutTeam() {
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-tight">
             One team, start to finish
           </h2>
-          <p className="font-sans font-medium text-slate-600 text-sm sm:text-base leading-relaxed">
+          <p className="font-sans font-normal text-[#202B61]/80 text-sm sm:text-base leading-relaxed">
             Arkanet is a team of engineers, designers, and strategists working across web, mobile, AI, and digital infrastructure — one cohesive team, not fragmented handoffs between disparate vendors.
           </p>
         </div>
@@ -40,7 +40,7 @@ export function AboutTeam() {
                 <h3 className="font-heading font-bold text-base sm:text-lg text-[#202B61] leading-tight">
                   {member.name}
                 </h3>
-                <p className="font-sans text-xs sm:text-sm text-slate-500 font-medium mt-1">
+                <p className="font-sans text-xs sm:text-sm text-[#202B61]/80 font-normal mt-1">
                   {member.role}
                 </p>
               </div>

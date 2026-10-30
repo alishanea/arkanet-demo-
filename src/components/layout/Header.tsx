@@ -50,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
     setMobileMenuOpen(false);
   };
 
-  const handleWorkClick = (e) => {
+  const handleWorkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setActiveMenu(null);
     setMobileMenuOpen(false);
     if (pathname === "/") {

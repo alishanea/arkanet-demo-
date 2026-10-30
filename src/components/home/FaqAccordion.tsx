@@ -43,7 +43,7 @@ export const FaqAccordion: React.FC = () => {
                   )}
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-5 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-3">
+                  <div className="px-6 pb-5 text-[#202B61]/80 text-base leading-relaxed border-t border-slate-100 pt-3">
                     {item.answer}
                   </div>
                 )}
