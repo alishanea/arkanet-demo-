@@ -277,14 +277,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 </span>
               </Link>
 
-              {/* Capabilities Button (Immediately after Home) */}
+              {/* Capabilities Button (Toggles strictly on CLICK, not on hover) */}
               <div
                 className="relative shrink-0"
-                onMouseEnter={() => {
-                  setHoveredTab("capabilities");
-                  handleMenuEnter("services");
-                }}
-                onMouseLeave={handleMenuLeave}
+                onMouseEnter={() => setHoveredTab("capabilities")}
+                onMouseLeave={() => setHoveredTab(null)}
               >
                 {(activeMenu === "services" || isCapabilitiesActive) && (
                   <motion.div
@@ -440,13 +437,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           </div>
         </LayoutGroup>
 
-        {/* ── DESKTOP CAPABILITIES MEGA-MENU (PERFECTLY CENTERED ON SCREEN & NAVBAR) ── */}
+        {/* ── DESKTOP CAPABILITIES MEGA-MENU (OPENED STRICTLY ON CLICK) ── */}
         <AnimatePresence>
           {activeMenu === "services" && (
             <div
               className="w-full flex justify-center pt-2 sm:pt-3 pointer-events-auto"
-              onMouseEnter={() => handleMenuEnter("services")}
-              onMouseLeave={handleMenuLeave}
             >
               <motion.div
                 initial={{ opacity: 0, y: -8, scale: 0.98 }}
