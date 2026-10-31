@@ -127,56 +127,74 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </Link>
         </div>
 
-        {/* ── 2. 4-COLUMN BALANCED, PIXEL-PERFECT SYMMETRICAL PROJECT GRID ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 lg:gap-8 items-start w-full">
-          {FEATURED_PROJECTS.map((project) => (
+        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID WITH CLEAN SEPARATION LINES ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 items-stretch w-full">
+          {FEATURED_PROJECTS.map((project, idx) => (
             <div
               key={project.id}
-              role="button"
-              tabIndex={0}
-              aria-haspopup="dialog"
-              aria-label={`View case study: ${project.title}`}
-              onClick={() => setSelectedProject(project)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  setSelectedProject(project);
-                }
-              }}
-              className="group flex flex-col justify-between h-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-xl transition-transform duration-200"
+              className={`flex flex-col justify-between h-full transition-all duration-200 ${
+                /* Desktop: simple vertical separation line between each box */
+                idx < 3 ? "lg:border-r lg:border-slate-200/90 lg:pr-6 xl:pr-7" : "lg:border-r-0 lg:pr-0"
+              } ${
+                /* Desktop: left padding on subsequent columns */
+                idx > 0 ? "lg:pl-6 xl:pl-7" : "lg:pl-0"
+              } ${
+                /* Tablet: separation line down the middle between column 1 and column 2 */
+                idx % 2 === 0
+                  ? "sm:border-r sm:border-slate-200/90 sm:pr-6 sm:pl-0"
+                  : "sm:border-r-0 sm:pl-6 sm:pr-0"
+              } ${
+                /* Mobile: subtle horizontal separation line between stacked items */
+                idx < 3 ? "border-b border-slate-200/90 pb-8 sm:border-b-0 sm:pb-0" : ""
+              }`}
             >
-              {/* Frameless Image with Rounded Corners & Smooth Hover Scale */}
-              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0">
-                <Image
-                  src={project.outerImage}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                />
-              </div>
-
-              {/* Clean Typography Stack with Pixel-Perfect Symmetry Across All 4 Cards */}
-              <div className="pt-4 sm:pt-5 flex flex-col flex-1">
-                {/* Category Label (enforced single-line baseline) */}
-                <div className="h-5 flex items-center mb-2">
-                  <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#202B61]/75 font-sans">
-                    {project.category}
-                  </p>
+              <div
+                role="button"
+                tabIndex={0}
+                aria-haspopup="dialog"
+                aria-label={`View case study: ${project.title}`}
+                onClick={() => setSelectedProject(project)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedProject(project);
+                  }
+                }}
+                className="group flex flex-col justify-between h-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-xl transition-transform duration-200"
+              >
+                {/* Frameless Image with Rounded Corners & Smooth Hover Scale */}
+                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0">
+                  <Image
+                    src={project.outerImage}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
                 </div>
 
-                {/* Project Headline (enforced 2-line container for identical baseline across all 4 cards) */}
-                <div className="h-[3rem] sm:h-[3.25rem] lg:h-[3.5rem] flex items-start mb-2">
-                  <h3 className="font-heading font-bold text-base sm:text-lg lg:text-[18px] text-[#202B61] leading-snug tracking-tight group-hover:text-[#202B61]/80 transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
+                {/* Clean Typography Stack with Pixel-Perfect Symmetry Across All 4 Cards */}
+                <div className="pt-4 sm:pt-5 flex flex-col flex-1">
+                  {/* Category Label (enforced single-line baseline) */}
+                  <div className="h-5 flex items-center mb-2">
+                    <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#202B61]/75 font-sans">
+                      {project.category}
+                    </p>
+                  </div>
 
-                {/* 3-Line Description (enforced 3-line baseline without ellipsis) */}
-                <div className="h-[4.2rem] sm:h-[4.5rem] flex items-start">
-                  <p className="font-sans text-sm text-[#202B61]/80 leading-relaxed font-normal line-clamp-3">
-                    {project.description}
-                  </p>
+                  {/* Project Headline (enforced 2-line container for identical baseline across all 4 cards) */}
+                  <div className="h-[3rem] sm:h-[3.25rem] lg:h-[3.5rem] flex items-start mb-2">
+                    <h3 className="font-heading font-bold text-base sm:text-lg lg:text-[18px] text-[#202B61] leading-snug tracking-tight group-hover:text-[#202B61]/80 transition-colors">
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  {/* 3-Line Description (enforced 3-line baseline without ellipsis) */}
+                  <div className="h-[4.2rem] sm:h-[4.5rem] flex items-start">
+                    <p className="font-sans text-sm text-[#202B61]/80 leading-relaxed font-normal line-clamp-3">
+                      {project.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
