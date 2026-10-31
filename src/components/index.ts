@@ -40,6 +40,8 @@ export * from "./home/FeaturedServices";
 
 // About Page Components
 export * from "./about/AboutHero";
+export * from "./about/AboutWhoWeAre";
+export * from "./about/AboutPrinciples";
 export * from "./about/AboutClients";
 export * from "./about/AboutCapabilities";
 export * from "./about/AboutTestimonials";

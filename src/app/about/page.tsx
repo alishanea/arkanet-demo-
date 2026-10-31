@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ContactFormModal } from "@/components/modals/ContactFormModal";
 import { AboutHero } from "@/components/about/AboutHero";
 import { AboutWhoWeAre } from "@/components/about/AboutWhoWeAre";
+import { AboutPrinciples } from "@/components/about/AboutPrinciples";
 import { AboutClients } from "@/components/about/AboutClients";
 import { AboutTestimonials } from "@/components/about/AboutTestimonials";
 import { AboutCTA } from "@/components/about/AboutCTA";
@@ -21,6 +22,7 @@ export default function AboutPage() {
 
       <AboutHero />
       <AboutWhoWeAre />
+      <AboutPrinciples />
       <AboutClients />
       <AboutTestimonials />
       <AboutCTA onOpenBooking={openContact} />
