@@ -62,7 +62,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
           {/* Continuous Trailing Track (Train) */}
           <div
             className="flex shrink-0 items-center animate-marquee group-hover:[animation-play-state:paused]"
-            style={{ animationDuration: "55s" }}
+            style={{ animationDuration: "95s" }}
           >
             {trailingLogos.map((logo, idx) => (
               <div

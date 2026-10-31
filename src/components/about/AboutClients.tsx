@@ -73,7 +73,7 @@ export function AboutClients() {
         {/* Single Track: Continuous Smooth Left Glide with Pause on Hover */}
         <div
           className="flex shrink-0 items-center animate-marquee py-4 group-hover:[animation-play-state:paused]"
-          style={{ animationDuration: "38s" }}
+          style={{ animationDuration: "95s" }}
         >
           {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, idx) => (
             <div

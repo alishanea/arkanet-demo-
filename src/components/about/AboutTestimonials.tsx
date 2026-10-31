@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const AUTO_SCROLL_INTERVAL = 6000;
+const AUTO_SCROLL_INTERVAL = 11000;
 
 export function AboutTestimonials() {
   const [active, setActive] = useState(0);

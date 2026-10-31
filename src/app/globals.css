@@ -222,6 +222,6 @@
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 36s linear infinite;
+  animation: marquee 95s linear infinite;
   will-change: transform;
 }
