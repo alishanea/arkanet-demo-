@@ -45,6 +45,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const isAboutActive = pathname === "/about";
   const isWorkActive = pathname === "/work" || pathname.startsWith("/work");
   const isContactActive = pathname === "/contact";
+  const isApplicationActive = pathname === "/application";
 
   const scrollToSection = (sectionId: string) => {
     setActiveMenu(null);
@@ -220,7 +221,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
       </AnimatePresence>
 
       {/* ── SLEEK, PREMIUM FLOATING PILL NAVBAR (ORGANIC, NOT BOXY) ── */}
-      <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full pointer-events-none">
+      <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto w-full pointer-events-none">
         <LayoutGroup id="header-nav">
           <div
             onMouseLeave={() => setHoveredTab(null)}
@@ -414,13 +415,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
             {/* 3. RIGHT SIDE: APPLICATION BUTTON ON DESKTOP + MOBILE TOGGLE */}
             <div className="flex items-center justify-end flex-1 gap-2.5 sm:gap-3">
-              <button
-                type="button"
-                onClick={handleCtaClick}
-                className="hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full bg-[#202B61] hover:bg-[#202B61]/90 text-white font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer select-none"
+              <Link
+                href="/application"
+                onClick={handleNavClick}
+                className={`hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer select-none ${
+                  isApplicationActive
+                    ? "bg-[#202B61] text-white ring-2 ring-[#202B61] ring-offset-2"
+                    : "bg-[#202B61] hover:bg-[#202B61]/90 text-white"
+                }`}
               >
                 Application
-              </button>
+              </Link>
 
               {/* Mobile Hamburger Toggle */}
               <button
@@ -526,14 +531,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               </div>
 
               <div className="pt-2 border-t border-slate-100">
-                <button
-                  type="button"
-                  onClick={handleCtaClick}
+                <Link
+                  href="/application"
+                  onClick={handleNavClick}
                   className="w-full flex items-center justify-center gap-2 bg-[#202B61] text-white py-3 rounded-full font-bold text-sm shadow-md"
                 >
-                  <span>Application</span>
+                  <span>Application Showcase &amp; Downloads</span>
                   <ArrowUpRight className="w-4 h-4 text-white" />
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>
