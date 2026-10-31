@@ -52,18 +52,21 @@ const PILLARS = [
 
 export function AboutWhoWeAre() {
   return (
-    <section id="about-story" className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-white border-t border-slate-200/80 text-left scroll-mt-28 sm:scroll-mt-36">
-      <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-10">
+    <section
+      id="about-story"
+      className="w-full py-14 sm:py-18 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#151E48] text-white border-t border-[#253272] text-left select-none overflow-hidden font-sans scroll-mt-28 sm:scroll-mt-36"
+    >
+      <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12 lg:space-y-14">
         
         {/* Section Heading & In-Depth Story */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
           <div className="lg:col-span-5 space-y-4">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-[1.15]">
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.15]">
               Engineering digital infrastructure that endures
             </h2>
           </div>
 
-          <div className="lg:col-span-7 space-y-5 text-[#202B61]/80 font-sans text-base sm:text-lg leading-relaxed font-normal">
+          <div className="lg:col-span-7 space-y-5 text-white/80 font-sans text-base sm:text-lg leading-relaxed font-normal">
             <p>
               Arkanet Technologies was founded with a singular conviction: businesses deserve technology partners who think like software owners, not disconnected outsourced agencies. Too many digital initiatives stumble because discovery, design, development, and hosting are fragmented across disparate vendors.
             </p>
@@ -73,8 +76,8 @@ export function AboutWhoWeAre() {
           </div>
         </div>
 
-        {/* 4 Stats Grid (Equal Word Length: exactly 10 words each) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        {/* 4 Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
           {STATS.map((stat, idx) => (
             <motion.div
               key={stat.label}
@@ -86,20 +89,20 @@ export function AboutWhoWeAre() {
                 delay: idx * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-                            className="bg-[#f8fafc] rounded-xl border border-slate-200/80 shadow-none p-5 sm:p-6 flex flex-col justify-between h-full text-left space-y-3"
+              className="bg-[#1C2758] rounded-xl border border-[#2D3C82]/80 shadow-none p-5 sm:p-6 flex flex-col justify-between h-full text-left space-y-3"
             >
               <div className="space-y-1.5">
-                <div className="font-heading font-extrabold text-4xl sm:text-5xl text-[#202B61] tracking-tight">
+                <div className="font-heading font-extrabold text-4xl sm:text-5xl text-white tracking-tight">
                   {stat.number}
                 </div>
                 <div className="h-10 sm:h-11 flex items-start">
-                  <h3 className="font-heading font-bold text-base text-[#202B61] leading-snug">
+                  <h3 className="font-heading font-bold text-base text-white leading-snug">
                     {stat.label}
                   </h3>
                 </div>
               </div>
               <div className="flex-1 flex items-start">
-                <p className="font-sans text-sm text-[#202B61]/80 font-normal leading-relaxed">
+                <p className="font-sans text-sm text-white/70 font-normal leading-relaxed">
                   {stat.detail}
                 </p>
               </div>
@@ -107,13 +110,13 @@ export function AboutWhoWeAre() {
           ))}
         </div>
 
-        {/* 4 Operating Pillars (Equal Word Length: exactly 24 words each) */}
-        <div className="space-y-6 pt-6 border-t border-slate-200/80">
+        {/* 4 Operating Pillars */}
+        <div className="space-y-6 pt-8 border-t border-[#253272]">
           <div className="max-w-3xl space-y-3 text-left">
-            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight">
+            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
               Our Core Operating Principles
             </h3>
-            <p className="font-sans text-base text-[#202B61]/80 leading-relaxed font-normal">
+            <p className="font-sans text-base text-white/80 leading-relaxed font-normal">
               How we approach every architectural decision, engineering sprint, and client commitment.
             </p>
           </div>
@@ -124,17 +127,17 @@ export function AboutWhoWeAre() {
               return (
                 <div
                   key={idx}
-                  className="rounded-xl border border-slate-200/80 p-5 sm:p-6 shadow-none bg-[#f8fafc] flex flex-col justify-between h-full space-y-3 text-left transition-all duration-300"
+                  className="rounded-xl border border-[#2D3C82]/80 p-5 sm:p-6 shadow-none bg-[#1C2758] flex flex-col justify-between h-full space-y-3 text-left transition-all duration-300"
                 >
                   <div className="space-y-3.5">
-                    <div className="w-10 h-10 rounded-lg bg-[#202B61] text-white flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/15 text-white flex items-center justify-center">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h4 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
+                    <h4 className="font-heading font-bold text-lg sm:text-xl text-white">
                       {pillar.title}
                     </h4>
                   </div>
-                  <p className="font-sans text-sm sm:text-base text-[#202B61]/80 leading-relaxed font-normal">
+                  <p className="font-sans text-sm sm:text-base text-white/75 leading-relaxed font-normal">
                     {pillar.desc}
                   </p>
                 </div>
