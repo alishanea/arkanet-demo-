@@ -125,14 +125,14 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                 <div className="relative w-full flex-1">
                   {/* Default State: Clean, Refined Headline */}
                   <div className="transition-all duration-200 ease-out group-hover:opacity-0 group-hover:-translate-y-1 group-focus-visible:opacity-0">
-                    <h3 className="font-heading font-bold text-[15px] sm:text-[16px] text-[#202B61] tracking-tight leading-snug">
+                    <h3 className="font-heading font-bold text-[15.5px] sm:text-[16.5px] text-[#202B61] tracking-tight leading-snug">
                       {card.title}
                     </h3>
                   </div>
 
                   {/* Hover State: Technical Value Proposition */}
                   <div className="absolute inset-0 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto">
-                    <p className="font-sans font-normal text-sm text-[#202B61]/80 leading-relaxed line-clamp-4">
+                    <p className="font-sans font-medium text-[13.5px] sm:text-[14px] text-[#202B61] leading-[1.55] line-clamp-4 tracking-[-0.01em]">
                       {card.description}
                     </p>
                   </div>
