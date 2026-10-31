@@ -359,84 +359,80 @@ export default function CapabilityDetailPage() {
             </div>
           </div>
 
-          {/* Symmetrical Architectural Cards Styled Exactly Like Works (Image 1) */}
-          <div className="space-y-5 sm:space-y-6">
+          {/* Alternating Editorial Showcase Pattern with Clean Architectural Separation */}
+          <div className="space-y-6 sm:space-y-8">
             {data.featureRows.map((row, idx) => {
               const rowNum = String(idx + 1).padStart(2, "0");
+              const isImageRight = row.imagePosition ? row.imagePosition === "right" : idx % 2 === 1;
+
               return (
                 <div
                   key={idx}
-                  className="group relative rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 transition-all duration-300 p-5 sm:p-6 lg:p-7 shadow-none text-left overflow-hidden w-full select-none"
+                  className="rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 lg:p-10 shadow-none transition-all duration-300 text-left"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                     
-                    {/* Left Side: Thumbnail (Span 4) - Uniform on left for all cards */}
-                    <div className="lg:col-span-4 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] max-h-[220px] rounded-xl overflow-hidden bg-slate-100 border border-slate-200/70 shrink-0">
-                      <img
-                        src={row.image}
-                        alt={row.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 ease-out"
-                      />
-                      <div className="absolute inset-0 bg-slate-900/[0.04] group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
-                    </div>
-
-                    {/* Right Side: Editorial Architecture & Metadata (Span 8) */}
-                    <div className="lg:col-span-8 flex flex-col justify-between space-y-3">
-                      
-                      {/* Meta Header Row */}
-                      <div className="flex items-center justify-between text-xs">
-                        <div className="flex items-center gap-2">
-                          <span className="font-heading font-black text-slate-400 text-xs sm:text-sm">
-                            #{rowNum}
-                          </span>
-                          <span className="h-3 w-[1px] bg-slate-200" />
-                          <span className="font-semibold text-[#202B61] text-[11px] uppercase tracking-wider">
-                            {data.title}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-1.5 text-slate-400 font-medium text-[11px] sm:text-xs">
-                          <span>Production Architecture</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#202B61] transition-transform duration-200 group-hover:scale-125 shrink-0" />
-                        </div>
+                    {/* Text Column (Span 6) - Alternates left or right */}
+                    <div className={`lg:col-span-6 space-y-4 ${isImageRight ? "lg:order-1" : "lg:order-2"}`}>
+                      {/* Metric / Index Badge */}
+                      <div className="flex items-center gap-2.5">
+                        <span className="font-heading font-black text-xs sm:text-sm text-[#202B61]/50 tracking-wider">
+                          #{rowNum}
+                        </span>
+                        <span className="h-3 w-[1px] bg-slate-200" />
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]/70">
+                          {data.title}
+                        </span>
                       </div>
 
-                      {/* Title and Arrow */}
-                      <div className="space-y-1.5">
-                        <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61] group-hover:text-[#202B61] transition-colors leading-snug">
-                          {row.title}
-                        </h3>
+                      <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#202B61] tracking-tight leading-snug">
+                        {row.title}
+                      </h3>
 
-                        <p className="font-sans text-sm text-[#202B61]/80 font-normal leading-relaxed max-w-3xl">
-                          {row.description}
-                        </p>
+                      <p className="font-sans text-sm sm:text-base text-[#202B61]/80 font-normal leading-relaxed">
+                        {row.description}
+                      </p>
+
+                      {/* Tech Chips */}
+                      <div className="pt-1 flex flex-wrap items-center gap-1.5 text-xs">
+                        {techChips.slice(0, 3).map((tech, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="font-sans text-[10px] sm:text-[11px] font-medium text-[#202B61]/80 bg-slate-100/90 px-2.5 py-1 rounded-md"
+                          >
+                            {tech}
+                          </span>
+                        ))}
                       </div>
 
-                      {/* Tech Stack Chips + Action Link */}
-                      <div className="pt-2 border-t border-slate-100/90 flex flex-wrap items-center justify-between gap-2.5">
-                        <div className="flex flex-wrap items-center gap-1.5 text-xs">
-                          {techChips.slice(0, 4).map((tech, tIdx) => (
-                            <span
-                              key={tIdx}
-                              className="font-sans text-[10px] sm:text-[11px] font-medium text-[#202B61]/80 bg-slate-100/80 px-2 py-0.5 rounded-md"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-
+                      <div className="pt-2">
                         <button
                           type="button"
                           onClick={openContact}
-                          className="group/btn inline-flex items-center gap-1.5 text-xs font-bold text-[#202B61] hover:text-[#202B61]/70 tracking-wider transition-colors cursor-pointer"
+                          className="group inline-flex items-center gap-2 text-xs font-bold text-[#202B61] hover:text-[#202B61]/70 uppercase tracking-wider transition-colors cursor-pointer"
                         >
-                          <span>Consult on this architecture</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                          <span>Consult on This Architecture</span>
+                          <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </button>
                       </div>
-
                     </div>
+
+                    {/* Image Column (Span 6) - Large Crisp Showcase Image */}
+                    <div className={`lg:col-span-6 ${isImageRight ? "lg:order-2" : "lg:order-1"}`}>
+                      <div className="group relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200/90 shadow-none bg-slate-100 transition-all duration-500">
+                        <img
+                          src={row.image}
+                          alt={row.title}
+                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#202B61]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-5">
+                          <span className="text-white text-xs font-sans font-medium">
+                            Engineered for high availability &amp; speed
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               );
