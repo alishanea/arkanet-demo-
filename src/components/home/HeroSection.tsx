@@ -10,7 +10,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="home" className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
       
       {/* -- CINEMATIC AMBIENT VIDEO BACKGROUND -- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

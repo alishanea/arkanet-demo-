@@ -97,8 +97,8 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
 export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = () => {
   return (
     <section
-      id="showcase"
-      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans"
+      id="capabilities"
+      className="relative w-full bg-[#f4f6fb] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans scroll-mt-24"
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         {/* ── 1. STRUCTURED PAGE SECTION HEADER ── */}
