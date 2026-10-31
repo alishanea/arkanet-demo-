@@ -119,7 +119,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
               <Link
                 key={card.id}
                 href={card.href}
-                className="group relative flex flex-col justify-between h-[180px] sm:h-[190px] lg:h-[195px] p-5 sm:p-5.5 lg:p-6 rounded-[4px] bg-white border border-slate-200/90 hover:border-slate-300 hover:bg-[#edf2f8] hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]/30 focus-visible:ring-offset-2 transition-all duration-200 cursor-pointer overflow-hidden text-left"
+                className="group relative flex flex-col justify-between h-[180px] sm:h-[190px] lg:h-[195px] p-5 sm:p-5.5 lg:p-6 rounded-[4px] bg-white border border-slate-200/90 shadow-none cursor-pointer overflow-hidden text-left transition-none"
               >
                 {/* Top Area: Smooth crossfade between Title (default) and Value Proposition (hover) */}
                 <div className="relative w-full flex-1">
