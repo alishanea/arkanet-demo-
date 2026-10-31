@@ -343,53 +343,89 @@ export default function CapabilityDetailPage() {
         </div>
       </section>
 
-      {/* ── SECTION 3: FEATURE ROWS WITH ALTERNATING POSITIONS & HOVER EFFECTS ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80 text-left bg-white font-sans">
-        <div className="max-w-[1400px] mx-auto space-y-24 sm:space-y-32">
-          {data.featureRows.map((row, idx) => {
-            return (
-              <div
-                key={idx}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
-                  row.imagePosition === "right" ? "" : "lg:[&>*:first-child]:order-2"
-                }`}
-              >
-                {/* Text Side */}
-                <div className="space-y-5">
-                  <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#202B61] tracking-tight leading-snug">
-                    {row.title}
-                  </h3>
-                  <p className="font-sans text-sm sm:text-base text-[#202B61]/80 font-normal leading-relaxed">
-                    {row.description}
-                  </p>
+      {/* ── SECTION 3: FEATURE ROWS WITH CLEAN ARCHITECTURAL CARD SEPARATION ── */}
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80 text-left bg-[#f4f6fb] font-sans">
+        <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
+          
+          {/* Structured Section Header for Clear Context & Visual Buffer */}
+          <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
+            <div className="max-w-3xl space-y-3">
+              <h2 className="section-h2">
+                Architecture &amp; Core Execution
+              </h2>
+              <p className="section-desc max-w-2xl">
+                Engineered modules and production workflows tailored for high availability, security, and seamless user experiences.
+              </p>
+            </div>
+          </div>
 
-                  <div className="pt-2">
-                    <button
-                      onClick={openContact}
-                      className="group inline-flex items-center gap-2 text-xs font-bold text-[#202B61] hover:text-[#202B61]/70 uppercase tracking-wider transition-colors cursor-pointer"
-                    >
-                      <span>Consult on This Architecture</span>
-                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </button>
+          {/* Clean Symmetrical Architectural Cards with Crisp Separation */}
+          <div className="space-y-6 sm:space-y-8">
+            {data.featureRows.map((row, idx) => {
+              const rowNum = String(idx + 1).padStart(2, "0");
+              return (
+                <div
+                  key={idx}
+                  className="rounded-[4px] bg-white border border-slate-200/90 p-6 sm:p-8 lg:p-10 shadow-none transition-all duration-300"
+                >
+                  <div
+                    className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center ${
+                      row.imagePosition === "right" ? "" : "lg:[&>*:first-child]:order-2"
+                    }`}
+                  >
+                    {/* Text Side (Span 6) */}
+                    <div className="lg:col-span-6 space-y-4">
+                      {/* Metric / Index Badge */}
+                      <div className="flex items-center gap-2.5">
+                        <span className="font-heading font-black text-xs sm:text-sm text-[#202B61]/50 tracking-wider">
+                          #{rowNum}
+                        </span>
+                        <span className="h-3 w-[1px] bg-slate-200" />
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]/70">
+                          {data.title}
+                        </span>
+                      </div>
+
+                      <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#202B61] tracking-tight leading-snug">
+                        {row.title}
+                      </h3>
+
+                      <p className="font-sans text-sm sm:text-base text-[#202B61]/80 font-normal leading-relaxed">
+                        {row.description}
+                      </p>
+
+                      <div className="pt-2">
+                        <button
+                          type="button"
+                          onClick={openContact}
+                          className="group inline-flex items-center gap-2 text-xs font-bold text-[#202B61] hover:text-[#202B61]/70 uppercase tracking-wider transition-colors cursor-pointer"
+                        >
+                          <span>Consult on This Architecture</span>
+                          <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Image Side (Span 6) */}
+                    <div className="lg:col-span-6">
+                      <div className="group relative aspect-[16/10] rounded-[4px] overflow-hidden border border-slate-200/90 shadow-none bg-slate-100 transition-all duration-500">
+                        <img
+                          src={row.image}
+                          alt={row.title}
+                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#202B61]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                          <span className="text-white text-xs font-sans font-medium">
+                            Engineered for high availability & speed
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                {/* Image Side with Box Radius < 5 and Shadow-None */}
-                <div className="group relative aspect-[16/10] rounded-[4px] overflow-hidden border border-slate-200/90 shadow-none bg-slate-100 transition-all duration-500">
-                  <img
-                    src={row.image}
-                    alt={row.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#202B61]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <span className="text-white text-xs font-sans font-medium">
-                      Engineered for high availability & speed
-                    </span>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
 
