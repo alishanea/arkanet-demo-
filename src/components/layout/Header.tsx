@@ -47,18 +47,29 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const isContactActive = pathname === "/contact";
   const isApplicationActive = pathname === "/application";
 
-  const scrollToSection = (sectionId: string) => {
-    setActiveMenu(null);
-    setMobileMenuOpen(false);
-    if (pathname === "/") {
-      const el = document.getElementById(sectionId);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-        return true;
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Smart hide-on-scroll down, reveal on scroll up
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < 60) {
+        setIsHeaderVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down -> hide navbar smoothly so it never overlaps content
+        setIsHeaderVisible(false);
+        setActiveMenu(null);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up -> reveal navbar
+        setIsHeaderVisible(true);
       }
-    }
-    return false;
-  };
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setActiveMenu(null);
@@ -66,33 +77,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
     if (pathname === "/") {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
-
-  const handleWorkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    setActiveMenu(null);
-    setMobileMenuOpen(false);
-    if (pathname === "/") {
-      e.preventDefault();
-      if (scrollToSection("work")) return;
-    }
-  };
-
-  const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    setActiveMenu(null);
-    setMobileMenuOpen(false);
-    if (pathname === "/") {
-      e.preventDefault();
-      if (scrollToSection("about")) return;
-    }
-  };
-
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    setActiveMenu(null);
-    setMobileMenuOpen(false);
-    if (pathname === "/") {
-      e.preventDefault();
-      if (scrollToSection("contact")) return;
     }
   };
 
@@ -221,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
       </AnimatePresence>
 
       {/* ── SLEEK, PREMIUM FLOATING PILL NAVBAR (ORGANIC, NOT BOXY) ── */}
-      <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto w-full pointer-events-none">
+      <header className={`fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto w-full pointer-events-none transition-all duration-300 ease-in-out ${isHeaderVisible || mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-28 opacity-0 pointer-events-none"}`}>
         <LayoutGroup id="header-nav">
           <div
             onMouseLeave={() => setHoveredTab(null)}
@@ -321,8 +305,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
               {/* Work Link */}
               <Link
-                href="/#work"
-                onClick={handleWorkClick}
+                href="/work"
+                onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("work")}
                 className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
@@ -351,8 +335,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
               {/* About Link */}
               <Link
-                href="/#about"
-                onClick={handleAboutClick}
+                href="/about"
+                onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("about")}
                 className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
@@ -381,8 +365,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
               {/* Contact Link */}
               <Link
-                href="/#contact"
-                onClick={handleContactClick}
+                href="/contact"
+                onClick={handleNavClick}
                 onMouseEnter={() => setHoveredTab("contact")}
                 className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
               >
@@ -497,8 +481,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   Capabilities &amp; Services
                 </Link>
                 <Link
-                  href="/#work"
-                  onClick={handleWorkClick}
+                  href="/work"
+                  onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
                     isWorkActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
@@ -506,8 +490,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   Works &amp; Case Studies
                 </Link>
                 <Link
-                  href="/#about"
-                  onClick={handleAboutClick}
+                  href="/about"
+                  onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
                     isAboutActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
@@ -515,8 +499,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   About Us
                 </Link>
                 <Link
-                  href="/#contact"
-                  onClick={handleContactClick}
+                  href="/contact"
+                  onClick={handleNavClick}
                   className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
                     isContactActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}

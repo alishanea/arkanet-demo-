@@ -52,7 +52,7 @@ const PILLARS = [
 
 export function AboutWhoWeAre() {
   return (
-    <section className="w-full py-10 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-12 bg-white border-t border-slate-200/80 text-left">
+    <section id="about-story" className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-white border-t border-slate-200/80 text-left scroll-mt-28 sm:scroll-mt-36">
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-10">
         
         {/* Section Heading & In-Depth Story */}
@@ -86,7 +86,7 @@ export function AboutWhoWeAre() {
                 delay: idx * 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-                            className="bg-[#f8fafc] rounded-[4px] shadow-none p-5 sm:p-6 flex flex-col justify-between h-full text-left space-y-3"
+                            className="bg-[#f8fafc] rounded-xl border border-slate-200/80 shadow-none p-5 sm:p-6 flex flex-col justify-between h-full text-left space-y-3"
             >
               <div className="space-y-1.5">
                 <div className="font-heading font-extrabold text-4xl sm:text-5xl text-[#202B61] tracking-tight">
@@ -124,10 +124,10 @@ export function AboutWhoWeAre() {
               return (
                 <div
                   key={idx}
-                  className="rounded-[4px] p-5 sm:p-6 shadow-none bg-[#f8fafc] flex flex-col justify-between h-full space-y-3 text-left transition-all duration-300"
+                  className="rounded-xl border border-slate-200/80 p-5 sm:p-6 shadow-none bg-[#f8fafc] flex flex-col justify-between h-full space-y-3 text-left transition-all duration-300"
                 >
                   <div className="space-y-3.5">
-                    <div className="w-10 h-10 rounded-[4px] bg-[#202B61] text-white flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-lg bg-[#202B61] text-white flex items-center justify-center">
                       <Icon className="w-5 h-5" />
                     </div>
                     <h4 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
