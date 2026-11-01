@@ -36,17 +36,17 @@ const CLIENT_LOGOS: ClientLogo[] = [
 
 export function AboutClients() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#f4f6fb] border-t border-slate-200/80 text-left select-none overflow-hidden px-4 sm:px-8 lg:px-12">
-      <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
+    <section className="w-full py-10 sm:py-14 lg:py-16 bg-[#f4f6fb] border-t border-slate-200/80 text-left select-none overflow-hidden px-4 sm:px-8 lg:px-12">
+      <div className="max-w-[1400px] mx-auto space-y-6 sm:space-y-8">
         
         {/* Section Heading with Clean Typography */}
-        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8 space-y-3 max-w-4xl text-left">
+        <div className="w-full border-b border-slate-200/80 pb-5 sm:pb-6 space-y-2.5 max-w-4xl text-left">
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.1]"
+            className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-[1.15]"
           >
             Trusted by ambitious businesses across the UAE &amp; India
           </motion.h2>
@@ -56,7 +56,7 @@ export function AboutClients() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.55, delay: 0.1 }}
-            className="font-sans text-base sm:text-lg md:text-xl text-[#202B61]/80 max-w-4xl pt-1 leading-relaxed font-normal"
+            className="font-sans text-base sm:text-lg text-[#202B61]/80 max-w-4xl pt-1 leading-relaxed font-normal"
           >
             Businesses across Kerala, India, and the Gulf trust us to build, modernise, and scale their digital systems and platforms.
           </motion.p>
@@ -65,28 +65,27 @@ export function AboutClients() {
       </div>
 
       {/* ── SINGLE CONTINUOUS TRAILING TRACK ── */}
-      <div className="relative w-full mt-10 sm:mt-14 py-4 overflow-hidden group">
+      <div className="relative w-full mt-6 sm:mt-8 py-2 overflow-hidden group">
         {/* Soft edge gradient masks */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-44 bg-gradient-to-r from-[#f4f6fb] to-transparent z-20" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-44 bg-gradient-to-l from-[#f4f6fb] to-transparent z-20" />
 
         {/* Single Track: Continuous Smooth Left Glide with Pause on Hover */}
         <div
-          className="flex shrink-0 items-center animate-marquee py-4 group-hover:[animation-play-state:paused]"
+          className="flex shrink-0 items-center animate-marquee py-2 group-hover:[animation-play-state:paused]"
           style={{ animationDuration: "95s" }}
         >
           {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, idx) => (
             <div
               key={`about-client-${logo.id}-${idx}`}
-              className="mx-8 sm:mx-12 lg:mx-14 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+              className="mx-6 sm:mx-10 lg:mx-12 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
               title={logo.alt}
             >
               <img
                 src={logo.src}
                 alt={logo.alt}
                 loading="eager"
-                style={{ mixBlendMode: "multiply" }}
-                className="h-20 sm:h-24 lg:h-28 max-h-28 max-w-[240px] sm:max-w-[300px] lg:max-w-[360px] w-auto object-contain opacity-85 hover:opacity-100 filter contrast-105 transition-all duration-300"
+                className="h-16 sm:h-20 lg:h-24 max-h-24 max-w-[220px] sm:max-w-[280px] lg:max-w-[340px] w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
               />
             </div>
           ))}

@@ -44,18 +44,18 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
   return (
     <section
       id="trusted-by"
-      className="relative w-full bg-[#f4f6fb] text-[#202B61] select-none py-6 sm:py-8 lg:py-9 border-t border-b border-slate-200/80 overflow-hidden font-sans"
+      className="relative w-full bg-[#f4f6fb] text-[#202B61] select-none py-2.5 sm:py-3.5 border-t border-b border-slate-200/80 overflow-hidden font-sans"
     >
       <div className="w-full">
         {/* Subtle Section Label */}
-        <div className="text-center mb-2 sm:mb-3">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#202B61]/60 font-sans">
+        <div className="text-center mb-1">
+          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#202B61]/60 font-sans">
             Our Clients
           </p>
         </div>
 
         {/* Trailing Marquee Container with Soft Fade Edges (Continuous Train) */}
-        <div className="relative w-full overflow-hidden flex items-center group">
+        <div className="relative w-full overflow-hidden flex items-center group py-1">
           {/* Left Trailing Gradient Fade Mask */}
           <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 lg:w-52 bg-gradient-to-r from-[#f4f6fb] to-transparent z-10 pointer-events-none" />
 
@@ -67,15 +67,14 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
             {trailingLogos.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
-                className="mx-8 sm:mx-12 lg:mx-14 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+                className="mx-6 sm:mx-10 lg:mx-12 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
                 title={logo.alt}
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
                   loading="eager"
-                  style={{ mixBlendMode: "multiply" }}
-                  className="h-20 sm:h-24 lg:h-28 max-h-28 max-w-[240px] sm:max-w-[300px] lg:max-w-[360px] w-auto object-contain opacity-85 hover:opacity-100 filter contrast-105 transition-all duration-300"
+                  className="h-16 sm:h-20 lg:h-24 max-h-24 max-w-[220px] sm:max-w-[280px] lg:max-w-[340px] w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}
