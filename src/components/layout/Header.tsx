@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ContactFormModal } from "@/components/modals/ContactFormModal";
 import {
   ChevronDown,
@@ -35,7 +35,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [hoveredTab, setHoveredTab] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -206,220 +205,127 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
       {/* ── SLEEK, PREMIUM FLOATING PILL NAVBAR (ORGANIC, NOT BOXY) ── */}
       <header className={`fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto w-full pointer-events-none transition-all duration-300 ease-in-out ${isHeaderVisible || mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-28 opacity-0 pointer-events-none"}`}>
-        <LayoutGroup id="header-nav">
-          <div
-            onMouseLeave={() => setHoveredTab(null)}
-            className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-full px-4 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between gap-4 w-full"
-          >
-                        {/* 1. BRAND LOGO & NAME (LEFT) */}
-            <div className="flex items-center flex-1">
-              <Link
-                href="/"
-                onClick={handleHomeClick}
-                className="flex items-center gap-2.5 shrink-0 group select-none"
-              >
-                <img
-                  src="/assets/images/arkanet-icon.png"
-                  alt="Arkanet Logo"
-                  className="w-7 h-7 sm:w-8 sm:h-8 object-contain group-hover:scale-105 transition-transform"
-                />
-                <span className="font-display font-black text-lg sm:text-xl text-[#202B61] tracking-tight group-hover:text-[#202B61] transition-colors">
-                  ARKANET
-                </span>
-              </Link>
-            </div>
+        <div
+          className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-full px-4 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between gap-4 w-full"
+        >
+          {/* 1. BRAND LOGO & NAME (LEFT) */}
+          <div className="flex items-center flex-1">
+            <Link
+              href="/"
+              onClick={handleHomeClick}
+              className="flex items-center gap-2.5 shrink-0 group select-none"
+            >
+              <img
+                src="/assets/images/arkanet-icon.png"
+                alt="Arkanet Logo"
+                className="w-7 h-7 sm:w-8 sm:h-8 object-contain group-hover:scale-105 transition-transform"
+              />
+              <span className="font-display font-black text-lg sm:text-xl text-[#202B61] tracking-tight group-hover:text-[#202B61] transition-colors">
+                ARKANET
+              </span>
+            </Link>
+          </div>
 
-            {/* 2. NAVIGATION MENU (CENTER - ALL BUTTONS TOGETHER) */}
-            <nav className="hidden md:flex items-center justify-center gap-1.5 lg:gap-2.5">
-              {/* Home Link */}
-              <Link
-                href="/"
-                onClick={handleHomeClick}
-                onMouseEnter={() => setHoveredTab("home")}
-                className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
-              >
-                {isHomeActive && (
-                  <motion.div
-                    layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {hoveredTab === "home" && !isHomeActive && (
-                  <motion.div
-                    layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span
-                  className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
-                    isHomeActive ? "text-white" : "text-[#202B61] hover:text-[#202B61]"
-                  }`}
-                >
-                  Home
-                </span>
-              </Link>
+          {/* 2. NAVIGATION MENU (CENTER - ALL BUTTONS TOGETHER) */}
+          <nav className="hidden md:flex items-center justify-center gap-1 lg:gap-2">
+            {/* Home Link */}
+            <Link
+              href="/"
+              onClick={handleHomeClick}
+              className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
+                isHomeActive && activeMenu !== "services"
+                  ? "bg-[#202B61] text-white shadow-xs"
+                  : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
+              }`}
+            >
+              Home
+            </Link>
 
-              {/* Capabilities Button (Toggles strictly on CLICK, not on hover) */}
-              <div
-                className="relative shrink-0"
-                onMouseEnter={() => setHoveredTab("capabilities")}
-                onMouseLeave={() => setHoveredTab(null)}
-              >
-                {(activeMenu === "services" || isCapabilitiesActive) && (
-                  <motion.div
-                    layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {hoveredTab === "capabilities" && activeMenu !== "services" && !isCapabilitiesActive && (
-                  <motion.div
-                    layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <button
-                  type="button"
-                  onClick={toggleCapabilities}
-                  className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none"
-                >
-                  <span
-                    className={`relative z-10 flex items-center gap-1.5 font-bold text-sm tracking-tight transition-colors duration-200 ${
-                      activeMenu === "services" || isCapabilitiesActive
-                        ? "text-white"
-                        : "text-[#202B61] hover:text-[#202B61]"
-                    }`}
-                  >
-                    <span>Capabilities</span>
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        activeMenu === "services" ? "rotate-180" : ""
-                      }`}
-                    />
-                  </span>
-                </button>
-              </div>
-
-              {/* Work Link */}
-              <Link
-                href="/work"
-                onClick={handleNavClick}
-                onMouseEnter={() => setHoveredTab("work")}
-                className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
-              >
-                {isWorkActive && (
-                  <motion.div
-                    layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {hoveredTab === "work" && !isWorkActive && (
-                  <motion.div
-                    layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span
-                  className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
-                    isWorkActive ? "text-white" : "text-[#202B61] hover:text-[#202B61]"
-                  }`}
-                >
-                  Works
-                </span>
-              </Link>
-
-              {/* About Link */}
-              <Link
-                href="/about"
-                onClick={handleNavClick}
-                onMouseEnter={() => setHoveredTab("about")}
-                className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
-              >
-                {isAboutActive && (
-                  <motion.div
-                    layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {hoveredTab === "about" && !isAboutActive && (
-                  <motion.div
-                    layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span
-                  className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
-                    isAboutActive ? "text-white" : "text-[#202B61] hover:text-[#202B61]"
-                  }`}
-                >
-                  About
-                </span>
-              </Link>
-
-              {/* Contact Link */}
-              <Link
-                href="/contact"
-                onClick={handleNavClick}
-                onMouseEnter={() => setHoveredTab("contact")}
-                className="relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 transition-colors shrink-0 flex items-center justify-center"
-              >
-                {isContactActive && (
-                  <motion.div
-                    layoutId="active-nav-pill"
-                    className="absolute inset-0 bg-[#202B61] rounded-full shadow-xs"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {hoveredTab === "contact" && !isContactActive && (
-                  <motion.div
-                    layoutId="hover-nav-pill"
-                    className="absolute inset-0 bg-[#202B61]/5 rounded-full"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span
-                  className={`relative z-10 font-bold text-sm tracking-tight transition-colors duration-200 ${
-                    isContactActive ? "text-white" : "text-[#202B61] hover:text-[#202B61]"
-                  }`}
-                >
-                  Contact
-                </span>
-              </Link>
-            </nav>
-
-            {/* 3. RIGHT SIDE: APPLICATION BUTTON ON DESKTOP + MOBILE TOGGLE */}
-            <div className="flex items-center justify-end flex-1 gap-2.5 sm:gap-3">
-              <Link
-                href="/application"
-                onClick={handleNavClick}
-                className={`hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer select-none ${
-                  isApplicationActive
-                    ? "bg-[#202B61] text-white ring-2 ring-[#202B61] ring-offset-2"
-                    : "bg-[#202B61] hover:bg-[#202B61]/90 text-white"
-                }`}
-              >
-                Application
-              </Link>
-
-              {/* Mobile Hamburger Toggle */}
+            {/* Capabilities Button (Toggles strictly on CLICK, not on hover) */}
+            <div className="relative shrink-0">
               <button
                 type="button"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 rounded-full text-[#202B61] hover:bg-[#202B61]/5 transition-colors cursor-pointer"
-                aria-label="Toggle navigation menu"
+                onClick={toggleCapabilities}
+                className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none transition-all duration-200 ease-out ${
+                  activeMenu === "services" || isCapabilitiesActive
+                    ? "bg-[#202B61] text-white shadow-xs"
+                    : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
+                }`}
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                <span>Capabilities</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ease-out ${
+                    activeMenu === "services" ? "rotate-180" : ""
+                  }`}
+                />
               </button>
             </div>
+
+            {/* Work Link */}
+            <Link
+              href="/work"
+              onClick={handleNavClick}
+              className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
+                isWorkActive && activeMenu !== "services"
+                  ? "bg-[#202B61] text-white shadow-xs"
+                  : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
+              }`}
+            >
+              Works
+            </Link>
+
+            {/* About Link */}
+            <Link
+              href="/about"
+              onClick={handleNavClick}
+              className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
+                isAboutActive && activeMenu !== "services"
+                  ? "bg-[#202B61] text-white shadow-xs"
+                  : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
+              }`}
+            >
+              About
+            </Link>
+
+            {/* Contact Link */}
+            <Link
+              href="/contact"
+              onClick={handleNavClick}
+              className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
+                isContactActive && activeMenu !== "services"
+                  ? "bg-[#202B61] text-white shadow-xs"
+                  : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
+              }`}
+            >
+              Contact
+            </Link>
+          </nav>
+
+          {/* 3. RIGHT SIDE: APPLICATION BUTTON ON DESKTOP + MOBILE TOGGLE */}
+          <div className="flex items-center justify-end flex-1 gap-2.5 sm:gap-3">
+            <Link
+              href="/application"
+              onClick={handleNavClick}
+              className={`hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer select-none ${
+                isApplicationActive
+                  ? "bg-[#202B61] text-white ring-2 ring-[#202B61] ring-offset-2"
+                  : "bg-[#202B61] hover:bg-[#202B61]/90 text-white"
+              }`}
+            >
+              Application
+            </Link>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-full text-[#202B61] hover:bg-[#202B61]/5 transition-colors cursor-pointer"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
-        </LayoutGroup>
+        </div>
 
         {/* ── DESKTOP CAPABILITIES MEGA-MENU (OPENED STRICTLY ON CLICK) ── */}
         <AnimatePresence>
