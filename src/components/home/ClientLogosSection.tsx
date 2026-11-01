@@ -48,7 +48,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
     >
       <div className="w-full">
         {/* Subtle Section Label */}
-        <div className="text-center mb-3 sm:mb-4">
+        <div className="text-center mb-2 sm:mb-3">
           <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#202B61]/60 font-sans">
             Our Clients
           </p>
@@ -67,7 +67,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
             {trailingLogos.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
-                className="mx-8 sm:mx-12 lg:mx-16 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110"
+                className="mx-8 sm:mx-12 lg:mx-14 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
                 title={logo.alt}
               >
                 <img
@@ -75,7 +75,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
                   alt={logo.alt}
                   loading="eager"
                   style={{ mixBlendMode: "multiply" }}
-                  className="h-16 sm:h-20 lg:h-24 max-h-24 max-w-[200px] sm:max-w-[260px] lg:max-w-[320px] w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  className="h-20 sm:h-24 lg:h-28 max-h-28 max-w-[240px] sm:max-w-[300px] lg:max-w-[360px] w-auto object-contain opacity-85 hover:opacity-100 filter contrast-105 transition-all duration-300"
                 />
               </div>
             ))}
