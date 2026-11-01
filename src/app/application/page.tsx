@@ -250,17 +250,6 @@ export default function ApplicationShowcasePage() {
       <section className="relative w-full pt-28 sm:pt-36 pb-14 sm:pb-20 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left">
         <div className="max-w-[1400px] mx-auto space-y-8">
           
-          {/* Top Category Badge */}
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] bg-[#202B61]/5 border border-[#202B61]/10 text-xs font-bold text-[#202B61] uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-[#202B61]" />
-              <span>Arkanet Product Labs &amp; Releases</span>
-            </span>
-            <span className="text-xs text-slate-400 font-medium hidden sm:inline-block">
-              · Production-Ready Code &amp; Deployable Assets
-            </span>
-          </div>
-
           {/* Majestic Editorial Headline */}
           <div className="max-w-4xl space-y-4">
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.1] text-wrap-balance">
