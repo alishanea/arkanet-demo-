@@ -43,8 +43,8 @@ export function AboutPrinciples() {
           </p>
         </div>
 
-        {/* Frameless Editorial Grid with Simple Line Separation (No Boxes) */}
-        <div className="border-t border-slate-200/80">
+        {/* Frameless Editorial Grid (No Boxes, Seamless from Header) */}
+        <div>
           <div className="grid grid-cols-1 md:grid-cols-2">
             {PILLARS.map((pillar, idx) => {
               const Icon = pillar.icon;
@@ -54,7 +54,9 @@ export function AboutPrinciples() {
               return (
                 <div
                   key={pillar.title}
-                  className={`py-8 sm:py-10 space-y-3 text-left ${
+                  className={`space-y-3 text-left ${
+                    isTopRow ? "pt-2 sm:pt-4 pb-8 sm:pb-10" : "py-8 sm:py-10"
+                  } ${
                     isLeftColumn
                       ? "md:pr-10 lg:pr-14 md:border-r md:border-slate-200/80"
                       : "md:pl-10 lg:pl-14"
