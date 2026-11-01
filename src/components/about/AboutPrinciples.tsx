@@ -32,9 +32,6 @@ export function AboutPrinciples() {
       <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
         {/* Section Heading & Subtitle */}
         <div className="max-w-3xl space-y-3 text-left">
-          <span className="text-xs font-heading font-extrabold uppercase tracking-wider text-[#202B61]/65">
-            Operating Framework
-          </span>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-[#202B61] tracking-tight leading-tight">
             Our Core Operating Principles
           </h2>
