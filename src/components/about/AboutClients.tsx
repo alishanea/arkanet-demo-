@@ -78,14 +78,14 @@ export function AboutClients() {
           {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, idx) => (
             <div
               key={`about-client-${logo.id}-${idx}`}
-              className="mx-6 sm:mx-10 lg:mx-12 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+              className="mx-8 sm:mx-12 lg:mx-16 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
               title={logo.alt}
             >
               <img
                 src={logo.src}
                 alt={logo.alt}
                 loading="eager"
-                className="h-16 sm:h-20 lg:h-24 max-h-24 max-w-[220px] sm:max-w-[280px] lg:max-w-[340px] w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
+                className="h-11 sm:h-13 lg:h-14 max-h-14 max-w-[180px] sm:max-w-[220px] lg:max-w-[260px] w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
               />
             </div>
           ))}
