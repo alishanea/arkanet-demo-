@@ -296,17 +296,10 @@ export default function WorkPage() {
       {/* ── 1. ARCHITECTURAL HERO HEADER (FULL PAGE SCREEN) ── */}
       <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 overflow-hidden">
         
-        {/* -- CINEMATIC AMBIENT BACKGROUND -- */}
+        {/* -- MINIMAL PURE AMBIENT CANVAS (ZERO PHOTO CLUTTER, 100% TYPOGRAPHIC CLARITY) -- */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2400&auto=format&fit=crop"
-            alt="Arkanet Engineering & Code Workspace"
-            className="w-full h-full object-cover opacity-45 brightness-105 saturate-105"
-            loading="eager"
-          />
-
-          {/* Consistent full-bleed gradient overlay (no oval shape) */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/80 via-[#f4f6fb]/60 to-[#f4f6fb]/90 pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[550px] bg-gradient-to-tr from-[#202B61]/[0.035] via-white/80 to-[#202B61]/[0.025] rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb] via-transparent to-[#f4f6fb] pointer-events-none" />
         </div>
 
         {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
