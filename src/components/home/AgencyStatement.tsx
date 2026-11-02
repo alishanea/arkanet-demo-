@@ -103,22 +103,22 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full bg-[#151E48] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-[#253272] font-sans antialiased overflow-hidden"
+      className="relative w-full bg-[#151E48] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-12 lg:py-14 select-none border-t border-[#253272] font-sans antialiased overflow-hidden"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12 lg:space-y-14">
+      <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-7 lg:space-y-8">
         
         {/* ── 1. AUTHORITATIVE STATEMENT HEADLINE & DESCRIPTION (PRECISION TYPOGRAPHY) ── */}
-        <div className="space-y-4 max-w-4xl text-left">
+        <div className="space-y-2.5 max-w-4xl text-left">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[40px] text-white leading-[1.18] tracking-[-0.025em]">
             The Digital Innovation Company
           </h2>
-          <p className="font-sans font-normal text-base sm:text-[17px] lg:text-[18px] text-white/80 leading-[1.65] max-w-3xl">
+          <p className="font-sans font-normal text-base sm:text-[17px] lg:text-[18px] text-white/80 leading-[1.6] max-w-4xl">
             Blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Founded in 2023, Arkanet Technologies specializes in transforming complex technological challenges into scalable, future-ready software platforms for enterprises and ambitious brands worldwide.
           </p>
         </div>
 
-        {/* ── 2. EDITORIAL 3-COLUMN CAPABILITY GRID (MAXIMUM LEGIBILITY & COMFORT) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 w-full text-left">
+        {/* ── 2. EDITORIAL 3-COLUMN CAPABILITY GRID (TIGHT COHESIVE SPACING) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 w-full text-left">
           {STATEMENTS.map((item) => (
             <Link
               key={item.id}
@@ -126,7 +126,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
               className="group flex flex-col items-start outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#151E48] rounded-sm"
             >
               {/* Minimalist Linear Icon */}
-              <div className="mb-4 sm:mb-5">
+              <div className="mb-3 sm:mb-3.5">
                 {item.renderIcon()}
               </div>
 
@@ -137,7 +137,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
               </h3>
 
               {/* Description (Exact Matched Length, Perfectly Symmetrical) */}
-              <p className="font-sans font-normal text-sm sm:text-[14.5px] text-white/75 leading-[1.65] mt-3.5 text-balance">
+              <p className="font-sans font-normal text-sm sm:text-[14.5px] text-white/75 leading-[1.65] mt-2.5 text-balance">
                 {item.desc}
               </p>
             </Link>
