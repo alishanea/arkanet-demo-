@@ -19,7 +19,7 @@ const STATEMENTS: CapabilityItem[] = [
   {
     id: "applied-ai",
     title: "Artificial Intelligence & Machine Learning",
-    desc: "Harness the power of predictive analytics and automated intelligence to drive informed decision-making. Our AI solutions range from developing custom virtual agents to engineering enterprise-grade big data infrastructure, designed to optimize operational efficiency and scale seamlessly with your business.",
+    desc: "Harness predictive analytics, custom virtual agents, and automated data pipelines engineered to optimize operations and scale your enterprise.",
     href: "/capabilities/applied-ai-ml",
     renderIcon: () => (
       <svg
@@ -47,7 +47,7 @@ const STATEMENTS: CapabilityItem[] = [
   {
     id: "ar-vr-metaverse",
     title: "AR/VR & Metaverse Development",
-    desc: "Redefine user engagement through immersive digital environments. We architect interactive 3D spaces, augmented and virtual reality experiences, and secure blockchain integrations that allow your brand to operate at the forefront of the digital frontier.",
+    desc: "Architect immersive 3D environments, spatial reality applications, and secure blockchain systems engineered for next-generation engagement.",
     href: "/capabilities/ecommerce-shopify-development",
     renderIcon: () => (
       <svg
@@ -73,7 +73,7 @@ const STATEMENTS: CapabilityItem[] = [
   {
     id: "cloud-devops",
     title: "Cloud Solutions & Infrastructure",
-    desc: "Build a resilient foundation for your digital transformation. We architect secure, highly scalable cloud environments that ensure continuous deployment, robust cybersecurity, and agile performance, empowering your enterprise to adapt and grow without technical limitations.",
+    desc: "Deploy resilient cloud architectures, continuous CI/CD pipelines, and enterprise cybersecurity engineered for high availability and zero downtime.",
     href: "/capabilities/cloud-devops-hosting",
     renderIcon: () => (
       <svg
@@ -126,12 +126,12 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
                 {item.renderIcon()}
               </div>
 
-              {/* Title (Crisp, High-Presence Lettering) */}
-              <h3 className="font-heading font-bold text-xl sm:text-[22px] text-white tracking-[-0.015em] leading-snug">
+              {/* Title (Crisp, High-Presence Lettering with Symmetrical Baseline) */}
+              <h3 className="font-heading font-bold text-xl sm:text-[22px] text-white tracking-[-0.015em] leading-snug md:min-h-[3.75rem] flex items-start">
                 {item.title}
               </h3>
 
-              {/* Description (Natural, Pure White Opacity) */}
+              {/* Description (Concise, Perfectly Symmetrical) */}
               <p className="font-sans font-normal text-sm sm:text-[14.5px] text-white/75 leading-[1.65] mt-3">
                 {item.desc}
               </p>
