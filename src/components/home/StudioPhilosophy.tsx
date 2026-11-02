@@ -27,7 +27,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
   return (
     <section
       id="about"
-      className="relative w-full bg-[#151E48] text-white select-none px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-[#253272] overflow-hidden font-sans scroll-mt-24"
+      className="relative w-full bg-[#151E48] text-white select-none px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-b border-[#253272] overflow-hidden font-sans scroll-mt-24"
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
