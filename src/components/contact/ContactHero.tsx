@@ -15,9 +15,8 @@ export function ContactHero() {
           loading="eager"
         />
 
-        {/* Multi-layered soft vignette and legibility masks */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/80 via-[#f4f4f8]/45 to-[#f4f6fb]/85 pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[#f4f6fb]/75 backdrop-blur-[2px] rounded-full blur-3xl pointer-events-none" />
+        {/* Consistent full-bleed gradient overlay (no oval shape) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/75 via-[#f4f6fb]/55 to-[#f4f6fb]/85 pointer-events-none" />
       </div>
 
       {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}

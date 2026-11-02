@@ -249,7 +249,6 @@ export default function CapabilityDetailPage() {
           {/* Soft Scrims & Ambient Overlay for Flawless Text Legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb] via-[#f4f6fb]/75 to-[#f4f6fb]/95 pointer-events-none z-[1]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb] via-[#f4f6fb]/80 to-transparent pointer-events-none z-[1]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-r from-[#202B61]/10 via-[#202B61]/5 to-transparent blur-3xl pointer-events-none z-[1]" />
         </div>
 
         {/* Foreground Content */}
