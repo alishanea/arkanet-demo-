@@ -30,7 +30,7 @@ export function AboutWhoWeAre() {
   return (
     <section
       id="about-story"
-      className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#151E48] text-white border-t border-[#253272] text-left select-none overflow-hidden font-sans scroll-mt-28 sm:scroll-mt-36"
+      className="w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#151E48] text-white border-t border-[#253272] text-left select-none overflow-hidden font-sans scroll-mt-28 sm:scroll-mt-36"
     >
       <div className="max-w-[1400px] mx-auto space-y-12 sm:space-y-16">
         

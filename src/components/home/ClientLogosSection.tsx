@@ -44,11 +44,11 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
   return (
     <section
       id="trusted-by"
-      className="relative w-full bg-white text-[#202B61] select-none py-9 sm:py-11 lg:py-12 border-t border-b border-slate-200/80 overflow-hidden font-sans"
+      className="relative w-full bg-white text-[#202B61] select-none py-14 sm:py-16 lg:py-20 border-t border-b border-slate-200/80 overflow-hidden font-sans"
     >
       <div className="w-full">
         {/* Subtle Section Label */}
-        <div className="text-center mb-6 sm:mb-8">
+        <div className="text-center mb-8 sm:mb-10">
           <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.28em] text-[#202B61]/60 font-sans">
             Our Clients
           </p>

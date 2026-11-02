@@ -67,25 +67,25 @@ export default function Home() {
         {/* 1. Hero Title */}
         <HeroSection onOpenBooking={handleOpenBooking} />
 
-        {/* 2. Trusted By Client Logo Stage (Immediate Social Proof & Brand Credibility) */}
-        <ClientLogosSection onOpenBooking={handleOpenBooking} />
-
-        {/* 3. Authoritative Agency Statement */}
+        {/* 1b. Agency Statement */}
         <AgencyStatement onOpenBooking={handleOpenBooking} />
 
-        {/* 4. Full-Stack Engineering & Applied AI Capabilities (Interactive 4-Pillar Grid) */}
+        {/* 2. Full-Stack Engineering & AI Capabilities (Interactive 4-Pillar Grid) */}
         <InteractiveShowcaseGrid onOpenBooking={handleOpenBooking} />
 
-        {/* 5. Selected Work & Case Studies (Tall Compact Deck) */}
-        <WhatsNewSection onOpenBooking={handleOpenBooking} />
-
-        {/* 6. Engineering Process */}
+        {/* 3. Engineering Process */}
         <OurProcess onOpenBooking={handleOpenBooking} />
 
-        {/* 7. Studio Philosophy & Team Stats */}
+        {/* 5. Studio Philosophy & Team Stats */}
         <StudioPhilosophy onOpenBooking={handleOpenBooking} />
 
-        {/* 8. Closing Headline CTA */}
+        {/* 5b. Trusted By Client Logo Stage (Original First Model) */}
+        <ClientLogosSection onOpenBooking={handleOpenBooking} />
+
+        {/* 6. Selected Work & Case Studies (Tall Compact Deck) */}
+        <WhatsNewSection onOpenBooking={handleOpenBooking} />
+
+        {/* 7. Closing Headline CTA */}
         <AboutCTA onOpenBooking={handleOpenBooking} />
       </main>
 

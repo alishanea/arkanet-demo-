@@ -27,7 +27,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
   return (
     <section
       id="about"
-      className="relative w-full bg-[#151E48] text-white select-none px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-b border-[#253272] overflow-hidden font-sans scroll-mt-24"
+      className="relative w-full bg-[#151E48] text-white select-none px-4 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-28 border-t border-[#253272] overflow-hidden font-sans scroll-mt-24"
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
@@ -78,7 +78,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
         </div>
 
         {/* Bottom: 3-Column Stats Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 pt-8 border-t border-[#253272] max-w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 pt-8 sm:pt-10 pb-2 sm:pb-4 border-t border-[#253272] max-w-full">
           {STATS_DATA.map((stat, idx) => (
             <div key={idx} className="flex items-center gap-4">
               <div className="font-heading font-extrabold text-3xl sm:text-4xl leading-none text-white tracking-tight shrink-0">
