@@ -9,7 +9,8 @@ interface AgencyStatementProps {
 
 interface CapabilityItem {
   id: string;
-  title: string;
+  titleLine1: string;
+  titleLine2: string;
   desc: string;
   href: string;
   renderIcon: () => React.ReactNode;
@@ -18,8 +19,9 @@ interface CapabilityItem {
 const STATEMENTS: CapabilityItem[] = [
   {
     id: "applied-ai",
-    title: "Artificial Intelligence & Machine Learning",
-    desc: "Harness predictive analytics, custom virtual agents, and automated data pipelines engineered to optimize operations and scale your enterprise.",
+    titleLine1: "Artificial Intelligence &",
+    titleLine2: "Machine Learning",
+    desc: "Harness predictive models, intelligent virtual agents, and automated data pipelines engineered to optimize enterprise operations.",
     href: "/capabilities/applied-ai-ml",
     renderIcon: () => (
       <svg
@@ -46,8 +48,9 @@ const STATEMENTS: CapabilityItem[] = [
   },
   {
     id: "ar-vr-metaverse",
-    title: "AR/VR & Metaverse Development",
-    desc: "Architect immersive 3D environments, spatial reality applications, and secure blockchain systems engineered for next-generation engagement.",
+    titleLine1: "AR/VR & Metaverse",
+    titleLine2: "Development",
+    desc: "Architect immersive 3D digital environments, spatial reality applications, and secure blockchain systems built to elevate engagement.",
     href: "/capabilities/ecommerce-shopify-development",
     renderIcon: () => (
       <svg
@@ -72,8 +75,9 @@ const STATEMENTS: CapabilityItem[] = [
   },
   {
     id: "cloud-devops",
-    title: "Cloud Solutions & Infrastructure",
-    desc: "Deploy resilient cloud architectures, continuous CI/CD pipelines, and enterprise cybersecurity engineered for high availability and zero downtime.",
+    titleLine1: "Cloud Solutions &",
+    titleLine2: "Infrastructure",
+    desc: "Deploy resilient cloud architectures, continuous CI/CD pipelines, and robust cybersecurity engineered for high availability and uptime.",
     href: "/capabilities/cloud-devops-hosting",
     renderIcon: () => (
       <svg
@@ -126,13 +130,14 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
                 {item.renderIcon()}
               </div>
 
-              {/* Title (Crisp, High-Presence Lettering with Symmetrical Baseline) */}
-              <h3 className="font-heading font-bold text-xl sm:text-[22px] text-white tracking-[-0.015em] leading-snug md:min-h-[3.75rem] flex items-start">
-                {item.title}
+              {/* Title (Symmetrical 2-Line Baseline Across All Columns) */}
+              <h3 className="font-heading font-bold text-xl sm:text-[22px] text-white tracking-[-0.015em] leading-[1.28]">
+                <span className="block">{item.titleLine1}</span>
+                <span className="block">{item.titleLine2}</span>
               </h3>
 
-              {/* Description (Concise, Perfectly Symmetrical) */}
-              <p className="font-sans font-normal text-sm sm:text-[14.5px] text-white/75 leading-[1.65] mt-3">
+              {/* Description (Exact Matched Length, Perfectly Symmetrical) */}
+              <p className="font-sans font-normal text-sm sm:text-[14.5px] text-white/75 leading-[1.65] mt-3.5 text-balance">
                 {item.desc}
               </p>
             </Link>
