@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
               </Link>
               
               <p className="font-sans text-xs sm:text-sm text-[#202B61]/75 leading-relaxed font-medium max-w-sm">
-                Engineering high-performance web platforms, mobile applications, and intelligent AI automation systems for ambitious brands across the UAE, India, and worldwide.
+                The Digital Innovation Company blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Founded in 2023, building future-ready platforms across hospitality, IT, eCommerce, and government sectors.
               </p>
 
             </div>
@@ -93,27 +93,27 @@ export const Footer: React.FC<FooterProps> = ({
                 Offices
               </h4>
               
-              {/* Dubai */}
+              {/* India HQ */}
               <div className="space-y-1 text-xs sm:text-sm text-[#202B61]/75">
-                <span className="font-bold text-[#202B61] block">Dubai (HQ)</span>
+                <span className="font-bold text-[#202B61] block">India Office (HQ)</span>
                 <p className="leading-relaxed">
-                  Capital Golden Tower, Suite 308,<br />
-                  Business Bay, Dubai, UAE
-                </p>
-                <a href="tel:+97145572716" className="text-[#202B61]/85 hover:text-[#202B61] block font-semibold pt-0.5">
-                  +971 4 557 2716
-                </a>
-              </div>
-
-              {/* India */}
-              <div className="space-y-1 text-xs sm:text-sm text-[#202B61]/75 pt-1">
-                <span className="font-bold text-[#202B61] block">India Office</span>
-                <p className="leading-relaxed">
-                  Room No. 227K, Benny Complex,<br />
-                  Kelakam, Kannur Dt, Kerala
+                  Room No: 227K, Benny complex,<br />
+                  Kelakam, Kannur. Kerala 670674
                 </p>
                 <a href="tel:+919074104372" className="text-[#202B61]/85 hover:text-[#202B61] block font-semibold pt-0.5">
                   +91 90741 04372
+                </a>
+              </div>
+
+              {/* UAE */}
+              <div className="space-y-1 text-xs sm:text-sm text-[#202B61]/75 pt-1">
+                <span className="font-bold text-[#202B61] block">UAE Office</span>
+                <p className="leading-relaxed">
+                  Suite 308, Capital Golden Tower,<br />
+                  Business Bay, Dubai
+                </p>
+                <a href="tel:+97145572716" className="text-[#202B61]/85 hover:text-[#202B61] block font-semibold pt-0.5">
+                  +971 4 557 2716
                 </a>
               </div>
             </div>

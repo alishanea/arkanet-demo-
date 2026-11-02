@@ -29,68 +29,68 @@ interface CapabilityCard {
 
 const CAPABILITY_CARDS: CapabilityCard[] = [
   {
-    id: "web-saas",
-    title: "Web Applications & SaaS Platforms",
+    id: "ui-ux",
+    title: "UI/UX Design & Product Strategy",
     description:
-      "Custom Next.js web applications, client portals, and multi-tenant SaaS engineered for sub-second latency and zero-downtime enterprise scale.",
-    href: "/capabilities/website-development",
+      "User-centric research, wireframing, high-fidelity design systems, and rapid interactive prototyping that align product functionality with business conversion.",
+    href: "/capabilities/graphic-design",
     icon: Layout,
   },
   {
-    id: "applied-ai",
-    title: "Applied AI & Automation Systems",
+    id: "web-mobile",
+    title: "Web & Mobile App Development",
     description:
-      "Custom machine learning models, document intelligence, and automated LLM workflows cutting operational processing cycles by up to 84%.",
+      "High-performance Next.js web applications, client portals, and native iOS/Android apps engineered for real-world traffic, speed, and 99.9% uptime.",
+    href: "/capabilities/website-development",
+    icon: Smartphone,
+  },
+  {
+    id: "digital-transformation",
+    title: "Digital Transformation Consulting",
+    description:
+      "Helping enterprises and growing brands reshape their operational workflows, modernize legacy systems, and implement a future-proof digital backbone.",
+    href: "/capabilities/business-automation",
+    icon: Shield,
+  },
+  {
+    id: "applied-ai",
+    title: "End-to-End ML & AI Production",
+    description:
+      "Harness predictive analytics and automated intelligence. Developing custom models trained on your data to optimize operational efficiency.",
     href: "/capabilities/applied-ai-ml",
     icon: Cpu,
   },
   {
-    id: "mobile-apps",
-    title: "Native Mobile & App Platforms",
+    id: "big-data",
+    title: "Big Data Infrastructure",
     description:
-      "High-performance native iOS, Android, and cross-platform mobile apps with real-time sync, offline caching, and 99.9% crash-free sessions.",
-    href: "/capabilities/mobile-app-development",
-    icon: Smartphone,
-  },
-  {
-    id: "cloud-devops",
-    title: "Cloud & DevOps Architectures",
-    description:
-      "Production-ready AWS cloud architectures, container orchestration, automated CI/CD pipelines, and enterprise-grade security protocols.",
+      "High-throughput data engineering pipelines, distributed storage, and real-time telemetry architectures turning scattered data into trusted business intelligence.",
     href: "/capabilities/cloud-devops-hosting",
-    icon: Cloud,
+    icon: Network,
   },
   {
-    id: "ecommerce",
-    title: "E-Commerce & Digital Flagships",
+    id: "virtual-agents",
+    title: "Virtual Agents & Chatbots",
     description:
-      "Headless commerce, high-converting checkout flows, and custom 3D WebGL visualizers engineered for maximum global customer engagement.",
-    href: "/capabilities/ecommerce-shopify-development",
-    icon: ShoppingBag,
-  },
-  {
-    id: "portals",
-    title: "Enterprise Portals & Client Systems",
-    description:
-      "Centralized role-based access portals, internal tooling, and secure databases engineered with strict SOC-2 and HIPAA compliance.",
-    href: "/capabilities/custom-portals",
-    icon: Shield,
-  },
-  {
-    id: "conversational-ai",
-    title: "Conversational AI & Autonomous Agents",
-    description:
-      "Autonomous tier-1 support agents, intelligent dispatch systems, and customer-facing assistants resolving complex inquiries 24/7.",
+      "Conversational AI assistants and WhatsApp Business API bots built on modern LLMs to automate customer queries and reduce support volume by up to 84%.",
     href: "/capabilities/ai-chatbot-automation",
     icon: Bot,
   },
   {
-    id: "api-integration",
-    title: "API & Systems Architecture",
+    id: "cloud-cybersecurity",
+    title: "Cloud Solutions & Cybersecurity",
     description:
-      "High-throughput microservices, legacy system modernizations, and event-driven integrations handling millions of reliable daily syncs.",
-    href: "/capabilities/api-systems-integration",
-    icon: Network,
+      "Secure, resilient cloud architectures with automated CI/CD deployment pipelines, continuous monitoring, and robust enterprise cybersecurity protocols.",
+    href: "/capabilities/cloud-devops-hosting",
+    icon: Cloud,
+  },
+  {
+    id: "ar-vr-metaverse",
+    title: "AR/VR & Metaverse Solutions",
+    description:
+      "Interactive 3D spaces, augmented and virtual reality experiences, and secure blockchain integrations allowing your brand to operate at the digital frontier.",
+    href: "/capabilities/ecommerce-shopify-development",
+    icon: ShoppingBag,
   },
 ];
 

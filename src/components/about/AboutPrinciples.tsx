@@ -6,23 +6,23 @@ import { Shield, Cpu, Zap, Layers } from "lucide-react";
 const PILLARS = [
   {
     icon: Layers,
-    title: "Dual-Hub Engineering Synergy",
-    desc: "We combine strategic client discovery at our Dubai headquarters with the rapid velocity of our dedicated engineering and R&D centers located across India.",
+    title: "Dual-Hub Innovation Synergy",
+    desc: "With our strategic headquarters in Kelakam, Kerala, and a dedicated corporate presence in Business Bay, Dubai, we seamlessly bridge regional insights with global technological standards.",
   },
   {
     icon: Cpu,
-    title: "Applied AI & Automation",
-    desc: "We build production-ready retrieval pipelines, fine-tuned domain models, and intelligent workflows that integrate directly into core enterprise databases.",
+    title: "Artificial Intelligence & Big Data",
+    desc: "Harness the power of predictive analytics, automated intelligence, custom virtual agents, and enterprise-grade big data infrastructure designed to optimize operational efficiency.",
   },
   {
     icon: Zap,
-    title: "Speed with Production Rigor",
-    desc: "Two-week agile sprints, continuous integration pipelines, strict TypeScript typing, and preview environments guarantee fast delivery with zero technical debt.",
+    title: "AR/VR & Metaverse Architecture",
+    desc: "Redefine user engagement through immersive digital environments, interactive 3D spaces, augmented reality, and secure blockchain integrations at the digital frontier.",
   },
   {
     icon: Shield,
-    title: "Enterprise Security & IP",
-    desc: "All client intellectual property belongs entirely to you. We enforce mutual confidentiality, encrypted credential vaults, and SOC2-ready protocols.",
+    title: "Cloud Solutions & Cybersecurity",
+    desc: "Architecting secure, highly scalable cloud environments that ensure continuous deployment, robust cybersecurity, and agile performance across all enterprise operations.",
   },
 ];
 

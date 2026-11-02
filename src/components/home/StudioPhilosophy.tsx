@@ -10,12 +10,12 @@ interface StudioPhilosophyProps {
 
 const STATS_DATA = [
   {
-    number: "20+",
-    label: "Years of combined technology expertise",
+    number: "2023",
+    label: "Founded as Digital Innovation Firm",
   },
   {
-    number: "1000+",
-    label: "Production digital software releases delivered",
+    number: "Dual-Hub",
+    label: "Kerala HQ & Dubai Corporate Office",
   },
   {
     number: "100%",
@@ -37,16 +37,16 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
           {/* Left Column */}
           <div className="lg:col-span-6 flex flex-col justify-between space-y-4 text-left">
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[40px] text-white leading-[1.18] tracking-[-0.025em]">
-              Same team, start to finish
+              Next-generation platforms, built to scale
             </h2>
 
             {/* Paragraph Copy */}
             <div className="max-w-xl space-y-3 font-sans text-base sm:text-[17px] text-slate-100 leading-relaxed font-normal">
               <p>
-                Arkanet is a team of engineers, designers, and strategists working across web, mobile, AI, and digital infrastructure: one cohesive unit, not four separate specialists handed off between projects.
+                Founded in 2023, Arkanet Technologies is a premier digital innovation and IT consulting firm dedicated to building next-generation software platforms. We specialize in transforming complex technological challenges into scalable, future-ready solutions for enterprises and ambitious brands worldwide.
               </p>
               <p className="text-slate-200/90">
-                We measure success the way our clients do — not by what shipped, but by what kept working under real production load. Ongoing support, proactive monitoring, and performance tuning are built into how we work.
+                Operating at the intersection of emerging technology and business strategy, our core expertise spans Artificial Intelligence, Blockchain, AR/VR, IoT, and robust cloud infrastructure across hospitality, IT, eCommerce, and government sectors.
               </p>
             </div>
 

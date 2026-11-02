@@ -5,24 +5,24 @@ import { motion } from "framer-motion";
 
 const STATS = [
   {
-    number: "20+",
-    label: "Years Combined Leadership",
-    detail: "Decades of engineering leadership, product design, and cloud architecture expertise.",
+    number: "2023",
+    label: "Year Founded",
+    detail: "Established as a next-generation digital innovation and technology consulting firm.",
   },
   {
-    number: "1000+",
-    label: "Projects & Releases Delivered",
-    detail: "Successful releases delivered from consumer mobile apps to enterprise workflow automation.",
-  },
-  {
-    number: "99.8%",
-    label: "SLA Uptime & Reliability",
-    detail: "Engineered with multi-region redundancy, automated failovers, and 24/7 monitoring.",
+    number: "Dual-Hub",
+    label: "Kerala HQ & Dubai Presence",
+    detail: "Bridging regional insights with global enterprise technological standards.",
   },
   {
     number: "100%",
     label: "In-House Engineering",
     detail: "Zero third-party contracting with one unified in-house team owning your entire codebase.",
+  },
+  {
+    number: "5+",
+    label: "Key Industry Verticals",
+    detail: "Delivering solutions across hospitality, IT, eCommerce, government, and business services.",
   },
 ];
 
@@ -38,16 +38,19 @@ export function AboutWhoWeAre() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
           <div className="lg:col-span-5 space-y-4">
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[44px] text-white tracking-tight leading-[1.15]">
-              Engineering digital infrastructure that endures
+              Bridging regional insights with global technology standards
             </h2>
           </div>
 
           <div className="lg:col-span-7 space-y-5">
             <p className="font-sans text-base sm:text-lg text-slate-100 font-normal leading-relaxed">
-              Arkanet Technologies was founded with a singular conviction: businesses deserve technology partners who think like software owners, not disconnected outsourced agencies. Too many digital initiatives stumble because discovery, design, development, and hosting are fragmented across disparate vendors.
+              Founded in 2023, Arkanet Technologies is a premier digital innovation and IT consulting firm dedicated to building next-generation software platforms. We specialize in transforming complex technological challenges into scalable, future-ready solutions for enterprises and ambitious brands worldwide.
             </p>
             <p className="font-sans text-base sm:text-lg text-slate-200/90 font-normal leading-relaxed">
-              We operate across 6 specialized practices — custom web platforms, native mobile applications, applied artificial intelligence, cloud architecture, UI/UX systems, and business process automation. By unifying strategic advisory in Dubai with deep technical craftsmanship in India, we deliver software built around your exact commercial realities.
+              Operating at the intersection of emerging technology and business strategy, our core expertise spans Artificial Intelligence, Blockchain, AR/VR, IoT, and robust cloud infrastructure. We partner with organizations across the hospitality, IT, eCommerce, and government sectors to architect immersive digital experiences and end-to-end data architectures that drive operational excellence and sustained market growth.
+            </p>
+            <p className="font-sans text-base sm:text-lg text-slate-200/90 font-normal leading-relaxed">
+              With our strategic headquarters in Kelakam, Kerala, and a dedicated corporate presence in Business Bay, Dubai, we seamlessly bridge regional insights with global technological standards. This dual-hub approach ensures agile development, continuous deployment, and highly responsive consulting tailored to the unique operational landscapes of our international clients. At Arkanet, we do not just adapt to the digital frontier—we actively build it.
             </p>
           </div>
         </div>

@@ -432,13 +432,14 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
   };
 
   const projectTypeOptions = [
-    "Website",
-    "Mobile App",
-    "Portal Development",
-    "UI/UX & Graphic Design",
-    "Digital Marketing",
-    "Business Automation",
-    "Applied AI",
+    "UI/UX Design",
+    "Web & Mobile App Development",
+    "Digital Transformation Consulting",
+    "End-to-End ML & AI",
+    "Big Data Infrastructure",
+    "Virtual Agents & Chatbots",
+    "Cloud & Cybersecurity",
+    "AR/VR & Metaverse",
   ];
 
   return (

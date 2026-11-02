@@ -23,13 +23,13 @@ export function AboutHero() {
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center px-4">
         {/* Clean, Majestic Editorial Headline */}
         <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
-          Powerful Products,<br />
-          Genuine Impact
+          The Digital Innovation<br />
+          Company
         </h1>
 
         {/* Balanced Descriptive Subtitle */}
         <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6">
-          Passionate tech enthusiasts and engineers crafting websites, applications, and AI systems built for real performance.
+          Founded in 2023, Arkanet Technologies blends AI, Blockchain, IoT, AR/VR, and cloud infrastructure to architect next-generation digital platforms for enterprises and ambitious brands worldwide.
         </p>
       </div>
 

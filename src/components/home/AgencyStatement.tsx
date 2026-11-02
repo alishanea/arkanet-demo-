@@ -17,35 +17,9 @@ interface CapabilityItem {
 
 const STATEMENTS: CapabilityItem[] = [
   {
-    id: "web-mobile",
-    title: "Web & Mobile Engineering",
-    desc: "Custom Next.js web applications, cross-platform mobile apps, and scalable digital platforms engineered for conversion, speed, and performance.",
-    href: "/capabilities/website-development",
-    renderIcon: () => (
-      <svg
-        viewBox="0 0 48 48"
-        fill="none"
-        stroke="currentColor"
-        className="w-10 h-10 stroke-[1.35] text-white"
-        aria-hidden="true"
-      >
-        <rect x="6" y="8" width="36" height="28" rx="3" />
-        <line x1="6" y1="16" x2="42" y2="16" />
-        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
-        <circle cx="17" cy="12" r="1.5" fill="currentColor" />
-        <circle cx="22" cy="12" r="1.5" fill="currentColor" />
-        <rect x="12" y="22" width="10" height="8" rx="1.5" />
-        <line x1="27" y1="23" x2="36" y2="23" />
-        <line x1="27" y1="28" x2="33" y2="28" />
-        <path d="M18 40h12" />
-        <path d="M24 36v4" />
-      </svg>
-    ),
-  },
-  {
     id: "applied-ai",
-    title: "Applied AI & Automation",
-    desc: "Production-ready machine learning models, conversational AI agents, and intelligent automated workflows built to scale enterprise business operations.",
+    title: "Artificial Intelligence & Machine Learning",
+    desc: "Harness the power of predictive analytics and automated intelligence to drive informed decision-making. Our AI solutions range from developing custom virtual agents to engineering enterprise-grade big data infrastructure, designed to optimize operational efficiency and scale seamlessly with your business.",
     href: "/capabilities/applied-ai-ml",
     renderIcon: () => (
       <svg
@@ -71,9 +45,35 @@ const STATEMENTS: CapabilityItem[] = [
     ),
   },
   {
+    id: "ar-vr-metaverse",
+    title: "AR/VR & Metaverse Development",
+    desc: "Redefine user engagement through immersive digital environments. We architect interactive 3D spaces, augmented and virtual reality experiences, and secure blockchain integrations that allow your brand to operate at the forefront of the digital frontier.",
+    href: "/capabilities/ecommerce-shopify-development",
+    renderIcon: () => (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        className="w-10 h-10 stroke-[1.35] text-white"
+        aria-hidden="true"
+      >
+        <rect x="6" y="8" width="36" height="28" rx="3" />
+        <line x1="6" y1="16" x2="42" y2="16" />
+        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+        <circle cx="17" cy="12" r="1.5" fill="currentColor" />
+        <circle cx="22" cy="12" r="1.5" fill="currentColor" />
+        <rect x="12" y="22" width="10" height="8" rx="1.5" />
+        <line x1="27" y1="23" x2="36" y2="23" />
+        <line x1="27" y1="28" x2="33" y2="28" />
+        <path d="M18 40h12" />
+        <path d="M24 36v4" />
+      </svg>
+    ),
+  },
+  {
     id: "cloud-devops",
-    title: "Cloud & DevOps Architecture",
-    desc: "Production-grade cloud architecture with continuous uptime monitoring, zero technical debt, and enterprise-grade security protocols across all workloads.",
+    title: "Cloud Solutions & Infrastructure",
+    desc: "Build a resilient foundation for your digital transformation. We architect secure, highly scalable cloud environments that ensure continuous deployment, robust cybersecurity, and agile performance, empowering your enterprise to adapt and grow without technical limitations.",
     href: "/capabilities/cloud-devops-hosting",
     renderIcon: () => (
       <svg
@@ -106,10 +106,10 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
         {/* ── 1. AUTHORITATIVE STATEMENT HEADLINE & DESCRIPTION (PRECISION TYPOGRAPHY) ── */}
         <div className="space-y-4 max-w-4xl text-left">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[40px] text-white leading-[1.18] tracking-[-0.025em]">
-            Engineering Enterprise Software, Intelligent AI &amp; Cloud Systems
+            The Digital Innovation Company
           </h2>
           <p className="font-sans font-normal text-base sm:text-[17px] lg:text-[18px] text-white/80 leading-[1.65] max-w-3xl">
-            We deliver custom digital products, web &amp; mobile applications, and applied artificial intelligence engineered to perform under real traffic and strict enterprise SLAs.
+            Blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Founded in 2023, Arkanet Technologies specializes in transforming complex technological challenges into scalable, future-ready software platforms for enterprises and ambitious brands worldwide.
           </p>
         </div>
 

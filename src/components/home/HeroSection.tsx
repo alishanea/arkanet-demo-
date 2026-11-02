@@ -35,14 +35,13 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center px-4">
         {/* Clean, Majestic Editorial Headline */}
         <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
-          Building Intelligent<br />
-          Digital Products
+          Websites, Apps &amp; AI —<br />
+          Engineered to Perform
         </h1>
 
         {/* Balanced Descriptive Subtitle */}
         <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6">
-          We engineer high performance websites, mobile apps, and intelligent AI systems.
-          Delivering scalable digital products built to perform and grow your business.
+          Arkanet Technologies designs and builds websites, mobile apps, and AI systems made to work under real traffic, real customers, and real deadlines — not just look good in a pitch deck.
         </p>
       </div>
 

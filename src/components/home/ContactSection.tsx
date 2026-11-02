@@ -15,19 +15,34 @@ import {
 } from "lucide-react";
 
 const SERVICES_LIST = [
-  "Web & SaaS Platforms",
-  "Mobile Applications",
-  "Applied AI & Automation",
-  "Cloud & DevOps",
-  "Custom Software",
-  "UI/UX & Product Design"
+  "UI/UX Design",
+  "Web & Mobile App Development",
+  "Digital Transformation Consulting",
+  "End-to-End ML & AI Solutions",
+  "Big Data Infrastructure",
+  "Virtual Agents & Chatbots",
+  "Cloud Solutions & Cybersecurity",
+  "AR/VR & Metaverse Development"
 ];
 
 const OFFICE_LOCATIONS = [
   {
+    city: "Kerala",
+    country: "India",
+    badge: "Headquarters",
+    entity: "Arkanet Technologies",
+    address: "Room No: 227K, Benny complex, Kelakam, Kannur. Kerala 670674, India",
+    poBox: null,
+    phone: "+91 90741 04372",
+    phoneHref: "tel:+919074104372",
+    email: "info@arkanet.in",
+    emailHref: "mailto:info@arkanet.in",
+    hours: "Mon – Sat: 9:00 AM – 6:30 PM IST"
+  },
+  {
     city: "Dubai",
     country: "United Arab Emirates",
-    badge: "Regional Headquarters",
+    badge: "UAE Office",
     entity: "Arkanet Technologies LLC",
     address: "Suite 308, Capital Golden Tower, Business Bay, Dubai, UAE",
     poBox: "P.O. Box: 393317",
@@ -36,19 +51,6 @@ const OFFICE_LOCATIONS = [
     email: "sales@arkanet.ae",
     emailHref: "mailto:sales@arkanet.ae",
     hours: "Sun – Thu: 9:00 AM – 6:00 PM GST"
-  },
-  {
-    city: "Kerala",
-    country: "India",
-    badge: "Engineering & R&D Hub",
-    entity: "Arkanet Technologies",
-    address: "Kelakam, Kannur, Kerala 670674, India",
-    poBox: null,
-    phone: "+91 90741 04372",
-    phoneHref: "tel:+919074104372",
-    email: "info@arkanet.in",
-    emailHref: "mailto:info@arkanet.in",
-    hours: "Mon – Sat: 9:00 AM – 6:30 PM IST"
   }
 ];
 
