@@ -46,7 +46,7 @@ const PROCESS_STEPS: ProcessStep[] = [
     key: "deliver",
     stepNumber: "03",
     title: "Deliver",
-    body: "Our engineering team executes with transparent two-week sprints, continuous integration pipelines, and rigorous automated quality assurance testing protocols.",
+    body: "Our engineering team executes with transparent two-week sprints, continuous integration, and rigorous automated quality assurance.",
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop",
     deliverables: [
