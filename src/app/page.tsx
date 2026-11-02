@@ -76,14 +76,14 @@ export default function Home() {
         {/* 3. Engineering Process */}
         <OurProcess onOpenBooking={handleOpenBooking} />
 
-        {/* 5. Studio Philosophy & Team Stats */}
-        <StudioPhilosophy onOpenBooking={handleOpenBooking} />
+        {/* 4. Selected Work & Case Studies (Work and Projects) */}
+        <WhatsNewSection onOpenBooking={handleOpenBooking} />
 
-        {/* 5b. Trusted By Client Logo Stage (Original First Model) */}
+        {/* 5. Trusted By Client Logo Stage (Client Details) */}
         <ClientLogosSection onOpenBooking={handleOpenBooking} />
 
-        {/* 6. Selected Work & Case Studies (Tall Compact Deck) */}
-        <WhatsNewSection onOpenBooking={handleOpenBooking} />
+        {/* 6. Studio Philosophy & Team Stats (About Us at last) */}
+        <StudioPhilosophy onOpenBooking={handleOpenBooking} />
 
         {/* 7. Closing Headline CTA */}
         <AboutCTA onOpenBooking={handleOpenBooking} />
