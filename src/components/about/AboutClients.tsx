@@ -78,7 +78,7 @@ export function AboutClients() {
           {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, idx) => (
             <div
               key={`about-client-${logo.id}-${idx}`}
-              className="mx-8 sm:mx-12 lg:mx-16 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+              className="mx-4 sm:mx-6 lg:mx-8 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
               title={logo.alt}
             >
               <img

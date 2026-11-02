@@ -44,18 +44,18 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
   return (
     <section
       id="trusted-by"
-      className="relative w-full bg-white text-[#202B61] select-none py-14 sm:py-16 lg:py-20 border-t border-b border-slate-200/80 overflow-hidden font-sans"
+      className="relative w-full bg-white text-[#202B61] select-none py-6 sm:py-7 lg:py-8 border-t border-b border-slate-300/90 shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] overflow-hidden font-sans"
     >
       <div className="w-full">
         {/* Subtle Section Label */}
-        <div className="text-center mb-8 sm:mb-10">
-          <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.28em] text-[#202B61]/60 font-sans">
+        <div className="text-center mb-3 sm:mb-4">
+          <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.28em] text-[#202B61]/65 font-sans">
             Our Clients
           </p>
         </div>
 
         {/* Trailing Marquee Container with Soft Fade Edges (Continuous Train) */}
-        <div className="relative w-full overflow-hidden flex items-center group py-2">
+        <div className="relative w-full overflow-hidden flex items-center group py-1">
           {/* Left Trailing Gradient Fade Mask */}
           <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
 
@@ -67,7 +67,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
             {trailingLogos.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
-                className="mx-8 sm:mx-12 lg:mx-16 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+                className="mx-4 sm:mx-6 lg:mx-8 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
                 title={logo.alt}
               >
                 <img
