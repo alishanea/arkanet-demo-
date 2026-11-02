@@ -392,27 +392,27 @@ export default function CapabilityDetailPage() {
                         {row.description}
                       </p>
 
-                      {/* Tech Chips */}
-                      <div className="pt-1 flex flex-wrap items-center gap-1.5 text-xs">
-                        {techChips.slice(0, 3).map((tech, tIdx) => (
-                          <span
-                            key={tIdx}
-                            className="font-sans text-[10px] sm:text-[11px] font-medium text-[#202B61]/80 bg-slate-100/90 px-2.5 py-1 rounded-md"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                      {/* Bottom Row: Tech Chips on left & Simple Arrow on right */}
+                      <div className="pt-2 flex items-center justify-between gap-3">
+                        <div className="flex flex-wrap items-center gap-1.5 text-xs">
+                          {techChips.slice(0, 3).map((tech, tIdx) => (
+                            <span
+                              key={tIdx}
+                              className="font-sans text-[10px] sm:text-[11px] font-medium text-[#202B61]/80 bg-slate-100/90 px-2.5 py-1 rounded-md"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
 
-                      {/* Action Arrow (No Text, Clean Safe Placement) */}
-                      <div className="pt-2">
+                        {/* Simple Arrow (No circle, aligned to the right) */}
                         <button
                           type="button"
                           onClick={openContact}
                           aria-label="Consult on this architecture"
-                          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200/90 bg-white hover:bg-[#202B61] text-[#202B61] hover:text-white flex items-center justify-center transition-all duration-200 group cursor-pointer shadow-sm hover:shadow"
+                          className="text-[#202B61] hover:text-[#202B61]/70 transition-colors p-1 group cursor-pointer shrink-0"
                         >
-                          <ArrowUpRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[2] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </button>
                       </div>
                     </div>
