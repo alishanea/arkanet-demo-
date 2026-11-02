@@ -44,7 +44,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
   return (
     <section
       id="trusted-by"
-      className="relative w-full bg-white text-[#202B61] select-none pt-5 sm:pt-6 lg:pt-7 pb-2 sm:pb-2.5 lg:pb-3 border-t border-b border-slate-300/90 shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] overflow-hidden font-sans"
+      className="relative w-full bg-[#f4f6fb] text-[#202B61] select-none pt-5 sm:pt-6 lg:pt-7 pb-2 sm:pb-2.5 lg:pb-3 border-t border-b border-slate-200/80 overflow-hidden font-sans"
     >
       <div className="w-full">
         {/* Subtle Section Label */}
@@ -57,7 +57,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
         {/* Trailing Marquee Container with Soft Fade Edges (Continuous Train) */}
         <div className="relative w-full overflow-hidden flex items-center group">
           {/* Left Trailing Gradient Fade Mask */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-r from-[#f4f6fb] to-transparent z-10 pointer-events-none" />
 
           {/* Continuous Trailing Track (Train) */}
           <div
@@ -81,7 +81,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
           </div>
 
           {/* Right Trailing Gradient Fade Mask */}
-          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-l from-[#f4f6fb] to-transparent z-10 pointer-events-none" />
         </div>
       </div>
     </section>
