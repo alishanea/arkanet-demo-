@@ -13,6 +13,7 @@ interface ClientLogo {
 }
 
 const CLIENT_LOGOS: ClientLogo[] = [
+  { id: "arkanet-1", src: "/assets/images/arkanet-logo-transparent.png", alt: "Arkanet Technologies" },
   { id: "2", src: "/assets/clinet-logo/2.png", alt: "Arbitralis" },
   { id: "3", src: "/assets/clinet-logo/3.png", alt: "B&G Store" },
   { id: "4", src: "/assets/clinet-logo/4.png", alt: "Decorpoint International" },
@@ -23,6 +24,7 @@ const CLIENT_LOGOS: ClientLogo[] = [
   { id: "9", src: "/assets/clinet-logo/9.png", alt: "Filipino Institute" },
   { id: "10", src: "/assets/clinet-logo/10.png", alt: "GDS Prestige" },
   { id: "11", src: "/assets/clinet-logo/11.png", alt: "Ikon Petroleum" },
+  { id: "arkanet-2", src: "/assets/images/arkanet-logo-transparent.png", alt: "Arkanet Technologies" },
   { id: "12", src: "/assets/clinet-logo/12.png", alt: "International Gemological Institute" },
   { id: "1", src: "/assets/clinet-logo/1.png", alt: "Al Ras" },
   { id: "13", src: "/assets/clinet-logo/13.png", alt: "Prime Logistics" },
