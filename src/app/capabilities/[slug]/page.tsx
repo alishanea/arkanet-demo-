@@ -266,34 +266,36 @@ export default function CapabilityDetailPage() {
             )}
           </div>
 
-          {/* Quick Capability Practice Switcher */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 pt-2">
-            {[
-              { name: "Web & SaaS", slug: "website-development" },
-              { name: "Mobile Apps", slug: "mobile-app-development" },
-              { name: "Applied AI", slug: "applied-ai-ml" },
-              { name: "Cloud & DevOps", slug: "cloud-devops-hosting" },
-              { name: "UI/UX Design", slug: "graphic-design" },
-              { name: "Marketing", slug: "digital-marketing" },
-              { name: "Automation", slug: "business-automation" },
-              { name: "WhatsApp", slug: "whatsapp-social-commerce-automation" },
-              { name: "ERP Systems", slug: "erp-business-management" },
-            ].map((cap) => {
-              const isActive = slug === cap.slug;
-              return (
-                <Link
-                  key={cap.slug}
-                  href={`/capabilities/${cap.slug}`}
-                  className={`px-3 py-1.5 rounded-[4px] shadow-none text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
-                    isActive
-                      ? "bg-[#202B61] text-white border border-[#202B61]"
-                      : "bg-white text-[#202B61]/75 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
-                  }`}
-                >
-                  {cap.name}
-                </Link>
-              );
-            })}
+          {/* Quick Capability Practice Switcher (Guaranteed Single-Line on all laptops) */}
+          <div className="w-full overflow-x-auto no-scrollbar pt-2 -mx-1 px-1">
+            <div className="flex items-center flex-nowrap gap-1.5 sm:gap-2 xl:gap-2.5 w-max lg:w-auto">
+              {[
+                { name: "Web & SaaS", slug: "website-development" },
+                { name: "Mobile Apps", slug: "mobile-app-development" },
+                { name: "Applied AI", slug: "applied-ai-ml" },
+                { name: "Cloud & DevOps", slug: "cloud-devops-hosting" },
+                { name: "UI/UX Design", slug: "graphic-design" },
+                { name: "Marketing", slug: "digital-marketing" },
+                { name: "Automation", slug: "business-automation" },
+                { name: "WhatsApp", slug: "whatsapp-social-commerce-automation" },
+                { name: "ERP Systems", slug: "erp-business-management" },
+              ].map((cap) => {
+                const isActive = slug === cap.slug;
+                return (
+                  <Link
+                    key={cap.slug}
+                    href={`/capabilities/${cap.slug}`}
+                    className={`shrink-0 whitespace-nowrap px-2.5 sm:px-2.5 xl:px-3 py-1.5 rounded-[4px] shadow-none text-[11px] sm:text-[11.5px] xl:text-xs font-semibold uppercase tracking-wide transition-all duration-200 ${
+                      isActive
+                        ? "bg-[#202B61] text-white border border-[#202B61]"
+                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
+                    }`}
+                  >
+                    {cap.name}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
