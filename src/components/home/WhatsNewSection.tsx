@@ -140,23 +140,17 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           {FEATURED_PROJECTS.map((project, idx) => (
             <div
               key={project.id}
-              className={`flex flex-col justify-between h-full w-full ${
-                /* Desktop (4-cols): only vertical lines in-between each work */
+              className={`flex flex-col justify-between h-full w-full border-b-0 pb-0 ${
+                /* Desktop (4-cols): only vertical divider lines in-between each work, zero bottom lines */
                 idx < 3 ? "lg:border-r lg:border-slate-200/80 lg:pr-6 xl:pr-7" : "lg:border-r-0 lg:pr-0"
               } ${
                 /* Desktop: left padding for subsequent columns */
                 idx > 0 ? "lg:pl-6 xl:pl-7" : "lg:pl-0"
               } ${
-                /* Tablet (2-cols): divider line between col 1 and col 2 */
+                /* Tablet (2-cols): vertical divider line between left and right column only */
                 idx % 2 === 0
                   ? "sm:border-r sm:border-slate-200/80 sm:pr-6 sm:pl-0"
                   : "sm:border-r-0 sm:pl-6 sm:pr-0"
-              } ${
-                /* Tablet: divider line between row 1 and row 2 */
-                idx < 2 ? "sm:border-b sm:border-slate-200/80 sm:pb-8" : "sm:pt-2"
-              } ${
-                /* Mobile: divider line between each work */
-                idx < 3 ? "border-b border-slate-200/80 pb-8 sm:border-b-0 sm:pb-0" : ""
               }`}
             >
               <div
