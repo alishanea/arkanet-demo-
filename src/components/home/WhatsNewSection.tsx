@@ -17,7 +17,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "Marble Tile & Stone Digital Showroom",
     titleLine1: "Marble Tile & Stone",
     titleLine2: "Digital Showroom",
-    description: "High-conversion digital showroom and interactive 3D visualizer engineered with WebGL for rapid architectural surface specifications and real-time approvals.",
+    description: "High performance digital showroom and interactive 3D visualizer engineered with WebGL for rapid architectural surface approvals.",
     outerImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -37,13 +37,13 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "careflow-health",
-    category: "Mobile Applications",
+    category: "Mobile Apps & Platforms",
     title: "CareFlow Enterprise Health Systems",
     titleLine1: "CareFlow Enterprise",
     titleLine2: "Health Systems",
-    description: "Unified mobile telehealth platform paired with clinician portal, automated prescription alerts, and secure real-time digital patient records access.",
-    outerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
+    description: "Unified mobile telehealth platform paired with clinician portal, automated prescription alerts, and secure digital patient records.",
+    outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+    innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "CareFlow Healthcare Group",
       year: "2025",
@@ -65,7 +65,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "NeuralDesk Enterprise AI Assistant",
     titleLine1: "NeuralDesk Enterprise",
     titleLine2: "AI Assistant",
-    description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected directly to helpdesks to automate complex technical query resolution instantly.",
+    description: "Enterprise RAG pipeline and intelligent LLM assistant connected directly to helpdesks to automate complex technical query resolutions.",
     outerImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -85,11 +85,11 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "aerologistics-cloud",
-    category: "Cloud & DevOps",
+    category: "Cloud & DevOps Systems",
     title: "AeroLogistics Global Cloud Platform",
     titleLine1: "AeroLogistics Global",
     titleLine2: "Cloud Platform",
-    description: "Cloud-native event-driven platform utilizing satellite telemetry and automated compliance monitoring for mission-critical global shipping cargo fleets.",
+    description: "Cloud native telemetry platform utilizing automated satellite monitoring and continuous compliance tracking for global shipping fleets.",
     outerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -135,22 +135,19 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </Link>
         </div>
 
-        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID WITH ONLY VERTICAL IN-BETWEEN LINES ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 sm:gap-y-8 lg:gap-y-0 items-stretch w-full">
+        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID WITH EQUAL SIZE, SHAPE, AND BODY ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-3.5 sm:-mx-4 lg:-mx-5 gap-y-10 sm:gap-y-10 lg:gap-y-0 items-stretch">
           {FEATURED_PROJECTS.map((project, idx) => (
             <div
               key={project.id}
-              className={`flex flex-col justify-between h-full w-full border-b-0 pb-0 ${
-                /* Desktop (4-cols): only vertical divider lines in-between each work, zero bottom lines */
-                idx < 3 ? "lg:border-r lg:border-slate-200/80 lg:pr-6 xl:pr-7" : "lg:border-r-0 lg:pr-0"
+              className={`flex flex-col justify-between h-full w-full px-3.5 sm:px-4 lg:px-5 border-b-0 pb-0 ${
+                /* Desktop (4-cols): pure centered vertical divider lines between columns */
+                idx < 3 ? "lg:border-r lg:border-slate-200/80" : "lg:border-r-0"
               } ${
-                /* Desktop: left padding for subsequent columns */
-                idx > 0 ? "lg:pl-6 xl:pl-7" : "lg:pl-0"
-              } ${
-                /* Tablet (2-cols): vertical divider line between left and right column only */
+                /* Tablet (2-cols): vertical divider line between left and right column */
                 idx % 2 === 0
-                  ? "sm:border-r sm:border-slate-200/80 sm:pr-6 sm:pl-0"
-                  : "sm:border-r-0 sm:pl-6 sm:pr-0"
+                  ? "sm:border-r sm:border-slate-200/80"
+                  : "sm:border-r-0"
               }`}
             >
               <div
@@ -167,7 +164,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 }}
                 className="group flex flex-col justify-between h-full w-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-xl transition-transform duration-200"
               >
-                {/* Symmetrical Aspect Ratio Image with Matched Lighting and Perspective */}
+                {/* 100% Identical Aspect Ratio & Dimensions Across All 4 Cards */}
                 <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0">
                   <Image
                     src={project.outerImage}
@@ -178,16 +175,16 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   />
                 </div>
 
-                {/* Clean Typography Stack with Pixel-Perfect Symmetry Across All 4 Cards */}
+                {/* Symmetrical Typography Stack: Equal Baseline, Height, and Alignment */}
                 <div className="pt-4 sm:pt-4.5 flex flex-col flex-1">
-                  {/* Category Label (Blue color, no hover effect) */}
+                  {/* Category Label (Identical font size, height, and color) */}
                   <div className="h-5 flex items-center mb-1.5">
                     <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#202B61] font-sans">
                       {project.category}
                     </p>
                   </div>
 
-                  {/* Project Headline (Symmetrical 2-line baseline for all cards) */}
+                  {/* Project Headline (Strict 2-line baseline height container for all cards) */}
                   <div className="h-[2.85rem] sm:h-[3.1rem] flex items-start mb-2">
                     <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-[#202B61] leading-[1.28] tracking-tight">
                       <span className="block">{project.titleLine1 || project.title}</span>
@@ -195,9 +192,9 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     </h3>
                   </div>
 
-                  {/* 3-Line Description (Blue color, zero hover effect, perfectly balanced) */}
-                  <div className="flex items-start">
-                    <p className="font-sans text-[13px] sm:text-[13.5px] text-[#202B61] leading-[1.6] font-normal text-balance">
+                  {/* Body Description: Exactly 16 words, zero hyphens, equal height container */}
+                  <div className="h-[4.25rem] sm:h-[4.5rem] flex items-start">
+                    <p className="font-sans text-[13px] sm:text-[13.5px] text-[#202B61] leading-[1.55] font-normal text-pretty">
                       {project.description}
                     </p>
                   </div>
