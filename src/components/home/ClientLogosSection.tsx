@@ -46,12 +46,12 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
   return (
     <section
       id="trusted-by"
-      className="relative w-full bg-amber-500 text-[#202B61] select-none pt-5 sm:pt-6 lg:pt-7 pb-3 sm:pb-3.5 lg:pb-4 border-t border-b border-amber-600/30 overflow-hidden font-sans"
+      className="relative w-full bg-white text-[#202B61] select-none pt-5 sm:pt-6 lg:pt-7 pb-3 sm:pb-3.5 lg:pb-4 border-t border-b border-slate-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.02)] overflow-hidden font-sans"
     >
       <div className="w-full">
         {/* Subtle Section Label */}
         <div className="text-center mb-1.5 sm:mb-2">
-          <p className="text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.28em] text-[#202B61] font-sans leading-none">
+          <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.28em] text-[#202B61] font-sans leading-none">
             Our Clients
           </p>
         </div>
@@ -59,7 +59,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
         {/* Trailing Marquee Container with Soft Fade Edges (Continuous Train) */}
         <div className="relative w-full overflow-hidden flex items-center group">
           {/* Left Trailing Gradient Fade Mask */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-r from-amber-500 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
 
           {/* Continuous Trailing Track (Train) */}
           <div
@@ -76,14 +76,14 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
                   src={logo.src}
                   alt={logo.alt}
                   loading="eager"
-                  className="h-16 sm:h-20 lg:h-24 max-h-24 max-w-[240px] sm:max-w-[300px] lg:max-w-[360px] w-auto object-contain opacity-95 hover:opacity-100 transition-all duration-300"
+                  className="h-16 sm:h-20 lg:h-24 max-h-24 max-w-[240px] sm:max-w-[300px] lg:max-w-[360px] w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}
           </div>
 
           {/* Right Trailing Gradient Fade Mask */}
-          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-l from-amber-500 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
         </div>
       </div>
     </section>
