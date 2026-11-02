@@ -299,14 +299,14 @@ export default function WorkPage() {
         {/* -- CINEMATIC AMBIENT BACKGROUND -- */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop"
-            alt="Arkanet Engineering Case Studies"
-            className="w-full h-full object-cover opacity-55 brightness-105 saturate-110"
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2400&auto=format&fit=crop"
+            alt="Arkanet Engineering & Code Workspace"
+            className="w-full h-full object-cover opacity-45 brightness-105 saturate-105"
             loading="eager"
           />
 
           {/* Consistent full-bleed gradient overlay (no oval shape) */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/75 via-[#f4f6fb]/55 to-[#f4f6fb]/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/80 via-[#f4f6fb]/60 to-[#f4f6fb]/90 pointer-events-none" />
         </div>
 
         {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
