@@ -404,14 +404,15 @@ export default function CapabilityDetailPage() {
                         ))}
                       </div>
 
+                      {/* Action Arrow (No Text, Clean Safe Placement) */}
                       <div className="pt-2">
                         <button
                           type="button"
                           onClick={openContact}
-                          className="group inline-flex items-center gap-2 text-xs font-bold text-[#202B61] hover:text-[#202B61]/70 uppercase tracking-wider transition-colors cursor-pointer"
+                          aria-label="Consult on this architecture"
+                          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200/90 bg-white hover:bg-[#202B61] text-[#202B61] hover:text-white flex items-center justify-center transition-all duration-200 group cursor-pointer shadow-sm hover:shadow"
                         >
-                          <span>Consult on This Architecture</span>
-                          <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          <ArrowUpRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[2] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </button>
                       </div>
                     </div>
