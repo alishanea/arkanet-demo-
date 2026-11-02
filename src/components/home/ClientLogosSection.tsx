@@ -67,7 +67,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
             {trailingLogos.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
-                className="mx-4 sm:mx-6 lg:mx-8 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+                className="mx-2 sm:mx-2.5 lg:mx-3 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
                 title={logo.alt}
               >
                 <img
