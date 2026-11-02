@@ -120,7 +120,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </div>
           <Link
             href="/work"
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-black hover:text-black/75 transition-colors shrink-0 group self-start sm:self-end pb-1"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#202B61] hover:text-[#202B61]/75 transition-colors shrink-0 group self-start sm:self-end pb-1"
           >
             <span>See all work</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -146,7 +146,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     setSelectedProject(project);
                   }
                 }}
-                className="group flex flex-col justify-between h-full w-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 rounded-xl transition-transform duration-200"
+                className="group flex flex-col justify-between h-full w-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-xl transition-transform duration-200"
               >
                 {/* Frameless Image with Rounded Corners & Smooth Hover Scale */}
                 <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0">
@@ -163,21 +163,21 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 <div className="pt-4 sm:pt-4.5 flex flex-col flex-1">
                   {/* Category Label (enforced single-line baseline) */}
                   <div className="h-5 flex items-center mb-1.5">
-                    <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-black/70 font-sans">
+                    <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#202B61]/70 font-sans">
                       {project.category}
                     </p>
                   </div>
 
                   {/* Project Headline (enforced uniform height container so all cards align horizontally) */}
                   <div className="h-[2.75rem] sm:h-[3rem] lg:h-[3.25rem] flex items-start mb-2">
-                    <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-black leading-snug tracking-tight group-hover:text-black/80 transition-colors">
+                    <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-[#202B61] leading-snug tracking-tight group-hover:text-[#202B61]/80 transition-colors">
                       {project.title}
                     </h3>
                   </div>
 
                   {/* 3-Line Description (enforced 3-line baseline) */}
                   <div className="h-[4.2rem] sm:h-[4.5rem] flex items-start">
-                    <p className="font-sans text-[13.5px] sm:text-sm text-black/75 leading-relaxed font-normal line-clamp-3">
+                    <p className="font-sans text-[13.5px] sm:text-sm text-[#202B61]/80 leading-relaxed font-normal line-clamp-3">
                       {project.description}
                     </p>
                   </div>

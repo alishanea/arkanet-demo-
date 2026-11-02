@@ -49,7 +49,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
       <div className="w-full">
         {/* Subtle Section Label */}
         <div className="text-center mb-1.5 sm:mb-2">
-          <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.28em] text-black/60 font-sans leading-none">
+          <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.28em] text-[#202B61]/65 font-sans leading-none">
             Our Clients
           </p>
         </div>

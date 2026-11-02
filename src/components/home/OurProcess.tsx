@@ -97,7 +97,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
     >
       <motion.div
         style={{ scale: cardScale }}
-        className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-6 lg:gap-10 xl:gap-12 items-center rounded-xl bg-white text-black p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-none origin-top"
+        className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-6 lg:gap-10 xl:gap-12 items-center rounded-xl bg-white text-[#202B61] p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-none origin-top"
       >
         {/* Left Column */}
         <motion.div
@@ -106,14 +106,14 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
         >
           {/* Top: Large Step Number */}
           <div>
-            <span className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-black/20 select-none leading-none tracking-tight block">
+            <span className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#202B61]/25 select-none leading-none tracking-tight block">
               {step.stepNumber}
             </span>
           </div>
 
           {/* Title & Description (Exact 18 words each) */}
           <div className="space-y-2 sm:space-y-3">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-black tracking-tight">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#202B61] tracking-tight">
               {step.title}
             </h3>
             <p className="section-desc max-w-xl">
@@ -136,7 +136,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
                         : "sm:pl-4 lg:pl-6 last:pb-0"
                     }`}
                   >
-                    <span className="font-sans text-xs sm:text-[13px] lg:text-sm font-semibold text-black leading-none tracking-tight whitespace-nowrap overflow-hidden text-ellipsis block">
+                    <span className="font-sans text-xs sm:text-[13px] lg:text-sm font-semibold text-[#202B61] leading-none tracking-tight whitespace-nowrap overflow-hidden text-ellipsis block">
                       {item}
                     </span>
                   </div>
@@ -165,7 +165,7 @@ export const OurProcess: React.FC<OurProcessProps> = () => {
   return (
     <section
       id="our-process"
-      className="relative w-full bg-[#f4f6fb] text-black py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80"
+      className="relative w-full bg-[#f4f6fb] text-[#202B61] py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80"
     >
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         {/* Section Heading */}
