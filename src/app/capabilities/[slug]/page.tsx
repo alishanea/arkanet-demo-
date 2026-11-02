@@ -312,29 +312,29 @@ export default function CapabilityDetailPage() {
             </div>
           </div>
 
-          {/* 4-Column Simple Clean Grid (No Hover Effects, No Numbers) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
+          {/* 4-Column Open Editorial Structure (Cisco-Inspired Minimalist Architecture) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 items-start">
             {data.highlights.map((item, idx) => {
               const IconComp = (LucideIcons as Record<string, any>)[item.icon] || LucideIcons.Award;
               return (
                 <div
                   key={idx}
-                  className="p-6 rounded-[4px] bg-white border border-slate-200/90 shadow-none flex flex-col text-left space-y-4"
+                  className="flex flex-col text-left space-y-3 sm:space-y-3.5"
                 >
-                  {/* Icon */}
-                  <div className="w-8 h-8 rounded-[4px] bg-[#202B61]/5 flex items-center justify-center text-[#202B61] shrink-0">
-                    <IconComp className="w-4 h-4 stroke-[1.8]" />
+                  {/* Clean Frameless Icon */}
+                  <div className="text-[#202B61] shrink-0">
+                    <IconComp className="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.4]" />
                   </div>
 
-                  {/* Title & Description Stack */}
-                  <div className="space-y-2">
-                    <h4 className="font-heading font-bold text-base sm:text-[17px] text-[#202B61] leading-snug tracking-tight">
-                      {item.title}
-                    </h4>
-                    <p className="font-sans text-sm text-[#202B61]/80 font-normal leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
+                  {/* Title */}
+                  <h4 className="font-heading font-bold text-lg sm:text-[19px] text-[#202B61] leading-snug tracking-tight pt-1">
+                    {item.title}
+                  </h4>
+
+                  {/* Description */}
+                  <p className="font-sans text-sm sm:text-[14.5px] text-[#202B61]/80 font-normal leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
               );
             })}
