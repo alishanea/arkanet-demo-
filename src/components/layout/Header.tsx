@@ -312,7 +312,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   : "bg-[#202B61] hover:bg-[#202B61]/90 text-white"
               }`}
             >
-              Application
+              Applications
             </Link>
 
             {/* Mobile Hamburger Toggle */}
