@@ -127,12 +127,29 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </Link>
         </div>
 
-        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID WITH 100% MATHEMATICAL SYMMETRY ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 lg:gap-7 xl:gap-8 items-stretch w-full">
-          {FEATURED_PROJECTS.map((project) => (
+        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID WITH SIMPLE DIVIDER LINES ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 sm:gap-y-8 lg:gap-y-0 items-stretch w-full">
+          {FEATURED_PROJECTS.map((project, idx) => (
             <div
               key={project.id}
-              className="flex flex-col justify-between h-full w-full"
+              className={`flex flex-col justify-between h-full w-full ${
+                /* Desktop (4-cols): simple separation line between each work */
+                idx < 3 ? "lg:border-r lg:border-slate-200/80 lg:pr-6 xl:pr-7" : "lg:border-r-0 lg:pr-0"
+              } ${
+                /* Desktop: left padding for subsequent columns */
+                idx > 0 ? "lg:pl-6 xl:pl-7" : "lg:pl-0"
+              } ${
+                /* Tablet (2-cols): divider line between col 1 and col 2 */
+                idx % 2 === 0
+                  ? "sm:border-r sm:border-slate-200/80 sm:pr-6 sm:pl-0"
+                  : "sm:border-r-0 sm:pl-6 sm:pr-0"
+              } ${
+                /* Tablet: divider line between row 1 and row 2 */
+                idx < 2 ? "sm:border-b sm:border-slate-200/80 sm:pb-8" : "sm:pt-2"
+              } ${
+                /* Mobile: divider line between each work */
+                idx < 3 ? "border-b border-slate-200/80 pb-8 sm:border-b-0 sm:pb-0" : ""
+              }`}
             >
               <div
                 role="button"
@@ -161,23 +178,23 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
 
                 {/* Clean Typography Stack with Pixel-Perfect Symmetry Across All 4 Cards */}
                 <div className="pt-4 sm:pt-4.5 flex flex-col flex-1">
-                  {/* Category Label (enforced single-line baseline) */}
+                  {/* Category Label (Blue color, no hover effect) */}
                   <div className="h-5 flex items-center mb-1.5">
-                    <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#202B61]/70 font-sans">
+                    <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#202B61] font-sans">
                       {project.category}
                     </p>
                   </div>
 
-                  {/* Project Headline (enforced uniform height container so all cards align horizontally) */}
+                  {/* Project Headline (Blue color, zero hover color shift) */}
                   <div className="h-[2.75rem] sm:h-[3rem] lg:h-[3.25rem] flex items-start mb-2">
-                    <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-[#202B61] leading-snug tracking-tight group-hover:text-[#202B61]/80 transition-colors">
+                    <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-[#202B61] leading-snug tracking-tight">
                       {project.title}
                     </h3>
                   </div>
 
-                  {/* 3-Line Description (enforced 3-line baseline) */}
+                  {/* 3-Line Description (Blue color, zero hover effect) */}
                   <div className="h-[4.2rem] sm:h-[4.5rem] flex items-start">
-                    <p className="font-sans text-[13.5px] sm:text-sm text-[#202B61]/80 leading-relaxed font-normal line-clamp-3">
+                    <p className="font-sans text-[13.5px] sm:text-sm text-[#202B61] leading-relaxed font-normal line-clamp-3">
                       {project.description}
                     </p>
                   </div>
