@@ -85,7 +85,7 @@ export function AboutClients() {
                 src={logo.src}
                 alt={logo.alt}
                 loading="eager"
-                className="h-11 sm:h-13 lg:h-14 max-h-14 max-w-[180px] sm:max-w-[220px] lg:max-w-[260px] w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
+                className="h-16 sm:h-20 lg:h-24 max-h-24 max-w-[240px] sm:max-w-[300px] lg:max-w-[360px] w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
               />
             </div>
           ))}
