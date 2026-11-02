@@ -14,9 +14,11 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "marble-tile-stone",
     category: "Web & SaaS Platforms",
-    title: "Marble Tile & Stone Showroom",
-    description: "High-conversion digital showroom and real-time 3D room visualizer engineered with WebGL for architectural surface approvals.",
-    outerImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
+    title: "Marble Tile & Stone Digital Showroom",
+    titleLine1: "Marble Tile & Stone",
+    titleLine2: "Digital Showroom",
+    description: "High-conversion digital showroom and interactive 3D visualizer engineered with WebGL for rapid architectural surface specifications and real-time approvals.",
+    outerImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "Marble Tile & Stone Ltd.",
@@ -36,10 +38,12 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "careflow-health",
     category: "Mobile Applications",
-    title: "CareFlow Health Systems",
-    description: "Unified mobile telehealth platform paired with a clinician portal, automated prescription alerts, and real-time lab report access.",
-    outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
+    title: "CareFlow Enterprise Health Systems",
+    titleLine1: "CareFlow Enterprise",
+    titleLine2: "Health Systems",
+    description: "Unified mobile telehealth platform paired with clinician portal, automated prescription alerts, and secure real-time digital patient records access.",
+    outerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
+    innerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "CareFlow Healthcare Group",
       year: "2025",
@@ -58,9 +62,11 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "neuraldesk-ai",
     category: "Applied AI & Automation",
-    title: "NeuralDesk AI Assistant",
-    description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected directly to helpdesks to automate technical query resolution.",
-    outerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+    title: "NeuralDesk Enterprise AI Assistant",
+    titleLine1: "NeuralDesk Enterprise",
+    titleLine2: "AI Assistant",
+    description: "Enterprise RAG pipeline and fine-tuned LLM assistant connected directly to helpdesks to automate complex technical query resolution instantly.",
+    outerImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "NeuralDesk Technologies",
@@ -80,10 +86,12 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "aerologistics-cloud",
     category: "Cloud & DevOps",
-    title: "AeroLogistics Global Cloud",
-    description: "Cloud-native event-driven platform utilizing satellite IoT telemetry and automated compliance monitoring for global cargo fleets.",
-    outerImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1600&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop",
+    title: "AeroLogistics Global Cloud Platform",
+    titleLine1: "AeroLogistics Global",
+    titleLine2: "Cloud Platform",
+    description: "Cloud-native event-driven platform utilizing satellite telemetry and automated compliance monitoring for mission-critical global shipping cargo fleets.",
+    outerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
+    innerImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1000&auto=format&fit=crop",
     detail: {
       client: "AeroLogistics Global Inc.",
       year: "2025",
@@ -105,11 +113,11 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
   const [selectedProject, setSelectedProject] = useState<WorkProjectDetail | null>(null);
 
   return (
-    <section id="work" className="relative w-full bg-[#f4f6fb] py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80 font-sans scroll-mt-24">
+    <section id="work" className="relative w-full bg-[#f4f6fb] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24">
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         
-        {/* ── 1. CLEAN EDITORIAL SECTION HEADER (WITH "SEE ALL WORK" LINK) ── */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 sm:pb-8 border-b border-slate-200/80">
+        {/* ── 1. CLEAN EDITORIAL SECTION HEADER (NO TOP/BOTTOM DIVIDER LINES) ── */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 sm:pb-3">
           <div className="space-y-2 max-w-2xl text-left">
             <h2 className="section-h2">
               Selected Work &amp; Case Studies
@@ -127,13 +135,13 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </Link>
         </div>
 
-        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID WITH SIMPLE DIVIDER LINES ── */}
+        {/* ── 2. 4-COLUMN BALANCED PROJECT GRID WITH ONLY VERTICAL IN-BETWEEN LINES ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 sm:gap-y-8 lg:gap-y-0 items-stretch w-full">
           {FEATURED_PROJECTS.map((project, idx) => (
             <div
               key={project.id}
               className={`flex flex-col justify-between h-full w-full ${
-                /* Desktop (4-cols): simple separation line between each work */
+                /* Desktop (4-cols): only vertical lines in-between each work */
                 idx < 3 ? "lg:border-r lg:border-slate-200/80 lg:pr-6 xl:pr-7" : "lg:border-r-0 lg:pr-0"
               } ${
                 /* Desktop: left padding for subsequent columns */
@@ -165,7 +173,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 }}
                 className="group flex flex-col justify-between h-full w-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-xl transition-transform duration-200"
               >
-                {/* Frameless Image with Rounded Corners & Smooth Hover Scale */}
+                {/* Symmetrical Aspect Ratio Image with Matched Lighting and Perspective */}
                 <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0">
                   <Image
                     src={project.outerImage}
@@ -185,16 +193,17 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     </p>
                   </div>
 
-                  {/* Project Headline (Blue color, zero hover color shift) */}
-                  <div className="h-[2.75rem] sm:h-[3rem] lg:h-[3.25rem] flex items-start mb-2">
-                    <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-[#202B61] leading-snug tracking-tight">
-                      {project.title}
+                  {/* Project Headline (Symmetrical 2-line baseline for all cards) */}
+                  <div className="h-[2.85rem] sm:h-[3.1rem] flex items-start mb-2">
+                    <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-[#202B61] leading-[1.28] tracking-tight">
+                      <span className="block">{project.titleLine1 || project.title}</span>
+                      <span className="block">{project.titleLine2}</span>
                     </h3>
                   </div>
 
-                  {/* 3-Line Description (Blue color, zero hover effect) */}
-                  <div className="h-[4.2rem] sm:h-[4.5rem] flex items-start">
-                    <p className="font-sans text-[13.5px] sm:text-sm text-[#202B61] leading-relaxed font-normal line-clamp-3">
+                  {/* 3-Line Description (Blue color, zero hover effect, perfectly balanced) */}
+                  <div className="flex items-start">
+                    <p className="font-sans text-[13px] sm:text-[13.5px] text-[#202B61] leading-[1.6] font-normal text-balance">
                       {project.description}
                     </p>
                   </div>
