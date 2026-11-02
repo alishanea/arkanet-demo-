@@ -110,11 +110,19 @@ export const Footer: React.FC<FooterProps> = ({
                 <span className="font-bold text-[#202B61] block">UAE Office</span>
                 <p className="leading-relaxed">
                   Suite 308, Capital Golden Tower,<br />
-                  Business Bay, Dubai
+                  Business Bay, Dubai, UAE
                 </p>
-                <a href="tel:+97145572716" className="text-[#202B61]/85 hover:text-[#202B61] block font-semibold pt-0.5">
-                  +971 4 557 2716
-                </a>
+                <div className="space-y-0.5 pt-0.5">
+                  <a href="tel:+97145572716" className="text-[#202B61]/85 hover:text-[#202B61] block font-semibold">
+                    +971 4 557 2716
+                  </a>
+                  <a href="tel:+971509338430" className="text-[#202B61]/85 hover:text-[#202B61] block font-semibold">
+                    +971 50 933 8430
+                  </a>
+                  <a href="mailto:sales@arkanet.ae" className="text-xs font-semibold text-[#202B61] hover:underline block pt-0.5">
+                    sales@arkanet.ae
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -148,9 +156,12 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
               </div>
 
-              <div className="pt-1">
-                <a href="mailto:info@arkanet.in" className="text-xs font-semibold text-[#202B61] hover:underline block">
-                  info@arkanet.in
+              <div className="pt-1 space-y-1">
+                <a href="mailto:sales@arkanet.ae" className="text-xs font-semibold text-[#202B61] hover:underline block">
+                  sales@arkanet.ae (UAE)
+                </a>
+                <a href="mailto:info@arkanet.in" className="text-xs font-semibold text-[#202B61]/80 hover:underline block">
+                  info@arkanet.in (HQ)
                 </a>
               </div>
             </div>

@@ -12,9 +12,22 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Arkanet Technologies, Websites, Apps & AI Engineered to Perform",
+  title: "Arkanet Technologies | Websites, Apps, Cloud & AI Engineered to Perform",
   description:
-    "Arkanet Technologies designs and builds websites, mobile apps, and AI systems made to work under real traffic, real customers, and real deadlines. Based in Kerala.",
+    "Arkanet Technologies designs and builds high-performance web platforms, mobile apps, enterprise cloud infrastructure, and applied AI systems. Operating across Kerala (India HQ) and Business Bay, Dubai (UAE).",
+  keywords: [
+    "Arkanet Technologies",
+    "Arkanet Technologies LLC",
+    "arkanet.ae",
+    "arkanet.in",
+    "Software Engineering Dubai",
+    "AI Development UAE",
+    "Web and Mobile App Development"
+  ],
+  metadataBase: new URL("https://arkanet.ae"),
+  alternates: {
+    canonical: "https://arkanet.ae",
+  },
 };
 
 export default function RootLayout({
