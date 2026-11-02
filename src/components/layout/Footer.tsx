@@ -35,9 +35,9 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="lg:col-span-4 space-y-4">
               <Link href="/" className="inline-flex items-center gap-2.5 font-display font-black text-xl text-white tracking-tight hover:opacity-85 transition-opacity">
                 <img
-                  src="/assets/images/arkanet-icon.png"
-                  alt="Arkanet"
-                  className="w-6 h-6 object-contain brightness-0 invert"
+                  src="/assets/images/arkanet-icon-dark.png"
+                  alt="Arkanet Technologies"
+                  className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
                 />
                 <span>ARKANET</span>
               </Link>

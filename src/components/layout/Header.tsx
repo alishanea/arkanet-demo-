@@ -216,7 +216,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               className="flex items-center gap-2.5 shrink-0 group select-none"
             >
               <img
-                src="/assets/images/arkanet-icon.png"
+                src="/assets/images/arkanet-icon-clean.png"
                 alt="Arkanet Logo"
                 className="w-7 h-7 sm:w-8 sm:h-8 object-contain group-hover:scale-105 transition-transform"
               />
