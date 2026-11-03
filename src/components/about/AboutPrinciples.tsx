@@ -7,35 +7,35 @@ const PILLARS = [
   {
     icon: Layers,
     title: "Dual-Hub Innovation Synergy",
-    desc: "With our strategic headquarters in Kelakam, Kerala, and a dedicated corporate presence in Business Bay, Dubai, we seamlessly bridge regional insights with global technological standards.",
+    desc: "Strategic headquarters in Kelakam paired with Dubai corporate office, bridging regional engineering talent with demanding global enterprise technology standards.",
   },
   {
     icon: Cpu,
     title: "Artificial Intelligence & Big Data",
-    desc: "Harness the power of predictive analytics, automated intelligence, custom virtual agents, and enterprise-grade big data infrastructure designed to optimize operational efficiency.",
+    desc: "Harness predictive analytics, automated intelligence, custom virtual agents, and scalable big data infrastructure engineered to maximize operational business efficiency.",
   },
   {
     icon: Zap,
     title: "AR/VR & Metaverse Architecture",
-    desc: "Redefine user engagement through immersive digital environments, interactive 3D spaces, augmented reality, and secure blockchain integrations at the digital frontier.",
+    desc: "Redefine digital engagement through immersive 3D spatial environments, augmented reality applications, and secure blockchain integrations at the digital frontier.",
   },
   {
     icon: Shield,
     title: "Cloud Solutions & Cybersecurity",
-    desc: "Architecting secure, highly scalable cloud environments that ensure continuous deployment, robust cybersecurity, and agile performance across all enterprise operations.",
+    desc: "Architect secure, resilient cloud environments ensuring continuous integration pipelines, enterprise cybersecurity protocols, and high availability performance across critical operations.",
   },
 ];
 
 export function AboutPrinciples() {
   return (
-    <section className="w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
+    <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
       <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
         {/* Section Heading & Subtitle */}
         <div className="max-w-3xl space-y-3 text-left">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-[#202B61] tracking-tight leading-tight">
+          <h2 className="section-h2">
             Our Core Operating Principles
           </h2>
-          <p className="font-sans text-base sm:text-lg text-[#202B61]/80 leading-relaxed font-normal">
+          <p className="section-desc max-w-2xl">
             How we approach every architectural decision, engineering sprint, and client commitment.
           </p>
         </div>
@@ -71,7 +71,7 @@ export function AboutPrinciples() {
                       {pillar.title}
                     </h3>
                   </div>
-                  <p className="font-sans text-[15px] sm:text-base text-[#202B61]/80 leading-relaxed font-normal pl-8">
+                  <p className="font-sans text-[15px] sm:text-base text-[#202B61] leading-[1.65] font-normal pl-8">
                     {pillar.desc}
                   </p>
                 </div>

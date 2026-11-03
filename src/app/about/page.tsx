@@ -27,7 +27,7 @@ export default function AboutPage() {
       <AboutTestimonials />
       <AboutCTA onOpenBooking={openContact} />
 
-      <Footer onOpenBooking={openContact} bgColor="bg-white" />
+      <Footer onOpenBooking={openContact}  />
     </main>
   );
 }

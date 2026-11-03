@@ -559,7 +559,7 @@ export default function WorkPage() {
       <AboutCTA onOpenBooking={openContact} />
 
       {/* ── 6. FOOTER ── */}
-      <Footer onOpenBooking={openContact} bgColor="bg-white" />
+      <Footer onOpenBooking={openContact}  />
     </main>
   );
 }

@@ -510,7 +510,7 @@ export default function ApplicationShowcasePage() {
       <AboutCTA onOpenBooking={openContact} />
 
       {/* ── 5. FOOTER ── */}
-      <Footer onOpenBooking={openContact} bgColor="bg-white" />
+      <Footer onOpenBooking={openContact}  />
     </main>
   );
 }

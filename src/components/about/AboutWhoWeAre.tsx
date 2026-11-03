@@ -12,12 +12,12 @@ const STATS = [
   {
     number: "Dual-Hub",
     label: "Kerala HQ & Dubai Presence",
-    detail: "Bridging regional insights with global enterprise technological standards.",
+    detail: "Bridging regional technical insights with scalable global enterprise technological standards.",
   },
   {
     number: "100%",
     label: "In-House Engineering",
-    detail: "Zero third-party contracting with one unified in-house team owning your entire codebase.",
+    detail: "Zero third-party outsourcing with one dedicated in-house full-stack engineering team.",
   },
   {
     number: "5+",
@@ -57,7 +57,7 @@ export function AboutWhoWeAre() {
 
         {/* 4 Stats Grid: Frameless with Simple Divider Lines */}
         <div className="pt-10 sm:pt-12 border-t border-[#253272]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 items-stretch w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-4 sm:-mx-6 lg:-mx-8 gap-y-8 items-stretch w-full">
             {STATS.map((stat, idx) => (
               <motion.div
                 key={stat.label}
@@ -69,17 +69,14 @@ export function AboutWhoWeAre() {
                   delay: idx * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className={`flex flex-col justify-between h-full text-left transition-all duration-200 ${
-                  /* Desktop (4-cols): simple separation line between each stat column */
-                  idx < 3 ? "lg:border-r lg:border-[#253272] lg:pr-8 xl:pr-10" : "lg:border-r-0 lg:pr-0"
+                className={`flex flex-col justify-between h-full text-left px-4 sm:px-6 lg:px-8 transition-all duration-200 ${
+                  /* Desktop (4-cols): centered vertical divider lines between columns */
+                  idx < 3 ? "lg:border-r lg:border-[#253272]" : "lg:border-r-0"
                 } ${
-                  /* Desktop: left padding on subsequent columns */
-                  idx > 0 ? "lg:pl-8 xl:pl-10" : "lg:pl-0"
-                } ${
-                  /* Tablet (2-cols): divider line between column 1 and column 2 */
+                  /* Tablet (2-cols): vertical divider line between column 1 and column 2 */
                   idx % 2 === 0
-                    ? "sm:border-r sm:border-[#253272] sm:pr-8 sm:pl-0"
-                    : "sm:border-r-0 sm:pl-8 sm:pr-0"
+                    ? "sm:border-r sm:border-[#253272]"
+                    : "sm:border-r-0"
                 } ${
                   /* Mobile (1-col): subtle horizontal separation line between items */
                   idx < 3 ? "border-b border-[#253272] pb-6 sm:border-b-0 sm:pb-0" : ""

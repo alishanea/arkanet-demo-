@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = ({
   return (
     <footer
       className={`relative text-white py-14 sm:py-16 overflow-hidden select-none border-t border-[#253272] ${
-        bgColor ? bgColor : "bg-[#151E48]"
+        bgColor && bgColor !== "bg-white" ? bgColor : "bg-[#151E48]"
       }`}
     >
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10 text-left font-sans">
