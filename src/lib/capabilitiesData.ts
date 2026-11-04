@@ -17,6 +17,7 @@ export interface CapabilityDetail {
     center: string;
     right: string;
   };
+  bgImage?: string;
   highlights: {
     icon: string;
     title: string;
@@ -55,6 +56,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.1 Custom Software Engineering
   "custom-software-engineering": {
     slug: "custom-software-engineering",
+    bgImage: "/assets/images/webdevelopmenttwo.jpg",
     badge: "CUSTOM SOFTWARE ENGINEERING",
     title: "Software built around your business,",
     highlightText: "not the other way around.",
@@ -152,6 +154,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.2 Web Design & Development
   "website-development": {
     slug: "website-development",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "WEBSITE DEVELOPMENT",
     title: "Websites engineered to",
     highlightText: "convert, not just impress.",
@@ -249,6 +252,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.3 Mobile App Development
   "mobile-app-development": {
     slug: "mobile-app-development",
+    bgImage: "/assets/images/App-development-three.webp",
     badge: "MOBILE APP DEVELOPMENT",
     title: "Apps people actually",
     highlightText: "keep on their phones.",
@@ -346,6 +350,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.4 SaaS Product Development
   "saas-product-development": {
     slug: "saas-product-development",
+    bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
     badge: "SAAS PRODUCT DEVELOPMENT",
     title: "Multi-tenant platforms",
     highlightText: "built to scale.",
@@ -443,6 +448,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.5 E-Commerce & Shopify Development
   "ecommerce-shopify-development": {
     slug: "ecommerce-shopify-development",
+    bgImage: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2000&auto=format&fit=crop",
     badge: "E-COMMERCE & SHOPIFY DEVELOPMENT",
     title: "Storefronts engineered",
     highlightText: "to generate revenue.",
@@ -540,6 +546,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.6 Marketplace & Directory Platforms
   "marketplace-directory-platforms": {
     slug: "marketplace-directory-platforms",
+    bgImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop",
     badge: "MARKETPLACE PLATFORMS",
     title: "Two-sided marketplaces,",
     highlightText: "built for high volume.",
@@ -637,6 +644,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.7 Custom Portals
   "custom-portals": {
     slug: "custom-portals",
+    bgImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop",
     badge: "ENTERPRISE PORTALS",
     title: "Give every stakeholder",
     highlightText: "their own front door.",
@@ -734,6 +742,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.8 API & Systems Integration
   "api-systems-integration": {
     slug: "api-systems-integration",
+    bgImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000&auto=format&fit=crop",
     badge: "API & SYSTEMS INTEGRATION",
     title: "Make your software systems",
     highlightText: "talk to each other.",
@@ -831,6 +840,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.9 Cloud, DevOps & Hosting
   "cloud-devops-hosting": {
     slug: "cloud-devops-hosting",
+    bgImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop",
     badge: "CLOUD & DEVOPS ENGINEERING",
     title: "Infrastructure that stays up,",
     highlightText: "whatever the traffic.",
@@ -928,6 +938,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.10 Legacy Modernization
   "legacy-modernization": {
     slug: "legacy-modernization",
+    bgImage: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=2000&auto=format&fit=crop",
     badge: "LEGACY MODERNIZATION",
     title: "Bring old systems",
     highlightText: "into the modern era.",
@@ -1030,6 +1041,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.1 Applied AI & ML
   "applied-ai-ml": {
     slug: "applied-ai-ml",
+    bgImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop",
     badge: "APPLIED AI & ML",
     title: "Custom models, built & evaluated",
     highlightText: "against your actual business metric.",
@@ -1127,6 +1139,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.2 Conversational AI & Agents
   "ai-chatbot-automation": {
     slug: "ai-chatbot-automation",
+    bgImage: "/assets/images/ai-chat-bots.jpg",
     badge: "CONVERSATIONAL AI & AGENTS",
     title: "Agents that act,",
     highlightText: "not just answer.",
@@ -1224,6 +1237,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.3 AI Commerce Assistants
   "ai-commerce-assistants": {
     slug: "ai-commerce-assistants",
+    bgImage: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2000&auto=format&fit=crop",
     badge: "AI COMMERCE ASSISTANTS",
     title: "A personal shopper on",
     highlightText: "every single product page.",
@@ -1321,6 +1335,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.4 Hybrid AI Support Desk
   "hybrid-ai-support-desk": {
     slug: "hybrid-ai-support-desk",
+    bgImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop",
     badge: "HYBRID AI SUPPORT DESK",
     title: "AI handles volume.",
     highlightText: "Humans handle nuance.",
@@ -1418,6 +1433,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.5 Document Intelligence & Automated Reporting
   "document-intelligence": {
     slug: "document-intelligence",
+    bgImage: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=2000&auto=format&fit=crop",
     badge: "DOCUMENT INTELLIGENCE",
     title: "Turn documents into data,",
     highlightText: "and data into documents.",
@@ -1515,6 +1531,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.6 Multilingual AI Solutions
   "multilingual-ai-solutions": {
     slug: "multilingual-ai-solutions",
+    bgImage: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2000&auto=format&fit=crop",
     badge: "MULTILINGUAL AI SOLUTIONS",
     title: "Arabic, Malayalam, & beyond,",
     highlightText: "done with true cultural fluency.",
@@ -1612,6 +1629,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.7 Data Engineering
   "data-engineering": {
     slug: "data-engineering",
+    bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
     badge: "DATA ENGINEERING & DATA SCIENCE",
     title: "Turn messy data into",
     highlightText: "answers you can trust.",
@@ -1709,6 +1727,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.8 Voice AI & IVR Systems
   "voice-ai-ivr-systems": {
     slug: "voice-ai-ivr-systems",
+    bgImage: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=2000&auto=format&fit=crop",
     badge: "VOICE AI & IVR SYSTEMS",
     title: "Phone support without",
     highlightText: "the hold music.",
@@ -1811,6 +1830,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 3.1 Business Process Automation
   "business-automation": {
     slug: "business-automation",
+    bgImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop",
     badge: "BUSINESS AUTOMATION",
     title: "We map the manual work.",
     highlightText: "Then we make it disappear.",
@@ -1908,6 +1928,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 3.2 Workflow & Integration Automation
   "workflow-integration-automation": {
     slug: "workflow-integration-automation",
+    bgImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2000&auto=format&fit=crop",
     badge: "WORKFLOW AUTOMATION",
     title: "Connect your SaaS tools",
     highlightText: "into one seamless flow.",
@@ -2005,6 +2026,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 3.3 WhatsApp & Social Commerce Automation
   "whatsapp-social-commerce-automation": {
     slug: "whatsapp-social-commerce-automation",
+    bgImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2000&auto=format&fit=crop",
     badge: "WHATSAPP & SOCIAL COMMERCE",
     title: "Sell and serve where your",
     highlightText: "customers already are.",
@@ -2107,6 +2129,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.1 Learning Management & Live Classrooms
   "learning-management-systems": {
     slug: "learning-management-systems",
+    bgImage: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2000&auto=format&fit=crop",
     badge: "LEARNING MANAGEMENT SYSTEMS",
     title: "Teach, assess, and certify",
     highlightText: "in one complete platform.",
@@ -2204,6 +2227,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.2 Video Conferencing & Meeting Platforms
   "video-conferencing-platforms": {
     slug: "video-conferencing-platforms",
+    bgImage: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=2000&auto=format&fit=crop",
     badge: "VIDEO CONFERENCING PLATFORMS",
     title: "Your own branded meeting rooms,",
     highlightText: "on your own infrastructure.",
@@ -2301,6 +2325,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.3 Event Management & Ticketing
   "event-management-ticketing": {
     slug: "event-management-ticketing",
+    bgImage: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2000&auto=format&fit=crop",
     badge: "EVENT TICKETING PLATFORMS",
     title: "From registration,",
     highlightText: "straight to the entrance gate.",
@@ -2398,6 +2423,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.4 ERP & Business Management Systems
   "erp-business-management": {
     slug: "erp-business-management",
+    bgImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop",
     badge: "ERP & BUSINESS MANAGEMENT",
     title: "One unified system for",
     highlightText: "your entire operation.",
@@ -2495,6 +2521,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.5 HR, Attendance & Access Control
   "hr-attendance-access-control": {
     slug: "hr-attendance-access-control",
+    bgImage: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2000&auto=format&fit=crop",
     badge: "HR & ACCESS CONTROL",
     title: "Attendance data is only useful",
     highlightText: "if payroll can read it.",
@@ -2592,6 +2619,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.6 Retail & Mall Automation
   "retail-mall-automation": {
     slug: "retail-mall-automation",
+    bgImage: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=2000&auto=format&fit=crop",
     badge: "RETAIL & MALL AUTOMATION",
     title: "Thousands of store decisions,",
     highlightText: "made automatically.",
@@ -2694,6 +2722,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.1 UI/UX & Graphic Design
   "graphic-design": {
     slug: "graphic-design",
+    bgImage: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2000&auto=format&fit=crop",
     badge: "UI/UX & GRAPHIC DESIGN",
     title: "Interfaces people understand",
     highlightText: "instantly, without a manual.",
@@ -2791,6 +2820,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.2 Brand Identity & Creative
   "brand-identity-creative": {
     slug: "brand-identity-creative",
+    bgImage: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=2000&auto=format&fit=crop",
     badge: "BRAND IDENTITY & CREATIVE",
     title: "Credibility is visual",
     highlightText: "long before it's verbal.",
@@ -2888,6 +2918,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.3 Digital Marketing
   "digital-marketing": {
     slug: "digital-marketing",
+    bgImage: "/assets/images/digital-marketing-one.jpg",
     badge: "DIGITAL MARKETING",
     title: "Marketing that grows",
     highlightText: "your revenue, not your reports.",
@@ -2985,6 +3016,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.4 SEO & Performance Marketing
   "seo-performance-marketing": {
     slug: "seo-performance-marketing",
+    bgImage: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=2000&auto=format&fit=crop",
     badge: "SEO & PERFORMANCE MARKETING",
     title: "Be found online when",
     highlightText: "it matters most.",
@@ -3087,6 +3119,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 6.1 Product Strategy & Consulting
   "product-strategy-consulting": {
     slug: "product-strategy-consulting",
+    bgImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop",
     badge: "PRODUCT STRATEGY & CONSULTING",
     title: "Get the plan right",
     highlightText: "before you write a line of code.",
@@ -3184,6 +3217,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 6.2 Maintenance & Support Retainers
   "maintenance-support-retainers": {
     slug: "maintenance-support-retainers",
+    bgImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2000&auto=format&fit=crop",
     badge: "MAINTENANCE & SUPPORT RETAINERS",
     title: "Someone on call",
     highlightText: "when it matters most.",

@@ -186,35 +186,13 @@ export default function CapabilityDetailPage() {
   const params = useParams();
   const slug = (params?.slug as string) || "website-development";
   const [contactOpen, setContactOpen] = useState(false);
-  const [activeIdx, setActiveIdx] = useState(0);
-
   const openContact = () => setContactOpen(true);
 
   // Fallback to website-development if slug not found
   const data = CAPABILITIES_DATA[slug] || CAPABILITIES_DATA["website-development"];
 
-  // Unique showcase images for this capability (used in hero background slideshow & sections)
-  const showcaseImages = [
-    data.heroImages.center,
-    data.heroImages.left,
-    data.heroImages.right,
-    ...(data.featureRows || []).map((r) => r.image),
-    data.techShowcase?.image,
-  ].filter(Boolean) as string[];
-
-  // Auto-advance background image one by one every 3 seconds
-  useEffect(() => {
-    if (showcaseImages.length === 0) return;
-    const timer = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % showcaseImages.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [showcaseImages.length]);
-
-  // Reset to first image when slug changes
-  useEffect(() => {
-    setActiveIdx(0);
-  }, [slug]);
+  // Dedicated, content-connected background image for each capability
+  const heroBg = data.bgImage || data.heroImages?.center;
 
   const metrics = PRACTICE_METRICS[slug] || DEFAULT_METRICS;
   const techChips = PRACTICE_TECH[slug] || DEFAULT_TECH;
@@ -223,32 +201,34 @@ export default function CapabilityDetailPage() {
     <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── SECTION 1: HERO SECTION WITH AUTOMATIC BACKGROUND IMAGE SLIDESHOW ── */}
+      {/* ── SECTION 1: HERO SECTION WITH DEDICATED CONTENT-CONNECTED BACKGROUND ── */}
       <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-28 sm:pt-36 pb-12 sm:pb-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left">
-        {/* Background Images Changing Smoothly One by One (Every 3 seconds) */}
-        <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+        {/* Dedicated Content-Connected Background Showcase Image */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] xl:w-[56%] z-0 overflow-hidden pointer-events-none select-none">
           <AnimatePresence mode="wait">
             <motion.div
-              key={activeIdx}
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 0.22, scale: 1.0 }}
+              key={slug}
+              initial={{ opacity: 0, scale: 1.04 }}
+              animate={{ opacity: 1, scale: 1.0 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="relative w-full h-full"
             >
-              {showcaseImages[activeIdx] && (
+              {heroBg && (
                 <img
-                  src={showcaseImages[activeIdx]}
-                  alt="Background showcase"
-                  className="w-full h-full object-cover brightness-105 saturate-110"
+                  src={heroBg}
+                  alt={`${data.title} Background Showcase`}
+                  className="w-full h-full object-cover object-center lg:object-right opacity-85 brightness-[1.02] contrast-[1.05]"
                 />
               )}
             </motion.div>
           </AnimatePresence>
 
-          {/* Soft Scrims & Ambient Overlay for Flawless Text Legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb] via-[#f4f6fb]/75 to-[#f4f6fb]/95 pointer-events-none z-[1]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb] via-[#f4f6fb]/80 to-transparent pointer-events-none z-[1]" />
+          {/* Precision Gradient Blends: Keeps left text 100% readable while right image remains crisp & vivid */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb] via-[#f4f6fb]/80 lg:via-[#f4f6fb]/50 to-transparent pointer-events-none z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb] via-transparent to-[#f4f6fb]/40 pointer-events-none z-[1]" />
+          {/* Extra contrast guard on mobile so copy never clashes */}
+          <div className="absolute inset-0 bg-[#f4f6fb]/75 sm:bg-[#f4f6fb]/60 lg:hidden pointer-events-none z-[1]" />
         </div>
 
         {/* Foreground Content */}
