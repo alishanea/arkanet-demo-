@@ -294,7 +294,7 @@ export default function WorkPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. ARCHITECTURAL HERO HEADER & FILTER CONTROLS (PROPER FIT RIGHT SHOWCASE MATCHING CAPABILITIES) ── */}
-      <section className="relative w-full overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-28 sm:pt-36 pb-16 sm:pb-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left select-none">
+      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left select-none">
         {/* Dedicated Engineering Showcase Background Image (Fits perfectly on right side, identical to Capabilities) */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] xl:w-[56%] z-0 overflow-hidden pointer-events-none select-none">
           <img
@@ -311,8 +311,8 @@ export default function WorkPage() {
           <div className="absolute inset-0 bg-[#f4f6fb]/75 sm:bg-[#f4f6fb]/60 lg:hidden pointer-events-none z-[1]" />
         </div>
 
-        {/* Foreground Content: Unified connected block matching Capabilities layout */}
-        <div className="relative z-10 max-w-[1400px] mx-auto w-full space-y-6 sm:space-y-8">
+        {/* Foreground Content: Unified connected block, centered vertically in the 1-page screen */}
+        <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto space-y-6 sm:space-y-8">
           <div className="space-y-5 w-full max-w-4xl lg:max-w-5xl">
             <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
               Selected Work &amp; <br />
