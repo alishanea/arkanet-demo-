@@ -202,7 +202,7 @@ export default function CapabilityDetailPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── SECTION 1: HERO SECTION WITH DEDICATED CONTENT-CONNECTED BACKGROUND ── */}
-      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#f4f6fb] text-[#202B61] py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left">
+      <section className="relative w-full overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-28 sm:pt-36 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left">
         {/* Dedicated Content-Connected Background Showcase Image */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] xl:w-[56%] z-0 overflow-hidden pointer-events-none select-none">
           <AnimatePresence mode="wait">
@@ -281,7 +281,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 2: OPEN HIGHLIGHTS GRID ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left bg-[#f4f6fb] border-t border-slate-200/80 font-sans">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left bg-[#f4f6fb] font-sans">
         <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
           <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
             <div className="max-w-3xl space-y-3">
