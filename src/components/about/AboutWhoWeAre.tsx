@@ -29,40 +29,42 @@ const STATS = [
 export function AboutWhoWeAre() {
   return (
     <>
-      {/* ── 1. MAIN NARRATIVE BODY: SIGNATURE DARK NAVY CANVAS ── */}
+      {/* ── 1. MAIN NARRATIVE BODY: BALANCED 2-COLUMN LAYOUT (ZERO DEAD SPACE) ── */}
       <section
         id="about-story"
-        className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#151E48] text-white border-t border-[#253272] text-left select-none overflow-hidden font-sans scroll-mt-28 sm:scroll-mt-36"
+        className="w-full py-14 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-[#151E48] text-white border-t border-[#253272] text-left select-none overflow-hidden font-sans scroll-mt-28 sm:scroll-mt-36"
       >
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
-            {/* Left Headline */}
-            <div className="lg:col-span-5 space-y-4">
+            
+            {/* Left Column: Headline + Core Intro Paragraph (Fills vertical height naturally) */}
+            <div className="lg:col-span-5 space-y-5">
               <h2 className="section-h2 text-white !text-white leading-[1.22] tracking-tight">
                 Bridging regional insights with global technology standards
               </h2>
-            </div>
-
-            {/* Right Story Paragraphs: Unified size, line-height & color */}
-            <div className="lg:col-span-7 space-y-4 font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal">
-              <p>
+              <p className="font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal">
                 Founded in 2023, Arkanet Technologies is a premier digital innovation and IT consulting firm dedicated to building next-generation software platforms. We specialize in transforming complex technological challenges into scalable, future-ready solutions for enterprises and ambitious brands worldwide.
               </p>
+            </div>
+
+            {/* Right Column: Capabilities & Strategic Presence Paragraphs */}
+            <div className="lg:col-span-7 space-y-4 font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal lg:pt-1">
               <p>
-                Operating at the intersection of emerging technology and business strategy, our core expertise spans Artificial Intelligence, Blockchain, AR/VR, IoT, and robust cloud infrastructure. We partner with organizations across the hospitality, IT, eCommerce, and government sectors to architect immersive digital experiences and end-to-end data architectures that drive operational excellence and sustained market growth.
+                Operating at the intersection of emerging technology and business strategy, our core expertise spans Artificial Intelligence, Blockchain, AR/VR, IoT, and robust cloud infrastructure. We partner with organizations across hospitality, IT, eCommerce, and government sectors to architect immersive digital experiences and end-to-end data architectures that drive operational excellence and sustained market growth.
               </p>
               <p>
                 With our strategic headquarters in Kelakam, Kerala, and a dedicated corporate presence in Business Bay, Dubai, we seamlessly bridge regional insights with global technological standards. This dual-hub approach ensures agile development, continuous deployment, and highly responsive consulting tailored to the unique operational landscapes of our international clients. At Arkanet, we do not just adapt to the digital frontier—we actively build it.
               </p>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* ── 2. BOTTOM STATS: SEAMLESS ON SITE #f4f6fb CANVAS ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] text-[#202B61] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
+      {/* ── 2. BOTTOM STATS: CRISP PADDING & NO DEAD SPACE ── */}
+      <section className="w-full py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] text-[#202B61] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-4 sm:-mx-6 lg:-mx-8 gap-y-8 items-stretch w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-4 sm:-mx-6 lg:-mx-8 gap-y-6 items-stretch w-full">
             {STATS.map((stat, idx) => (
               <motion.div
                 key={stat.label}

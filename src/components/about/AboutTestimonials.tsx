@@ -91,7 +91,7 @@ export function AboutTestimonials() {
   const testimonial = testimonials[active];
 
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none font-sans">
+    <section className="w-full py-12 sm:py-16 lg:py-18 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none font-sans">
       <div className="max-w-[1400px] mx-auto">
         <div className="relative w-full bg-[#151E48] text-white rounded-2xl p-8 sm:p-12 lg:p-16 border border-[#253272] shadow-sm flex flex-col justify-between min-h-[360px] sm:min-h-[380px]">
           

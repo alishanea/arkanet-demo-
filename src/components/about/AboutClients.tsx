@@ -36,7 +36,7 @@ const CLIENT_LOGOS: ClientLogo[] = [
 
 export function AboutClients() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none overflow-hidden px-4 sm:px-8 lg:px-12 font-sans">
+    <section className="w-full py-12 sm:py-16 lg:py-18 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none overflow-hidden px-4 sm:px-8 lg:px-12 font-sans">
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10">
         
         {/* Section Heading & Subtitle */}
