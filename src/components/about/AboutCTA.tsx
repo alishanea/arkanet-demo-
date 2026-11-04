@@ -8,8 +8,8 @@ interface AboutCTAProps {
 
 export function AboutCTA({ onOpenBooking }: AboutCTAProps) {
   return (
-    <section id="contact" className="relative z-20 bg-[#f4f6fb] text-[#202B61] py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 text-left select-none border-t border-slate-200/80 font-sans scroll-mt-24">
-      <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-8">
+    <section id="contact" className="relative z-20 bg-[#f4f6fb] text-[#202B61] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left select-none border-b border-slate-200/80 font-sans scroll-mt-24">
+      <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-6">
         <div 
           className="group cursor-pointer inline-block outline-none focus:outline-none focus-visible:outline-none focus:ring-0 active:outline-none select-none" 
           onClick={onOpenBooking}

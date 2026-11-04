@@ -91,13 +91,13 @@ export function AboutTestimonials() {
   const testimonial = testimonials[active];
 
   return (
-    <section className="w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-white border-t border-slate-200/80 text-left">
+    <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none font-sans">
       <div className="max-w-[1400px] mx-auto">
-        <div className="relative w-full bg-[#202B61] text-white rounded-[5px] p-8 sm:p-12 lg:p-16 border border-slate-800 shadow-none flex flex-col justify-between min-h-[380px] sm:min-h-[400px]">
+        <div className="relative w-full bg-[#151E48] text-white rounded-2xl p-8 sm:p-12 lg:p-16 border border-[#253272] shadow-sm flex flex-col justify-between min-h-[360px] sm:min-h-[380px]">
           
           {/* Top Quote Content */}
           <div className="relative z-10 w-full max-w-4xl my-auto">
-            <div className="grid grid-cols-1 grid-rows-1 items-center min-h-[160px] sm:min-h-[180px]">
+            <div className="grid grid-cols-1 grid-rows-1 items-center min-h-[150px] sm:min-h-[170px]">
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={active}
@@ -116,34 +116,36 @@ export function AboutTestimonials() {
                   }}
                   className="col-start-1 row-start-1 w-full"
                 >
-                  <blockquote className="font-heading font-medium text-2xl sm:text-3xl lg:text-4xl leading-snug tracking-tight text-white !text-white">
+                  <blockquote className="font-heading font-medium text-xl sm:text-2xl lg:text-3xl leading-snug tracking-tight text-white !text-white">
                     &#8220;{testimonial.quote}&#8221;
                   </blockquote>
                 </motion.div>
               </AnimatePresence>
             </div>
+
+            {/* Author Attribution */}
+            <div className="mt-8 space-y-1">
+              <div className="font-heading font-bold text-base sm:text-lg text-white">
+                {testimonial.author}
+              </div>
+              <div className="font-sans text-xs sm:text-sm text-slate-300 font-medium">
+                {testimonial.role}, {testimonial.company}
+              </div>
+            </div>
           </div>
 
-          {/* Bottom Footer: Author Details + Controls */}
-          <div className="relative z-10 pt-8 sm:pt-10 mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-white/10">
-            {/* Author */}
-            <div className="flex flex-col text-left">
-              <span className="font-heading font-bold text-base sm:text-lg text-white">
-                {testimonial.author}
-              </span>
-              <span className="font-sans text-xs sm:text-sm text-slate-400 font-normal mt-0.5">
-                {testimonial.role ? `${testimonial.role} · ${testimonial.company}` : testimonial.company}
-              </span>
-            </div>
-
-            {/* Arrow Controls */}
-            {hasMultiple && (
+          {/* Bottom Controls / Arrows */}
+          {hasMultiple && (
+            <div className="relative z-10 flex items-center justify-between pt-6 border-t border-[#253272] mt-6">
+              <div className="text-xs font-sans font-semibold text-slate-300 tracking-wider">
+                0{active + 1} / 0{testimonials.length}
+              </div>
               <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={previousTestimonial}
                   aria-label="Previous testimonial"
-                  className="w-10 h-10 rounded-[4px] border border-white/20 flex items-center justify-center text-white hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer"
+                  className="w-10 h-10 rounded-full border border-slate-700/80 hover:border-white hover:bg-white/10 text-white flex items-center justify-center transition-all cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4" />
                 </button>
@@ -151,13 +153,13 @@ export function AboutTestimonials() {
                   type="button"
                   onClick={nextTestimonial}
                   aria-label="Next testimonial"
-                  className="w-10 h-10 rounded-[4px] border border-white/20 flex items-center justify-center text-white hover:bg-white/10 active:scale-95 transition-all duration-200 cursor-pointer"
+                  className="w-10 h-10 rounded-full border border-slate-700/80 hover:border-white hover:bg-white/10 text-white flex items-center justify-center transition-all cursor-pointer"
                 >
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-            )}
-          </div>
+            </div>
+          )}
 
         </div>
       </div>

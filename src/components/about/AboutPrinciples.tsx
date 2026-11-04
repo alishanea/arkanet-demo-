@@ -31,16 +31,16 @@ export function AboutPrinciples() {
     <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
       <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
         {/* Section Heading & Subtitle */}
-        <div className="max-w-3xl space-y-3 text-left">
+        <div className="max-w-3xl space-y-2.5 text-left">
           <h2 className="section-h2">
             Our Core Operating Principles
           </h2>
           <p className="section-desc max-w-2xl">
-            How we approach every architectural decision, engineering sprint, and client commitment.
+            How we approach every architectural decision, engineering sprint, and client commitment
           </p>
         </div>
 
-        {/* Frameless Editorial Grid (No Boxes, Seamless from Header) */}
+        {/* Frameless Editorial Grid */}
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2">
             {PILLARS.map((pillar, idx) => {
@@ -67,11 +67,11 @@ export function AboutPrinciples() {
                 >
                   <div className="flex items-center gap-3">
                     <Icon className="w-5 h-5 text-[#202B61] stroke-[2] shrink-0" />
-                    <h3 className="font-heading font-bold text-xl sm:text-[22px] text-[#202B61] tracking-tight">
+                    <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61] tracking-tight">
                       {pillar.title}
                     </h3>
                   </div>
-                  <p className="font-sans text-[15px] sm:text-base text-[#202B61] leading-[1.65] font-normal pl-8">
+                  <p className="font-sans text-sm sm:text-[15px] text-[#202B61]/85 leading-[1.65] font-normal pl-8">
                     {pillar.desc}
                   </p>
                 </div>

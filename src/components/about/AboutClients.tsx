@@ -36,62 +36,39 @@ const CLIENT_LOGOS: ClientLogo[] = [
 
 export function AboutClients() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#f4f6fb] border-t border-slate-200/80 text-left select-none overflow-hidden px-4 sm:px-8 lg:px-12">
-      <div className="max-w-[1400px] mx-auto space-y-6 sm:space-y-8">
+    <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none overflow-hidden px-4 sm:px-8 lg:px-12 font-sans">
+      <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10">
         
-        {/* Section Heading with Clean Typography */}
-        <div className="w-full border-b border-slate-200/80 pb-5 sm:pb-6 space-y-2.5 max-w-4xl text-left">
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5 }}
-            className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-[1.15]"
-          >
-            Trusted by ambitious businesses across the UAE &amp; India
-          </motion.h2>
+        {/* Section Heading & Subtitle */}
+        <div className="space-y-2.5 max-w-3xl text-left">
+          <h2 className="section-h2">
+            Trusted by Ambitious Businesses Across UAE &amp; India
+          </h2>
+          <p className="section-desc max-w-2xl">
+            From regional founders to international enterprises, we deliver software infrastructure that scales under real production demands
+          </p>
+        </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-            className="font-sans text-base sm:text-lg text-[#202B61]/80 max-w-4xl pt-1 leading-relaxed font-normal"
-          >
-            Businesses across Kerala, India, and the Gulf trust us to build, modernise, and scale their digital systems and platforms.
-          </motion.p>
+        {/* Client Logos Grid / Continuous Flow */}
+        <div className="relative w-full overflow-hidden py-4 -mx-2 px-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 items-center">
+            {CLIENT_LOGOS.slice(0, 12).map((logo) => (
+              <div
+                key={logo.id}
+                className="bg-white rounded-xl p-4 sm:p-5 h-20 sm:h-24 border border-slate-200/90 shadow-none flex items-center justify-center transition-all duration-300 hover:border-slate-300"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-10 sm:max-h-12 w-auto object-contain opacity-85 hover:opacity-100 transition-opacity"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
-
-      {/* ── SINGLE CONTINUOUS TRAILING TRACK ── */}
-      <div className="relative w-full mt-6 sm:mt-8 py-2 overflow-hidden group">
-        {/* Soft edge gradient masks */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-44 bg-gradient-to-r from-[#f4f6fb] to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-44 bg-gradient-to-l from-[#f4f6fb] to-transparent z-20" />
-
-        {/* Single Track: Continuous Smooth Left Glide with Pause on Hover */}
-        <div
-          className="flex shrink-0 items-center animate-marquee py-2 group-hover:[animation-play-state:paused]"
-          style={{ animationDuration: "95s" }}
-        >
-          {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, idx) => (
-            <div
-              key={`about-client-${logo.id}-${idx}`}
-              className="mx-2 sm:mx-2.5 lg:mx-3 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
-              title={logo.alt}
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                loading="eager"
-                className="h-16 sm:h-20 lg:h-24 max-h-24 max-w-[240px] sm:max-w-[300px] lg:max-w-[360px] w-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
     </section>
   );
 }
