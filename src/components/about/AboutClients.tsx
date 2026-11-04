@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 
 interface ClientLogo {
   id: string;
@@ -22,52 +21,54 @@ const CLIENT_LOGOS: ClientLogo[] = [
   { id: "10", src: "/assets/clinet-logo/10.png", alt: "GDS Prestige" },
   { id: "11", src: "/assets/clinet-logo/11.png", alt: "Ikon Petroleum" },
   { id: "12", src: "/assets/clinet-logo/12.png", alt: "International Gemological Institute" },
-  { id: "13", src: "/assets/clinet-logo/13.png", alt: "Client Partner 13" },
-  { id: "14", src: "/assets/clinet-logo/14.png", alt: "Client Partner 14" },
-  { id: "15", src: "/assets/clinet-logo/15.png", alt: "Client Partner 15" },
-  { id: "1-1", src: "/assets/clinet-logo/1-1.png", alt: "Client Partner 16" },
-  { id: "2-1", src: "/assets/clinet-logo/2-1.png", alt: "Client Partner 17" },
-  { id: "3-1", src: "/assets/clinet-logo/3-1.png", alt: "Client Partner 18" },
-  { id: "4-1", src: "/assets/clinet-logo/4-1.png", alt: "Client Partner 19" },
-  { id: "5-1", src: "/assets/clinet-logo/5-1.png", alt: "Client Partner 20" },
-  { id: "6-1", src: "/assets/clinet-logo/6-1.png", alt: "Client Partner 21" },
-  { id: "7-1", src: "/assets/clinet-logo/7-1.png", alt: "Client Partner 22" },
 ];
 
 export function AboutClients() {
+  // Duplicate array once for seamless -50% infinite trailing train loop
+  const trailingLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
+
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none overflow-hidden px-4 sm:px-8 lg:px-12 font-sans">
-      <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10">
-        
-        {/* Section Heading & Subtitle */}
-        <div className="space-y-2.5 max-w-3xl text-left">
-          <h2 className="section-h2">
-            Trusted by Ambitious Businesses Across UAE &amp; India
-          </h2>
-          <p className="section-desc max-w-2xl">
-            From regional founders to international enterprises, we deliver software infrastructure that scales under real production demands
+    <section
+      id="clients"
+      className="relative w-full bg-[#f4f6fb] text-[#202B61] select-none py-10 sm:py-12 lg:py-14 border-b border-slate-200/80 overflow-hidden font-sans scroll-mt-24"
+    >
+      <div className="w-full">
+        {/* Subtle Section Label */}
+        <div className="text-center mb-6 sm:mb-7">
+          <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.28em] text-[#202B61] font-sans leading-none">
+            Our Clients
           </p>
         </div>
 
-        {/* Client Logos Grid / Continuous Flow */}
-        <div className="relative w-full overflow-hidden py-4 -mx-2 px-2">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 items-center">
-            {CLIENT_LOGOS.slice(0, 12).map((logo) => (
+        {/* Trailing Marquee Container with Soft Fade Edges (Continuous Train) */}
+        <div className="relative w-full overflow-hidden flex items-center group">
+          {/* Left Trailing Gradient Fade Mask */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-r from-[#f4f6fb] to-transparent z-10 pointer-events-none" />
+
+          {/* Continuous Trailing Track (Train) */}
+          <div
+            className="flex shrink-0 items-center animate-marquee group-hover:[animation-play-state:paused]"
+            style={{ animationDuration: "55s" }}
+          >
+            {trailingLogos.map((logo, idx) => (
               <div
-                key={logo.id}
-                className="bg-white rounded-xl p-4 sm:p-5 h-20 sm:h-24 border border-slate-200/90 shadow-none flex items-center justify-center transition-all duration-300 hover:border-slate-300"
+                key={`${logo.id}-${idx}`}
+                className="bg-white rounded-xl p-4 sm:p-5 h-20 sm:h-24 border border-slate-200/90 shadow-none flex items-center justify-center shrink-0 min-w-[170px] sm:min-w-[210px] mx-2 sm:mx-3 transition-all duration-300 hover:border-slate-300 cursor-pointer"
+                title={logo.alt}
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
+                  loading="eager"
                   className="max-h-10 sm:max-h-12 w-auto object-contain opacity-85 hover:opacity-100 transition-opacity"
-                  loading="lazy"
                 />
               </div>
             ))}
           </div>
-        </div>
 
+          {/* Right Trailing Gradient Fade Mask */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-l from-[#f4f6fb] to-transparent z-10 pointer-events-none" />
+        </div>
       </div>
     </section>
   );
