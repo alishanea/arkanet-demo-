@@ -9,7 +9,7 @@ export function AboutAwards() {
 
         <div className="max-w-3xl space-y-3">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-tight">
-            While our focus is on client success, we&apos;re proud to have our work continually recognised by industry leaders.
+            While our focus is on client success, we&apos;re proud to have our work continually recognised by industry leaders
           </h2>
         </div>
 

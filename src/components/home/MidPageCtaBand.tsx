@@ -15,7 +15,7 @@ export const MidPageCtaBand: React.FC = () => {
             <h3 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.1] text-[#202B61]">
               Have a brief? Send it over, 
               <br className="hidden sm:block" />
-              we&apos;ll tell you what it takes.
+              we&apos;ll tell you what it takes
             </h3>
             
             {/* Response Status Pill */}

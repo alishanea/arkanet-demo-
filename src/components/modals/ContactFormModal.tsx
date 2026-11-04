@@ -485,7 +485,7 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({
                     {/* ── Headline ── */}
                     <div className="space-y-3 mb-8 sm:mb-14">
                       <h1 className="hero-h1 font-extrabold text-3xl sm:text-6xl lg:text-[104px] leading-[1.05] sm:leading-[0.98] tracking-tight text-left text-[#202B61]">
-                        Let&apos;s get started.
+                        Let&apos;s get started
                       </h1>
                       <div className="pt-2 sm:pt-4 space-y-1 text-sm sm:text-xl">
                         <p className="font-bold text-[#202B61]">

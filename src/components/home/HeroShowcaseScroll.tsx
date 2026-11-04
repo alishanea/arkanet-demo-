@@ -182,7 +182,7 @@ export const HeroShowcaseScroll: React.FC<HeroShowcaseScrollProps> = () => {
 
           <div className="relative z-20 text-center px-4 sm:px-6 max-w-4xl space-y-3 sm:space-y-4 pointer-events-none mx-auto">
             <h2 className="showcase-heading text-white text-center max-w-4xl mx-auto">
-              Shaping Next Gen Digital<br />Applications &amp; AI.
+              Shaping Next Gen Digital<br />Applications &amp; AI
             </h2>
             <p className="hero-sub font-medium !text-white/90 max-w-2xl mx-auto text-center">
               Scroll down to explore our production engineering reel.

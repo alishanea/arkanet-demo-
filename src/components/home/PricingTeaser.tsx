@@ -12,7 +12,7 @@ export const PricingTeaser: React.FC<PricingTeaserProps> = ({ onOpenBooking }) =
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-subtle border border-borderline rounded-2xl p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-2xs">
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-4">
-            Pay for a partner, not a project quote.
+            Pay for a partner, not a project quote
           </h2>
           <p className="text-base sm:text-lg text-[#202B61]/80 max-w-xl mx-auto mb-8">
             Choose a subscription that scales with you, from a single AI pilot to a full engineering team on retainer.

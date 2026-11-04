@@ -7,7 +7,7 @@ export function AboutCulture() {
 
         <div className="max-w-3xl space-y-3">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-tight">
-            Above all, we believe in human relationships, exceptional outcomes, and having fun along the way.
+            Above all, we believe in human relationships, exceptional outcomes, and having fun along the way
           </h2>
         </div>
 

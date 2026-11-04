@@ -35,8 +35,8 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
               <span>Full-Stack Engineering &amp; AI Capabilities</span>
             </div>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-[1.1]">
-              Architected for Speed.<br />
-              Engineered for Enterprise Scale.
+              Architected for Speed<br />
+              Engineered for Enterprise Scale
             </h2>
             <p className="font-sans text-sm sm:text-base text-[#202B61]/80 font-normal leading-relaxed">
               We eliminate technical bloat. Delivering production-ready web platforms, native mobile ecosystems, applied AI systems, and cloud architectures.
