@@ -87,7 +87,7 @@ export default function ContactPage() {
       <ContactHero />
 
       {/* ── PAGE 2: SECOND PAGE PROJECT DETAILS (CLEAN 2-COLUMN LEFT & RIGHT WITH HOME PAGE COLOR) ── */}
-      <section className="relative w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] text-[#202B61] border-t border-slate-200/80 text-left">
+      <section className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] text-[#202B61] border-t border-slate-200/80 text-left">
         <div className="max-w-[1400px] mx-auto">
           {submitted ? (
             <div className="bg-white rounded-[4px] border border-slate-200/90 p-8 sm:p-12 text-center max-w-xl mx-auto space-y-4 shadow-none">

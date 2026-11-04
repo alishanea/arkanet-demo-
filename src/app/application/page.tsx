@@ -247,7 +247,7 @@ export default function ApplicationShowcasePage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. ARCHITECTURAL HERO HEADER ── */}
-      <section className="relative w-full pt-28 sm:pt-36 pb-14 sm:pb-20 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left">
+      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left">
         <div className="max-w-[1400px] mx-auto space-y-8">
           
           {/* Majestic Editorial Headline */}
@@ -255,7 +255,7 @@ export default function ApplicationShowcasePage() {
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.1] text-wrap-balance">
               Applications, Shopify Stores &amp; Enterprise AI Products
             </h1>
-            <p className="font-sans text-base sm:text-lg lg:text-xl text-[#202B61]/80 font-normal leading-relaxed max-w-3xl">
+            <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-3xl">
               Explore our portfolio of production-grade mobile applications, high-converting Shopify websites, and autonomous AI systems built for commercial scale.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function ApplicationShowcasePage() {
       </section>
 
       {/* ── 2. PRODUCT SHOWCASE GRID ── */}
-      <section className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 text-left font-sans">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans">
         <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10">
 
           {/* Results Count Bar */}

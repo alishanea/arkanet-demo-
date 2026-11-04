@@ -4,7 +4,7 @@ import React from "react";
 
 export function AboutHero() {
   return (
-    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden font-sans">
+    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden font-sans">
       
       {/* Cinematic Ambient Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -25,7 +25,7 @@ export function AboutHero() {
             Company
           </h1>
 
-          <p className="hero-sub font-normal text-[#202B61]/85 leading-[1.65] max-w-2xl sm:max-w-3xl text-center mx-auto">
+          <p className="hero-sub font-medium text-[#202B61] leading-[1.65] max-w-2xl sm:max-w-3xl text-center mx-auto">
             Founded in 2023, Arkanet Technologies blends AI, Blockchain, IoT, AR/VR, and cloud infrastructure to architect next-generation digital platforms for enterprises and ambitious brands worldwide
           </p>
         </div>

@@ -294,7 +294,7 @@ export default function WorkPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. ARCHITECTURAL HERO HEADER (FULL PAGE SCREEN) ── */}
-      <section className="relative w-full min-h-[50vh] sm:min-h-[55vh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-28 sm:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
+      <section className="relative w-full min-h-[50vh] sm:min-h-[55vh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
         
         {/* -- MINIMAL PURE AMBIENT CANVAS (ZERO PHOTO CLUTTER, 100% TYPOGRAPHIC CLARITY) -- */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -317,8 +317,8 @@ export default function WorkPage() {
       </section>
 
       {/* ── 2. FILTER & LAYOUT VIEW CONTROLS ── */}
-      <section className="w-full bg-[#f4f6fb] pt-8 sm:pt-10 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto pb-6 flex flex-wrap items-center justify-between gap-3">
+      <section className="w-full bg-[#f4f6fb] py-6 sm:py-7 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80">
+        <div className="max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat;

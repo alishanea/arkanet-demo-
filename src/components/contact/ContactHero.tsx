@@ -4,7 +4,7 @@ import React from "react";
 
 export function ContactHero() {
   return (
-    <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
+    <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
       
       {/* -- CINEMATIC AMBIENT BACKGROUND -- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

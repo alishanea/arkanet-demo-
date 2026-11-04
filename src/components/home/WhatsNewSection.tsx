@@ -113,7 +113,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
   const [selectedProject, setSelectedProject] = useState<WorkProjectDetail | null>(null);
 
   return (
-    <section id="work" className="relative w-full bg-[#f4f6fb] pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 lg:pb-28 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24">
+    <section id="work" className="relative w-full bg-[#f4f6fb] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24">
       <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
         
         {/* ── 1. CLEAN EDITORIAL SECTION HEADER (NO TOP/BOTTOM DIVIDER LINES) ── */}
