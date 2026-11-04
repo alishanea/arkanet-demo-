@@ -28,7 +28,7 @@ const PILLARS = [
 
 export function AboutPrinciples() {
   return (
-    <section className="w-full py-12 sm:py-16 lg:py-18 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
+    <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
       <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
         {/* Section Heading & Subtitle */}
         <div className="max-w-3xl space-y-2.5 text-left">

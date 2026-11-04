@@ -4,7 +4,7 @@ import React from "react";
 
 export function AboutHero() {
   return (
-    <section className="relative w-full py-20 sm:py-24 lg:py-28 flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden font-sans">
+    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden font-sans">
       
       {/* Cinematic Ambient Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -19,7 +19,7 @@ export function AboutHero() {
 
       {/* Hero Content */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center">
-        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-5">
+        <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6">
           <h1 className="hero-h1 text-[#202B61] text-center">
             The Digital Innovation<br />
             Company
