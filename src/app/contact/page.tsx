@@ -83,7 +83,7 @@ export default function ContactPage() {
               Project Details
             </h2>
             <p className="font-sans text-sm sm:text-base text-slate-200 leading-relaxed">
-              Tell us about what you want to build. Our engineering leads will review your requirements and provide technical scope, system architecture feasibility, and timelines within 2 hours.
+              Tell us about what you want to build. Our engineering leads will review your requirements and provide technical scope, timelines, and feasibility.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   Project Details Received
                 </h3>
                 <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Thank you, <span className="font-semibold text-[#151E48]">{formData.name}</span>. Our solutions team has received your project details and will follow up with <span className="font-semibold text-[#151E48]">{formData.email}</span> within 2 hours.
+                  Thank you, <span className="font-semibold text-[#151E48]">{formData.name}</span>. Our solutions team has received your project details and will follow up with <span className="font-semibold text-[#151E48]">{formData.email}</span> shortly.
                 </p>
               </div>
               <div className="pt-2">
