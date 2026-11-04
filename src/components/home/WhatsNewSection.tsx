@@ -113,8 +113,8 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
   const [selectedProject, setSelectedProject] = useState<WorkProjectDetail | null>(null);
 
   return (
-    <section id="work" className="relative w-full bg-[#f4f6fb] pt-16 sm:pt-20 lg:pt-24 pb-24 sm:pb-28 lg:pb-32 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24">
-      <div className="max-w-[1536px] mx-auto space-y-10 sm:space-y-12">
+    <section id="work" className="relative w-full bg-[#f4f6fb] pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 lg:pb-28 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24">
+      <div className="max-w-[1440px] mx-auto space-y-10 sm:space-y-12">
         
         {/* ── 1. CLEAN EDITORIAL SECTION HEADER (NO TOP/BOTTOM DIVIDER LINES) ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 sm:pb-3">
@@ -135,12 +135,12 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
           </Link>
         </div>
 
-        {/* ── 2. EXPANDED 4-COLUMN PROJECT GRID WITH ENLARGED BOXES AND CONTENT ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-4 sm:-mx-5 lg:-mx-6 gap-y-12 sm:gap-y-12 lg:gap-y-0 items-stretch">
+        {/* ── 2. PROPORTIONAL 4-COLUMN PROJECT GRID WITH HARMONIOUS SIZING & SPACING ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-3.5 sm:-mx-4 lg:-mx-5 gap-y-10 sm:gap-y-10 lg:gap-y-0 items-stretch">
           {FEATURED_PROJECTS.map((project, idx) => (
             <div
               key={project.id}
-              className={`flex flex-col justify-between h-full w-full px-4 sm:px-5 lg:px-6 border-b-0 pb-0 ${
+              className={`flex flex-col justify-between h-full w-full px-3.5 sm:px-4 lg:px-5 border-b-0 pb-0 ${
                 /* Desktop (4-cols): pure centered vertical divider lines between columns */
                 idx < 3 ? "lg:border-r lg:border-slate-200/80" : "lg:border-r-0"
               } ${
@@ -164,8 +164,8 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 }}
                 className="group flex flex-col justify-between h-full w-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-xl transition-transform duration-200"
               >
-                {/* Substantially Larger Image Box with 4:3 Presence */}
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-[0_4px_16px_rgba(0,0,0,0.06)] shrink-0">
+                {/* Clean Aspect Ratio Image with Balanced Proportions */}
+                <div className="relative w-full aspect-[16/10.5] rounded-xl overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0">
                   <Image
                     src={project.outerImage}
                     alt={project.title}
@@ -175,26 +175,26 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   />
                 </div>
 
-                {/* Enhanced Typography Stack: Larger Headings, Increased Body, Generous Spacing */}
-                <div className="pt-5 sm:pt-6 flex flex-col flex-1">
-                  {/* Category Label (Enlarged and Clear) */}
-                  <div className="h-6 flex items-center mb-2">
-                    <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.06em] text-[#202B61] font-sans">
+                {/* Refined Typography Stack: Reduced Eyebrow, Elegant Title, Balanced Body */}
+                <div className="pt-4 sm:pt-4.5 flex flex-col flex-1">
+                  {/* Category Eyebrow Label (Reduced size, refined tracking, subtle contrast) */}
+                  <div className="h-4 flex items-center mb-1.5">
+                    <p className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.14em] text-[#202B61]/70 font-sans leading-none">
                       {project.category}
                     </p>
                   </div>
 
-                  {/* Project Headline (Larger font, calibrated 2-line baseline) */}
-                  <div className="h-[3.25rem] sm:h-[3.6rem] lg:h-[3.9rem] flex items-start mb-2.5">
-                    <h3 className="font-heading font-bold text-lg sm:text-[19px] lg:text-[21px] xl:text-[22px] text-[#202B61] leading-[1.24] tracking-tight">
+                  {/* Project Headline (Harmonious 2-line baseline height) */}
+                  <div className="h-[2.85rem] sm:h-[3.1rem] lg:h-[3.35rem] flex items-start mb-2">
+                    <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] xl:text-[19px] text-[#202B61] leading-[1.26] tracking-tight">
                       <span className="block">{project.titleLine1 || project.title}</span>
                       <span className="block">{project.titleLine2}</span>
                     </h3>
                   </div>
 
-                  {/* Body Description: Larger body font (15.5px), 16 words, balanced 3-line flow with generous space */}
-                  <div className="min-h-[4.5rem] sm:min-h-[4.8rem] lg:min-h-[5.2rem] flex items-start pb-2">
-                    <p className="font-sans text-[14px] sm:text-[14.5px] lg:text-[15.5px] text-[#202B61] leading-[1.62] font-normal text-pretty">
+                  {/* Body Description: Balanced size, 16 words, perfect 3-line flow */}
+                  <div className="min-h-[4.2rem] sm:min-h-[4.5rem] flex items-start pb-1">
+                    <p className="font-sans text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#202B61]/85 leading-[1.6] font-normal text-pretty">
                       {project.description}
                     </p>
                   </div>
