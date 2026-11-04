@@ -293,75 +293,76 @@ export default function WorkPage() {
     <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. ARCHITECTURAL HERO HEADER (100VH FULL SCREEN PROPER FIT) ── */}
-      <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-between bg-[#f4f6fb] text-[#202B61] select-none pt-24 sm:pt-28 pb-6 sm:pb-8 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
+      {/* ── 1. ARCHITECTURAL HERO HEADER & FILTER CONTROLS (UNIFIED, CONNECTED, NO SEPARATE BOTTOM LINE) ── */}
+      <section className="relative w-full bg-[#f4f6fb] text-[#202B61] select-none pt-28 sm:pt-36 pb-12 sm:pb-14 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
         
-        {/* -- MINIMAL PURE AMBIENT CANVAS (ZERO PHOTO CLUTTER, 100% TYPOGRAPHIC CLARITY) -- */}
+        {/* -- MINIMAL PURE AMBIENT CANVAS -- */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[550px] bg-gradient-to-tr from-[#202B61]/[0.035] via-white/80 to-[#202B61]/[0.025] rounded-full blur-3xl pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb] via-transparent to-[#f4f6fb] pointer-events-none" />
         </div>
 
-        {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center my-auto px-4">
-          <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
-            Selected Work &amp;<br />
-            Engineering Case Studies
-          </h1>
+        {/* -- HERO CONTENT & CONTROLS (CONNECTED IN ONE CLEAN BLOCK, NO SEPARATION LINE) -- */}
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center space-y-6 sm:space-y-8">
+          <div className="space-y-4 max-w-4xl sm:max-w-5xl mx-auto">
+            <h1 className="hero-h1 text-[#202B61] text-center">
+              Selected Work &amp;<br />
+              Engineering Case Studies
+            </h1>
 
-          <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6 text-balance">
-            A curated index of production web platforms, mobile ecosystems, cloud architectures, and applied AI systems engineered for real-world traffic.
-          </p>
-        </div>
-
-        {/* ── 2. FILTER & LAYOUT VIEW CONTROLS (ANCHORED NEATLY AT BOTTOM OF SCREEN 1) ── */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto pt-4 sm:pt-5 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-            {CATEGORIES.map((cat) => {
-              const isActive = activeCategory === cat;
-              const count = cat === "All"
-                ? WORK_PROJECTS.length
-                : WORK_PROJECTS.filter((p) => p.category === cat).length;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 outline-none focus:outline-none focus:ring-0 select-none ${
-                    isActive
-                      ? "bg-[#202B61] text-white"
-                      : "bg-white text-[#202B61]/80 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
-                  }`}
-                >
-                  <span>{cat}</span>
-                  <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
-                    isActive ? "bg-white/20 text-white" : "bg-slate-100 text-[#202B61]/70"
-                  }`}>
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
+            <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto text-balance">
+              A curated index of production web platforms, mobile ecosystems, cloud architectures, and applied AI systems engineered for real-world traffic.
+            </p>
           </div>
 
-          {/* View Mode Toggle Controls */}
-          <div className="flex items-center gap-1 bg-white border border-slate-200/90 rounded-xl p-1 shrink-0">
-            <button
-              onClick={() => setViewMode("detailed")}
-              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "detailed" ? "bg-[#202B61] text-white" : "text-[#202B61]/70 hover:text-[#202B61]"}`}
-              title="Detailed List View"
-            >
-              <List className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setViewMode("compact")}
-              className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "compact" ? "bg-[#202B61] text-white" : "text-[#202B61]/70 hover:text-[#202B61]"}`}
-              title="Compact Grid View"
-            >
-              <LayoutGrid className="w-4 h-4" />
-            </button>
+          {/* Filter & Layout View Controls: Directly connected with NO separate bottom bar and NO separation line */}
+          <div className="w-full flex flex-wrap items-center justify-between gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+              {CATEGORIES.map((cat) => {
+                const isActive = activeCategory === cat;
+                const count = cat === "All"
+                  ? WORK_PROJECTS.length
+                  : WORK_PROJECTS.filter((p) => p.category === cat).length;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-2 outline-none focus:outline-none focus:ring-0 select-none ${
+                      isActive
+                        ? "bg-[#202B61] text-white"
+                        : "bg-white text-[#202B61]/80 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
+                    }`}
+                  >
+                    <span>{cat}</span>
+                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
+                      isActive ? "bg-white/20 text-white" : "bg-slate-100 text-[#202B61]/70"
+                    }`}>
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* View Mode Toggle Controls */}
+            <div className="flex items-center gap-1 bg-white border border-slate-200/90 rounded-xl p-1 shrink-0">
+              <button
+                onClick={() => setViewMode("detailed")}
+                className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "detailed" ? "bg-[#202B61] text-white" : "text-[#202B61]/70 hover:text-[#202B61]"}`}
+                title="Detailed List View"
+              >
+                <List className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => setViewMode("compact")}
+                className={`p-1.5 rounded-lg transition-colors cursor-pointer ${viewMode === "compact" ? "bg-[#202B61] text-white" : "text-[#202B61]/70 hover:text-[#202B61]"}`}
+                title="Compact Grid View"
+              >
+                <LayoutGrid className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
-
       </section>
 
       {/* ── 3. WORK SHOWCASE STAGE ── */}
