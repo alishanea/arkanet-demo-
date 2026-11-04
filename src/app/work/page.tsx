@@ -293,26 +293,25 @@ export default function WorkPage() {
     <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. ARCHITECTURAL HERO HEADER & FILTER CONTROLS (UNIFIED, CONNECTED, NO SEPARATE BOTTOM LINE) ── */}
-      <section className="relative w-full bg-[#f4f6fb] text-[#202B61] select-none pt-28 sm:pt-36 pb-12 sm:pb-14 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
+      {/* ── 1. ARCHITECTURAL HERO HEADER & FILTER CONTROLS (COMPLETE 1-PAGE PROPER FIT) ── */}
+      <section className="relative w-full min-h-[calc(100vh-5rem)] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
         
-        {/* -- CINEMATIC AMBIENT BACKGROUND IMAGE & GRADIENT OVERLAYS -- */}
+        {/* -- CINEMATIC AMBIENT BACKGROUND IMAGE & BALANCED GRADIENT OVERLAYS -- */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
           <img
             src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2400&auto=format&fit=crop"
             alt="Arkanet Engineering & Code Workspace"
-            className="w-full h-full object-cover object-center opacity-30 sm:opacity-35 brightness-[1.02] contrast-[1.05]"
+            className="w-full h-full object-cover object-center opacity-45 sm:opacity-50 brightness-[1.02] contrast-[1.06]"
             loading="eager"
           />
 
-          {/* Precision Gradient Blends for pristine contrast, readable text, and smooth site integration */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/85 via-[#f4f6fb]/70 to-[#f4f6fb] pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb]/70 via-transparent to-[#f4f6fb]/70 pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[550px] bg-gradient-to-tr from-[#202B61]/[0.035] via-white/70 to-[#202B61]/[0.025] rounded-full blur-3xl pointer-events-none" />
+          {/* Precision Gradient Blends: Clear background image visibility + 100% typographic contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/80 via-[#f4f6fb]/60 to-[#f4f6fb]/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb]/60 via-transparent to-[#f4f6fb]/60 pointer-events-none" />
         </div>
 
-        {/* -- HERO CONTENT & CONTROLS (CONNECTED IN ONE CLEAN BLOCK, NO SEPARATION LINE) -- */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center space-y-6 sm:space-y-8">
+        {/* -- HERO CONTENT & CONTROLS (VERTICALLY CENTERED PROPER FIT, CONNECTED CONTROLS, NO CUTTING) -- */}
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center space-y-6 sm:space-y-8 my-auto">
           <div className="space-y-4 max-w-4xl sm:max-w-5xl mx-auto">
             <h1 className="hero-h1 text-[#202B61] text-center">
               Selected Work &amp;<br />
