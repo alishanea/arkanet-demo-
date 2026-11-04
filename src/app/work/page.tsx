@@ -293,38 +293,39 @@ export default function WorkPage() {
     <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. ARCHITECTURAL HERO HEADER & FILTER CONTROLS (COMPLETE 1-PAGE PROPER FIT) ── */}
-      <section className="relative w-full min-h-[calc(100vh-5rem)] min-h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
-        
-        {/* -- CINEMATIC AMBIENT BACKGROUND IMAGE & BALANCED GRADIENT OVERLAYS -- */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
+      {/* ── 1. ARCHITECTURAL HERO HEADER & FILTER CONTROLS (PROPER FIT RIGHT SHOWCASE MATCHING CAPABILITIES) ── */}
+      <section className="relative w-full overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-28 sm:pt-36 pb-16 sm:pb-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left select-none">
+        {/* Dedicated Engineering Showcase Background Image (Fits perfectly on right side, identical to Capabilities) */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] xl:w-[56%] z-0 overflow-hidden pointer-events-none select-none">
           <img
-            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2400&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2000&auto=format&fit=crop"
             alt="Arkanet Engineering & Code Workspace"
-            className="w-full h-full object-cover object-center opacity-45 sm:opacity-50 brightness-[1.02] contrast-[1.06]"
+            className="w-full h-full object-cover object-center lg:object-right opacity-80 sm:opacity-85 brightness-[1.02] contrast-[1.05]"
             loading="eager"
           />
 
-          {/* Precision Gradient Blends: Clear background image visibility + 100% typographic contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/80 via-[#f4f6fb]/60 to-[#f4f6fb]/85 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb]/60 via-transparent to-[#f4f6fb]/60 pointer-events-none" />
+          {/* Precision Gradient Blends: Keeps left text 100% readable while right image remains crisp, vivid, and properly fitted */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb] via-[#f4f6fb]/80 lg:via-[#f4f6fb]/50 to-transparent pointer-events-none z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb]/40 via-transparent to-transparent pointer-events-none z-[1]" />
+          {/* Mobile contrast guard so copy never clashes on small screens */}
+          <div className="absolute inset-0 bg-[#f4f6fb]/75 sm:bg-[#f4f6fb]/60 lg:hidden pointer-events-none z-[1]" />
         </div>
 
-        {/* -- HERO CONTENT & CONTROLS (VERTICALLY CENTERED PROPER FIT, CONNECTED CONTROLS, NO CUTTING) -- */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center space-y-6 sm:space-y-8 my-auto">
-          <div className="space-y-4 max-w-4xl sm:max-w-5xl mx-auto">
-            <h1 className="hero-h1 text-[#202B61] text-center">
-              Selected Work &amp;<br />
-              Engineering Case Studies
+        {/* Foreground Content: Unified connected block matching Capabilities layout */}
+        <div className="relative z-10 max-w-[1400px] mx-auto w-full space-y-6 sm:space-y-8">
+          <div className="space-y-5 w-full max-w-4xl lg:max-w-5xl">
+            <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
+              Selected Work &amp; <br />
+              <span className="text-[#202B61]">Engineering Case Studies</span>
             </h1>
 
-            <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto text-balance">
+            <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-3xl">
               A curated index of production web platforms, mobile ecosystems, cloud architectures, and applied AI systems engineered for real-world traffic.
             </p>
           </div>
 
-          {/* Filter & Layout View Controls: Directly connected with NO separate bottom bar and NO separation line */}
-          <div className="w-full flex flex-wrap items-center justify-between gap-3 pt-2">
+          {/* Filter & Layout View Controls: Connected directly below subtitle with NO separate section and NO separation line */}
+          <div className="w-full flex flex-wrap items-center justify-between gap-3 pt-1">
             <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
               {CATEGORIES.map((cat) => {
                 const isActive = activeCategory === cat;
