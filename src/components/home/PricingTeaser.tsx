@@ -9,7 +9,7 @@ interface PricingTeaserProps {
 export const PricingTeaser: React.FC<PricingTeaserProps> = ({ onOpenBooking }) => {
   return (
     <section id="pricing-teaser" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         <div className="bg-subtle border border-borderline rounded-2xl p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-2xs">
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy mb-4">
             Pay for a partner, not a project quote

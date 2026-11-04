@@ -4,7 +4,7 @@ import React from "react";
 
 export function ContactHero() {
   return (
-    <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 overflow-hidden">
+    <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
       
       {/* -- CINEMATIC AMBIENT BACKGROUND -- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -20,7 +20,7 @@ export function ContactHero() {
       </div>
 
       {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center px-4">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center">
         {/* Clean, Majestic Editorial Headline */}
         <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
           Let&apos;s Build Something<br />

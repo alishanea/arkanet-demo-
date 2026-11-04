@@ -3,7 +3,7 @@ import { weDo, weDont } from "@/lib/aboutData";
 export function AboutCulture() {
   return (
     <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
+      <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
 
         <div className="max-w-3xl space-y-3">
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-tight">

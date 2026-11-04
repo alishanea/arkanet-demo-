@@ -29,19 +29,19 @@ export const TopAnnouncementBar: React.FC<TopAnnouncementBarProps> = ({ onOpenBo
   if (!isVisible) return null;
 
   return (
-    <div className="bg-navy text-white text-xs sm:text-sm py-2 px-4 relative z-50 transition-all">
-      <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-center">
+    <div className="bg-[#151E48] text-white text-xs sm:text-sm py-2 px-4 sm:px-8 lg:px-12 relative z-50 transition-all font-sans">
+      <div className="max-w-[1400px] mx-auto flex items-center justify-center gap-2 text-center">
         <span className="text-slate-200">Now booking Q1 project slots, get a free scope call</span>
         <button
           onClick={onOpenBooking}
-          className="inline-flex items-center gap-1 font-semibold text-white underline hover:text-white/80 transition-colors"
+          className="inline-flex items-center gap-1 font-semibold text-white underline hover:text-white/80 transition-colors cursor-pointer"
         >
           Book Scope Call <ArrowRight className="w-3.5 h-3.5" />
         </button>
       </div>
       <button
         onClick={handleDismiss}
-        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1 rounded-md transition-colors"
+        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1 rounded-md transition-colors cursor-pointer"
         aria-label="Dismiss announcement"
       >
         <X className="w-4 h-4" />

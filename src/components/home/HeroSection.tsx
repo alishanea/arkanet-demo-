@@ -10,7 +10,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <section id="home" className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="home" className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden">
       
       {/* -- CINEMATIC AMBIENT VIDEO / IMAGE BACKGROUND -- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -32,7 +32,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       </div>
 
       {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center px-4">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center">
         {/* Clean Editorial Headline (No Hyphens) */}
         <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
           Websites, Apps &amp; AI<br />

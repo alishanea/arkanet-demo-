@@ -294,7 +294,7 @@ export default function WorkPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. ARCHITECTURAL HERO HEADER (FULL PAGE SCREEN) ── */}
-      <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-20 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 overflow-hidden">
+      <section className="relative w-full min-h-[50vh] sm:min-h-[55vh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none pt-28 sm:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
         
         {/* -- MINIMAL PURE AMBIENT CANVAS (ZERO PHOTO CLUTTER, 100% TYPOGRAPHIC CLARITY) -- */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -303,7 +303,7 @@ export default function WorkPage() {
         </div>
 
         {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center justify-center px-4">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center">
           <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
             Selected Work &amp;<br />
             Engineering Case Studies
@@ -367,7 +367,7 @@ export default function WorkPage() {
       </section>
 
       {/* ── 3. WORK SHOWCASE STAGE ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12">
         <div className="max-w-[1400px] mx-auto">
           {filteredProjects.length === 0 ? (
             <div className="py-20 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-sm">
