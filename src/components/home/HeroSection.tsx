@@ -21,10 +21,10 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-50 brightness-105 saturate-110"
+          className="w-full h-full object-cover opacity-65 brightness-105 saturate-110"
         >
+          <source src="/assets/hero-video.mp4" type="video/mp4" />
           <source src="/assets/hero-video.webm" type="video/webm" />
-          <source src="/assets/images/compressed-hero-video.mp4" type="video/mp4" />
         </video>
 
         {/* Consistent full-bleed gradient overlay */}

@@ -104,7 +104,7 @@ export const HeroShowcaseScroll: React.FC<HeroShowcaseScrollProps> = () => {
             preload="none"
             className="absolute inset-0 w-full h-full object-cover brightness-[0.82] contrast-[1.05]"
           >
-            {loadVideo && <source src="/assets/hero-video.webm" type="video/webm" />}
+            {loadVideo && <source src="/assets/hero-video.mp4" type="video/mp4" />}
           </video>
 
           {/* Theme Vignette Gradient Overlay */}
@@ -174,7 +174,7 @@ export const HeroShowcaseScroll: React.FC<HeroShowcaseScrollProps> = () => {
             preload="auto"
             className="absolute inset-0 w-full h-full object-cover brightness-[0.7] contrast-[1.1]"
           >
-            {loadVideo && <source src="/assets/hero-video.webm" type="video/webm" />}
+            {loadVideo && <source src="/assets/hero-video.mp4" type="video/mp4" />}
             Your browser does not support HTML5 video.
           </video>
 
