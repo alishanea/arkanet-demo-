@@ -293,8 +293,8 @@ export default function WorkPage() {
     <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. ARCHITECTURAL HERO HEADER (FULL PAGE SCREEN) ── */}
-      <section className="relative w-full min-h-[50vh] sm:min-h-[55vh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
+      {/* ── 1. ARCHITECTURAL HERO HEADER (100VH FULL SCREEN PROPER FIT) ── */}
+      <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-between bg-[#f4f6fb] text-[#202B61] select-none pt-24 sm:pt-28 pb-6 sm:pb-8 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden">
         
         {/* -- MINIMAL PURE AMBIENT CANVAS (ZERO PHOTO CLUTTER, 100% TYPOGRAPHIC CLARITY) -- */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -303,22 +303,19 @@ export default function WorkPage() {
         </div>
 
         {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center my-auto px-4">
           <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
             Selected Work &amp;<br />
             Engineering Case Studies
           </h1>
 
-          <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6">
+          <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6 text-balance">
             A curated index of production web platforms, mobile ecosystems, cloud architectures, and applied AI systems engineered for real-world traffic.
           </p>
         </div>
 
-      </section>
-
-      {/* ── 2. FILTER & LAYOUT VIEW CONTROLS ── */}
-      <section className="w-full bg-[#f4f6fb] py-6 sm:py-7 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80">
-        <div className="max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-3">
+        {/* ── 2. FILTER & LAYOUT VIEW CONTROLS (ANCHORED NEATLY AT BOTTOM OF SCREEN 1) ── */}
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto pt-4 sm:pt-5 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat;
@@ -364,6 +361,7 @@ export default function WorkPage() {
             </button>
           </div>
         </div>
+
       </section>
 
       {/* ── 3. WORK SHOWCASE STAGE ── */}
