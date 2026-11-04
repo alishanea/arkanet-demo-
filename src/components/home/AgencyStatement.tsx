@@ -103,16 +103,16 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full bg-[#151E48] text-white px-4 sm:px-8 lg:px-12 py-10 sm:py-12 lg:py-14 select-none border-t border-[#253272] font-sans antialiased overflow-hidden"
+      className="relative w-full bg-[#151E48] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-b border-[#253272] font-sans antialiased overflow-hidden scroll-mt-24"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-7 lg:space-y-8">
+      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12 lg:space-y-14">
         
         {/* ── 1. AUTHORITATIVE STATEMENT HEADLINE & DESCRIPTION (PRECISION TYPOGRAPHY) ── */}
-        <div className="space-y-2.5 max-w-4xl text-left">
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[40px] text-white leading-[1.18] tracking-[-0.025em]">
+        <div className="space-y-4 max-w-4xl text-left">
+          <h2 className="section-h2 text-white !text-white leading-[1.18] tracking-tight">
             The Digital Innovation Company
           </h2>
-          <p className="font-sans font-normal text-base sm:text-[17px] lg:text-[18px] text-white/80 leading-[1.6] max-w-4xl">
+          <p className="font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal max-w-4xl">
             Blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Founded in 2023, Arkanet Technologies specializes in transforming complex technological challenges into scalable, future-ready software platforms for enterprises and ambitious brands worldwide.
           </p>
         </div>
