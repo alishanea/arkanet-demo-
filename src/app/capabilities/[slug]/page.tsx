@@ -201,8 +201,8 @@ export default function CapabilityDetailPage() {
     <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── SECTION 1: HERO SECTION WITH DEDICATED CONTENT-CONNECTED BACKGROUND ── */}
-      <section className="relative w-full overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-28 sm:pt-36 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left">
+      {/* ── SECTION 1: HERO SECTION WITH DEDICATED CONTENT-CONNECTED BACKGROUND (100VH 1-PAGE PROPER FIT) ── */}
+      <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-between overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-24 sm:pt-28 pb-6 sm:pb-8 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left">
         {/* Dedicated Content-Connected Background Showcase Image */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] xl:w-[56%] z-0 overflow-hidden pointer-events-none select-none">
           <AnimatePresence mode="wait">
@@ -226,55 +226,58 @@ export default function CapabilityDetailPage() {
 
           {/* Precision Gradient Blends: Keeps left text 100% readable while right image remains crisp & vivid */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb] via-[#f4f6fb]/80 lg:via-[#f4f6fb]/50 to-transparent pointer-events-none z-[1]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb] via-transparent to-[#f4f6fb]/40 pointer-events-none z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb]/40 via-transparent to-transparent pointer-events-none z-[1]" />
           {/* Extra contrast guard on mobile so copy never clashes */}
           <div className="absolute inset-0 bg-[#f4f6fb]/75 sm:bg-[#f4f6fb]/60 lg:hidden pointer-events-none z-[1]" />
         </div>
 
-        {/* Foreground Content */}
-        <div className="relative z-10 max-w-[1400px] mx-auto w-full space-y-8">
-          <div className="space-y-5 w-full max-w-5xl lg:max-w-6xl">
+        {/* Foreground Content: Perfectly Balanced 1-Page Screen Fit */}
+        <div className="relative z-10 max-w-[1400px] mx-auto w-full h-full flex flex-col justify-between my-auto">
+          {/* Middle: Headline + Subtitle (Vertically Centered in Available Space) */}
+          <div className="my-auto space-y-5 sm:space-y-6 w-full max-w-4xl lg:max-w-5xl py-6 sm:py-8">
             <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
               {data.title} <br />
               <span className="text-[#202B61]">{data.highlightText}</span>
             </h1>
 
             {data.subtitle && (
-              <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-4xl">
+              <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-3xl">
                 {data.subtitle}
               </p>
             )}
           </div>
 
-          {/* Quick Capability Practice Switcher (Guaranteed Single-Line on all laptops) */}
-          <div className="w-full overflow-x-auto no-scrollbar pt-2 -mx-1 px-1">
-            <div className="flex items-center flex-nowrap gap-1.5 sm:gap-2 xl:gap-2.5 w-max lg:w-auto">
-              {[
-                { name: "Web & SaaS", slug: "website-development" },
-                { name: "Mobile Apps", slug: "mobile-app-development" },
-                { name: "Applied AI", slug: "applied-ai-ml" },
-                { name: "Cloud & DevOps", slug: "cloud-devops-hosting" },
-                { name: "UI/UX Design", slug: "graphic-design" },
-                { name: "Marketing", slug: "digital-marketing" },
-                { name: "Automation", slug: "business-automation" },
-                { name: "WhatsApp", slug: "whatsapp-social-commerce-automation" },
-                { name: "ERP Systems", slug: "erp-business-management" },
-              ].map((cap) => {
-                const isActive = slug === cap.slug;
-                return (
-                  <Link
-                    key={cap.slug}
-                    href={`/capabilities/${cap.slug}`}
-                    className={`shrink-0 whitespace-nowrap px-2.5 sm:px-2.5 xl:px-3 py-1.5 rounded-[4px] shadow-none text-[11px] sm:text-[11.5px] xl:text-xs font-semibold uppercase tracking-wide transition-all duration-200 ${
-                      isActive
-                        ? "bg-[#202B61] text-white border border-[#202B61]"
-                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
-                    }`}
-                  >
-                    {cap.name}
-                  </Link>
-                );
-              })}
+          {/* Bottom: Quick Capability Practice Switcher (Docked Cleanly at Bottom of 1-Page Screen) */}
+          <div className="w-full pt-4 sm:pt-5 border-t border-slate-200/80">
+            <div className="w-full overflow-x-auto no-scrollbar py-0.5 -mx-1 px-1">
+              <div className="flex items-center flex-nowrap gap-1.5 sm:gap-2 xl:gap-2.5 w-max lg:w-auto">
+                {[
+                  { name: "Web & SaaS", slug: "website-development" },
+                  { name: "Mobile Apps", slug: "mobile-app-development" },
+                  { name: "Applied AI", slug: "applied-ai-ml" },
+                  { name: "Cloud & DevOps", slug: "cloud-devops-hosting" },
+                  { name: "UI/UX Design", slug: "graphic-design" },
+                  { name: "Marketing", slug: "digital-marketing" },
+                  { name: "Automation", slug: "business-automation" },
+                  { name: "WhatsApp", slug: "whatsapp-social-commerce-automation" },
+                  { name: "ERP Systems", slug: "erp-business-management" },
+                ].map((cap) => {
+                  const isActive = slug === cap.slug;
+                  return (
+                    <Link
+                      key={cap.slug}
+                      href={`/capabilities/${cap.slug}`}
+                      className={`shrink-0 whitespace-nowrap px-2.5 sm:px-2.5 xl:px-3 py-1.5 rounded-[4px] shadow-none text-[11px] sm:text-[11.5px] xl:text-xs font-semibold uppercase tracking-wide transition-all duration-200 ${
+                        isActive
+                          ? "bg-[#202B61] text-white border border-[#202B61]"
+                          : "bg-white text-[#202B61]/75 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
+                      }`}
+                    >
+                      {cap.name}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
