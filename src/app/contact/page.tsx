@@ -77,25 +77,14 @@ export default function ContactPage() {
       <section className="relative w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-12 bg-[#151E48] text-white border-t border-b border-[#253272] text-left select-none overflow-hidden font-sans">
         <div className="max-w-[1400px] mx-auto space-y-6 sm:space-y-8">
           
-          {/* Section Header with SLA & Security Badges (Balances Top Width) */}
-          <div className="w-full flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-white/10">
-            <div className="space-y-1.5 max-w-2xl text-left">
-              <h2 className="section-h2 text-white !text-white leading-tight tracking-tight">
-                Project Details
-              </h2>
-              <p className="font-sans text-sm sm:text-base text-slate-200 leading-relaxed">
-                Tell us about what you want to build. Our engineering leads will review your requirements and provide technical scope, system architecture feasibility, and timelines within 2 hours.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-2.5 text-xs font-semibold text-slate-300 shrink-0">
-              <span className="flex items-center gap-1.5 bg-[#1C265A] border border-[#2B397D] px-3.5 py-2 rounded-[4px]">
-                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                2-Hour SLA Response
-              </span>
-              <span className="flex items-center gap-1.5 bg-[#1C265A] border border-[#2B397D] px-3.5 py-2 rounded-[4px]">
-                Direct NDA
-              </span>
-            </div>
+          {/* Section Header */}
+          <div className="w-full text-left space-y-1.5 max-w-3xl pb-4 border-b border-white/10">
+            <h2 className="section-h2 text-white !text-white leading-tight tracking-tight">
+              Project Details
+            </h2>
+            <p className="font-sans text-sm sm:text-base text-slate-200 leading-relaxed">
+              Tell us about what you want to build. Our engineering leads will review your requirements and provide technical scope, system architecture feasibility, and timelines within 2 hours.
+            </p>
           </div>
 
           {submitted ? (
