@@ -59,10 +59,10 @@ export function AboutWhoWeAre() {
         </div>
       </section>
 
-      {/* ── 2. BOTTOM STATS: SEAMLESS ON SITE #f4f6fb CANVAS ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] text-[#202B61] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
+      {/* ── 2. BOTTOM STATS: REFINED COMPACT SIZING ON SITE #f4f6fb CANVAS ── */}
+      <section className="w-full py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] text-[#202B61] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-4 sm:-mx-6 lg:-mx-8 gap-y-8 items-stretch w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-4 sm:-mx-6 lg:-mx-8 gap-y-7 items-stretch w-full">
             {STATS.map((stat, idx) => (
               <motion.div
                 key={stat.label}
@@ -81,19 +81,19 @@ export function AboutWhoWeAre() {
                     ? "sm:border-r sm:border-slate-200/90"
                     : "sm:border-r-0"
                 } ${
-                  idx < 3 ? "border-b border-slate-200/90 pb-6 sm:border-b-0 sm:pb-0" : ""
+                  idx < 3 ? "border-b border-slate-200/90 pb-5 sm:border-b-0 sm:pb-0" : ""
                 }`}
               >
-                <div className="space-y-1.5">
-                  <div className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[42px] text-[#202B61] tracking-tight leading-tight">
+                <div className="space-y-1">
+                  <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-[#202B61] tracking-tight leading-tight">
                     {stat.number}
                   </div>
-                  <h3 className="font-heading font-bold text-sm sm:text-base text-[#202B61] leading-snug">
+                  <h3 className="font-heading font-bold text-xs sm:text-[13.5px] lg:text-sm text-[#202B61] leading-snug">
                     {stat.label}
                   </h3>
                 </div>
-                <div className="pt-2">
-                  <p className="font-sans text-xs sm:text-[13.5px] text-[#202B61]/80 font-normal leading-[1.6]">
+                <div className="pt-1.5">
+                  <p className="font-sans text-[11.5px] sm:text-xs text-[#202B61]/75 font-normal leading-[1.55]">
                     {stat.detail}
                   </p>
                 </div>
