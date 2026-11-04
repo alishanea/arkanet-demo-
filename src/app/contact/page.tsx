@@ -86,9 +86,20 @@ export default function ContactPage() {
       {/* ── PAGE 1: FIRST PAGE FIT AND PROPER (100VH FULL SCREEN) ── */}
       <ContactHero />
 
-      {/* ── PAGE 2: SECOND PAGE PROJECT DETAILS (SIGNATURE DARK NAVY THEME) ── */}
+      {/* ── PAGE 2: SECOND PAGE PROJECT DETAILS (HARMONIOUS 2-COLUMN FLOW & REFINED SIZING) ── */}
       <section className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#151E48] text-white border-t border-b border-[#253272] text-left select-none overflow-hidden font-sans">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10">
+          
+          {/* Section Header with Clear Narrative Flow */}
+          <div className="w-full text-left space-y-2.5 max-w-3xl">
+            <h2 className="section-h2 text-white !text-white leading-tight tracking-tight">
+              Project Details
+            </h2>
+            <p className="font-sans text-sm sm:text-[15px] text-slate-200 leading-relaxed max-w-2xl">
+              Tell us about what you want to build. Our engineering leads will review your requirements and provide technical scope, system architecture feasibility, and timelines within 2 hours.
+            </p>
+          </div>
+
           {submitted ? (
             <div className="bg-[#1C265A] rounded-[4px] border border-[#2B397D] p-8 sm:p-12 text-center max-w-xl mx-auto space-y-4 shadow-none">
               <div className="w-14 h-14 rounded-full bg-white/10 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-400/30 shadow-none">
@@ -123,25 +134,22 @@ export default function ContactPage() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
               
-              {/* ── LEFT SIDE: HEADER & PRACTICE AREA ── */}
-              <div className="lg:col-span-5 space-y-6">
-                <div className="space-y-3">
-                  <h2 className="section-h2 text-white !text-white leading-tight tracking-tight">
-                    Project Details
-                  </h2>
-                  <p className="font-sans text-xs sm:text-sm text-slate-200 leading-relaxed max-w-lg">
-                    Tell us about what you want to build. Our engineering leads will review your requirements and provide technical scope, timelines, and feasibility.
-                  </p>
-                </div>
+              {/* ── LEFT COLUMN (6 COLS): STEP 1 - PRACTICE AREA 2-COLUMN TABLE & TRUST ASSURANCE ── */}
+              <div className="lg:col-span-6 bg-[#1C265A] rounded-[4px] border border-[#2B397D] p-6 sm:p-7 flex flex-col justify-between space-y-5">
+                <div className="space-y-3.5">
+                  <div className="flex items-center justify-between pb-2 border-b border-[#253272]">
+                    <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-200">
+                      1. Select Practice Area <span className="text-rose-400">*</span>
+                    </label>
+                    <span className="text-[11px] font-semibold text-slate-400">
+                      Choose primary domain
+                    </span>
+                  </div>
 
-                {/* Practice Area Selection */}
-                <div className="space-y-2.5 pt-2">
-                  <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-300">
-                    1. Select Practice Area <span className="text-rose-400">*</span>
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
+                  {/* 2-Column Balanced Table Grid with Refined Sizing */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {SERVICES_LIST.map((srv) => {
                       const isSelected = formData.service === srv;
                       return (
@@ -149,32 +157,65 @@ export default function ContactPage() {
                           key={srv}
                           type="button"
                           onClick={() => setFormData({ ...formData, service: srv })}
-                          className={`w-full px-4 py-3 rounded-[4px] text-xs sm:text-sm font-semibold text-left transition-all cursor-pointer border flex items-center justify-between shadow-none ${
+                          className={`px-3 py-2.5 rounded-[4px] text-xs font-semibold text-left transition-all cursor-pointer border flex items-center justify-between shadow-none ${
                             isSelected
                               ? "bg-white text-[#151E48] border-white font-bold shadow-sm"
-                              : "bg-[#1C265A] hover:bg-[#233072] text-slate-200 border-[#2B397D] hover:border-slate-300/40"
+                              : "bg-[#151E48] hover:bg-[#202B61] text-slate-200 border-[#253272] hover:border-slate-300/40"
                           }`}
                         >
-                          <span className="truncate">{srv}</span>
-                          {isSelected && <Check className="w-4 h-4 text-[#151E48] shrink-0 ml-1.5" />}
+                          <span className="truncate pr-1">{srv}</span>
+                          <span className={`w-3.5 h-3.5 rounded-full flex items-center justify-center shrink-0 border ${
+                            isSelected
+                              ? "border-[#151E48] bg-[#151E48] text-white"
+                              : "border-slate-500/60 bg-transparent"
+                          }`}>
+                            {isSelected && <Check className="w-2.5 h-2.5 text-white stroke-[3]" />}
+                          </span>
                         </button>
                       );
                     })}
                   </div>
                 </div>
+
+                {/* Trust & Engineering SLA Badges */}
+                <div className="pt-4 border-t border-[#253272] space-y-2">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-slate-300">
+                    What happens next:
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-300/90 font-sans">
+                    <div className="flex items-center gap-1.5 bg-[#151E48]/80 px-2.5 py-1.5 rounded-[4px] border border-[#253272]">
+                      <span className="text-emerald-400 text-sm">✓</span>
+                      <span>2-Hr Response</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 bg-[#151E48]/80 px-2.5 py-1.5 rounded-[4px] border border-[#253272]">
+                      <span className="text-emerald-400 text-sm">✓</span>
+                      <span>Direct NDA</span>
+                    </div>
+                    <div className="flex items-center gap-1.5 bg-[#151E48]/80 px-2.5 py-1.5 rounded-[4px] border border-[#253272]">
+                      <span className="text-emerald-400 text-sm">✓</span>
+                      <span>Senior Lead Call</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* ── RIGHT SIDE: FORM INPUTS & SUBMIT ── */}
-              <div className="lg:col-span-7 bg-[#1C265A] rounded-[4px] border border-[#2B397D] p-6 sm:p-8 lg:p-10 shadow-none space-y-5 text-white">
+              {/* ── RIGHT COLUMN (6 COLS): STEP 2 & STEP 3 - CONTACT DETAILS & SCOPE ── */}
+              <div className="lg:col-span-6 bg-[#1C265A] rounded-[4px] border border-[#2B397D] p-6 sm:p-7 flex flex-col justify-between space-y-4 text-white">
                 
                 {/* 2. Contact Information Fields */}
-                <div className="space-y-2.5">
-                  <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-200">
-                    2. Contact Information
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-[#253272]">
+                    <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-200">
+                      2. Contact Information
+                    </label>
+                    <span className="text-[11px] font-semibold text-slate-400">
+                      Confidential &amp; direct
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-1">
-                      <label className="font-sans text-[11px] sm:text-xs font-semibold text-slate-200">
+                      <label className="font-sans text-[11px] font-semibold text-slate-200">
                         Full Name <span className="text-rose-400">*</span>
                       </label>
                       <input
@@ -183,12 +224,12 @@ export default function ContactPage() {
                         placeholder="Your name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#2B397D] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all placeholder:text-slate-400/60 shadow-none"
+                        className="w-full px-3.5 py-2.5 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#253272] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all placeholder:text-slate-400/60 shadow-none"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="font-sans text-[11px] sm:text-xs font-semibold text-slate-200">
+                      <label className="font-sans text-[11px] font-semibold text-slate-200">
                         Work Email <span className="text-rose-400">*</span>
                       </label>
                       <input
@@ -197,12 +238,12 @@ export default function ContactPage() {
                         placeholder="name@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#2B397D] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all placeholder:text-slate-400/60 shadow-none"
+                        className="w-full px-3.5 py-2.5 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#253272] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all placeholder:text-slate-400/60 shadow-none"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="font-sans text-[11px] sm:text-xs font-semibold text-slate-200">
+                      <label className="font-sans text-[11px] font-semibold text-slate-200">
                         Phone / WhatsApp
                       </label>
                       <input
@@ -210,12 +251,12 @@ export default function ContactPage() {
                         placeholder="+971 50 123 4567"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#2B397D] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all placeholder:text-slate-400/60 shadow-none"
+                        className="w-full px-3.5 py-2.5 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#253272] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all placeholder:text-slate-400/60 shadow-none"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="font-sans text-[11px] sm:text-xs font-semibold text-slate-200">
+                      <label className="font-sans text-[11px] font-semibold text-slate-200">
                         Company Name
                       </label>
                       <input
@@ -223,33 +264,33 @@ export default function ContactPage() {
                         placeholder="Company name"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#2B397D] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all placeholder:text-slate-400/60 shadow-none"
+                        className="w-full px-3.5 py-2.5 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#253272] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all placeholder:text-slate-400/60 shadow-none"
                       />
                     </div>
                   </div>
                 </div>
 
                 {/* 3. Project Description & Timeline Textarea */}
-                <div className="space-y-1.5">
+                <div className="space-y-1.5 pt-1">
                   <label className="block font-sans text-xs font-bold uppercase tracking-wider text-slate-200">
                     3. Project Description &amp; Timeline <span className="text-rose-400">*</span>
                   </label>
                   <textarea
                     required
-                    rows={4}
+                    rows={3}
                     placeholder="Describe what you are planning to build, target timeline, or existing systems to integrate..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#2B397D] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all resize-none placeholder:text-slate-400/60 leading-relaxed shadow-none"
+                    className="w-full px-3.5 py-2.5 rounded-[4px] bg-[#151E48] focus:bg-[#12193E] border border-[#253272] focus:border-white focus:ring-1 focus:ring-white outline-none text-xs sm:text-sm text-white transition-all resize-none placeholder:text-slate-400/60 leading-relaxed shadow-none"
                   />
                 </div>
 
-                {/* Clean Submit Row */}
+                {/* Clean Submit Row with Direct Icon */}
                 <div className="pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-[#151E48] font-bold text-xs uppercase tracking-wider px-9 py-3.5 rounded-[4px] transition-all cursor-pointer shadow-none hover:shadow-none disabled:opacity-70"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-[#151E48] font-bold text-xs uppercase tracking-wider py-3.5 px-8 rounded-[4px] transition-all cursor-pointer shadow-none hover:shadow-none disabled:opacity-70"
                   >
                     <span>{isSubmitting ? "Sending..." : "Submit Project Details"}</span>
                     <Send className="w-3.5 h-3.5 text-[#151E48]" />
