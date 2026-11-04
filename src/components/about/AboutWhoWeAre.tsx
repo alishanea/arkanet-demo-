@@ -59,19 +59,19 @@ export function AboutWhoWeAre() {
         </div>
       </section>
 
-      {/* ── 2. BOTTOM STATS: REFINED COMPACT SIZING ON SITE #f4f6fb CANVAS ── */}
-      <section className="w-full py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] text-[#202B61] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
+      {/* ── 2. BOTTOM STATS: ULTRA-COMPACT REFINED STRIP ON SITE #f4f6fb CANVAS ── */}
+      <section className="w-full py-7 sm:py-8 lg:py-10 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] text-[#202B61] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-4 sm:-mx-6 lg:-mx-8 gap-y-7 items-stretch w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-4 sm:-mx-6 lg:-mx-8 gap-y-6 items-stretch w-full">
             {STATS.map((stat, idx) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{
-                  duration: 0.45,
-                  delay: idx * 0.08,
+                  duration: 0.4,
+                  delay: idx * 0.06,
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 className={`flex flex-col justify-between h-full text-left px-4 sm:px-6 lg:px-8 transition-all duration-200 ${
@@ -81,19 +81,19 @@ export function AboutWhoWeAre() {
                     ? "sm:border-r sm:border-slate-200/90"
                     : "sm:border-r-0"
                 } ${
-                  idx < 3 ? "border-b border-slate-200/90 pb-5 sm:border-b-0 sm:pb-0" : ""
+                  idx < 3 ? "border-b border-slate-200/90 pb-4 sm:border-b-0 sm:pb-0" : ""
                 }`}
               >
-                <div className="space-y-1">
-                  <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-[#202B61] tracking-tight leading-tight">
+                <div className="space-y-0.5">
+                  <div className="font-heading font-extrabold text-xl sm:text-2xl lg:text-[26px] text-[#202B61] tracking-tight leading-tight">
                     {stat.number}
                   </div>
-                  <h3 className="font-heading font-bold text-xs sm:text-[13.5px] lg:text-sm text-[#202B61] leading-snug">
+                  <h3 className="font-heading font-bold text-xs sm:text-[13px] text-[#202B61] leading-snug">
                     {stat.label}
                   </h3>
                 </div>
-                <div className="pt-1.5">
-                  <p className="font-sans text-[11.5px] sm:text-xs text-[#202B61]/75 font-normal leading-[1.55]">
+                <div className="pt-1">
+                  <p className="font-sans text-[11px] sm:text-[11.5px] text-[#202B61]/70 font-normal leading-[1.5]">
                     {stat.detail}
                   </p>
                 </div>
