@@ -323,9 +323,15 @@ export default function WorkPage() {
               A curated index of production web platforms, mobile ecosystems, cloud architectures, and applied AI systems engineered for real-world traffic.
             </p>
           </div>
+        </div>
+      </section>
 
-          {/* Filter & Layout View Controls: Connected directly below subtitle with NO separate section and NO separation line */}
-          <div className="w-full flex flex-wrap items-center justify-between gap-3 pt-1">
+      {/* ── 2. WORK SHOWCASE STAGE & FILTER CONTROLS (SECOND PAGE) ── */}
+      <section className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12">
+        <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10">
+          
+          {/* Filter & Layout View Controls: Restored to Second Page */}
+          <div className="w-full flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-200/80">
             <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
               {CATEGORIES.map((cat) => {
                 const isActive = activeCategory === cat;
@@ -371,12 +377,6 @@ export default function WorkPage() {
               </button>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── 3. WORK SHOWCASE STAGE ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12">
-        <div className="max-w-[1400px] mx-auto">
           {filteredProjects.length === 0 ? (
             <div className="py-20 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-sm">
               No projects found for category &quot;{activeCategory}&quot;.
