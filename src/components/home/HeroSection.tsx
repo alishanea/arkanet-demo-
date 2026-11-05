@@ -12,7 +12,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section id="home" className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden">
       
-      {/* -- CINEMATIC AMBIENT VIDEO / IMAGE BACKGROUND -- */}
+      {/* -- CINEMATIC TECH TEAM BACKGROUND VIDEO (SEAMLESS 1080P LOOP) -- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <video
           ref={videoRef}
@@ -23,8 +23,8 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           preload="auto"
           className="w-full h-full object-cover opacity-50 brightness-105 saturate-110"
         >
-          <source src="/assets/hero-video.webm" type="video/webm" />
-          <source src="/assets/images/compressed-hero-video.mp4" type="video/mp4" />
+          <source src="/assets/hero-tech-team.webm" type="video/webm" />
+          <source src="/assets/hero-tech-team.mp4" type="video/mp4" />
         </video>
 
         {/* Consistent full-bleed gradient overlay */}
