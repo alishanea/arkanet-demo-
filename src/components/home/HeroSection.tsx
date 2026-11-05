@@ -48,14 +48,65 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         }}
       />
 
-      {/* ── 3. ARKANET SIGNATURE EMBLEM WATERMARK (ELEGANT BACKGROUND BRAND RELATION) ── */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[1] select-none opacity-[0.045] transition-opacity duration-700">
-        <img
-          src="/assets/images/arkanet-icon-clean.png"
-          alt=""
-          aria-hidden="true"
-          className="w-[300px] sm:w-[420px] lg:w-[520px] h-auto object-contain blur-[0.5px]"
-        />
+      {/* ── 3. HIGH-TECH PROCESSOR & NEURAL CIRCUIT DIE (TECHNOLOGICAL ARCHITECTURE WATERMARK) ── */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] sm:w-[680px] lg:w-[840px] h-[520px] sm:h-[680px] lg:h-[840px] pointer-events-none z-[1] select-none opacity-[0.10] text-[#202B61]">
+        <svg
+          viewBox="0 0 800 800"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+        >
+          {/* Outer Boundary Frame & Alignment Reticles */}
+          <rect x="80" y="80" width="640" height="640" rx="28" stroke="currentColor" strokeWidth="1.5" strokeDasharray="8 8" opacity="0.4" />
+          <circle cx="80" cy="80" r="4" fill="currentColor" opacity="0.5" />
+          <circle cx="720" cy="80" r="4" fill="currentColor" opacity="0.5" />
+          <circle cx="80" cy="720" r="4" fill="currentColor" opacity="0.5" />
+          <circle cx="720" cy="720" r="4" fill="currentColor" opacity="0.5" />
+
+          {/* Precision Chip Die Outer Ring */}
+          <rect x="160" y="160" width="480" height="480" rx="18" stroke="currentColor" strokeWidth="1.5" opacity="0.6" />
+          <rect x="180" y="180" width="440" height="440" rx="14" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+
+          {/* Central Computing & Neural Silicon Core */}
+          <rect x="270" y="270" width="260" height="260" rx="12" stroke="currentColor" strokeWidth="2" opacity="0.8" fill="currentColor" fillOpacity="0.03" />
+
+          {/* Core Quad-Cluster Logic Blocks */}
+          <rect x="295" y="295" width="95" height="95" rx="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
+          <rect x="410" y="295" width="95" height="95" rx="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
+          <rect x="295" y="410" width="95" height="95" rx="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
+          <rect x="410" y="410" width="95" height="95" rx="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
+
+          {/* Central Neural Node Nexus */}
+          <circle cx="400" cy="400" r="22" stroke="currentColor" strokeWidth="1.5" opacity="0.7" />
+          <circle cx="400" cy="400" r="8" fill="currentColor" opacity="0.9" />
+
+          {/* North Data Bus Lines */}
+          <path d="M220 160 V100 M260 160 V70 M310 160 V110 M360 160 V80 M400 160 V50 M440 160 V80 M490 160 V110 M540 160 V70 M580 160 V100" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
+          {/* South Data Bus Lines */}
+          <path d="M220 640 V700 M260 640 V730 M310 640 V690 M360 640 V720 M400 640 V750 M440 640 V720 M490 640 V690 M540 640 V730 M580 640 V700" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
+          {/* West Data Bus Lines */}
+          <path d="M160 220 H100 M160 260 H70 M160 310 H110 M160 360 H80 M160 400 H50 M160 440 H80 M160 490 H110 M160 540 H70 M160 580 H100" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
+          {/* East Data Bus Lines */}
+          <path d="M640 220 H700 M640 260 H730 M640 310 H690 M640 360 H720 M640 400 H750 M640 440 H720 M640 490 H690 M640 540 H730 M640 580 H700" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
+
+          {/* Bus Terminal Pins / Node Dots */}
+          <circle cx="400" cy="50" r="3.5" fill="currentColor" opacity="0.8" />
+          <circle cx="400" cy="750" r="3.5" fill="currentColor" opacity="0.8" />
+          <circle cx="50" cy="400" r="3.5" fill="currentColor" opacity="0.8" />
+          <circle cx="750" cy="400" r="3.5" fill="currentColor" opacity="0.8" />
+
+          <circle cx="260" cy="70" r="2.5" fill="currentColor" opacity="0.6" />
+          <circle cx="540" cy="70" r="2.5" fill="currentColor" opacity="0.6" />
+          <circle cx="260" cy="730" r="2.5" fill="currentColor" opacity="0.6" />
+          <circle cx="540" cy="730" r="2.5" fill="currentColor" opacity="0.6" />
+
+          {/* Diagonal Corner Circuit Vectors */}
+          <path d="M160 160 L105 105 M640 160 L695 105 M160 640 L105 695 M640 640 L695 695" stroke="currentColor" strokeWidth="1.5" opacity="0.7" />
+          <circle cx="105" cy="105" r="3" fill="currentColor" opacity="0.7" />
+          <circle cx="695" cy="105" r="3" fill="currentColor" opacity="0.7" />
+          <circle cx="105" cy="695" r="3" fill="currentColor" opacity="0.7" />
+          <circle cx="695" cy="695" r="3" fill="currentColor" opacity="0.7" />
+        </svg>
       </div>
 
       {/* ── 4. LIVING ARKANET BRAND AMBIENT OPTICAL GLOW ── */}
