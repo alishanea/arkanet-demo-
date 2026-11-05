@@ -48,65 +48,95 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         }}
       />
 
-      {/* ── 3. HIGH-TECH PROCESSOR & NEURAL CIRCUIT DIE (TECHNOLOGICAL ARCHITECTURE WATERMARK) ── */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] sm:w-[680px] lg:w-[840px] h-[520px] sm:h-[680px] lg:h-[840px] pointer-events-none z-[1] select-none opacity-[0.10] text-[#202B61]">
+      {/* ── 3. ARKANET LOGO & IT NETWORK CIRCUITRY IN BACKGROUND ── */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[620px] sm:w-[780px] lg:w-[920px] h-[480px] sm:h-[580px] lg:h-[660px] pointer-events-none z-[1] flex items-center justify-center">
+        
+        {/* IT Field Circuit SVG Surrounding Logo */}
         <svg
-          viewBox="0 0 800 800"
+          viewBox="0 0 900 600"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
+          className="absolute inset-0 w-full h-full text-[#202B61] opacity-25"
         >
-          {/* Outer Boundary Frame & Alignment Reticles */}
-          <rect x="80" y="80" width="640" height="640" rx="28" stroke="currentColor" strokeWidth="1.5" strokeDasharray="8 8" opacity="0.4" />
-          <circle cx="80" cy="80" r="4" fill="currentColor" opacity="0.5" />
-          <circle cx="720" cy="80" r="4" fill="currentColor" opacity="0.5" />
-          <circle cx="80" cy="720" r="4" fill="currentColor" opacity="0.5" />
-          <circle cx="720" cy="720" r="4" fill="currentColor" opacity="0.5" />
+          {/* Central Housing Frame */}
+          <rect x="250" y="160" width="400" height="280" rx="20" stroke="currentColor" strokeWidth="1.2" strokeDasharray="6 6" opacity="0.6" />
+          <rect x="270" y="180" width="360" height="240" rx="14" stroke="currentColor" strokeWidth="1.5" opacity="0.8" />
 
-          {/* Precision Chip Die Outer Ring */}
-          <rect x="160" y="160" width="480" height="480" rx="18" stroke="currentColor" strokeWidth="1.5" opacity="0.6" />
-          <rect x="180" y="180" width="440" height="440" rx="14" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+          {/* West Bus Traces (Network Ingress) */}
+          <path d="M50 220 H180 L210 250 H270" stroke="currentColor" strokeWidth="1.2" />
+          <path d="M80 300 H270" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M50 380 H180 L210 350 H270" stroke="currentColor" strokeWidth="1.2" />
+          <circle cx="50" cy="220" r="3.5" fill="currentColor" />
+          <circle cx="80" cy="300" r="4" fill="#3B82F6" className="animate-pulse" />
+          <circle cx="50" cy="380" r="3.5" fill="currentColor" />
 
-          {/* Central Computing & Neural Silicon Core */}
-          <rect x="270" y="270" width="260" height="260" rx="12" stroke="currentColor" strokeWidth="2" opacity="0.8" fill="currentColor" fillOpacity="0.03" />
+          {/* East Bus Traces (Network Egress) */}
+          <path d="M630 250 H690 L720 220 H850" stroke="currentColor" strokeWidth="1.2" />
+          <path d="M630 300 H820" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M630 350 H690 L720 380 H850" stroke="currentColor" strokeWidth="1.2" />
+          <circle cx="850" cy="220" r="3.5" fill="currentColor" />
+          <circle cx="820" cy="300" r="4" fill="#3B82F6" className="animate-pulse" />
+          <circle cx="850" cy="380" r="3.5" fill="currentColor" />
 
-          {/* Core Quad-Cluster Logic Blocks */}
-          <rect x="295" y="295" width="95" height="95" rx="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
-          <rect x="410" y="295" width="95" height="95" rx="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
-          <rect x="295" y="410" width="95" height="95" rx="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
-          <rect x="410" y="410" width="95" height="95" rx="6" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
+          {/* North Bus Traces (Cloud / Compute Lines) */}
+          <path d="M350 50 V180" stroke="currentColor" strokeWidth="1.2" />
+          <path d="M450 30 V180" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M550 50 V180" stroke="currentColor" strokeWidth="1.2" />
+          <circle cx="350" cy="50" r="3" fill="currentColor" />
+          <circle cx="450" cy="30" r="4" fill="#3B82F6" className="animate-pulse" />
+          <circle cx="550" cy="50" r="3" fill="currentColor" />
 
-          {/* Central Neural Node Nexus */}
-          <circle cx="400" cy="400" r="22" stroke="currentColor" strokeWidth="1.5" opacity="0.7" />
-          <circle cx="400" cy="400" r="8" fill="currentColor" opacity="0.9" />
+          {/* South Bus Traces (Database / Storage Lines) */}
+          <path d="M350 420 V550" stroke="currentColor" strokeWidth="1.2" />
+          <path d="M450 420 V570" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M550 420 V550" stroke="currentColor" strokeWidth="1.2" />
+          <circle cx="350" cy="550" r="3" fill="currentColor" />
+          <circle cx="450" cy="570" r="4" fill="#3B82F6" className="animate-pulse" />
+          <circle cx="550" cy="550" r="3" fill="currentColor" />
 
-          {/* North Data Bus Lines */}
-          <path d="M220 160 V100 M260 160 V70 M310 160 V110 M360 160 V80 M400 160 V50 M440 160 V80 M490 160 V110 M540 160 V70 M580 160 V100" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
-          {/* South Data Bus Lines */}
-          <path d="M220 640 V700 M260 640 V730 M310 640 V690 M360 640 V720 M400 640 V750 M440 640 V720 M490 640 V690 M540 640 V730 M580 640 V700" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
-          {/* West Data Bus Lines */}
-          <path d="M160 220 H100 M160 260 H70 M160 310 H110 M160 360 H80 M160 400 H50 M160 440 H80 M160 490 H110 M160 540 H70 M160 580 H100" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
-          {/* East Data Bus Lines */}
-          <path d="M640 220 H700 M640 260 H730 M640 310 H690 M640 360 H720 M640 400 H750 M640 440 H720 M640 490 H690 M640 540 H730 M640 580 H700" stroke="currentColor" strokeWidth="1.2" opacity="0.6" />
+          {/* IT Data Packet Pulses Traveling on Traces */}
+          <circle cx="160" cy="300" r="2.5" fill="#3B82F6">
+            <animate attributeName="cx" values="80;270" dur="3s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="740" cy="300" r="2.5" fill="#3B82F6">
+            <animate attributeName="cx" values="630;820" dur="3s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="450" cy="100" r="2.5" fill="#3B82F6">
+            <animate attributeName="cy" values="30;180" dur="2.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="450" cy="500" r="2.5" fill="#3B82F6">
+            <animate attributeName="cy" values="420;570" dur="2.5s" repeatCount="indefinite" />
+          </circle>
 
-          {/* Bus Terminal Pins / Node Dots */}
-          <circle cx="400" cy="50" r="3.5" fill="currentColor" opacity="0.8" />
-          <circle cx="400" cy="750" r="3.5" fill="currentColor" opacity="0.8" />
-          <circle cx="50" cy="400" r="3.5" fill="currentColor" opacity="0.8" />
-          <circle cx="750" cy="400" r="3.5" fill="currentColor" opacity="0.8" />
-
-          <circle cx="260" cy="70" r="2.5" fill="currentColor" opacity="0.6" />
-          <circle cx="540" cy="70" r="2.5" fill="currentColor" opacity="0.6" />
-          <circle cx="260" cy="730" r="2.5" fill="currentColor" opacity="0.6" />
-          <circle cx="540" cy="730" r="2.5" fill="currentColor" opacity="0.6" />
-
-          {/* Diagonal Corner Circuit Vectors */}
-          <path d="M160 160 L105 105 M640 160 L695 105 M160 640 L105 695 M640 640 L695 695" stroke="currentColor" strokeWidth="1.5" opacity="0.7" />
-          <circle cx="105" cy="105" r="3" fill="currentColor" opacity="0.7" />
-          <circle cx="695" cy="105" r="3" fill="currentColor" opacity="0.7" />
-          <circle cx="105" cy="695" r="3" fill="currentColor" opacity="0.7" />
-          <circle cx="695" cy="695" r="3" fill="currentColor" opacity="0.7" />
+          {/* Subtle IT Field Telemetry Tags */}
+          <text x="90" y="290" fill="currentColor" fontSize="9" fontFamily="monospace" letterSpacing="0.1em" opacity="0.6">// DATA_BUS_01</text>
+          <text x="710" y="290" fill="currentColor" fontSize="9" fontFamily="monospace" letterSpacing="0.1em" opacity="0.6">// API_GATEWAY</text>
+          <text x="460" y="55" fill="currentColor" fontSize="9" fontFamily="monospace" letterSpacing="0.1em" opacity="0.6">// CLOUD_CLUSTER</text>
+          <text x="460" y="555" fill="currentColor" fontSize="9" fontFamily="monospace" letterSpacing="0.1em" opacity="0.6">// NEURAL_PIPELINE</text>
         </svg>
+
+        {/* Central Arkanet Brand Logo with IT Glow & Laser Scanline */}
+        <div className="relative flex flex-col items-center justify-center opacity-18 select-none transition-opacity duration-500">
+          {/* Arkanet Official Icon */}
+          <img
+            src="/assets/images/arkanet-icon-clean.png"
+            alt="Arkanet Logo"
+            className="w-20 sm:w-24 lg:w-28 h-auto object-contain drop-shadow-sm mb-2"
+          />
+          {/* Arkanet Official Brand Text */}
+          <span className="font-display font-black tracking-[0.3em] text-xl sm:text-2xl lg:text-3xl text-[#202B61] leading-none">
+            ARKANET
+          </span>
+
+          {/* Subtle IT Laser Scanline Sweep */}
+          <div
+            className="absolute left-[-20%] right-[-20%] h-[2px] bg-gradient-to-r from-transparent via-[#3B82F6]/60 to-transparent pointer-events-none"
+            style={{
+              animation: "itScanline 6s ease-in-out infinite",
+            }}
+          />
+        </div>
+
       </div>
 
       {/* ── 4. LIVING ARKANET BRAND AMBIENT OPTICAL GLOW ── */}
@@ -136,6 +166,26 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           Arkanet Technologies designs and builds websites, mobile apps, and AI systems made to work under real traffic, real customers, and real deadlines.
         </p>
       </div>
+
+      {/* Inline Keyframes for IT Scanline */}
+      <style jsx>{`
+        @keyframes itScanline {
+          0%, 100% {
+            top: -20%;
+            opacity: 0;
+          }
+          15% {
+            opacity: 0.8;
+          }
+          50% {
+            top: 120%;
+            opacity: 0.8;
+          }
+          65% {
+            opacity: 0;
+          }
+        }
+      `}</style>
     </section>
   );
 };
