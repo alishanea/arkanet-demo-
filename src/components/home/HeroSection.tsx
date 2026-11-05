@@ -14,7 +14,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       id="home"
       className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden font-sans"
     >
-      {/* ── 1. CINEMATIC AMBIENT VIDEO BACKGROUND ── */}
+      {/* ── 1. HIGH-TECH AMBIENT BACKGROUND VIDEO ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <video
           ref={videoRef}
@@ -23,35 +23,35 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-40 brightness-105 saturate-110"
+          className="w-full h-full object-cover opacity-50 brightness-105 saturate-110"
         >
-          <source src="/assets/hero-video.webm" type="video/webm" />
+          <source src="/assets/tech-hero-video.mp4" type="video/mp4" />
           <source src="/assets/images/compressed-hero-video.mp4" type="video/mp4" />
         </video>
 
-        {/* Ambient Gradient Overlays for Depth & Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/75 via-[#f4f6fb]/50 to-[#f4f6fb]/90 pointer-events-none" />
+        {/* Cinematic Multi-Stop Gradient Overlays for Maximum Text Contrast & Seamless Flow */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/75 via-[#f4f6fb]/45 to-[#f4f6fb]/95 pointer-events-none" />
       </div>
 
-      {/* ── 2. TECHNOLOGICAL PRECISION GRID OVERLAY ── */}
+      {/* ── 2. DUAL-FREQUENCY ARCHITECTURAL TECH GRID OVERLAY ── */}
       <div
-        className="absolute inset-0 z-[1] pointer-events-none opacity-60"
+        className="absolute inset-0 z-[1] pointer-events-none opacity-65"
         style={{
           backgroundImage: `
-            radial-gradient(circle, rgba(32, 43, 97, 0.12) 1px, transparent 1px),
-            linear-gradient(to right, rgba(32, 43, 97, 0.035) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(32, 43, 97, 0.035) 1px, transparent 1px)
+            radial-gradient(circle, rgba(32, 43, 97, 0.13) 1px, transparent 1px),
+            linear-gradient(to right, rgba(32, 43, 97, 0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(32, 43, 97, 0.04) 1px, transparent 1px)
           `,
-          backgroundSize: "32px 32px, 96px 96px, 96px 96px",
-          maskImage: "radial-gradient(ellipse 80% 70% at 50% 50%, black 25%, transparent 85%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 50%, black 25%, transparent 85%)",
+          backgroundSize: "28px 28px, 84px 84px, 84px 84px",
+          maskImage: "radial-gradient(ellipse 85% 75% at 50% 50%, black 30%, transparent 90%)",
+          WebkitMaskImage: "radial-gradient(ellipse 85% 75% at 50% 50%, black 30%, transparent 90%)",
         }}
       />
 
-      {/* ── 3. AMBIENT TECHNOLOGICAL GLOW / OPTICAL LIGHT CONE ── */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] max-w-[95vw] h-[420px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1)_0%,rgba(32,43,97,0.06)_40%,transparent_70%)] blur-2xl pointer-events-none z-[1]" />
+      {/* ── 3. LIVING AMBIENT OPTICAL TECH GLOW CONE ── */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] max-w-[95vw] h-[440px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.12)_0%,rgba(32,43,97,0.07)_45%,transparent_75%)] blur-2xl pointer-events-none z-[1] animate-pulse" style={{ animationDuration: "8s" }} />
 
-      {/* ── 4. MINIMALIST ARCHITECTURAL CORNER CROSSHAIRS ── */}
+      {/* ── 4. ARCHITECTURAL CORNER CROSSHAIRS (MINIMAL BLUEPRINT FRAMING) ── */}
       <div className="absolute inset-x-8 sm:inset-x-14 lg:inset-x-20 top-28 bottom-12 pointer-events-none z-[2] hidden sm:block">
         <span className="absolute top-0 left-0 font-mono text-xs text-[#202B61]/25 select-none leading-none">+</span>
         <span className="absolute top-0 right-0 font-mono text-xs text-[#202B61]/25 select-none leading-none">+</span>
@@ -59,7 +59,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         <span className="absolute bottom-0 right-0 font-mono text-xs text-[#202B61]/25 select-none leading-none">+</span>
       </div>
 
-      {/* ── 5. ORIGINAL HERO CONTENT (PURE & UNCLUTTERED) ── */}
+      {/* ── 5. CLEAN, POWERFUL EDITORIAL HEADLINE & SUBTITLE (ZERO EXTRA CONTENT) ── */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center">
         {/* Clean Editorial Headline (No Hyphens) */}
         <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
