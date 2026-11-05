@@ -1,286 +1,152 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 interface HeroSectionProps {
   onOpenBooking?: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+  const [isHovering, setIsHovering] = useState(false);
 
+  // Smooth mouse tracking for atmospheric spotlight
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animId: number;
-    let width = 0;
-    let height = 0;
-    const dpr = Math.min(typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1, 2);
-
-    const resize = () => {
-      if (!canvas || !canvas.parentElement) return;
-      const rect = canvas.parentElement.getBoundingClientRect();
-      width = rect.width;
-      height = rect.height;
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      ctx.scale(dpr, dpr);
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      setMousePos({ x, y });
+      setIsHovering(true);
     };
 
-    resize();
-    window.addEventListener("resize", resize);
-
-    // Mouse tracking with smooth physics
-    let mouseX = -1000;
-    let mouseY = -1000;
-    let targetX = -1000;
-    let targetY = -1000;
-
-    const onMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      targetX = e.clientX - rect.left;
-      targetY = e.clientY - rect.top;
+    const handleMouseLeave = () => {
+      setIsHovering(false);
     };
 
-    const onMouseLeave = () => {
-      targetX = -1000;
-      targetY = -1000;
-    };
-
-    window.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseleave", onMouseLeave);
-
-    // ── HARMONIC FLOW BANDS (DISTRIBUTED ACROSS THE FULL VIEWPORT) ──
-    const waveBands = [
-      // Upper atmospheric currents
-      {
-        baseYRatio: 0.18,
-        amplitude: 40,
-        wavelength: 0.0024,
-        speed: 0.007,
-        stroke: "rgba(32, 43, 97, 0.14)",
-        fill: "rgba(32, 43, 97, 0.015)",
-        lineWidth: 1.2,
-      },
-      {
-        baseYRatio: 0.28,
-        amplitude: 48,
-        wavelength: 0.0031,
-        speed: 0.009,
-        stroke: "rgba(59, 130, 246, 0.22)",
-        fill: "rgba(59, 130, 246, 0.025)",
-        lineWidth: 1.4,
-      },
-      // Mid-depth flow framing the headline
-      {
-        baseYRatio: 0.44,
-        amplitude: 36,
-        wavelength: 0.0028,
-        speed: 0.006,
-        stroke: "rgba(32, 43, 97, 0.12)",
-        fill: "transparent",
-        lineWidth: 1.0,
-      },
-      {
-        baseYRatio: 0.54,
-        amplitude: 54,
-        wavelength: 0.0022,
-        speed: 0.008,
-        stroke: "rgba(59, 130, 246, 0.32)",
-        fill: "rgba(59, 130, 246, 0.035)",
-        lineWidth: 1.8,
-      },
-      // Lower fluid flow ribbons
-      {
-        baseYRatio: 0.68,
-        amplitude: 60,
-        wavelength: 0.0026,
-        speed: 0.007,
-        stroke: "rgba(32, 43, 97, 0.24)",
-        fill: "rgba(32, 43, 97, 0.04)",
-        lineWidth: 2.0,
-      },
-      {
-        baseYRatio: 0.80,
-        amplitude: 50,
-        wavelength: 0.0034,
-        speed: 0.011,
-        stroke: "rgba(59, 130, 246, 0.25)",
-        fill: "rgba(59, 130, 246, 0.03)",
-        lineWidth: 1.6,
-      },
-      {
-        baseYRatio: 0.90,
-        amplitude: 38,
-        wavelength: 0.0040,
-        speed: 0.013,
-        stroke: "rgba(32, 43, 97, 0.15)",
-        fill: "transparent",
-        lineWidth: 1.2,
-      },
-    ];
-
-    // ── GENTLE FLOW PARTICLES (DRIFTING ORGANICALLY ALONG CURRENTS) ──
-    interface FlowParticle {
-      x: number;
-      y: number;
-      speed: number;
-      r: number;
-      alpha: number;
-      bandIdx: number;
-      phase: number;
+    const node = containerRef.current;
+    if (node) {
+      node.addEventListener("mousemove", handleMouseMove);
+      node.addEventListener("mouseleave", handleMouseLeave);
     }
-
-    const particles: FlowParticle[] = [];
-    for (let i = 0; i < 36; i++) {
-      particles.push({
-        x: Math.random() * (width || 1400),
-        y: Math.random() * (height || 900),
-        speed: 0.4 + Math.random() * 0.7,
-        r: 1.4 + Math.random() * 1.6,
-        alpha: 0.25 + Math.random() * 0.45,
-        bandIdx: i % waveBands.length,
-        phase: Math.random() * Math.PI * 2,
-      });
-    }
-
-    let time = 0;
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      // Smooth mouse easing
-      if (targetX > 0) {
-        mouseX += (targetX - mouseX) * 0.08;
-        mouseY += (targetY - mouseY) * 0.08;
-      } else {
-        mouseX = -1000;
-        mouseY = -1000;
-      }
-
-      // Soft ambient light aura following cursor
-      if (mouseX > 0 && mouseY > 0) {
-        const spot = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 320);
-        spot.addColorStop(0, "rgba(59, 130, 246, 0.09)");
-        spot.addColorStop(0.5, "rgba(32, 43, 97, 0.025)");
-        spot.addColorStop(1, "transparent");
-        ctx.fillStyle = spot;
-        ctx.beginPath();
-        ctx.arc(mouseX, mouseY, 320, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      time += 1;
-
-      // ── Render each flowing wave across full viewport ──
-      for (let i = 0; i < waveBands.length; i++) {
-        const w = waveBands[i];
-        const baseY = height * w.baseYRatio;
-        const waveTime = time * w.speed;
-
-        ctx.beginPath();
-        ctx.moveTo(0, height);
-        ctx.lineTo(0, baseY);
-
-        const step = 8;
-        for (let x = 0; x <= width + step; x += step) {
-          let y =
-            baseY +
-            Math.sin(x * w.wavelength + waveTime) * w.amplitude +
-            Math.sin(x * w.wavelength * 0.55 - waveTime * 0.65) * (w.amplitude * 0.45);
-
-          if (mouseX > 0 && mouseY > 0) {
-            const dx = x - mouseX;
-            const dy = baseY - mouseY;
-            const dist = Math.hypot(dx, dy);
-            const reach = 260;
-            if (dist < reach) {
-              const factor = (1 - dist / reach) ** 2;
-              y += (mouseY - baseY) * factor * 0.24;
-            }
-          }
-
-          ctx.lineTo(x, y);
-        }
-
-        ctx.lineTo(width, height);
-        ctx.closePath();
-
-        if (w.fill !== "transparent") {
-          ctx.fillStyle = w.fill;
-          ctx.fill();
-        }
-
-        ctx.strokeStyle = w.stroke;
-        ctx.lineWidth = w.lineWidth;
-        ctx.stroke();
-      }
-
-      // ── Render subtle flow particles drifting across the currents ──
-      for (const p of particles) {
-        p.x += p.speed;
-        if (p.x > width + 20) {
-          p.x = -20;
-          p.y = Math.random() * height;
-        }
-
-        const band = waveBands[p.bandIdx];
-        const baseY = height * band.baseYRatio;
-        const waveY =
-          baseY +
-          Math.sin(p.x * band.wavelength + time * band.speed) * (band.amplitude * 0.7);
-
-        p.y += (waveY - p.y) * 0.05;
-
-        const pulse = (Math.sin(time * 0.03 + p.phase) + 1.0) * 0.5;
-        const finalAlpha = p.alpha * (0.6 + pulse * 0.4);
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle =
-          p.bandIdx % 2 === 0
-            ? `rgba(59, 130, 246, ${finalAlpha})`
-            : `rgba(32, 43, 97, ${finalAlpha * 0.8})`;
-        ctx.fill();
-      }
-
-      animId = requestAnimationFrame(render);
-    };
-
-    render();
 
     return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseleave", onMouseLeave);
+      if (node) {
+        node.removeEventListener("mousemove", handleMouseMove);
+        node.removeEventListener("mouseleave", handleMouseLeave);
+      }
     };
   }, []);
 
+  const handleCtaClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onOpenBooking) {
+      onOpenBooking();
+    } else {
+      const workSection = document.getElementById("work");
+      if (workSection) {
+        workSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <section
+      ref={containerRef}
       id="home"
-      className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden"
+      className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-between bg-[#0a0e17] text-white select-none overflow-hidden font-sans"
     >
-      {/* ── FULL-CANVAS FLUID WAVE FLOW & PARTICLES ── */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 z-0 w-full h-full pointer-events-auto"
-      />
+      {/* ── CINEMATIC MONUMENTAL PORTAL VIDEO BACKGROUND ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster="/assets/hero-cosmic-poster.jpg"
+          className="w-full h-full object-cover object-[72%_center] sm:object-center opacity-95 transition-transform duration-1000 ease-out"
+          style={{
+            transform: isHovering
+              ? `scale(1.02) translate(${(mousePos.x - 50) * -0.015}%, ${(mousePos.y - 50) * -0.015}%)`
+              : "scale(1)",
+          }}
+        >
+          <source src="/assets/hero-cosmic.webm" type="video/webm" />
+          <source src="/assets/hero-cosmic.mp4" type="video/mp4" />
+        </video>
 
-      {/* ── CLEAN CENTERED EDITORIAL HEADLINE & SUBTITLE ONLY ── */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center pointer-events-none px-4 sm:px-8">
-        <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto drop-shadow-[0_2px_16px_rgba(32,43,97,0.06)]">
-          Websites, Apps &amp; AI<br />
-          Engineered to Perform
-        </h1>
+        {/* Ambient atmospheric cursor spotlight */}
+        <div
+          className="absolute inset-0 transition-opacity duration-700 pointer-events-none"
+          style={{
+            opacity: isHovering ? 0.8 : 0.3,
+            background: `radial-gradient(circle 600px at ${mousePos.x}% ${mousePos.y}%, rgba(245, 190, 110, 0.09), transparent 75%)`,
+          }}
+        />
 
-        <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6 text-balance drop-shadow-[0_1px_8px_rgba(32,43,97,0.04)]">
-          Arkanet Technologies designs and builds websites, mobile apps, and AI systems made to work under real traffic, real customers, and real deadlines.
-        </p>
+        {/* Cinematic gradient overlays matching EOSAI reference: dark left column for typography, brilliant right view */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0e17]/95 via-[#0a0e17]/55 sm:via-[#0a0e17]/35 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e17]/90 via-transparent to-[#0a0e17]/40 pointer-events-none" />
+      </div>
+
+      {/* ── MAIN CONTENT CONTAINER (LEFT-ALIGNED EDITORIAL LAYOUT) ── */}
+      <div className="relative z-10 w-full max-w-[1500px] mx-auto px-6 sm:px-12 lg:px-20 h-full flex flex-col justify-between pt-28 sm:pt-36 lg:pt-40 pb-8 sm:pb-12 pointer-events-none">
+        
+        {/* Left-Aligned Headline & Story Block */}
+        <div className="my-auto max-w-xl lg:max-w-2xl text-left pointer-events-auto">
+          <h1 className="hero-h1 !text-white text-left font-light tracking-tight leading-[1.08] text-4xl sm:text-6xl lg:text-7xl xl:text-[76px] drop-shadow-[0_4px_30px_rgba(0,0,0,0.85)]">
+            Websites, Apps &amp; AI<br />
+            <span className="font-semibold text-white">Engineered to Perform.</span>
+          </h1>
+
+          {/* Minimalist horizontal rule */}
+          <div className="w-12 sm:w-16 h-[1.5px] bg-white/40 my-6 sm:my-8" />
+
+          {/* Subtitle description */}
+          <p className="hero-sub !text-slate-300 font-normal text-left text-sm sm:text-base lg:text-lg leading-relaxed max-w-md sm:max-w-lg drop-shadow-[0_2px_16px_rgba(0,0,0,0.8)]">
+            Arkanet Technologies designs and builds websites, mobile apps, and AI systems made to work under real traffic, real customers, and real deadlines.
+          </p>
+
+          {/* Minimalist circular CTA button */}
+          <div className="mt-8 sm:mt-10">
+            <a
+              href="#work"
+              onClick={handleCtaClick}
+              className="group inline-flex items-center gap-4 cursor-pointer select-none"
+            >
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/40 flex items-center justify-center transition-all duration-300 group-hover:border-white group-hover:bg-white/15 group-hover:scale-105 group-hover:shadow-[0_0_24px_rgba(255,255,255,0.2)]">
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-white transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.8}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+              <span className="text-xs sm:text-sm uppercase tracking-[0.22em] font-medium text-white/90 group-hover:text-white transition-colors">
+                View Our Work
+              </span>
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom Left Minimalist Scroll Indicator */}
+        <div className="mt-auto pt-6 flex items-center gap-3 select-none pointer-events-none opacity-70">
+          <span className="text-[10px] tracking-[0.28em] uppercase text-white/80 font-mono">
+            Scroll
+          </span>
+          <div className="w-8 h-[1px] bg-white/30 relative">
+            <div className="w-1.5 h-1.5 rounded-full bg-amber-300 -top-[2.5px] right-0 animate-pulse shadow-[0_0_8px_rgba(252,211,77,0.8)]" />
+          </div>
+        </div>
+
       </div>
     </section>
   );
