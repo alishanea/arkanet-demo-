@@ -9,7 +9,7 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // ── HIGH-PERFORMANCE INTERACTIVE IT CANVAS BACKGROUND ──
+  // ── DEEP-SPACE IT CONSTELLATION BACKGROUND ──
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -34,8 +34,8 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
     resize();
     window.addEventListener("resize", resize);
 
-    // Particle nodes definition
-    interface Particle {
+    // ── Interfaces ──
+    interface Node {
       x: number;
       y: number;
       ox: number;
@@ -43,10 +43,11 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       vx: number;
       vy: number;
       radius: number;
-      baseColor: string;
+      color: string;
       glowColor: string;
       phase: number;
-      speed: number;
+      phaseSpeed: number;
+      tier: number; // 0 = hub, 1 = mid, 2 = leaf
     }
 
     interface Ripple {
@@ -56,53 +57,80 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       maxRadius: number;
       alpha: number;
       speed: number;
+      color: string;
     }
 
-    interface Packet {
+    interface DataPacket {
       fromX: number;
       fromY: number;
       toX: number;
       toY: number;
       progress: number;
       speed: number;
+      color: string;
+      trail: Array<{ x: number; y: number; a: number }>;
     }
 
-    const particles: Particle[] = [];
-    const ripples: Ripple[] = [];
-    const packets: Packet[] = [];
+    interface FloatingCode {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      text: string;
+      alpha: number;
+      size: number;
+      life: number;
+      maxLife: number;
+    }
 
-    // Calculate node distribution
+    // ── Colour palette ──
+    const HUB_COLOR = "#00e5ff";       // cyan hub nodes
+    const MID_COLOR = "#3B82F6";       // blue mid nodes
+    const LEAF_COLOR = "#7c8aff";      // indigo leaf nodes
+    const PACKET_A = "#00e5ff";
+    const PACKET_B = "#a78bfa";
+    const RIPPLE_COLOR_A = "#00e5ff";
+    const RIPPLE_COLOR_B = "#3B82F6";
+
     const isMobile = window.innerWidth < 768;
-    const cols = isMobile ? 8 : 16;
-    const rows = isMobile ? 12 : 10;
-    const cellW = width / cols;
-    const cellH = height / rows;
+    const NODE_COUNT = isMobile ? 55 : 110;
 
-    for (let c = 0; c < cols; c++) {
-      for (let r = 0; r < rows; r++) {
-        const ox = (c + 0.5) * cellW + (Math.random() - 0.5) * (cellW * 0.4);
-        const oy = (r + 0.5) * cellH + (Math.random() - 0.5) * (cellH * 0.4);
-        particles.push({
-          x: ox,
-          y: oy,
-          ox,
-          oy,
-          vx: 0,
-          vy: 0,
-          radius: Math.random() * 1.5 + 1.2,
-          baseColor: Math.random() > 0.3 ? "rgba(32, 43, 97, 0.4)" : "rgba(59, 130, 246, 0.55)",
-          glowColor: "rgba(59, 130, 246, 0.9)",
-          phase: Math.random() * Math.PI * 2,
-          speed: 0.02 + Math.random() * 0.03,
-        });
-      }
+    const nodes: Node[] = [];
+    const ripples: Ripple[] = [];
+    const packets: DataPacket[] = [];
+    const floatingCodes: FloatingCode[] = [];
+
+    const CODE_SNIPPETS = [
+      "01", "10", "if()", "{}","fn", "=>", "AI", "</>", "ssh",
+      "git", "api", "SQL", "0x", "{}","cdn", "jwt", "ts", "py",
+    ];
+
+    // ── Build node network ──
+    for (let i = 0; i < NODE_COUNT; i++) {
+      const tier = i < NODE_COUNT * 0.08 ? 0 : i < NODE_COUNT * 0.3 ? 1 : 2;
+      const radius = tier === 0 ? 3.8 + Math.random() * 1.2
+                   : tier === 1 ? 2.2 + Math.random() * 1.0
+                   : 1.2 + Math.random() * 0.8;
+      const color = tier === 0 ? HUB_COLOR : tier === 1 ? MID_COLOR : LEAF_COLOR;
+      const ox = Math.random() * width;
+      const oy = Math.random() * height;
+      nodes.push({
+        x: ox, y: oy, ox, oy,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        radius, color,
+        glowColor: color,
+        phase: Math.random() * Math.PI * 2,
+        phaseSpeed: 0.015 + Math.random() * 0.025,
+        tier,
+      });
     }
 
-    // Mouse tracking for fluid interactive distortion
-    let mouseX = -1000;
-    let mouseY = -1000;
-    let targetMouseX = -1000;
-    let targetMouseY = -1000;
+    // ── Mouse tracking ──
+    let mouseX = -2000;
+    let mouseY = -2000;
+    let targetMouseX = -2000;
+    let targetMouseY = -2000;
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -111,47 +139,47 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
     };
 
     const handleMouseLeave = () => {
-      targetMouseX = -1000;
-      targetMouseY = -1000;
+      targetMouseX = -2000;
+      targetMouseY = -2000;
     };
 
-    // Click / Touch creates an interactive digital sonar wave
+    // ── Click / tap: sonar ripple + burst packets ──
     const handleClick = (e: MouseEvent | TouchEvent) => {
       const rect = canvas.getBoundingClientRect();
-      let clickX = 0;
-      let clickY = 0;
-
+      let cx = 0, cy = 0;
       if ("touches" in e && e.touches.length > 0) {
-        clickX = e.touches[0].clientX - rect.left;
-        clickY = e.touches[0].clientY - rect.top;
+        cx = e.touches[0].clientX - rect.left;
+        cy = e.touches[0].clientY - rect.top;
       } else if ("clientX" in e) {
-        clickX = e.clientX - rect.left;
-        clickY = e.clientY - rect.top;
+        cx = e.clientX - rect.left;
+        cy = e.clientY - rect.top;
       }
 
       ripples.push({
-        x: clickX,
-        y: clickY,
-        radius: 5,
-        maxRadius: Math.max(width, height) * 0.65,
-        alpha: 0.7,
-        speed: 7,
+        x: cx, y: cy,
+        radius: 4,
+        maxRadius: Math.max(width, height) * 0.7,
+        alpha: 0.9,
+        speed: 8,
+        color: Math.random() > 0.5 ? RIPPLE_COLOR_A : RIPPLE_COLOR_B,
       });
 
-      // Also trigger a cluster of quick data bursts
-      for (let i = 0; i < 4; i++) {
-        const randP1 = particles[Math.floor(Math.random() * particles.length)];
-        const randP2 = particles[Math.floor(Math.random() * particles.length)];
-        if (randP1 && randP2) {
-          packets.push({
-            fromX: randP1.x,
-            fromY: randP1.y,
-            toX: randP2.x,
-            toY: randP2.y,
-            progress: 0,
-            speed: 0.02 + Math.random() * 0.03,
-          });
-        }
+      // burst 6 data packets from nearest node
+      const nearest = nodes.reduce((best, n) => {
+        const d = Math.hypot(n.x - cx, n.y - cy);
+        return d < Math.hypot(best.x - cx, best.y - cy) ? n : best;
+      }, nodes[0]);
+
+      for (let i = 0; i < 6; i++) {
+        const target = nodes[Math.floor(Math.random() * nodes.length)];
+        packets.push({
+          fromX: nearest.x, fromY: nearest.y,
+          toX: target.x, toY: target.y,
+          progress: 0,
+          speed: 0.012 + Math.random() * 0.025,
+          color: Math.random() > 0.5 ? PACKET_A : PACKET_B,
+          trail: [],
+        });
       }
     };
 
@@ -160,193 +188,274 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
     canvas.addEventListener("touchstart", handleClick, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
 
-    // Occasional automated data packet stream
+    // ── Max link distance (tiered) ──
+    const MAX_LINK = isMobile ? 110 : 155;
+
+    // ── Gradient background ──
+    let bgGradient: CanvasGradient | null = null;
+    const buildBg = () => {
+      bgGradient = ctx.createLinearGradient(0, 0, width, height);
+      bgGradient.addColorStop(0, "#0a0e1a");
+      bgGradient.addColorStop(0.5, "#0d1530");
+      bgGradient.addColorStop(1, "#050810");
+    };
+    buildBg();
+
     let packetTimer = 0;
-    const maxLinkDist = isMobile ? 100 : 135;
+    let codeTimer = 0;
+    let frame = 0;
 
     const render = () => {
+      frame++;
       ctx.clearRect(0, 0, width, height);
 
-      // Smooth mouse interpolation
-      if (targetMouseX > 0) {
-        mouseX += (targetMouseX - mouseX) * 0.12;
-        mouseY += (targetMouseY - mouseY) * 0.12;
-      } else {
-        mouseX = -1000;
-        mouseY = -1000;
+      // ── Background ──
+      if (bgGradient) {
+        ctx.fillStyle = bgGradient;
+        ctx.fillRect(0, 0, width, height);
       }
 
-      // Draw subtle interactive cursor glow field
-      if (mouseX > 0 && mouseY > 0) {
-        const cursorGlow = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 220);
-        cursorGlow.addColorStop(0, "rgba(59, 130, 246, 0.12)");
-        cursorGlow.addColorStop(0.5, "rgba(32, 43, 97, 0.04)");
-        cursorGlow.addColorStop(1, "transparent");
-        ctx.fillStyle = cursorGlow;
+      // ── Subtle radial vignette ──
+      const vig = ctx.createRadialGradient(width * 0.5, height * 0.5, 0, width * 0.5, height * 0.5, Math.max(width, height) * 0.72);
+      vig.addColorStop(0, "rgba(0,229,255,0.03)");
+      vig.addColorStop(0.6, "transparent");
+      vig.addColorStop(1, "rgba(0,0,0,0.45)");
+      ctx.fillStyle = vig;
+      ctx.fillRect(0, 0, width, height);
+
+      // ── Smooth mouse ──
+      if (targetMouseX > 0) {
+        mouseX += (targetMouseX - mouseX) * 0.1;
+        mouseY += (targetMouseY - mouseY) * 0.1;
+      } else {
+        mouseX = -2000;
+        mouseY = -2000;
+      }
+
+      // ── Mouse spotlight ──
+      if (mouseX > 0) {
+        const spot = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 260);
+        spot.addColorStop(0, "rgba(0,229,255,0.09)");
+        spot.addColorStop(0.4, "rgba(59,130,246,0.04)");
+        spot.addColorStop(1, "transparent");
+        ctx.fillStyle = spot;
         ctx.beginPath();
-        ctx.arc(mouseX, mouseY, 220, 0, Math.PI * 2);
+        ctx.arc(mouseX, mouseY, 260, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // Update & Draw Click Ripples
+      // ── Update & draw ripples ──
       for (let r = ripples.length - 1; r >= 0; r--) {
         const rip = ripples[r];
         rip.radius += rip.speed;
-        rip.alpha *= 0.965;
+        rip.alpha *= 0.962;
+        if (rip.alpha < 0.008 || rip.radius > rip.maxRadius) { ripples.splice(r, 1); continue; }
 
-        if (rip.alpha < 0.01 || rip.radius > rip.maxRadius) {
-          ripples.splice(r, 1);
-          continue;
-        }
-
+        // outer ring
         ctx.save();
         ctx.beginPath();
         ctx.arc(rip.x, rip.y, rip.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(59, 130, 246, ${rip.alpha * 0.5})`;
+        ctx.strokeStyle = `${rip.color}${Math.round(rip.alpha * 255).toString(16).padStart(2, "0")}`;
         ctx.lineWidth = 1.5;
+        ctx.shadowColor = rip.color;
+        ctx.shadowBlur = 10;
         ctx.stroke();
+        // inner ring offset
+        ctx.beginPath();
+        ctx.arc(rip.x, rip.y, Math.max(0, rip.radius - 15), 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(59,130,246,${rip.alpha * 0.4})`;
+        ctx.lineWidth = 0.6;
+        ctx.shadowBlur = 0;
+        ctx.stroke();
+        ctx.restore();
+
+        // push nearby nodes
+        for (const n of nodes) {
+          const dist = Math.hypot(n.x - rip.x, n.y - rip.y);
+          const waveDist = Math.abs(dist - rip.radius);
+          if (waveDist < 25 && dist > 0) {
+            const force = (1 - waveDist / 25) * rip.alpha * 4;
+            n.vx += ((n.x - rip.x) / dist) * force;
+            n.vy += ((n.y - rip.y) / dist) * force;
+          }
+        }
+      }
+
+      // ── Physics: update nodes ──
+      for (const n of nodes) {
+        // gentle autonomous drift
+        n.x += n.vx;
+        n.y += n.vy;
+
+        // mouse repulsion
+        if (mouseX > 0) {
+          const dx = n.x - mouseX;
+          const dy = n.y - mouseY;
+          const dist = Math.hypot(dx, dy);
+          const pushR = 170;
+          if (dist < pushR && dist > 0) {
+            const force = (1 - dist / pushR) * 5.5;
+            n.vx += (dx / dist) * force;
+            n.vy += (dy / dist) * force;
+          }
+        }
+
+        // spring home
+        n.vx += (n.ox - n.x) * 0.03;
+        n.vy += (n.oy - n.y) * 0.03;
+        n.vx *= 0.86;
+        n.vy *= 0.86;
+
+        // soft boundary bounce
+        if (n.x < 0) n.vx += 0.5;
+        if (n.x > width) n.vx -= 0.5;
+        if (n.y < 0) n.vy += 0.5;
+        if (n.y > height) n.vy -= 0.5;
+
+        n.phase += n.phaseSpeed;
+      }
+
+      // ── Draw edges ──
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        for (let j = i + 1; j < nodes.length; j++) {
+          const b = nodes[j];
+          const dist = Math.hypot(a.x - b.x, a.y - b.y);
+          if (dist < MAX_LINK) {
+            const alpha = (1 - dist / MAX_LINK) * (a.tier === 0 || b.tier === 0 ? 0.55 : 0.28);
+            const edgeColor = a.tier === 0 || b.tier === 0 ? HUB_COLOR : MID_COLOR;
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `${edgeColor}${Math.round(alpha * 255).toString(16).padStart(2, "0")}`;
+            ctx.lineWidth = a.tier === 0 || b.tier === 0 ? 0.9 : 0.5;
+            if (a.tier === 0 || b.tier === 0) {
+              ctx.shadowColor = HUB_COLOR;
+              ctx.shadowBlur = 4;
+            }
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+      }
+
+      // ── Draw nodes ──
+      for (const n of nodes) {
+        const pulse = Math.sin(n.phase) * 0.5;
+        const r = Math.max(0.5, n.radius + pulse);
+
+        // glow
+        ctx.save();
+        ctx.shadowColor = n.glowColor;
+        ctx.shadowBlur = n.tier === 0 ? 18 : n.tier === 1 ? 10 : 5;
+
+        // outer halo for hubs
+        if (n.tier === 0) {
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, r + 4, 0, Math.PI * 2);
+          ctx.fillStyle = `${n.color}22`;
+          ctx.fill();
+        }
 
         ctx.beginPath();
-        ctx.arc(rip.x, rip.y, Math.max(0, rip.radius - 12), 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(32, 43, 97, ${rip.alpha * 0.3})`;
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
+        ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = n.color;
+        ctx.fill();
         ctx.restore();
       }
 
-      // Update particles physics & interactions
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-
-        // 1. Mouse magnetic push / interaction
-        if (mouseX > 0 && mouseY > 0) {
-          const dx = p.x - mouseX;
-          const dy = p.y - mouseY;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const pushRadius = 160;
-
-          if (dist < pushRadius && dist > 0) {
-            const force = (1 - dist / pushRadius) * 4.5;
-            p.vx += (dx / dist) * force;
-            p.vy += (dy / dist) * force;
-          }
-        }
-
-        // 2. Ripple displacement
-        for (const rip of ripples) {
-          const dx = p.x - rip.x;
-          const dy = p.y - rip.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const waveDist = Math.abs(dist - rip.radius);
-
-          if (waveDist < 30) {
-            const waveForce = (1 - waveDist / 30) * rip.alpha * 3.5;
-            if (dist > 0) {
-              p.vx += (dx / dist) * waveForce;
-              p.vy += (dy / dist) * waveForce;
-            }
-          }
-        }
-
-        // 3. Spring back to origin (homeostasis)
-        const homeX = p.ox - p.x;
-        const homeY = p.oy - p.y;
-        p.vx += homeX * 0.035;
-        p.vy += homeY * 0.035;
-
-        // Friction damping
-        p.vx *= 0.88;
-        p.vy *= 0.88;
-
-        // Position update
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Gentle breathing pulse
-        p.phase += p.speed;
-      }
-
-      // Draw Network Interconnections (Data bus lines)
-      for (let i = 0; i < particles.length; i++) {
-        const p1 = particles[i];
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < maxLinkDist) {
-            const alpha = (1 - dist / maxLinkDist) * 0.22;
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(32, 43, 97, ${alpha})`;
-            ctx.lineWidth = 0.75;
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw Particles
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        const pulseFactor = Math.sin(p.phase) * 0.6;
-        const currentRadius = Math.max(0.8, p.radius + pulseFactor);
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, currentRadius, 0, Math.PI * 2);
-        ctx.fillStyle = p.baseColor;
-        ctx.fill();
-      }
-
-      // Spawn periodic digital packets
+      // ── Auto-spawn data packets ──
       packetTimer++;
-      if (packetTimer > 45 && packets.length < 8) {
+      if (packetTimer > 30 && packets.length < 18) {
         packetTimer = 0;
-        const idx1 = Math.floor(Math.random() * particles.length);
-        const p1 = particles[idx1];
-        // find a neighbor
-        for (let j = 0; j < particles.length; j++) {
-          if (idx1 === j) continue;
-          const p2 = particles[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < maxLinkDist) {
+        const src = nodes[Math.floor(Math.random() * nodes.length)];
+        for (const tgt of nodes) {
+          if (tgt === src) continue;
+          const dist = Math.hypot(src.x - tgt.x, src.y - tgt.y);
+          if (dist < MAX_LINK) {
             packets.push({
-              fromX: p1.x,
-              fromY: p1.y,
-              toX: p2.x,
-              toY: p2.y,
+              fromX: src.x, fromY: src.y,
+              toX: tgt.x, toY: tgt.y,
               progress: 0,
-              speed: 0.015 + Math.random() * 0.02,
+              speed: 0.01 + Math.random() * 0.025,
+              color: Math.random() > 0.4 ? PACKET_A : PACKET_B,
+              trail: [],
             });
             break;
           }
         }
       }
 
-      // Draw and update glowing packets
+      // ── Draw data packets with trail ──
       for (let pk = packets.length - 1; pk >= 0; pk--) {
         const pkt = packets[pk];
         pkt.progress += pkt.speed;
+        if (pkt.progress >= 1) { packets.splice(pk, 1); continue; }
 
-        if (pkt.progress >= 1) {
-          packets.splice(pk, 1);
-          continue;
+        const cx = pkt.fromX + (pkt.toX - pkt.fromX) * pkt.progress;
+        const cy = pkt.fromY + (pkt.toY - pkt.fromY) * pkt.progress;
+
+        // trail
+        pkt.trail.push({ x: cx, y: cy, a: 0.9 });
+        if (pkt.trail.length > 14) pkt.trail.shift();
+        for (let t = 0; t < pkt.trail.length; t++) {
+          const pt = pkt.trail[t];
+          const trailA = (t / pkt.trail.length) * pt.a * 0.5;
+          const trailR = (t / pkt.trail.length) * 2;
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, Math.max(0.3, trailR), 0, Math.PI * 2);
+          ctx.fillStyle = `${pkt.color}${Math.round(trailA * 255).toString(16).padStart(2, "0")}`;
+          ctx.fill();
         }
 
-        const currX = pkt.fromX + (pkt.toX - pkt.fromX) * pkt.progress;
-        const currY = pkt.fromY + (pkt.toY - pkt.fromY) * pkt.progress;
-
+        // head
+        ctx.save();
         ctx.beginPath();
-        ctx.arc(currX, currY, 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = "#3B82F6";
-        ctx.shadowColor = "#3B82F6";
-        ctx.shadowBlur = 6;
+        ctx.arc(cx, cy, 2.8, 0, Math.PI * 2);
+        ctx.fillStyle = pkt.color;
+        ctx.shadowColor = pkt.color;
+        ctx.shadowBlur = 10;
         ctx.fill();
-        ctx.shadowBlur = 0;
+        ctx.restore();
       }
+
+      // ── Floating code snippets ──
+      codeTimer++;
+      if (codeTimer > 60 && floatingCodes.length < (isMobile ? 6 : 14)) {
+        codeTimer = 0;
+        const life = 180 + Math.random() * 120;
+        floatingCodes.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: -0.2 - Math.random() * 0.3,
+          text: CODE_SNIPPETS[Math.floor(Math.random() * CODE_SNIPPETS.length)],
+          alpha: 0,
+          size: 10 + Math.random() * 5,
+          life: 0,
+          maxLife: life,
+        });
+      }
+
+      ctx.save();
+      ctx.font = `600 ${12}px 'Courier New', monospace`;
+      for (let fc = floatingCodes.length - 1; fc >= 0; fc--) {
+        const f = floatingCodes[fc];
+        f.life++;
+        f.x += f.vx;
+        f.y += f.vy;
+        const halfLife = f.maxLife * 0.5;
+        f.alpha = f.life < halfLife
+          ? (f.life / halfLife) * 0.35
+          : ((f.maxLife - f.life) / halfLife) * 0.35;
+        if (f.life >= f.maxLife) { floatingCodes.splice(fc, 1); continue; }
+
+        ctx.font = `600 ${f.size}px 'Courier New', monospace`;
+        ctx.fillStyle = `rgba(0,229,255,${f.alpha})`;
+        ctx.fillText(f.text, f.x, f.y);
+      }
+      ctx.restore();
 
       animationFrameId = requestAnimationFrame(render);
     };
@@ -366,65 +475,22 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section
       id="home"
-      className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden font-sans"
+      className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#07091a] text-white select-none overflow-hidden font-sans"
     >
-      {/* ── 1. AMBIENT CYBERNETIC COLOR WASHES (PURE CODE, ZERO VIDEO LOAD) ── */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Soft moving tech gradients */}
-        <div
-          className="absolute -top-[25%] -left-[10%] w-[65vw] h-[65vw] max-w-[800px] max-h-[800px] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.12)_0%,rgba(32,43,97,0.04)_50%,transparent_75%)] blur-3xl animate-pulse"
-          style={{ animationDuration: "12s" }}
-        />
-        <div
-          className="absolute -bottom-[20%] -right-[10%] w-[65vw] h-[65vw] max-w-[850px] max-h-[850px] rounded-full bg-[radial-gradient(circle,rgba(32,43,97,0.09)_0%,rgba(59,130,246,0.06)_50%,transparent_75%)] blur-3xl animate-pulse"
-          style={{ animationDuration: "10s", animationDelay: "3s" }}
-        />
-      </div>
-
-      {/* ── 2. ARCHITECTURAL TECH GRID PATTERN ── */}
-      <div
-        className="absolute inset-0 z-[1] pointer-events-none opacity-45"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle, rgba(32, 43, 97, 0.12) 1px, transparent 1px),
-            linear-gradient(to right, rgba(32, 43, 97, 0.025) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(32, 43, 97, 0.025) 1px, transparent 1px)
-          `,
-          backgroundSize: "32px 32px, 96px 96px, 96px 96px",
-          maskImage: "radial-gradient(ellipse 85% 75% at 50% 50%, black 30%, transparent 90%)",
-          WebkitMaskImage: "radial-gradient(ellipse 85% 75% at 50% 50%, black 30%, transparent 90%)",
-        }}
-      />
-
-      {/* ── 3. FULLY INTERACTIVE IT DATA MESH & SONAR RIPPLE CANVAS ── */}
+      {/* ── DEEP-SPACE IT CONSTELLATION CANVAS ── */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 z-[1] w-full h-full cursor-crosshair"
       />
 
-      {/* ── 4. ARKANET EMBLEM WITH LIVING TECH AURA (25% OPACITY, NO TEXT) ── */}
-      <div className="absolute inset-0 z-[2] pointer-events-none flex items-center justify-center">
-        {/* Soft breathing optical aura */}
-        <div
-          className="absolute w-[460px] h-[360px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.14)_0%,rgba(32,43,97,0.06)_50%,transparent_75%)] blur-2xl animate-pulse pointer-events-none"
-          style={{ animationDuration: "6s" }}
-        />
-
-        <img
-          src="/assets/images/arkanet-icon-clean.png"
-          alt="Arkanet Logo"
-          className="relative w-[260px] sm:w-[340px] md:w-[420px] lg:w-[480px] max-w-[80vw] max-h-[60vh] object-contain opacity-25 select-none"
-        />
-      </div>
-
-      {/* ── 5. CLEAN EDITORIAL HEADLINE & SUBTITLE (ZERO BOXES, ZERO EXTRA TEXT) ── */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center pointer-events-none">
-        <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
+      {/* ── HEADLINE CONTENT ── */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center pointer-events-none px-4 sm:px-8">
+        <h1 className="hero-h1 text-white text-center max-w-4xl sm:max-w-5xl mx-auto drop-shadow-[0_0_40px_rgba(0,229,255,0.25)]">
           Websites, Apps &amp; AI<br />
           Engineered to Perform
         </h1>
 
-        <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6 text-balance">
+        <p className="hero-sub font-medium text-slate-300 leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6 text-balance">
           Arkanet Technologies designs and builds websites, mobile apps, and AI systems made to work under real traffic, real customers, and real deadlines.
         </p>
       </div>
