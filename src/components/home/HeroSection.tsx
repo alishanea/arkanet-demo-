@@ -31,6 +31,15 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/75 via-[#f4f6fb]/55 to-[#f4f6fb]/85 pointer-events-none" />
       </div>
 
+      {/* -- ARKANET LOGO IN BACKGROUND (50% OPACITY) -- */}
+      <div className="absolute inset-0 z-[1] pointer-events-none flex items-center justify-center">
+        <img
+          src="/assets/images/arkanet-logo-transparent.png"
+          alt="Arkanet Logo"
+          className="w-[280px] sm:w-[380px] md:w-[460px] lg:w-[520px] max-w-[85vw] max-h-[65vh] object-contain opacity-50 select-none"
+        />
+      </div>
+
       {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center">
         {/* Clean Editorial Headline (No Hyphens) */}
