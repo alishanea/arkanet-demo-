@@ -97,12 +97,17 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="space-y-1 text-xs sm:text-sm text-slate-300">
                 <span className="font-bold text-white block">India Office (HQ)</span>
                 <p className="leading-relaxed">
-                  Room No: 227K, Benny complex,<br />
-                  Kelakam, Kannur. Kerala 670674
+                  Room No. 227K, Benny Complex,<br />
+                  Kelakam, Kannur Dt, Kerala 670674
                 </p>
-                <a href="tel:+919074104372" className="text-slate-300 hover:text-white block font-semibold pt-0.5 transition-colors">
-                  +91 90741 04372
-                </a>
+                <div className="space-y-0.5 pt-0.5">
+                  <a href="tel:+919074104372" className="text-slate-300 hover:text-white block font-semibold transition-colors">
+                    +91 90741 04372
+                  </a>
+                  <a href="mailto:info@arkanet.in" className="text-xs font-semibold text-slate-200 hover:text-white hover:underline block pt-0.5 transition-colors">
+                    info@arkanet.in
+                  </a>
+                </div>
               </div>
 
               {/* UAE */}

@@ -173,7 +173,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         </h1>
 
         <p className="hero-sub font-medium text-[#202B61]/80 leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6 text-balance drop-shadow-[0_1px_8px_rgba(32,43,97,0.04)]">
-          Arkanet Technologies blends AI, Cloud, IoT, and custom software engineering to build high-performance digital solutions for businesses, governments, and visionary leaders across Dubai, the UAE, and globally.
+          Arkanet Technologies designs and builds websites, mobile apps, and AI systems made to work under real traffic, real customers, and real deadlines — not just look good in a pitch deck. Based in Kerala and built for founders, growing SMEs, and enterprise teams alike, we take projects from first sketch through to production, then stay on as the team that keeps them running and improving.
         </p>
       </div>
     </section>

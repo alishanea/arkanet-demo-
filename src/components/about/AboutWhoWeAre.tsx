@@ -38,20 +38,20 @@ export function AboutWhoWeAre() {
           {/* Left Column: Headline + Core Intro */}
           <div className="lg:col-span-5 space-y-5">
             <h2 className="section-h2 text-white !text-white leading-[1.22] tracking-tight">
-              Bridging regional insights with global technology standards
+              A passionate team of tech enthusiasts, creatives, and problem solvers
             </h2>
             <p className="font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal">
-              Founded in 2023, Arkanet Technologies is a premier digital innovation and IT consulting firm dedicated to building next-generation software platforms. We specialize in transforming complex technological challenges into scalable, future-ready solutions for enterprises and ambitious brands worldwide.
+              Based in Kannur, Kerala with global presence in Business Bay, Dubai, Arkanet Technologies combines diverse backgrounds and deep engineering expertise to create a powerhouse of digital talent. From web development wizards to AI and digital marketing mavens, we have the skills to turn your vision into a digital masterpiece.
             </p>
           </div>
 
           {/* Right Story Paragraphs: Unified size, line-height & color */}
           <div className="lg:col-span-7 space-y-4 font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal lg:pt-1">
             <p>
-              Operating at the intersection of emerging technology and business strategy, our core expertise spans Artificial Intelligence, Blockchain, AR/VR, IoT, and robust cloud infrastructure. We partner with organizations across hospitality, IT, eCommerce, and government sectors to architect immersive digital experiences and end-to-end data architectures that drive operational excellence and sustained market growth.
+              Our mission is to empower businesses and individuals with innovative solutions that drive measurable success in an ever-evolving digital landscape. We are committed to delivering excellence through creativity, technology, and unwavering dedication to our clients — staying ahead of industry trends, working collaboratively on tailor-made architectures, and building long-term relationships with ongoing support after project launch.
             </p>
             <p>
-              With our strategic headquarters in Kelakam, Kerala, and a dedicated corporate presence in Business Bay, Dubai, we seamlessly bridge regional insights with global technological standards. This dual-hub approach ensures agile development, continuous deployment, and highly responsive consulting tailored to the unique operational landscapes of our international clients. At Arkanet, we do not just adapt to the digital frontier—we actively build it.
+              As part of a next-generation global technology group, our software, cloud, and artificial intelligence offerings are built on a decade-long foundation of market expertise and enterprise engagements. With our India operations centered in Kelakam, Kannur, we provide agile delivery, transparent sprint reporting, and direct engineering access that modern businesses rely on.
             </p>
           </div>
         </div>

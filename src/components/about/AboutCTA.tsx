@@ -16,15 +16,18 @@ export function AboutCTA({ onOpenBooking }: AboutCTAProps) {
           tabIndex={0}
         >
           <h2 className="hero-h1 text-[#202B61]">
-            <span>Let&apos;s make</span>
+            <span>Have something</span>
             {" "}
             <span className="inline-block text-[#202B61] mx-1 sm:mx-2.5 font-normal align-middle text-[0.88em] group-hover:translate-x-3 transition-transform duration-300 ease-out">
               →
             </span>
             <br />
-            <span>something engaging</span>
+            <span>in mind?</span>
           </h2>
         </div>
+        <p className="font-sans text-sm sm:text-base lg:text-lg text-[#202B61]/80 max-w-2xl leading-relaxed">
+          Send us a brief, a sketch, or just a problem you haven&apos;t solved yet — we&apos;ll tell you plainly whether AI or a rebuild is the right call.
+        </p>
       </div>
     </section>
   );
