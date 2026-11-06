@@ -10,36 +10,31 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left select-none"
+      className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden font-sans"
     >
-      {/* ── DEDICATED ENGINEERING & WORKSPACE BACKGROUND IMAGE (MATCHING ARCHITECTURAL HERO ACROSS ALL PAGES) ── */}
-      <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] xl:w-[56%] z-0 overflow-hidden pointer-events-none select-none">
+      {/* ── CINEMATIC AMBIENT BACKGROUND (MATCHING CONTACT, WORK & ABOUT PAGES) ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2000&auto=format&fit=crop"
-          alt="Arkanet Engineering & Code Workspace"
-          className="w-full h-full object-cover object-center lg:object-right opacity-80 sm:opacity-85 brightness-[1.02] contrast-[1.05]"
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2400&auto=format&fit=crop"
+          alt="Arkanet Engineering Workspace"
+          className="w-full h-full object-cover opacity-55 brightness-105 saturate-110"
           loading="eager"
         />
 
-        {/* Precision Gradient Blends: Keeps left text 100% crisp & readable while right image remains vivid and clear */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb] via-[#f4f6fb]/80 lg:via-[#f4f6fb]/50 to-transparent pointer-events-none z-[1]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb]/40 via-transparent to-transparent pointer-events-none z-[1]" />
-        {/* Mobile contrast guard so copy never clashes on smaller devices */}
-        <div className="absolute inset-0 bg-[#f4f6fb]/75 sm:bg-[#f4f6fb]/60 lg:hidden pointer-events-none z-[1]" />
+        {/* Consistent full-bleed gradient overlay (matching Contact, Work & About) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/75 via-[#f4f6fb]/55 to-[#f4f6fb]/85 pointer-events-none" />
       </div>
 
-      {/* ── FOREGROUND CONTENT: EDITORIAL HEADLINE & SUBTITLE MATCHING SITEWIDE ARCHITECTURAL HIERARCHY ── */}
-      <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto space-y-6 sm:space-y-8">
-        <div className="space-y-5 w-full max-w-4xl lg:max-w-5xl">
-          <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
-            Websites, Apps &amp; AI <br />
-            <span className="text-[#202B61]">Engineered to Perform</span>
-          </h1>
+      {/* ── HERO CONTENT (CENTERED EDITORIAL HIERARCHY) ── */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center">
+        <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto">
+          Websites, Apps &amp; AI<br />
+          Engineered to Perform
+        </h1>
 
-          <p className="hero-sub font-sans font-medium text-[#202B61]/80 leading-relaxed max-w-3xl">
-            Arkanet Technologies designs and builds websites, mobile apps, and AI systems made to work under real traffic, real customers, and real deadlines.
-          </p>
-        </div>
+        <p className="hero-sub font-medium text-[#202B61] leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6">
+          Arkanet Technologies designs and builds websites, mobile apps, and AI systems made to work under real traffic, real customers, and real deadlines.
+        </p>
       </div>
     </section>
   );
