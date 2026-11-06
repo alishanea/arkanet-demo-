@@ -167,13 +167,6 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
 
       {/* ── CLEAN CENTERED EDITORIAL HEADLINE & SUBTITLE WITH GENEROUS EMPTY SPACE ── */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center pointer-events-none px-4 sm:px-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#202B61]/5 border border-[#202B61]/10 mb-4 sm:mb-5">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse" />
-          <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-[#202B61]">
-            The Digital Innovation Company
-          </span>
-        </div>
-
         <h1 className="hero-h1 text-[#202B61] text-center max-w-4xl sm:max-w-5xl mx-auto drop-shadow-[0_2px_16px_rgba(32,43,97,0.06)]">
           Websites, Apps &amp; AI<br />
           Engineered to Perform
