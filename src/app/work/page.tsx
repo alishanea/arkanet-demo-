@@ -29,6 +29,90 @@ const PROJECT_DETAILS_MAP: Record<string, {
   impact: string[];
   techStack: string[];
 }> = {
+  "ai-mobility-platform": {
+    client: "Dubai Smart Mobility Initiative",
+    year: "2026",
+    services: ["AI Mobility Intelligence", "Computer Vision Parking", "Sensor Telemetry", "IoT Integration"],
+    overview: "Arkanet engineered an automated mobility intelligence platform connecting in-ground IoT sensors, computer vision feeds, and driver navigation apps across high-density urban zones.",
+    challenge: "Urban drivers spend up to 20 minutes locating available parking, generating traffic bottlenecks, unnecessary fuel burn, and transit friction.",
+    solution: "Deployed real-time edge computer vision paired with IoT sensors and mobile telemetry to detect, predict, and guide drivers to vacant parking bays with sub-second accuracy.",
+    impact: [
+      "38% Reduction in parking search transit time",
+      "Over 42,000 Connected parking bays monitored live",
+      "99.6% Sensor accuracy across outdoor and indoor garages",
+    ],
+    techStack: ["Python", "TensorFlow", "Edge IoT", "MQTT", "Next.js", "AWS IoT Core"],
+  },
+  "healthcare-bigdata-platform": {
+    client: "UAE Healthcare & Clinical Network",
+    year: "2025",
+    services: ["Big Data Engineering", "Hospital Data Lake", "Cardiovascular AI", "Clinical Decision Support"],
+    overview: "A mission-critical healthcare big data infrastructure designed to unify electronic health records (EHR), lab feeds, and vital metrics into a single high-security clinical data lake.",
+    challenge: "Fragmented hospital data systems and delayed risk identification in cardiovascular diseases caused high clinical latency and treatment delays.",
+    solution: "Engineered a scalable big data pipeline that normalizes hospital records into an encrypted data lake, applying predictive machine learning to flag cardiovascular indicators early.",
+    impact: [
+      "1.2M+ Patient records indexed and unified",
+      "42% Earlier detection of critical cardiac risk factors",
+      "100% Compliance with UAE Ministry of Health clinical data regulations",
+    ],
+    techStack: ["Apache Spark", "Kafka", "Python", "PostgreSQL", "Next.js", "Docker"],
+  },
+  "conversational-ai-voicebots": {
+    client: "Enterprise Customer Care & Telecom",
+    year: "2026",
+    services: ["Conversational AI", "Voicebot Development", "Arabic/English NLU", "Omnichannel Integration"],
+    overview: "An enterprise-grade conversational AI suite engineered to handle high-concurrency customer enquiries across phone lines, web chat, and WhatsApp Business API.",
+    challenge: "Peak season support queues overwhelmed human support desks, resulting in 15+ minute wait times and inconsistent multilingual Arabic/English service.",
+    solution: "Trained and deployed neural voicebots and generative chat assistants with real-time speech recognition, automated ticket resolution, and seamless human agent handoffs.",
+    impact: [
+      "86% First-contact automated resolution rate",
+      "Sub-1.2s Average neural voice response latency",
+      "Fluid real-time switching between Arabic and English",
+    ],
+    techStack: ["Python", "FastAPI", "Speech-to-Text NLU", "LangChain", "WebRTC", "WhatsApp API"],
+  },
+  "price-hunting-engine": {
+    client: "Middle East E-Commerce Marketplace",
+    year: "2025",
+    services: ["Price Hunting Algorithm", "High-Scale Web Scraper", "Dynamic Repricing", "Market Intelligence"],
+    overview: "An automated price monitoring and competitive intelligence platform scraping competitor portals at scale to dynamically optimize retail margins.",
+    challenge: "Manual price audits across dozens of e-commerce platforms took days, leaving retailers vulnerable to undercutting and lost market share.",
+    solution: "Built a distributed crawler cluster capable of scraping over 8 million product pages daily with automatic proxy rotation, anti-bot handling, and instant repricing APIs.",
+    impact: [
+      "8.5M+ Daily product prices tracked dynamically",
+      "+22% Improvement in average retailer profit margin",
+      "Sub-minute price fluctuation alert generation",
+    ],
+    techStack: ["Python / Scrapy", "Redis Queue", "Elasticsearch", "Next.js Dashboard", "Go Workers"],
+  },
+  "blockchain-asset-tokenization": {
+    client: "Dubai Real Estate & Asset Consortium",
+    year: "2026",
+    services: ["Asset Tokenization", "Smart Contracts", "Crypto Wallet Integration", "dApp Engineering"],
+    overview: "A regulated real-world asset (RWA) tokenization platform enabling fractional ownership of high-value commercial real estate and commodities.",
+    challenge: "High entry barriers and multi-week settlement times for commercial real estate limited liquidity and international investor participation.",
+    solution: "Built legally compliant ERC-3643 / Hyperledger security token contracts, investor onboarding with automated KYC/AML, and an institutional custodial wallet.",
+    impact: [
+      "$180M+ In tokenized real estate assets issued",
+      "Instant cross-border investor settlement",
+      "Zero smart-contract vulnerabilities verified across 3 audits",
+    ],
+    techStack: ["Solidity", "Hyperledger Fabric", "Next.js", "ethers.js", "Hardhat", "PostgreSQL"],
+  },
+  "remote-workforce-management": {
+    client: "Global IT Consulting & Distributed Teams",
+    year: "2025",
+    services: ["RWM Platform", "Productivity Telemetry", "Process Automation", "Enterprise Portals"],
+    overview: "Unified digital workspace designed to coordinate cross-border remote teams, track project deliverables, and automate administrative workflows.",
+    challenge: "Fragmented messaging apps, disconnected Jira boards, and manual payroll calculations caused management opacity and billing errors.",
+    solution: "Architected an enterprise operations portal with role-based access, automated sprint hour verification, real-time activity metrics, and international invoicing.",
+    impact: [
+      "3,500+ Remote engineers and contractors managed daily",
+      "70% Reduction in monthly billing and payroll disputes",
+      "Unified dashboard replacing 6 disparate SaaS tools",
+    ],
+    techStack: ["Next.js", "TypeScript", "Node.js", "GraphQL", "PostgreSQL", "AWS ECS"],
+  },
   "marble-tile-stone": {
     client: "Marble Tile & Stone Ltd.",
     year: "2025",
@@ -172,6 +256,60 @@ const PROJECT_DETAILS_MAP: Record<string, {
 };
 
 const WORK_PROJECTS: WorkProject[] = [
+  {
+    id: "ai-mobility-platform",
+    category: "AI & Automation",
+    title: "AI Mobility & Connected Parking Intelligence",
+    description: "Connected vehicle navigation, sensor telemetry, and AI-driven automated parking space allocation for modern smart cities.",
+    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1600&auto=format&fit=crop",
+    year: "2026",
+    services: ["AI Mobility Intelligence", "Computer Vision Parking", "IoT Telemetry"],
+  },
+  {
+    id: "healthcare-bigdata-platform",
+    category: "Cloud & Platforms",
+    title: "Healthcare Big Data & Hospital Analytics",
+    description: "High-throughput data engineering pipeline and predictive analytics for hospital networks and cardiovascular clinical decision support.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1600&auto=format&fit=crop",
+    year: "2025",
+    services: ["Big Data Engineering", "Hospital Data Lake", "Cardiovascular AI"],
+  },
+  {
+    id: "conversational-ai-voicebots",
+    category: "AI & Automation",
+    title: "Conversational AI & Multilingual Voicebots",
+    description: "Multilingual Arabic & English conversational assistants and neural voicebots automating customer care across web, phone, and WhatsApp.",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
+    year: "2026",
+    services: ["Conversational AI", "Voicebot Development", "Arabic/English NLU"],
+  },
+  {
+    id: "price-hunting-engine",
+    category: "Websites",
+    title: "Dynamic Price Hunting & Scraping Engine",
+    description: "Distributed market crawler monitoring millions of product listings, competitor reviews, ratings, and delivery terms in real time.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+    year: "2025",
+    services: ["Price Hunting Algorithm", "High-Scale Web Scraper", "Dynamic Repricing"],
+  },
+  {
+    id: "blockchain-asset-tokenization",
+    category: "Cloud & Platforms",
+    title: "Blockchain Real Estate & Asset Tokenization",
+    description: "Regulated real-world asset (RWA) tokenization platform enabling fractional ownership of high-value commercial real estate and commodities.",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1600&auto=format&fit=crop",
+    year: "2026",
+    services: ["Asset Tokenization", "Smart Contracts", "Crypto Wallet"],
+  },
+  {
+    id: "remote-workforce-management",
+    category: "Mobile Apps & Portals",
+    title: "Remote Workforce Management (RWM) Platform",
+    description: "End-to-end management platform for distributed teams, integrating communications, automated workflow tracking, compliance, and productivity telemetry.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
+    year: "2025",
+    services: ["RWM Platform", "Productivity Telemetry", "Process Automation"],
+  },
   {
     id: "marble-tile-stone",
     category: "Websites",
@@ -319,8 +457,8 @@ export default function WorkPage() {
               <span className="text-[#202B61]">Engineering Case Studies</span>
             </h1>
 
-            <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-3xl">
-              A curated index of production web platforms, mobile ecosystems, cloud architectures, and applied AI systems engineered for real-world traffic.
+            <p className="hero-sub font-sans font-medium text-[#202B61]/80 leading-relaxed max-w-3xl">
+              A curated index of production AI mobility systems, healthcare big data platforms, conversational voicebots, and enterprise software engineered for measurable business impact across Dubai, the UAE, and global markets.
             </p>
           </div>
         </div>

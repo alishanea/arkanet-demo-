@@ -74,32 +74,46 @@ export const FEATURED_SERVICES: ServiceItem[] = [
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
-    id: "pique",
-    title: "PIQUE Modular Home System",
-    client: "PIQUE Luxury Homes",
-    result: "Custom 3D Configurator & Modular Builder Platform",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"
+    id: "ai-mobility-platform",
+    title: "AI Mobility & Connected Parking Platform",
+    client: "Dubai Smart Mobility Initiative",
+    result: "Automated Parking Telemetry & Connected Vehicle Navigation",
+    image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop"
   },
   {
-    id: "sussex-taps",
-    title: "Sussex Taps Digital Experience",
-    client: "Sussex Tapware Australia",
-    result: "Artisan E-Commerce & 3D Brassware Studio",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop"
+    id: "healthcare-bigdata-platform",
+    title: "Healthcare Big Data & Hospital Analytics",
+    client: "UAE Healthcare & Clinical Network",
+    result: "Cardiovascular Risk Prediction & Unified Clinical Data Lake",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop"
   },
   {
-    id: "chaleit",
-    title: "Chaleit Alpine Mobile App",
-    client: "Chaleit Retreats",
-    result: "Luxury Ski Resort Concierge & Real-Time Booking",
-    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop"
+    id: "conversational-ai-voicebots",
+    title: "Enterprise Conversational AI & Voicebots",
+    client: "Enterprise Customer Care & Telecom",
+    result: "Bilingual Arabic/English Neural Voice & WhatsApp Agents",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop"
   },
   {
-    id: "exposing-surveillance",
-    title: "Exposing Surveillance Platform",
-    client: "Digital Rights Research Foundation",
-    result: "Global Network Graph & Data Intelligence Engine",
+    id: "price-hunting-engine",
+    title: "Dynamic Price Hunting & Scraping Engine",
+    client: "Middle East E-Commerce Marketplace",
+    result: "Real-Time Competitor Intelligence & Algorithmic Repricing",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "blockchain-asset-tokenization",
+    title: "Blockchain Real Estate & Asset Tokenization",
+    client: "Dubai Real Estate & Asset Consortium",
+    result: "Regulated Security Tokens & P2P Trading Marketplace",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "remote-workforce-management",
+    title: "Remote Workforce Management (RWM) Platform",
+    client: "Global IT Consulting & Distributed Teams",
+    result: "Productivity Telemetry, Compliance & Sprint Workflows",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
   }
 ];
 
