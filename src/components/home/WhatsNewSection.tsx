@@ -65,7 +65,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "Enterprise Conversational AI & Multilingual Voicebots",
     titleLine1: "Conversational AI &",
     titleLine2: "Multilingual Voicebots",
-    description: "Multilingual Arabic & English conversational assistants and neural voicebots automating customer care across web, phone, and WhatsApp.",
+    description: "Multilingual Arabic & English conversational voicebots automating customer care across web, phone, and WhatsApp.",
     outerImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop",
     detail: {

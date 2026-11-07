@@ -278,7 +278,7 @@ const WORK_PROJECTS: WorkProject[] = [
     id: "conversational-ai-voicebots",
     category: "AI & Automation",
     title: "Conversational AI & Multilingual Voicebots",
-    description: "Multilingual Arabic & English conversational assistants and neural voicebots automating customer care across web, phone, and WhatsApp.",
+    description: "Multilingual Arabic & English conversational voicebots automating customer care across web, phone, and WhatsApp.",
     image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
     year: "2026",
     services: ["Conversational AI", "Voicebot Development", "Arabic/English NLU"],
