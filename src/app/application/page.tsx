@@ -451,6 +451,74 @@ const ShopifyLogo: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }
   </svg>
 );
 
+const PRODUCT_BOX_THEMES: Record<string, {
+  boxBg: string;
+  borderColor: string;
+  radialAura: string;
+  badgeBg: string;
+  badgeText: string;
+  pillButton: string;
+  iconBg: string;
+  tagBg: string;
+  statAccent: string;
+}> = {
+  "vesper-horology": {
+    boxBg: "bg-gradient-to-br from-[#0a1024] via-[#121c42] to-[#1c2c69]",
+    borderColor: "border-blue-900/50 hover:border-blue-500/60",
+    radialAura: "rgba(59, 130, 246, 0.42)",
+    badgeBg: "bg-blue-500/25 text-blue-200 border-blue-400/35",
+    badgeText: "60fps WebGL 3D Engine",
+    pillButton: "bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-[0_4px_16px_rgba(37,99,235,0.45)]",
+    iconBg: "bg-blue-50 text-blue-700 border-blue-200/80",
+    tagBg: "bg-blue-100/70 text-blue-900 border-blue-200/60",
+    statAccent: "text-blue-600",
+  },
+  "careflow-health": {
+    boxBg: "bg-gradient-to-br from-[#021812] via-[#053227] to-[#0a4d3c]",
+    borderColor: "border-emerald-900/50 hover:border-emerald-500/60",
+    radialAura: "rgba(16, 185, 129, 0.42)",
+    badgeBg: "bg-emerald-500/25 text-emerald-200 border-emerald-400/35",
+    badgeText: "HIPAA Compliant WebRTC",
+    pillButton: "bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-[0_4px_16px_rgba(16,185,129,0.45)]",
+    iconBg: "bg-emerald-50 text-emerald-700 border-emerald-200/80",
+    tagBg: "bg-emerald-100/70 text-emerald-900 border-emerald-200/60",
+    statAccent: "text-emerald-600",
+  },
+  "kinetics-movement": {
+    boxBg: "bg-gradient-to-br from-[#051124] via-[#09224b] to-[#10377a]",
+    borderColor: "border-cyan-900/50 hover:border-cyan-500/60",
+    radialAura: "rgba(6, 182, 212, 0.42)",
+    badgeBg: "bg-cyan-500/25 text-cyan-200 border-cyan-400/35",
+    badgeText: "30fps CoreML Vision",
+    pillButton: "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 shadow-[0_4px_16px_rgba(6,182,212,0.45)]",
+    iconBg: "bg-cyan-50 text-cyan-700 border-cyan-200/80",
+    tagBg: "bg-cyan-100/70 text-cyan-900 border-cyan-200/60",
+    statAccent: "text-cyan-600",
+  },
+  "moda-atelier": {
+    boxBg: "bg-gradient-to-br from-[#1a050d] via-[#330a19] to-[#4d0f26]",
+    borderColor: "border-rose-900/50 hover:border-rose-500/60",
+    radialAura: "rgba(244, 63, 94, 0.42)",
+    badgeBg: "bg-rose-500/25 text-rose-200 border-rose-400/35",
+    badgeText: "4K Runway Video Commerce",
+    pillButton: "bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 shadow-[0_4px_16px_rgba(244,63,94,0.45)]",
+    iconBg: "bg-rose-50 text-rose-700 border-rose-200/80",
+    tagBg: "bg-rose-100/70 text-rose-900 border-rose-200/60",
+    statAccent: "text-rose-600",
+  },
+  "parkease-mobility": {
+    boxBg: "bg-gradient-to-br from-[#0f0721] via-[#1d0e3d] to-[#2d165c]",
+    borderColor: "border-purple-900/50 hover:border-purple-500/60",
+    radialAura: "rgba(168, 85, 247, 0.42)",
+    badgeBg: "bg-purple-500/25 text-purple-200 border-purple-400/35",
+    badgeText: "Sub-Second MQTT Telemetry",
+    pillButton: "bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 shadow-[0_4px_16px_rgba(168,85,247,0.45)]",
+    iconBg: "bg-purple-50 text-purple-700 border-purple-200/80",
+    tagBg: "bg-purple-100/70 text-purple-900 border-purple-200/60",
+    statAccent: "text-purple-600",
+  },
+};
+
 export default function ApplicationPage() {
   const [selectedCategory, setSelectedCategory] = useState<ApplicationCategory>("All");
   const [contactOpen, setContactOpen] = useState(false);
@@ -481,6 +549,7 @@ export default function ApplicationPage() {
   };
 
   const currentDeckApp = FEATURED_SLIDES[activeDeckIdx];
+  const currentTheme = PRODUCT_BOX_THEMES[currentDeckApp.id] || PRODUCT_BOX_THEMES["vesper-horology"];
 
   return (
     <main className="min-h-screen bg-[#eaeaea] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
@@ -633,28 +702,54 @@ export default function ApplicationPage() {
           <div className="relative rounded-[28px] bg-white border border-[#d8d8d8] p-6 sm:p-8 lg:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
               
-              {/* Left Column: Clean App Store Preview Container */}
+              {/* Left Column: Colored Studio Product Box */}
               <div className="lg:col-span-6">
                 <div
                   role="button"
                   tabIndex={0}
                   onClick={() => handleOpenAppModal(currentDeckApp)}
-                  className="group relative aspect-[16/10] w-full rounded-[18px] overflow-hidden bg-slate-50 border border-slate-200/80 cursor-pointer"
+                  className={`group relative aspect-[16/10] w-full rounded-[22px] overflow-hidden border cursor-pointer transition-all duration-500 shadow-[0_16px_40px_rgba(0,0,0,0.14)] ${currentTheme.boxBg} ${currentTheme.borderColor}`}
                 >
-                  <Image
-                    src={currentDeckApp.previewImage}
-                    alt={currentDeckApp.name}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
+                  {/* Center Ambient Radial Aura (The Glow from Reference Image) */}
+                  <div
+                    className="absolute inset-0 pointer-events-none opacity-85 transition-opacity duration-500 group-hover:opacity-100"
+                    style={{
+                      background: `radial-gradient(circle at 50% 50%, ${currentTheme.radialAura}, transparent 70%)`
+                    }}
                   />
                   
-                  {/* Subtle Floating Bottom Pill Bar */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs">
-                    <span className="bg-white/95 backdrop-blur-md text-[#202B61] px-3 py-1.5 rounded-full border border-slate-200/70 font-medium text-[11px] shadow-2xs">
+                  {/* Subtle Tech Grid Texture */}
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none opacity-40" />
+
+                  {/* Top Left Feature Badge */}
+                  <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase border backdrop-blur-md shadow-2xs ${currentTheme.badgeBg}`}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+                      <span>{currentTheme.badgeText}</span>
+                    </span>
+                  </div>
+
+                  {/* Product Visual Presentation */}
+                  <div className="relative w-full h-full flex items-center justify-center p-6 sm:p-8">
+                    <Image
+                      src={currentDeckApp.id === "vesper-horology" ? "/assets/images/vesper-watch-cutout.png" : currentDeckApp.previewImage}
+                      alt={currentDeckApp.name}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className={`transition-transform duration-500 ease-out group-hover:scale-104 ${
+                        currentDeckApp.id === "vesper-horology"
+                          ? "object-contain p-4 drop-shadow-[0_20px_35px_rgba(0,0,0,0.65)]"
+                          : "object-cover mix-blend-luminosity opacity-85 group-hover:opacity-100"
+                      }`}
+                    />
+                  </div>
+
+                  {/* Bottom Floating Control Bar */}
+                  <div className="absolute bottom-3 left-3 right-3 z-10 flex items-center justify-between text-xs">
+                    <span className="bg-black/60 backdrop-blur-md text-white/90 px-3 py-1.5 rounded-full border border-white/15 font-medium text-[11px] shadow-sm">
                       {currentDeckApp.platforms}
                     </span>
-                    <span className="bg-[#202B61] text-white font-bold px-3.5 py-1.5 rounded-full shadow-2xs flex items-center gap-1 group-hover:bg-[#202B61]/90 text-[11px] transition-colors">
+                    <span className={`text-white font-bold px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1 text-[11px] transition-all group-hover:scale-102 ${currentTheme.pillButton}`}>
                       <span>View Specifications</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
@@ -668,7 +763,7 @@ export default function ApplicationPage() {
                 {/* App Icon Squircle & Category Line */}
                 <div className="flex items-center gap-3">
                   <div
-                    className="w-12 h-12 rounded-[16px] bg-[#f1f5f9] border border-slate-200/80 text-[#202B61] flex items-center justify-center shrink-0 shadow-2xs"
+                    className={`w-12 h-12 rounded-[16px] border flex items-center justify-center shrink-0 shadow-2xs transition-colors duration-300 ${currentTheme.iconBg}`}
                   >
                     {currentDeckApp.category === "Shopify Stores" ? (
                       <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
@@ -677,7 +772,7 @@ export default function ApplicationPage() {
                     )}
                   </div>
                   <div className="min-w-0 space-y-0.5">
-                    <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                    <span className={`inline-block text-[10.5px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border transition-colors duration-300 ${currentTheme.tagBg}`}>
                       {currentDeckApp.category}
                     </span>
                     <p className="font-sans text-[11px] text-slate-400 font-medium truncate">
@@ -699,7 +794,7 @@ export default function ApplicationPage() {
                 {/* 3 Impact Stat Metrics */}
                 <div className="grid grid-cols-3 gap-3 py-3 border-y border-slate-100">
                   <div>
-                    <h4 className="font-heading font-black text-xl sm:text-2xl text-[#202B61]">
+                    <h4 className={`font-heading font-black text-xl sm:text-2xl transition-colors duration-300 ${currentTheme.statAccent}`}>
                       {currentDeckApp.metrics.stat1.value}
                     </h4>
                     <span className="text-[10.5px] font-sans text-slate-500 font-medium block mt-0.5 leading-snug">
