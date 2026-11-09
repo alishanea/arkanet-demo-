@@ -22,6 +22,8 @@ export interface InteractiveShowcaseGridProps {
 interface CapabilityCard {
   id: string;
   title: string;
+  titleLine1: string;
+  titleLine2: string;
   description: string;
   href: string;
   icon: LucideIcon;
@@ -30,7 +32,9 @@ interface CapabilityCard {
 const CAPABILITY_CARDS: CapabilityCard[] = [
   {
     id: "ui-ux",
-    title: "UI/UX Design, Wireframing & Product Strategy",
+    title: "UI/UX Product Design & Digital Prototyping",
+    titleLine1: "UI/UX Product Design &",
+    titleLine2: "Digital Prototyping",
     description:
       "User-centric research, wireframing, high-fidelity design systems, and rapid interactive prototyping that align product functionality with business conversion.",
     href: "/capabilities/graphic-design",
@@ -38,7 +42,9 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
   },
   {
     id: "web-mobile",
-    title: "High-Performance Web & Mobile App Development",
+    title: "High-Performance Web & Mobile App Engineering",
+    titleLine1: "High-Performance Web &",
+    titleLine2: "Mobile App Engineering",
     description:
       "High-performance Next.js web applications, client portals, and native iOS/Android apps engineered for real-world traffic, speed, and 99.9% uptime.",
     href: "/capabilities/website-development",
@@ -46,7 +52,9 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
   },
   {
     id: "digital-transformation",
-    title: "Enterprise Digital Transformation Consulting",
+    title: "Digital Transformation & Enterprise Consulting",
+    titleLine1: "Digital Transformation &",
+    titleLine2: "Enterprise Consulting",
     description:
       "Helping enterprises and growing brands reshape their operational workflows, modernize legacy systems, and implement a future-proof digital backbone.",
     href: "/capabilities/business-automation",
@@ -55,6 +63,8 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
   {
     id: "applied-ai",
     title: "Applied Machine Learning & Enterprise AI Systems",
+    titleLine1: "Applied Machine Learning &",
+    titleLine2: "Enterprise AI Systems",
     description:
       "Harness predictive analytics and automated intelligence. Developing custom models trained on your data to optimize operational efficiency.",
     href: "/capabilities/applied-ai-ml",
@@ -62,7 +72,9 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
   },
   {
     id: "big-data",
-    title: "Big Data Pipelines & Distributed Infrastructure",
+    title: "Big Data Pipelines & Cloud Infrastructure",
+    titleLine1: "Big Data Pipelines &",
+    titleLine2: "Cloud Infrastructure",
     description:
       "High-throughput data engineering pipelines, distributed storage, and real-time telemetry architectures turning scattered data into trusted business intelligence.",
     href: "/capabilities/cloud-devops-hosting",
@@ -70,7 +82,9 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
   },
   {
     id: "virtual-agents",
-    title: "Conversational AI, Voicebots & Virtual Agents",
+    title: "Conversational AI & Intelligent Voicebots",
+    titleLine1: "Conversational AI &",
+    titleLine2: "Intelligent Voicebots",
     description:
       "Conversational AI assistants and WhatsApp Business API bots built on modern LLMs to automate customer queries and reduce support volume by up to 84%.",
     href: "/capabilities/ai-chatbot-automation",
@@ -78,7 +92,9 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
   },
   {
     id: "cloud-cybersecurity",
-    title: "Cloud Architecture, DevOps & Cybersecurity",
+    title: "Cloud Infrastructure, DevOps & Cybersecurity",
+    titleLine1: "Cloud Infrastructure,",
+    titleLine2: "DevOps & Cybersecurity",
     description:
       "Secure, resilient cloud architectures with automated CI/CD deployment pipelines, continuous monitoring, and robust enterprise cybersecurity protocols.",
     href: "/capabilities/cloud-devops-hosting",
@@ -87,6 +103,8 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
   {
     id: "ar-vr-metaverse",
     title: "Spatial 3D, AR/VR & Metaverse Solutions",
+    titleLine1: "Spatial 3D, AR/VR &",
+    titleLine2: "Metaverse Solutions",
     description:
       "Interactive 3D spaces, augmented and virtual reality experiences, and secure blockchain integrations allowing your brand to operate at the digital frontier.",
     href: "/capabilities/ecommerce-shopify-development",
@@ -125,8 +143,9 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                 <div className="relative w-full flex-1 flex flex-col justify-center my-auto">
                   {/* Default State: Refined Heading, cleanly centered in the mid */}
                   <div className="transition-all duration-200 ease-out group-hover:opacity-0 group-hover:-translate-y-1 group-focus-visible:opacity-0 flex flex-col justify-center items-center text-center">
-                    <h3 className="font-heading font-bold text-[15.5px] sm:text-[16.5px] lg:text-[17px] xl:text-[17.5px] text-[#202B61] tracking-tight leading-[1.3] text-balance">
-                      {card.title}
+                    <h3 className="font-heading font-bold text-[15.5px] sm:text-[16.5px] lg:text-[17px] xl:text-[17.5px] text-[#202B61] tracking-tight leading-[1.3] text-center">
+                      <span className="block">{card.titleLine1 || card.title}</span>
+                      <span className="block">{card.titleLine2}</span>
                     </h3>
                   </div>
 
