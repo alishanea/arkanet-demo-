@@ -618,19 +618,19 @@ export default function ApplicationPage() {
       </section>
 
       {/* ── 2. FEATURED CASE CAROUSEL DECK (INSPIRED BY REFERENCE IMAGE 3 "What We've Built") ── */}
-      <section className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 text-left overflow-hidden">
-        <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center">
+        <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 my-auto">
           
           {/* Section Header */}
           <div className="text-left">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
               What We&apos;ve Built
             </h2>
           </div>
 
           {/* Elevated Floating 3D Showcase Card (Matching Image 3) */}
-          <div className="relative rounded-[32px] bg-white border border-slate-200/90 p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(32,43,97,0.08)]">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="relative rounded-[28px] bg-white border border-slate-200/90 p-5 sm:p-7 lg:p-8 shadow-[0_16px_40px_rgba(32,43,97,0.06)]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
               
               {/* Left Column: Visual Mockup Container (Matching the Squircle 3D Visual in Image 3) */}
               <div className="lg:col-span-6">
@@ -638,7 +638,7 @@ export default function ApplicationPage() {
                   role="button"
                   tabIndex={0}
                   onClick={() => handleOpenAppModal(currentDeckApp)}
-                  className="group relative aspect-[16/11] w-full rounded-[24px] overflow-hidden bg-slate-900 border border-slate-200 shadow-[0_12px_36px_rgba(0,0,0,0.12)] cursor-pointer"
+                  className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-slate-900 border border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.1)] cursor-pointer"
                 >
                   <Image
                     src={currentDeckApp.previewImage}
@@ -651,11 +651,11 @@ export default function ApplicationPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
                   {/* Floating Action Pill */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
-                    <span className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 font-medium">
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
+                    <span className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 font-medium text-[11px]">
                       {currentDeckApp.platforms}
                     </span>
-                    <span className="bg-white text-[#202B61] font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1 group-hover:bg-slate-100">
+                    <span className="bg-white text-[#202B61] font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1 group-hover:bg-slate-100 text-[11px]">
                       <span>View Specifications</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
@@ -664,59 +664,59 @@ export default function ApplicationPage() {
               </div>
 
               {/* Right Column: Information, Impact Metrics, & Actions (Matching Image 3) */}
-              <div className="lg:col-span-6 space-y-6 text-left">
+              <div className="lg:col-span-6 space-y-4 sm:space-y-5 text-left">
                 
                 {/* Brand / Category Badge with Color Accent */}
                 <div className="flex items-center gap-2.5">
                   <div
-                    className={`w-9 h-9 rounded-xl bg-gradient-to-br ${currentDeckApp.themeColor} text-white flex items-center justify-center shadow-xs`}
+                    className={`w-8 h-8 rounded-xl bg-gradient-to-br ${currentDeckApp.themeColor} text-white flex items-center justify-center shadow-xs`}
                   >
                     {currentDeckApp.category === "Shopify Stores" ? (
-                      <ShoppingBag className="w-4.5 h-4.5 stroke-[2]" />
+                      <ShoppingBag className="w-4 h-4 stroke-[2]" />
                     ) : (
-                      <Smartphone className="w-4.5 h-4.5 stroke-[2]" />
+                      <Smartphone className="w-4 h-4 stroke-[2]" />
                     )}
                   </div>
                   <div>
-                    <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider ${currentDeckApp.badgeBg} ${currentDeckApp.badgeText}`}>
+                    <span className={`px-2.5 py-0.5 rounded-md text-[10.5px] font-bold uppercase tracking-wider ${currentDeckApp.badgeBg} ${currentDeckApp.badgeText}`}>
                       {currentDeckApp.category}
                     </span>
                   </div>
                 </div>
 
                 {/* Title & Tagline */}
-                <div className="space-y-2">
-                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
+                <div className="space-y-1.5">
+                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight leading-tight">
                     {currentDeckApp.name}
                   </h3>
-                  <p className="font-sans text-sm sm:text-base text-[#202B61]/75 leading-relaxed font-normal">
+                  <p className="font-sans text-xs sm:text-sm text-[#202B61]/75 leading-relaxed font-normal">
                     {currentDeckApp.description}
                   </p>
                 </div>
 
                 {/* 3 Impact Stat Metrics (Matching Image 3 "+40% Demo Booking, +25% Closing Rate, 3x Engagement") */}
-                <div className="grid grid-cols-3 gap-3 py-4 border-y border-slate-100">
+                <div className="grid grid-cols-3 gap-3 py-3 border-y border-slate-100">
                   <div>
-                    <h4 className="font-heading font-black text-2xl sm:text-3xl text-[#202B61]">
+                    <h4 className="font-heading font-black text-xl sm:text-2xl text-[#202B61]">
                       {currentDeckApp.metrics.stat1.value}
                     </h4>
-                    <span className="text-[11px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
+                    <span className="text-[10.5px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
                       {currentDeckApp.metrics.stat1.label}
                     </span>
                   </div>
                   <div className="border-l border-slate-100 pl-3">
-                    <h4 className="font-heading font-black text-2xl sm:text-3xl text-emerald-600">
+                    <h4 className="font-heading font-black text-xl sm:text-2xl text-emerald-600">
                       {currentDeckApp.metrics.stat2.value}
                     </h4>
-                    <span className="text-[11px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
+                    <span className="text-[10.5px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
                       {currentDeckApp.metrics.stat2.label}
                     </span>
                   </div>
                   <div className="border-l border-slate-100 pl-3">
-                    <h4 className="font-heading font-black text-2xl sm:text-3xl text-[#202B61]">
+                    <h4 className="font-heading font-black text-xl sm:text-2xl text-[#202B61]">
                       {currentDeckApp.metrics.stat3.value}
                     </h4>
-                    <span className="text-[11px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
+                    <span className="text-[10.5px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
                       {currentDeckApp.metrics.stat3.label}
                     </span>
                   </div>
@@ -727,7 +727,7 @@ export default function ApplicationPage() {
                   <button
                     type="button"
                     onClick={() => handleOpenAppModal(currentDeckApp)}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-sm active:scale-95"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-sm active:scale-95"
                   >
                     <span>Read Full Case Study</span>
                     <ArrowUpRight className="w-4 h-4 text-white" />
@@ -736,7 +736,7 @@ export default function ApplicationPage() {
                   <button
                     type="button"
                     onClick={() => handleOpenAppModal(currentDeckApp)}
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-[#202B61] font-sans font-bold text-xs sm:text-sm transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-[#202B61] font-sans font-bold text-xs sm:text-sm transition-all cursor-pointer"
                   >
                     <Download className="w-4 h-4" />
                     <span>Download App / Store Demo</span>
@@ -748,42 +748,44 @@ export default function ApplicationPage() {
             </div>
           </div>
 
-          {/* Bottom Deck Navigation: Prev Arrow, Pagination Dots, Counter, Next Arrow */}
-          <div className="flex items-center justify-center gap-4 pt-3">
-            <button
-              type="button"
-              onClick={handlePrevDeck}
-              className="w-11 h-11 rounded-full bg-white hover:bg-slate-100 border border-slate-200/90 text-[#202B61] flex items-center justify-center shadow-xs cursor-pointer active:scale-95 transition-all"
-              aria-label="Previous featured release"
-            >
-              <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-            </button>
-
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/90 shadow-2xs">
+          {/* Bottom Deck Navigation: Dots on Left, Very Simple Arrows on Right Bottom */}
+          <div className="flex items-center justify-between pt-2">
+            <div className="flex items-center gap-1.5">
               {FEATURED_SLIDES.map((slide, idx) => (
                 <button
                   key={slide.id}
                   type="button"
                   onClick={() => setActiveDeckIdx(idx)}
-                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    idx === activeDeckIdx ? "w-8 bg-[#202B61]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    idx === activeDeckIdx ? "w-7 bg-[#202B61]" : "w-2 bg-slate-300 hover:bg-slate-400"
                   }`}
                   aria-label={`Slide to ${slide.name}`}
                 />
               ))}
-              <span className="text-xs font-mono font-bold text-[#202B61]/70 ml-2 pl-2 border-l border-slate-200">
+              <span className="text-xs font-mono font-semibold text-[#202B61]/60 ml-2">
                 0{activeDeckIdx + 1} / 0{FEATURED_SLIDES.length}
               </span>
             </div>
 
-            <button
-              type="button"
-              onClick={handleNextDeck}
-              className="w-11 h-11 rounded-full bg-white hover:bg-slate-100 border border-slate-200/90 text-[#202B61] flex items-center justify-center shadow-xs cursor-pointer active:scale-95 transition-all"
-              aria-label="Next featured release"
-            >
-              <ChevronRight className="w-5 h-5 stroke-[2.5]" />
-            </button>
+            {/* Simple Arrows on Right Bottom */}
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={handlePrevDeck}
+                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
+                aria-label="Previous featured release"
+              >
+                <ChevronLeft className="w-4 h-4 stroke-[2]" />
+              </button>
+              <button
+                type="button"
+                onClick={handleNextDeck}
+                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
+                aria-label="Next featured release"
+              >
+                <ChevronRight className="w-4 h-4 stroke-[2]" />
+              </button>
+            </div>
           </div>
 
         </div>
