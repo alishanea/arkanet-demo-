@@ -484,12 +484,6 @@ export default function ApplicationPage() {
 
         {/* Top Content: Proper Authoritative Heading & Subheading (Deep Navy #202B61) */}
         <div className="relative z-10 max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 text-left">
-          
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90 text-xs font-bold uppercase tracking-wider text-[#202B61] shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>Applications &amp; Storefronts Showcase</span>
-          </div>
-
           <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.12] max-w-4xl text-balance">
             Applications, Shopify Stores &amp; Enterprise Platforms
           </h1>
