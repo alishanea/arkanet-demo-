@@ -622,38 +622,10 @@ export default function ApplicationPage() {
         <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
           
           {/* Section Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div className="space-y-1.5">
-              <span className="text-xs font-bold tracking-widest uppercase text-[#202B61]/60 block font-mono">
-                001 • FEATURED SHOWCASE
-              </span>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight">
-                What We&apos;ve Built
-              </h2>
-            </div>
-
-            {/* Navigation Arrows & Counter */}
-            <div className="flex items-center gap-3">
-              <span className="text-xs font-mono font-bold text-[#202B61]/60 mr-1">
-                0{activeDeckIdx + 1} / 0{FEATURED_SLIDES.length}
-              </span>
-              <button
-                type="button"
-                onClick={handlePrevDeck}
-                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200/90 text-[#202B61] flex items-center justify-center shadow-xs cursor-pointer active:scale-95 transition-all"
-                aria-label="Previous featured release"
-              >
-                <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
-              </button>
-              <button
-                type="button"
-                onClick={handleNextDeck}
-                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200/90 text-[#202B61] flex items-center justify-center shadow-xs cursor-pointer active:scale-95 transition-all"
-                aria-label="Next featured release"
-              >
-                <ChevronRight className="w-4 h-4 stroke-[2.5]" />
-              </button>
-            </div>
+          <div className="text-left">
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight">
+              What We&apos;ve Built
+            </h2>
           </div>
 
           {/* Elevated Floating 3D Showcase Card (Matching Image 3) */}
@@ -776,19 +748,42 @@ export default function ApplicationPage() {
             </div>
           </div>
 
-          {/* Quick Deck Pagination Dots */}
-          <div className="flex items-center justify-center gap-2 pt-2">
-            {FEATURED_SLIDES.map((slide, idx) => (
-              <button
-                key={slide.id}
-                type="button"
-                onClick={() => setActiveDeckIdx(idx)}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  idx === activeDeckIdx ? "w-8 bg-[#202B61]" : "w-2 bg-slate-300 hover:bg-slate-400"
-                }`}
-                aria-label={`Slide to ${slide.name}`}
-              />
-            ))}
+          {/* Bottom Deck Navigation: Prev Arrow, Pagination Dots, Counter, Next Arrow */}
+          <div className="flex items-center justify-center gap-4 pt-3">
+            <button
+              type="button"
+              onClick={handlePrevDeck}
+              className="w-11 h-11 rounded-full bg-white hover:bg-slate-100 border border-slate-200/90 text-[#202B61] flex items-center justify-center shadow-xs cursor-pointer active:scale-95 transition-all"
+              aria-label="Previous featured release"
+            >
+              <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+            </button>
+
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/90 shadow-2xs">
+              {FEATURED_SLIDES.map((slide, idx) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  onClick={() => setActiveDeckIdx(idx)}
+                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    idx === activeDeckIdx ? "w-8 bg-[#202B61]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                  }`}
+                  aria-label={`Slide to ${slide.name}`}
+                />
+              ))}
+              <span className="text-xs font-mono font-bold text-[#202B61]/70 ml-2 pl-2 border-l border-slate-200">
+                0{activeDeckIdx + 1} / 0{FEATURED_SLIDES.length}
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleNextDeck}
+              className="w-11 h-11 rounded-full bg-white hover:bg-slate-100 border border-slate-200/90 text-[#202B61] flex items-center justify-center shadow-xs cursor-pointer active:scale-95 transition-all"
+              aria-label="Next featured release"
+            >
+              <ChevronRight className="w-5 h-5 stroke-[2.5]" />
+            </button>
           </div>
 
         </div>
