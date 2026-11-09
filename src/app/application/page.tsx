@@ -482,7 +482,7 @@ export default function ApplicationPage() {
   const currentDeckApp = FEATURED_SLIDES[activeDeckIdx];
 
   return (
-    <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       {/* ── HEADER ── */}
       <Header onOpenBooking={openContact} />
 
@@ -490,7 +490,7 @@ export default function ApplicationPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. BENTO HERO SHOWCASE (INSPIRED BY REFERENCE IMAGES 1 & 2) ── */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left flex flex-col justify-center">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-7 my-auto">
           
           {/* Header Row: Large Typography (Matching Image 1: "Our focus is simple / Design to convert") */}
@@ -513,7 +513,7 @@ export default function ApplicationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5">
             
             {/* Card 1: Avatar stack & Partners (Span 3) */}
-            <div className="lg:col-span-3 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-white border border-slate-200/80 shadow-[0_4px_24px_rgba(32,43,97,0.04)] min-h-[220px]">
+            <div className="lg:col-span-3 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs min-h-[220px]">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
                   <div className="w-8 h-8 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
@@ -548,7 +548,7 @@ export default function ApplicationPage() {
             </div>
 
             {/* Card 2: Revenue Generated (Span 4) */}
-            <div className="lg:col-span-4 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-white border border-slate-200/80 shadow-[0_4px_24px_rgba(32,43,97,0.04)] min-h-[220px]">
+            <div className="lg:col-span-4 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs min-h-[220px]">
               <div className="space-y-1">
                 <span className="text-xs font-semibold text-[#202B61]/70">
                   Through custom-tailored mobile &amp; e-commerce systems
@@ -618,12 +618,12 @@ export default function ApplicationPage() {
       </section>
 
       {/* ── 2. FEATURED CASE CAROUSEL DECK (INSPIRED BY REFERENCE IMAGE 3 "What We've Built") ── */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#E2ECF8] border-b border-blue-200/60 text-left overflow-hidden flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 my-auto">
           
           {/* Section Header (Matching Reference 3 & Snippet 4, 6) */}
           <div className="text-left space-y-1">
-            <span className="font-mono text-xs font-bold tracking-widest uppercase text-[#5B6B8C] block">
+            <span className="font-mono text-xs font-bold tracking-widest uppercase text-[#202B61]/65 block">
               001 • FEATURED SHOWCASE
             </span>
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
@@ -632,7 +632,7 @@ export default function ApplicationPage() {
           </div>
 
           {/* Elevated Floating 3D Showcase Card */}
-          <div className="relative rounded-[28px] bg-white border border-slate-200/80 p-6 sm:p-8 lg:p-10 shadow-[0_8px_32px_rgba(32,43,97,0.06)]">
+          <div className="relative rounded-[28px] bg-white border border-blue-100/90 p-6 sm:p-8 lg:p-10 shadow-[0_10px_36px_rgba(32,43,97,0.08)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
               
               {/* Left Column: Clean App Store Preview Container */}
@@ -796,7 +796,7 @@ export default function ApplicationPage() {
       </section>
 
       {/* ── 3. FULL APP STORE & SHOPIFY DIRECTORY (COLORFUL SQUIRCLES, REVIEWS, GET BUTTONS) ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#f4f6fb] border-t border-slate-200/80">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-white border-t border-slate-200/80">
         <div className="max-w-[1400px] mx-auto space-y-8">
 
           {/* Directory Header & Category Filter Tabs */}
