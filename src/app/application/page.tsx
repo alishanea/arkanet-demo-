@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,9 +13,10 @@ import {
   Star,
   Check,
   X,
-  ShieldCheck,
-  Sparkles,
+  ChevronLeft,
   ChevronRight,
+  Sparkles,
+  ShieldCheck,
   Globe,
 } from "lucide-react";
 
@@ -38,6 +39,7 @@ interface ApplicationItem {
   iconBg: string;
   iconType: "mobile" | "shopify" | "saas";
   previewImage: string;
+  heroImage: string;
   screenshots: string[];
   liveUrl?: string;
   description: string;
@@ -60,7 +62,7 @@ const APPLICATIONS: ApplicationItem[] = [
     name: "CareFlow Telehealth",
     category: "Mobile Apps",
     subCategory: "Medical & Telehealth",
-    tagline: "Encrypted patient portal & live video encounters",
+    tagline: "Encrypted patient portal with live video encounters and automated lab routing.",
     rating: 4.9,
     reviewsCount: "1.2k ratings",
     platformBadge: "iOS & Android",
@@ -68,6 +70,8 @@ const APPLICATIONS: ApplicationItem[] = [
     iconType: "mobile",
     previewImage:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1800&auto=format&fit=crop",
     screenshots: [
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
@@ -98,7 +102,7 @@ const APPLICATIONS: ApplicationItem[] = [
     name: "Vesper Luxury Horology",
     category: "Shopify Stores",
     subCategory: "Luxury Watches & Jewelry",
-    tagline: "Headless 3D watch customizer & flagship store",
+    tagline: "60fps WebGL 3D watch customizer with sub-second edge checkout delivery.",
     rating: 4.9,
     reviewsCount: "860 ratings",
     platformBadge: "Shopify Plus",
@@ -106,6 +110,8 @@ const APPLICATIONS: ApplicationItem[] = [
     iconType: "shopify",
     previewImage:
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1800&auto=format&fit=crop",
     screenshots: [
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1000&auto=format&fit=crop",
@@ -136,7 +142,7 @@ const APPLICATIONS: ApplicationItem[] = [
     name: "Kinetics Athlete Coach",
     category: "Mobile Apps",
     subCategory: "Health & Fitness",
-    tagline: "On-device AI pose tracking & movement analyzer",
+    tagline: "On-device neural computer vision for real-time 30fps athletic movement analysis.",
     rating: 4.8,
     reviewsCount: "2.4k ratings",
     platformBadge: "iOS & watchOS",
@@ -144,6 +150,8 @@ const APPLICATIONS: ApplicationItem[] = [
     iconType: "mobile",
     previewImage:
       "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1800&auto=format&fit=crop",
     screenshots: [
       "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop",
@@ -174,7 +182,7 @@ const APPLICATIONS: ApplicationItem[] = [
     name: "StoneCraft Surfaces",
     category: "Shopify Stores",
     subCategory: "Home & Architecture",
-    tagline: "Architectural stone sampling & contractor store",
+    tagline: "Architectural stone sampling, 2K slab inspector, and contractor wholesale portal.",
     rating: 4.9,
     reviewsCount: "430 ratings",
     platformBadge: "Shopify Plus",
@@ -182,6 +190,8 @@ const APPLICATIONS: ApplicationItem[] = [
     iconType: "shopify",
     previewImage:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1800&auto=format&fit=crop",
     screenshots: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop",
@@ -207,48 +217,11 @@ const APPLICATIONS: ApplicationItem[] = [
     },
   },
   {
-    id: "aura-botanicals",
-    name: "Aura Living Botanicals",
-    category: "Shopify Stores",
-    subCategory: "Beauty & Wellness",
-    tagline: "Clean organic skincare & subscription e-commerce",
-    rating: 4.8,
-    reviewsCount: "3.1k ratings",
-    platformBadge: "Shopify Store",
-    iconBg: "bg-rose-600",
-    iconType: "shopify",
-    previewImage:
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1000&auto=format&fit=crop",
-    ],
-    liveUrl: "https://aura.demo.arkanet.com",
-    description:
-      "Minimalist Shopify storefront engineered for a clean beauty brand, combining editorial product storytelling, personalized skincare quiz, and recurring subscriptions.",
-    highlights: [
-      "Dynamic 6-step skin diagnostic quiz recommending custom regimens",
-      "1-click recurring subscription discount and automated replenishment",
-      "Mobile-first sticky add-to-bag with sliding upsell drawer",
-      "Localized multicurrency checkout with instant Apple Pay and Shop Pay",
-    ],
-    techStack: ["Shopify OS 2.0", "Recharge Subscriptions", "Klaviyo", "Liquid"],
-    client: "Aura Living Organics",
-    year: "2025",
-    platforms: "Shopify Online Store 2.0 • Recharge Subscriptions",
-    downloads: {
-      primaryLabel: "Visit Shopify Store",
-      primaryType: "shopify",
-      secondaryLabel: "Take Skincare Quiz",
-      secondaryType: "web",
-    },
-  },
-  {
     id: "parkease-mobility",
     name: "ParkEase Smart Mobility",
     category: "Mobile Apps",
     subCategory: "Navigation & Transit",
-    tagline: "Connected vehicle navigation & parking allocator",
+    tagline: "Connected Apple CarPlay transit navigator with live telemetry across 42,000+ bays.",
     rating: 4.9,
     reviewsCount: "5.8k ratings",
     platformBadge: "iOS & Android",
@@ -256,6 +229,8 @@ const APPLICATIONS: ApplicationItem[] = [
     iconType: "mobile",
     previewImage:
       "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1800&auto=format&fit=crop",
     screenshots: [
       "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=1000&auto=format&fit=crop",
@@ -281,48 +256,11 @@ const APPLICATIONS: ApplicationItem[] = [
     },
   },
   {
-    id: "neuraldesk-ai",
-    name: "NeuralDesk Enterprise",
-    category: "Web & SaaS",
-    subCategory: "Productivity & AI",
-    tagline: "Private knowledge retrieval & workflow assistant",
-    rating: 4.9,
-    reviewsCount: "640 ratings",
-    platformBadge: "Web & Cloud",
-    iconBg: "bg-cyan-700",
-    iconType: "saas",
-    previewImage:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-    ],
-    liveUrl: "https://neuraldesk.demo.arkanet.com",
-    description:
-      "Self-hosted enterprise AI intelligence system indexing corporate repositories, legal contracts, and ERP data with role-based access control and strict data privacy.",
-    highlights: [
-      "Semantic vector indexing across PDF documents, spreadsheets, and databases",
-      "Granular departmental access controls ensuring zero unapproved data leaks",
-      "Instant citation verification linking every AI answer to exact source pages",
-      "Zero telemetry export, fully deployable inside private corporate VPCs",
-    ],
-    techStack: ["FastAPI", "Python", "pgvector", "LangChain", "Docker", "Next.js"],
-    client: "Global Financial Advisory Network",
-    year: "2026",
-    platforms: "Cloud SaaS • Docker VPC • Web & Mobile",
-    downloads: {
-      primaryLabel: "Deploy SaaS Instance",
-      primaryType: "cloud",
-      secondaryLabel: "Explore API Docs",
-      secondaryType: "docs",
-    },
-  },
-  {
     id: "moda-atelier",
     name: "Moda Atelier Milano",
     category: "Shopify Stores",
     subCategory: "Luxury Fashion",
-    tagline: "Runway video shopping & international boutique",
+    tagline: "Interactive runway video shopping and invitation-gated private client salon.",
     rating: 4.8,
     reviewsCount: "1.9k ratings",
     platformBadge: "Shopify Plus",
@@ -330,6 +268,8 @@ const APPLICATIONS: ApplicationItem[] = [
     iconType: "shopify",
     previewImage:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1800&auto=format&fit=crop",
     screenshots: [
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop",
@@ -354,7 +294,87 @@ const APPLICATIONS: ApplicationItem[] = [
       secondaryType: "web",
     },
   },
+  {
+    id: "aura-botanicals",
+    name: "Aura Living Botanicals",
+    category: "Shopify Stores",
+    subCategory: "Beauty & Wellness",
+    tagline: "Clean organic skincare with personalized regimens and subscription replenishment.",
+    rating: 4.8,
+    reviewsCount: "3.1k ratings",
+    platformBadge: "Shopify Store",
+    iconBg: "bg-rose-600",
+    iconType: "shopify",
+    previewImage:
+      "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1800&auto=format&fit=crop",
+    screenshots: [
+      "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1000&auto=format&fit=crop",
+    ],
+    liveUrl: "https://aura.demo.arkanet.com",
+    description:
+      "Minimalist Shopify storefront engineered for a clean beauty brand, combining editorial product storytelling, personalized skincare quiz, and recurring subscriptions.",
+    highlights: [
+      "Dynamic 6-step skin diagnostic quiz recommending custom regimens",
+      "1-click recurring subscription discount and automated replenishment",
+      "Mobile-first sticky add-to-bag with sliding upsell drawer",
+      "Localized multicurrency checkout with instant Apple Pay and Shop Pay",
+    ],
+    techStack: ["Shopify OS 2.0", "Recharge Subscriptions", "Klaviyo", "Liquid"],
+    client: "Aura Living Organics",
+    year: "2025",
+    platforms: "Shopify Online Store 2.0 • Recharge Subscriptions",
+    downloads: {
+      primaryLabel: "Visit Shopify Store",
+      primaryType: "shopify",
+      secondaryLabel: "Take Skincare Quiz",
+      secondaryType: "web",
+    },
+  },
+  {
+    id: "neuraldesk-ai",
+    name: "NeuralDesk Enterprise",
+    category: "Web & SaaS",
+    subCategory: "Productivity & AI",
+    tagline: "Private enterprise knowledge retrieval and departmental AI workflow assistant.",
+    rating: 4.9,
+    reviewsCount: "640 ratings",
+    platformBadge: "Web & Cloud",
+    iconBg: "bg-cyan-700",
+    iconType: "saas",
+    previewImage:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+    heroImage:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1800&auto=format&fit=crop",
+    screenshots: [
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+    ],
+    liveUrl: "https://neuraldesk.demo.arkanet.com",
+    description:
+      "Self-hosted enterprise AI intelligence system indexing corporate repositories, legal contracts, and ERP data with role-based access control and strict data privacy.",
+    highlights: [
+      "Semantic vector indexing across PDF documents, spreadsheets, and databases",
+      "Granular departmental access controls ensuring zero unapproved data leaks",
+      "Instant citation verification linking every AI answer to exact source pages",
+      "Zero telemetry export, fully deployable inside private corporate VPCs",
+    ],
+    techStack: ["FastAPI", "Python", "pgvector", "LangChain", "Docker", "Next.js"],
+    client: "Global Financial Advisory Network",
+    year: "2026",
+    platforms: "Cloud SaaS • Docker VPC • Web & Mobile",
+    downloads: {
+      primaryLabel: "Deploy SaaS Instance",
+      primaryType: "cloud",
+      secondaryLabel: "Explore API Docs",
+      secondaryType: "docs",
+    },
+  },
 ];
+
+const FEATURED_SLIDES = APPLICATIONS.slice(0, 5);
 
 const CATEGORIES: ApplicationCategory[] = [
   "All",
@@ -363,7 +383,6 @@ const CATEGORIES: ApplicationCategory[] = [
   "Web & SaaS",
 ];
 
-// Helper icon renderers for App Store / Google Play / Shopify buttons
 const AppleLogo: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.56.64-1.05 1.7-0.92 2.73 1.01.08 2.03-.5 2.63-1.23z" />
@@ -388,7 +407,33 @@ export default function ApplicationPage() {
   const [selectedApp, setSelectedApp] = useState<ApplicationItem | null>(null);
   const [activeScreenshotIdx, setActiveScreenshotIdx] = useState(0);
 
+  // Auto-sliding featured banner state
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const autoSlideTimerRef = useRef<NodeJS.Timeout | null>(null);
+
   const openContact = () => setContactOpen(true);
+
+  // Auto-slide effect every 4.8 seconds
+  useEffect(() => {
+    if (isPaused) return;
+
+    autoSlideTimerRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % FEATURED_SLIDES.length);
+    }, 4800);
+
+    return () => {
+      if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
+    };
+  }, [isPaused]);
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + FEATURED_SLIDES.length) % FEATURED_SLIDES.length);
+  };
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % FEATURED_SLIDES.length);
+  };
 
   const filteredApps =
     selectedCategory === "All"
@@ -400,6 +445,8 @@ export default function ApplicationPage() {
     setActiveScreenshotIdx(0);
   };
 
+  const activeFeatured = FEATURED_SLIDES[currentSlide];
+
   return (
     <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       {/* ── HEADER ── */}
@@ -408,38 +455,135 @@ export default function ApplicationPage() {
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. ARCHITECTURAL HERO HEADER ── */}
-      <section className="relative w-full pt-28 sm:pt-32 lg:pt-36 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left">
-        <div className="max-w-[1400px] mx-auto space-y-6">
+      {/* ── 1. CINEMATIC AUTO-SLIDING FEATURED HERO SECTION ── */}
+      <section
+        className="relative w-full pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="max-w-[1400px] mx-auto">
           
-          <div className="max-w-3xl space-y-2.5">
-            <h1 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
-              Applications &amp; Shopify Storefronts
-            </h1>
-            <p className="font-sans text-sm sm:text-base text-[#202B61]/80 leading-relaxed font-normal">
-              Browse our directory of production mobile apps, high-converting Shopify websites, and enterprise systems. Click any card for full specs, screenshots, and download options.
-            </p>
-          </div>
+          {/* Billboard Frame */}
+          <div className="relative w-full min-h-[460px] sm:min-h-[500px] lg:min-h-[540px] rounded-2xl overflow-hidden bg-[#151E48] text-white shadow-[0_12px_40px_rgba(21,30,72,0.18)] flex flex-col justify-end p-6 sm:p-10 lg:p-14 border border-[#253272]">
+            
+            {/* Sliding Background Image Layer */}
+            {FEATURED_SLIDES.map((slide, idx) => (
+              <div
+                key={slide.id}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  idx === currentSlide ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105 pointer-events-none"
+                }`}
+              >
+                <Image
+                  src={slide.heroImage}
+                  alt={slide.name}
+                  fill
+                  priority={idx === 0}
+                  className="object-cover transition-transform duration-1000 ease-out"
+                />
+                {/* Deep Architectural Dark Navy Vignette Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#151E48] via-[#151E48]/75 to-[#151E48]/35" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#151E48]/90 via-[#151E48]/50 to-transparent" />
+              </div>
+            ))}
 
-          {/* Clean Segmented Category Tabs */}
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            {CATEGORIES.map((category) => {
-              const isActive = selectedCategory === category;
-              return (
+            {/* Foreground Content for Current Slide */}
+            <div className="relative z-20 max-w-2xl space-y-4 sm:space-y-5 text-left">
+              
+              {/* Category Eyebrow & Status */}
+              <div className="flex items-center gap-2.5">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-bold tracking-widest uppercase text-white/95 border border-white/20">
+                  <Sparkles className="w-3 h-3 text-amber-300" />
+                  <span>Featured {activeFeatured.category}</span>
+                </span>
+                
+                <span className="text-xs text-white/75 font-medium flex items-center gap-1">
+                  <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                  <strong className="text-white">{activeFeatured.rating}</strong>
+                  <span className="text-white/60">({activeFeatured.reviewsCount})</span>
+                </span>
+              </div>
+
+              {/* Title & Platforms */}
+              <div className="space-y-1.5">
+                <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.12]">
+                  {activeFeatured.name}
+                </h1>
+                <p className="font-sans text-xs sm:text-sm text-white/70 font-medium">
+                  {activeFeatured.subCategory} • {activeFeatured.platformBadge}
+                </p>
+              </div>
+
+              {/* Small Clean Description */}
+              <p className="font-sans text-xs sm:text-[14.5px] text-slate-200 leading-relaxed font-normal max-w-xl">
+                {activeFeatured.tagline}
+              </p>
+
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
                 <button
-                  key={category}
                   type="button"
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
-                    isActive
-                      ? "bg-[#202B61] text-white shadow-xs"
-                      : "bg-[#f8fafc] text-[#202B61]/70 hover:text-[#202B61] hover:bg-slate-100 border border-slate-200/90"
-                  }`}
+                  onClick={() => handleOpenAppModal(activeFeatured)}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#202B61] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-md active:scale-95"
                 >
-                  {category}
+                  <Download className="w-4 h-4 text-[#202B61]" />
+                  <span>View Details &amp; Download</span>
                 </button>
-              );
-            })}
+
+                <button
+                  type="button"
+                  onClick={openContact}
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-sans font-semibold text-xs sm:text-sm backdrop-blur-md border border-white/20 transition-all cursor-pointer"
+                >
+                  <span>Request Custom Build</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </div>
+
+            </div>
+
+            {/* Slide Navigation Controls & Progress Dots (Bottom Right) */}
+            <div className="relative z-20 flex items-center justify-between pt-6 mt-6 border-t border-white/15">
+              
+              {/* Progress Dots / Bars */}
+              <div className="flex items-center gap-2">
+                {FEATURED_SLIDES.map((slide, idx) => (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    onClick={() => setCurrentSlide(idx)}
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === currentSlide
+                        ? "w-8 bg-white"
+                        : "w-2 bg-white/30 hover:bg-white/60"
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}: ${slide.name}`}
+                  />
+                ))}
+              </div>
+
+              {/* Arrow Controls */}
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handlePrevSlide}
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-md flex items-center justify-center text-white border border-white/15 transition-all cursor-pointer"
+                  aria-label="Previous featured app"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNextSlide}
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-md flex items-center justify-center text-white border border-white/15 transition-all cursor-pointer"
+                  aria-label="Next featured app"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
@@ -449,14 +593,37 @@ export default function ApplicationPage() {
       <section className="w-full py-10 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-12 text-left font-sans">
         <div className="max-w-[1400px] mx-auto space-y-6">
 
-          {/* Directory Count Bar */}
-          <div className="flex items-center justify-between pb-3 border-b border-slate-200/80 text-xs text-[#202B61]/70 font-medium">
-            <span>
-              Showing <strong className="text-[#202B61]">{filteredApps.length}</strong> verified releases
-            </span>
-            <span className="hidden sm:inline-block">
-              Click any card to view screenshots &amp; download options
-            </span>
+          {/* Section Heading & Category Filter Bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 border-b border-slate-200/80">
+            <div className="space-y-1">
+              <h2 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight">
+                All Applications &amp; Storefronts
+              </h2>
+              <p className="font-sans text-xs sm:text-sm text-[#202B61]/70">
+                Verified customer ratings, production releases, and architectural breakdowns.
+              </p>
+            </div>
+
+            {/* Segmented Category Filter Pills */}
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              {CATEGORIES.map((category) => {
+                const isActive = selectedCategory === category;
+                return (
+                  <button
+                    key={category}
+                    type="button"
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
+                      isActive
+                        ? "bg-[#202B61] text-white shadow-xs"
+                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-100 border border-slate-200/90"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* 3-Column Visual Grid */}
@@ -500,16 +667,16 @@ export default function ApplicationPage() {
 
                         {/* Title & Category */}
                         <div className="min-w-0 space-y-0.5">
-                          <h2 className="font-heading font-bold text-[14.5px] sm:text-[15px] text-[#202B61] leading-tight truncate">
+                          <h3 className="font-heading font-bold text-[14.5px] sm:text-[15px] text-[#202B61] leading-tight truncate">
                             {app.name}
-                          </h2>
+                          </h3>
                           <p className="font-sans text-[11.5px] text-[#202B61]/70 truncate">
                             {app.subCategory}
                           </p>
                         </div>
                       </div>
 
-                      {/* Right: App Store 'VIEW' Action Pill */}
+                      {/* Right: App Store 'GET' Action Pill */}
                       <span className="shrink-0 inline-flex items-center justify-center px-3 py-1 rounded-full bg-slate-100 group-hover:bg-[#202B61] text-[#202B61] group-hover:text-white font-sans font-bold text-xs tracking-tight transition-colors duration-200">
                         GET
                       </span>
