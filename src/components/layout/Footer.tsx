@@ -80,6 +80,11 @@ export const Footer: React.FC<FooterProps> = ({
                   </Link>
                 </li>
                 <li>
+                  <Link href="/application" className="hover:text-white transition-colors">
+                    Applications &amp; Storefronts
+                  </Link>
+                </li>
+                <li>
                   <Link href="/about" className="hover:text-white transition-colors">
                     About Our Team
                   </Link>
