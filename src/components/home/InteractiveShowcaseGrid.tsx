@@ -111,40 +111,40 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           </p>
         </div>
 
-        {/* ── 2. 8-CARD TIGHT ARCHITECTURAL GRID (HEADING FITS & FEELS FILLED, CONTENT VISIBLE ON HOVER) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4 w-full">
+        {/* ── 2. 8-CARD TIGHT ARCHITECTURAL GRID (LARGER SHAPE, PROMINENT CENTERED HEADING, CONTENT ON HOVER) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-4.5 w-full">
           {CAPABILITY_CARDS.map((card) => {
             const Icon = card.icon;
             return (
               <Link
                 key={card.id}
                 href={card.href}
-                className="group relative flex flex-col justify-between h-[155px] sm:h-[160px] lg:h-[165px] p-5 sm:p-5.5 rounded-[4px] bg-white border border-slate-200/90 hover:border-[#202B61]/40 shadow-none hover:shadow-[0_4px_16px_rgba(32,43,97,0.05)] cursor-pointer overflow-hidden text-left transition-all duration-300"
+                className="group relative flex flex-col justify-between h-[175px] sm:h-[185px] lg:h-[195px] p-5 sm:p-6 lg:p-6.5 rounded-[4px] bg-white border border-slate-200/90 hover:border-[#202B61]/40 shadow-none hover:shadow-[0_6px_24px_rgba(32,43,97,0.06)] cursor-pointer overflow-hidden transition-all duration-300"
               >
-                {/* Content Area: Heading (Default View) & Description (Hover View) */}
-                <div className="relative w-full flex-1">
-                  {/* Default State: Refined Heading that fits the box and feels filled */}
-                  <div className="transition-all duration-200 ease-out group-hover:opacity-0 group-hover:-translate-y-1 group-focus-visible:opacity-0">
-                    <h3 className="font-heading font-bold text-[15px] sm:text-[16px] lg:text-[16.5px] text-[#202B61] tracking-tight leading-[1.32] text-pretty">
+                {/* Content Area: Vertically and horizontally centered in the mid */}
+                <div className="relative w-full flex-1 flex flex-col justify-center my-auto">
+                  {/* Default State: Larger Heading, cleanly centered in the mid */}
+                  <div className="transition-all duration-200 ease-out group-hover:opacity-0 group-hover:-translate-y-1 group-focus-visible:opacity-0 flex flex-col justify-center items-center text-center">
+                    <h3 className="font-heading font-bold text-[17px] sm:text-[18px] lg:text-[19px] xl:text-[19.5px] text-[#202B61] tracking-tight leading-[1.26] text-balance">
                       {card.title}
                     </h3>
                   </div>
 
-                  {/* Hover State: Content becomes visible after hover */}
-                  <div className="absolute inset-0 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto">
-                    <p className="font-sans font-medium text-[12.5px] sm:text-[13px] text-[#202B61] leading-[1.5] line-clamp-4 tracking-[-0.01em]">
+                  {/* Hover State: Content becomes visible after hover, cleanly centered in the mid */}
+                  <div className="absolute inset-0 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0 transition-all duration-200 ease-out pointer-events-none group-hover:pointer-events-auto flex flex-col justify-center items-center text-center">
+                    <p className="font-sans font-medium text-[12.5px] sm:text-[13px] lg:text-[13.5px] text-[#202B61] leading-[1.52] line-clamp-4 tracking-[-0.01em] text-pretty">
                       {card.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Row: Linear Icon on Left, Clean Subtle Arrow on Right */}
-                <div className="flex items-end justify-between w-full pt-2 mt-auto">
+                <div className="flex items-center justify-between w-full pt-2 mt-auto">
                   <div className="text-[#202B61]/70 group-hover:text-[#202B61] transition-colors duration-200">
-                    <Icon className="w-5 h-5 stroke-[1.35]" />
+                    <Icon className="w-5.5 h-5.5 stroke-[1.35]" />
                   </div>
                   <div className="text-[#202B61]/50 group-hover:text-[#202B61] group-hover:translate-x-1.5 transition-all duration-200">
-                    <ArrowRight className="w-4 h-4 stroke-[1.6]" />
+                    <ArrowRight className="w-4.5 h-4.5 stroke-[1.6]" />
                   </div>
                 </div>
               </Link>
