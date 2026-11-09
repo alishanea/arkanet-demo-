@@ -25,6 +25,10 @@ const ClientLogosSection = dynamic(
   () => import("@/components/home/ClientLogosSection").then((m) => m.ClientLogosSection),
   { ssr: true }
 );
+const HomeReviewsSection = dynamic(
+  () => import("@/components/home/HomeReviewsSection").then((m) => m.HomeReviewsSection),
+  { ssr: true }
+);
 const WhatsNewSection = dynamic(
   () => import("@/components/home/WhatsNewSection").then((m) => m.WhatsNewSection),
   { ssr: true }
@@ -81,6 +85,9 @@ export default function Home() {
 
         {/* 5. Trusted By Client Logo Stage (Client Details) */}
         <ClientLogosSection onOpenBooking={handleOpenBooking} />
+
+        {/* 5b. Client Reviews & Stories (EXCELLENT EVERYWHERE Sliding Showcase) */}
+        <HomeReviewsSection />
 
         {/* 6. Studio Philosophy & Team Stats (About Us at last) */}
         <StudioPhilosophy onOpenBooking={handleOpenBooking} />
