@@ -572,39 +572,37 @@ export default function ApplicationPage() {
               </div>
             </div>
 
-            {/* Card 3: Dark High-Contrast Statement Card (Span 5 - Matching Image 1 Dark Card) */}
-            <div className="lg:col-span-5 relative flex flex-col justify-between p-5 sm:p-6 lg:p-7 rounded-[24px] bg-[#151E48] text-white shadow-[0_12px_40px_rgba(21,30,72,0.18)] overflow-hidden min-h-[220px]">
+            {/* Card 3: Light High-Trust Review Card (App Store & Play Store Caliber) */}
+            <div className="lg:col-span-5 relative flex flex-col justify-between p-5 sm:p-6 lg:p-7 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs overflow-hidden min-h-[220px]">
               
-              {/* Subtle Growth Trajectory Graphic in Background (Matching Image 1) */}
-              <div className="absolute right-3 bottom-3 opacity-15 pointer-events-none">
-                <TrendingUp className="w-40 h-40 text-emerald-400 stroke-[1]" />
-              </div>
-
               <div className="relative z-10 space-y-2 max-w-sm">
-                <p className="font-sans font-medium text-xs sm:text-[13px] text-slate-200 leading-relaxed">
+                <span className="text-[11px] font-bold tracking-wider uppercase text-[#202B61]/60">
+                  Global Release Track Record
+                </span>
+                <p className="font-sans font-medium text-xs sm:text-[13px] text-[#202B61]/80 leading-relaxed">
                   We engineered 50+ applications and Shopify stores worldwide, helping category leaders scale traffic, automate workflows, and retain customers.
                 </p>
               </div>
 
-              <div className="relative z-10 pt-6 flex items-end justify-between">
+              <div className="relative z-10 pt-5 flex items-end justify-between border-t border-slate-200/60 mt-4">
                 <div>
-                  <h4 className="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">
-                    4.9<span className="text-white/60 text-2xl font-normal">/5</span>
+                  <h4 className="font-heading font-black text-4xl sm:text-5xl text-[#202B61] tracking-tight">
+                    4.9<span className="text-[#202B61]/50 text-2xl font-normal">/5</span>
                   </h4>
-                  <div className="flex items-center gap-1 text-amber-400 mt-1">
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                  <div className="flex items-center gap-1 text-amber-500 mt-1">
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
                   </div>
                 </div>
 
                 <div className="text-right">
-                  <span className="text-[10.5px] font-bold uppercase tracking-widest text-slate-300 block">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#202B61]/50 block">
                     TRUSTED BY
                   </span>
-                  <span className="text-xs font-semibold text-white block">
+                  <span className="text-xs font-bold text-[#202B61] block">
                     CLIENTS WORLDWIDE
                   </span>
                 </div>
@@ -618,7 +616,7 @@ export default function ApplicationPage() {
       </section>
 
       {/* ── 2. FEATURED CASE CAROUSEL DECK (INSPIRED BY REFERENCE IMAGE 3 "What We've Built") ── */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#FAFAFC] border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 my-auto">
           
           {/* Section Header */}
@@ -628,34 +626,32 @@ export default function ApplicationPage() {
             </h2>
           </div>
 
-          {/* Elevated Floating 3D Showcase Card (Matching Image 3) */}
-          <div className="relative rounded-[28px] bg-white border border-slate-200/90 p-5 sm:p-7 lg:p-8 shadow-[0_16px_40px_rgba(32,43,97,0.06)]">
+          {/* Elevated Floating 3D Showcase Card (Clean App Store & Play Store Style) */}
+          <div className="relative rounded-[24px] bg-white border border-slate-200/80 p-5 sm:p-7 lg:p-8 shadow-[0_4px_24px_rgba(32,43,97,0.04)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
               
-              {/* Left Column: Visual Mockup Container (Matching the Squircle 3D Visual in Image 3) */}
+              {/* Left Column: Clean App Store Preview Container */}
               <div className="lg:col-span-6">
                 <div
                   role="button"
                   tabIndex={0}
                   onClick={() => handleOpenAppModal(currentDeckApp)}
-                  className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-slate-900 border border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.1)] cursor-pointer"
+                  className="group relative aspect-[16/10] w-full rounded-[18px] overflow-hidden bg-slate-50 border border-slate-200/80 cursor-pointer"
                 >
                   <Image
                     src={currentDeckApp.previewImage}
                     alt={currentDeckApp.name}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-104 transition-transform duration-700 ease-out"
+                    className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
                   />
-                  {/* Glowing Edge Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
-                  {/* Floating Action Pill */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs">
-                    <span className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 font-medium text-[11px]">
+                  {/* Subtle Floating Bottom Pill Bar */}
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs">
+                    <span className="bg-white/95 backdrop-blur-md text-[#202B61] px-3 py-1.5 rounded-full border border-slate-200/70 font-medium text-[11px] shadow-2xs">
                       {currentDeckApp.platforms}
                     </span>
-                    <span className="bg-white text-[#202B61] font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1 group-hover:bg-slate-100 text-[11px]">
+                    <span className="bg-[#202B61] text-white font-bold px-3.5 py-1.5 rounded-full shadow-2xs flex items-center gap-1 group-hover:bg-[#202B61]/90 text-[11px] transition-colors">
                       <span>View Specifications</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
@@ -663,28 +659,31 @@ export default function ApplicationPage() {
                 </div>
               </div>
 
-              {/* Right Column: Information, Impact Metrics, & Actions (Matching Image 3) */}
+              {/* Right Column: Clean Editorial Info, Metrics & Actions */}
               <div className="lg:col-span-6 space-y-4 sm:space-y-5 text-left">
                 
-                {/* Brand / Category Badge with Color Accent */}
-                <div className="flex items-center gap-2.5">
+                {/* App Icon Squircle & Category Line */}
+                <div className="flex items-center gap-3">
                   <div
-                    className={`w-8 h-8 rounded-xl bg-gradient-to-br ${currentDeckApp.themeColor} text-white flex items-center justify-center shadow-xs`}
+                    className="w-12 h-12 rounded-[16px] bg-[#f1f5f9] border border-slate-200/80 text-[#202B61] flex items-center justify-center shrink-0 shadow-2xs"
                   >
                     {currentDeckApp.category === "Shopify Stores" ? (
-                      <ShoppingBag className="w-4 h-4 stroke-[2]" />
+                      <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
                     ) : (
-                      <Smartphone className="w-4 h-4 stroke-[2]" />
+                      <Smartphone className="w-5 h-5 stroke-[1.8]" />
                     )}
                   </div>
-                  <div>
-                    <span className={`px-2.5 py-0.5 rounded-md text-[10.5px] font-bold uppercase tracking-wider ${currentDeckApp.badgeBg} ${currentDeckApp.badgeText}`}>
+                  <div className="min-w-0 space-y-0.5">
+                    <span className="inline-block text-[10.5px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
                       {currentDeckApp.category}
                     </span>
+                    <p className="font-sans text-[11px] text-slate-400 font-medium truncate">
+                      {currentDeckApp.subCategory}
+                    </p>
                   </div>
                 </div>
 
-                {/* Title & Tagline */}
+                {/* Title & Description */}
                 <div className="space-y-1.5">
                   <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight leading-tight">
                     {currentDeckApp.name}
@@ -694,21 +693,21 @@ export default function ApplicationPage() {
                   </p>
                 </div>
 
-                {/* 3 Impact Stat Metrics (Matching Image 3 "+40% Demo Booking, +25% Closing Rate, 3x Engagement") */}
+                {/* 3 Impact Stat Metrics */}
                 <div className="grid grid-cols-3 gap-3 py-3 border-y border-slate-100">
                   <div>
                     <h4 className="font-heading font-black text-xl sm:text-2xl text-[#202B61]">
                       {currentDeckApp.metrics.stat1.value}
                     </h4>
-                    <span className="text-[10.5px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
+                    <span className="text-[10.5px] font-sans text-slate-500 font-medium block mt-0.5 leading-snug">
                       {currentDeckApp.metrics.stat1.label}
                     </span>
                   </div>
                   <div className="border-l border-slate-100 pl-3">
-                    <h4 className="font-heading font-black text-xl sm:text-2xl text-emerald-600">
+                    <h4 className="font-heading font-black text-xl sm:text-2xl text-[#202B61]">
                       {currentDeckApp.metrics.stat2.value}
                     </h4>
-                    <span className="text-[10.5px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
+                    <span className="text-[10.5px] font-sans text-slate-500 font-medium block mt-0.5 leading-snug">
                       {currentDeckApp.metrics.stat2.label}
                     </span>
                   </div>
@@ -716,30 +715,30 @@ export default function ApplicationPage() {
                     <h4 className="font-heading font-black text-xl sm:text-2xl text-[#202B61]">
                       {currentDeckApp.metrics.stat3.value}
                     </h4>
-                    <span className="text-[10.5px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
+                    <span className="text-[10.5px] font-sans text-slate-500 font-medium block mt-0.5 leading-snug">
                       {currentDeckApp.metrics.stat3.label}
                     </span>
                   </div>
                 </div>
 
-                {/* Actions */}
+                {/* Actions: Clean App Store Style */}
                 <div className="flex flex-wrap items-center gap-3 pt-1">
                   <button
                     type="button"
                     onClick={() => handleOpenAppModal(currentDeckApp)}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-sm active:scale-95"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-2xs active:scale-95"
                   >
-                    <span>Read Full Case Study</span>
+                    <span>Read Case Study</span>
                     <ArrowUpRight className="w-4 h-4 text-white" />
                   </button>
 
                   <button
                     type="button"
                     onClick={() => handleOpenAppModal(currentDeckApp)}
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-[#202B61] font-sans font-bold text-xs sm:text-sm transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-[#202B61] font-sans font-semibold text-xs sm:text-sm transition-all cursor-pointer"
                   >
-                    <Download className="w-4 h-4" />
-                    <span>Download App / Store Demo</span>
+                    <Download className="w-4 h-4 text-[#202B61]/70" />
+                    <span>Download App / Demo</span>
                   </button>
                 </div>
 
@@ -845,24 +844,24 @@ export default function ApplicationPage() {
                       handleOpenAppModal(app);
                     }
                   }}
-                  className="group rounded-[24px] bg-[#f8fafc] border border-slate-200/90 p-5 sm:p-6 hover:border-[#202B61]/40 hover:shadow-[0_12px_36px_rgba(32,43,97,0.08)] cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                  className="group rounded-[20px] bg-white border border-slate-200/80 p-5 hover:border-[#202B61]/30 hover:shadow-[0_8px_30px_rgba(32,43,97,0.06)] cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
                 >
                   <div className="space-y-4">
                     
-                    {/* Header: Colorful Squircle Icon + App Info + GET Button */}
+                    {/* Header: App Store Squircle Icon + App Info + GET Button */}
                     <div className="flex items-center justify-between gap-3">
                       
                       <div className="flex items-center gap-3.5 min-w-0">
-                        {/* Radiant Gradient Squircle Icon */}
+                        {/* App Squircle Icon */}
                         <div
-                          className={`w-13 h-13 rounded-2xl bg-gradient-to-br ${app.themeColor} text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform`}
+                          className="w-12 h-12 rounded-[16px] bg-[#f1f5f9] border border-slate-200/80 text-[#202B61] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-102 transition-transform"
                         >
                           {isShopify ? (
-                            <ShoppingBag className="w-6 h-6 stroke-[1.8]" />
+                            <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
                           ) : app.iconType === "mobile" ? (
-                            <Smartphone className="w-6 h-6 stroke-[1.8]" />
+                            <Smartphone className="w-5 h-5 stroke-[1.8]" />
                           ) : (
-                            <Layers className="w-6 h-6 stroke-[1.8]" />
+                            <Layers className="w-5 h-5 stroke-[1.8]" />
                           )}
                         </div>
 
@@ -871,31 +870,31 @@ export default function ApplicationPage() {
                           <h3 className="font-heading font-bold text-base sm:text-[17px] text-[#202B61] leading-tight truncate">
                             {app.name}
                           </h3>
-                          <span className={`inline-block px-2 py-0.5 rounded text-[10.5px] font-bold uppercase tracking-wider ${app.badgeBg} ${app.badgeText}`}>
+                          <span className="inline-block text-[10.5px] font-semibold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
                             {app.subCategory}
                           </span>
                         </div>
                       </div>
 
                       {/* App Store 'GET' Pill Button */}
-                      <span className="shrink-0 inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white group-hover:bg-[#202B61] text-[#202B61] group-hover:text-white font-sans font-bold text-xs tracking-tight border border-slate-200/90 shadow-xs transition-colors duration-200">
+                      <span className="shrink-0 inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-slate-100 group-hover:bg-[#202B61] text-[#202B61] group-hover:text-white font-sans font-bold text-xs tracking-tight transition-colors duration-200">
                         GET
                       </span>
 
                     </div>
 
                     {/* Screenshot / Interface Preview */}
-                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-200 border border-slate-200/80">
+                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 border border-slate-100">
                       <Image
                         src={app.previewImage}
                         alt={app.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                        className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
                       />
-                      <div className="absolute inset-0 bg-[#202B61]/25 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                        <span className="bg-white/95 backdrop-blur-xs text-[#202B61] text-xs font-bold px-4 py-2 rounded-full shadow-sm flex items-center gap-1.5">
-                          <span>View Screenshots &amp; Download</span>
+                      <div className="absolute inset-0 bg-[#202B61]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                        <span className="bg-white/95 backdrop-blur-xs text-[#202B61] text-xs font-bold px-3.5 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
+                          <span>View Details</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
                         </span>
                       </div>
@@ -909,7 +908,7 @@ export default function ApplicationPage() {
                   </div>
 
                   {/* Bottom: Customer Rating & Platform Tag */}
-                  <div className="pt-3.5 mt-4 border-t border-slate-200/70 flex items-center justify-between text-xs">
+                  <div className="pt-3.5 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-1 text-amber-500 font-bold">
                       <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
                       <span>{app.rating}</span>
@@ -918,7 +917,7 @@ export default function ApplicationPage() {
                       </span>
                     </div>
 
-                    <span className="text-[#202B61]/70 font-semibold bg-white px-2.5 py-1 rounded-md border border-slate-200/70 shadow-2xs">
+                    <span className="text-slate-500 font-semibold bg-slate-50 px-2.5 py-1 rounded-md border border-slate-200/70 text-[11px]">
                       {app.platformBadge}
                     </span>
                   </div>
@@ -953,11 +952,11 @@ export default function ApplicationPage() {
               <X className="w-5 h-5" />
             </button>
 
-            {/* App Store Top Row: Radiant Icon + Name + Primary Download */}
+            {/* App Store Top Row: Clean Squircle Icon + Name + Primary Download */}
             <div className="flex items-start justify-between gap-4 pr-8">
               <div className="flex items-center gap-4">
                 <div
-                  className={`w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-gradient-to-br ${selectedApp.themeColor} text-white flex items-center justify-center shrink-0 shadow-md`}
+                  className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-[#f1f5f9] border border-slate-200/80 text-[#202B61] flex items-center justify-center shrink-0 shadow-2xs"
                 >
                   {selectedApp.category === "Shopify Stores" ? (
                     <ShoppingBag className="w-8 h-8 stroke-[1.8]" />
