@@ -15,8 +15,12 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  TrendingUp,
   ShieldCheck,
   Sparkles,
+  Zap,
+  Globe,
+  Award,
 } from "lucide-react";
 
 import { Header } from "@/components/layout/Header";
@@ -35,12 +39,19 @@ interface ApplicationItem {
   rating: number;
   reviewsCount: string;
   platformBadge: string;
-  iconBg: string;
+  themeColor: string; // Tailwind background gradient for icon & accents
+  badgeBg: string;
+  badgeText: string;
   iconType: "mobile" | "shopify" | "saas";
   previewImage: string;
   screenshots: string[];
   liveUrl?: string;
   description: string;
+  metrics: {
+    stat1: { label: string; value: string };
+    stat2: { label: string; value: string };
+    stat3: { label: string; value: string };
+  };
   highlights: string[];
   techStack: string[];
   client: string;
@@ -56,53 +67,17 @@ interface ApplicationItem {
 
 const APPLICATIONS: ApplicationItem[] = [
   {
-    id: "careflow-health",
-    name: "CareFlow Telehealth",
-    category: "Mobile Apps",
-    subCategory: "Medical & Telehealth",
-    tagline: "Encrypted patient portal with live WebRTC video visits and diagnostic report routing.",
-    rating: 4.9,
-    reviewsCount: "1.2k ratings",
-    platformBadge: "iOS & Android",
-    iconBg: "bg-emerald-600",
-    iconType: "mobile",
-    previewImage:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1000&auto=format&fit=crop",
-    ],
-    liveUrl: "https://careflow.demo.arkanet.com",
-    description:
-      "A patient-first healthcare mobile application engineered with encrypted WebRTC video encounters, instant diagnostic report delivery, and direct prescription routing.",
-    highlights: [
-      "Sub-second WebRTC video consultations with zero buffering",
-      "Biometric patient authentication with HIPAA-compliant data vault",
-      "Instant laboratory report push notifications & automated reminders",
-      "Integration with hospital Electronic Health Records (EHR) databases",
-    ],
-    techStack: ["React Native", "TypeScript", "WebRTC", "HIPAA Vault", "GraphQL"],
-    client: "CareFlow Health Group",
-    year: "2026",
-    platforms: "iOS 17+ • Android 14+ • iPadOS",
-    downloads: {
-      primaryLabel: "Download on App Store",
-      primaryType: "apple",
-      secondaryLabel: "Get on Google Play",
-      secondaryType: "android",
-    },
-  },
-  {
     id: "vesper-horology",
     name: "Vesper Luxury Horology",
     category: "Shopify Stores",
     subCategory: "Luxury Watches & Jewelry",
     tagline: "60fps WebGL 3D watch customizer with sub-second edge checkout delivery.",
     rating: 4.9,
-    reviewsCount: "860 ratings",
+    reviewsCount: "860 reviews",
     platformBadge: "Shopify Plus",
-    iconBg: "bg-amber-600",
+    themeColor: "from-amber-500 to-yellow-600",
+    badgeBg: "bg-amber-100",
+    badgeText: "text-amber-800",
     iconType: "shopify",
     previewImage:
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop",
@@ -114,6 +89,11 @@ const APPLICATIONS: ApplicationItem[] = [
     liveUrl: "https://vesper.demo.arkanet.com",
     description:
       "High-conversion bespoke Shopify Plus storefront featuring a 60fps WebGL 3D watch customizer, sub-second edge page loads, and localized international checkout.",
+    metrics: {
+      stat1: { label: "Conversion Lift", value: "+34%" },
+      stat2: { label: "Edge Page Load", value: "480ms" },
+      stat3: { label: "Avg. Cart Value", value: "3.2x" },
+    },
     highlights: [
       "Real-time 3D watch strap, bezel, and dial material visualizer",
       "Multi-currency conversion with duty and tax calculation at checkout",
@@ -132,15 +112,62 @@ const APPLICATIONS: ApplicationItem[] = [
     },
   },
   {
+    id: "careflow-health",
+    name: "CareFlow Telehealth",
+    category: "Mobile Apps",
+    subCategory: "Medical & Telehealth",
+    tagline: "Encrypted patient portal with live WebRTC video visits and diagnostic report routing.",
+    rating: 4.9,
+    reviewsCount: "1.2k reviews",
+    platformBadge: "iOS & Android",
+    themeColor: "from-emerald-500 to-teal-600",
+    badgeBg: "bg-emerald-100",
+    badgeText: "text-emerald-800",
+    iconType: "mobile",
+    previewImage:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+    screenshots: [
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1000&auto=format&fit=crop",
+    ],
+    liveUrl: "https://careflow.demo.arkanet.com",
+    description:
+      "A patient-first healthcare mobile application engineered with encrypted WebRTC video encounters, instant diagnostic report delivery, and direct prescription routing.",
+    metrics: {
+      stat1: { label: "Queue Efficiency", value: "+42%" },
+      stat2: { label: "Encounter Video Latency", value: "<250ms" },
+      stat3: { label: "HIPAA Compliant", value: "100%" },
+    },
+    highlights: [
+      "Sub-second WebRTC video consultations with zero buffering",
+      "Biometric patient authentication with HIPAA-compliant data vault",
+      "Instant laboratory report push notifications & automated reminders",
+      "Integration with hospital Electronic Health Records (EHR) databases",
+    ],
+    techStack: ["React Native", "TypeScript", "WebRTC", "HIPAA Vault", "GraphQL"],
+    client: "CareFlow Health Group",
+    year: "2026",
+    platforms: "iOS 17+ • Android 14+ • iPadOS",
+    downloads: {
+      primaryLabel: "Download on App Store",
+      primaryType: "apple",
+      secondaryLabel: "Get on Google Play",
+      secondaryType: "android",
+    },
+  },
+  {
     id: "kinetics-movement",
     name: "Kinetics Athlete Coach",
     category: "Mobile Apps",
     subCategory: "Health & Fitness",
     tagline: "On-device neural computer vision for real-time 30fps athletic movement analysis.",
     rating: 4.8,
-    reviewsCount: "2.4k ratings",
+    reviewsCount: "2.4k reviews",
     platformBadge: "iOS & watchOS",
-    iconBg: "bg-blue-600",
+    themeColor: "from-blue-600 to-cyan-500",
+    badgeBg: "bg-blue-100",
+    badgeText: "text-blue-800",
     iconType: "mobile",
     previewImage:
       "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop",
@@ -152,6 +179,11 @@ const APPLICATIONS: ApplicationItem[] = [
     liveUrl: "https://kinetics.demo.arkanet.com",
     description:
       "Athletic performance app utilizing on-device Apple Neural Engine pose estimation to provide 30fps joint tracking, repetition count, and instant audio feedback.",
+    metrics: {
+      stat1: { label: "Processing FPS", value: "30fps" },
+      stat2: { label: "Form Accuracy", value: "99.4%" },
+      stat3: { label: "User Retention", value: "88%" },
+    },
     highlights: [
       "Private on-device CoreML computer vision with zero server latency",
       "Audible posture warnings and barbell velocity tracking",
@@ -170,89 +202,17 @@ const APPLICATIONS: ApplicationItem[] = [
     },
   },
   {
-    id: "stonecraft-surfaces",
-    name: "StoneCraft Surfaces",
-    category: "Shopify Stores",
-    subCategory: "Home & Architecture",
-    tagline: "Architectural stone sampling, 2K slab inspector, and contractor wholesale portal.",
-    rating: 4.9,
-    reviewsCount: "430 ratings",
-    platformBadge: "Shopify Plus",
-    iconBg: "bg-slate-700",
-    iconType: "shopify",
-    previewImage:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop",
-    ],
-    liveUrl: "https://stonecraft.demo.arkanet.com",
-    description:
-      "Modern e-commerce platform for architectural stone and marble suppliers. Includes high-resolution slab inspection, sample request cart, and wholesale trade pricing.",
-    highlights: [
-      "2K texture zoom on natural marble, granite, and quartz slabs",
-      "Physical architectural sample checkout with real-time courier tracking",
-      "Verified contractor wholesale login with tiered quantity discounting",
-      "Direct ERP integration for warehouse slab bundle availability",
-    ],
-    techStack: ["Shopify Liquid", "Tailwind CSS", "Storefront API", "Edge CDN"],
-    client: "StoneCraft Natural Surfaces",
-    year: "2025",
-    platforms: "Shopify Plus • Custom Liquid Architecture",
-    downloads: {
-      primaryLabel: "Open Live Storefront",
-      primaryType: "shopify",
-      secondaryLabel: "Trade Portal Demo",
-      secondaryType: "web",
-    },
-  },
-  {
-    id: "parkease-mobility",
-    name: "ParkEase Smart Mobility",
-    category: "Mobile Apps",
-    subCategory: "Navigation & Transit",
-    tagline: "Connected Apple CarPlay transit navigator with live telemetry across 42,000+ bays.",
-    rating: 4.9,
-    reviewsCount: "5.8k ratings",
-    platformBadge: "iOS & Android",
-    iconBg: "bg-indigo-600",
-    iconType: "mobile",
-    previewImage:
-      "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=1000&auto=format&fit=crop",
-    ],
-    liveUrl: "https://parkease.demo.arkanet.com",
-    description:
-      "Smart city mobility application connecting drivers to real-time in-ground IoT sensors across urban parking garages, enabling automated bay reservations and contact-free gate exit.",
-    highlights: [
-      "Sub-second sensor telemetry across 42,000+ monitored parking bays",
-      "Turn-by-turn guidance directly into open spots via Apple CarPlay",
-      "Automated license plate recognition and frictionless mobile billing",
-      "Transit traffic prediction model reducing search latency by 38%",
-    ],
-    techStack: ["Flutter", "TensorFlow Edge", "MQTT IoT", "Apple CarPlay", "AWS"],
-    client: "Dubai Smart Mobility Initiative",
-    year: "2026",
-    platforms: "iOS 17+ • Android 14+ • Apple CarPlay",
-    downloads: {
-      primaryLabel: "Download on iOS",
-      primaryType: "apple",
-      secondaryLabel: "Get on Android",
-      secondaryType: "android",
-    },
-  },
-  {
     id: "moda-atelier",
     name: "Moda Atelier Milano",
     category: "Shopify Stores",
     subCategory: "Luxury Fashion",
     tagline: "Interactive runway video shopping and invitation-gated private client salon.",
     rating: 4.8,
-    reviewsCount: "1.9k ratings",
+    reviewsCount: "1.9k reviews",
     platformBadge: "Shopify Plus",
-    iconBg: "bg-stone-800",
+    themeColor: "from-rose-600 to-pink-600",
+    badgeBg: "bg-rose-100",
+    badgeText: "text-rose-800",
     iconType: "shopify",
     previewImage:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
@@ -263,6 +223,11 @@ const APPLICATIONS: ApplicationItem[] = [
     liveUrl: "https://moda.demo.arkanet.com",
     description:
       "Editorial digital flagship for an Italian luxury fashion house, featuring full-screen runway video integration, virtual styling appointments, and private VIP collection access.",
+    metrics: {
+      stat1: { label: "VIP Engagement", value: "4.5x" },
+      stat2: { label: "Shoppable Video CTR", value: "28%" },
+      stat3: { label: "Global Currencies", value: "32+" },
+    },
     highlights: [
       "Seamless runway video playback paired with interactive shoppable tags",
       "VIP private client shopping room gated by invitation code",
@@ -281,15 +246,105 @@ const APPLICATIONS: ApplicationItem[] = [
     },
   },
   {
+    id: "parkease-mobility",
+    name: "ParkEase Smart Mobility",
+    category: "Mobile Apps",
+    subCategory: "Navigation & Transit",
+    tagline: "Connected Apple CarPlay transit navigator with live telemetry across 42,000+ bays.",
+    rating: 4.9,
+    reviewsCount: "5.8k reviews",
+    platformBadge: "iOS & Android",
+    themeColor: "from-indigo-600 to-purple-600",
+    badgeBg: "bg-purple-100",
+    badgeText: "text-purple-800",
+    iconType: "mobile",
+    previewImage:
+      "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
+    screenshots: [
+      "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=1000&auto=format&fit=crop",
+    ],
+    liveUrl: "https://parkease.demo.arkanet.com",
+    description:
+      "Smart city mobility application connecting drivers to real-time in-ground IoT sensors across urban parking garages, enabling automated bay reservations and contact-free gate exit.",
+    metrics: {
+      stat1: { label: "Search Time Reduction", value: "38%" },
+      stat2: { label: "Connected Bays", value: "42,000+" },
+      stat3: { label: "Telemetry Uptime", value: "99.9%" },
+    },
+    highlights: [
+      "Sub-second sensor telemetry across 42,000+ monitored parking bays",
+      "Turn-by-turn guidance directly into open spots via Apple CarPlay",
+      "Automated license plate recognition and frictionless mobile billing",
+      "Transit traffic prediction model reducing search latency by 38%",
+    ],
+    techStack: ["Flutter", "TensorFlow Edge", "MQTT IoT", "Apple CarPlay", "AWS"],
+    client: "Dubai Smart Mobility Initiative",
+    year: "2026",
+    platforms: "iOS 17+ • Android 14+ • Apple CarPlay",
+    downloads: {
+      primaryLabel: "Download on iOS",
+      primaryType: "apple",
+      secondaryLabel: "Get on Android",
+      secondaryType: "android",
+    },
+  },
+  {
+    id: "stonecraft-surfaces",
+    name: "StoneCraft Surfaces",
+    category: "Shopify Stores",
+    subCategory: "Home & Architecture",
+    tagline: "Architectural stone sampling, 2K slab inspector, and contractor wholesale portal.",
+    rating: 4.9,
+    reviewsCount: "430 reviews",
+    platformBadge: "Shopify Plus",
+    themeColor: "from-stone-700 to-slate-800",
+    badgeBg: "bg-stone-100",
+    badgeText: "text-stone-800",
+    iconType: "shopify",
+    previewImage:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    screenshots: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop",
+    ],
+    liveUrl: "https://stonecraft.demo.arkanet.com",
+    description:
+      "Modern e-commerce platform for architectural stone and marble suppliers. Includes high-resolution slab inspection, sample request cart, and wholesale trade pricing.",
+    metrics: {
+      stat1: { label: "Sample Orders", value: "+110%" },
+      stat2: { label: "Texture Zoom", value: "2K Quad" },
+      stat3: { label: "Trade Wholesale", value: "Active" },
+    },
+    highlights: [
+      "2K texture zoom on natural marble, granite, and quartz slabs",
+      "Physical architectural sample checkout with real-time courier tracking",
+      "Verified contractor wholesale login with tiered quantity discounting",
+      "Direct ERP integration for warehouse slab bundle availability",
+    ],
+    techStack: ["Shopify Liquid", "Tailwind CSS", "Storefront API", "Edge CDN"],
+    client: "StoneCraft Natural Surfaces",
+    year: "2025",
+    platforms: "Shopify Plus • Custom Liquid Architecture",
+    downloads: {
+      primaryLabel: "Open Live Storefront",
+      primaryType: "shopify",
+      secondaryLabel: "Trade Portal Demo",
+      secondaryType: "web",
+    },
+  },
+  {
     id: "aura-botanicals",
     name: "Aura Living Botanicals",
     category: "Shopify Stores",
     subCategory: "Beauty & Wellness",
     tagline: "Clean organic skincare with personalized regimens and subscription replenishment.",
     rating: 4.8,
-    reviewsCount: "3.1k ratings",
+    reviewsCount: "3.1k reviews",
     platformBadge: "Shopify Store",
-    iconBg: "bg-rose-600",
+    themeColor: "from-orange-500 to-rose-500",
+    badgeBg: "bg-orange-100",
+    badgeText: "text-orange-800",
     iconType: "shopify",
     previewImage:
       "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
@@ -300,6 +355,11 @@ const APPLICATIONS: ApplicationItem[] = [
     liveUrl: "https://aura.demo.arkanet.com",
     description:
       "Minimalist Shopify storefront engineered for a clean beauty brand, combining editorial product storytelling, personalized skincare quiz, and recurring subscriptions.",
+    metrics: {
+      stat1: { label: "Subscription Rate", value: "+45%" },
+      stat2: { label: "Quiz Completion", value: "76%" },
+      stat3: { label: "Mobile Speed", value: "98/100" },
+    },
     highlights: [
       "Dynamic 6-step skin diagnostic quiz recommending custom regimens",
       "1-click recurring subscription discount and automated replenishment",
@@ -324,9 +384,11 @@ const APPLICATIONS: ApplicationItem[] = [
     subCategory: "Productivity & AI",
     tagline: "Private enterprise knowledge retrieval and departmental AI workflow assistant.",
     rating: 4.9,
-    reviewsCount: "640 ratings",
+    reviewsCount: "640 reviews",
     platformBadge: "Web & Cloud",
-    iconBg: "bg-cyan-700",
+    themeColor: "from-cyan-600 to-blue-700",
+    badgeBg: "bg-cyan-100",
+    badgeText: "text-cyan-800",
     iconType: "saas",
     previewImage:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
@@ -337,6 +399,11 @@ const APPLICATIONS: ApplicationItem[] = [
     liveUrl: "https://neuraldesk.demo.arkanet.com",
     description:
       "Self-hosted enterprise AI intelligence system indexing corporate repositories, legal contracts, and ERP data with role-based access control and strict data privacy.",
+    metrics: {
+      stat1: { label: "Internal Ticket Drop", value: "-84%" },
+      stat2: { label: "Citation Accuracy", value: "99.8%" },
+      stat3: { label: "Data Leakage", value: "0%" },
+    },
     highlights: [
       "Semantic vector indexing across PDF documents, spreadsheets, and databases",
       "Granular departmental access controls ensuring zero unapproved data leaks",
@@ -356,7 +423,7 @@ const APPLICATIONS: ApplicationItem[] = [
   },
 ];
 
-const FEATURED_SLIDES = APPLICATIONS.slice(0, 6);
+const FEATURED_SLIDES = APPLICATIONS.slice(0, 5);
 
 const CATEGORIES: ApplicationCategory[] = [
   "All",
@@ -389,19 +456,17 @@ export default function ApplicationPage() {
   const [selectedApp, setSelectedApp] = useState<ApplicationItem | null>(null);
   const [activeScreenshotIdx, setActiveScreenshotIdx] = useState(0);
 
-  // Horizontal interactive slider ref for the right-side carousel
-  const sliderTrackRef = useRef<HTMLDivElement>(null);
+  // Deck carousel index (Image 3 inspired)
+  const [activeDeckIdx, setActiveDeckIdx] = useState(0);
 
   const openContact = () => setContactOpen(true);
 
-  const handleScrollLeft = () => {
-    if (!sliderTrackRef.current) return;
-    sliderTrackRef.current.scrollBy({ left: -360, behavior: "smooth" });
+  const handlePrevDeck = () => {
+    setActiveDeckIdx((prev) => (prev - 1 + FEATURED_SLIDES.length) % FEATURED_SLIDES.length);
   };
 
-  const handleScrollRight = () => {
-    if (!sliderTrackRef.current) return;
-    sliderTrackRef.current.scrollBy({ left: 360, behavior: "smooth" });
+  const handleNextDeck = () => {
+    setActiveDeckIdx((prev) => (prev + 1) % FEATURED_SLIDES.length);
   };
 
   const filteredApps =
@@ -414,187 +479,337 @@ export default function ApplicationPage() {
     setActiveScreenshotIdx(0);
   };
 
+  const currentDeckApp = FEATURED_SLIDES[activeDeckIdx];
+
   return (
-    <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#F8FAFC] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       {/* ── HEADER ── */}
       <Header onOpenBooking={openContact} />
 
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. PROPER FIRST PAGE (LEFT: PROPER HEADING & METADATA, RIGHT: INTERACTIVE SLIDING SHOWCASE) ── */}
-      <section className="relative w-full pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-18 lg:pb-20 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 overflow-hidden text-left">
-        <div className="max-w-[1400px] w-full mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      {/* ── 1. BENTO HERO SHOWCASE (INSPIRED BY REFERENCE IMAGES 1 & 2) ── */}
+      <section className="relative w-full pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left">
+        <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
+          
+          {/* Header Row: Large Typography (Matching Image 1: "Our focus is simple / Design to convert") */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2">
+            <div className="space-y-2 max-w-3xl">
+              <span className="font-heading font-medium text-lg sm:text-xl lg:text-2xl text-slate-400 block tracking-tight">
+                Our focus is simple
+              </span>
+              <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08] text-balance">
+                Design to scale &amp; convert
+              </h1>
+            </div>
+
+            <p className="font-sans text-sm sm:text-base text-[#202B61]/70 leading-relaxed font-normal max-w-md lg:text-right">
+              We engineer production mobile apps and flagship Shopify websites that turn technical architecture into measurable commercial growth.
+            </p>
+          </div>
+
+          {/* Bento Cards Grid (Matching Image 1 & Image 2) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5">
             
-            {/* ── LEFT COLUMN: PROPER HEADING, SUBHEADING, AND NAVIGATION CONTROLS ── */}
-            <div className="lg:col-span-5 space-y-6">
-              
-              {/* Rating Eyebrow */}
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-amber-500 font-bold text-xs sm:text-[13px]">
-                  <Star className="w-4 h-4 fill-amber-400 stroke-amber-500" />
-                  <span>4.9 ★</span>
+            {/* Card 1: Avatar stack & Partners (Span 3) */}
+            <div className="lg:col-span-3 flex flex-col justify-between p-6 sm:p-7 rounded-[28px] bg-[#f8fafc] border border-slate-200/80 shadow-xs">
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
+                    CF
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-amber-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
+                    VH
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-blue-600 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
+                    KP
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-rose-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
+                    MA
+                  </div>
                 </div>
-                <span className="text-slate-300">•</span>
-                <span className="font-sans font-semibold text-xs sm:text-[13px] text-[#202B61]/70">
-                  App Store &amp; Shopify Verified Releases
+                <span className="text-[11px] font-bold tracking-wider uppercase text-[#202B61]/70">
+                  50+ Global Releases
                 </span>
               </div>
 
-              {/* Proper Massive Headline (Punchy, Authoritative) */}
-              <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[54px] text-[#202B61] tracking-tight leading-[1.08] text-balance">
-                Applications &amp; Shopify Storefronts
-              </h1>
-
-              {/* Subheading */}
-              <p className="font-sans text-sm sm:text-base lg:text-[16.5px] text-[#202B61]/80 leading-relaxed font-normal max-w-lg">
-                Explore our production-grade mobile applications, high-converting Shopify websites, and autonomous enterprise systems engineered to scale internationally.
-              </p>
-
-              {/* Navigation Arrows for the Right-Side Interactive Slider */}
-              <div className="flex items-center gap-3 pt-2">
-                <button
-                  type="button"
-                  onClick={handleScrollLeft}
-                  className="w-12 h-12 rounded-full bg-[#202B61] hover:bg-[#202B61]/90 active:scale-95 text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"
-                  aria-label="Previous product"
-                >
-                  <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-                </button>
-
-                <button
-                  type="button"
-                  onClick={handleScrollRight}
-                  className="w-12 h-12 rounded-full bg-[#202B61] hover:bg-[#202B61]/90 active:scale-95 text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"
-                  aria-label="Next product"
-                >
-                  <ChevronRight className="w-5 h-5 stroke-[2.5]" />
-                </button>
+              <div className="pt-8 space-y-1">
+                <span className="font-sans text-xs text-[#202B61]/65 font-medium block">
+                  Average Enterprise ROI Timeline
+                </span>
+                <h3 className="font-heading font-extrabold text-4xl text-[#202B61] tracking-tight">
+                  90%
+                </h3>
+                <p className="font-sans text-xs text-[#202B61]/75">
+                  Return on investment within 90 days of launch
+                </p>
               </div>
-
             </div>
 
-            {/* ── RIGHT COLUMN: INTERACTIVE SLIDING PRODUCT SHOWCASE CAROUSEL ── */}
-            <div className="lg:col-span-7 overflow-hidden">
-              <div
-                ref={sliderTrackRef}
-                className="flex items-stretch gap-4 sm:gap-5 overflow-x-auto no-scrollbar scroll-smooth py-2 pr-2"
-                style={{ scrollSnapType: "x mandatory" }}
-              >
-                {FEATURED_SLIDES.map((slide) => {
-                  const isShopify = slide.category === "Shopify Stores";
-
-                  return (
-                    <div
-                      key={slide.id}
-                      className="w-[290px] sm:w-[330px] lg:w-[345px] shrink-0 rounded-2xl bg-[#f8fafc] border border-slate-200/90 p-5 flex flex-col justify-between shadow-[0_4px_20px_rgba(32,43,97,0.05)] hover:shadow-[0_10px_32px_rgba(32,43,97,0.10)] hover:border-[#202B61]/35 transition-all duration-300"
-                      style={{ scrollSnapAlign: "start" }}
-                    >
-                      <div className="space-y-4">
-                        
-                        {/* Top: Icon + Category + GET Action */}
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="flex items-center gap-3 min-w-0">
-                            {/* App Squircle Icon */}
-                            <div
-                              className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${slide.iconBg} text-white flex items-center justify-center shrink-0 shadow-sm`}
-                            >
-                              {isShopify ? (
-                                <ShoppingBag className="w-5.5 h-5.5 stroke-[1.8]" />
-                              ) : slide.iconType === "mobile" ? (
-                                <Smartphone className="w-5.5 h-5.5 stroke-[1.8]" />
-                              ) : (
-                                <Layers className="w-5.5 h-5.5 stroke-[1.8]" />
-                              )}
-                            </div>
-
-                            <div className="min-w-0 space-y-0.5">
-                              <span className="block text-[10.5px] font-bold uppercase tracking-wider text-[#202B61]/60 truncate">
-                                {slide.category}
-                              </span>
-                              <div className="flex items-center gap-1 text-amber-500 font-bold text-xs">
-                                <Star className="w-3 h-3 fill-amber-400 stroke-amber-500" />
-                                <span>{slide.rating}</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          <button
-                            type="button"
-                            onClick={() => handleOpenAppModal(slide)}
-                            className="px-3.5 py-1.5 rounded-full bg-[#202B61] text-white hover:bg-[#202B61]/90 font-sans font-bold text-xs tracking-tight transition-all cursor-pointer shadow-xs active:scale-95"
-                          >
-                            GET
-                          </button>
-                        </div>
-
-                        {/* Middle: Crisp Visual Picture / Interface Preview */}
-                        <div
-                          role="button"
-                          tabIndex={0}
-                          onClick={() => handleOpenAppModal(slide)}
-                          className="group relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80 cursor-pointer"
-                        >
-                          <Image
-                            src={slide.previewImage}
-                            alt={slide.name}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 350px"
-                            className="object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
-                          />
-                          <div className="absolute inset-0 bg-[#202B61]/25 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                            <span className="bg-white/95 backdrop-blur-xs text-[#202B61] text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
-                              <span>View Specs</span>
-                              <ArrowUpRight className="w-3.5 h-3.5" />
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* App Details: Title + Tagline */}
-                        <div className="space-y-1">
-                          <h3 className="font-heading font-bold text-base sm:text-lg text-[#202B61] leading-snug">
-                            {slide.name}
-                          </h3>
-                          <p className="font-sans text-xs text-[#202B61]/75 leading-relaxed line-clamp-2">
-                            {slide.tagline}
-                          </p>
-                        </div>
-
-                      </div>
-
-                      {/* Bottom Footer: Platform Tag */}
-                      <div className="pt-3 mt-4 border-t border-slate-200/70 flex items-center justify-between text-[11px] text-[#202B61]/70">
-                        <span className="font-medium truncate">{slide.platforms}</span>
-                        <span className="font-bold text-emerald-600 shrink-0">Live</span>
-                      </div>
-
-                    </div>
-                  );
-                })}
+            {/* Card 2: Revenue Generated (Span 4) */}
+            <div className="lg:col-span-4 flex flex-col justify-between p-6 sm:p-7 rounded-[28px] bg-[#f8fafc] border border-slate-200/80 shadow-xs">
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-[#202B61]/70">
+                  Through custom-tailored mobile &amp; e-commerce systems
+                </span>
               </div>
+
+              <div className="pt-6 space-y-3">
+                <div>
+                  <h3 className="font-heading font-black text-5xl text-[#202B61] tracking-tight">
+                    $45M<span className="text-emerald-600 font-bold">+</span>
+                  </h3>
+                  <span className="text-xs font-sans text-[#202B61]/65 font-medium block mt-0.5">
+                    Client transaction volume powered in 2025–2026
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 pt-2 border-t border-slate-200/60 text-xs font-semibold text-[#202B61]/80">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Available for Q2 Architecture &amp; App Builds</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Dark High-Contrast Statement Card (Span 5 - Matching Image 1 Dark Card) */}
+            <div className="lg:col-span-5 relative flex flex-col justify-between p-6 sm:p-8 rounded-[28px] bg-[#151E48] text-white shadow-[0_12px_40px_rgba(21,30,72,0.18)] overflow-hidden">
+              
+              {/* Subtle Growth Trajectory Graphic in Background (Matching Image 1) */}
+              <div className="absolute right-3 bottom-3 opacity-15 pointer-events-none">
+                <TrendingUp className="w-48 h-48 text-emerald-400 stroke-[1]" />
+              </div>
+
+              <div className="relative z-10 space-y-2 max-w-sm">
+                <p className="font-sans font-medium text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  We engineered 50+ applications and Shopify stores worldwide, helping category leaders scale traffic, automate workflows, and retain customers.
+                </p>
+              </div>
+
+              <div className="relative z-10 pt-8 flex items-end justify-between">
+                <div>
+                  <h4 className="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">
+                    4.9<span className="text-white/60 text-2xl font-normal">/5</span>
+                  </h4>
+                  <div className="flex items-center gap-1 text-amber-400 mt-1">
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                  </div>
+                </div>
+
+                <div className="text-right">
+                  <span className="text-[10.5px] font-bold uppercase tracking-widest text-slate-300 block">
+                    TRUSTED BY
+                  </span>
+                  <span className="text-xs font-semibold text-white block">
+                    CLIENTS WORLDWIDE
+                  </span>
+                </div>
+              </div>
+
             </div>
 
           </div>
+
         </div>
       </section>
 
-      {/* ── 2. FULL DIRECTORY GRID WITH CATEGORY FILTERS ── */}
-      <section className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#f4f6fb]">
-        <div className="max-w-[1400px] mx-auto space-y-6">
+      {/* ── 2. FEATURED CASE CAROUSEL DECK (INSPIRED BY REFERENCE IMAGE 3 "What We've Built") ── */}
+      <section className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 text-left overflow-hidden">
+        <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
+          
+          {/* Section Header */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="space-y-1.5">
+              <span className="text-xs font-bold tracking-widest uppercase text-[#202B61]/60 block font-mono">
+                001 • FEATURED SHOWCASE
+              </span>
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight">
+                What We&apos;ve Built
+              </h2>
+            </div>
 
-          {/* Section Heading & Category Filter Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 border-b border-slate-200/80">
+            {/* Navigation Arrows & Counter */}
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-mono font-bold text-[#202B61]/60 mr-1">
+                0{activeDeckIdx + 1} / 0{FEATURED_SLIDES.length}
+              </span>
+              <button
+                type="button"
+                onClick={handlePrevDeck}
+                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200/90 text-[#202B61] flex items-center justify-center shadow-xs cursor-pointer active:scale-95 transition-all"
+                aria-label="Previous featured release"
+              >
+                <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
+              </button>
+              <button
+                type="button"
+                onClick={handleNextDeck}
+                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200/90 text-[#202B61] flex items-center justify-center shadow-xs cursor-pointer active:scale-95 transition-all"
+                aria-label="Next featured release"
+              >
+                <ChevronRight className="w-4 h-4 stroke-[2.5]" />
+              </button>
+            </div>
+          </div>
+
+          {/* Elevated Floating 3D Showcase Card (Matching Image 3) */}
+          <div className="relative rounded-[32px] bg-white border border-slate-200/90 p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(32,43,97,0.08)]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              {/* Left Column: Visual Mockup Container (Matching the Squircle 3D Visual in Image 3) */}
+              <div className="lg:col-span-6">
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => handleOpenAppModal(currentDeckApp)}
+                  className="group relative aspect-[16/11] w-full rounded-[24px] overflow-hidden bg-slate-900 border border-slate-200 shadow-[0_12px_36px_rgba(0,0,0,0.12)] cursor-pointer"
+                >
+                  <Image
+                    src={currentDeckApp.previewImage}
+                    alt={currentDeckApp.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-104 transition-transform duration-700 ease-out"
+                  />
+                  {/* Glowing Edge Vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  
+                  {/* Floating Action Pill */}
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
+                    <span className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 font-medium">
+                      {currentDeckApp.platforms}
+                    </span>
+                    <span className="bg-white text-[#202B61] font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1 group-hover:bg-slate-100">
+                      <span>View Specifications</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Information, Impact Metrics, & Actions (Matching Image 3) */}
+              <div className="lg:col-span-6 space-y-6 text-left">
+                
+                {/* Brand / Category Badge with Color Accent */}
+                <div className="flex items-center gap-2.5">
+                  <div
+                    className={`w-9 h-9 rounded-xl bg-gradient-to-br ${currentDeckApp.themeColor} text-white flex items-center justify-center shadow-xs`}
+                  >
+                    {currentDeckApp.category === "Shopify Stores" ? (
+                      <ShoppingBag className="w-4.5 h-4.5 stroke-[2]" />
+                    ) : (
+                      <Smartphone className="w-4.5 h-4.5 stroke-[2]" />
+                    )}
+                  </div>
+                  <div>
+                    <span className={`px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider ${currentDeckApp.badgeBg} ${currentDeckApp.badgeText}`}>
+                      {currentDeckApp.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Title & Tagline */}
+                <div className="space-y-2">
+                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
+                    {currentDeckApp.name}
+                  </h3>
+                  <p className="font-sans text-sm sm:text-base text-[#202B61]/75 leading-relaxed font-normal">
+                    {currentDeckApp.description}
+                  </p>
+                </div>
+
+                {/* 3 Impact Stat Metrics (Matching Image 3 "+40% Demo Booking, +25% Closing Rate, 3x Engagement") */}
+                <div className="grid grid-cols-3 gap-3 py-4 border-y border-slate-100">
+                  <div>
+                    <h4 className="font-heading font-black text-2xl sm:text-3xl text-[#202B61]">
+                      {currentDeckApp.metrics.stat1.value}
+                    </h4>
+                    <span className="text-[11px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
+                      {currentDeckApp.metrics.stat1.label}
+                    </span>
+                  </div>
+                  <div className="border-l border-slate-100 pl-3">
+                    <h4 className="font-heading font-black text-2xl sm:text-3xl text-emerald-600">
+                      {currentDeckApp.metrics.stat2.value}
+                    </h4>
+                    <span className="text-[11px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
+                      {currentDeckApp.metrics.stat2.label}
+                    </span>
+                  </div>
+                  <div className="border-l border-slate-100 pl-3">
+                    <h4 className="font-heading font-black text-2xl sm:text-3xl text-[#202B61]">
+                      {currentDeckApp.metrics.stat3.value}
+                    </h4>
+                    <span className="text-[11px] font-sans text-[#202B61]/65 font-medium block mt-0.5 leading-snug">
+                      {currentDeckApp.metrics.stat3.label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex flex-wrap items-center gap-3 pt-1">
+                  <button
+                    type="button"
+                    onClick={() => handleOpenAppModal(currentDeckApp)}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-sm active:scale-95"
+                  >
+                    <span>Read Full Case Study</span>
+                    <ArrowUpRight className="w-4 h-4 text-white" />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => handleOpenAppModal(currentDeckApp)}
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-[#202B61] font-sans font-bold text-xs sm:text-sm transition-all cursor-pointer"
+                  >
+                    <Download className="w-4 h-4" />
+                    <span>Download App / Store Demo</span>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          {/* Quick Deck Pagination Dots */}
+          <div className="flex items-center justify-center gap-2 pt-2">
+            {FEATURED_SLIDES.map((slide, idx) => (
+              <button
+                key={slide.id}
+                type="button"
+                onClick={() => setActiveDeckIdx(idx)}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  idx === activeDeckIdx ? "w-8 bg-[#202B61]" : "w-2 bg-slate-300 hover:bg-slate-400"
+                }`}
+                aria-label={`Slide to ${slide.name}`}
+              />
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── 3. FULL APP STORE & SHOPIFY DIRECTORY (COLORFUL SQUIRCLES, REVIEWS, GET BUTTONS) ── */}
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-white">
+        <div className="max-w-[1400px] mx-auto space-y-8">
+
+          {/* Directory Header & Category Filter Tabs */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-slate-200/80">
             <div className="space-y-1">
-              <h2 className="font-heading font-extrabold text-xl sm:text-2xl text-[#202B61] tracking-tight">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight">
                 All Applications &amp; Storefronts
               </h2>
               <p className="font-sans text-xs sm:text-sm text-[#202B61]/70">
-                Verified customer ratings, production releases, and architectural breakdowns.
+                Browse our complete catalog of verified mobile releases and e-commerce platforms.
               </p>
             </div>
 
-            {/* Segmented Category Filter Pills */}
+            {/* Segmented Filter Pills */}
             <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
               {CATEGORIES.map((category) => {
                 const isActive = selectedCategory === category;
@@ -603,10 +818,10 @@ export default function ApplicationPage() {
                     key={category}
                     type="button"
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
+                    className={`px-4 py-2 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
                       isActive
                         ? "bg-[#202B61] text-white shadow-xs"
-                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-100 border border-slate-200/90"
+                        : "bg-slate-100 text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-200"
                     }`}
                   >
                     {category}
@@ -617,7 +832,7 @@ export default function ApplicationPage() {
           </div>
 
           {/* 3-Column Visual Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {filteredApps.map((app) => {
               const isShopify = app.category === "Shopify Stores";
 
@@ -633,72 +848,71 @@ export default function ApplicationPage() {
                       handleOpenAppModal(app);
                     }
                   }}
-                  className="group rounded-[6px] bg-white border border-slate-200/90 p-4 sm:p-5 hover:border-[#202B61]/40 hover:shadow-[0_8px_24px_rgba(32,43,97,0.07)] cursor-pointer transition-all duration-200 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                  className="group rounded-[24px] bg-[#f8fafc] border border-slate-200/90 p-5 sm:p-6 hover:border-[#202B61]/40 hover:shadow-[0_12px_36px_rgba(32,43,97,0.08)] cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
                 >
-                  <div className="space-y-3.5">
+                  <div className="space-y-4">
                     
-                    {/* Header: App Store Icon + Identity + GET Button */}
+                    {/* Header: Colorful Squircle Icon + App Info + GET Button */}
                     <div className="flex items-center justify-between gap-3">
                       
-                      {/* Left: App Icon & Name */}
-                      <div className="flex items-center gap-3 min-w-0">
-                        {/* Squircle App Icon */}
+                      <div className="flex items-center gap-3.5 min-w-0">
+                        {/* Radiant Gradient Squircle Icon */}
                         <div
-                          className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${app.iconBg} text-white flex items-center justify-center shrink-0 shadow-[0_2px_8px_rgba(0,0,0,0.12)] group-hover:scale-103 transition-transform`}
+                          className={`w-13 h-13 rounded-2xl bg-gradient-to-br ${app.themeColor} text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform`}
                         >
                           {isShopify ? (
-                            <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
+                            <ShoppingBag className="w-6 h-6 stroke-[1.8]" />
                           ) : app.iconType === "mobile" ? (
-                            <Smartphone className="w-5 h-5 stroke-[1.8]" />
+                            <Smartphone className="w-6 h-6 stroke-[1.8]" />
                           ) : (
-                            <Layers className="w-5 h-5 stroke-[1.8]" />
+                            <Layers className="w-6 h-6 stroke-[1.8]" />
                           )}
                         </div>
 
-                        {/* Title & Category */}
+                        {/* Title & Category Line */}
                         <div className="min-w-0 space-y-0.5">
-                          <h3 className="font-heading font-bold text-[14.5px] sm:text-[15px] text-[#202B61] leading-tight truncate">
+                          <h3 className="font-heading font-bold text-base sm:text-[17px] text-[#202B61] leading-tight truncate">
                             {app.name}
                           </h3>
-                          <p className="font-sans text-[11.5px] text-[#202B61]/70 truncate">
+                          <span className={`inline-block px-2 py-0.5 rounded text-[10.5px] font-bold uppercase tracking-wider ${app.badgeBg} ${app.badgeText}`}>
                             {app.subCategory}
-                          </p>
+                          </span>
                         </div>
                       </div>
 
-                      {/* Right: App Store 'GET' Action Pill */}
-                      <span className="shrink-0 inline-flex items-center justify-center px-3 py-1 rounded-full bg-slate-100 group-hover:bg-[#202B61] text-[#202B61] group-hover:text-white font-sans font-bold text-xs tracking-tight transition-colors duration-200">
+                      {/* App Store 'GET' Pill Button */}
+                      <span className="shrink-0 inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white group-hover:bg-[#202B61] text-[#202B61] group-hover:text-white font-sans font-bold text-xs tracking-tight border border-slate-200/90 shadow-xs transition-colors duration-200">
                         GET
                       </span>
 
                     </div>
 
-                    {/* Middle: Clean Interface Picture Preview */}
-                    <div className="relative aspect-[16/10] w-full rounded-[4px] overflow-hidden bg-slate-100 border border-slate-200/80">
+                    {/* Screenshot / Interface Preview */}
+                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-200 border border-slate-200/80">
                       <Image
                         src={app.previewImage}
                         alt={app.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
+                        className="object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
                       />
-                      <div className="absolute inset-0 bg-[#202B61]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                        <span className="bg-white/95 backdrop-blur-xs text-[#202B61] text-xs font-bold px-3 py-1.5 rounded-[4px] shadow-sm flex items-center gap-1.5">
+                      <div className="absolute inset-0 bg-[#202B61]/25 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                        <span className="bg-white/95 backdrop-blur-xs text-[#202B61] text-xs font-bold px-4 py-2 rounded-full shadow-sm flex items-center gap-1.5">
                           <span>View Screenshots &amp; Download</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
                         </span>
                       </div>
                     </div>
 
-                    {/* Short Tagline / Summary */}
-                    <p className="font-sans text-xs text-[#202B61]/80 leading-relaxed line-clamp-2">
+                    {/* Short Tagline */}
+                    <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/80 leading-relaxed line-clamp-2">
                       {app.tagline}
                     </p>
 
                   </div>
 
                   {/* Bottom: Customer Rating & Platform Tag */}
-                  <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between text-[11.5px]">
+                  <div className="pt-3.5 mt-4 border-t border-slate-200/70 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-1 text-amber-500 font-bold">
                       <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
                       <span>{app.rating}</span>
@@ -707,7 +921,7 @@ export default function ApplicationPage() {
                       </span>
                     </div>
 
-                    <span className="text-[#202B61]/70 font-medium bg-slate-50 px-2 py-0.5 rounded-[4px] border border-slate-200/70">
+                    <span className="text-[#202B61]/70 font-semibold bg-white px-2.5 py-1 rounded-md border border-slate-200/70 shadow-2xs">
                       {app.platformBadge}
                     </span>
                   </div>
@@ -720,7 +934,7 @@ export default function ApplicationPage() {
         </div>
       </section>
 
-      {/* ── 3. DETAILED APP STORE MODAL SHEET (ALL DETAILS + DOWNLOAD OPTIONS) ── */}
+      {/* ── 4. DETAILED APP STORE MODAL SHEET (ALL DETAILS + DOWNLOAD OPTIONS) ── */}
       {selectedApp && (
         <div
           role="dialog"
@@ -729,24 +943,24 @@ export default function ApplicationPage() {
           onClick={() => setSelectedApp(null)}
         >
           <div
-            className="relative w-full max-w-2xl bg-white rounded-[8px] border border-slate-200/90 p-5 sm:p-7 space-y-5 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
+            className="relative w-full max-w-2xl bg-white rounded-[24px] border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               type="button"
               onClick={() => setSelectedApp(null)}
-              className="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-[#202B61] transition-colors cursor-pointer rounded-full hover:bg-slate-100"
+              className="absolute top-5 right-5 p-2 text-slate-400 hover:text-[#202B61] transition-colors cursor-pointer rounded-full hover:bg-slate-100"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* App Store Top Row: Icon + Name + Primary Download */}
+            {/* App Store Top Row: Radiant Icon + Name + Primary Download */}
             <div className="flex items-start justify-between gap-4 pr-8">
-              <div className="flex items-center gap-3.5 sm:gap-4">
+              <div className="flex items-center gap-4">
                 <div
-                  className={`w-16 h-16 sm:w-18 sm:h-18 rounded-2xl ${selectedApp.iconBg} text-white flex items-center justify-center shrink-0 shadow-md`}
+                  className={`w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-gradient-to-br ${selectedApp.themeColor} text-white flex items-center justify-center shrink-0 shadow-md`}
                 >
                   {selectedApp.category === "Shopify Stores" ? (
                     <ShoppingBag className="w-8 h-8 stroke-[1.8]" />
@@ -777,7 +991,7 @@ export default function ApplicationPage() {
                   setSelectedApp(null);
                   openContact();
                 }}
-                className="shrink-0 inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs"
+                className="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>GET</span>
@@ -785,7 +999,7 @@ export default function ApplicationPage() {
             </div>
 
             {/* App Store Key Metrics Bar */}
-            <div className="grid grid-cols-3 gap-2 py-2.5 px-3 rounded-[6px] bg-slate-50 border border-slate-200/70 text-center text-xs">
+            <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-xl bg-slate-50 border border-slate-200/70 text-center text-xs">
               <div>
                 <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
                   Customer Rating
@@ -838,7 +1052,7 @@ export default function ApplicationPage() {
                     setSelectedApp(null);
                     openContact();
                   }}
-                  className="flex items-center justify-between p-3 rounded-[6px] bg-white border border-slate-200 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
                 >
                   <div className="flex items-center gap-2.5">
                     {selectedApp.downloads.primaryType === "apple" ? (
@@ -868,7 +1082,7 @@ export default function ApplicationPage() {
                       setSelectedApp(null);
                       openContact();
                     }}
-                    className="flex items-center justify-between p-3 rounded-[6px] bg-white border border-slate-200 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
+                    className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
                   >
                     <div className="flex items-center gap-2.5">
                       {selectedApp.downloads.secondaryType === "android" ? (
@@ -898,7 +1112,7 @@ export default function ApplicationPage() {
               </span>
 
               {/* Main Screenshot Preview */}
-              <div className="relative aspect-[16/9] w-full rounded-[6px] overflow-hidden bg-slate-100 border border-slate-200/80">
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
                 <Image
                   src={selectedApp.screenshots[activeScreenshotIdx] || selectedApp.previewImage}
                   alt={selectedApp.name}
@@ -915,7 +1129,7 @@ export default function ApplicationPage() {
                       key={idx}
                       type="button"
                       onClick={() => setActiveScreenshotIdx(idx)}
-                      className={`relative w-20 h-12 rounded-[4px] overflow-hidden border cursor-pointer transition-all ${
+                      className={`relative w-20 h-12 rounded-lg overflow-hidden border cursor-pointer transition-all ${
                         activeScreenshotIdx === idx
                           ? "border-[#202B61] ring-2 ring-[#202B61]/20 scale-102"
                           : "border-slate-200 opacity-60 hover:opacity-100"
@@ -982,7 +1196,7 @@ export default function ApplicationPage() {
                   setSelectedApp(null);
                   openContact();
                 }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs ml-auto"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs ml-auto"
               >
                 <span>Request Custom Build &amp; Source</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -993,10 +1207,10 @@ export default function ApplicationPage() {
         </div>
       )}
 
-      {/* ── 4. CLOSING CTA ── */}
+      {/* ── 5. CLOSING CTA ── */}
       <AboutCTA onOpenBooking={openContact} />
 
-      {/* ── 5. FOOTER ── */}
+      {/* ── 6. FOOTER ── */}
       <Footer onOpenBooking={openContact} />
     </main>
   );
