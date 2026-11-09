@@ -123,9 +123,9 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
               >
                 {/* Content Area: Vertically and horizontally centered in the mid */}
                 <div className="relative w-full flex-1 flex flex-col justify-center my-auto">
-                  {/* Default State: Larger Heading, cleanly centered in the mid */}
+                  {/* Default State: Refined Heading, cleanly centered in the mid */}
                   <div className="transition-all duration-200 ease-out group-hover:opacity-0 group-hover:-translate-y-1 group-focus-visible:opacity-0 flex flex-col justify-center items-center text-center">
-                    <h3 className="font-heading font-bold text-[17px] sm:text-[18px] lg:text-[19px] xl:text-[19.5px] text-[#202B61] tracking-tight leading-[1.26] text-balance">
+                    <h3 className="font-heading font-bold text-[15.5px] sm:text-[16.5px] lg:text-[17px] xl:text-[17.5px] text-[#202B61] tracking-tight leading-[1.3] text-balance">
                       {card.title}
                     </h3>
                   </div>
