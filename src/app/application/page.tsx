@@ -8,12 +8,15 @@ import {
   ShoppingBag,
   Layers,
   ArrowUpRight,
+  Download,
+  ExternalLink,
   Star,
   Check,
   X,
-  ExternalLink,
   ShieldCheck,
   Sparkles,
+  ChevronRight,
+  Globe,
 } from "lucide-react";
 
 import { Header } from "@/components/layout/Header";
@@ -39,9 +42,16 @@ interface ApplicationItem {
   liveUrl?: string;
   description: string;
   highlights: string[];
+  techStack: string[];
   client: string;
   year: string;
   platforms: string;
+  downloads: {
+    primaryLabel: string;
+    primaryType: "apple" | "shopify" | "cloud";
+    secondaryLabel?: string;
+    secondaryType?: "android" | "web" | "docs";
+  };
 }
 
 const APPLICATIONS: ApplicationItem[] = [
@@ -61,19 +71,27 @@ const APPLICATIONS: ApplicationItem[] = [
     screenshots: [
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://careflow.demo.arkanet.com",
     description:
-      "A patient-first healthcare application engineered with encrypted WebRTC video encounters, instant diagnostic report delivery, and direct prescription routing.",
+      "A patient-first healthcare mobile application engineered with encrypted WebRTC video encounters, instant diagnostic report delivery, and direct prescription routing.",
     highlights: [
       "Sub-second WebRTC video consultations with zero buffering",
       "Biometric patient authentication with HIPAA-compliant data vault",
       "Instant laboratory report push notifications & automated reminders",
       "Integration with hospital Electronic Health Records (EHR) databases",
     ],
+    techStack: ["React Native", "TypeScript", "WebRTC", "HIPAA Vault", "GraphQL"],
     client: "CareFlow Health Group",
     year: "2026",
     platforms: "iOS 17+ • Android 14+ • iPadOS",
+    downloads: {
+      primaryLabel: "Download on App Store",
+      primaryType: "apple",
+      secondaryLabel: "Get on Google Play",
+      secondaryType: "android",
+    },
   },
   {
     id: "vesper-horology",
@@ -91,6 +109,7 @@ const APPLICATIONS: ApplicationItem[] = [
     screenshots: [
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://vesper.demo.arkanet.com",
     description:
@@ -101,9 +120,16 @@ const APPLICATIONS: ApplicationItem[] = [
       "High-speed edge caching with 98+ Google Lighthouse performance",
       "VIP private client appointment scheduler for flagship boutiques",
     ],
+    techStack: ["Shopify Plus", "Next.js 15", "Three.js / WebGL", "Tailwind CSS"],
     client: "Vesper Timepieces Geneva",
     year: "2025",
     platforms: "Shopify Online Store 2.0 • Headless Next.js",
+    downloads: {
+      primaryLabel: "Visit Live Shopify Store",
+      primaryType: "shopify",
+      secondaryLabel: "Explore 3D Configurator",
+      secondaryType: "web",
+    },
   },
   {
     id: "kinetics-movement",
@@ -121,6 +147,7 @@ const APPLICATIONS: ApplicationItem[] = [
     screenshots: [
       "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://kinetics.demo.arkanet.com",
     description:
@@ -131,9 +158,16 @@ const APPLICATIONS: ApplicationItem[] = [
       "Seamless bi-directional sync with Apple Health and Google Fit",
       "Weekly athletic progress telemetry with fatigue prediction",
     ],
+    techStack: ["Swift", "CoreML", "TensorFlow Lite", "HealthKit", "watchOS"],
     client: "Kinetics Pro Labs",
     year: "2025",
     platforms: "iOS 17+ • Apple Watch • HealthKit",
+    downloads: {
+      primaryLabel: "Download for iOS",
+      primaryType: "apple",
+      secondaryLabel: "Get for Android",
+      secondaryType: "android",
+    },
   },
   {
     id: "stonecraft-surfaces",
@@ -161,9 +195,16 @@ const APPLICATIONS: ApplicationItem[] = [
       "Verified contractor wholesale login with tiered quantity discounting",
       "Direct ERP integration for warehouse slab bundle availability",
     ],
+    techStack: ["Shopify Liquid", "Tailwind CSS", "Storefront API", "Edge CDN"],
     client: "StoneCraft Natural Surfaces",
     year: "2025",
     platforms: "Shopify Plus • Custom Liquid Architecture",
+    downloads: {
+      primaryLabel: "Open Live Storefront",
+      primaryType: "shopify",
+      secondaryLabel: "Trade Portal Demo",
+      secondaryType: "web",
+    },
   },
   {
     id: "aura-botanicals",
@@ -191,9 +232,16 @@ const APPLICATIONS: ApplicationItem[] = [
       "Mobile-first sticky add-to-bag with sliding upsell drawer",
       "Localized multicurrency checkout with instant Apple Pay and Shop Pay",
     ],
+    techStack: ["Shopify OS 2.0", "Recharge Subscriptions", "Klaviyo", "Liquid"],
     client: "Aura Living Organics",
     year: "2025",
     platforms: "Shopify Online Store 2.0 • Recharge Subscriptions",
+    downloads: {
+      primaryLabel: "Visit Shopify Store",
+      primaryType: "shopify",
+      secondaryLabel: "Take Skincare Quiz",
+      secondaryType: "web",
+    },
   },
   {
     id: "parkease-mobility",
@@ -221,9 +269,16 @@ const APPLICATIONS: ApplicationItem[] = [
       "Automated license plate recognition and frictionless mobile billing",
       "Transit traffic prediction model reducing search latency by 38%",
     ],
+    techStack: ["Flutter", "TensorFlow Edge", "MQTT IoT", "Apple CarPlay", "AWS"],
     client: "Dubai Smart Mobility Initiative",
     year: "2026",
     platforms: "iOS 17+ • Android 14+ • Apple CarPlay",
+    downloads: {
+      primaryLabel: "Download on iOS",
+      primaryType: "apple",
+      secondaryLabel: "Get on Android",
+      secondaryType: "android",
+    },
   },
   {
     id: "neuraldesk-ai",
@@ -251,9 +306,16 @@ const APPLICATIONS: ApplicationItem[] = [
       "Instant citation verification linking every AI answer to exact source pages",
       "Zero telemetry export, fully deployable inside private corporate VPCs",
     ],
+    techStack: ["FastAPI", "Python", "pgvector", "LangChain", "Docker", "Next.js"],
     client: "Global Financial Advisory Network",
     year: "2026",
     platforms: "Cloud SaaS • Docker VPC • Web & Mobile",
+    downloads: {
+      primaryLabel: "Deploy SaaS Instance",
+      primaryType: "cloud",
+      secondaryLabel: "Explore API Docs",
+      secondaryType: "docs",
+    },
   },
   {
     id: "moda-atelier",
@@ -281,9 +343,16 @@ const APPLICATIONS: ApplicationItem[] = [
       "Integrated concierge chat and global white-glove courier tracking",
       "Express global delivery calculation and multi-warehouse fulfillment",
     ],
+    techStack: ["Shopify Plus", "Storefront API", "Tailwind CSS", "Vimeo Pro"],
     client: "Moda Atelier S.p.A.",
     year: "2025",
     platforms: "Shopify Plus • Liquid OS 2.0 • Global Multi-Currency",
+    downloads: {
+      primaryLabel: "Visit Shopify Store",
+      primaryType: "shopify",
+      secondaryLabel: "Watch Runway Stream",
+      secondaryType: "web",
+    },
   },
 ];
 
@@ -294,10 +363,30 @@ const CATEGORIES: ApplicationCategory[] = [
   "Web & SaaS",
 ];
 
+// Helper icon renderers for App Store / Google Play / Shopify buttons
+const AppleLogo: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.56.64-1.05 1.7-0.92 2.73 1.01.08 2.03-.5 2.63-1.23z" />
+  </svg>
+);
+
+const PlayLogo: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M3.609 1.814L13.792 12 3.61 22.186c-.372-.379-.61-.908-.61-1.492V3.306c0-.584.238-1.113.609-1.492zm11.605 11.607l2.454 2.454-11.45 6.467 8.996-8.921zm0-2.842L6.218 1.658l11.45 6.467-2.454 2.454zm1.42 1.42l3.411 1.927c.801.453.801 1.191 0 1.644l-3.411 1.927-2.185-2.185 2.185-2.185z" />
+  </svg>
+);
+
+const ShopifyLogo: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M19.78 6.55c-.04-.33-.31-.57-.64-.58l-3.56-.12c-.22 0-.42.12-.52.31l-1.37 2.48c-.08.15-.24.24-.41.24-.17 0-.33-.09-.41-.24L11.5 6.16c-.1-.19-.3-.31-.52-.31l-3.56.12c-.33.01-.6.25-.64.58l-1.5 13.5c-.04.36.19.69.54.77l11.5 2.5c.06.01.12.02.18.02.29 0 .56-.17.67-.45l1.61-14.75z" />
+  </svg>
+);
+
 export default function ApplicationPage() {
   const [selectedCategory, setSelectedCategory] = useState<ApplicationCategory>("All");
   const [contactOpen, setContactOpen] = useState(false);
   const [selectedApp, setSelectedApp] = useState<ApplicationItem | null>(null);
+  const [activeScreenshotIdx, setActiveScreenshotIdx] = useState(0);
 
   const openContact = () => setContactOpen(true);
 
@@ -305,6 +394,11 @@ export default function ApplicationPage() {
     selectedCategory === "All"
       ? APPLICATIONS
       : APPLICATIONS.filter((item) => item.category === selectedCategory);
+
+  const handleOpenAppModal = (app: ApplicationItem) => {
+    setSelectedApp(app);
+    setActiveScreenshotIdx(0);
+  };
 
   return (
     <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
@@ -314,16 +408,16 @@ export default function ApplicationPage() {
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. CLEAN APP STORE STYLE HERO HEADER ── */}
+      {/* ── 1. ARCHITECTURAL HERO HEADER ── */}
       <section className="relative w-full pt-28 sm:pt-32 lg:pt-36 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left">
         <div className="max-w-[1400px] mx-auto space-y-6">
           
           <div className="max-w-3xl space-y-2.5">
             <h1 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
-              Applications &amp; Shopify Stores
+              Applications &amp; Shopify Storefronts
             </h1>
             <p className="font-sans text-sm sm:text-base text-[#202B61]/80 leading-relaxed font-normal">
-              Select any app or store below to inspect live customer ratings, verified production builds, and architectural specifications.
+              Browse our directory of production mobile apps, high-converting Shopify websites, and enterprise systems. Click any card for full specs, screenshots, and download options.
             </p>
           </div>
 
@@ -351,22 +445,22 @@ export default function ApplicationPage() {
         </div>
       </section>
 
-      {/* ── 2. COMPACT APP STORE / PLAY STORE CARD DIRECTORY ── */}
+      {/* ── 2. VISUAL APP STORE DIRECTORY GRID (IMAGE PREVIEW + APP STORE BADGES) ── */}
       <section className="w-full py-10 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-12 text-left font-sans">
         <div className="max-w-[1400px] mx-auto space-y-6">
 
           {/* Directory Count Bar */}
           <div className="flex items-center justify-between pb-3 border-b border-slate-200/80 text-xs text-[#202B61]/70 font-medium">
             <span>
-              Showing <strong className="text-[#202B61]">{filteredApps.length}</strong> releases
+              Showing <strong className="text-[#202B61]">{filteredApps.length}</strong> verified releases
             </span>
             <span className="hidden sm:inline-block">
-              Click any card to open complete details &amp; previews
+              Click any card to view screenshots &amp; download options
             </span>
           </div>
 
-          {/* Compact App Store Grid (3 Columns on Desktop, 2 on Tablet, 1 on Mobile) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-4.5">
+          {/* 3-Column Visual Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {filteredApps.map((app) => {
               const isShopify = app.category === "Shopify Stores";
 
@@ -375,60 +469,89 @@ export default function ApplicationPage() {
                   key={app.id}
                   role="button"
                   tabIndex={0}
-                  onClick={() => setSelectedApp(app)}
+                  onClick={() => handleOpenAppModal(app)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
-                      setSelectedApp(app);
+                      handleOpenAppModal(app);
                     }
                   }}
-                  className="group relative rounded-[6px] bg-white border border-slate-200/90 p-4 sm:p-4.5 hover:border-[#202B61]/40 hover:shadow-[0_4px_18px_rgba(32,43,97,0.06)] cursor-pointer transition-all duration-200 flex items-center justify-between gap-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                  className="group rounded-[6px] bg-white border border-slate-200/90 p-4 sm:p-5 hover:border-[#202B61]/40 hover:shadow-[0_8px_24px_rgba(32,43,97,0.07)] cursor-pointer transition-all duration-200 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
                 >
-                  {/* Left: App Icon + Metadata */}
-                  <div className="flex items-center gap-3.5 min-w-0">
+                  <div className="space-y-3.5">
                     
-                    {/* App Store Squircle Icon */}
-                    <div
-                      className={`w-12 h-12 sm:w-13 sm:h-13 rounded-xl ${app.iconBg} text-white flex items-center justify-center shrink-0 shadow-[0_2px_8px_rgba(0,0,0,0.12)] group-hover:scale-103 transition-transform`}
-                    >
-                      {isShopify ? (
-                        <ShoppingBag className="w-5.5 h-5.5 stroke-[1.8]" />
-                      ) : app.iconType === "mobile" ? (
-                        <Smartphone className="w-5.5 h-5.5 stroke-[1.8]" />
-                      ) : (
-                        <Layers className="w-5.5 h-5.5 stroke-[1.8]" />
-                      )}
+                    {/* Header: App Store Icon + Identity + GET Button */}
+                    <div className="flex items-center justify-between gap-3">
+                      
+                      {/* Left: App Icon & Name */}
+                      <div className="flex items-center gap-3 min-w-0">
+                        {/* Squircle App Icon */}
+                        <div
+                          className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${app.iconBg} text-white flex items-center justify-center shrink-0 shadow-[0_2px_8px_rgba(0,0,0,0.12)] group-hover:scale-103 transition-transform`}
+                        >
+                          {isShopify ? (
+                            <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
+                          ) : app.iconType === "mobile" ? (
+                            <Smartphone className="w-5 h-5 stroke-[1.8]" />
+                          ) : (
+                            <Layers className="w-5 h-5 stroke-[1.8]" />
+                          )}
+                        </div>
+
+                        {/* Title & Category */}
+                        <div className="min-w-0 space-y-0.5">
+                          <h2 className="font-heading font-bold text-[14.5px] sm:text-[15px] text-[#202B61] leading-tight truncate">
+                            {app.name}
+                          </h2>
+                          <p className="font-sans text-[11.5px] text-[#202B61]/70 truncate">
+                            {app.subCategory}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Right: App Store 'VIEW' Action Pill */}
+                      <span className="shrink-0 inline-flex items-center justify-center px-3 py-1 rounded-full bg-slate-100 group-hover:bg-[#202B61] text-[#202B61] group-hover:text-white font-sans font-bold text-xs tracking-tight transition-colors duration-200">
+                        GET
+                      </span>
+
                     </div>
 
-                    {/* App Info */}
-                    <div className="min-w-0 space-y-0.5">
-                      <h2 className="font-heading font-bold text-[14.5px] sm:text-[15px] text-[#202B61] leading-tight truncate">
-                        {app.name}
-                      </h2>
-                      
-                      <p className="font-sans text-[11.5px] text-[#202B61]/70 truncate">
-                        {app.subCategory}
-                      </p>
-
-                      {/* App Store Rating & Platform Bar */}
-                      <div className="flex items-center gap-1.5 text-[11px] text-[#202B61]/80 pt-0.5">
-                        <div className="flex items-center gap-0.5 text-amber-500 font-bold">
-                          <Star className="w-3 h-3 fill-amber-400 stroke-amber-500" />
-                          <span>{app.rating}</span>
-                        </div>
-                        <span className="text-slate-300">•</span>
-                        <span className="text-[#202B61]/65 truncate">
-                          {app.platformBadge}
+                    {/* Middle: Clean Interface Picture Preview */}
+                    <div className="relative aspect-[16/10] w-full rounded-[4px] overflow-hidden bg-slate-100 border border-slate-200/80">
+                      <Image
+                        src={app.previewImage}
+                        alt={app.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-[#202B61]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                        <span className="bg-white/95 backdrop-blur-xs text-[#202B61] text-xs font-bold px-3 py-1.5 rounded-[4px] shadow-sm flex items-center gap-1.5">
+                          <span>View Screenshots &amp; Download</span>
+                          <ArrowUpRight className="w-3.5 h-3.5" />
                         </span>
                       </div>
                     </div>
 
+                    {/* Short Tagline / Summary */}
+                    <p className="font-sans text-xs text-[#202B61]/80 leading-relaxed line-clamp-2">
+                      {app.tagline}
+                    </p>
+
                   </div>
 
-                  {/* Right: App Store Style 'VIEW' Action Pill */}
-                  <div className="shrink-0 pl-1">
-                    <span className="inline-flex items-center justify-center px-3.5 py-1.5 rounded-full bg-slate-100 group-hover:bg-[#202B61] text-[#202B61] group-hover:text-white font-sans font-bold text-xs tracking-tight transition-colors duration-200">
-                      VIEW
+                  {/* Bottom: Customer Rating & Platform Tag */}
+                  <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between text-[11.5px]">
+                    <div className="flex items-center gap-1 text-amber-500 font-bold">
+                      <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
+                      <span>{app.rating}</span>
+                      <span className="text-[#202B61]/55 font-normal ml-0.5">
+                        ({app.reviewsCount})
+                      </span>
+                    </div>
+
+                    <span className="text-[#202B61]/70 font-medium bg-slate-50 px-2 py-0.5 rounded-[4px] border border-slate-200/70">
+                      {app.platformBadge}
                     </span>
                   </div>
 
@@ -440,60 +563,75 @@ export default function ApplicationPage() {
         </div>
       </section>
 
-      {/* ── 3. DETAILED APP STORE MODAL SHEET (APPEARS ONLY AFTER SELECTION) ── */}
+      {/* ── 3. DETAILED APP STORE MODAL SHEET (ALL DETAILS + DOWNLOAD OPTIONS) ── */}
       {selectedApp && (
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/40 backdrop-blur-xs animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/40 backdrop-blur-xs animate-in fade-in duration-200"
           onClick={() => setSelectedApp(null)}
         >
           <div
-            className="relative w-full max-w-2xl bg-white rounded-[8px] border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-2xl max-h-[90vh] overflow-y-auto text-left"
+            className="relative w-full max-w-2xl bg-white rounded-[8px] border border-slate-200/90 p-5 sm:p-7 space-y-5 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               type="button"
               onClick={() => setSelectedApp(null)}
-              className="absolute top-5 right-5 p-1.5 text-slate-400 hover:text-[#202B61] transition-colors cursor-pointer rounded-full hover:bg-slate-100"
+              className="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-[#202B61] transition-colors cursor-pointer rounded-full hover:bg-slate-100"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* App Store Header Section */}
-            <div className="flex items-start gap-4 pr-8">
-              <div
-                className={`w-16 h-16 sm:w-18 sm:h-18 rounded-2xl ${selectedApp.iconBg} text-white flex items-center justify-center shrink-0 shadow-md`}
-              >
-                {selectedApp.category === "Shopify Stores" ? (
-                  <ShoppingBag className="w-8 h-8 stroke-[1.8]" />
-                ) : selectedApp.iconType === "mobile" ? (
-                  <Smartphone className="w-8 h-8 stroke-[1.8]" />
-                ) : (
-                  <Layers className="w-8 h-8 stroke-[1.8]" />
-                )}
+            {/* App Store Top Row: Icon + Name + Primary Download */}
+            <div className="flex items-start justify-between gap-4 pr-8">
+              <div className="flex items-center gap-3.5 sm:gap-4">
+                <div
+                  className={`w-16 h-16 sm:w-18 sm:h-18 rounded-2xl ${selectedApp.iconBg} text-white flex items-center justify-center shrink-0 shadow-md`}
+                >
+                  {selectedApp.category === "Shopify Stores" ? (
+                    <ShoppingBag className="w-8 h-8 stroke-[1.8]" />
+                  ) : selectedApp.iconType === "mobile" ? (
+                    <Smartphone className="w-8 h-8 stroke-[1.8]" />
+                  ) : (
+                    <Layers className="w-8 h-8 stroke-[1.8]" />
+                  )}
+                </div>
+
+                <div className="space-y-0.5 min-w-0">
+                  <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] leading-tight">
+                    {selectedApp.name}
+                  </h3>
+                  <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/70 font-medium">
+                    {selectedApp.subCategory}
+                  </p>
+                  <p className="font-sans text-[11px] text-[#202B61]/55">
+                    {selectedApp.client} • Released {selectedApp.year}
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-1 min-w-0">
-                <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] leading-tight">
-                  {selectedApp.name}
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#202B61]/70">
-                  {selectedApp.tagline}
-                </p>
-                <p className="font-sans text-xs text-[#202B61]/60 font-medium">
-                  {selectedApp.client} • Released {selectedApp.year}
-                </p>
-              </div>
+              {/* Direct Download / Visit Store Primary Button */}
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedApp(null);
+                  openContact();
+                }}
+                className="shrink-0 inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>GET</span>
+              </button>
             </div>
 
-            {/* App Store Rating & Metrics Bar */}
-            <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-[6px] bg-slate-50 border border-slate-200/70 text-center text-xs">
+            {/* App Store Key Metrics Bar */}
+            <div className="grid grid-cols-3 gap-2 py-2.5 px-3 rounded-[6px] bg-slate-50 border border-slate-200/70 text-center text-xs">
               <div>
-                <span className="block text-[11px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
-                  Rating
+                <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
+                  Customer Rating
                 </span>
                 <span className="font-bold text-[#202B61] text-sm flex items-center justify-center gap-1 mt-0.5">
                   <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
@@ -505,47 +643,136 @@ export default function ApplicationPage() {
               </div>
 
               <div className="border-x border-slate-200">
-                <span className="block text-[11px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
-                  Category
-                </span>
-                <span className="font-bold text-[#202B61] text-sm block mt-0.5 truncate px-1">
-                  {selectedApp.category}
-                </span>
-                <span className="block text-[10px] text-[#202B61]/60 mt-0.5 truncate px-1">
-                  {selectedApp.subCategory}
-                </span>
-              </div>
-
-              <div>
-                <span className="block text-[11px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
+                <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
                   Platform
                 </span>
                 <span className="font-bold text-[#202B61] text-sm block mt-0.5 truncate px-1">
                   {selectedApp.platformBadge}
                 </span>
                 <span className="block text-[10px] text-emerald-600 font-semibold mt-0.5">
-                  Verified Production
+                  Live in Production
+                </span>
+              </div>
+
+              <div>
+                <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
+                  Architecture
+                </span>
+                <span className="font-bold text-[#202B61] text-sm block mt-0.5 truncate px-1">
+                  {selectedApp.category}
+                </span>
+                <span className="block text-[10px] text-[#202B61]/60 mt-0.5">
+                  Arkanet Verified
                 </span>
               </div>
             </div>
 
-            {/* Screenshots Gallery */}
-            <div className="space-y-2">
+            {/* ── DOWNLOAD & ACCESS OPTIONS ── */}
+            <div className="space-y-2 pt-1">
               <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70 block">
-                Interface Preview
+                Download &amp; Store Access Options
               </span>
-              <div className="relative aspect-[16/9] w-full rounded-[6px] overflow-hidden bg-slate-100 border border-slate-200/80">
-                <Image
-                  src={selectedApp.previewImage}
-                  alt={selectedApp.name}
-                  fill
-                  className="object-cover"
-                />
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {/* Primary Download Button */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedApp(null);
+                    openContact();
+                  }}
+                  className="flex items-center justify-between p-3 rounded-[6px] bg-white border border-slate-200 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    {selectedApp.downloads.primaryType === "apple" ? (
+                      <AppleLogo className="w-5 h-5 text-[#202B61]" />
+                    ) : selectedApp.downloads.primaryType === "shopify" ? (
+                      <ShopifyLogo className="w-5 h-5 text-emerald-600" />
+                    ) : (
+                      <Download className="w-5 h-5 text-[#202B61]" />
+                    )}
+                    <div className="text-left">
+                      <span className="block font-sans font-bold text-xs text-[#202B61]">
+                        {selectedApp.downloads.primaryLabel}
+                      </span>
+                      <span className="block font-sans text-[10.5px] text-[#202B61]/60">
+                        Official Storefront Link
+                      </span>
+                    </div>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-[#202B61]/50 group-hover:text-[#202B61] transition-colors" />
+                </button>
+
+                {/* Secondary Download Button */}
+                {selectedApp.downloads.secondaryLabel && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedApp(null);
+                      openContact();
+                    }}
+                    className="flex items-center justify-between p-3 rounded-[6px] bg-white border border-slate-200 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      {selectedApp.downloads.secondaryType === "android" ? (
+                        <PlayLogo className="w-5 h-5 text-[#202B61]" />
+                      ) : (
+                        <ExternalLink className="w-4.5 h-4.5 text-[#202B61]" />
+                      )}
+                      <div className="text-left">
+                        <span className="block font-sans font-bold text-xs text-[#202B61]">
+                          {selectedApp.downloads.secondaryLabel}
+                        </span>
+                        <span className="block font-sans text-[10.5px] text-[#202B61]/60">
+                          Direct Access &amp; Demo
+                        </span>
+                      </div>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-[#202B61]/50 group-hover:text-[#202B61] transition-colors" />
+                  </button>
+                )}
               </div>
             </div>
 
-            {/* Description */}
-            <div className="space-y-1.5">
+            {/* Screenshots Gallery with Thumbnails */}
+            <div className="space-y-2 pt-1">
+              <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70 block">
+                Interface Screenshots Preview
+              </span>
+
+              {/* Main Screenshot Preview */}
+              <div className="relative aspect-[16/9] w-full rounded-[6px] overflow-hidden bg-slate-100 border border-slate-200/80">
+                <Image
+                  src={selectedApp.screenshots[activeScreenshotIdx] || selectedApp.previewImage}
+                  alt={selectedApp.name}
+                  fill
+                  className="object-cover transition-all duration-300"
+                />
+              </div>
+
+              {/* Screenshot Thumbnails (if multiple) */}
+              {selectedApp.screenshots.length > 1 && (
+                <div className="flex items-center gap-2 pt-1">
+                  {selectedApp.screenshots.map((img, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setActiveScreenshotIdx(idx)}
+                      className={`relative w-20 h-12 rounded-[4px] overflow-hidden border cursor-pointer transition-all ${
+                        activeScreenshotIdx === idx
+                          ? "border-[#202B61] ring-2 ring-[#202B61]/20 scale-102"
+                          : "border-slate-200 opacity-60 hover:opacity-100"
+                      }`}
+                    >
+                      <Image src={img} alt={`Preview ${idx + 1}`} fill className="object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* About The Application Description */}
+            <div className="space-y-1.5 pt-1">
               <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
                 About The Application
               </h4>
@@ -554,10 +781,10 @@ export default function ApplicationPage() {
               </p>
             </div>
 
-            {/* Key Deliverables */}
-            <div className="space-y-2 pt-2 border-t border-slate-100">
+            {/* Key Deliverables & Architectural Features */}
+            <div className="space-y-2 pt-1 border-t border-slate-100">
               <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
-                Features &amp; Technical Capabilities
+                Key Features &amp; Deliverables
               </h4>
               <div className="space-y-1.5">
                 {selectedApp.highlights.map((h, i) => (
@@ -569,25 +796,40 @@ export default function ApplicationPage() {
               </div>
             </div>
 
-            {/* Modal Bottom Actions */}
-            <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-              <span className="font-sans text-xs text-[#202B61]/70">
+            {/* Tech Stack Chips */}
+            <div className="space-y-1.5 pt-1 border-t border-slate-100">
+              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
+                Engineered With
+              </h4>
+              <div className="flex flex-wrap items-center gap-1.5">
+                {selectedApp.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="font-sans text-[11px] font-medium text-[#202B61]/80 bg-[#f8fafc] border border-slate-200/80 px-2.5 py-0.5 rounded-[4px]"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Modal Bottom Inquire / Walkthrough */}
+            <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+              <span className="font-sans text-[11px] text-[#202B61]/65">
                 Compatibility: {selectedApp.platforms}
               </span>
               
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSelectedApp(null);
-                    openContact();
-                  }}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs"
-                >
-                  <span>Request Full Walkthrough</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedApp(null);
+                  openContact();
+                }}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs ml-auto"
+              >
+                <span>Request Custom Build &amp; Source</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </button>
             </div>
 
           </div>
