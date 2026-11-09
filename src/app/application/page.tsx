@@ -471,10 +471,6 @@ export default function ApplicationPage() {
                 >
                   <ChevronRight className="w-5 h-5 stroke-[2.5]" />
                 </button>
-
-                <span className="text-xs font-sans font-semibold text-[#202B61]/65 pl-2">
-                  Scroll releases →
-                </span>
               </div>
 
             </div>
