@@ -45,7 +45,7 @@ const STEPS = [
 
 export function AboutHowWeWork({ onOpenBooking }: AboutHowWeWorkProps) {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] select-none border-t border-slate-200/80">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] select-none border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         {/* Section Heading & Sub-Content */}
         <div className="w-full text-left space-y-3 max-w-4xl">

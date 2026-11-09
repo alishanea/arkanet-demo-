@@ -483,7 +483,7 @@ export default function ApplicationPage() {
   const currentDeckApp = FEATURED_SLIDES[activeDeckIdx];
 
   return (
-    <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#eaeaea] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       {/* ── HEADER ── */}
       <Header onOpenBooking={openContact} />
 
@@ -491,7 +491,7 @@ export default function ApplicationPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. BENTO HERO SHOWCASE (INSPIRED BY REFERENCE IMAGES 1 & 2) ── */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left flex flex-col justify-center">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-b border-[#d8d8d8] text-left flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-7 my-auto">
           
           {/* Header Row: Large Typography (Matching Image 1: "Our focus is simple / Design to convert") */}
@@ -514,7 +514,7 @@ export default function ApplicationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5">
             
             {/* Card 1: Avatar stack & Partners (Span 3) */}
-            <div className="lg:col-span-3 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs min-h-[220px]">
+            <div className="lg:col-span-3 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-white border border-[#d8d8d8] shadow-[0_4px_20px_rgba(0,0,0,0.03)] min-h-[220px]">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
                   <div className="w-8 h-8 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
@@ -549,7 +549,7 @@ export default function ApplicationPage() {
             </div>
 
             {/* Card 2: Revenue Generated (Span 4) */}
-            <div className="lg:col-span-4 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs min-h-[220px]">
+            <div className="lg:col-span-4 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-white border border-[#d8d8d8] shadow-[0_4px_20px_rgba(0,0,0,0.03)] min-h-[220px]">
               <div className="space-y-1">
                 <span className="text-xs font-semibold text-[#202B61]/70">
                   Through custom-tailored mobile &amp; e-commerce systems
@@ -794,11 +794,11 @@ export default function ApplicationPage() {
       </section>
 
       {/* ── 3. FULL APP STORE & SHOPIFY DIRECTORY (COLORFUL SQUIRCLES, REVIEWS, GET BUTTONS) ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-white border-t border-slate-200/80">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#eaeaea] border-t border-[#d8d8d8]">
         <div className="max-w-[1400px] mx-auto space-y-8">
 
           {/* Directory Header & Category Filter Tabs */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-slate-200/80">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-[#d8d8d8]">
             <div className="space-y-1">
               <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight">
                 All Applications &amp; Storefronts
@@ -820,7 +820,7 @@ export default function ApplicationPage() {
                     className={`px-4 py-2 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
                       isActive
                         ? "bg-[#202B61] text-white shadow-xs"
-                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-100 border border-slate-200/60"
+                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-100 border border-[#d8d8d8]"
                     }`}
                   >
                     {category}
@@ -847,7 +847,7 @@ export default function ApplicationPage() {
                       handleOpenAppModal(app);
                     }
                   }}
-                  className="group rounded-[20px] bg-white border border-slate-200/80 p-5 hover:border-[#202B61]/40 hover:shadow-[0_8px_30px_rgba(32,43,97,0.06)] cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                  className="group rounded-[20px] bg-white border border-[#d8d8d8] shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-5 hover:border-[#202B61]/40 hover:shadow-[0_8px_30px_rgba(32,43,97,0.06)] cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
                 >
                   <div className="space-y-4">
                     

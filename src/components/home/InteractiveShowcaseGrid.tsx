@@ -116,7 +116,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
   return (
     <section
       id="capabilities"
-      className="relative w-full bg-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans scroll-mt-24"
+      className="relative w-full bg-[#eaeaea] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-[#d8d8d8] overflow-hidden font-sans scroll-mt-24"
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         {/* ── 1. STRUCTURED PAGE SECTION HEADER ── */}
@@ -137,7 +137,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
               <Link
                 key={card.id}
                 href={card.href}
-                className="group relative flex flex-col justify-between h-[175px] sm:h-[185px] lg:h-[195px] p-5 sm:p-6 lg:p-6.5 rounded-[4px] bg-white border border-slate-200/90 hover:border-[#202B61]/40 shadow-none hover:shadow-[0_6px_24px_rgba(32,43,97,0.06)] cursor-pointer overflow-hidden transition-all duration-300"
+                className="group relative flex flex-col justify-between h-[175px] sm:h-[185px] lg:h-[195px] p-5 sm:p-6 lg:p-6.5 rounded-[4px] bg-white border border-[#d8d8d8] hover:border-[#202B61]/40 shadow-none hover:shadow-[0_6px_24px_rgba(32,43,97,0.06)] cursor-pointer overflow-hidden transition-all duration-300"
               >
                 {/* Content Area: Vertically and horizontally centered in the mid */}
                 <div className="relative w-full flex-1 flex flex-col justify-center my-auto">

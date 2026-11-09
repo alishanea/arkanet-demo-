@@ -198,11 +198,11 @@ export default function CapabilityDetailPage() {
   const techChips = PRACTICE_TECH[slug] || DEFAULT_TECH;
 
   return (
-    <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#eaeaea] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── SECTION 1: HERO SECTION WITH DEDICATED CONTENT-CONNECTED BACKGROUND (OLD CONNECTED DESIGN) ── */}
-      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#f4f6fb] text-[#202B61] pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left">
+      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#eaeaea] text-[#202B61] pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left">
         {/* Dedicated Content-Connected Background Showcase Image */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] xl:w-[56%] z-0 overflow-hidden pointer-events-none select-none">
           <AnimatePresence mode="wait">
@@ -225,10 +225,10 @@ export default function CapabilityDetailPage() {
           </AnimatePresence>
 
           {/* Precision Gradient Blends: Keeps left text 100% readable while right image remains crisp & vivid */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f4f6fb] via-[#f4f6fb]/80 lg:via-[#f4f6fb]/50 to-transparent pointer-events-none z-[1]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#f4f6fb]/40 via-transparent to-transparent pointer-events-none z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#eaeaea] via-[#eaeaea]/80 lg:via-[#eaeaea]/50 to-transparent pointer-events-none z-[1]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#eaeaea]/40 via-transparent to-transparent pointer-events-none z-[1]" />
           {/* Extra contrast guard on mobile so copy never clashes */}
-          <div className="absolute inset-0 bg-[#f4f6fb]/75 sm:bg-[#f4f6fb]/60 lg:hidden pointer-events-none z-[1]" />
+          <div className="absolute inset-0 bg-[#eaeaea]/75 sm:bg-[#eaeaea]/60 lg:hidden pointer-events-none z-[1]" />
         </div>
 
         {/* Foreground Content: Unified connected block, centered vertically in the 1-page screen */}
@@ -281,7 +281,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 2: OPEN HIGHLIGHTS GRID ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left bg-[#f4f6fb] font-sans">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left bg-[#eaeaea] font-sans">
         <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
           <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
             <div className="max-w-3xl space-y-3">
@@ -325,7 +325,7 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 3: FEATURE ROWS WITH CLEAN ARCHITECTURAL CARD SEPARATION ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80 text-left bg-[#f4f6fb] font-sans">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80 text-left bg-[#eaeaea] font-sans">
         <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
           
           {/* Structured Section Header for Clear Context & Visual Buffer */}
@@ -450,9 +450,9 @@ export default function CapabilityDetailPage() {
       </section>
 
       {/* ── SECTION 5: TECH SHOWCASE CARD WITH PRACTICE-SPECIFIC CHIPS ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left bg-white border-t border-slate-200/80 font-sans">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left bg-[#eaeaea] border-t border-[#d8d8d8] font-sans">
         <div className="max-w-[1400px] mx-auto">
-          <div className="p-8 sm:p-12 lg:p-16 bg-[#f8fafc] text-[#202B61] rounded-[4px] border border-slate-200/90 shadow-none">
+          <div className="p-8 sm:p-12 lg:p-16 bg-white text-[#202B61] rounded-[4px] border border-[#d8d8d8] shadow-none">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div className="space-y-6">
                 <h3 className="font-heading font-bold text-3xl sm:text-4xl text-[#202B61] tracking-tight leading-tight">
@@ -503,7 +503,7 @@ export default function CapabilityDetailPage() {
       <AboutCTA onOpenBooking={openContact} />
 
       {/* ── SECTION 7: FOOTER ── */}
-      <Footer onOpenBooking={openContact} bgColor="bg-white" />
+      <Footer onOpenBooking={openContact} bgColor="bg-[#eaeaea]" />
     </main>
   );
 }

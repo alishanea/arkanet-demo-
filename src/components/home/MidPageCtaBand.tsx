@@ -5,7 +5,7 @@ import { MessageSquare, Phone, Clock } from "lucide-react";
 
 export const MidPageCtaBand: React.FC = () => {
   return (
-    <section className="w-full bg-[#f4f6fb] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80">
+    <section className="w-full bg-[#eaeaea] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none border-t border-slate-200/80">
       <div className="max-w-[1400px] mx-auto bg-white border border-slate-200/90 rounded-2xl shadow-sm px-6 sm:px-10 lg:px-12 py-12 sm:py-14 lg:py-16">
         
         <div className="w-full flex flex-col lg:flex-row lg:items-center justify-between gap-10 lg:gap-12">

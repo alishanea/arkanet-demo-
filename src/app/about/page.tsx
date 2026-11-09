@@ -16,7 +16,7 @@ export default function AboutPage() {
   const openContact = () => setContactOpen(true);
 
   return (
-    <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#eaeaea] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
 
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 

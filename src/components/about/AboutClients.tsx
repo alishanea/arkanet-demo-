@@ -40,7 +40,7 @@ export function AboutClients() {
   return (
     <section
       id="clients"
-      className="relative w-full bg-[#f4f6fb] text-[#202B61] select-none py-10 sm:py-12 lg:py-14 border-b border-slate-200/80 overflow-hidden font-sans scroll-mt-24"
+      className="relative w-full bg-[#eaeaea] text-[#202B61] select-none py-10 sm:py-12 lg:py-14 border-b border-slate-200/80 overflow-hidden font-sans scroll-mt-24"
     >
       <div className="w-full">
         {/* Subtle Section Label */}
@@ -53,7 +53,7 @@ export function AboutClients() {
         {/* Trailing Marquee Container with Soft Fade Edges (Continuous Seamless Movement, No Boxes) */}
         <div className="relative w-full overflow-hidden flex items-center group">
           {/* Left Trailing Gradient Fade Mask */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-r from-[#f4f6fb] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-r from-[#eaeaea] to-transparent z-10 pointer-events-none" />
 
           {/* Continuous Trailing Track (Simply Move) */}
           <div
@@ -77,7 +77,7 @@ export function AboutClients() {
           </div>
 
           {/* Right Trailing Gradient Fade Mask */}
-          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-l from-[#f4f6fb] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-l from-[#eaeaea] to-transparent z-10 pointer-events-none" />
         </div>
       </div>
     </section>

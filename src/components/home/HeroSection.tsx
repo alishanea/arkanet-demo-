@@ -157,7 +157,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section
       id="home"
-      className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden"
+      className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#eaeaea] text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden"
     >
       {/* ── MINIMALIST CANVAS FLOW (LOWER THIRD ONLY, NO FULL WAVES, NO CIRCLES) ── */}
       <canvas

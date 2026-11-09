@@ -24,7 +24,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
   const [activeTab, setActiveTab] = useState<"all" | "startups" | "enterprise">("all");
 
   return (
-    <section className="relative w-full py-16 sm:py-20 lg:py-24 bg-[#f4f6fb] text-[#202B61] select-none border-t border-slate-200/80 overflow-hidden px-4 sm:px-8 lg:px-12">
+    <section className="relative w-full py-16 sm:py-20 lg:py-24 bg-[#eaeaea] text-[#202B61] select-none border-t border-slate-200/80 overflow-hidden px-4 sm:px-8 lg:px-12">
       <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
         
         {/* Header with Segmented Intent Switcher (Wise-Style) */}

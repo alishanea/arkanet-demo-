@@ -4,7 +4,7 @@ import React from "react";
 
 export function AboutHero() {
   return (
-    <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden font-sans">
+    <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#eaeaea] text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden font-sans">
       
       {/* Cinematic Ambient Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -14,7 +14,7 @@ export function AboutHero() {
           className="w-full h-full object-cover opacity-50 brightness-105 saturate-110"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/80 via-[#f4f6fb]/60 to-[#f4f6fb]/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#eaeaea]/80 via-[#eaeaea]/60 to-[#eaeaea]/90 pointer-events-none" />
       </div>
 
       {/* Hero Content */}

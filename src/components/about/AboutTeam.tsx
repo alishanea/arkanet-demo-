@@ -5,7 +5,7 @@ import { team } from "@/lib/aboutData";
 
 export function AboutTeam() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-t border-slate-200/80 text-left">
+    <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-t border-slate-200/80 text-left">
       <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         
         {/* Section Header */}

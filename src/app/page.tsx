@@ -59,7 +59,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f4f6fb]">
+    <div className="min-h-screen flex flex-col bg-[#eaeaea]">
 
 
       {/* Main Homepage Flow */}

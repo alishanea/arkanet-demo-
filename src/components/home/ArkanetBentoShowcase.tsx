@@ -141,7 +141,7 @@ export const ArkanetBentoShowcase: React.FC<ArkanetBentoShowcaseProps> = () => {
   return (
     <section
       id="what-we-build"
-      className="relative w-full bg-[#f4f6fb] pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:pb-20 px-6 sm:px-8 lg:px-[40px] select-none"
+      className="relative w-full bg-[#eaeaea] pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:pb-20 px-6 sm:px-8 lg:px-[40px] select-none"
     >
       <div className="w-full space-y-10 sm:space-y-12 lg:space-y-16">
         {/* Section Header (Preserved) */}

@@ -428,11 +428,11 @@ export default function WorkPage() {
     : null;
 
   return (
-    <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#eaeaea] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. CINEMATIC WORK HERO (MATCHING CONTACT & ABOUT PAGES FULL-BLEED AMBIENT STYLE) ── */}
-      <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#f4f6fb] text-[#202B61] select-none py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden font-sans">
+      <section className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-[#eaeaea] text-[#202B61] select-none py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 overflow-hidden font-sans">
         
         {/* Cinematic Ambient Background */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -444,7 +444,7 @@ export default function WorkPage() {
           />
 
           {/* Consistent full-bleed gradient overlay matching Contact & About */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6fb]/75 via-[#f4f6fb]/55 to-[#f4f6fb]/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#eaeaea]/75 via-[#eaeaea]/55 to-[#eaeaea]/85 pointer-events-none" />
         </div>
 
         {/* Hero Content (Centered, 100% matched to Contact page type) */}

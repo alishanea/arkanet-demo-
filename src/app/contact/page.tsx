@@ -67,7 +67,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#f4f6fb] text-[#202B61] selection:bg-[#202B61] selection:text-white font-sans overflow-x-hidden">
+    <main className="min-h-screen bg-[#eaeaea] text-[#202B61] selection:bg-[#202B61] selection:text-white font-sans overflow-x-hidden">
       <ContactFormModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />
 
       {/* ── PAGE 1: FIRST PAGE FIT AND PROPER (100VH FULL SCREEN) ── */}
@@ -229,7 +229,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── PAGE 3: THIRD PAGE ADDRESS OF OFFICES & DIRECT CONTACT ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#f4f6fb] border-t border-slate-200/80 text-left">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-t border-slate-200/80 text-left">
         <div className="max-w-[1400px] mx-auto space-y-10">
           
           {/* Section Header */}
