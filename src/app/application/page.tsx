@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Smartphone,
   ShoppingBag,
@@ -15,7 +16,6 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
   ShieldCheck,
   Globe,
 } from "lucide-react";
@@ -401,26 +401,44 @@ const ShopifyLogo: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }
   </svg>
 );
 
+// Slide transition variants for smooth sliding of product details
+const slideVariants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 50 : -50,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? 50 : -50,
+    opacity: 0,
+  }),
+};
+
 export default function ApplicationPage() {
   const [selectedCategory, setSelectedCategory] = useState<ApplicationCategory>("All");
   const [contactOpen, setContactOpen] = useState(false);
   const [selectedApp, setSelectedApp] = useState<ApplicationItem | null>(null);
   const [activeScreenshotIdx, setActiveScreenshotIdx] = useState(0);
 
-  // Auto-sliding state
+  // Auto-sliding state with direction tracking for smooth animation
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideDirection, setSlideDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const autoSlideTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const openContact = () => setContactOpen(true);
 
-  // Auto-slide effect every 4.5 seconds
+  // Auto-slide effect every 5 seconds
   useEffect(() => {
     if (isPaused) return;
 
     autoSlideTimerRef.current = setInterval(() => {
+      setSlideDirection(1);
       setCurrentSlide((prev) => (prev + 1) % FEATURED_SLIDES.length);
-    }, 4500);
+    }, 5000);
 
     return () => {
       if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
@@ -428,11 +446,18 @@ export default function ApplicationPage() {
   }, [isPaused]);
 
   const handlePrevSlide = () => {
+    setSlideDirection(-1);
     setCurrentSlide((prev) => (prev - 1 + FEATURED_SLIDES.length) % FEATURED_SLIDES.length);
   };
 
   const handleNextSlide = () => {
+    setSlideDirection(1);
     setCurrentSlide((prev) => (prev + 1) % FEATURED_SLIDES.length);
+  };
+
+  const handleSelectSlide = (idx: number) => {
+    setSlideDirection(idx > currentSlide ? 1 : -1);
+    setCurrentSlide(idx);
   };
 
   const filteredApps =
@@ -455,13 +480,13 @@ export default function ApplicationPage() {
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. PROPER FIRST PAGE (LIGHT BACKGROUND HERO WITH AUTO-SLIDING PRODUCTS) ── */}
+      {/* ── 1. PROPER FIRST PAGE (LIGHT BACKGROUND HERO WITH INTERACTIVE SLIDING PRODUCT BOX) ── */}
       <section
-        className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex flex-col justify-between pt-32 sm:pt-36 lg:pt-40 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 overflow-hidden bg-white text-[#202B61] border-b border-slate-200/80"
+        className="relative w-full pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 overflow-hidden bg-white text-[#202B61] border-b border-slate-200/80"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Background Auto-Sliding Product Showcase Layer (Light Airy Treatment) */}
+        {/* Background Auto-Sliding Subtle Ambiance Layer */}
         {FEATURED_SLIDES.map((slide, idx) => (
           <div
             key={slide.id}
@@ -474,127 +499,197 @@ export default function ApplicationPage() {
               alt={slide.name}
               fill
               priority={idx === 0}
-              className="object-cover transition-transform duration-1000 ease-out opacity-[0.14] mix-blend-luminosity filter blur-[0.5px]"
+              className="object-cover transition-transform duration-1000 ease-out opacity-[0.10] mix-blend-luminosity filter blur-[1px]"
             />
             {/* Luminous Light Gradient Overlay ensuring 100% crisp navy typography */}
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/40" />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/50" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
           </div>
         ))}
 
-        {/* Top Content: Proper Authoritative Heading & Subheading (Deep Navy #202B61) */}
-        <div className="relative z-10 max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 text-left">
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.12] max-w-4xl text-balance">
-            Applications, Shopify Stores &amp; Enterprise Platforms
-          </h1>
+        <div className="relative z-10 max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 text-left">
+          
+          {/* Top Content: Authoritative Heading & Subheading */}
+          <div className="space-y-3.5 sm:space-y-4 max-w-4xl">
+            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.12] text-balance">
+              Applications, Shopify Stores &amp; Enterprise Platforms
+            </h1>
 
-          <p className="font-sans text-base sm:text-lg lg:text-xl text-[#202B61]/80 leading-relaxed font-normal max-w-3xl">
-            Explore our verified portfolio of production mobile apps, high-converting Shopify websites, and autonomous systems engineered for global enterprises.
-          </p>
+            <p className="font-sans text-base sm:text-lg lg:text-xl text-[#202B61]/80 leading-relaxed font-normal max-w-3xl">
+              Explore our verified portfolio of production mobile apps, high-converting Shopify websites, and autonomous systems engineered for global enterprises.
+            </p>
+          </div>
 
-        </div>
-
-        {/* Bottom Floating Light Card: Active Product Info, Small Name & Description */}
-        <div className="relative z-10 max-w-[1400px] w-full mx-auto pt-8 sm:pt-10">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 p-4.5 sm:p-6 lg:p-7 rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_8px_30px_rgba(32,43,97,0.06)]">
+          {/* ── INTERACTIVE PRODUCT SLIDER BOX (NO EMPTY VOID, SMOOTH SLIDING DETAILS) ── */}
+          <div className="rounded-2xl bg-white border border-slate-200/90 shadow-[0_12px_40px_rgba(32,43,97,0.07)] overflow-hidden">
             
-            {/* Active Product Icon + Name + Description */}
-            <div className="flex items-center gap-3.5 sm:gap-4.5 min-w-0">
+            {/* Top Interactive Product Tabs Bar */}
+            <div className="flex items-center justify-between border-b border-slate-100 px-4 sm:px-6 py-2.5 sm:py-3 bg-slate-50/80 overflow-x-auto no-scrollbar gap-3">
               
-              {/* Product Squircle Icon */}
-              <div
-                className={`w-13 h-13 sm:w-16 sm:h-16 rounded-2xl ${activeFeatured.iconBg} text-white flex items-center justify-center shrink-0 shadow-md`}
-              >
-                {activeFeatured.category === "Shopify Stores" ? (
-                  <ShoppingBag className="w-7 h-7 stroke-[1.8]" />
-                ) : activeFeatured.iconType === "mobile" ? (
-                  <Smartphone className="w-7 h-7 stroke-[1.8]" />
-                ) : (
-                  <Layers className="w-7 h-7 stroke-[1.8]" />
-                )}
-              </div>
-
-              {/* Product Info */}
-              <div className="space-y-0.5 sm:space-y-1 min-w-0 text-left">
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]">
-                    Featuring: {activeFeatured.category}
-                  </span>
-                  <span className="text-slate-300">•</span>
-                  <span className="text-xs text-[#202B61]/80 font-semibold flex items-center gap-1">
-                    <Star className="w-3 h-3 fill-amber-400 stroke-amber-500" />
-                    {activeFeatured.rating}
-                  </span>
-                  <span className="text-[11px] text-[#202B61]/60">
-                    ({activeFeatured.reviewsCount})
-                  </span>
-                </div>
-
-                <h2 className="font-heading font-bold text-lg sm:text-xl text-[#202B61] leading-tight truncate">
-                  {activeFeatured.name}
-                </h2>
-
-                <p className="font-sans text-xs sm:text-sm text-[#202B61]/75 leading-snug line-clamp-1 max-w-xl">
-                  {activeFeatured.tagline}
-                </p>
-              </div>
-
-            </div>
-
-            {/* Controls & Action Button */}
-            <div className="flex items-center justify-between md:justify-end gap-3 shrink-0 pt-2 md:pt-0 border-t border-slate-100 md:border-t-0">
-              
-              {/* Progress Dots & Slide Arrows */}
-              <div className="flex items-center gap-2 mr-2">
-                <div className="flex items-center gap-1.5">
-                  {FEATURED_SLIDES.map((slide, idx) => (
+              {/* Product Pills (Clicking instantly slides to that product) */}
+              <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                {FEATURED_SLIDES.map((slide, idx) => {
+                  const isActive = idx === currentSlide;
+                  return (
                     <button
                       key={slide.id}
                       type="button"
-                      onClick={() => setCurrentSlide(idx)}
-                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                        idx === currentSlide
-                          ? "w-6 bg-[#202B61]"
-                          : "w-2 bg-[#202B61]/25 hover:bg-[#202B61]/50"
+                      onClick={() => handleSelectSlide(idx)}
+                      className={`flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer whitespace-nowrap select-none ${
+                        isActive
+                          ? "bg-[#202B61] text-white shadow-xs"
+                          : "bg-white text-[#202B61]/70 hover:text-[#202B61] hover:bg-slate-100 border border-slate-200/80"
                       }`}
-                      aria-label={`Go to slide ${idx + 1}: ${slide.name}`}
-                    />
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-1 ml-2">
-                  <button
-                    type="button"
-                    onClick={handlePrevSlide}
-                    className="w-7 h-7 rounded-full bg-white hover:bg-slate-100 flex items-center justify-center text-[#202B61] border border-slate-200/90 shadow-xs cursor-pointer"
-                    aria-label="Previous"
-                  >
-                    <ChevronLeft className="w-3.5 h-3.5" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleNextSlide}
-                    className="w-7 h-7 rounded-full bg-white hover:bg-slate-100 flex items-center justify-center text-[#202B61] border border-slate-200/90 shadow-xs cursor-pointer"
-                    aria-label="Next"
-                  >
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
+                    >
+                      <span
+                        className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                          isActive ? "bg-amber-400" : "bg-slate-300"
+                        }`}
+                      />
+                      <span>{slide.name}</span>
+                    </button>
+                  );
+                })}
               </div>
 
-              {/* View Details CTA */}
-              <button
-                type="button"
-                onClick={() => handleOpenAppModal(activeFeatured)}
-                className="inline-flex items-center gap-1.5 px-4.5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs active:scale-95"
-              >
-                <span>View Details</span>
-                <ArrowUpRight className="w-4 h-4 text-white" />
-              </button>
+              {/* Slider Controls (Next / Prev + Step Counter) */}
+              <div className="hidden sm:flex items-center gap-2 shrink-0 pl-2">
+                <span className="text-[11.5px] font-mono font-bold text-[#202B61]/60 mr-1 select-none">
+                  0{currentSlide + 1} / 0{FEATURED_SLIDES.length}
+                </span>
+
+                <button
+                  type="button"
+                  onClick={handlePrevSlide}
+                  className="w-7 h-7 rounded-full bg-white hover:bg-slate-100 flex items-center justify-center text-[#202B61] border border-slate-200/90 shadow-xs cursor-pointer active:scale-95 transition-transform"
+                  aria-label="Previous product"
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleNextSlide}
+                  className="w-7 h-7 rounded-full bg-white hover:bg-slate-100 flex items-center justify-center text-[#202B61] border border-slate-200/90 shadow-xs cursor-pointer active:scale-95 transition-transform"
+                  aria-label="Next product"
+                >
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
 
             </div>
 
+            {/* Main Interactive Slide Body: Split Layout with Details on Left, Mockup on Right */}
+            <div className="relative min-h-[220px] p-5 sm:p-7 lg:p-8 overflow-hidden">
+              <AnimatePresence mode="wait" custom={slideDirection}>
+                <motion.div
+                  key={activeFeatured.id}
+                  custom={slideDirection}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.32, ease: "easeOut" }}
+                  className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center"
+                >
+                  {/* Left Column (Span 7): App Identity, Category, Full Description, and Actions */}
+                  <div className="lg:col-span-7 space-y-4 text-left">
+                    
+                    <div className="flex items-center gap-3.5 sm:gap-4">
+                      {/* Squircle App Icon */}
+                      <div
+                        className={`w-13 h-13 sm:w-15 sm:h-15 rounded-2xl ${activeFeatured.iconBg} text-white flex items-center justify-center shrink-0 shadow-md`}
+                      >
+                        {activeFeatured.category === "Shopify Stores" ? (
+                          <ShoppingBag className="w-7 h-7 stroke-[1.8]" />
+                        ) : activeFeatured.iconType === "mobile" ? (
+                          <Smartphone className="w-7 h-7 stroke-[1.8]" />
+                        ) : (
+                          <Layers className="w-7 h-7 stroke-[1.8]" />
+                        )}
+                      </div>
+
+                      {/* Title & Category Line */}
+                      <div className="space-y-0.5 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]">
+                            {activeFeatured.category}
+                          </span>
+                          <span className="text-slate-300">•</span>
+                          <span className="text-xs text-[#202B61]/80 font-semibold flex items-center gap-1">
+                            <Star className="w-3 h-3 fill-amber-400 stroke-amber-500" />
+                            {activeFeatured.rating}
+                          </span>
+                          <span className="text-[11px] text-[#202B61]/60">
+                            ({activeFeatured.reviewsCount})
+                          </span>
+                        </div>
+
+                        <h2 className="font-heading font-bold text-xl sm:text-2xl text-[#202B61] leading-tight truncate">
+                          {activeFeatured.name}
+                        </h2>
+                      </div>
+                    </div>
+
+                    {/* Descriptive Text (Clean, informative, no fluff) */}
+                    <p className="font-sans text-xs sm:text-sm text-[#202B61]/85 leading-relaxed max-w-xl">
+                      {activeFeatured.description}
+                    </p>
+
+                    {/* Action Bar */}
+                    <div className="flex flex-wrap items-center gap-3 pt-1">
+                      <button
+                        type="button"
+                        onClick={() => handleOpenAppModal(activeFeatured)}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs active:scale-95"
+                      >
+                        <span>View Details &amp; Download</span>
+                        <ArrowUpRight className="w-4 h-4 text-white" />
+                      </button>
+
+                      <span className="text-xs text-[#202B61]/70 font-medium">
+                        {activeFeatured.platformBadge} • Verified Production Release
+                      </span>
+                    </div>
+
+                  </div>
+
+                  {/* Right Column (Span 5): Visual Preview of the Active Product */}
+                  <div className="lg:col-span-5">
+                    <div
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => handleOpenAppModal(activeFeatured)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          handleOpenAppModal(activeFeatured);
+                        }
+                      }}
+                      className="group relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80 shadow-xs cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                    >
+                      <Image
+                        src={activeFeatured.previewImage}
+                        alt={activeFeatured.name}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 40vw"
+                        className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-[#202B61]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                        <span className="bg-white/95 backdrop-blur-xs text-[#202B61] text-xs font-bold px-3.5 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
+                          <span>Open Full Specifications</span>
+                          <ArrowUpRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
           </div>
+
         </div>
 
       </section>
