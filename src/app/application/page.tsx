@@ -621,11 +621,8 @@ export default function ApplicationPage() {
       <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 my-auto">
           
-          {/* Section Header (Matching Reference 3 & Snippet 4, 6) */}
-          <div className="text-left space-y-1">
-            <span className="font-mono text-xs font-bold tracking-widest uppercase text-slate-500 block">
-              001 • FEATURED SHOWCASE
-            </span>
+          {/* Section Header */}
+          <div className="text-left">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
               What We&apos;ve Built
             </h2>
