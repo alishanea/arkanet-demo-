@@ -618,12 +618,12 @@ export default function ApplicationPage() {
       </section>
 
       {/* ── 2. FEATURED CASE CAROUSEL DECK (INSPIRED BY REFERENCE IMAGE 3 "What We've Built") ── */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#E2ECF8] border-b border-blue-200/60 text-left overflow-hidden flex flex-col justify-center">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 my-auto">
           
           {/* Section Header (Matching Reference 3 & Snippet 4, 6) */}
           <div className="text-left space-y-1">
-            <span className="font-mono text-xs font-bold tracking-widest uppercase text-[#202B61]/65 block">
+            <span className="font-mono text-xs font-bold tracking-widest uppercase text-slate-500 block">
               001 • FEATURED SHOWCASE
             </span>
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
@@ -632,7 +632,7 @@ export default function ApplicationPage() {
           </div>
 
           {/* Elevated Floating 3D Showcase Card */}
-          <div className="relative rounded-[28px] bg-white border border-blue-100/90 p-6 sm:p-8 lg:p-10 shadow-[0_10px_36px_rgba(32,43,97,0.08)]">
+          <div className="relative rounded-[28px] bg-white border border-slate-200/80 p-6 sm:p-8 lg:p-10 shadow-[0_4px_24px_rgba(32,43,97,0.04)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
               
               {/* Left Column: Clean App Store Preview Container */}
