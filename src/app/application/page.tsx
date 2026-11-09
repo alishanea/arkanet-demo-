@@ -407,20 +407,20 @@ export default function ApplicationPage() {
   const [selectedApp, setSelectedApp] = useState<ApplicationItem | null>(null);
   const [activeScreenshotIdx, setActiveScreenshotIdx] = useState(0);
 
-  // Auto-sliding featured banner state
+  // Auto-sliding state
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const autoSlideTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const openContact = () => setContactOpen(true);
 
-  // Auto-slide effect every 4.8 seconds
+  // Auto-slide effect every 4.5 seconds
   useEffect(() => {
     if (isPaused) return;
 
     autoSlideTimerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % FEATURED_SLIDES.length);
-    }, 4800);
+    }, 4500);
 
     return () => {
       if (autoSlideTimerRef.current) clearInterval(autoSlideTimerRef.current);
@@ -455,142 +455,156 @@ export default function ApplicationPage() {
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. CINEMATIC AUTO-SLIDING FEATURED HERO SECTION ── */}
+      {/* ── 1. PROPER FIRST PAGE (HERO WITH HEADING, SUBHEADING, AND BACKGROUND PRODUCT SLIDER) ── */}
       <section
-        className="relative w-full pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80"
+        className="relative w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] flex flex-col justify-between pt-32 sm:pt-36 lg:pt-40 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 overflow-hidden bg-[#151E48] text-white border-b border-[#253272]"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="max-w-[1400px] mx-auto">
+        {/* Background Auto-Sliding Product Showcase Layer */}
+        {FEATURED_SLIDES.map((slide, idx) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === currentSlide ? "opacity-100 z-0 scale-100" : "opacity-0 -z-10 scale-105 pointer-events-none"
+            }`}
+          >
+            <Image
+              src={slide.heroImage}
+              alt={slide.name}
+              fill
+              priority={idx === 0}
+              className="object-cover transition-transform duration-1000 ease-out"
+            />
+            {/* Deep Multi-Layer Vignette Overlay ensuring crystal-clear text readability */}
+            <div className="absolute inset-0 bg-[#151E48]/80 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#151E48] via-[#151E48]/70 to-[#151E48]/40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#151E48]/90 via-[#151E48]/60 to-transparent" />
+          </div>
+        ))}
+
+        {/* Top Content: Proper Authoritative Heading & Subheading */}
+        <div className="relative z-10 max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 text-left">
           
-          {/* Billboard Frame */}
-          <div className="relative w-full min-h-[460px] sm:min-h-[500px] lg:min-h-[540px] rounded-2xl overflow-hidden bg-[#151E48] text-white shadow-[0_12px_40px_rgba(21,30,72,0.18)] flex flex-col justify-end p-6 sm:p-10 lg:p-14 border border-[#253272]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/12 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-wider text-white shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+            <span>Applications &amp; Storefronts Showcase</span>
+          </div>
+
+          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12] max-w-4xl text-balance">
+            Applications, Shopify Stores &amp; Enterprise Platforms
+          </h1>
+
+          <p className="font-sans text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-normal max-w-3xl">
+            Explore our verified portfolio of production mobile apps, high-converting Shopify websites, and autonomous systems engineered for global enterprises.
+          </p>
+
+        </div>
+
+        {/* Bottom Floating Glass Card: Active Product Info, Small Name & Description */}
+        <div className="relative z-10 max-w-[1400px] w-full mx-auto pt-8 sm:pt-10">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 p-4.5 sm:p-6 lg:p-7 rounded-2xl bg-white/12 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.25)]">
             
-            {/* Sliding Background Image Layer */}
-            {FEATURED_SLIDES.map((slide, idx) => (
-              <div
-                key={slide.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  idx === currentSlide ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105 pointer-events-none"
-                }`}
-              >
-                <Image
-                  src={slide.heroImage}
-                  alt={slide.name}
-                  fill
-                  priority={idx === 0}
-                  className="object-cover transition-transform duration-1000 ease-out"
-                />
-                {/* Deep Architectural Dark Navy Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#151E48] via-[#151E48]/75 to-[#151E48]/35" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#151E48]/90 via-[#151E48]/50 to-transparent" />
-              </div>
-            ))}
-
-            {/* Foreground Content for Current Slide */}
-            <div className="relative z-20 max-w-2xl space-y-4 sm:space-y-5 text-left">
+            {/* Active Product Icon + Name + Description */}
+            <div className="flex items-center gap-3.5 sm:gap-4.5 min-w-0">
               
-              {/* Category Eyebrow & Status */}
-              <div className="flex items-center gap-2.5">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-bold tracking-widest uppercase text-white/95 border border-white/20">
-                  <Sparkles className="w-3 h-3 text-amber-300" />
-                  <span>Featured {activeFeatured.category}</span>
-                </span>
-                
-                <span className="text-xs text-white/75 font-medium flex items-center gap-1">
-                  <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
-                  <strong className="text-white">{activeFeatured.rating}</strong>
-                  <span className="text-white/60">({activeFeatured.reviewsCount})</span>
-                </span>
+              {/* Product Squircle Icon */}
+              <div
+                className={`w-13 h-13 sm:w-16 sm:h-16 rounded-2xl ${activeFeatured.iconBg} text-white flex items-center justify-center shrink-0 shadow-lg`}
+              >
+                {activeFeatured.category === "Shopify Stores" ? (
+                  <ShoppingBag className="w-7 h-7 stroke-[1.8]" />
+                ) : activeFeatured.iconType === "mobile" ? (
+                  <Smartphone className="w-7 h-7 stroke-[1.8]" />
+                ) : (
+                  <Layers className="w-7 h-7 stroke-[1.8]" />
+                )}
               </div>
 
-              {/* Title & Platforms */}
-              <div className="space-y-1.5">
-                <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.12]">
+              {/* Product Info */}
+              <div className="space-y-0.5 sm:space-y-1 min-w-0 text-left">
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-amber-300">
+                    Featuring: {activeFeatured.category}
+                  </span>
+                  <span className="text-white/40">•</span>
+                  <span className="text-xs text-white/80 font-semibold flex items-center gap-1">
+                    <Star className="w-3 h-3 fill-amber-400 stroke-amber-400" />
+                    {activeFeatured.rating}
+                  </span>
+                </div>
+
+                <h2 className="font-heading font-bold text-lg sm:text-xl text-white leading-tight truncate">
                   {activeFeatured.name}
-                </h1>
-                <p className="font-sans text-xs sm:text-sm text-white/70 font-medium">
-                  {activeFeatured.subCategory} • {activeFeatured.platformBadge}
+                </h2>
+
+                <p className="font-sans text-xs sm:text-sm text-slate-200 leading-snug line-clamp-1 max-w-xl">
+                  {activeFeatured.tagline}
                 </p>
-              </div>
-
-              {/* Small Clean Description */}
-              <p className="font-sans text-xs sm:text-[14.5px] text-slate-200 leading-relaxed font-normal max-w-xl">
-                {activeFeatured.tagline}
-              </p>
-
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => handleOpenAppModal(activeFeatured)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#202B61] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-md active:scale-95"
-                >
-                  <Download className="w-4 h-4 text-[#202B61]" />
-                  <span>View Details &amp; Download</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={openContact}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-sans font-semibold text-xs sm:text-sm backdrop-blur-md border border-white/20 transition-all cursor-pointer"
-                >
-                  <span>Request Custom Build</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
               </div>
 
             </div>
 
-            {/* Slide Navigation Controls & Progress Dots (Bottom Right) */}
-            <div className="relative z-20 flex items-center justify-between pt-6 mt-6 border-t border-white/15">
+            {/* Controls & Action Button */}
+            <div className="flex items-center justify-between md:justify-end gap-3 shrink-0 pt-2 md:pt-0 border-t border-white/10 md:border-t-0">
               
-              {/* Progress Dots / Bars */}
-              <div className="flex items-center gap-2">
-                {FEATURED_SLIDES.map((slide, idx) => (
+              {/* Progress Dots & Slide Arrows */}
+              <div className="flex items-center gap-2 mr-2">
+                <div className="flex items-center gap-1.5">
+                  {FEATURED_SLIDES.map((slide, idx) => (
+                    <button
+                      key={slide.id}
+                      type="button"
+                      onClick={() => setCurrentSlide(idx)}
+                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                        idx === currentSlide
+                          ? "w-6 bg-white"
+                          : "w-2 bg-white/30 hover:bg-white/60"
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}: ${slide.name}`}
+                    />
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-1 ml-2">
                   <button
-                    key={slide.id}
                     type="button"
-                    onClick={() => setCurrentSlide(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === currentSlide
-                        ? "w-8 bg-white"
-                        : "w-2 bg-white/30 hover:bg-white/60"
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}: ${slide.name}`}
-                  />
-                ))}
+                    onClick={handlePrevSlide}
+                    className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-white border border-white/15 cursor-pointer"
+                    aria-label="Previous"
+                  >
+                    <ChevronLeft className="w-3.5 h-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleNextSlide}
+                    className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-white border border-white/15 cursor-pointer"
+                    aria-label="Next"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
 
-              {/* Arrow Controls */}
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={handlePrevSlide}
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-md flex items-center justify-center text-white border border-white/15 transition-all cursor-pointer"
-                  aria-label="Previous featured app"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  type="button"
-                  onClick={handleNextSlide}
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-md flex items-center justify-center text-white border border-white/15 transition-all cursor-pointer"
-                  aria-label="Next featured app"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
+              {/* View Details CTA */}
+              <button
+                type="button"
+                onClick={() => handleOpenAppModal(activeFeatured)}
+                className="inline-flex items-center gap-1.5 px-4.5 py-2.5 rounded-full bg-white text-[#202B61] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-md active:scale-95"
+              >
+                <span>View Details</span>
+                <ArrowUpRight className="w-4 h-4 text-[#202B61]" />
+              </button>
 
             </div>
 
           </div>
-
         </div>
+
       </section>
 
       {/* ── 2. VISUAL APP STORE DIRECTORY GRID (IMAGE PREVIEW + APP STORE BADGES) ── */}
-      <section className="w-full py-10 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-12 text-left font-sans">
+      <section className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 text-left font-sans">
         <div className="max-w-[1400px] mx-auto space-y-6">
 
           {/* Section Heading & Category Filter Bar */}
