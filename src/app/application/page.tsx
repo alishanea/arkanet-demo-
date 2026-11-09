@@ -482,7 +482,7 @@ export default function ApplicationPage() {
   const currentDeckApp = FEATURED_SLIDES[activeDeckIdx];
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#EEF2F6] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       {/* ── HEADER ── */}
       <Header onOpenBooking={openContact} />
 
@@ -490,13 +490,13 @@ export default function ApplicationPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. BENTO HERO SHOWCASE (INSPIRED BY REFERENCE IMAGES 1 & 2) ── */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left flex flex-col justify-center">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-[#EEF2F6] border-b border-slate-200/80 text-left flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-7 my-auto">
           
           {/* Header Row: Large Typography (Matching Image 1: "Our focus is simple / Design to convert") */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-1">
             <div className="space-y-1.5 max-w-3xl">
-              <span className="font-heading font-medium text-base sm:text-lg text-slate-400 block tracking-tight">
+              <span className="font-heading font-medium text-base sm:text-lg text-slate-500 block tracking-tight">
                 Our focus is simple
               </span>
               <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-[1.1] text-balance">
@@ -513,7 +513,7 @@ export default function ApplicationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5">
             
             {/* Card 1: Avatar stack & Partners (Span 3) */}
-            <div className="lg:col-span-3 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs min-h-[220px]">
+            <div className="lg:col-span-3 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-white border border-slate-200/80 shadow-[0_4px_20px_rgba(32,43,97,0.04)] min-h-[220px]">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
                   <div className="w-8 h-8 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
@@ -548,7 +548,7 @@ export default function ApplicationPage() {
             </div>
 
             {/* Card 2: Revenue Generated (Span 4) */}
-            <div className="lg:col-span-4 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs min-h-[220px]">
+            <div className="lg:col-span-4 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-white border border-slate-200/80 shadow-[0_4px_20px_rgba(32,43,97,0.04)] min-h-[220px]">
               <div className="space-y-1">
                 <span className="text-xs font-semibold text-[#202B61]/70">
                   Through custom-tailored mobile &amp; e-commerce systems
@@ -565,7 +565,7 @@ export default function ApplicationPage() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2 pt-2 border-t border-slate-200/60 text-xs font-semibold text-[#202B61]/80">
+                <div className="flex items-center gap-2 pt-2 border-t border-slate-100 text-xs font-semibold text-[#202B61]/80">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>Available for Q2 Architecture &amp; App Builds</span>
                 </div>
@@ -573,7 +573,7 @@ export default function ApplicationPage() {
             </div>
 
             {/* Card 3: Light High-Trust Review Card (App Store & Play Store Caliber) */}
-            <div className="lg:col-span-5 relative flex flex-col justify-between p-5 sm:p-6 lg:p-7 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs overflow-hidden min-h-[220px]">
+            <div className="lg:col-span-5 relative flex flex-col justify-between p-5 sm:p-6 lg:p-7 rounded-[24px] bg-white border border-slate-200/80 shadow-[0_4px_20px_rgba(32,43,97,0.04)] overflow-hidden min-h-[220px]">
               
               <div className="relative z-10 space-y-2 max-w-sm">
                 <span className="text-[11px] font-bold tracking-wider uppercase text-[#202B61]/60">
@@ -584,7 +584,7 @@ export default function ApplicationPage() {
                 </p>
               </div>
 
-              <div className="relative z-10 pt-5 flex items-end justify-between border-t border-slate-200/60 mt-4">
+              <div className="relative z-10 pt-5 flex items-end justify-between border-t border-slate-100 mt-4">
                 <div>
                   <h4 className="font-heading font-black text-4xl sm:text-5xl text-[#202B61] tracking-tight">
                     4.9<span className="text-[#202B61]/50 text-2xl font-normal">/5</span>
@@ -616,7 +616,7 @@ export default function ApplicationPage() {
       </section>
 
       {/* ── 2. FEATURED CASE CAROUSEL DECK (INSPIRED BY REFERENCE IMAGE 3 "What We've Built") ── */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#FAFAFC] border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#EAEFF5] border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 my-auto">
           
           {/* Section Header */}
@@ -627,7 +627,7 @@ export default function ApplicationPage() {
           </div>
 
           {/* Elevated Floating 3D Showcase Card (Clean App Store & Play Store Style) */}
-          <div className="relative rounded-[24px] bg-white border border-slate-200/80 p-5 sm:p-7 lg:p-8 shadow-[0_4px_24px_rgba(32,43,97,0.04)]">
+          <div className="relative rounded-[28px] bg-white border border-slate-200/80 p-6 sm:p-8 lg:p-10 shadow-[0_8px_32px_rgba(32,43,97,0.06)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
               
               {/* Left Column: Clean App Store Preview Container */}
@@ -791,7 +791,7 @@ export default function ApplicationPage() {
       </section>
 
       {/* ── 3. FULL APP STORE & SHOPIFY DIRECTORY (COLORFUL SQUIRCLES, REVIEWS, GET BUTTONS) ── */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-white">
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#EEF2F6]">
         <div className="max-w-[1400px] mx-auto space-y-8">
 
           {/* Directory Header & Category Filter Tabs */}
@@ -817,7 +817,7 @@ export default function ApplicationPage() {
                     className={`px-4 py-2 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
                       isActive
                         ? "bg-[#202B61] text-white shadow-xs"
-                        : "bg-slate-100 text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-200"
+                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-100 border border-slate-200/60"
                     }`}
                   >
                     {category}
