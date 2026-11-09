@@ -27,6 +27,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ContactFormModal } from "@/components/modals/ContactFormModal";
 import { AboutCTA } from "@/components/about/AboutCTA";
+import { HomeReviewsSection } from "@/components/home/HomeReviewsSection";
 
 type ApplicationCategory = "All" | "Mobile Apps" | "Shopify Stores" | "Web & SaaS";
 
@@ -1204,6 +1205,9 @@ export default function ApplicationPage() {
           </div>
         </div>
       )}
+
+      {/* ── 4. CLIENT REVIEWS & VERIFIED STORIES (EXCELLENT EVERYWHERE) ── */}
+      <HomeReviewsSection />
 
       {/* ── 5. CLOSING CTA ── */}
       <AboutCTA onOpenBooking={openContact} />
