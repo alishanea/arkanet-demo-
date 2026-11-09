@@ -496,9 +496,6 @@ export default function ApplicationPage() {
           {/* Header Row: Large Typography (Matching Image 1: "Our focus is simple / Design to convert") */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-1">
             <div className="space-y-1.5 max-w-3xl">
-              <span className="inline-block text-[11px] font-mono font-bold tracking-widest uppercase text-slate-500 bg-white px-2.5 py-1 rounded-md border border-slate-200/80 shadow-2xs mb-1">
-                001 • APPLICATION STUDIO
-              </span>
               <span className="font-heading font-medium text-base sm:text-lg text-slate-500 block tracking-tight">
                 Our focus is simple
               </span>
