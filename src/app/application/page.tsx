@@ -618,8 +618,8 @@ export default function ApplicationPage() {
         </div>
       </section>
 
-      {/* ── 2. FEATURED CASE CAROUSEL DECK (INSPIRED BY REFERENCE IMAGE 3 "What We've Built") ── */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#F8FAFC] border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center">
+      {/* ── 2. FEATURED CASE CAROUSEL DECK (BG COLOR #EAEAEA FROM REFERENCE IMAGE) ── */}
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-b border-[#d8d8d8] text-left overflow-hidden flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-5 my-auto">
           
           {/* Section Header */}
@@ -629,8 +629,8 @@ export default function ApplicationPage() {
             </h2>
           </div>
 
-          {/* Elevated Floating 3D Showcase Card */}
-          <div className="relative rounded-[28px] bg-white border border-slate-200/80 p-6 sm:p-8 lg:p-10 shadow-[0_4px_24px_rgba(32,43,97,0.04)]">
+          {/* Elevated Floating 3D Showcase Card (Crisp White Card on #eaeaea Canvas) */}
+          <div className="relative rounded-[28px] bg-white border border-[#d8d8d8] p-6 sm:p-8 lg:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
               
               {/* Left Column: Clean App Store Preview Container */}
@@ -759,12 +759,12 @@ export default function ApplicationPage() {
                   type="button"
                   onClick={() => setActiveDeckIdx(idx)}
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    idx === activeDeckIdx ? "w-7 bg-[#202B61]" : "w-2 bg-slate-300 hover:bg-slate-400"
+                    idx === activeDeckIdx ? "w-7 bg-[#202B61]" : "w-2 bg-slate-400 hover:bg-slate-500"
                   }`}
                   aria-label={`Slide to ${slide.name}`}
                 />
               ))}
-              <span className="text-xs font-mono font-semibold text-[#202B61]/60 ml-2">
+              <span className="text-xs font-mono font-semibold text-[#202B61]/70 ml-2">
                 0{activeDeckIdx + 1} / 0{FEATURED_SLIDES.length}
               </span>
             </div>
@@ -774,7 +774,7 @@ export default function ApplicationPage() {
               <button
                 type="button"
                 onClick={handlePrevDeck}
-                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
+                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-300 text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
                 aria-label="Previous featured release"
               >
                 <ChevronLeft className="w-4 h-4 stroke-[2]" />
@@ -782,7 +782,7 @@ export default function ApplicationPage() {
               <button
                 type="button"
                 onClick={handleNextDeck}
-                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
+                className="w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-300 text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
                 aria-label="Next featured release"
               >
                 <ChevronRight className="w-4 h-4 stroke-[2]" />
