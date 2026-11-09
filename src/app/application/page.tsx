@@ -490,21 +490,21 @@ export default function ApplicationPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── 1. BENTO HERO SHOWCASE (INSPIRED BY REFERENCE IMAGES 1 & 2) ── */}
-      <section className="relative w-full pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left">
-        <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left flex flex-col justify-center">
+        <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-7 my-auto">
           
           {/* Header Row: Large Typography (Matching Image 1: "Our focus is simple / Design to convert") */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2">
-            <div className="space-y-2 max-w-3xl">
-              <span className="font-heading font-medium text-lg sm:text-xl lg:text-2xl text-slate-400 block tracking-tight">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-1">
+            <div className="space-y-1.5 max-w-3xl">
+              <span className="font-heading font-medium text-base sm:text-lg text-slate-400 block tracking-tight">
                 Our focus is simple
               </span>
-              <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08] text-balance">
+              <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-[1.1] text-balance">
                 Design to scale &amp; convert
               </h1>
             </div>
 
-            <p className="font-sans text-sm sm:text-base text-[#202B61]/70 leading-relaxed font-normal max-w-md lg:text-right">
+            <p className="font-sans text-xs sm:text-sm text-[#202B61]/70 leading-relaxed font-normal max-w-md lg:text-right">
               We engineer production mobile apps and flagship Shopify websites that turn technical architecture into measurable commercial growth.
             </p>
           </div>
@@ -513,7 +513,7 @@ export default function ApplicationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5">
             
             {/* Card 1: Avatar stack & Partners (Span 3) */}
-            <div className="lg:col-span-3 flex flex-col justify-between p-6 sm:p-7 rounded-[28px] bg-[#f8fafc] border border-slate-200/80 shadow-xs">
+            <div className="lg:col-span-3 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs min-h-[220px]">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
                   <div className="w-8 h-8 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
@@ -534,11 +534,11 @@ export default function ApplicationPage() {
                 </span>
               </div>
 
-              <div className="pt-8 space-y-1">
+              <div className="pt-6 space-y-1">
                 <span className="font-sans text-xs text-[#202B61]/65 font-medium block">
                   Average Enterprise ROI Timeline
                 </span>
-                <h3 className="font-heading font-extrabold text-4xl text-[#202B61] tracking-tight">
+                <h3 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight">
                   90%
                 </h3>
                 <p className="font-sans text-xs text-[#202B61]/75">
@@ -548,16 +548,16 @@ export default function ApplicationPage() {
             </div>
 
             {/* Card 2: Revenue Generated (Span 4) */}
-            <div className="lg:col-span-4 flex flex-col justify-between p-6 sm:p-7 rounded-[28px] bg-[#f8fafc] border border-slate-200/80 shadow-xs">
+            <div className="lg:col-span-4 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-[#f8fafc] border border-slate-200/80 shadow-xs min-h-[220px]">
               <div className="space-y-1">
                 <span className="text-xs font-semibold text-[#202B61]/70">
                   Through custom-tailored mobile &amp; e-commerce systems
                 </span>
               </div>
 
-              <div className="pt-6 space-y-3">
+              <div className="pt-4 space-y-2.5">
                 <div>
-                  <h3 className="font-heading font-black text-5xl text-[#202B61] tracking-tight">
+                  <h3 className="font-heading font-black text-4xl sm:text-5xl text-[#202B61] tracking-tight">
                     $45M<span className="text-emerald-600 font-bold">+</span>
                   </h3>
                   <span className="text-xs font-sans text-[#202B61]/65 font-medium block mt-0.5">
@@ -573,20 +573,20 @@ export default function ApplicationPage() {
             </div>
 
             {/* Card 3: Dark High-Contrast Statement Card (Span 5 - Matching Image 1 Dark Card) */}
-            <div className="lg:col-span-5 relative flex flex-col justify-between p-6 sm:p-8 rounded-[28px] bg-[#151E48] text-white shadow-[0_12px_40px_rgba(21,30,72,0.18)] overflow-hidden">
+            <div className="lg:col-span-5 relative flex flex-col justify-between p-5 sm:p-6 lg:p-7 rounded-[24px] bg-[#151E48] text-white shadow-[0_12px_40px_rgba(21,30,72,0.18)] overflow-hidden min-h-[220px]">
               
               {/* Subtle Growth Trajectory Graphic in Background (Matching Image 1) */}
               <div className="absolute right-3 bottom-3 opacity-15 pointer-events-none">
-                <TrendingUp className="w-48 h-48 text-emerald-400 stroke-[1]" />
+                <TrendingUp className="w-40 h-40 text-emerald-400 stroke-[1]" />
               </div>
 
               <div className="relative z-10 space-y-2 max-w-sm">
-                <p className="font-sans font-medium text-xs sm:text-sm text-slate-200 leading-relaxed">
+                <p className="font-sans font-medium text-xs sm:text-[13px] text-slate-200 leading-relaxed">
                   We engineered 50+ applications and Shopify stores worldwide, helping category leaders scale traffic, automate workflows, and retain customers.
                 </p>
               </div>
 
-              <div className="relative z-10 pt-8 flex items-end justify-between">
+              <div className="relative z-10 pt-6 flex items-end justify-between">
                 <div>
                   <h4 className="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">
                     4.9<span className="text-white/60 text-2xl font-normal">/5</span>
