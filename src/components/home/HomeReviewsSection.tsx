@@ -94,16 +94,8 @@ export const HomeReviewsSection: React.FC = () => {
       <div className="max-w-[1400px] w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* ── LEFT COLUMN: PILL, HEADING, SUBTITLE & ARROWS ── */}
+          {/* ── LEFT COLUMN: HEADING, SUBTITLE & ARROWS ── */}
           <div className="lg:col-span-4 space-y-6 text-left">
-            
-            {/* Mission / Review Pill matching reference */}
-            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200/60 shadow-2xs">
-              <span className="text-[11px] font-bold tracking-widest uppercase text-rose-600">
-                Client Testimonials
-              </span>
-            </div>
-
             {/* Massive Bold Heading */}
             <h2 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[0.98] uppercase">
               EXCELLENT

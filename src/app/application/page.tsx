@@ -496,13 +496,6 @@ export default function ApplicationPage() {
           
           {/* Main Hero Header Block */}
           <div className="max-w-4xl space-y-4 sm:space-y-5 text-left">
-            {/* Mission / Studio Pill */}
-            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200/60 shadow-2xs">
-              <span className="text-[11px] font-bold tracking-widest uppercase text-rose-600">
-                Application Studio
-              </span>
-            </div>
-
             {/* Expansive Studio Headline */}
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08] text-balance">
               Flagship Mobile Apps &amp; <br className="hidden sm:inline" />
@@ -685,9 +678,9 @@ export default function ApplicationPage() {
               {/* Right Column: Clean Editorial Info & Single Clear Action */}
               <div className="lg:col-span-6 space-y-5 text-left">
                 
-                {/* Category Pill Tag */}
-                <div className="space-y-2">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-rose-50 border border-rose-200/60 text-rose-600 font-bold text-[11px] tracking-wider uppercase">
+                {/* Category Kicker */}
+                <div className="space-y-1.5">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#202B61]/60 block">
                     {currentDeckApp.category} • {currentDeckApp.subCategory}
                   </span>
                   <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
