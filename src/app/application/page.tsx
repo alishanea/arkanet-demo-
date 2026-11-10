@@ -624,71 +624,75 @@ export default function ApplicationPage() {
           </div>
         </div>
 
-        {/* Horizontal Sliding Track */}
-        <div className="relative w-full overflow-hidden">
-          <div
-            className="flex transition-transform duration-500 ease-out px-4 sm:px-8 lg:px-12"
-            style={{
-              transform: `translateX(-${activeDeckIdx * 100}%)`,
-            }}
-          >
-            {FEATURED_SLIDES.map((slide) => (
-              <div
-                key={slide.id}
-                className="w-full shrink-0 pr-4 sm:pr-8 lg:pr-12"
-              >
-                <div className="relative rounded-[28px] bg-[#18191C] text-white border border-white/10 p-6 sm:p-8 lg:p-12 shadow-[0_20px_45px_rgba(0,0,0,0.22)]">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                    
-                    {/* Left Column: Authentic High-Resolution Image */}
-                    <div className="lg:col-span-7">
-                      <div
-                        role="button"
-                        tabIndex={0}
-                        onClick={() => handleOpenAppModal(slide)}
-                        className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-[#101114] border border-white/10 cursor-pointer shadow-sm"
-                      >
-                        <Image
-                          src={slide.previewImage}
-                          alt={slide.name}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 55vw"
-                          className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Right Column: Clean Editorial Info & Single Clear Action */}
-                    <div className="lg:col-span-5 space-y-6 text-left">
-                      <div className="space-y-2">
-                        <span className="inline-block px-3 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 font-bold text-[10px] tracking-widest uppercase">
-                          {slide.category}
-                        </span>
-                        <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-tight">
-                          {slide.name}
-                        </h3>
-                      </div>
-
-                      <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-                        {slide.description}
-                      </p>
-
-                      <div className="pt-2">
-                        <button
-                          type="button"
+        {/* Horizontal Sliding Stage */}
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-8 lg:px-12">
+          <div className="relative w-full overflow-hidden rounded-[28px]">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{
+                width: `${FEATURED_SLIDES.length * 100}%`,
+                transform: `translateX(-${(activeDeckIdx * 100) / FEATURED_SLIDES.length}%)`,
+              }}
+            >
+              {FEATURED_SLIDES.map((slide) => (
+                <div
+                  key={slide.id}
+                  className="shrink-0"
+                  style={{ width: `${100 / FEATURED_SLIDES.length}%` }}
+                >
+                  <div className="relative rounded-[28px] bg-[#18191C] text-white border border-white/10 p-6 sm:p-8 lg:p-12 shadow-[0_20px_45px_rgba(0,0,0,0.22)]">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                      
+                      {/* Left Column: Authentic High-Resolution Image */}
+                      <div className="lg:col-span-7">
+                        <div
+                          role="button"
+                          tabIndex={0}
                           onClick={() => handleOpenAppModal(slide)}
-                          className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#18191C] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-sm active:scale-95"
+                          className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-[#101114] border border-white/10 cursor-pointer shadow-sm"
                         >
-                          <span>Read Case Study</span>
-                          <ArrowUpRight className="w-4 h-4 text-[#18191C]" />
-                        </button>
+                          <Image
+                            src={slide.previewImage}
+                            alt={slide.name}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 55vw"
+                            className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
+                          />
+                        </div>
                       </div>
-                    </div>
 
+                      {/* Right Column: Clean Editorial Info & Single Clear Action */}
+                      <div className="lg:col-span-5 space-y-6 text-left">
+                        <div className="space-y-2">
+                          <span className="inline-block px-3 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 font-bold text-[10px] tracking-widest uppercase">
+                            {slide.category}
+                          </span>
+                          <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-tight">
+                            {slide.name}
+                          </h3>
+                        </div>
+
+                        <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                          {slide.description}
+                        </p>
+
+                        <div className="pt-2">
+                          <button
+                            type="button"
+                            onClick={() => handleOpenAppModal(slide)}
+                            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#18191C] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-sm active:scale-95"
+                          >
+                            <span>Read Case Study</span>
+                            <ArrowUpRight className="w-4 h-4 text-[#18191C]" />
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
