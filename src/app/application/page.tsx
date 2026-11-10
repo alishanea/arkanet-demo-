@@ -490,148 +490,122 @@ export default function ApplicationPage() {
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. PROPER APPLICATION STUDIO HERO PAGE ── */}
+      {/* ── 1. EXACT STUDIO HERO FROM REFERENCE ── */}
       <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-b border-[#d8d8d8] text-left flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 my-auto">
           
-          {/* Main Hero Header Block */}
-          <div className="max-w-4xl space-y-4 sm:space-y-5 text-left">
-            {/* Expansive Studio Headline */}
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08] text-balance">
-              Flagship Mobile Apps &amp; <br className="hidden sm:inline" />
-              <span className="text-[#202B61]">High–Converting Storefronts.</span>
-            </h1>
+          {/* Main Hero Header Block: Two-Column Headline & Subtitle */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2 text-left">
+            <div>
+              <p className="font-sans text-base sm:text-lg text-[#202B61]/60 font-medium mb-1">
+                Our focus is simple
+              </p>
+              <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.05]">
+                Design to scale &amp; convert
+              </h1>
+            </div>
 
-            {/* Subtitle Narrative */}
-            <p className="font-sans text-base sm:text-lg text-[#202B61]/80 font-normal leading-relaxed max-w-2xl text-pretty">
-              We design and engineer production mobile applications, bespoke Shopify Plus stores, and intelligent digital products built for speed, measurable commercial growth, and global scale.
-            </p>
-
-            {/* Primary Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-1 sm:pt-2">
-              <a
-                href="#showcase"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#18214D] transition-all cursor-pointer shadow-md active:scale-95"
-              >
-                <span>Explore Featured Releases</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-
-              <button
-                type="button"
-                onClick={openContact}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-slate-50 text-[#202B61] font-sans font-bold text-xs sm:text-sm border border-[#d8d8d8] transition-all cursor-pointer shadow-2xs active:scale-95"
-              >
-                <span>Request Custom Build</span>
-                <Sparkles className="w-4 h-4 text-amber-500" />
-              </button>
+            <div className="max-w-md lg:max-w-lg lg:pb-1">
+              <p className="font-sans text-sm sm:text-[15px] text-[#202B61]/65 leading-relaxed font-normal">
+                We engineer production mobile apps and flagship Shopify websites that turn technical architecture into measurable commercial growth.
+              </p>
             </div>
           </div>
 
-          {/* Elevated 3-Card Proof Grid (Real Substantive Studio Metrics) */}
+          {/* Elevated 3-Card Bento Proof Grid (Exact Reference Replica) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 pt-2">
             
-            {/* Card 1: Verified Track Record (Span 4) */}
-            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-6 sm:p-7 flex flex-col justify-between shadow-[0_8px_30px_rgba(0,0,0,0.04)] min-h-[220px]">
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex -space-x-2.5 overflow-hidden py-0.5">
-                  <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=120&auto=format&fit=crop"
-                    alt="Engineer"
-                    className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=120&auto=format&fit=crop"
-                    alt="Engineer"
-                    className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=120&auto=format&fit=crop"
-                    alt="Engineer"
-                    className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=120&auto=format&fit=crop"
-                    alt="Engineer"
-                    className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
-                  />
+            {/* Card 1: Verified Releases & ROI */}
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-6 sm:p-7 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[230px]">
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-1.5 overflow-hidden py-0.5">
+                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#059669] text-white font-bold text-[10px] ring-2 ring-white">
+                    CF
+                  </div>
+                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#d97706] text-white font-bold text-[10px] ring-2 ring-white">
+                    VH
+                  </div>
+                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#2563eb] text-white font-bold text-[10px] ring-2 ring-white">
+                    KP
+                  </div>
+                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#e11d48] text-white font-bold text-[10px] ring-2 ring-white">
+                    MA
+                  </div>
                 </div>
-                <span className="text-[11px] font-bold tracking-wider uppercase text-[#202B61]/75 bg-slate-100 px-2.5 py-1 rounded-md">
+                <span className="text-[11px] font-bold tracking-wider uppercase text-[#202B61]/60">
                   50+ Global Releases
                 </span>
               </div>
 
               <div className="pt-6 space-y-1">
-                <span className="font-sans text-xs text-[#202B61]/65 font-medium block">
-                  Average Commercial Payback
+                <span className="font-sans text-xs text-[#202B61]/60 font-medium block">
+                  Average Enterprise ROI Timeline
                 </span>
-                <h3 className="font-heading font-black text-4xl sm:text-5xl text-[#202B61] tracking-tight">
+                <h3 className="font-heading font-black text-5xl text-[#202B61] tracking-tight leading-none">
                   90%
                 </h3>
-                <p className="font-sans text-xs text-[#202B61]/75">
-                  Return on investment achieved within first 90 days of launch
+                <p className="font-sans text-xs text-[#202B61]/60 pt-0.5">
+                  Return on investment within 90 days of launch
                 </p>
               </div>
             </div>
 
-            {/* Card 2: Production Scale & Availability (Span 4) */}
-            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-6 sm:p-7 flex flex-col justify-between shadow-[0_8px_30px_rgba(0,0,0,0.04)] min-h-[220px]">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-bold tracking-wider uppercase text-[#202B61]/75">
-                  Transaction Scale
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  Q2/Q3 Available
-                </span>
-              </div>
-
-              <div className="pt-6 space-y-1">
-                <span className="font-sans text-xs text-[#202B61]/65 font-medium block">
-                  Client Commerce Volume Powered
-                </span>
-                <h3 className="font-heading font-black text-4xl sm:text-5xl text-[#202B61] tracking-tight">
-                  $45M<span className="text-emerald-600 font-bold">+</span>
-                </h3>
-                <p className="font-sans text-xs text-[#202B61]/75">
-                  Sub-500ms edge response speed with 99.98% production uptime
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3: Dark High-Contrast Quality Card (Span 4) */}
-            <div className="lg:col-span-4 relative rounded-[28px] bg-[#161E44] text-white p-6 sm:p-7 flex flex-col justify-between shadow-[0_12px_36px_rgba(22,30,68,0.2)] overflow-hidden min-h-[220px]">
-              {/* Upward Zigzag Arrow Watermark */}
-              <div className="absolute right-0 bottom-2 pointer-events-none opacity-15">
-                <TrendingUp className="w-48 h-48 text-white stroke-[1.2]" />
-              </div>
-
-              <div className="relative z-10 space-y-1.5">
-                <span className="text-[10.5px] font-bold uppercase tracking-widest text-slate-300 block">
-                  Quality Assurance &amp; SLA
-                </span>
-                <p className="font-sans text-xs sm:text-[13px] text-slate-200 font-normal leading-relaxed">
-                  Enterprise-grade architecture with zero data leakage, WebGL 3D engines, and direct App Store &amp; Shopify approval.
+            {/* Card 2: Transaction Volume & Availability */}
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-6 sm:p-7 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[230px]">
+              <div>
+                <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/70 font-normal leading-relaxed">
+                  Through custom-tailored mobile &amp; e-commerce systems
                 </p>
               </div>
 
-              <div className="relative z-10 pt-5 flex items-end justify-between border-t border-white/10 mt-4">
-                <div>
-                  <h4 className="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">
-                    4.9<span className="text-white/50 text-2xl font-light">/5</span>
-                  </h4>
+              <div className="pt-4 space-y-3">
+                <div className="space-y-1">
+                  <h3 className="font-heading font-black text-5xl text-[#202B61] tracking-tight leading-none">
+                    $45M<span className="text-emerald-600 font-bold">+</span>
+                  </h3>
+                  <p className="font-sans text-xs text-[#202B61]/60">
+                    Client transaction volume powered in 2025–2026
+                  </p>
                 </div>
 
-                <div className="text-right">
-                  <div className="flex items-center gap-1 text-amber-400 justify-end mb-1">
+                <div className="pt-1 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="font-sans text-xs text-[#202B61]/75 font-medium">
+                    Available for Q2 Architecture &amp; App Builds
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Dark Elevated Client Trust Card */}
+            <div className="lg:col-span-4 rounded-[28px] bg-[#18191c] text-white p-6 sm:p-7 flex flex-col justify-between shadow-[0_16px_40px_rgba(0,0,0,0.18)] min-h-[230px]">
+              <div>
+                <p className="font-sans text-xs sm:text-[13px] text-slate-300 font-normal leading-relaxed">
+                  We engineered 50+ applications and Shopify stores worldwide, helping category leaders scale traffic, automate workflows, and retain customers.
+                </p>
+              </div>
+
+              <div className="pt-6 flex items-end justify-between">
+                <div>
+                  <h4 className="font-heading font-black text-5xl text-white tracking-tight leading-none">
+                    4.9<span className="text-white/45 text-2xl font-light">/5</span>
+                  </h4>
+                  <div className="flex items-center gap-1 text-amber-400 mt-2">
                     <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
                     <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
                     <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
                     <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
                     <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-300 block">
-                    TRUSTED WORLDWIDE
+                </div>
+
+                <div className="text-right flex flex-col items-end">
+                  <TrendingUp className="w-10 h-10 text-emerald-500 stroke-[2] mb-1.5" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block leading-tight">
+                    TRUSTED BY
+                  </span>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-white block leading-tight">
+                    CLIENTS WORLDWIDE
                   </span>
                 </div>
               </div>
