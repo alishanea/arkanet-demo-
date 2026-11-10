@@ -587,23 +587,20 @@ export default function ApplicationPage() {
           <div className="relative rounded-[36px] sm:rounded-[44px] bg-white border border-[#E2E4E8] py-12 sm:py-16 px-4 sm:px-8 lg:px-12 shadow-[0_12px_45px_rgba(0,0,0,0.03)] overflow-hidden">
             
             {/* Top Centered Header Block */}
-            <div className="max-w-xl mx-auto space-y-3 mb-6 sm:mb-10 text-center">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/90 text-[#6B7280] font-mono text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase">
-                005 • CASE STUDIES
-              </span>
+            <div className="max-w-xl mx-auto space-y-2 mb-8 sm:mb-12 text-center">
               <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#18191C] tracking-tight leading-tight">
                 What We&apos;ve Built
               </h2>
             </div>
 
             {/* 3D Depth Card Carousel Stage */}
-            <div className="relative w-full max-w-[1020px] mx-auto h-[500px] sm:h-[430px] md:h-[390px] flex items-center justify-center">
+            <div className="relative w-full max-w-[1020px] mx-auto h-[490px] sm:h-[420px] md:h-[380px] flex items-center justify-center">
               
-              {/* Prev / Next Floating Circular Arrows (Exact Reference Style) */}
+              {/* Prev / Next Floating Circular Arrows */}
               <button
                 type="button"
                 onClick={handlePrevDeck}
-                className="absolute left-1 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+                className="absolute left-1 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
                 aria-label="Previous case study"
               >
                 <ChevronLeft className="w-5 h-5 stroke-[2.2]" />
@@ -612,7 +609,7 @@ export default function ApplicationPage() {
               <button
                 type="button"
                 onClick={handleNextDeck}
-                className="absolute right-1 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+                className="absolute right-1 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
                 aria-label="Next case study"
               >
                 <ChevronRight className="w-5 h-5 stroke-[2.2]" />
@@ -645,7 +642,7 @@ export default function ApplicationPage() {
                         ? "translate(calc(-50% - clamp(110px, 18vw, 210px)), -50%) scale(0.88)"
                         : `translate(calc(-50% + ${diff * 280}px), -50%) scale(0.75)`,
                       zIndex: isCenter ? 30 : isVisible ? 20 : 10,
-                      opacity: isCenter ? 1 : isVisible ? 0.42 : 0,
+                      opacity: isCenter ? 1 : isVisible ? 0.38 : 0,
                       pointerEvents: isVisible ? "auto" : "none",
                     }}
                     className={`absolute left-1/2 top-1/2 w-[92%] sm:w-[680px] md:w-[760px] lg:w-[820px] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
@@ -653,44 +650,36 @@ export default function ApplicationPage() {
                     }`}
                   >
                     <div
-                      className={`relative rounded-[28px] sm:rounded-[34px] bg-[#F7F7F9] border border-[#E5E7EB] p-4 sm:p-5 lg:p-6 shadow-[0_22px_55px_rgba(0,0,0,0.08)] flex flex-col md:flex-row items-center gap-5 sm:gap-6 text-left transition-all ${
+                      className={`relative rounded-[28px] sm:rounded-[34px] bg-white border border-[#E5E7EB] p-4 sm:p-5 lg:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.06)] flex flex-col md:flex-row items-center gap-5 sm:gap-6 text-left transition-all ${
                         isCenter ? "ring-1 ring-black/5" : ""
                       }`}
                     >
-                      {/* Left Side: Rounded Image Canvas */}
+                      {/* Left Side: Clean Rounded Image Canvas */}
                       <div
                         role="button"
                         tabIndex={0}
                         onClick={() => {
                           if (isCenter) handleOpenAppModal(slide);
                         }}
-                        className="relative aspect-[4/3] md:aspect-square w-full md:w-[260px] lg:w-[290px] shrink-0 rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#141518] border border-black/5 shadow-inner cursor-pointer group"
+                        className="relative aspect-[4/3] md:aspect-square w-full md:w-[260px] lg:w-[290px] shrink-0 rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#141518] border border-[#E5E7EB] cursor-pointer group"
                       >
                         <Image
                           src={slide.previewImage}
                           alt={slide.name}
                           fill
                           sizes="(max-width: 768px) 100vw, 320px"
-                          className="object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                          className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
                           priority={isCenter}
                         />
                       </div>
 
-                      {/* Right Side: Editorial & 3-Column Metrics */}
-                      <div className="flex-1 min-w-0 space-y-3 sm:space-y-3.5 py-1">
+                      {/* Right Side: Editorial & Clean Metrics */}
+                      <div className="flex-1 min-w-0 space-y-3 py-1">
                         
-                        {/* Logo / Brand Header */}
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <span className="w-5 h-5 rounded-md bg-[#18191C] text-white flex items-center justify-center font-bold text-[10px]">
-                              ▲
-                            </span>
-                            <span className="font-heading font-black text-xs sm:text-sm tracking-wider uppercase text-[#18191C]">
-                              {slide.name.split(" ")[0]} STUDIO
-                            </span>
-                          </div>
-                          <span className="text-[10px] font-mono text-[#6B7280] font-semibold uppercase">
-                            0{idx + 1}
+                        {/* Clean Client Name */}
+                        <div>
+                          <span className="font-heading font-extrabold text-xs sm:text-[13px] tracking-wider uppercase text-[#18191C]">
+                            {slide.name.split(" ")[0]}
                           </span>
                         </div>
 
@@ -704,20 +693,20 @@ export default function ApplicationPage() {
                           </p>
                         </div>
 
-                        {/* Read More Link */}
+                        {/* Clean Read More Action */}
                         <div>
                           <button
                             type="button"
                             onClick={() => handleOpenAppModal(slide)}
-                            className="inline-flex items-center gap-1.5 font-sans font-bold text-xs text-[#18191C] hover:text-black hover:underline cursor-pointer group/link"
+                            className="inline-flex items-center gap-1.5 font-sans font-bold text-xs text-[#18191C] hover:opacity-75 transition-opacity cursor-pointer"
                           >
                             <span>Read More</span>
-                            <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                            <ArrowUpRight className="w-3.5 h-3.5" />
                           </button>
                         </div>
 
-                        {/* 3-Column Metrics (Exact Reference Feature) */}
-                        <div className="grid grid-cols-3 gap-3 pt-3 mt-2 border-t border-[#E5E7EB]">
+                        {/* 3-Column Metrics */}
+                        <div className="grid grid-cols-3 gap-3 pt-3.5 mt-2 border-t border-slate-100">
                           <div>
                             <div className="font-heading font-black text-base sm:text-lg text-[#18191C] tracking-tight leading-none">
                               {slide.metrics.stat1.value}
@@ -756,7 +745,7 @@ export default function ApplicationPage() {
             {/* Pagination Indicators & Bottom CTA Button */}
             <div className="space-y-4 mt-6 sm:mt-8 flex flex-col items-center">
               
-              {/* Pagination Dots (Reference Gradient Pill for Active) */}
+              {/* Clean Minimal Pagination Dots */}
               <div className="flex items-center justify-center gap-2">
                 {FEATURED_SLIDES.map((_, i) => {
                   const isActive = i === activeDeckIdx;
@@ -765,10 +754,10 @@ export default function ApplicationPage() {
                       key={i}
                       type="button"
                       onClick={() => setActiveDeckIdx(i)}
-                      className={`transition-all duration-300 rounded-full cursor-pointer ${
+                      className={`transition-all duration-200 rounded-full cursor-pointer ${
                         isActive
-                          ? "w-7 h-2 bg-gradient-to-r from-amber-400 via-rose-400 to-indigo-500 shadow-xs"
-                          : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+                          ? "w-6 h-1.5 bg-[#18191C]"
+                          : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
                       }`}
                       aria-label={`Go to slide ${i + 1}`}
                     />
@@ -776,11 +765,11 @@ export default function ApplicationPage() {
                 })}
               </div>
 
-              {/* Pill Button (Exact Reference Match) */}
+              {/* Clean Pill Button */}
               <div>
                 <a
                   href="#directory"
-                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#18191C] text-white hover:bg-black font-sans font-semibold text-xs tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#18191C] text-white hover:bg-black font-sans font-semibold text-xs tracking-tight shadow-sm hover:shadow-md active:scale-95 transition-all cursor-pointer"
                 >
                   Explore all Case Studies
                 </a>
