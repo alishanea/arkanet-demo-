@@ -4,11 +4,12 @@ import React from "react";
 
 interface AboutCTAProps {
   onOpenBooking: () => void;
+  bgColor?: string;
 }
 
-export function AboutCTA({ onOpenBooking }: AboutCTAProps) {
+export function AboutCTA({ onOpenBooking, bgColor = "bg-white" }: AboutCTAProps) {
   return (
-    <section id="contact" className="relative z-20 bg-[#eaeaea] text-[#202B61] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left select-none border-t border-b border-slate-200/80 font-sans scroll-mt-24">
+    <section id="contact" className={`relative z-20 ${bgColor} text-[#202B61] py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left select-none border-t border-b border-slate-200/80 font-sans scroll-mt-24`}>
       <div className="max-w-[1400px] w-full mx-auto space-y-4 sm:space-y-6">
         <div 
           className="group cursor-pointer inline-block outline-none focus:outline-none focus-visible:outline-none focus:ring-0 active:outline-none select-none" 

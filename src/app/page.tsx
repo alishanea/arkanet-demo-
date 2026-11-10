@@ -59,11 +59,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#eaeaea]">
+    <div className="min-h-screen flex flex-col bg-white">
 
 
       {/* Main Homepage Flow */}
-      <main className="flex-1">
+      <main className="flex-1 bg-white">
         {/* 1. Hero Title */}
         <HeroSection onOpenBooking={handleOpenBooking} />
 
@@ -86,7 +86,7 @@ export default function Home() {
         <StudioPhilosophy onOpenBooking={handleOpenBooking} />
 
         {/* 7. Closing Headline CTA */}
-        <AboutCTA onOpenBooking={handleOpenBooking} />
+        <AboutCTA onOpenBooking={handleOpenBooking} bgColor="bg-white" />
       </main>
 
       {/* Footer */}

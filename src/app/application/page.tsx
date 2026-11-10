@@ -1305,7 +1305,7 @@ export default function ApplicationPage() {
       <HomeReviewsSection />
 
       {/* ── 5. CLOSING CTA ── */}
-      <AboutCTA onOpenBooking={openContact} />
+      <AboutCTA onOpenBooking={openContact} bgColor="bg-[#eaeaea]" />
 
       {/* ── 6. FOOTER ── */}
       <Footer onOpenBooking={openContact} />

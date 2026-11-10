@@ -44,7 +44,7 @@ export const ClientLogosSection: React.FC<ClientLogosSectionProps> = () => {
   return (
     <section
       id="trusted-by"
-      className="relative w-full bg-[#eaeaea] text-[#202B61] select-none py-7 sm:py-8 lg:py-9 border-t border-b border-[#d8d8d8] shadow-[0_1px_3px_rgba(0,0,0,0.02)] overflow-hidden font-sans"
+      className="relative w-full bg-white text-[#202B61] select-none py-7 sm:py-8 lg:py-9 border-t border-b border-slate-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.02)] overflow-hidden font-sans"
     >
       <div className="w-full">
         {/* Subtle Section Label */}
