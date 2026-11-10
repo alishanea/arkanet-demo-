@@ -575,116 +575,149 @@ export default function ApplicationPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          2. FEATURED CASE CAROUSEL DECK (CLEAN STUDIO SHOWCASE, LUXURY DARK CARD)
+          2. FEATURED CASE CAROUSEL DECK (HORIZONTAL SLIDING STUDIO STAGE)
           ══════════════════════════════════════════════════════════════════ */}
-      <section id="showcase" className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center scroll-mt-20">
-        <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-8 my-auto">
+      <section id="showcase" className="relative w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-200/80 text-left overflow-hidden scroll-mt-20">
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-8 lg:px-12 mb-8 sm:mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           
           {/* Section Header */}
-          <div className="text-left">
+          <div className="space-y-1">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
               What We&apos;ve Built
             </h2>
+            <p className="font-sans text-xs sm:text-sm text-slate-500">
+              Explore our flagship mobile releases and high-growth commerce platforms.
+            </p>
           </div>
 
-          {/* Clean Studio Showcase Card (Luxury Dark Navy - Zero Micro-Elements) */}
-          <div className="relative rounded-[28px] bg-[#151E48] text-white border border-[#253272] p-6 sm:p-8 lg:p-12 shadow-[0_16px_40px_rgba(21,30,72,0.18)]">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              
-              {/* Left Column: Authentic High-Resolution Image, No Cutouts, No Floating Overlays */}
-              <div className="lg:col-span-6">
+          {/* Slide Navigation Controls & Progress */}
+          <div className="flex items-center gap-4">
+            <div className="hidden sm:flex items-center gap-2">
+              <span className="font-mono text-xs font-bold text-[#202B61]">0{activeDeckIdx + 1}</span>
+              <div className="w-24 h-1 bg-slate-200 rounded-full overflow-hidden">
                 <div
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => handleOpenAppModal(currentDeckApp)}
-                  className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-slate-900 border border-white/10 cursor-pointer shadow-sm"
-                >
-                  <Image
-                    src={currentDeckApp.previewImage}
-                    alt={currentDeckApp.name}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
-                  />
-                </div>
+                  className="h-full bg-[#202B61] transition-all duration-300 rounded-full"
+                  style={{ width: `${((activeDeckIdx + 1) / FEATURED_SLIDES.length) * 100}%` }}
+                />
               </div>
-
-              {/* Right Column: Clean Editorial Info & Single Clear Action */}
-              <div className="lg:col-span-6 space-y-6 text-left">
-                
-                {/* Category Kicker */}
-                <div className="space-y-1.5">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-300 block">
-                    {currentDeckApp.category} • {currentDeckApp.subCategory}
-                  </span>
-                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-tight">
-                    {currentDeckApp.name}
-                  </h3>
-                </div>
-
-                <p className="font-sans text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
-                  {currentDeckApp.description}
-                </p>
-
-                {/* Single Primary Action Button */}
-                <div className="pt-2">
-                  <button
-                    type="button"
-                    onClick={() => handleOpenAppModal(currentDeckApp)}
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#151E48] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-sm active:scale-95"
-                  >
-                    <span>Read Case Study</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#151E48]" />
-                  </button>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-
-          {/* Bottom Deck Navigation: Clean Dots on Left, Clean Arrows on Right */}
-          <div className="flex items-center justify-between pt-2">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1.5">
-                {FEATURED_SLIDES.map((slide, idx) => (
-                  <button
-                    key={slide.id}
-                    type="button"
-                    onClick={() => setActiveDeckIdx(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === activeDeckIdx ? "w-7 bg-[#202B61]" : "w-2 bg-[#202B61]/25 hover:bg-[#202B61]/50"
-                    }`}
-                    aria-label={`Slide to ${slide.name}`}
-                  />
-                ))}
-              </div>
-              <span className="text-xs font-mono font-semibold text-[#202B61]/70">
-                0{activeDeckIdx + 1} / 0{FEATURED_SLIDES.length}
-              </span>
+              <span className="font-mono text-xs text-slate-400">0{FEATURED_SLIDES.length}</span>
             </div>
 
-            {/* Clean Arrows */}
             <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={handlePrevDeck}
-                className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
-                aria-label="Previous featured release"
+                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-2xs"
+                aria-label="Previous slide"
               >
                 <ChevronLeft className="w-4 h-4 stroke-[2]" />
               </button>
               <button
                 type="button"
                 onClick={handleNextDeck}
-                className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
-                aria-label="Next featured release"
+                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-2xs"
+                aria-label="Next slide"
               >
                 <ChevronRight className="w-4 h-4 stroke-[2]" />
               </button>
             </div>
           </div>
+        </div>
 
+        {/* Horizontal Sliding Track */}
+        <div className="relative w-full overflow-hidden">
+          <div
+            className="flex transition-transform duration-500 ease-out px-4 sm:px-8 lg:px-12"
+            style={{
+              transform: `translateX(-${activeDeckIdx * 100}%)`,
+            }}
+          >
+            {FEATURED_SLIDES.map((slide) => (
+              <div
+                key={slide.id}
+                className="w-full shrink-0 pr-4 sm:pr-8 lg:pr-12"
+              >
+                <div className="relative rounded-[28px] bg-[#151E48] text-white border border-[#253272] p-6 sm:p-8 lg:p-12 shadow-[0_16px_40px_rgba(21,30,72,0.18)]">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    {/* Left Column: Authentic High-Resolution Image */}
+                    <div className="lg:col-span-7">
+                      <div
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => handleOpenAppModal(slide)}
+                        className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-slate-900 border border-white/10 cursor-pointer shadow-sm"
+                      >
+                        <Image
+                          src={slide.previewImage}
+                          alt={slide.name}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 55vw"
+                          className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Right Column: Clean Editorial Info & Single Clear Action */}
+                    <div className="lg:col-span-5 space-y-6 text-left">
+                      <div className="space-y-1.5">
+                        <span className="text-xs font-bold uppercase tracking-wider text-slate-300 block">
+                          {slide.category} • {slide.subCategory}
+                        </span>
+                        <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-tight">
+                          {slide.name}
+                        </h3>
+                      </div>
+
+                      <p className="font-sans text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+                        {slide.description}
+                      </p>
+
+                      <div className="pt-2">
+                        <button
+                          type="button"
+                          onClick={() => handleOpenAppModal(slide)}
+                          className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#151E48] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-sm active:scale-95"
+                        >
+                          <span>Read Case Study</span>
+                          <ArrowUpRight className="w-4 h-4 text-[#151E48]" />
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Project Navigation Rail (Clickable Thumbnails / Tabs) */}
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-8 lg:px-12 mt-6 sm:mt-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {FEATURED_SLIDES.map((slide, idx) => {
+              const isActive = idx === activeDeckIdx;
+              return (
+                <button
+                  key={slide.id}
+                  type="button"
+                  onClick={() => setActiveDeckIdx(idx)}
+                  className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer ${
+                    isActive
+                      ? "bg-[#151E48] text-white border-[#151E48] shadow-xs"
+                      : "bg-white text-slate-600 hover:text-[#202B61] hover:bg-slate-50 border-slate-200"
+                  }`}
+                >
+                  <span className={`block font-mono text-[10px] font-bold ${isActive ? "text-slate-300" : "text-slate-400"}`}>
+                    0{idx + 1}
+                  </span>
+                  <span className="block font-sans font-bold text-xs truncate mt-0.5">
+                    {slide.name}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </section>
 
