@@ -622,8 +622,8 @@ export default function ApplicationPage() {
                           <span className={`font-mono text-xs font-bold ${isActive ? "text-[#18191C]" : "text-[#6B7280]"}`}>
                             0{idx + 1}
                           </span>
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#6B7280]">
-                            • {slide.category}
+                          <span className="text-[11px] font-medium text-[#6B7280]">
+                            {slide.subCategory}
                           </span>
                         </div>
                         <h4 className={`font-heading font-extrabold text-sm sm:text-base truncate ${isActive ? "text-[#18191C]" : "text-[#18191C]/80 group-hover:text-[#18191C]"}`}>
@@ -657,16 +657,11 @@ export default function ApplicationPage() {
                 return (
                   <div className="rounded-[32px] bg-white border border-[#E2E4E8] p-6 sm:p-8 lg:p-9 shadow-[0_16px_50px_rgba(0,0,0,0.04)] space-y-6 sm:space-y-7 transition-all">
                     
-                    {/* Stage Header Bar: Category + Slide Arrows */}
+                    {/* Stage Header Bar: SubCategory / Platform + Slide Arrows */}
                     <div className="flex items-center justify-between pb-4 border-b border-[#E2E4E8]">
-                      <div className="flex items-center gap-2">
-                        <span className="inline-block px-3 py-1 rounded-full bg-rose-50 border border-rose-200/80 text-rose-600 font-bold text-[10px] tracking-widest uppercase">
-                          {activeSlide.category}
-                        </span>
-                        <span className="text-xs font-semibold text-[#6B7280]">
-                          {activeSlide.subCategory}
-                        </span>
-                      </div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#6B7280]">
+                        {activeSlide.subCategory}
+                      </span>
 
                       {/* Carousel Arrow Controls */}
                       <div className="flex items-center gap-2">
