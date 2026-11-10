@@ -559,125 +559,160 @@ export default function ApplicationPage() {
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── 1. BENTO HERO SHOWCASE (INSPIRED BY REFERENCE IMAGES 1 & 2) ── */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-b border-[#d8d8d8] text-left flex flex-col justify-center">
-        <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-7 my-auto">
+      {/* ── 1. BENTO HERO SHOWCASE (EXACTLY MATCHING USER REFERENCE IMAGE) ── */}
+      <section className="relative w-full pt-24 sm:pt-28 pb-10 sm:pb-12 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-b border-[#d8d8d8] text-left flex flex-col justify-center">
+        <div className="max-w-[1360px] w-full mx-auto">
           
-          {/* Header Row: Large Typography (Matching Image 1: "Our focus is simple / Design to convert") */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-1">
-            <div className="space-y-1.5 max-w-3xl">
-              <span className="font-heading font-medium text-base sm:text-lg text-slate-500 block tracking-tight">
-                Our focus is simple
-              </span>
-              <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#202B61] tracking-tight leading-[1.1] text-balance">
-                Design to scale &amp; convert
-              </h1>
-            </div>
-
-            <p className="font-sans text-xs sm:text-sm text-[#202B61]/70 leading-relaxed font-normal max-w-md lg:text-right">
-              We engineer production mobile apps and flagship Shopify websites that turn technical architecture into measurable commercial growth.
-            </p>
-          </div>
-
-          {/* Bento Cards Grid (Matching Image 1 & Image 2) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5">
+          {/* Giant Rounded White Studio Canvas Card (Matching Reference Image) */}
+          <div className="w-full rounded-[32px] sm:rounded-[36px] bg-white border border-[#d8d8d8] p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] space-y-8 sm:space-y-10">
             
-            {/* Card 1: Avatar stack & Partners (Span 3) */}
-            <div className="lg:col-span-3 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-white border border-[#d8d8d8] shadow-[0_4px_20px_rgba(0,0,0,0.03)] min-h-[220px]">
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
-                    CF
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-amber-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
-                    VH
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-blue-600 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
-                    KP
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-rose-500 border-2 border-white flex items-center justify-center text-white text-[11px] font-bold">
-                    MA
-                  </div>
-                </div>
-                <span className="text-[11px] font-bold tracking-wider uppercase text-[#202B61]/70">
-                  50+ Global Releases
+            {/* Header Row: Mission Tag + Two-Tone Heading on Left, Promise Paragraph on Right */}
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2">
+              <div className="space-y-3 max-w-2xl">
+                {/* MISSION Pill Tag */}
+                <span className="inline-block text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-[#E0533C] bg-[#FFF3F0] border border-[#FCD8D2] px-3 py-1 rounded-full shadow-2xs">
+                  MISSION
                 </span>
+                
+                {/* Two-Tone Headline */}
+                <h1 className="font-heading tracking-tight leading-[1.08] text-balance">
+                  <span className="block text-slate-400 font-medium text-3xl sm:text-4xl lg:text-[46px]">
+                    Our focus is simple
+                  </span>
+                  <span className="block text-[#18181B] font-extrabold text-3xl sm:text-4xl lg:text-[46px] mt-1">
+                    Design to convert
+                  </span>
+                </h1>
               </div>
 
-              <div className="pt-6 space-y-1">
-                <span className="font-sans text-xs text-[#202B61]/65 font-medium block">
-                  Average Enterprise ROI Timeline
-                </span>
-                <h3 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#202B61] tracking-tight">
-                  90%
-                </h3>
-                <p className="font-sans text-xs text-[#202B61]/75">
-                  Return on investment within 90 days of launch
+              {/* Right Side Promise Narrative */}
+              <div className="max-w-xs lg:text-left">
+                <p className="font-sans text-xs sm:text-[13.5px] text-slate-500 font-normal leading-relaxed">
+                  We promise to deliver beyond your expectations for your business.
                 </p>
               </div>
             </div>
 
-            {/* Card 2: Revenue Generated (Span 4) */}
-            <div className="lg:col-span-4 flex flex-col justify-between p-5 sm:p-6 rounded-[24px] bg-white border border-[#d8d8d8] shadow-[0_4px_20px_rgba(0,0,0,0.03)] min-h-[220px]">
-              <div className="space-y-1">
-                <span className="text-xs font-semibold text-[#202B61]/70">
-                  Through custom-tailored mobile &amp; e-commerce systems
-                </span>
-              </div>
-
-              <div className="pt-4 space-y-2.5">
-                <div>
-                  <h3 className="font-heading font-black text-4xl sm:text-5xl text-[#202B61] tracking-tight">
-                    $45M<span className="text-emerald-600 font-bold">+</span>
-                  </h3>
-                  <span className="text-xs font-sans text-[#202B61]/65 font-medium block mt-0.5">
-                    Client transaction volume powered in 2025–2026
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2 pt-2 border-t border-slate-100 text-xs font-semibold text-[#202B61]/80">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>Available for Q2 Architecture &amp; App Builds</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3: Dark High-Contrast Statement Card (Matching Image 1 Dark Card #232323) */}
-            <div className="lg:col-span-5 relative flex flex-col justify-between p-5 sm:p-6 lg:p-7 rounded-[24px] bg-[#232323] text-white shadow-[0_12px_36px_rgba(0,0,0,0.14)] overflow-hidden min-h-[220px]">
+            {/* 3-Column Bento Cards Grid (Matching Reference Composition) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5 items-stretch">
               
-              {/* Subtle Growth Trajectory Graphic in Background (Matching Image 1) */}
-              <div className="absolute right-3 bottom-3 opacity-15 pointer-events-none">
-                <TrendingUp className="w-40 h-40 text-emerald-400 stroke-[1]" />
-              </div>
+              {/* ── COLUMN 1 (Span 3.5): Overlapping Partner Avatars + 90% ROI Card ── */}
+              <div className="lg:col-span-3 flex flex-col gap-4 sm:gap-5 justify-between">
+                
+                {/* 1A. Top Pill Card: 4 Overlapping Avatars + 40+ Partners */}
+                <div className="p-4 rounded-[22px] bg-[#F7F8FA] border border-slate-200/80 flex items-center justify-between gap-3 shadow-2xs">
+                  <div className="flex -space-x-2.5 overflow-hidden py-0.5 pl-0.5">
+                    <img
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=120&auto=format&fit=crop"
+                      alt="Partner Avatar"
+                      className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
+                    />
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=120&auto=format&fit=crop"
+                      alt="Partner Avatar"
+                      className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
+                    />
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=120&auto=format&fit=crop"
+                      alt="Partner Avatar"
+                      className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
+                    />
+                    <img
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=120&auto=format&fit=crop"
+                      alt="Partner Avatar"
+                      className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover"
+                    />
+                  </div>
 
-              <div className="relative z-10 space-y-2 max-w-sm">
-                <p className="font-sans font-medium text-xs sm:text-[13px] text-slate-200 leading-relaxed">
-                  We engineered 50+ applications and Shopify stores worldwide, helping category leaders scale traffic, automate workflows, and retain customers.
-                </p>
-              </div>
+                  <span className="text-[11px] font-bold tracking-wider uppercase text-slate-700 shrink-0">
+                    40+ PARTNERS
+                  </span>
+                </div>
 
-              <div className="relative z-10 pt-5 flex items-end justify-between border-t border-white/10 mt-4">
-                <div>
-                  <h4 className="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">
-                    4.9<span className="text-white/60 text-2xl font-normal">/5</span>
-                  </h4>
-                  <div className="flex items-center gap-1 text-amber-400 mt-1">
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                {/* 1B. Bottom Card: Earn back on investment + 90% ROI */}
+                <div className="flex-1 p-6 rounded-[24px] bg-[#F7F8FA] border border-slate-200/80 flex flex-col justify-between min-h-[220px] shadow-2xs">
+                  <p className="font-sans text-xs sm:text-[13.5px] text-slate-600 font-medium leading-relaxed max-w-[200px]">
+                    Earn back on your investment within 30 days
+                  </p>
+
+                  <div className="pt-6">
+                    <h3 className="font-heading font-black text-4xl sm:text-5xl text-[#18181B] tracking-tight">
+                      90%
+                    </h3>
+                    <span className="font-sans text-xs text-slate-400 font-normal block mt-1.5">
+                      Return on investment (ROI)
+                    </span>
                   </div>
                 </div>
 
-                <div className="text-right">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block">
-                    TRUSTED BY
-                  </span>
-                  <span className="text-xs font-bold text-white block">
-                    CLIENTS WORLDWIDE
+              </div>
+
+              {/* ── COLUMN 2 (Span 4): Funnel Systems + $2.5+ Revenue + Available for June ── */}
+              <div className="lg:col-span-4 flex flex-col gap-4 sm:gap-5 justify-between">
+                
+                {/* 2A. Top Card: Funnel Systems + $2.5+ Revenue */}
+                <div className="flex-1 p-6 rounded-[24px] bg-[#F7F8FA] border border-slate-200/80 flex flex-col justify-between min-h-[220px] shadow-2xs">
+                  <p className="font-sans text-xs sm:text-[13.5px] text-slate-600 font-medium leading-relaxed max-w-[220px]">
+                    Through our custom-tailored funnel systems
+                  </p>
+
+                  <div className="pt-6">
+                    <h3 className="font-heading font-black text-4xl sm:text-5xl text-[#18181B] tracking-tight">
+                      $2.5<span className="text-slate-400 font-semibold text-3xl sm:text-4xl">+</span>
+                    </h3>
+                    <span className="font-sans text-xs text-slate-400 font-normal block mt-1.5">
+                      Revenue generated
+                    </span>
+                  </div>
+                </div>
+
+                {/* 2B. Bottom Card: Available for June Status Pill Card */}
+                <div className="p-4 rounded-[22px] bg-[#F7F8FA] border border-slate-200/80 flex items-center gap-2.5 shadow-2xs">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                  <span className="text-[11px] font-bold tracking-wider uppercase text-slate-700">
+                    AVAILABLE FOR JUNE
                   </span>
                 </div>
+
+              </div>
+
+              {/* ── COLUMN 3 (Span 5): Prominent Dark Studio Card with Arrow Watermark ── */}
+              <div className="lg:col-span-5 relative flex flex-col justify-between p-7 sm:p-8 rounded-[28px] bg-[#1e1e1e] text-white shadow-[0_16px_40px_rgba(0,0,0,0.22)] overflow-hidden min-h-[300px]">
+                
+                {/* Upward Zigzag Arrow Watermark (Matching Reference Image) */}
+                <div className="absolute -right-2 -bottom-2 pointer-events-none opacity-[0.14] select-none">
+                  <TrendingUp className="w-52 h-52 text-white stroke-[1.2]" />
+                </div>
+
+                {/* Narrative Statement */}
+                <div className="relative z-10 space-y-2 max-w-sm">
+                  <p className="font-sans font-normal text-xs sm:text-[13.5px] text-slate-200 leading-relaxed">
+                    We delivered 50+ projects worldwide, helping service-based companies secure more clients
+                  </p>
+                </div>
+
+                {/* Bottom Row: 4.8/5 Rating + Stars & Trusted by Clients */}
+                <div className="relative z-10 pt-6 flex items-end justify-between border-t border-white/10 mt-6">
+                  <div>
+                    <h4 className="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">
+                      4.8<span className="text-white/45 text-2xl font-light">/5</span>
+                    </h4>
+                  </div>
+
+                  <div className="text-right">
+                    <div className="flex items-center gap-1 text-amber-400 justify-end mb-1">
+                      <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                      <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                      <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                      <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                      <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                    </div>
+                    <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-widest text-slate-300 block leading-tight">
+                      TRUSTED BY CLIENTS WORLDWIDE
+                    </span>
+                  </div>
+                </div>
+
               </div>
 
             </div>
