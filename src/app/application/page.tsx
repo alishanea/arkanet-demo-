@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Smartphone,
   ShoppingBag,
@@ -14,12 +15,12 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  TrendingUp,
+  ShieldCheck,
+  Sparkles,
   Zap,
   Globe,
   Award,
-  Sparkles,
-  ShieldCheck,
-  TrendingUp,
 } from "lucide-react";
 
 import { Footer } from "@/components/layout/Footer";
@@ -449,41 +450,24 @@ const ShopifyLogo: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }
   </svg>
 );
 
-/* ── Platform category cards for the grid (like "Notely for Android / iOS / Web / Desktop") ── */
-const PLATFORM_CARDS = [
-  {
-    title: "Mobile Apps",
-    subtitle: "Native iOS & Android experiences built with Swift, Kotlin, Flutter, and React Native. Optimized for performance, offline-first, and App Store ready.",
-    apps: APPLICATIONS.filter((a) => a.category === "Mobile Apps").slice(0, 2),
-    icon: Smartphone,
-  },
-  {
-    title: "Shopify Stores",
-    subtitle: "High-conversion Shopify Plus storefronts with headless architecture, 3D product viewers, and localized checkout for global e-commerce.",
-    apps: APPLICATIONS.filter((a) => a.category === "Shopify Stores").slice(0, 2),
-    icon: ShoppingBag,
-  },
-  {
-    title: "Web & SaaS",
-    subtitle: "Enterprise web applications, AI-powered dashboards, and scalable SaaS platforms with real-time data processing and role-based access.",
-    apps: APPLICATIONS.filter((a) => a.category === "Web & SaaS").slice(0, 2),
-    icon: Layers,
-  },
-  {
-    title: "Enterprise Solutions",
-    subtitle: "End-to-end custom builds integrating IoT telemetry, computer vision, and cloud infrastructure for organizations at scale.",
-    apps: APPLICATIONS.filter((a) => a.category === "Mobile Apps").slice(1, 3),
-    icon: Globe,
-  },
-];
-
 export default function ApplicationPage() {
   const [selectedCategory, setSelectedCategory] = useState<ApplicationCategory>("All");
   const [contactOpen, setContactOpen] = useState(false);
   const [selectedApp, setSelectedApp] = useState<ApplicationItem | null>(null);
   const [activeScreenshotIdx, setActiveScreenshotIdx] = useState(0);
 
+  // Deck carousel index (Image 3 inspired)
+  const [activeDeckIdx, setActiveDeckIdx] = useState(0);
+
   const openContact = () => setContactOpen(true);
+
+  const handlePrevDeck = () => {
+    setActiveDeckIdx((prev) => (prev - 1 + FEATURED_SLIDES.length) % FEATURED_SLIDES.length);
+  };
+
+  const handleNextDeck = () => {
+    setActiveDeckIdx((prev) => (prev + 1) % FEATURED_SLIDES.length);
+  };
 
   const filteredApps =
     selectedCategory === "All"
@@ -495,271 +479,271 @@ export default function ApplicationPage() {
     setActiveScreenshotIdx(0);
   };
 
+  const currentDeckApp = FEATURED_SLIDES[activeDeckIdx];
+
   return (
-    <main className="min-h-screen bg-white text-[#1a1a2e] selection:bg-[#1a1a2e] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#eaeaea] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 1 — DARK HERO  (Scribbit: "Ideas. Notes. Clarity.")
-          ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full bg-[#0f0f1a] text-white overflow-hidden">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 lg:pb-24">
-
-          {/* Active users badge */}
-          <div className="flex items-center gap-2 mb-8">
-            <div className="flex -space-x-2">
-              {["CF", "VH", "KP", "MA"].map((initials, i) => (
-                <div
-                  key={initials}
-                  className="w-7 h-7 rounded-full bg-white/15 border-2 border-[#0f0f1a] flex items-center justify-center text-[10px] font-bold text-white/80"
-                >
-                  {initials}
-                </div>
-              ))}
+      {/* ── 1. EXACT STUDIO HERO FROM REFERENCE ── */}
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-b border-[#d8d8d8] text-left flex flex-col justify-center">
+        <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 my-auto">
+          
+          {/* Main Hero Header Block: Two-Column Headline & Subtitle */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2 text-left">
+            <div>
+              <p className="font-sans text-base sm:text-lg text-slate-500 font-medium mb-1">
+                Our focus is simple
+              </p>
+              <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.05]">
+                Design to scale &amp; convert
+              </h1>
             </div>
-            <span className="text-xs text-white/50 font-medium">50+ production releases</span>
-          </div>
 
-          {/* Main Headline */}
-          <h1 className="font-black text-4xl sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.05] tracking-tight max-w-3xl">
-            Apps. Stores. Scale.
-            <br />
-            <span className="text-white/90">Wherever your business grows.</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="mt-5 text-base sm:text-lg text-white/50 max-w-xl leading-relaxed">
-            We engineer production mobile apps, Shopify storefronts, and enterprise SaaS — ready whenever growth demands.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-3 mt-8">
-            <button
-              type="button"
-              onClick={openContact}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#0f0f1a] font-bold text-sm hover:bg-white/90 transition-all cursor-pointer active:scale-[0.97]"
-            >
-              Start a Project
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
-            <a
-              href="#showcase"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white/80 font-semibold text-sm hover:bg-white/5 transition-all cursor-pointer"
-            >
-              View Case Studies
-            </a>
-          </div>
-
-          {/* Featured App Preview Mockup */}
-          <div className="mt-14 relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 aspect-[16/8] max-w-4xl">
-            <Image
-              src={APPLICATIONS[0].previewImage}
-              alt={APPLICATIONS[0].name}
-              fill
-              sizes="(max-width: 1024px) 100vw, 900px"
-              className="object-cover"
-              priority
-            />
-            {/* Floating product label */}
-            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-black/60 backdrop-blur-sm rounded-xl px-4 py-2.5 border border-white/10">
-              <p className="text-[11px] text-white/60 font-medium">{APPLICATIONS[0].platforms}</p>
-              <p className="text-sm font-bold text-white">{APPLICATIONS[0].name}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Trust Bar */}
-        <div className="border-t border-white/10">
-          <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 py-5 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-white/45 font-medium">
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5" /> 100% Production-Ready
-            </span>
-            <span className="flex items-center gap-1.5">
-              <TrendingUp className="w-3.5 h-3.5" /> $45M+ Revenue Powered
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Award className="w-3.5 h-3.5" /> 4.9/5 Client Rating
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5" /> Delivered Globally
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 2 — FEATURE SHOWCASE  (Scribbit: "Notes that work the way you think")
-          ══════════════════════════════════════════════════════════════════ */}
-      <section id="showcase" className="w-full bg-white py-20 sm:py-24 lg:py-28 scroll-mt-20">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-            {/* Left Text */}
-            <div className="space-y-5 max-w-lg">
-              <h2 className="font-black text-3xl sm:text-4xl lg:text-[42px] leading-[1.1] tracking-tight text-[#1a1a2e]">
-                Products that work the way your business thinks.
-              </h2>
-              <p className="text-base text-[#1a1a2e]/60 leading-relaxed">
-                Every application we build starts from your commercial goals — not ours. With Arkanet, every line of code maps directly to conversions, retention, or operational velocity. Architecture adapts to your style, helping you scale focused and productive.
+            <div className="max-w-md lg:max-w-lg lg:pb-1">
+              <p className="font-sans text-sm sm:text-[15px] text-slate-500 leading-relaxed font-normal">
+                We engineer production mobile apps and flagship Shopify websites that turn technical architecture into measurable commercial growth.
               </p>
             </div>
-
-            {/* Right — Large Product Screenshot */}
-            <div className="relative rounded-2xl overflow-hidden border border-[#e5e5e5] bg-[#f8f8f8] aspect-[4/3]">
-              <Image
-                src={APPLICATIONS[1].previewImage}
-                alt={APPLICATIONS[1].name}
-                fill
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className="object-cover"
-              />
-            </div>
           </div>
-        </div>
-      </section>
 
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 3 — CAPABILITIES + FEATURES  (Scribbit: "Smarter Notes" section)
-          ══════════════════════════════════════════════════════════════════ */}
-      <section className="w-full bg-[#fafafa] border-y border-[#ebebeb] py-20 sm:py-24 lg:py-28">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Elevated 3-Card Bento Proof Grid (Exact Reference Replica) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 pt-2">
+            
+            {/* Card 1: Verified Releases & ROI */}
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[280px] sm:min-h-[300px]">
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-1.5 overflow-hidden py-0.5">
+                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#059669] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
+                    CF
+                  </div>
+                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#d97706] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
+                    VH
+                  </div>
+                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#2563eb] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
+                    KP
+                  </div>
+                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#e11d48] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
+                    MA
+                  </div>
+                </div>
+                <span className="text-xs font-bold tracking-wider uppercase text-slate-500">
+                  50+ GLOBAL RELEASES
+                </span>
+              </div>
 
-            {/* Left — Illustration / Screenshot in Card */}
-            <div className="rounded-2xl overflow-hidden border border-[#e5e5e5] bg-white aspect-[4/3] relative">
-              <Image
-                src={APPLICATIONS[4].previewImage}
-                alt={APPLICATIONS[4].name}
-                fill
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className="object-cover"
-              />
+              <div className="space-y-1">
+                <span className="font-sans text-xs text-slate-500 font-medium block">
+                  Average Enterprise ROI Timeline
+                </span>
+                <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#202B61] tracking-tight leading-none">
+                  90%
+                </h3>
+                <p className="font-sans text-xs sm:text-[13px] text-slate-500 pt-0.5">
+                  Return on investment within 90 days of launch
+                </p>
+              </div>
             </div>
 
-            {/* Right — Heading + Feature List */}
-            <div className="space-y-8">
+            {/* Card 2: Transaction Volume & Availability */}
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[280px] sm:min-h-[300px]">
               <div>
-                <h2 className="font-black text-3xl sm:text-4xl leading-[1.1] tracking-tight text-[#1a1a2e]">
-                  Smarter Products. One Simple Space to Build, Ship &amp; Scale.
-                </h2>
-                <p className="mt-4 text-base text-[#1a1a2e]/55 leading-relaxed">
-                  From idea to production in one streamlined pipeline. We capture your requirements, organize them into clear architecture, stay focused with agile sprints, and deliver a product that moves with you.
+                <p className="font-sans text-xs sm:text-[13px] text-slate-500 font-normal leading-relaxed">
+                  Through custom-tailored mobile &amp; e-commerce systems
                 </p>
               </div>
 
-              {/* Feature Items */}
-              <div className="space-y-7">
-                {[
-                  {
-                    icon: Zap,
-                    title: "Rapid Prototyping & Delivery",
-                    desc: "From wireframe to working prototype in weeks, not months. We build iteratively so you see progress from day one.",
-                  },
-                  {
-                    icon: Sparkles,
-                    title: "Adaptive Architecture",
-                    desc: "Your product grows with you. We design flexible systems that can pivot with market changes and scale with demand.",
-                  },
-                  {
-                    icon: ShieldCheck,
-                    title: "Production-Grade & Secure",
-                    desc: "Every build ships with enterprise security, automated testing, and monitoring baked in from the start.",
-                  },
-                ].map((feature) => (
-                  <div key={feature.title} className="flex items-start gap-4">
-                    <div className="shrink-0 w-10 h-10 rounded-xl bg-[#1a1a2e] flex items-center justify-center">
-                      <feature.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-base text-[#1a1a2e]">{feature.title}</h4>
-                      <p className="mt-1 text-sm text-[#1a1a2e]/55 leading-relaxed">{feature.desc}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="space-y-3">
+                <div className="space-y-1">
+                  <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#202B61] tracking-tight leading-none">
+                    $45M<span className="text-emerald-500 font-bold">+</span>
+                  </h3>
+                  <p className="font-sans text-xs sm:text-[13px] text-slate-500">
+                    Client transaction volume powered in 2025–2026
+                  </p>
+                </div>
+
+                <div className="pt-1 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="font-sans text-xs text-slate-600 font-medium">
+                    Available for Q2 Architecture &amp; App Builds
+                  </span>
+                </div>
               </div>
             </div>
+
+            {/* Card 3: Dark Elevated Client Trust Card */}
+            <div className="lg:col-span-4 rounded-[28px] bg-[#18191c] text-white p-7 sm:p-8 flex flex-col justify-between shadow-[0_16px_40px_rgba(0,0,0,0.18)] min-h-[280px] sm:min-h-[300px]">
+              <div>
+                <p className="font-sans text-xs sm:text-[13px] text-slate-300 font-normal leading-relaxed">
+                  We engineered 50+ applications and Shopify stores worldwide, helping category leaders scale traffic, automate workflows, and retain customers.
+                </p>
+              </div>
+
+              <div className="pt-6 flex items-end justify-between">
+                <div>
+                  <h4 className="font-heading font-black text-5xl sm:text-6xl text-white tracking-tight leading-none">
+                    4.9<span className="text-white/45 text-2xl font-light">/5</span>
+                  </h4>
+                  <div className="flex items-center gap-1 text-amber-400 mt-2">
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                  </div>
+                </div>
+
+                <div className="text-right flex flex-col items-end">
+                  <svg viewBox="0 0 64 36" fill="none" className="w-16 h-9 stroke-emerald-500 stroke-[2.5] mb-2">
+                    <path d="M4 28 L20 16 L32 24 L56 6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M42 6 H56 V20" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block leading-tight">
+                    TRUSTED BY
+                  </span>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-white block leading-tight">
+                    CLIENTS WORLDWIDE
+                  </span>
+                </div>
+              </div>
+            </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 4 — PLATFORM GRID  (Scribbit: "Ideas. Notes. Clarity. Wherever your mind goes.")
-          ══════════════════════════════════════════════════════════════════ */}
-      <section className="w-full bg-white py-20 sm:py-24 lg:py-28">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
-
-          {/* Section Heading */}
-          <div className="max-w-2xl mb-12">
-            <h2 className="font-black text-3xl sm:text-4xl lg:text-[42px] leading-[1.1] tracking-tight text-[#1a1a2e]">
-              Apps. Stores. SaaS.
-              <br />
-              <span className="text-[#1a1a2e]/60">Wherever your audience is.</span>
+      {/* ── 2. FEATURED CASE CAROUSEL DECK (CLEAN MINIMAL STUDIO SHOWCASE) ── */}
+      <section id="showcase" className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-b border-[#d8d8d8] text-left overflow-hidden flex flex-col justify-center scroll-mt-20">
+        <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-8 my-auto">
+          
+          {/* Section Header */}
+          <div className="text-left">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
+              What We&apos;ve Built
             </h2>
           </div>
 
-          {/* 2x2 Platform Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {PLATFORM_CARDS.map((card) => (
-              <div
-                key={card.title}
-                className="group rounded-2xl border border-[#e5e5e5] bg-[#fafafa] p-6 sm:p-8 hover:border-[#1a1a2e]/20 transition-all"
-              >
-                {/* Preview thumbnails */}
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  {card.apps.map((app) => (
-                    <div
-                      key={app.id}
-                      role="button"
-                      tabIndex={0}
-                      onClick={() => handleOpenAppModal(app)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          handleOpenAppModal(app);
-                        }
-                      }}
-                      className="relative aspect-[16/10] rounded-xl overflow-hidden bg-white border border-[#e5e5e5] cursor-pointer hover:border-[#1a1a2e]/30 transition-all"
-                    >
-                      <Image
-                        src={app.previewImage}
-                        alt={app.name}
-                        fill
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
+          {/* Elevated Floating Studio Showcase Card */}
+          <div className="relative rounded-[28px] bg-white border border-[#d8d8d8] p-6 sm:p-8 lg:p-12 shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              
+              {/* Left Column: Authentic High-Resolution Image, No Micro-Elements */}
+              <div className="lg:col-span-6">
+                <div
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => handleOpenAppModal(currentDeckApp)}
+                  className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-slate-100 border border-slate-200/80 cursor-pointer shadow-sm"
+                >
+                  <Image
+                    src={currentDeckApp.previewImage}
+                    alt={currentDeckApp.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
+                  />
+                </div>
+              </div>
+
+              {/* Right Column: Clean Editorial Info & Single Clear Action */}
+              <div className="lg:col-span-6 space-y-5 text-left">
+                
+                {/* Category Kicker */}
+                <div className="space-y-1.5">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#202B61]/60 block">
+                    {currentDeckApp.category} • {currentDeckApp.subCategory}
+                  </span>
+                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
+                    {currentDeckApp.name}
+                  </h3>
                 </div>
 
-                {/* Card Text */}
-                <h3 className="font-bold text-lg text-[#1a1a2e] mb-2">{card.title}</h3>
-                <p className="text-sm text-[#1a1a2e]/55 leading-relaxed">{card.subtitle}</p>
+                <p className="font-sans text-sm sm:text-base text-[#202B61]/75 leading-relaxed font-normal">
+                  {currentDeckApp.description}
+                </p>
+
+                {/* Single Primary Action Button */}
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    onClick={() => handleOpenAppModal(currentDeckApp)}
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#18214D] transition-all cursor-pointer shadow-sm active:scale-95"
+                  >
+                    <span>Read Case Study</span>
+                    <ArrowUpRight className="w-4 h-4 text-white" />
+                  </button>
+                </div>
+
               </div>
-            ))}
+
+            </div>
           </div>
+
+          {/* Bottom Deck Navigation: Clean Dots on Left, Clean Arrows on Right */}
+          <div className="flex items-center justify-between pt-2">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1.5">
+                {FEATURED_SLIDES.map((slide, idx) => (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    onClick={() => setActiveDeckIdx(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === activeDeckIdx ? "w-7 bg-[#202B61]" : "w-2 bg-[#202B61]/25 hover:bg-[#202B61]/50"
+                    }`}
+                    aria-label={`Slide to ${slide.name}`}
+                  />
+                ))}
+              </div>
+              <span className="text-xs font-mono font-semibold text-[#202B61]/70">
+                0{activeDeckIdx + 1} / 0{FEATURED_SLIDES.length}
+              </span>
+            </div>
+
+            {/* Clean Arrows */}
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={handlePrevDeck}
+                className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 border border-[#d8d8d8] text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
+                aria-label="Previous featured release"
+              >
+                <ChevronLeft className="w-4 h-4 stroke-[2]" />
+              </button>
+              <button
+                type="button"
+                onClick={handleNextDeck}
+                className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 border border-[#d8d8d8] text-[#202B61] flex items-center justify-center cursor-pointer transition-all active:scale-95 shadow-2xs"
+                aria-label="Next featured release"
+              >
+                <ChevronRight className="w-4 h-4 stroke-[2]" />
+              </button>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 5 — FULL APP DIRECTORY (Browse all applications)
-          ══════════════════════════════════════════════════════════════════ */}
-      <section className="w-full bg-[#fafafa] border-y border-[#ebebeb] py-20 sm:py-24 lg:py-28">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 space-y-8">
+      {/* ── 3. FULL APP STORE & SHOPIFY DIRECTORY (COLORFUL SQUIRCLES, REVIEWS, GET BUTTONS) ── */}
+      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#eaeaea] border-t border-[#d8d8d8]">
+        <div className="max-w-[1400px] mx-auto space-y-8">
 
-          {/* Directory Header & Category Filter */}
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-6 border-b border-[#e5e5e5]">
-            <div>
-              <h2 className="font-black text-2xl sm:text-3xl text-[#1a1a2e] tracking-tight">
+          {/* Directory Header & Category Filter Tabs */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-[#d8d8d8]">
+            <div className="space-y-1">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight">
                 All Applications &amp; Storefronts
               </h2>
-              <p className="mt-1 text-sm text-[#1a1a2e]/50">
-                Browse our complete catalog of verified releases.
+              <p className="font-sans text-xs sm:text-sm text-[#202B61]/70">
+                Browse our complete catalog of verified mobile releases and e-commerce platforms.
               </p>
             </div>
 
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center gap-2">
+            {/* Segmented Filter Pills */}
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
               {CATEGORIES.map((category) => {
                 const isActive = selectedCategory === category;
                 return (
@@ -767,10 +751,10 @@ export default function ApplicationPage() {
                     key={category}
                     type="button"
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer select-none ${
+                    className={`px-4 py-2 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
                       isActive
-                        ? "bg-[#1a1a2e] text-white"
-                        : "bg-white text-[#1a1a2e]/65 hover:text-[#1a1a2e] border border-[#e5e5e5] hover:border-[#1a1a2e]/30"
+                        ? "bg-[#202B61] text-white shadow-xs"
+                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-100 border border-[#d8d8d8]"
                     }`}
                   >
                     {category}
@@ -780,192 +764,195 @@ export default function ApplicationPage() {
             </div>
           </div>
 
-          {/* 3-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredApps.map((app) => (
-              <div
-                key={app.id}
-                role="button"
-                tabIndex={0}
-                onClick={() => handleOpenAppModal(app)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    handleOpenAppModal(app);
-                  }
-                }}
-                className="group rounded-2xl bg-white border border-[#e5e5e5] p-5 hover:border-[#1a1a2e]/25 hover:shadow-lg cursor-pointer transition-all outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a2e] flex flex-col"
-              >
-                {/* Preview Image */}
-                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#f0f0f0] border border-[#e5e5e5] mb-4">
-                  <Image
-                    src={app.previewImage}
-                    alt={app.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                  />
-                </div>
+          {/* 3-Column Clean Release Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+            {filteredApps.map((app) => {
+              return (
+                <div
+                  key={app.id}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => handleOpenAppModal(app)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleOpenAppModal(app);
+                    }
+                  }}
+                  className="group rounded-[24px] bg-white border border-[#d8d8d8] shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-5 sm:p-6 hover:border-[#202B61]/40 hover:shadow-[0_12px_36px_rgba(32,43,97,0.08)] cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                >
+                  <div className="space-y-4">
+                    {/* Clean Preview Image */}
+                    <div className="relative aspect-[16/10] w-full rounded-[16px] overflow-hidden bg-slate-100 border border-slate-200/70">
+                      <Image
+                        src={app.previewImage}
+                        alt={app.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
+                      />
+                    </div>
 
-                {/* Card Meta */}
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#1a1a2e]/45 block mb-1">
-                  {app.category}
-                </span>
-                <h3 className="font-bold text-base text-[#1a1a2e] leading-snug mb-1">
-                  {app.name}
-                </h3>
-                <p className="text-xs text-[#1a1a2e]/55 leading-relaxed line-clamp-2 mb-4">
-                  {app.tagline}
-                </p>
+                    {/* Metadata & Title */}
+                    <div className="space-y-1.5 pt-1">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]/60 block">
+                        {app.category} • {app.subCategory}
+                      </span>
+                      <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug group-hover:text-[#18214D] transition-colors">
+                        {app.name}
+                      </h3>
+                      <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/75 leading-relaxed line-clamp-2">
+                        {app.tagline}
+                      </p>
+                    </div>
+                  </div>
 
-                {/* Bottom Row */}
-                <div className="mt-auto pt-4 border-t border-[#f0f0f0] flex items-center justify-between">
-                  <span className="text-[11px] font-medium text-[#1a1a2e]/45">{app.platformBadge}</span>
-                  <span className="inline-flex items-center gap-1 text-xs font-bold text-[#1a1a2e] group-hover:translate-x-0.5 transition-transform">
-                    View Details
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </span>
+                  {/* Clean Bottom Action Row */}
+                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span className="text-[#202B61]/60 font-semibold text-[11px]">
+                      {app.platformBadge}
+                    </span>
+                    <span className="inline-flex items-center gap-1 font-sans font-bold text-xs text-[#202B61] group-hover:translate-x-0.5 transition-transform">
+                      <span>View Details</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 6 — CTA BANNER  (Scribbit: "How You Take Notes?")
-          ══════════════════════════════════════════════════════════════════ */}
-      <section className="w-full bg-white py-20 sm:py-24">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="rounded-2xl bg-[#f5f5f5] border border-[#e5e5e5] py-16 px-8 sm:px-12 text-center">
-            <h2 className="font-black text-2xl sm:text-3xl lg:text-4xl text-[#1a1a2e] tracking-tight">
-              How Do You Build Products?
-            </h2>
-            <p className="mt-3 text-sm sm:text-base text-[#1a1a2e]/50 max-w-lg mx-auto leading-relaxed">
-              Start building apps to capture your market instantly. Keep your team organized effortlessly.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <button
-                type="button"
-                onClick={openContact}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#1a1a2e] text-white font-bold text-sm hover:bg-[#1a1a2e]/90 transition-all cursor-pointer active:scale-[0.97]"
-              >
-                Get Started Free
-                <ArrowUpRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── APP DETAIL MODAL ── */}
+      {/* ── 4. DETAILED APP STORE MODAL SHEET (ALL DETAILS + DOWNLOAD OPTIONS) ── */}
       {selectedApp && (
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/40 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/40 backdrop-blur-xs animate-in fade-in duration-200"
           onClick={() => setSelectedApp(null)}
         >
           <div
-            className="relative w-full max-w-2xl bg-white rounded-2xl border border-[#e5e5e5] p-6 sm:p-8 space-y-5 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
+            className="relative w-full max-w-2xl bg-white rounded-[24px] border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close */}
+            {/* Close button */}
             <button
               type="button"
               onClick={() => setSelectedApp(null)}
-              className="absolute top-4 right-4 p-2 text-[#1a1a2e]/40 hover:text-[#1a1a2e] transition-colors cursor-pointer rounded-full hover:bg-[#f5f5f5]"
+              className="absolute top-5 right-5 p-2 text-slate-400 hover:text-[#202B61] transition-colors cursor-pointer rounded-full hover:bg-slate-100"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* Header */}
+            {/* Modal Header: Clean Title & Primary Action */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pr-8">
-              <div className="min-w-0">
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#1a1a2e]/45 block">
+              <div className="space-y-1 min-w-0">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]/60 block">
                   {selectedApp.category} • {selectedApp.subCategory}
                 </span>
-                <h3 className="font-black text-2xl sm:text-3xl text-[#1a1a2e] leading-tight">
+                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] leading-tight">
                   {selectedApp.name}
                 </h3>
-                <p className="text-xs text-[#1a1a2e]/45 mt-0.5">
+                <p className="font-sans text-xs text-[#202B61]/60">
                   {selectedApp.client} • Released {selectedApp.year}
                 </p>
               </div>
 
+              {/* Primary Contact / Build Button */}
               <button
                 type="button"
                 onClick={() => {
                   setSelectedApp(null);
                   openContact();
                 }}
-                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1a1a2e] text-white font-bold text-xs sm:text-sm hover:bg-[#1a1a2e]/90 transition-all cursor-pointer active:scale-95"
+                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#18214D] transition-all cursor-pointer shadow-xs active:scale-95"
               >
-                Request Custom Build
+                <span>Request Custom Build</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Metrics Bar */}
-            <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-xl bg-[#fafafa] border border-[#ebebeb] text-center text-xs">
+            {/* App Store Key Metrics Bar */}
+            <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-xl bg-slate-50 border border-slate-200/70 text-center text-xs">
               <div>
-                <span className="block text-[10px] text-[#1a1a2e]/45 uppercase tracking-wider font-semibold">
-                  Rating
+                <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
+                  Customer Rating
                 </span>
-                <span className="font-bold text-[#1a1a2e] text-sm flex items-center justify-center gap-1 mt-0.5">
+                <span className="font-bold text-[#202B61] text-sm flex items-center justify-center gap-1 mt-0.5">
                   <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
                   {selectedApp.rating}
                 </span>
-                <span className="block text-[10px] text-[#1a1a2e]/40 mt-0.5">{selectedApp.reviewsCount}</span>
+                <span className="block text-[10px] text-[#202B61]/60 mt-0.5">
+                  {selectedApp.reviewsCount}
+                </span>
               </div>
-              <div className="border-x border-[#ebebeb]">
-                <span className="block text-[10px] text-[#1a1a2e]/45 uppercase tracking-wider font-semibold">
+
+              <div className="border-x border-slate-200">
+                <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
                   Platform
                 </span>
-                <span className="font-bold text-[#1a1a2e] text-sm block mt-0.5 truncate px-1">
+                <span className="font-bold text-[#202B61] text-sm block mt-0.5 truncate px-1">
                   {selectedApp.platformBadge}
                 </span>
-                <span className="block text-[10px] text-emerald-600 font-semibold mt-0.5">Live</span>
-              </div>
-              <div>
-                <span className="block text-[10px] text-[#1a1a2e]/45 uppercase tracking-wider font-semibold">
-                  Type
+                <span className="block text-[10px] text-emerald-600 font-semibold mt-0.5">
+                  Live in Production
                 </span>
-                <span className="font-bold text-[#1a1a2e] text-sm block mt-0.5 truncate px-1">
+              </div>
+
+              <div>
+                <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
+                  Architecture
+                </span>
+                <span className="font-bold text-[#202B61] text-sm block mt-0.5 truncate px-1">
                   {selectedApp.category}
                 </span>
-                <span className="block text-[10px] text-[#1a1a2e]/40 mt-0.5">Verified</span>
+                <span className="block text-[10px] text-[#202B61]/60 mt-0.5">
+                  Arkanet Verified
+                </span>
               </div>
             </div>
 
-            {/* Downloads */}
-            <div className="space-y-2">
-              <span className="font-bold text-xs uppercase tracking-wider text-[#1a1a2e]/50 block">
-                Access Options
+            {/* ── DOWNLOAD & ACCESS OPTIONS ── */}
+            <div className="space-y-2 pt-1">
+              <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70 block">
+                Download &amp; Store Access Options
               </span>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {/* Primary Download Button */}
                 <button
                   type="button"
                   onClick={() => {
                     setSelectedApp(null);
                     openContact();
                   }}
-                  className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-[#e5e5e5] hover:border-[#1a1a2e]/30 transition-all cursor-pointer group"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
                 >
                   <div className="flex items-center gap-2.5">
                     {selectedApp.downloads.primaryType === "apple" ? (
-                      <AppleLogo className="w-5 h-5 text-[#1a1a2e]" />
+                      <AppleLogo className="w-5 h-5 text-[#202B61]" />
                     ) : selectedApp.downloads.primaryType === "shopify" ? (
                       <ShopifyLogo className="w-5 h-5 text-emerald-600" />
                     ) : (
-                      <Download className="w-5 h-5 text-[#1a1a2e]" />
+                      <Download className="w-5 h-5 text-[#202B61]" />
                     )}
-                    <span className="font-bold text-xs text-[#1a1a2e]">{selectedApp.downloads.primaryLabel}</span>
+                    <div className="text-left">
+                      <span className="block font-sans font-bold text-xs text-[#202B61]">
+                        {selectedApp.downloads.primaryLabel}
+                      </span>
+                      <span className="block font-sans text-[10.5px] text-[#202B61]/60">
+                        Official Storefront Link
+                      </span>
+                    </div>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-[#1a1a2e]/30 group-hover:text-[#1a1a2e] transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-[#202B61]/50 group-hover:text-[#202B61] transition-colors" />
                 </button>
 
+                {/* Secondary Download Button */}
                 {selectedApp.downloads.secondaryLabel && (
                   <button
                     type="button"
@@ -973,28 +960,37 @@ export default function ApplicationPage() {
                       setSelectedApp(null);
                       openContact();
                     }}
-                    className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-[#e5e5e5] hover:border-[#1a1a2e]/30 transition-all cursor-pointer group"
+                    className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
                   >
                     <div className="flex items-center gap-2.5">
                       {selectedApp.downloads.secondaryType === "android" ? (
-                        <PlayLogo className="w-5 h-5 text-[#1a1a2e]" />
+                        <PlayLogo className="w-5 h-5 text-[#202B61]" />
                       ) : (
-                        <ExternalLink className="w-4.5 h-4.5 text-[#1a1a2e]" />
+                        <ExternalLink className="w-4.5 h-4.5 text-[#202B61]" />
                       )}
-                      <span className="font-bold text-xs text-[#1a1a2e]">{selectedApp.downloads.secondaryLabel}</span>
+                      <div className="text-left">
+                        <span className="block font-sans font-bold text-xs text-[#202B61]">
+                          {selectedApp.downloads.secondaryLabel}
+                        </span>
+                        <span className="block font-sans text-[10.5px] text-[#202B61]/60">
+                          Direct Access &amp; Demo
+                        </span>
+                      </div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#1a1a2e]/30 group-hover:text-[#1a1a2e] transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 text-[#202B61]/50 group-hover:text-[#202B61] transition-colors" />
                   </button>
                 )}
               </div>
             </div>
 
-            {/* Screenshots */}
-            <div className="space-y-2">
-              <span className="font-bold text-xs uppercase tracking-wider text-[#1a1a2e]/50 block">
-                Screenshots
+            {/* Screenshots Gallery with Thumbnails */}
+            <div className="space-y-2 pt-1">
+              <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70 block">
+                Interface Screenshots Preview
               </span>
-              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-[#f5f5f5] border border-[#e5e5e5]">
+
+              {/* Main Screenshot Preview */}
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
                 <Image
                   src={selectedApp.screenshots[activeScreenshotIdx] || selectedApp.previewImage}
                   alt={selectedApp.name}
@@ -1002,6 +998,8 @@ export default function ApplicationPage() {
                   className="object-cover transition-all duration-300"
                 />
               </div>
+
+              {/* Screenshot Thumbnails (if multiple) */}
               {selectedApp.screenshots.length > 1 && (
                 <div className="flex items-center gap-2 pt-1">
                   {selectedApp.screenshots.map((img, idx) => (
@@ -1011,8 +1009,8 @@ export default function ApplicationPage() {
                       onClick={() => setActiveScreenshotIdx(idx)}
                       className={`relative w-20 h-12 rounded-lg overflow-hidden border cursor-pointer transition-all ${
                         activeScreenshotIdx === idx
-                          ? "border-[#1a1a2e] ring-2 ring-[#1a1a2e]/20"
-                          : "border-[#e5e5e5] opacity-60 hover:opacity-100"
+                          ? "border-[#202B61] ring-2 ring-[#202B61]/20 scale-102"
+                          : "border-slate-200 opacity-60 hover:opacity-100"
                       }`}
                     >
                       <Image src={img} alt={`Preview ${idx + 1}`} fill className="object-cover" />
@@ -1022,24 +1020,24 @@ export default function ApplicationPage() {
               )}
             </div>
 
-            {/* Description */}
-            <div className="space-y-1.5">
-              <h4 className="font-bold text-xs uppercase tracking-wider text-[#1a1a2e]/50">
-                About
+            {/* About The Application Description */}
+            <div className="space-y-1.5 pt-1">
+              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
+                About The Application
               </h4>
-              <p className="text-sm text-[#1a1a2e]/75 leading-relaxed">
+              <p className="font-sans text-xs sm:text-sm text-[#202B61]/85 leading-relaxed">
                 {selectedApp.description}
               </p>
             </div>
 
-            {/* Key Features */}
-            <div className="space-y-2 border-t border-[#f0f0f0] pt-4">
-              <h4 className="font-bold text-xs uppercase tracking-wider text-[#1a1a2e]/50">
-                Key Features
+            {/* Key Deliverables & Architectural Features */}
+            <div className="space-y-2 pt-1 border-t border-slate-100">
+              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
+                Key Features &amp; Deliverables
               </h4>
               <div className="space-y-1.5">
                 {selectedApp.highlights.map((h, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-[#1a1a2e]/75">
+                  <div key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-[#202B61]/85">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                     <span className="leading-snug">{h}</span>
                   </div>
@@ -1047,16 +1045,16 @@ export default function ApplicationPage() {
               </div>
             </div>
 
-            {/* Tech Stack */}
-            <div className="space-y-1.5 border-t border-[#f0f0f0] pt-4">
-              <h4 className="font-bold text-xs uppercase tracking-wider text-[#1a1a2e]/50">
-                Built With
+            {/* Tech Stack Chips */}
+            <div className="space-y-1.5 pt-1 border-t border-slate-100">
+              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
+                Engineered With
               </h4>
               <div className="flex flex-wrap items-center gap-1.5">
                 {selectedApp.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-[11px] font-medium text-[#1a1a2e]/70 bg-[#f5f5f5] border border-[#e5e5e5] px-2.5 py-0.5 rounded"
+                    className="font-sans text-[11px] font-medium text-[#202B61]/80 bg-[#f8fafc] border border-slate-200/80 px-2.5 py-0.5 rounded-[4px]"
                   >
                     {tech}
                   </span>
@@ -1064,34 +1062,36 @@ export default function ApplicationPage() {
               </div>
             </div>
 
-            {/* Footer */}
-            <div className="pt-3 border-t border-[#f0f0f0] flex flex-wrap items-center justify-between gap-3">
-              <span className="text-[11px] text-[#1a1a2e]/40">
-                {selectedApp.platforms}
+            {/* Modal Bottom Inquire / Walkthrough */}
+            <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+              <span className="font-sans text-[11px] text-[#202B61]/65">
+                Compatibility: {selectedApp.platforms}
               </span>
+              
               <button
                 type="button"
                 onClick={() => {
                   setSelectedApp(null);
                   openContact();
                 }}
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#1a1a2e] text-white font-bold text-xs hover:bg-[#1a1a2e]/90 transition-all cursor-pointer ml-auto"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs ml-auto"
               >
-                Request Build
+                <span>Request Custom Build &amp; Source</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </button>
             </div>
+
           </div>
         </div>
       )}
 
-      {/* ── CLIENT REVIEWS ── */}
+      {/* ── 4. CLIENT REVIEWS & VERIFIED STORIES (EXCELLENT EVERYWHERE) ── */}
       <HomeReviewsSection />
 
-      {/* ── CLOSING CTA ── */}
-      <AboutCTA onOpenBooking={openContact} bgColor="bg-white" />
+      {/* ── 5. CLOSING CTA ── */}
+      <AboutCTA onOpenBooking={openContact} bgColor="bg-[#eaeaea]" />
 
-      {/* ── FOOTER ── */}
+      {/* ── 6. FOOTER ── */}
       <Footer onOpenBooking={openContact} />
     </main>
   );
