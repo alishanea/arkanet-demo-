@@ -10,11 +10,7 @@ interface ReviewItem {
   role: string;
   company: string;
   rating: number;
-  source: string;
-  bgColor: string;
-  textColor: string;
-  subTextColor: string;
-  iconBg: string;
+  isDark?: boolean;
 }
 
 const REVIEWS: ReviewItem[] = [
@@ -26,11 +22,6 @@ const REVIEWS: ReviewItem[] = [
     role: "Chief Medical Officer",
     company: "CareFlow Telehealth Network",
     rating: 5,
-    source: "Google Play",
-    bgColor: "bg-[#0d2818]", // Deep forest green like the Wise screenshot
-    textColor: "text-[#d8f3dc]",
-    subTextColor: "text-[#b7e4c7]/80",
-    iconBg: "bg-white",
   },
   {
     id: "review-2",
@@ -40,11 +31,7 @@ const REVIEWS: ReviewItem[] = [
     role: "Head of Digital Commerce",
     company: "Vesper Horology Geneva",
     rating: 5,
-    source: "Google Play",
-    bgColor: "bg-[#9fe870]", // Signature vibrant lime green like the Wise screenshot
-    textColor: "text-[#163300]",
-    subTextColor: "text-[#163300]/80",
-    iconBg: "bg-white",
+    isDark: true, // Elevated dark contrast card like reference bento
   },
   {
     id: "review-3",
@@ -54,11 +41,6 @@ const REVIEWS: ReviewItem[] = [
     role: "Director of Smart Mobility",
     company: "Dubai Smart City Initiative",
     rating: 5,
-    source: "Google Play",
-    bgColor: "bg-[#202B61]", // Arkanet deep brand navy
-    textColor: "text-white",
-    subTextColor: "text-slate-300",
-    iconBg: "bg-white",
   },
   {
     id: "review-4",
@@ -68,11 +50,6 @@ const REVIEWS: ReviewItem[] = [
     role: "VP of Enterprise Technology",
     company: "Global Financial Advisory",
     rating: 5,
-    source: "Google Play",
-    bgColor: "bg-[#1f2937]", // Slate charcoal
-    textColor: "text-slate-100",
-    subTextColor: "text-slate-300",
-    iconBg: "bg-white",
   },
   {
     id: "review-5",
@@ -82,35 +59,8 @@ const REVIEWS: ReviewItem[] = [
     role: "Managing Director",
     company: "StoneCraft Surfaces Milan",
     rating: 5,
-    source: "Google Play",
-    bgColor: "bg-[#2d4a22]", // Muted olive forest
-    textColor: "text-[#ecf39e]",
-    subTextColor: "text-[#ecf39e]/75",
-    iconBg: "bg-white",
   },
 ];
-
-// Google Play multicolor icon
-const GooglePlayIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
-  <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
-    <path
-      d="M3.609 1.814L13.792 12 3.61 22.186c-.372-.379-.61-.908-.61-1.492V3.306c0-.584.238-1.113.609-1.492z"
-      fill="#4285F4"
-    />
-    <path
-      d="M15.215 13.421l-1.423-1.421L3.609 22.186c.355.361.944.409 1.458.118l10.148-8.883z"
-      fill="#EA4335"
-    />
-    <path
-      d="M15.215 10.579L5.067 1.696C4.553 1.405 3.964 1.453 3.609 1.814l10.183 10.186 1.423-1.421z"
-      fill="#FBBC04"
-    />
-    <path
-      d="M18.626 12l-3.411-1.927-1.423 1.421 1.423 1.421L18.626 12c.708-.403.708-1.291 0-1.694z"
-      fill="#34A853"
-    />
-  </svg>
-);
 
 export const HomeReviewsSection: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -144,20 +94,17 @@ export const HomeReviewsSection: React.FC = () => {
       <div className="max-w-[1400px] w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* ── LEFT COLUMN: RATING, MASSIVE HEADING, SUBTITLE & ARROWS ── */}
+          {/* ── LEFT COLUMN: PILL, HEADING, SUBTITLE & ARROWS ── */}
           <div className="lg:col-span-4 space-y-6 text-left">
             
-            {/* Rating Eyebrow with Google Play Icon */}
-            <div className="flex items-center gap-2">
-              <div className="w-5 h-5 flex items-center justify-center shrink-0">
-                <GooglePlayIcon className="w-4.5 h-4.5" />
-              </div>
-              <span className="font-sans font-bold text-xs sm:text-[13px] text-[#202B61] tracking-tight">
-                4.9 ★ on Google Play &amp; Enterprise Platforms
+            {/* Mission / Review Pill matching reference */}
+            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200/60 shadow-2xs">
+              <span className="text-[11px] font-bold tracking-widest uppercase text-rose-600">
+                Client Testimonials
               </span>
             </div>
 
-            {/* Massive Bold Heading (2 Lines, High Impact like EXCELLENT EVERYWHERE) */}
+            {/* Massive Bold Heading */}
             <h2 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[0.98] uppercase">
               EXCELLENT
               <br />
@@ -169,70 +116,95 @@ export const HomeReviewsSection: React.FC = () => {
               See the stories of founders, product leaders, and enterprises worldwide choosing Arkanet.
             </p>
 
-            {/* Interactive Circular Navigation Arrow Controls */}
-            <div className="flex items-center gap-3 pt-2">
+            {/* Clean Circular Navigation Arrow Controls */}
+            <div className="flex items-center gap-2.5 pt-2">
               <button
                 type="button"
                 onClick={handleScrollLeft}
-                className="w-12 h-12 rounded-full bg-[#9fe870] hover:bg-[#8fd860] active:scale-95 text-[#163300] flex items-center justify-center transition-all cursor-pointer shadow-xs disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-[#d8d8d8] text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                 aria-label="Previous review"
               >
-                <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
+                <ChevronLeft className="w-5 h-5 stroke-[2]" />
               </button>
 
               <button
                 type="button"
                 onClick={handleScrollRight}
-                className="w-12 h-12 rounded-full bg-[#9fe870] hover:bg-[#8fd860] active:scale-95 text-[#163300] flex items-center justify-center transition-all cursor-pointer shadow-xs disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-[#d8d8d8] text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                 aria-label="Next review"
               >
-                <ChevronRight className="w-6 h-6 stroke-[2.5]" />
+                <ChevronRight className="w-5 h-5 stroke-[2]" />
               </button>
             </div>
 
           </div>
 
-          {/* ── RIGHT COLUMN: HORIZONTAL SLIDING REVIEW CARDS ── */}
+          {/* ── RIGHT COLUMN: CLEAN HORIZONTAL SLIDING REVIEW CARDS ── */}
           <div className="lg:col-span-8 overflow-hidden">
             <div
               ref={scrollContainerRef}
               onScroll={checkScroll}
-              className="flex items-stretch gap-4 sm:gap-5 overflow-x-auto no-scrollbar scroll-smooth py-2 pr-4"
+              className="flex items-stretch gap-5 overflow-x-auto no-scrollbar scroll-smooth py-3 px-1"
               style={{ scrollSnapType: "x mandatory" }}
             >
-              {REVIEWS.map((review) => (
-                <div
-                  key={review.id}
-                  className={`w-[290px] sm:w-[330px] lg:w-[350px] shrink-0 ${review.bgColor} rounded-[28px] p-7 sm:p-8 flex flex-col justify-between shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.12)] transition-all duration-300`}
-                  style={{ scrollSnapAlign: "start" }}
-                >
-                  {/* Top Row: Circular Icon Badge */}
-                  <div className="mb-6">
-                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-md">
-                      <GooglePlayIcon className="w-6 h-6" />
+              {REVIEWS.map((review) => {
+                const isDark = review.isDark;
+
+                return (
+                  <div
+                    key={review.id}
+                    className={`w-[290px] sm:w-[330px] lg:w-[360px] shrink-0 rounded-[28px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
+                      isDark
+                        ? "bg-[#161E44] text-white shadow-[0_12px_36px_rgba(22,30,68,0.22)] border border-[#161E44]"
+                        : "bg-white text-[#202B61] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-[#d8d8d8] hover:shadow-[0_12px_36px_rgba(0,0,0,0.08)]"
+                    }`}
+                    style={{ scrollSnapAlign: "start" }}
+                  >
+                    {/* Top: 5 Stars */}
+                    <div className="flex items-center gap-1 mb-5">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-amber-400 stroke-amber-400"
+                        />
+                      ))}
+                    </div>
+
+                    {/* Middle: Customer Review Quote */}
+                    <div className="flex-1 mb-8">
+                      <p
+                        className={`font-sans font-normal text-sm sm:text-[15px] leading-[1.65] ${
+                          isDark ? "text-slate-200" : "text-[#202B61]/85"
+                        }`}
+                      >
+                        &ldquo;{review.quote}&rdquo;
+                      </p>
+                    </div>
+
+                    {/* Bottom: Author Name & Company Details */}
+                    <div
+                      className={`space-y-1 pt-4 border-t ${
+                        isDark ? "border-white/10" : "border-slate-100"
+                      }`}
+                    >
+                      <h4
+                        className={`font-heading font-bold text-base ${
+                          isDark ? "text-white" : "text-[#202B61]"
+                        }`}
+                      >
+                        {review.author}
+                      </h4>
+                      <p
+                        className={`font-sans text-xs leading-snug ${
+                          isDark ? "text-slate-300" : "text-[#202B61]/65"
+                        }`}
+                      >
+                        {review.role} • {review.company}
+                      </p>
                     </div>
                   </div>
-
-                  {/* Middle: Customer Review Quote */}
-                  <div className="flex-1 mb-8">
-                    <p
-                      className={`font-sans font-medium text-sm sm:text-[15px] ${review.textColor} leading-[1.65]`}
-                    >
-                      &ldquo;{review.quote}&rdquo;
-                    </p>
-                  </div>
-
-                  {/* Bottom: Author Name & Company Details */}
-                  <div className="space-y-1 pt-4 border-t border-white/10">
-                    <h4 className={`font-heading font-bold text-base ${review.textColor}`}>
-                      {review.author}
-                    </h4>
-                    <p className={`font-sans text-xs ${review.subTextColor} leading-snug`}>
-                      {review.role} • {review.company}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -241,4 +213,5 @@ export const HomeReviewsSection: React.FC = () => {
     </section>
   );
 };
+
 
