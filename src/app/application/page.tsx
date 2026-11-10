@@ -575,206 +575,201 @@ export default function ApplicationPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          2. FEATURED COVERFLOW 3D DEPTH SHOWCASE (MATCHING USER REFERENCE)
+          2. FEATURED COVERFLOW 3D DEPTH SHOWCASE (NO OUTER SHAPE, EXPANSIVE VIEW)
           ══════════════════════════════════════════════════════════════════ */}
       <section
         id="showcase"
-        className="relative w-full pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-8 lg:px-12 bg-[#EDEDF0] border-b border-[#E2E4E8] scroll-mt-24 font-sans text-center"
+        className="relative w-full pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-[#EDEDF0] border-b border-[#E2E4E8] scroll-mt-24 font-sans text-center overflow-hidden"
       >
-        <div className="max-w-[1340px] w-full mx-auto">
+        <div className="max-w-[1440px] w-full mx-auto space-y-8 sm:space-y-10">
           
-          {/* Outer Rounded Studio Frame (Exact Reference Container) */}
-          <div className="relative rounded-[36px] sm:rounded-[44px] bg-white border border-[#E2E4E8] py-12 sm:py-16 px-4 sm:px-8 lg:px-12 shadow-[0_12px_45px_rgba(0,0,0,0.03)] overflow-hidden">
+          {/* Top Centered Header Block */}
+          <div className="max-w-xl mx-auto space-y-2 text-center">
+            <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#18191C] tracking-tight leading-tight">
+              What We&apos;ve Built
+            </h2>
+          </div>
+
+          {/* 3D Depth Card Carousel Stage (Expansive, filling width without empty voids) */}
+          <div className="relative w-full h-[540px] sm:h-[480px] md:h-[440px] lg:h-[460px] flex items-center justify-center">
             
-            {/* Top Centered Header Block */}
-            <div className="max-w-xl mx-auto space-y-2 mb-8 sm:mb-12 text-center">
-              <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#18191C] tracking-tight leading-tight">
-                What We&apos;ve Built
-              </h2>
-            </div>
+            {/* Prev / Next Floating Circular Arrows */}
+            <button
+              type="button"
+              onClick={handlePrevDeck}
+              className="absolute left-2 sm:left-6 md:left-12 lg:left-16 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+              aria-label="Previous case study"
+            >
+              <ChevronLeft className="w-5 h-5 stroke-[2.2]" />
+            </button>
 
-            {/* 3D Depth Card Carousel Stage */}
-            <div className="relative w-full max-w-[1020px] mx-auto h-[490px] sm:h-[420px] md:h-[380px] flex items-center justify-center">
-              
-              {/* Prev / Next Floating Circular Arrows */}
-              <button
-                type="button"
-                onClick={handlePrevDeck}
-                className="absolute left-1 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
-                aria-label="Previous case study"
-              >
-                <ChevronLeft className="w-5 h-5 stroke-[2.2]" />
-              </button>
+            <button
+              type="button"
+              onClick={handleNextDeck}
+              className="absolute right-2 sm:right-6 md:right-12 lg:right-16 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+              aria-label="Next case study"
+            >
+              <ChevronRight className="w-5 h-5 stroke-[2.2]" />
+            </button>
 
-              <button
-                type="button"
-                onClick={handleNextDeck}
-                className="absolute right-1 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
-                aria-label="Next case study"
-              >
-                <ChevronRight className="w-5 h-5 stroke-[2.2]" />
-              </button>
+            {/* Coverflow Depth Cards */}
+            {FEATURED_SLIDES.map((slide, idx) => {
+              let diff = idx - activeDeckIdx;
+              const total = FEATURED_SLIDES.length;
+              if (diff > total / 2) diff -= total;
+              if (diff < -total / 2) diff += total;
 
-              {/* Coverflow Depth Cards */}
-              {FEATURED_SLIDES.map((slide, idx) => {
-                let diff = idx - activeDeckIdx;
-                const total = FEATURED_SLIDES.length;
-                if (diff > total / 2) diff -= total;
-                if (diff < -total / 2) diff += total;
+              const isCenter = diff === 0;
+              const isRightPeek = diff === 1;
+              const isLeftPeek = diff === -1;
+              const isVisible = isCenter || isRightPeek || isLeftPeek;
 
-                const isCenter = diff === 0;
-                const isRightPeek = diff === 1;
-                const isLeftPeek = diff === -1;
-                const isVisible = isCenter || isRightPeek || isLeftPeek;
-
-                return (
+              return (
+                <div
+                  key={slide.id}
+                  onClick={() => {
+                    if (!isCenter) setActiveDeckIdx(idx);
+                  }}
+                  style={{
+                    transform: isCenter
+                      ? "translate(-50%, -50%) scale(1)"
+                      : isRightPeek
+                      ? "translate(calc(-50% + clamp(160px, 26vw, 360px)), -50%) scale(0.88)"
+                      : isLeftPeek
+                      ? "translate(calc(-50% - clamp(160px, 26vw, 360px)), -50%) scale(0.88)"
+                      : `translate(calc(-50% + ${diff * 420}px), -50%) scale(0.75)`,
+                    zIndex: isCenter ? 30 : isVisible ? 20 : 10,
+                    opacity: isCenter ? 1 : isVisible ? 0.38 : 0,
+                    pointerEvents: isVisible ? "auto" : "none",
+                  }}
+                  className={`absolute left-1/2 top-1/2 w-[92%] sm:w-[800px] md:w-[920px] lg:w-[1020px] xl:w-[1080px] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                    !isCenter ? "cursor-pointer select-none" : ""
+                  }`}
+                >
                   <div
-                    key={slide.id}
-                    onClick={() => {
-                      if (!isCenter) setActiveDeckIdx(idx);
-                    }}
-                    style={{
-                      transform: isCenter
-                        ? "translate(-50%, -50%) scale(1)"
-                        : isRightPeek
-                        ? "translate(calc(-50% + clamp(110px, 18vw, 210px)), -50%) scale(0.88)"
-                        : isLeftPeek
-                        ? "translate(calc(-50% - clamp(110px, 18vw, 210px)), -50%) scale(0.88)"
-                        : `translate(calc(-50% + ${diff * 280}px), -50%) scale(0.75)`,
-                      zIndex: isCenter ? 30 : isVisible ? 20 : 10,
-                      opacity: isCenter ? 1 : isVisible ? 0.38 : 0,
-                      pointerEvents: isVisible ? "auto" : "none",
-                    }}
-                    className={`absolute left-1/2 top-1/2 w-[92%] sm:w-[680px] md:w-[760px] lg:w-[820px] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-                      !isCenter ? "cursor-pointer select-none" : ""
+                    className={`relative rounded-[28px] sm:rounded-[36px] bg-white border border-[#E2E4E8] p-5 sm:p-7 lg:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.06)] flex flex-col md:flex-row items-center gap-6 sm:gap-8 text-left transition-all ${
+                      isCenter ? "ring-1 ring-black/5" : ""
                     }`}
                   >
+                    {/* Left Side: Generous Rounded Image Canvas */}
                     <div
-                      className={`relative rounded-[28px] sm:rounded-[34px] bg-white border border-[#E5E7EB] p-4 sm:p-5 lg:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.06)] flex flex-col md:flex-row items-center gap-5 sm:gap-6 text-left transition-all ${
-                        isCenter ? "ring-1 ring-black/5" : ""
-                      }`}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => {
+                        if (isCenter) handleOpenAppModal(slide);
+                      }}
+                      className="relative aspect-[4/3] md:aspect-square w-full md:w-[300px] lg:w-[360px] xl:w-[400px] shrink-0 rounded-[22px] sm:rounded-[26px] overflow-hidden bg-[#141518] border border-[#E5E7EB] cursor-pointer group shadow-xs"
                     >
-                      {/* Left Side: Clean Rounded Image Canvas */}
-                      <div
-                        role="button"
-                        tabIndex={0}
-                        onClick={() => {
-                          if (isCenter) handleOpenAppModal(slide);
-                        }}
-                        className="relative aspect-[4/3] md:aspect-square w-full md:w-[260px] lg:w-[290px] shrink-0 rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#141518] border border-[#E5E7EB] cursor-pointer group"
-                      >
-                        <Image
-                          src={slide.previewImage}
-                          alt={slide.name}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 320px"
-                          className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
-                          priority={isCenter}
-                        />
+                      <Image
+                        src={slide.previewImage}
+                        alt={slide.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 420px"
+                        className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
+                        priority={isCenter}
+                      />
+                    </div>
+
+                    {/* Right Side: Editorial & Clean Metrics */}
+                    <div className="flex-1 min-w-0 space-y-3.5 sm:space-y-4 py-1">
+                      
+                      {/* Clean Client Name */}
+                      <div>
+                        <span className="font-heading font-extrabold text-xs sm:text-sm tracking-wider uppercase text-[#18191C]">
+                          {slide.name.split(" ")[0]} STUDIO
+                        </span>
                       </div>
 
-                      {/* Right Side: Editorial & Clean Metrics */}
-                      <div className="flex-1 min-w-0 space-y-3 py-1">
-                        
-                        {/* Clean Client Name */}
-                        <div>
-                          <span className="font-heading font-extrabold text-xs sm:text-[13px] tracking-wider uppercase text-[#18191C]">
-                            {slide.name.split(" ")[0]}
-                          </span>
-                        </div>
+                      {/* Title & Description */}
+                      <div>
+                        <h3 className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-[#18191C] tracking-tight leading-snug">
+                          {slide.name}
+                        </h3>
+                        <p className="font-sans text-xs sm:text-sm text-[#6B7280] leading-relaxed line-clamp-2 sm:line-clamp-3 mt-1.5">
+                          {slide.description}
+                        </p>
+                      </div>
 
-                        {/* Title & Description */}
-                        <div>
-                          <h3 className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#18191C] tracking-tight leading-snug">
-                            {slide.name}
-                          </h3>
-                          <p className="font-sans text-xs sm:text-[13px] text-[#6B7280] leading-relaxed line-clamp-2 mt-1">
-                            {slide.description}
-                          </p>
-                        </div>
+                      {/* Clean Read More Action */}
+                      <div className="pt-0.5">
+                        <button
+                          type="button"
+                          onClick={() => handleOpenAppModal(slide)}
+                          className="inline-flex items-center gap-1.5 font-sans font-bold text-xs sm:text-sm text-[#18191C] hover:opacity-75 transition-opacity cursor-pointer group"
+                        >
+                          <span>Read Case Study</span>
+                          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        </button>
+                      </div>
 
-                        {/* Clean Read More Action */}
+                      {/* 3-Column Metrics */}
+                      <div className="grid grid-cols-3 gap-4 pt-4 mt-2 border-t border-slate-100">
                         <div>
-                          <button
-                            type="button"
-                            onClick={() => handleOpenAppModal(slide)}
-                            className="inline-flex items-center gap-1.5 font-sans font-bold text-xs text-[#18191C] hover:opacity-75 transition-opacity cursor-pointer"
-                          >
-                            <span>Read More</span>
-                            <ArrowUpRight className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-
-                        {/* 3-Column Metrics */}
-                        <div className="grid grid-cols-3 gap-3 pt-3.5 mt-2 border-t border-slate-100">
-                          <div>
-                            <div className="font-heading font-black text-base sm:text-lg text-[#18191C] tracking-tight leading-none">
-                              {slide.metrics.stat1.value}
-                            </div>
-                            <div className="font-sans text-[10px] sm:text-[11px] text-[#6B7280] mt-1 leading-tight line-clamp-1">
-                              {slide.metrics.stat1.label}
-                            </div>
+                          <div className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#18191C] tracking-tight leading-none">
+                            {slide.metrics.stat1.value}
                           </div>
-                          <div>
-                            <div className="font-heading font-black text-base sm:text-lg text-[#18191C] tracking-tight leading-none">
-                              {slide.metrics.stat2.value}
-                            </div>
-                            <div className="font-sans text-[10px] sm:text-[11px] text-[#6B7280] mt-1 leading-tight line-clamp-1">
-                              {slide.metrics.stat2.label}
-                            </div>
-                          </div>
-                          <div>
-                            <div className="font-heading font-black text-base sm:text-lg text-[#18191C] tracking-tight leading-none">
-                              {slide.metrics.stat3.value}
-                            </div>
-                            <div className="font-sans text-[10px] sm:text-[11px] text-[#6B7280] mt-1 leading-tight line-clamp-1">
-                              {slide.metrics.stat3.label}
-                            </div>
+                          <div className="font-sans text-[11px] sm:text-xs text-[#6B7280] mt-1.5 leading-tight line-clamp-1">
+                            {slide.metrics.stat1.label}
                           </div>
                         </div>
-
+                        <div>
+                          <div className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#18191C] tracking-tight leading-none">
+                            {slide.metrics.stat2.value}
+                          </div>
+                          <div className="font-sans text-[11px] sm:text-xs text-[#6B7280] mt-1.5 leading-tight line-clamp-1">
+                            {slide.metrics.stat2.label}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#18191C] tracking-tight leading-none">
+                            {slide.metrics.stat3.value}
+                          </div>
+                          <div className="font-sans text-[11px] sm:text-xs text-[#6B7280] mt-1.5 leading-tight line-clamp-1">
+                            {slide.metrics.stat3.label}
+                          </div>
+                        </div>
                       </div>
 
                     </div>
+
                   </div>
+                </div>
+              );
+            })}
+
+          </div>
+
+          {/* Pagination Indicators & Bottom CTA Button */}
+          <div className="space-y-4 pt-2 flex flex-col items-center">
+            
+            {/* Clean Minimal Pagination Dots */}
+            <div className="flex items-center justify-center gap-2">
+              {FEATURED_SLIDES.map((_, i) => {
+                const isActive = i === activeDeckIdx;
+                return (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setActiveDeckIdx(i)}
+                    className={`transition-all duration-200 rounded-full cursor-pointer ${
+                      isActive
+                        ? "w-7 h-1.5 bg-[#18191C]"
+                        : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
+                    }`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
                 );
               })}
-
             </div>
 
-            {/* Pagination Indicators & Bottom CTA Button */}
-            <div className="space-y-4 mt-6 sm:mt-8 flex flex-col items-center">
-              
-              {/* Clean Minimal Pagination Dots */}
-              <div className="flex items-center justify-center gap-2">
-                {FEATURED_SLIDES.map((_, i) => {
-                  const isActive = i === activeDeckIdx;
-                  return (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setActiveDeckIdx(i)}
-                      className={`transition-all duration-200 rounded-full cursor-pointer ${
-                        isActive
-                          ? "w-6 h-1.5 bg-[#18191C]"
-                          : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
-                      }`}
-                      aria-label={`Go to slide ${i + 1}`}
-                    />
-                  );
-                })}
-              </div>
-
-              {/* Clean Pill Button */}
-              <div>
-                <a
-                  href="#directory"
-                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#18191C] text-white hover:bg-black font-sans font-semibold text-xs tracking-tight shadow-sm hover:shadow-md active:scale-95 transition-all cursor-pointer"
-                >
-                  Explore all Case Studies
-                </a>
-              </div>
-
+            {/* Clean Pill Button */}
+            <div>
+              <a
+                href="#directory"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-[#18191C] text-white hover:bg-black font-sans font-semibold text-xs sm:text-sm tracking-tight shadow-sm hover:shadow-md active:scale-95 transition-all cursor-pointer"
+              >
+                Explore all Case Studies
+              </a>
             </div>
 
           </div>
