@@ -575,175 +575,217 @@ export default function ApplicationPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          2. FLAGSHIP SHOWCASE (SPLIT-STAGE INTERACTIVE MASTER & DETAIL)
+          2. FEATURED COVERFLOW 3D DEPTH SHOWCASE (MATCHING USER REFERENCE)
           ══════════════════════════════════════════════════════════════════ */}
       <section
         id="showcase"
-        className="relative w-full pt-28 sm:pt-32 pb-20 sm:pb-24 px-4 sm:px-8 lg:px-12 bg-[#EDEDF0] border-b border-[#E2E4E8] text-left scroll-mt-28 font-sans"
+        className="relative w-full pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-8 lg:px-12 bg-[#EDEDF0] border-b border-[#E2E4E8] scroll-mt-24 font-sans text-center"
       >
-        <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
+        <div className="max-w-[1340px] w-full mx-auto">
           
-          {/* Main 12-Column Split Showcase Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          {/* Outer Rounded Studio Frame (Exact Reference Container) */}
+          <div className="relative rounded-[36px] sm:rounded-[44px] bg-white border border-[#E2E4E8] py-12 sm:py-16 px-4 sm:px-8 lg:px-12 shadow-[0_12px_45px_rgba(0,0,0,0.03)] overflow-hidden">
             
-            {/* ── LEFT COLUMN (5 COLS): SECTION INTRO + VERTICAL PROJECT INDEX ── */}
-            <div className="lg:col-span-5 space-y-6 sm:space-y-8">
-              
-              {/* Header Block */}
-              <div className="space-y-3">
-                <span className="inline-block px-3 py-1 rounded-full bg-rose-50 border border-rose-200/80 text-rose-600 font-bold text-[10px] tracking-widest uppercase">
-                  FLAGSHIP RELEASES
-                </span>
-                <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#18191C] tracking-tight leading-[1.1]">
-                  What We&apos;ve Built
-                </h2>
-                <p className="font-sans text-sm sm:text-base text-[#6B7280] leading-relaxed font-normal">
-                  Select a flagship release to inspect technical architecture, live interfaces, and commercial growth metrics.
-                </p>
-              </div>
+            {/* Top Centered Header Block */}
+            <div className="max-w-xl mx-auto space-y-3 mb-6 sm:mb-10 text-center">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/90 text-[#6B7280] font-mono text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase">
+                005 • CASE STUDIES
+              </span>
+              <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#18191C] tracking-tight leading-tight">
+                What We&apos;ve Built
+              </h2>
+            </div>
 
-              {/* Vertical Interactive Project Index */}
-              <div className="space-y-2.5 pt-1">
-                {FEATURED_SLIDES.map((slide, idx) => {
-                  const isActive = idx === activeDeckIdx;
-                  return (
-                    <button
-                      key={slide.id}
-                      type="button"
-                      onClick={() => setActiveDeckIdx(idx)}
-                      className={`w-full text-left p-4 sm:p-5 rounded-[20px] transition-all duration-200 cursor-pointer flex items-center justify-between group outline-none ${
-                        isActive
-                          ? "bg-white border-2 border-[#18191C] shadow-[0_8px_30px_rgba(0,0,0,0.06)] translate-x-1"
-                          : "bg-white/70 hover:bg-white border border-[#E2E4E8] text-slate-600 hover:text-[#18191C]"
+            {/* 3D Depth Card Carousel Stage */}
+            <div className="relative w-full max-w-[1020px] mx-auto h-[500px] sm:h-[430px] md:h-[390px] flex items-center justify-center">
+              
+              {/* Prev / Next Floating Circular Arrows (Exact Reference Style) */}
+              <button
+                type="button"
+                onClick={handlePrevDeck}
+                className="absolute left-1 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+                aria-label="Previous case study"
+              >
+                <ChevronLeft className="w-5 h-5 stroke-[2.2]" />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleNextDeck}
+                className="absolute right-1 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+                aria-label="Next case study"
+              >
+                <ChevronRight className="w-5 h-5 stroke-[2.2]" />
+              </button>
+
+              {/* Coverflow Depth Cards */}
+              {FEATURED_SLIDES.map((slide, idx) => {
+                let diff = idx - activeDeckIdx;
+                const total = FEATURED_SLIDES.length;
+                if (diff > total / 2) diff -= total;
+                if (diff < -total / 2) diff += total;
+
+                const isCenter = diff === 0;
+                const isRightPeek = diff === 1;
+                const isLeftPeek = diff === -1;
+                const isVisible = isCenter || isRightPeek || isLeftPeek;
+
+                return (
+                  <div
+                    key={slide.id}
+                    onClick={() => {
+                      if (!isCenter) setActiveDeckIdx(idx);
+                    }}
+                    style={{
+                      transform: isCenter
+                        ? "translate(-50%, -50%) scale(1)"
+                        : isRightPeek
+                        ? "translate(calc(-50% + clamp(110px, 18vw, 210px)), -50%) scale(0.88)"
+                        : isLeftPeek
+                        ? "translate(calc(-50% - clamp(110px, 18vw, 210px)), -50%) scale(0.88)"
+                        : `translate(calc(-50% + ${diff * 280}px), -50%) scale(0.75)`,
+                      zIndex: isCenter ? 30 : isVisible ? 20 : 10,
+                      opacity: isCenter ? 1 : isVisible ? 0.42 : 0,
+                      pointerEvents: isVisible ? "auto" : "none",
+                    }}
+                    className={`absolute left-1/2 top-1/2 w-[92%] sm:w-[680px] md:w-[760px] lg:w-[820px] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                      !isCenter ? "cursor-pointer select-none" : ""
+                    }`}
+                  >
+                    <div
+                      className={`relative rounded-[28px] sm:rounded-[34px] bg-[#F7F7F9] border border-[#E5E7EB] p-4 sm:p-5 lg:p-6 shadow-[0_22px_55px_rgba(0,0,0,0.08)] flex flex-col md:flex-row items-center gap-5 sm:gap-6 text-left transition-all ${
+                        isCenter ? "ring-1 ring-black/5" : ""
                       }`}
                     >
-                      <div className="space-y-1 pr-3 min-w-0">
-                        <div className="flex items-center gap-2">
-                          <span className={`font-mono text-xs font-bold ${isActive ? "text-[#18191C]" : "text-[#6B7280]"}`}>
-                            0{idx + 1}
-                          </span>
-                          <span className="text-[11px] font-medium text-[#6B7280]">
-                            {slide.subCategory}
-                          </span>
-                        </div>
-                        <h4 className={`font-heading font-extrabold text-sm sm:text-base truncate ${isActive ? "text-[#18191C]" : "text-[#18191C]/80 group-hover:text-[#18191C]"}`}>
-                          {slide.name}
-                        </h4>
+                      {/* Left Side: Rounded Image Canvas */}
+                      <div
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => {
+                          if (isCenter) handleOpenAppModal(slide);
+                        }}
+                        className="relative aspect-[4/3] md:aspect-square w-full md:w-[260px] lg:w-[290px] shrink-0 rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[#141518] border border-black/5 shadow-inner cursor-pointer group"
+                      >
+                        <Image
+                          src={slide.previewImage}
+                          alt={slide.name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 320px"
+                          className="object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                          priority={isCenter}
+                        />
                       </div>
 
-                      <div className="shrink-0 flex items-center gap-2">
-                        {isActive ? (
-                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#18191C] text-white text-[10px] font-bold tracking-wide uppercase">
-                            <span>Viewing</span>
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      {/* Right Side: Editorial & 3-Column Metrics */}
+                      <div className="flex-1 min-w-0 space-y-3 sm:space-y-3.5 py-1">
+                        
+                        {/* Logo / Brand Header */}
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <span className="w-5 h-5 rounded-md bg-[#18191C] text-white flex items-center justify-center font-bold text-[10px]">
+                              ▲
+                            </span>
+                            <span className="font-heading font-black text-xs sm:text-sm tracking-wider uppercase text-[#18191C]">
+                              {slide.name.split(" ")[0]} STUDIO
+                            </span>
+                          </div>
+                          <span className="text-[10px] font-mono text-[#6B7280] font-semibold uppercase">
+                            0{idx + 1}
                           </span>
-                        ) : (
-                          <span className="w-8 h-8 rounded-full border border-transparent group-hover:border-[#E2E4E8] flex items-center justify-center text-[#6B7280] group-hover:text-[#18191C] transition-all">
-                            <ChevronRight className="w-4 h-4" />
-                          </span>
-                        )}
+                        </div>
+
+                        {/* Title & Description */}
+                        <div>
+                          <h3 className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#18191C] tracking-tight leading-snug">
+                            {slide.name}
+                          </h3>
+                          <p className="font-sans text-xs sm:text-[13px] text-[#6B7280] leading-relaxed line-clamp-2 mt-1">
+                            {slide.description}
+                          </p>
+                        </div>
+
+                        {/* Read More Link */}
+                        <div>
+                          <button
+                            type="button"
+                            onClick={() => handleOpenAppModal(slide)}
+                            className="inline-flex items-center gap-1.5 font-sans font-bold text-xs text-[#18191C] hover:text-black hover:underline cursor-pointer group/link"
+                          >
+                            <span>Read More</span>
+                            <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                          </button>
+                        </div>
+
+                        {/* 3-Column Metrics (Exact Reference Feature) */}
+                        <div className="grid grid-cols-3 gap-3 pt-3 mt-2 border-t border-[#E5E7EB]">
+                          <div>
+                            <div className="font-heading font-black text-base sm:text-lg text-[#18191C] tracking-tight leading-none">
+                              {slide.metrics.stat1.value}
+                            </div>
+                            <div className="font-sans text-[10px] sm:text-[11px] text-[#6B7280] mt-1 leading-tight line-clamp-1">
+                              {slide.metrics.stat1.label}
+                            </div>
+                          </div>
+                          <div>
+                            <div className="font-heading font-black text-base sm:text-lg text-[#18191C] tracking-tight leading-none">
+                              {slide.metrics.stat2.value}
+                            </div>
+                            <div className="font-sans text-[10px] sm:text-[11px] text-[#6B7280] mt-1 leading-tight line-clamp-1">
+                              {slide.metrics.stat2.label}
+                            </div>
+                          </div>
+                          <div>
+                            <div className="font-heading font-black text-base sm:text-lg text-[#18191C] tracking-tight leading-none">
+                              {slide.metrics.stat3.value}
+                            </div>
+                            <div className="font-sans text-[10px] sm:text-[11px] text-[#6B7280] mt-1 leading-tight line-clamp-1">
+                              {slide.metrics.stat3.label}
+                            </div>
+                          </div>
+                        </div>
+
                       </div>
-                    </button>
+
+                    </div>
+                  </div>
+                );
+              })}
+
+            </div>
+
+            {/* Pagination Indicators & Bottom CTA Button */}
+            <div className="space-y-4 mt-6 sm:mt-8 flex flex-col items-center">
+              
+              {/* Pagination Dots (Reference Gradient Pill for Active) */}
+              <div className="flex items-center justify-center gap-2">
+                {FEATURED_SLIDES.map((_, i) => {
+                  const isActive = i === activeDeckIdx;
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setActiveDeckIdx(i)}
+                      className={`transition-all duration-300 rounded-full cursor-pointer ${
+                        isActive
+                          ? "w-7 h-2 bg-gradient-to-r from-amber-400 via-rose-400 to-indigo-500 shadow-xs"
+                          : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+                      }`}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
                   );
                 })}
               </div>
 
-            </div>
+              {/* Pill Button (Exact Reference Match) */}
+              <div>
+                <a
+                  href="#directory"
+                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#18191C] text-white hover:bg-black font-sans font-semibold text-xs tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
+                >
+                  Explore all Case Studies
+                </a>
+              </div>
 
-            {/* ── RIGHT COLUMN (7 COLS): ELEVATED STUDIO WHITE SHOWCASE STAGE ── */}
-            <div className="lg:col-span-7">
-              {(() => {
-                const activeSlide = FEATURED_SLIDES[activeDeckIdx] || FEATURED_SLIDES[0];
-                return (
-                  <div className="rounded-[32px] bg-white border border-[#E2E4E8] p-6 sm:p-8 lg:p-9 shadow-[0_16px_50px_rgba(0,0,0,0.04)] space-y-6 sm:space-y-7 transition-all">
-                    
-                    {/* Stage Header Bar: SubCategory / Platform + Slide Arrows */}
-                    <div className="flex items-center justify-between pb-4 border-b border-[#E2E4E8]">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#6B7280]">
-                        {activeSlide.subCategory}
-                      </span>
-
-                      {/* Carousel Arrow Controls */}
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs font-bold text-[#6B7280] mr-1">
-                          0{activeDeckIdx + 1} / 0{FEATURED_SLIDES.length}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={handlePrevDeck}
-                          className="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-[#E2E4E8] text-[#18191C] flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-2xs"
-                          aria-label="Previous project"
-                        >
-                          <ChevronLeft className="w-4 h-4 stroke-[2]" />
-                        </button>
-                        <button
-                          type="button"
-                          onClick={handleNextDeck}
-                          className="w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-[#E2E4E8] text-[#18191C] flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-2xs"
-                          aria-label="Next project"
-                        >
-                          <ChevronRight className="w-4 h-4 stroke-[2]" />
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* High-Resolution Device Mockup Canvas */}
-                    <div
-                      role="button"
-                      tabIndex={0}
-                      onClick={() => handleOpenAppModal(activeSlide)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          handleOpenAppModal(activeSlide);
-                        }
-                      }}
-                      className="group relative aspect-[16/10] w-full rounded-[22px] overflow-hidden bg-slate-100 border border-[#E2E4E8] cursor-pointer shadow-xs outline-none focus-visible:ring-2 focus-visible:ring-[#18191C]"
-                    >
-                      <Image
-                        src={activeSlide.previewImage}
-                        alt={activeSlide.name}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 55vw"
-                        className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
-                        priority
-                      />
-                    </div>
-
-                    {/* Editorial Details & Call To Action */}
-                    <div className="space-y-4 pt-1">
-                      <div className="space-y-2">
-                        <h3 className="font-heading font-black text-2xl sm:text-3xl text-[#18191C] tracking-tight leading-snug">
-                          {activeSlide.name}
-                        </h3>
-                        <p className="font-sans text-sm sm:text-base text-[#6B7280] leading-relaxed font-normal">
-                          {activeSlide.description}
-                        </p>
-                      </div>
-
-                      {/* Action Row */}
-                      <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-slate-100">
-                        <span className="font-sans text-xs font-semibold text-[#6B7280]">
-                          {activeSlide.platformBadge} • Production Verified
-                        </span>
-
-                        <div className="flex items-center gap-3">
-                          <button
-                            type="button"
-                            onClick={() => handleOpenAppModal(activeSlide)}
-                            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#18191C] text-white hover:bg-black font-sans font-bold text-xs sm:text-sm transition-all cursor-pointer shadow-sm active:scale-95"
-                          >
-                            <span>Read Case Study</span>
-                            <ArrowUpRight className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-                );
-              })()}
             </div>
 
           </div>
@@ -754,7 +796,7 @@ export default function ApplicationPage() {
       {/* ══════════════════════════════════════════════════════════════════
           3. FULL APP STORE & SHOPIFY DIRECTORY (MATCHING REFERENCE DESIGN)
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#EDEDF0] border-b border-[#E2E4E8]">
+      <section id="directory" className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#EDEDF0] border-b border-[#E2E4E8] scroll-mt-24">
         <div className="max-w-[1400px] mx-auto space-y-8">
 
           {/* Directory Header & Category Filter Tabs */}
