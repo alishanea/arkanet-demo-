@@ -644,9 +644,26 @@ export default function ApplicationPage() {
             </div>
           </div>
 
-          {/* Elevated Floating Studio Showcase Card (Pure White with Subtle Border) */}
-          <div className="relative rounded-[28px] bg-white border border-slate-200/90 p-6 sm:p-8 lg:p-12 shadow-[0_8px_32px_rgba(32,43,97,0.05)]">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Elevated Floating Studio Showcase Card (Luxury Dark Studio Theme) */}
+          <div className="relative rounded-[28px] bg-[#121833] text-white border border-[#253272] p-6 sm:p-8 lg:p-12 shadow-[0_20px_50px_rgba(18,24,51,0.22)] overflow-hidden">
+            {/* Subtle Ambient Accent Glow */}
+            <div
+              className="absolute -top-28 -right-28 w-96 h-96 rounded-full blur-3xl pointer-events-none opacity-20 transition-all duration-700"
+              style={{
+                background:
+                  currentDeckApp.id === "vesper-horology"
+                    ? "#f59e0b"
+                    : currentDeckApp.id === "careflow-health"
+                    ? "#10b981"
+                    : currentDeckApp.id === "kinetics-movement"
+                    ? "#06b6d4"
+                    : currentDeckApp.id === "moda-atelier"
+                    ? "#f43f5e"
+                    : "#a855f7",
+              }}
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
               
               {/* Left Column: High-Resolution Visual with Zoom on Hover */}
               <div className="lg:col-span-6">
@@ -654,17 +671,17 @@ export default function ApplicationPage() {
                   role="button"
                   tabIndex={0}
                   onClick={() => handleOpenAppModal(currentDeckApp)}
-                  className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-slate-50 border border-slate-200/80 cursor-pointer shadow-xs"
+                  className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-[#0c1024] border border-white/10 cursor-pointer shadow-lg"
                 >
                   <Image
                     src={currentDeckApp.previewImage}
                     alt={currentDeckApp.name}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
+                    className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
                     priority
                   />
-                  <div className="absolute inset-0 bg-[#202B61]/0 group-hover:bg-[#202B61]/5 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 </div>
               </div>
 
@@ -674,46 +691,46 @@ export default function ApplicationPage() {
                 {/* Category & Client Header */}
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#202B61]/60">
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
                       {currentDeckApp.category}
                     </span>
-                    <span className="text-slate-300">•</span>
-                    <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                    <span className="text-white/30">•</span>
+                    <span className="text-xs font-semibold text-emerald-300 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
                       {currentDeckApp.platformBadge}
                     </span>
                   </div>
-                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight leading-tight">
+                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-tight">
                     {currentDeckApp.name}
                   </h3>
                 </div>
 
-                <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                   {currentDeckApp.description}
                 </p>
 
                 {/* Real Quantified Impact Metrics (Clean Structural Boxes) */}
-                <div className="grid grid-cols-3 gap-3 py-3 border-y border-slate-100">
+                <div className="grid grid-cols-3 gap-3 py-3.5 border-y border-white/10">
                   <div>
-                    <span className="block font-heading font-black text-xl sm:text-2xl text-[#202B61]">
+                    <span className="block font-heading font-black text-xl sm:text-2xl text-white">
                       {currentDeckApp.metrics.stat1.value}
                     </span>
-                    <span className="block font-sans text-[11px] text-slate-500 font-medium">
+                    <span className="block font-sans text-[11px] text-slate-400 font-medium">
                       {currentDeckApp.metrics.stat1.label}
                     </span>
                   </div>
-                  <div className="border-x border-slate-100 px-3">
-                    <span className="block font-heading font-black text-xl sm:text-2xl text-[#202B61]">
+                  <div className="border-x border-white/10 px-3">
+                    <span className="block font-heading font-black text-xl sm:text-2xl text-white">
                       {currentDeckApp.metrics.stat2.value}
                     </span>
-                    <span className="block font-sans text-[11px] text-slate-500 font-medium">
+                    <span className="block font-sans text-[11px] text-slate-400 font-medium">
                       {currentDeckApp.metrics.stat2.label}
                     </span>
                   </div>
                   <div>
-                    <span className="block font-heading font-black text-xl sm:text-2xl text-[#202B61]">
+                    <span className="block font-heading font-black text-xl sm:text-2xl text-white">
                       {currentDeckApp.metrics.stat3.value}
                     </span>
-                    <span className="block font-sans text-[11px] text-slate-500 font-medium">
+                    <span className="block font-sans text-[11px] text-slate-400 font-medium">
                       {currentDeckApp.metrics.stat3.label}
                     </span>
                   </div>
@@ -724,16 +741,16 @@ export default function ApplicationPage() {
                   <button
                     type="button"
                     onClick={() => handleOpenAppModal(currentDeckApp)}
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#18214D] transition-all cursor-pointer shadow-sm active:scale-95"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#121833] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-sm active:scale-95"
                   >
                     <span>Read Case Study</span>
-                    <ArrowUpRight className="w-4 h-4 text-white" />
+                    <ArrowUpRight className="w-4 h-4 text-[#121833]" />
                   </button>
 
                   <button
                     type="button"
                     onClick={openContact}
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/90 text-[#202B61] font-sans font-bold text-xs sm:text-sm transition-all cursor-pointer active:scale-95"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-sans font-bold text-xs sm:text-sm transition-all cursor-pointer active:scale-95"
                   >
                     <span>Request Custom Build</span>
                   </button>
