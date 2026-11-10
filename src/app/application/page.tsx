@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   Smartphone,
@@ -14,11 +14,6 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
-  Search,
-  Sparkles,
-  ShieldCheck,
-  TrendingUp,
-  SlidersHorizontal,
 } from "lucide-react";
 
 import { Footer } from "@/components/layout/Footer";
@@ -414,7 +409,6 @@ const ShopifyLogo: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }
 
 export default function ApplicationPage() {
   const [selectedCategory, setSelectedCategory] = useState<ApplicationCategory>("All");
-  const [searchQuery, setSearchQuery] = useState("");
   const [contactOpen, setContactOpen] = useState(false);
   const [selectedApp, setSelectedApp] = useState<ApplicationItem | null>(null);
   const [activeScreenshotIdx, setActiveScreenshotIdx] = useState(0);
@@ -432,22 +426,10 @@ export default function ApplicationPage() {
     setActiveDeckIdx((prev) => (prev + 1) % FEATURED_SLIDES.length);
   };
 
-  // Filtered and searched applications
-  const filteredApps = useMemo(() => {
-    return APPLICATIONS.filter((app) => {
-      const matchesCategory =
-        selectedCategory === "All" || app.category === selectedCategory;
-      const q = searchQuery.toLowerCase().trim();
-      const matchesSearch =
-        !q ||
-        app.name.toLowerCase().includes(q) ||
-        app.tagline.toLowerCase().includes(q) ||
-        app.client.toLowerCase().includes(q) ||
-        app.subCategory.toLowerCase().includes(q) ||
-        app.techStack.some((t) => t.toLowerCase().includes(q));
-      return matchesCategory && matchesSearch;
-    });
-  }, [selectedCategory, searchQuery]);
+  const filteredApps =
+    selectedCategory === "All"
+      ? APPLICATIONS
+      : APPLICATIONS.filter((item) => item.category === selectedCategory);
 
   const handleOpenAppModal = (app: ApplicationItem) => {
     setSelectedApp(app);
@@ -456,23 +438,13 @@ export default function ApplicationPage() {
 
   const currentDeckApp = FEATURED_SLIDES[activeDeckIdx];
 
-  // Category counts
-  const categoryCounts = useMemo(() => {
-    return {
-      All: APPLICATIONS.length,
-      "Mobile Apps": APPLICATIONS.filter((a) => a.category === "Mobile Apps").length,
-      "Shopify Stores": APPLICATIONS.filter((a) => a.category === "Shopify Stores").length,
-      "Web & SaaS": APPLICATIONS.filter((a) => a.category === "Web & SaaS").length,
-    };
-  }, []);
-
   return (
     <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ══════════════════════════════════════════════════════════════════
-          1. HERO SECTION (CLEAN WHITE STUDIO CANVAS WITH BENTO PROOF GRID)
+          1. EXACT STUDIO HERO FROM REFERENCE (CLEAN, NO MICRO-ELEMENTS)
           ══════════════════════════════════════════════════════════════════ */}
       <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 my-auto">
@@ -480,7 +452,7 @@ export default function ApplicationPage() {
           {/* Main Hero Header Block: Two-Column Headline & Subtitle */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2 text-left">
             <div>
-              <p className="font-sans text-base sm:text-lg text-slate-500 font-medium mb-1.5">
+              <p className="font-sans text-base sm:text-lg text-slate-500 font-medium mb-1">
                 Our focus is simple
               </p>
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.05]">
@@ -489,17 +461,17 @@ export default function ApplicationPage() {
             </div>
 
             <div className="max-w-md lg:max-w-lg lg:pb-1">
-              <p className="font-sans text-sm sm:text-[15px] text-slate-600 leading-relaxed font-normal">
+              <p className="font-sans text-sm sm:text-[15px] text-slate-500 leading-relaxed font-normal">
                 We engineer production mobile apps and flagship Shopify websites that turn technical architecture into measurable commercial growth.
               </p>
             </div>
           </div>
 
-          {/* Elevated 3-Card Bento Proof Grid (Cohesive Studio Palette) */}
+          {/* Elevated 3-Card Bento Proof Grid (Exact Reference Replica) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 pt-2">
             
             {/* Card 1: Verified Releases & ROI */}
-            <div className="lg:col-span-4 rounded-[28px] bg-white border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(32,43,97,0.03)] hover:shadow-[0_12px_32px_rgba(32,43,97,0.07)] hover:-translate-y-0.5 transition-all duration-300 min-h-[280px] sm:min-h-[300px]">
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(32,43,97,0.03)] min-h-[280px] sm:min-h-[300px]">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-1.5 overflow-hidden py-0.5">
                   <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#059669] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
@@ -527,16 +499,16 @@ export default function ApplicationPage() {
                 <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#202B61] tracking-tight leading-none">
                   90%
                 </h3>
-                <p className="font-sans text-xs sm:text-[13px] text-slate-600 pt-0.5">
+                <p className="font-sans text-xs sm:text-[13px] text-slate-500 pt-0.5">
                   Return on investment within 90 days of launch
                 </p>
               </div>
             </div>
 
             {/* Card 2: Transaction Volume & Availability */}
-            <div className="lg:col-span-4 rounded-[28px] bg-white border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(32,43,97,0.03)] hover:shadow-[0_12px_32px_rgba(32,43,97,0.07)] hover:-translate-y-0.5 transition-all duration-300 min-h-[280px] sm:min-h-[300px]">
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(32,43,97,0.03)] min-h-[280px] sm:min-h-[300px]">
               <div>
-                <p className="font-sans text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed">
+                <p className="font-sans text-xs sm:text-[13px] text-slate-500 font-normal leading-relaxed">
                   Through custom-tailored mobile &amp; e-commerce systems
                 </p>
               </div>
@@ -546,27 +518,24 @@ export default function ApplicationPage() {
                   <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#202B61] tracking-tight leading-none">
                     $45M<span className="text-emerald-500 font-bold">+</span>
                   </h3>
-                  <p className="font-sans text-xs sm:text-[13px] text-slate-600">
+                  <p className="font-sans text-xs sm:text-[13px] text-slate-500">
                     Client transaction volume powered in 2025–2026
                   </p>
                 </div>
 
-                <div className="pt-1 flex items-center gap-2.5">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-                  </span>
-                  <span className="font-sans text-xs text-slate-700 font-medium">
+                <div className="pt-1 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="font-sans text-xs text-slate-600 font-medium">
                     Available for Q2 Architecture &amp; App Builds
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Card 3: Dark Elevated Client Trust Card (Arkanet Signature Navy) */}
-            <div className="lg:col-span-4 rounded-[28px] bg-[#151E48] text-white p-7 sm:p-8 flex flex-col justify-between shadow-[0_16px_40px_rgba(21,30,72,0.18)] hover:shadow-[0_20px_48px_rgba(21,30,72,0.24)] hover:-translate-y-0.5 transition-all duration-300 min-h-[280px] sm:min-h-[300px]">
+            {/* Card 3: Dark Elevated Client Trust Card (Exact Reference Replica) */}
+            <div className="lg:col-span-4 rounded-[28px] bg-[#18191c] text-white p-7 sm:p-8 flex flex-col justify-between shadow-[0_16px_40px_rgba(0,0,0,0.18)] min-h-[280px] sm:min-h-[300px]">
               <div>
-                <p className="font-sans text-xs sm:text-[13px] text-slate-200 font-normal leading-relaxed">
+                <p className="font-sans text-xs sm:text-[13px] text-slate-300 font-normal leading-relaxed">
                   We engineered 50+ applications and Shopify stores worldwide, helping category leaders scale traffic, automate workflows, and retain customers.
                 </p>
               </div>
@@ -586,7 +555,7 @@ export default function ApplicationPage() {
                 </div>
 
                 <div className="text-right flex flex-col items-end">
-                  <svg viewBox="0 0 64 36" fill="none" className="w-16 h-9 stroke-emerald-400 stroke-[2.5] mb-2">
+                  <svg viewBox="0 0 64 36" fill="none" className="w-16 h-9 stroke-emerald-500 stroke-[2.5] mb-2">
                     <path d="M4 28 L20 16 L32 24 L56 6" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M42 6 H56 V20" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -606,153 +575,66 @@ export default function ApplicationPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          2. FEATURED CASE CAROUSEL DECK (INTERACTIVE FLAGSHIP STUDIO SHOWCASE)
+          2. FEATURED CASE CAROUSEL DECK (CLEAN STUDIO SHOWCASE, LUXURY DARK CARD)
           ══════════════════════════════════════════════════════════════════ */}
       <section id="showcase" className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left overflow-hidden flex flex-col justify-center scroll-mt-20">
         <div className="max-w-[1400px] w-full mx-auto space-y-6 sm:space-y-8 my-auto">
           
-          {/* Section Header & Interactive Project Switcher */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 pb-2">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#202B61]/60 block mb-1">
-                Featured Flagships
-              </span>
-              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
-                What We&apos;ve Built
-              </h2>
-            </div>
-
-            {/* Quick Interactive Slide Switcher Pills */}
-            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-              {FEATURED_SLIDES.map((slide, idx) => {
-                const isActive = idx === activeDeckIdx;
-                return (
-                  <button
-                    key={slide.id}
-                    type="button"
-                    onClick={() => setActiveDeckIdx(idx)}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
-                      isActive
-                        ? "bg-[#202B61] text-white shadow-xs"
-                        : "bg-slate-50 text-[#202B61]/70 hover:text-[#202B61] hover:bg-slate-100 border border-slate-200/80"
-                    }`}
-                  >
-                    {slide.name.split(" ")[0]}
-                  </button>
-                );
-              })}
-            </div>
+          {/* Section Header */}
+          <div className="text-left">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#202B61] tracking-tight">
+              What We&apos;ve Built
+            </h2>
           </div>
 
-          {/* Elevated Floating Studio Showcase Card (Luxury Dark Studio Theme) */}
-          <div className="relative rounded-[28px] bg-[#121833] text-white border border-[#253272] p-6 sm:p-8 lg:p-12 shadow-[0_20px_50px_rgba(18,24,51,0.22)] overflow-hidden">
-            {/* Subtle Ambient Accent Glow */}
-            <div
-              className="absolute -top-28 -right-28 w-96 h-96 rounded-full blur-3xl pointer-events-none opacity-20 transition-all duration-700"
-              style={{
-                background:
-                  currentDeckApp.id === "vesper-horology"
-                    ? "#f59e0b"
-                    : currentDeckApp.id === "careflow-health"
-                    ? "#10b981"
-                    : currentDeckApp.id === "kinetics-movement"
-                    ? "#06b6d4"
-                    : currentDeckApp.id === "moda-atelier"
-                    ? "#f43f5e"
-                    : "#a855f7",
-              }}
-            />
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+          {/* Clean Studio Showcase Card (Luxury Dark Navy - Zero Micro-Elements) */}
+          <div className="relative rounded-[28px] bg-[#151E48] text-white border border-[#253272] p-6 sm:p-8 lg:p-12 shadow-[0_16px_40px_rgba(21,30,72,0.18)]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
-              {/* Left Column: High-Resolution Visual with Zoom on Hover */}
+              {/* Left Column: Authentic High-Resolution Image, No Cutouts, No Floating Overlays */}
               <div className="lg:col-span-6">
                 <div
                   role="button"
                   tabIndex={0}
                   onClick={() => handleOpenAppModal(currentDeckApp)}
-                  className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-[#0c1024] border border-white/10 cursor-pointer shadow-lg"
+                  className="group relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-slate-900 border border-white/10 cursor-pointer shadow-sm"
                 >
                   <Image
                     src={currentDeckApp.previewImage}
                     alt={currentDeckApp.name}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
-                    priority
+                    className="object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
                   />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
                 </div>
               </div>
 
-              {/* Right Column: Clean Editorial Info, Real Metrics & Action */}
+              {/* Right Column: Clean Editorial Info & Single Clear Action */}
               <div className="lg:col-span-6 space-y-6 text-left">
                 
-                {/* Category & Client Header */}
+                {/* Category Kicker */}
                 <div className="space-y-1.5">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
-                      {currentDeckApp.category}
-                    </span>
-                    <span className="text-white/30">•</span>
-                    <span className="text-xs font-semibold text-emerald-300 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
-                      {currentDeckApp.platformBadge}
-                    </span>
-                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-300 block">
+                    {currentDeckApp.category} • {currentDeckApp.subCategory}
+                  </span>
                   <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-tight">
                     {currentDeckApp.name}
                   </h3>
                 </div>
 
-                <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                <p className="font-sans text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
                   {currentDeckApp.description}
                 </p>
 
-                {/* Real Quantified Impact Metrics (Clean Structural Boxes) */}
-                <div className="grid grid-cols-3 gap-3 py-3.5 border-y border-white/10">
-                  <div>
-                    <span className="block font-heading font-black text-xl sm:text-2xl text-white">
-                      {currentDeckApp.metrics.stat1.value}
-                    </span>
-                    <span className="block font-sans text-[11px] text-slate-400 font-medium">
-                      {currentDeckApp.metrics.stat1.label}
-                    </span>
-                  </div>
-                  <div className="border-x border-white/10 px-3">
-                    <span className="block font-heading font-black text-xl sm:text-2xl text-white">
-                      {currentDeckApp.metrics.stat2.value}
-                    </span>
-                    <span className="block font-sans text-[11px] text-slate-400 font-medium">
-                      {currentDeckApp.metrics.stat2.label}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="block font-heading font-black text-xl sm:text-2xl text-white">
-                      {currentDeckApp.metrics.stat3.value}
-                    </span>
-                    <span className="block font-sans text-[11px] text-slate-400 font-medium">
-                      {currentDeckApp.metrics.stat3.label}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Primary Actions */}
-                <div className="pt-1 flex flex-wrap items-center gap-3">
+                {/* Single Primary Action Button */}
+                <div className="pt-2">
                   <button
                     type="button"
                     onClick={() => handleOpenAppModal(currentDeckApp)}
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#121833] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-sm active:scale-95"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#151E48] font-sans font-bold text-xs sm:text-sm hover:bg-slate-100 transition-all cursor-pointer shadow-sm active:scale-95"
                   >
                     <span>Read Case Study</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#121833]" />
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={openContact}
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-sans font-bold text-xs sm:text-sm transition-all cursor-pointer active:scale-95"
-                  >
-                    <span>Request Custom Build</span>
+                    <ArrowUpRight className="w-4 h-4 text-[#151E48]" />
                   </button>
                 </div>
 
@@ -771,7 +653,7 @@ export default function ApplicationPage() {
                     type="button"
                     onClick={() => setActiveDeckIdx(idx)}
                     className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === activeDeckIdx ? "w-7 bg-[#202B61]" : "w-2 bg-slate-300 hover:bg-slate-400"
+                      idx === activeDeckIdx ? "w-7 bg-[#202B61]" : "w-2 bg-[#202B61]/25 hover:bg-[#202B61]/50"
                     }`}
                     aria-label={`Slide to ${slide.name}`}
                   />
@@ -807,173 +689,102 @@ export default function ApplicationPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          3. PRODUCT LISTING DIRECTORY (ALL APPLICATIONS & STOREFRONTS)
+          3. FULL APP STORE & SHOPIFY DIRECTORY (CLEAN CARDS - ZERO MICRO-ELEMENTS)
           ══════════════════════════════════════════════════════════════════ */}
       <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-white border-b border-slate-200/80">
         <div className="max-w-[1400px] mx-auto space-y-8">
 
-          {/* Directory Header & Interactive Filter / Search Bar */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 pb-6 border-b border-slate-200/80">
-            <div className="space-y-1.5 max-w-xl">
+          {/* Directory Header & Category Filter Tabs */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-slate-200/80">
+            <div className="space-y-1">
               <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight">
                 All Applications &amp; Storefronts
               </h2>
-              <p className="font-sans text-xs sm:text-sm text-slate-500">
-                Browse our complete catalog of verified mobile releases, headless Shopify stores, and enterprise SaaS.
+              <p className="font-sans text-xs sm:text-sm text-[#202B61]/70">
+                Browse our complete catalog of verified mobile releases and e-commerce platforms.
               </p>
             </div>
 
-            {/* Interactive Filters & Search Controls */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              {/* Real-Time Search Input */}
-              <div className="relative min-w-[240px]">
-                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search releases or tech..."
-                  className="w-full pl-9 pr-8 py-2 rounded-full text-xs font-medium bg-slate-50 border border-slate-200 text-[#202B61] placeholder:text-slate-400 focus:outline-none focus:border-[#202B61] focus:bg-white transition-all"
-                />
-                {searchQuery && (
+            {/* Segmented Filter Pills */}
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              {CATEGORIES.map((category) => {
+                const isActive = selectedCategory === category;
+                return (
                   <button
+                    key={category}
                     type="button"
-                    onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#202B61]"
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
+                      isActive
+                        ? "bg-[#202B61] text-white shadow-xs"
+                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-50 border border-slate-200/80"
+                    }`}
                   >
-                    <X className="w-3.5 h-3.5" />
+                    {category}
                   </button>
-                )}
-              </div>
-
-              {/* Segmented Filter Pills */}
-              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                {CATEGORIES.map((category) => {
-                  const isActive = selectedCategory === category;
-                  const count = categoryCounts[category];
-                  return (
-                    <button
-                      key={category}
-                      type="button"
-                      onClick={() => setSelectedCategory(category)}
-                      className={`px-3.5 py-2 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none flex items-center gap-1.5 ${
-                        isActive
-                          ? "bg-[#202B61] text-white shadow-xs"
-                          : "bg-slate-50 text-[#202B61]/70 hover:text-[#202B61] hover:bg-slate-100 border border-slate-200/80"
-                      }`}
-                    >
-                      <span>{category}</span>
-                      <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                        isActive ? "bg-white/20 text-white" : "bg-slate-200/70 text-slate-600"
-                      }`}>
-                        {count}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
+                );
+              })}
             </div>
           </div>
 
           {/* 3-Column Clean Release Grid */}
-          {filteredApps.length === 0 ? (
-            <div className="rounded-[24px] bg-slate-50 border border-dashed border-slate-200 py-16 px-6 text-center space-y-3">
-              <p className="font-heading font-bold text-lg text-[#202B61]">No releases found</p>
-              <p className="font-sans text-xs sm:text-sm text-slate-500">
-                Try adjusting your search terms or category filter.
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedCategory("All");
-                  setSearchQuery("");
-                }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#202B61] text-white text-xs font-semibold"
-              >
-                Reset Filters
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-              {filteredApps.map((app) => {
-                return (
-                  <div
-                    key={app.id}
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => handleOpenAppModal(app)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        handleOpenAppModal(app);
-                      }
-                    }}
-                    className="group rounded-[24px] bg-white border border-slate-200/80 shadow-[0_4px_20px_rgba(32,43,97,0.03)] p-5 sm:p-6 hover:border-[#202B61]/40 hover:shadow-[0_12px_36px_rgba(32,43,97,0.08)] hover:-translate-y-1 cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
-                  >
-                    <div className="space-y-4">
-                      {/* Clean Preview Image */}
-                      <div className="relative aspect-[16/10] w-full rounded-[16px] overflow-hidden bg-slate-50 border border-slate-200/70">
-                        <Image
-                          src={app.previewImage}
-                          alt={app.name}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
-                        />
-                      </div>
-
-                      {/* Metadata & Title */}
-                      <div className="space-y-2 pt-1">
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]/60">
-                            {app.category}
-                          </span>
-                          <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
-                            {app.platformBadge}
-                          </span>
-                        </div>
-
-                        <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug group-hover:text-[#18214D] transition-colors">
-                          {app.name}
-                        </h3>
-
-                        <p className="font-sans text-xs sm:text-[13px] text-slate-600 leading-relaxed line-clamp-2">
-                          {app.tagline}
-                        </p>
-
-                        {/* Tech Stack Chips */}
-                        <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                          {app.techStack.slice(0, 3).map((tech) => (
-                            <span
-                              key={tech}
-                              className="text-[10.5px] font-medium text-slate-600 bg-slate-50 border border-slate-200/80 px-2 py-0.5 rounded-[4px]"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+            {filteredApps.map((app) => {
+              return (
+                <div
+                  key={app.id}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => handleOpenAppModal(app)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      handleOpenAppModal(app);
+                    }
+                  }}
+                  className="group rounded-[24px] bg-white border border-slate-200/80 shadow-[0_4px_20px_rgba(32,43,97,0.03)] p-5 sm:p-6 hover:border-[#202B61]/40 hover:shadow-[0_12px_36px_rgba(32,43,97,0.08)] cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                >
+                  <div className="space-y-4">
+                    {/* Clean Preview Image */}
+                    <div className="relative aspect-[16/10] w-full rounded-[16px] overflow-hidden bg-slate-50 border border-slate-200/70">
+                      <Image
+                        src={app.previewImage}
+                        alt={app.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
+                      />
                     </div>
 
-                    {/* Clean Bottom Action Row */}
-                    <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-1 text-amber-500">
-                        <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
-                        <span className="font-bold text-[#202B61] text-xs">{app.rating}</span>
-                        <span className="text-[10.5px] text-slate-400">({app.reviewsCount})</span>
-                      </div>
-
-                      <span className="inline-flex items-center gap-1 font-sans font-bold text-xs text-[#202B61] group-hover:translate-x-0.5 transition-transform">
-                        <span>View Details</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
+                    {/* Metadata & Title */}
+                    <div className="space-y-1.5 pt-1">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]/60 block">
+                        {app.category} • {app.subCategory}
                       </span>
+                      <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug group-hover:text-[#18214D] transition-colors">
+                        {app.name}
+                      </h3>
+                      <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/75 leading-relaxed line-clamp-2">
+                        {app.tagline}
+                      </p>
                     </div>
-
                   </div>
-                );
-              })}
-            </div>
-          )}
+
+                  {/* Clean Bottom Action Row */}
+                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span className="text-[#202B61]/60 font-semibold text-[11px]">
+                      {app.platformBadge}
+                    </span>
+                    <span className="inline-flex items-center gap-1 font-sans font-bold text-xs text-[#202B61] group-hover:translate-x-0.5 transition-transform">
+                      <span>View Details</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+
+                </div>
+              );
+            })}
+          </div>
 
         </div>
       </section>
@@ -1011,7 +822,7 @@ export default function ApplicationPage() {
                 <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] leading-tight">
                   {selectedApp.name}
                 </h3>
-                <p className="font-sans text-xs text-slate-500">
+                <p className="font-sans text-xs text-[#202B61]/60">
                   {selectedApp.client} • Released {selectedApp.year}
                 </p>
               </div>
@@ -1033,20 +844,20 @@ export default function ApplicationPage() {
             {/* App Store Key Metrics Bar */}
             <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-xl bg-slate-50 border border-slate-200/70 text-center text-xs">
               <div>
-                <span className="block text-[10.5px] text-slate-500 uppercase tracking-wider font-semibold">
+                <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
                   Customer Rating
                 </span>
                 <span className="font-bold text-[#202B61] text-sm flex items-center justify-center gap-1 mt-0.5">
                   <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
                   {selectedApp.rating}
                 </span>
-                <span className="block text-[10px] text-slate-400 mt-0.5">
+                <span className="block text-[10px] text-[#202B61]/60 mt-0.5">
                   {selectedApp.reviewsCount}
                 </span>
               </div>
 
               <div className="border-x border-slate-200">
-                <span className="block text-[10.5px] text-slate-500 uppercase tracking-wider font-semibold">
+                <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
                   Platform
                 </span>
                 <span className="font-bold text-[#202B61] text-sm block mt-0.5 truncate px-1">
@@ -1058,13 +869,13 @@ export default function ApplicationPage() {
               </div>
 
               <div>
-                <span className="block text-[10.5px] text-slate-500 uppercase tracking-wider font-semibold">
+                <span className="block text-[10.5px] text-[#202B61]/60 uppercase tracking-wider font-semibold">
                   Architecture
                 </span>
                 <span className="font-bold text-[#202B61] text-sm block mt-0.5 truncate px-1">
                   {selectedApp.category}
                 </span>
-                <span className="block text-[10px] text-slate-400 mt-0.5">
+                <span className="block text-[10px] text-[#202B61]/60 mt-0.5">
                   Arkanet Verified
                 </span>
               </div>
@@ -1097,12 +908,12 @@ export default function ApplicationPage() {
                       <span className="block font-sans font-bold text-xs text-[#202B61]">
                         {selectedApp.downloads.primaryLabel}
                       </span>
-                      <span className="block font-sans text-[10.5px] text-slate-500">
+                      <span className="block font-sans text-[10.5px] text-[#202B61]/60">
                         Official Storefront Link
                       </span>
                     </div>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-[#202B61]/50 group-hover:text-[#202B61] transition-colors" />
                 </button>
 
                 {selectedApp.downloads.secondaryLabel && (
@@ -1124,12 +935,12 @@ export default function ApplicationPage() {
                         <span className="block font-sans font-bold text-xs text-[#202B61]">
                           {selectedApp.downloads.secondaryLabel}
                         </span>
-                        <span className="block font-sans text-[10.5px] text-slate-500">
+                        <span className="block font-sans text-[10.5px] text-[#202B61]/60">
                           Direct Access &amp; Demo
                         </span>
                       </div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 text-[#202B61]/50 group-hover:text-[#202B61] transition-colors" />
                   </button>
                 )}
               </div>
@@ -1142,7 +953,7 @@ export default function ApplicationPage() {
               </span>
 
               {/* Main Screenshot Preview */}
-              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-50 border border-slate-200/80">
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
                 <Image
                   src={selectedApp.screenshots[activeScreenshotIdx] || selectedApp.previewImage}
                   alt={selectedApp.name}
@@ -1177,7 +988,7 @@ export default function ApplicationPage() {
               <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
                 About The Application
               </h4>
-              <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sans text-xs sm:text-sm text-[#202B61]/85 leading-relaxed">
                 {selectedApp.description}
               </p>
             </div>
@@ -1189,7 +1000,7 @@ export default function ApplicationPage() {
               </h4>
               <div className="space-y-1.5">
                 {selectedApp.highlights.map((h, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-700">
+                  <div key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-[#202B61]/85">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                     <span className="leading-snug">{h}</span>
                   </div>
@@ -1206,7 +1017,7 @@ export default function ApplicationPage() {
                 {selectedApp.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="font-sans text-[11px] font-medium text-[#202B61]/80 bg-slate-50 border border-slate-200/80 px-2.5 py-0.5 rounded-[4px]"
+                    className="font-sans text-[11px] font-medium text-[#202B61]/80 bg-[#f8fafc] border border-slate-200/80 px-2.5 py-0.5 rounded-[4px]"
                   >
                     {tech}
                   </span>
@@ -1216,7 +1027,7 @@ export default function ApplicationPage() {
 
             {/* Modal Bottom Inquire */}
             <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-              <span className="font-sans text-[11px] text-slate-500">
+              <span className="font-sans text-[11px] text-[#202B61]/65">
                 Compatibility: {selectedApp.platforms}
               </span>
               
@@ -1226,7 +1037,7 @@ export default function ApplicationPage() {
                   setSelectedApp(null);
                   openContact();
                 }}
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#18214D] transition-all cursor-pointer shadow-xs ml-auto"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#202B61]/90 transition-all cursor-pointer shadow-xs ml-auto"
               >
                 <span>Request Custom Build &amp; Source</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
