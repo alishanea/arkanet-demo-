@@ -23,7 +23,6 @@ import {
   Award,
 } from "lucide-react";
 
-import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ContactFormModal } from "@/components/modals/ContactFormModal";
 import { AboutCTA } from "@/components/about/AboutCTA";
@@ -484,9 +483,6 @@ export default function ApplicationPage() {
 
   return (
     <main className="min-h-screen bg-[#eaeaea] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
-      {/* ── HEADER ── */}
-      <Header onOpenBooking={openContact} />
-
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
@@ -497,7 +493,7 @@ export default function ApplicationPage() {
           {/* Main Hero Header Block: Two-Column Headline & Subtitle */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2 text-left">
             <div>
-              <p className="font-sans text-base sm:text-lg text-[#202B61]/60 font-medium mb-1">
+              <p className="font-sans text-base sm:text-lg text-slate-500 font-medium mb-1">
                 Our focus is simple
               </p>
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.05]">
@@ -506,7 +502,7 @@ export default function ApplicationPage() {
             </div>
 
             <div className="max-w-md lg:max-w-lg lg:pb-1">
-              <p className="font-sans text-sm sm:text-[15px] text-[#202B61]/65 leading-relaxed font-normal">
+              <p className="font-sans text-sm sm:text-[15px] text-slate-500 leading-relaxed font-normal">
                 We engineer production mobile apps and flagship Shopify websites that turn technical architecture into measurable commercial growth.
               </p>
             </div>
@@ -516,61 +512,61 @@ export default function ApplicationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 pt-2">
             
             {/* Card 1: Verified Releases & ROI */}
-            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-6 sm:p-7 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[230px]">
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[280px] sm:min-h-[300px]">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-1.5 overflow-hidden py-0.5">
-                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#059669] text-white font-bold text-[10px] ring-2 ring-white">
+                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#059669] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
                     CF
                   </div>
-                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#d97706] text-white font-bold text-[10px] ring-2 ring-white">
+                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#d97706] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
                     VH
                   </div>
-                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#2563eb] text-white font-bold text-[10px] ring-2 ring-white">
+                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#2563eb] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
                     KP
                   </div>
-                  <div className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#e11d48] text-white font-bold text-[10px] ring-2 ring-white">
+                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#e11d48] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
                     MA
                   </div>
                 </div>
-                <span className="text-[11px] font-bold tracking-wider uppercase text-[#202B61]/60">
-                  50+ Global Releases
+                <span className="text-xs font-bold tracking-wider uppercase text-slate-500">
+                  50+ GLOBAL RELEASES
                 </span>
               </div>
 
-              <div className="pt-6 space-y-1">
-                <span className="font-sans text-xs text-[#202B61]/60 font-medium block">
+              <div className="space-y-1">
+                <span className="font-sans text-xs text-slate-500 font-medium block">
                   Average Enterprise ROI Timeline
                 </span>
-                <h3 className="font-heading font-black text-5xl text-[#202B61] tracking-tight leading-none">
+                <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#202B61] tracking-tight leading-none">
                   90%
                 </h3>
-                <p className="font-sans text-xs text-[#202B61]/60 pt-0.5">
+                <p className="font-sans text-xs sm:text-[13px] text-slate-500 pt-0.5">
                   Return on investment within 90 days of launch
                 </p>
               </div>
             </div>
 
             {/* Card 2: Transaction Volume & Availability */}
-            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-6 sm:p-7 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[230px]">
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#d8d8d8] p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[280px] sm:min-h-[300px]">
               <div>
-                <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/70 font-normal leading-relaxed">
+                <p className="font-sans text-xs sm:text-[13px] text-slate-500 font-normal leading-relaxed">
                   Through custom-tailored mobile &amp; e-commerce systems
                 </p>
               </div>
 
-              <div className="pt-4 space-y-3">
+              <div className="space-y-3">
                 <div className="space-y-1">
-                  <h3 className="font-heading font-black text-5xl text-[#202B61] tracking-tight leading-none">
-                    $45M<span className="text-emerald-600 font-bold">+</span>
+                  <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#202B61] tracking-tight leading-none">
+                    $45M<span className="text-emerald-500 font-bold">+</span>
                   </h3>
-                  <p className="font-sans text-xs text-[#202B61]/60">
+                  <p className="font-sans text-xs sm:text-[13px] text-slate-500">
                     Client transaction volume powered in 2025–2026
                   </p>
                 </div>
 
                 <div className="pt-1 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="font-sans text-xs text-[#202B61]/75 font-medium">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="font-sans text-xs text-slate-600 font-medium">
                     Available for Q2 Architecture &amp; App Builds
                   </span>
                 </div>
@@ -578,7 +574,7 @@ export default function ApplicationPage() {
             </div>
 
             {/* Card 3: Dark Elevated Client Trust Card */}
-            <div className="lg:col-span-4 rounded-[28px] bg-[#18191c] text-white p-6 sm:p-7 flex flex-col justify-between shadow-[0_16px_40px_rgba(0,0,0,0.18)] min-h-[230px]">
+            <div className="lg:col-span-4 rounded-[28px] bg-[#18191c] text-white p-7 sm:p-8 flex flex-col justify-between shadow-[0_16px_40px_rgba(0,0,0,0.18)] min-h-[280px] sm:min-h-[300px]">
               <div>
                 <p className="font-sans text-xs sm:text-[13px] text-slate-300 font-normal leading-relaxed">
                   We engineered 50+ applications and Shopify stores worldwide, helping category leaders scale traffic, automate workflows, and retain customers.
@@ -587,7 +583,7 @@ export default function ApplicationPage() {
 
               <div className="pt-6 flex items-end justify-between">
                 <div>
-                  <h4 className="font-heading font-black text-5xl text-white tracking-tight leading-none">
+                  <h4 className="font-heading font-black text-5xl sm:text-6xl text-white tracking-tight leading-none">
                     4.9<span className="text-white/45 text-2xl font-light">/5</span>
                   </h4>
                   <div className="flex items-center gap-1 text-amber-400 mt-2">
@@ -600,7 +596,10 @@ export default function ApplicationPage() {
                 </div>
 
                 <div className="text-right flex flex-col items-end">
-                  <TrendingUp className="w-10 h-10 text-emerald-500 stroke-[2] mb-1.5" />
+                  <svg viewBox="0 0 64 36" fill="none" className="w-16 h-9 stroke-emerald-500 stroke-[2.5] mb-2">
+                    <path d="M4 28 L20 16 L32 24 L56 6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M42 6 H56 V20" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block leading-tight">
                     TRUSTED BY
                   </span>
