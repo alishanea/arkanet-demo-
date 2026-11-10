@@ -89,7 +89,7 @@ export const HomeReviewsSection: React.FC = () => {
   return (
     <section
       id="reviews"
-      className="relative w-full bg-[#eaeaea] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-[#d8d8d8] overflow-hidden font-sans select-none scroll-mt-24"
+      className="relative w-full bg-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-slate-200/80 overflow-hidden font-sans select-none scroll-mt-24"
     >
       <div className="max-w-[1400px] w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -113,7 +113,7 @@ export const HomeReviewsSection: React.FC = () => {
               <button
                 type="button"
                 onClick={handleScrollLeft}
-                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-[#d8d8d8] text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="w-5 h-5 stroke-[2]" />
@@ -122,7 +122,7 @@ export const HomeReviewsSection: React.FC = () => {
               <button
                 type="button"
                 onClick={handleScrollRight}
-                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-[#d8d8d8] text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                 aria-label="Next review"
               >
                 <ChevronRight className="w-5 h-5 stroke-[2]" />
@@ -148,7 +148,7 @@ export const HomeReviewsSection: React.FC = () => {
                     className={`w-[290px] sm:w-[330px] lg:w-[360px] shrink-0 rounded-[28px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                       isDark
                         ? "bg-[#161E44] text-white shadow-[0_12px_36px_rgba(22,30,68,0.22)] border border-[#161E44]"
-                        : "bg-white text-[#202B61] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-[#d8d8d8] hover:shadow-[0_12px_36px_rgba(0,0,0,0.08)]"
+                        : "bg-white text-[#202B61] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-200/80 hover:shadow-[0_12px_36px_rgba(32,43,97,0.08)] hover:border-[#202B61]/30"
                     }`}
                     style={{ scrollSnapAlign: "start" }}
                   >
