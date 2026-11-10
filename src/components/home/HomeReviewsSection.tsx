@@ -89,7 +89,7 @@ export const HomeReviewsSection: React.FC = () => {
   return (
     <section
       id="reviews"
-      className="relative w-full bg-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-slate-200/80 overflow-hidden font-sans select-none scroll-mt-24"
+      className="relative w-full bg-[#EDEDF0] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-[#E2E4E8] overflow-hidden font-sans select-none scroll-mt-24"
     >
       <div className="max-w-[1400px] w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -97,14 +97,14 @@ export const HomeReviewsSection: React.FC = () => {
           {/* ── LEFT COLUMN: HEADING, SUBTITLE & ARROWS ── */}
           <div className="lg:col-span-4 space-y-6 text-left">
             {/* Massive Bold Heading */}
-            <h2 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[0.98] uppercase">
+            <h2 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#18191C] tracking-tight leading-[0.98] uppercase">
               EXCELLENT
               <br />
               EVERYWHERE
             </h2>
 
             {/* Subheading */}
-            <p className="font-sans text-sm sm:text-base text-[#202B61]/80 leading-relaxed font-normal max-w-sm">
+            <p className="font-sans text-sm sm:text-base text-[#6B7280] leading-relaxed font-normal max-w-sm">
               See the stories of founders, product leaders, and enterprises worldwide choosing Arkanet.
             </p>
 
@@ -113,7 +113,7 @@ export const HomeReviewsSection: React.FC = () => {
               <button
                 type="button"
                 onClick={handleScrollLeft}
-                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-[#E2E4E8] text-[#18191C] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="w-5 h-5 stroke-[2]" />
@@ -122,7 +122,7 @@ export const HomeReviewsSection: React.FC = () => {
               <button
                 type="button"
                 onClick={handleScrollRight}
-                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-[#E2E4E8] text-[#18191C] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                 aria-label="Next review"
               >
                 <ChevronRight className="w-5 h-5 stroke-[2]" />
@@ -147,8 +147,8 @@ export const HomeReviewsSection: React.FC = () => {
                     key={review.id}
                     className={`w-[290px] sm:w-[330px] lg:w-[360px] shrink-0 rounded-[28px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                       isDark
-                        ? "bg-[#161E44] text-white shadow-[0_12px_36px_rgba(22,30,68,0.22)] border border-[#161E44]"
-                        : "bg-white text-[#202B61] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-200/80 hover:shadow-[0_12px_36px_rgba(32,43,97,0.08)] hover:border-[#202B61]/30"
+                        ? "bg-[#18191C] text-white shadow-[0_16px_40px_rgba(0,0,0,0.22)] border border-[#18191C]"
+                        : "bg-white text-[#18191C] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-[#E2E4E8] hover:shadow-[0_12px_36px_rgba(0,0,0,0.08)]"
                     }`}
                     style={{ scrollSnapAlign: "start" }}
                   >
