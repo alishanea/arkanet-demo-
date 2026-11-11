@@ -32,7 +32,7 @@ const ARKANET_PROJECTS: ArkanetProjectCard[] = [
     ],
     ctaText: "Our Process",
     videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-code-animation-on-a-computer-screen-41544-large.mp4",
-    poster: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    poster: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
     bgGradient: "from-[#1b2545] to-[#202B61]",
   },
   {
@@ -80,7 +80,7 @@ const ARKANET_PROJECTS: ArkanetProjectCard[] = [
     ],
     ctaText: "Explore Data Map",
     videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-smartphone-with-green-screen-41547-large.mp4",
-    poster: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    poster: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?q=80&w=1200&auto=format&fit=crop",
     bgGradient: "from-[#2b2545] to-[#202B61]",
   },
 ];
