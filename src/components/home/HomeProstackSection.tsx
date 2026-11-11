@@ -82,18 +82,22 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
 
           {/* Right Column: CTAs */}
           <div className="lg:col-span-5 flex flex-col sm:flex-row items-start sm:items-center lg:justify-end gap-3.5 pb-1">
-            {/* 6. Primary CTA (Styled in Prostack Red with NEW Ribbon) */}
+            {/* 6. Primary CTA */}
             <div className="relative inline-flex items-center">
-              <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-white text-[#D61F28] border border-[#D61F28]/35 text-[8.5px] font-black uppercase tracking-wider shadow-sm flex items-center gap-0.5 pointer-events-none select-none">
-                <span className="w-1 h-1 rounded-full bg-[#D61F28] animate-pulse" />
+              <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-[#D61F28] text-white text-[8.5px] font-black uppercase tracking-wider shadow-xs flex items-center gap-0.5 pointer-events-none select-none">
                 NEW
               </span>
               <a
                 href="https://prostack.arkanet.ae/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-sm hover:shadow-md active:scale-95 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#202B61] text-white hover:bg-[#151E48] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-xs hover:shadow-md active:scale-95 transition-all cursor-pointer"
               >
+                <img
+                  src="/assets/images/prostack-mark-red.png"
+                  alt="Prostack Mark"
+                  className="w-4 h-4 object-contain"
+                />
                 <span>Explore Prostack</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
