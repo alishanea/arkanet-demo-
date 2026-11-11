@@ -27,6 +27,7 @@ interface CapabilityItem {
   number: string;
   title: string;
   description: string;
+  details: string[];
   icon: LucideIcon;
 }
 
@@ -34,49 +35,105 @@ const CAPABILITIES: CapabilityItem[] = [
   {
     number: "01",
     title: "Website & Content Management",
-    description: "Build and manage pages, blogs, media, menus and website themes with drag-and-drop ease and full revision control.",
+    description:
+      "A flexible headless CMS designed for marketing teams to author, schedule, and publish rich editorial pages, blog articles, and landing pages with complete revision history.",
+    details: [
+      "Visual drag-and-drop page assembly",
+      "Multi-author workflows with draft approvals",
+      "Nested navigation and multi-language support",
+      "Automated image compression and CDN delivery",
+    ],
     icon: Layout,
   },
   {
     number: "02",
-    title: "E-commerce Management",
-    description: "Manage products, variants, inventory, customers, orders, discounts and promotions with real-time stock sync.",
+    title: "E-Commerce & Catalog Control",
+    description:
+      "High-velocity digital storefront infrastructure managing unlimited SKUs, complex matrix variants, real-time inventory synchronization, and localized multi-currency pricing.",
+    details: [
+      "SKU variant management (sizes, colors, bundles)",
+      "Multi-warehouse stock tracking and alerts",
+      "Dynamic promotions, coupon codes, and gift cards",
+      "One-page optimized checkout with Stripe & local gateways",
+    ],
     icon: ShoppingBag,
   },
   {
     number: "03",
     title: "Visual Builder & Developer Tools",
-    description: "Work with visual editing tools or customize themes using clean code and Liquid-based production templates.",
+    description:
+      "Bridging the divide between non-technical creators and senior engineers. Build visually using pre-tested components or take complete code control via Liquid templating.",
+    details: [
+      "Shopify-compatible Liquid syntax templates",
+      "Custom CSS, Tailwind classes, and JavaScript injections",
+      "Local developer CLI with hot-reload previews",
+      "Git-backed version control for theme releases",
+    ],
     icon: Code2,
   },
   {
     number: "04",
-    title: "SEO & Performance Tools",
-    description: "Manage metadata, canonical redirects, automated XML sitemaps, image optimization and sub-second edge speed checks.",
+    title: "Automated SEO & Edge Performance",
+    description:
+      "Engineered from the ground up to achieve 95+ Core Web Vitals out of the box. Eliminate SEO plugin conflicts with built-in search engine optimization automation.",
+    details: [
+      "Dynamic XML sitemaps and robots.txt generation",
+      "Automated OpenGraph and Schema.org JSON-LD tags",
+      "301 and 302 wildcard redirect management",
+      "Sub-second global edge caching via Cloudflare network",
+    ],
     icon: Gauge,
   },
   {
     number: "05",
-    title: "Analytics & Insights",
-    description: "Understand customer journeys, visitor traffic, cart abandonments and revenue performance through live analytics dashboards.",
+    title: "Analytics & Telemetry Insights",
+    description:
+      "Real-time business telemetry and customer funnel tracking built directly into the platform without relying on third-party tracking scripts that slow down page loads.",
+    details: [
+      "Live visitor session and conversion telemetry",
+      "Cart abandonment tracking with automated recovery emails",
+      "Product revenue, average order value (AOV), and cohort metrics",
+      "Privacy-first GDPR & CCPA compliant measurement",
+    ],
     icon: BarChart3,
   },
   {
     number: "06",
-    title: "Security & Access Control",
-    description: "Support safer operations through continuous security monitoring, automated audit logs, 2FA, and granular role permissions.",
+    title: "Enterprise Security & Governance",
+    description:
+      "Zero-compromise protection for your customer transactions and business data with enterprise-grade encryption, role-based access control, and automated compliance logging.",
+    details: [
+      "Granular role-based access control (RBAC)",
+      "Mandatory two-factor authentication (2FA)",
+      "Immutable audit logs tracking all administrative actions",
+      "Automated daily encrypted backups with point-in-time recovery",
+    ],
     icon: ShieldCheck,
   },
   {
     number: "07",
     title: "Memberships & Marketplaces",
-    description: "Support gated subscriber content, tiered membership levels, vendor self-service portals and multi-vendor commissions.",
+    description:
+      "Turn your standard store into a recurring revenue engine or a full multi-vendor marketplace with vendor portals, gated content tiers, and automated commission splits.",
+    details: [
+      "Subscriber-only gated content and digital products",
+      "Recurring membership billing and customer portals",
+      "Vendor self-service dashboard for product onboarding",
+      "Automated payout calculations and commission structures",
+    ],
     icon: Users2,
   },
   {
     number: "08",
-    title: "Integrations & Extensions",
-    description: "Connect external payment gateways, CRM backends, logistics providers and extend platform functionality via REST & GraphQL APIs.",
+    title: "Open APIs & ERP Webhooks",
+    description:
+      "Connect Prostack seamlessly into your existing enterprise software ecosystem. Integrate directly with SAP, Microsoft Dynamics, Salesforce, Zoho, and custom logistics providers.",
+    details: [
+      "High-throughput REST and GraphQL API endpoints",
+      "Real-time event webhooks for order and inventory triggers",
+      "Pre-built integrations for major regional payment gateways",
+      "Custom microservice extension support",
+    ],
     icon: Plug,
   },
 ];
@@ -84,28 +141,37 @@ const CAPABILITIES: CapabilityItem[] = [
 interface AudienceItem {
   role: string;
   description: string;
+  benefits: string;
   icon: LucideIcon;
 }
 
 const TARGET_AUDIENCES: AudienceItem[] = [
   {
-    role: "Growing Businesses",
-    description: "Manage brand websites, corporate messaging, customer portals and daily online operations from a single unified workspace.",
+    role: "Growing DTC & B2B Brands",
+    description:
+      "Manage marketing websites, wholesale catalogs, direct consumer sales, and daily operations from one unified platform without stitching together ten disparate SaaS tools.",
+    benefits: "Faster time to market, lower software overhead, and sub-second page performance.",
     icon: Building2,
   },
   {
-    role: "E-commerce Brands",
-    description: "Organize SKU catalogs, customer segments, warehouse inventory, multi-currency pricing and high-volume order flows.",
+    role: "High-Volume E-Commerce Stores",
+    description:
+      "Organize complex product variant matrices, warehouse inventories, localized currencies, and high-concurrency flash sale traffic without platform crashes.",
+    benefits: "High conversion checkout, automated inventory sync, and zero revenue-share penalties.",
     icon: Store,
   },
   {
-    role: "Agencies & Studios",
-    description: "Build and deploy production-grade websites for client portfolios with white-label client management and role controls.",
+    role: "Agencies & Design Studios",
+    description:
+      "Deliver bespoke, high-performance web products for your clients faster using Liquid themes and visual block builders, backed by white-label administrative accounts.",
+    benefits: "Faster client turnarounds, reusable component libraries, and full developer code access.",
     icon: Briefcase,
   },
   {
-    role: "Marketplace Operators",
-    description: "Coordinate vendor onboardings, product approvals, automated commission splits and complex marketplace fulfillment.",
+    role: "Multi-Vendor Marketplaces",
+    description:
+      "Coordinate hundreds of independent merchant catalogs, automated commission distributions, customer disputes, and complex shipping fulfillment under one roof.",
+    benefits: "Vendor self-service onboarding, unified customer cart, and automated split payments.",
     icon: Layers,
   },
 ];
@@ -117,89 +183,88 @@ interface BenefitItem {
 
 const BENEFITS: BenefitItem[] = [
   {
-    title: "Connected website and commerce management",
-    detail: "Eliminate disparate tools. Content, store catalog, order pipelines, and marketing tools live in one cohesive hub.",
+    title: "Unified Architecture Eliminates Plugin Chaos",
+    detail:
+      "Unlike WordPress or Shopify where 20+ conflicting plugins cause security vulnerabilities and slow load times, Prostack provides CMS, e-commerce, SEO, and analytics out of the box in one unified engine.",
   },
   {
-    title: "Flexible visual and code-based customisation",
-    detail: "Marketers enjoy rapid visual block layout editors, while developers retain direct code control via Liquid templating.",
+    title: "Sub-Second Global Edge Performance",
+    detail:
+      "Every Prostack website is rendered and cached across a distributed global edge network, guaranteeing sub-second initial page load times and 95+ Core Web Vitals scores worldwide.",
   },
   {
-    title: "Centralised content and product operations",
-    detail: "Maintain single-source-of-truth accuracy for multi-channel inventories, pricing rules, media libraries, and blog releases.",
+    title: "Developer Freedom via Liquid & Custom Code",
+    detail:
+      "Marketers get a visual page builder with real-time editing, while engineers retain total freedom to write custom Liquid templates, CSS, and API hooks without framework lock-in.",
   },
   {
-    title: "Built-in SEO and performance tools",
-    detail: "Automated schema injection, canonical link routing, redirect management, and edge caching for sub-second delivery.",
+    title: "Zero Revenue-Share Penalties",
+    detail:
+      "Keep 100% of your transaction revenue. Prostack does not charge arbitrary percentage fees on top of your payment gateway rates, allowing your business margins to scale freely.",
   },
   {
-    title: "Security and integration capabilities",
-    detail: "Strict role-based permissions, automated backup checkpoints, and modular REST & GraphQL APIs for enterprise scale.",
+    title: "Enterprise Security & Automated Compliance",
+    detail:
+      "Equipped with granular role-based permissions, automated tamper-proof audit trails, daily encrypted database backups, and SOC2-ready security practices from day one.",
   },
 ];
 
 export default function ProstackPage() {
   const [contactOpen, setContactOpen] = useState(false);
-
   const openContact = () => setContactOpen(true);
 
   return (
-    <main className="min-h-screen bg-[#202B61] text-white selection:bg-[#D61F28] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#D61F28] selection:text-white overflow-x-hidden font-sans">
       {/* Contact brief modal */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ══════════════════════════════════════════════════════════════════
-          SECTION 1 — HERO
+          SECTION 1 — HERO (CLEAN WHITE EDITORIAL CANVAS)
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full pt-32 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 lg:pb-28 px-4 sm:px-8 lg:px-12 bg-[#202B61] border-b border-[#2d3a7c] text-left select-none overflow-hidden">
+      <section className="relative w-full pt-32 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 lg:pb-28 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden">
         <div className="relative max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
           
-          <div className="max-w-3xl space-y-6 text-left">
-            {/* Eyebrow: BUILT BY ARKANET */}
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-200 font-sans">
-              BUILT BY ARKANET • INTEGRATED DIGITAL PLATFORM
-            </p>
-
-            {/* Official Prostack Logo Asset */}
-            <div className="pt-2 pb-2">
+          <div className="max-w-3xl space-y-5 text-left">
+            {/* Official Prostack Logo Asset (Navy on White) */}
+            <div className="pt-2 pb-1">
               <Image
-                src="/assets/images/prostack-logo.png"
+                src="/assets/images/prostack-logo-navy.png"
                 alt="Prostack Logo"
                 width={280}
                 height={55}
-                className="h-11 sm:h-13 w-auto object-contain drop-shadow-md"
+                className="h-10 sm:h-12 w-auto object-contain"
                 priority
               />
             </div>
 
             {/* Heading */}
-            <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-heading font-extrabold text-white tracking-tight leading-[1.12] text-balance">
-              One Platform. Everything Your Digital Business Needs.
+            <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-heading font-extrabold text-[#202B61] tracking-tight leading-[1.12] text-balance">
+              One Connected Platform. Everything Your Digital Business Needs.
             </h1>
 
             {/* Supporting Copy */}
-            <p className="font-sans text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-normal max-w-2xl text-pretty">
-              Build and manage modern business websites with an integrated platform for content, commerce, performance and security.
+            <p className="font-sans text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed font-normal max-w-2xl text-pretty">
+              Build and scale high-performance websites and online storefronts with an integrated platform combining CMS, headless commerce, automated SEO, and security infrastructure.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="pt-4 flex flex-wrap items-center gap-4">
+            {/* Clean Action Buttons */}
+            <div className="pt-3 flex flex-wrap items-center gap-4">
               <a
                 href="https://prostack.arkanet.ae/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-[4px] bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-[4px] bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-sm hover:shadow active:scale-95 transition-all cursor-pointer"
               >
-                <span>Get Started / Explore Prostack</span>
+                <span>Launch Prostack Live</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
 
               <button
                 type="button"
                 onClick={openContact}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[4px] bg-white text-[#202B61] hover:bg-slate-100 font-sans font-bold text-xs sm:text-sm tracking-tight shadow-sm transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[4px] bg-white text-[#202B61] hover:bg-slate-50 border border-slate-200/90 hover:border-[#202B61]/50 font-sans font-bold text-xs sm:text-sm tracking-tight shadow-2xs transition-all cursor-pointer"
               >
-                <span>Talk to Our Team</span>
+                <span>Schedule Platform Demo</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -209,24 +274,24 @@ export default function ProstackPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          SECTION 2 — PRODUCT OVERVIEW
+          SECTION 2 — PRODUCT ARCHITECTURE SUMMARY
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-18 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#161e47] border-b border-[#2d3a7c] text-left select-none">
+      <section className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             
             <div className="lg:col-span-5 space-y-3">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#D61F28] font-sans">
                 PRODUCT ARCHITECTURE
               </p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight leading-snug text-balance">
-                Everything connected in one platform
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] tracking-tight leading-snug text-balance">
+                Everything connected in one unified operational core
               </h2>
             </div>
 
             <div className="lg:col-span-7">
-              <p className="font-sans text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed font-normal text-pretty">
-                Prostack combines the essential tools businesses need to create, operate and grow their online presence. Manage website content, products, orders, customers and performance from one connected workspace.
+              <p className="font-sans text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-pretty">
+                Modern online businesses waste thousands of dollars and hundreds of engineering hours gluing together fragmented plugins for page building, cart checkouts, SEO tags, and security audits. Prostack re-engineers this stack from the ground up, delivering all essential commerce and publishing domains inside a single, high-speed workspace.
               </p>
             </div>
 
@@ -235,42 +300,108 @@ export default function ProstackPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          SECTION 3 — KEY CAPABILITIES
+          SECTION 3 — ALL 8 CORE ENGINEERED CAPABILITIES (EXPLAINED IN FULL)
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#202B61] border-b border-[#2d3a7c] text-left select-none scroll-mt-24" id="capabilities">
+      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none scroll-mt-24" id="capabilities">
         <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-14">
           
-          <div className="max-w-2xl space-y-3">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
+          <div className="max-w-3xl space-y-3">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#D61F28] font-sans">
               CORE CAPABILITY SUITE
             </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight leading-snug text-balance">
-              Engineered Capabilities
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] tracking-tight leading-snug text-balance">
+              The Eight Engineered Domains of Prostack
             </h2>
-            <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed text-pretty">
-              Eight unified operational domains designed to eliminate third-party plugin fragmentation.
+            <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed text-pretty">
+              Every critical function required to build, operate, and scale digital web commerce without third-party plugin friction.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
             {CAPABILITIES.map((cap) => {
               const Icon = cap.icon;
               return (
                 <div
                   key={cap.number}
-                  className="rounded-[4px] bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.09] hover:border-white/[0.22] p-6 sm:p-7 flex flex-col justify-between backdrop-blur-sm transition-all duration-300 group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+                  className="rounded-[4px] bg-white border border-slate-200/90 hover:border-[#202B61]/50 p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 group shadow-2xs hover:shadow-xs"
                 >
                   <div className="space-y-4">
-                    <div className="w-10 h-10 rounded-[4px] bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-white group-hover:bg-[#D61F28] group-hover:border-[#D61F28] transition-all duration-300">
-                      <Icon className="w-5 h-5 stroke-[1.6]" />
+                    {/* Top Header: Frameless Icon & Number */}
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-[4px] bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors duration-200">
+                        <Icon className="w-5 h-5 stroke-[1.6]" />
+                      </div>
+                      <span className="font-mono text-xs font-bold text-slate-400">
+                        {cap.number}
+                      </span>
                     </div>
 
-                    <h3 className="font-heading font-bold text-lg text-white leading-snug text-balance">
+                    {/* Capability Title */}
+                    <h3 className="font-heading font-bold text-lg text-[#202B61] leading-snug text-balance pt-1">
                       {cap.title}
                     </h3>
 
-                    <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed text-pretty">
+                    {/* Description Narrative */}
+                    <p className="font-sans text-xs sm:text-[13.5px] text-slate-600 leading-relaxed text-pretty">
                       {cap.description}
+                    </p>
+
+                    {/* Key Technical Features Checklist */}
+                    <ul className="pt-3 border-t border-slate-100 space-y-2">
+                      {cap.details.map((detail, dIdx) => (
+                        <li key={dIdx} className="flex items-start gap-2 font-sans text-xs text-slate-600 leading-normal">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D61F28] shrink-0 mt-0.5" />
+                          <span>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════
+          SECTION 4 — AUDIENCE & USE CASES
+          ══════════════════════════════════════════════════════════════════ */}
+      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none">
+        <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-14">
+          
+          <div className="max-w-2xl space-y-3">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#D61F28] font-sans">
+              AUDIENCE &amp; TEAMS
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] tracking-tight leading-snug text-balance">
+              Who Prostack is Built For
+            </h2>
+            <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed text-pretty">
+              Engineered for organizations that have outgrown rigid templates and need enterprise-grade scale.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+            {TARGET_AUDIENCES.map((audience, idx) => {
+              const Icon = audience.icon;
+              return (
+                <div
+                  key={idx}
+                  className="rounded-[4px] bg-white border border-slate-200/90 hover:border-[#202B61]/50 p-6 sm:p-7 space-y-4 transition-all duration-200 shadow-2xs group"
+                >
+                  <div className="w-10 h-10 rounded-[4px] bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors duration-200">
+                    <Icon className="w-5 h-5 stroke-[1.6]" />
+                  </div>
+                  <h3 className="font-heading font-bold text-base sm:text-lg text-[#202B61] text-balance">
+                    {audience.role}
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed text-pretty">
+                    {audience.description}
+                  </p>
+                  <div className="pt-3 border-t border-slate-100">
+                    <p className="font-sans text-xs font-semibold text-[#202B61]">
+                      Advantage: <span className="font-normal text-slate-600">{audience.benefits}</span>
                     </p>
                   </div>
                 </div>
@@ -282,64 +413,21 @@ export default function ProstackPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          SECTION 4 — WHO IT IS FOR
+          SECTION 5 — WHY PROSTACK (ARCHITECTURAL ADVANTAGES)
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#0B102B] border-b border-slate-800/80 text-left select-none">
-        <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-14">
-          
-          <div className="max-w-2xl space-y-3">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
-              AUDIENCE &amp; TEAMS
-            </p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight leading-snug text-balance">
-              Designed for teams building digital businesses
-            </h2>
-            <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed text-pretty">
-              Purpose-built workflows tailored for high-output digital merchants and creators.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            {TARGET_AUDIENCES.map((audience, idx) => {
-              const Icon = audience.icon;
-              return (
-                <div
-                  key={idx}
-                  className="rounded-[4px] bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.09] hover:border-white/[0.22] p-6 sm:p-7 space-y-4 backdrop-blur-sm transition-all duration-300 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
-                >
-                  <div className="w-10 h-10 rounded-[4px] bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-white">
-                    <Icon className="w-5 h-5 stroke-[1.6]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-base sm:text-lg text-white text-balance">
-                    {audience.role}
-                  </h3>
-                  <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed text-pretty">
-                    {audience.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════════════
-          SECTION 5 — WHY PROSTACK
-          ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#161e47] border-b border-[#2d3a7c] text-left select-none">
+      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             
             <div className="lg:col-span-5 space-y-3">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#D61F28] font-sans">
                 CORE ADVANTAGES
               </p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight leading-snug text-balance">
-                Why Prostack
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] tracking-tight leading-snug text-balance">
+                Why Enterprises Choose Prostack
               </h2>
-              <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed text-pretty">
-                Engineered from the ground up to solve operational friction without bloated plugins or vendor lock-in.
+              <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed text-pretty">
+                Engineered from the ground up to solve operational friction without bloated plugins, performance regressions, or arbitrary revenue cuts.
               </p>
             </div>
 
@@ -347,14 +435,14 @@ export default function ProstackPage() {
               {BENEFITS.map((benefit, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-4 p-5 rounded-[4px] bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.09] backdrop-blur-sm shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
+                  className="flex items-start gap-4 p-5 rounded-[4px] bg-white border border-slate-200/90 shadow-2xs"
                 >
                   <CheckCircle2 className="w-5 h-5 text-[#D61F28] shrink-0 mt-0.5" />
                   <div className="space-y-1">
-                    <h3 className="font-heading font-bold text-sm sm:text-base text-white text-balance">
+                    <h3 className="font-heading font-bold text-sm sm:text-base text-[#202B61] text-balance">
                       {benefit.title}
                     </h3>
-                    <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed text-pretty">
+                    <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed text-pretty">
                       {benefit.detail}
                     </p>
                   </div>
@@ -367,26 +455,26 @@ export default function ProstackPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          SECTION 6 — FINAL CTA
+          SECTION 6 — FINAL CTA (CLEAN WHITE)
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#202B61] text-center select-none overflow-hidden">
+      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-white text-center select-none overflow-hidden">
         <div className="relative max-w-[840px] mx-auto space-y-6">
-          <div className="w-14 h-14 mx-auto rounded-[4px] bg-white/10 border border-white/15 flex items-center justify-center shadow-md">
+          <div className="w-12 h-12 mx-auto rounded-[4px] bg-slate-50 border border-slate-200/80 flex items-center justify-center shadow-2xs">
             <Image
               src="/assets/images/prostack-icon.png"
               alt="Prostack Icon"
-              width={32}
-              height={32}
-              className="w-8 h-8 rounded-xs object-contain"
+              width={28}
+              height={28}
+              className="w-7 h-7 object-contain"
             />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-extrabold text-white text-center tracking-tight leading-snug text-balance">
-            Ready to build with Prostack?
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-extrabold text-[#202B61] text-center tracking-tight leading-snug text-balance">
+            Ready to scale your digital business with Prostack?
           </h2>
 
-          <p className="font-sans text-base sm:text-lg text-slate-200 max-w-xl mx-auto leading-relaxed text-pretty">
-            Discover a connected platform for creating, managing and growing your digital business.
+          <p className="font-sans text-base sm:text-lg text-slate-600 max-w-xl mx-auto leading-relaxed text-pretty">
+            Experience an integrated platform engineered for creating, managing, and accelerating your online commerce.
           </p>
 
           <div className="pt-3 flex flex-wrap items-center justify-center gap-4">
@@ -394,18 +482,18 @@ export default function ProstackPage() {
               href="https://prostack.arkanet.ae/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[4px] bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-sm tracking-tight shadow-lg hover:shadow-xl active:scale-95 transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[4px] bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-sm tracking-tight shadow-sm hover:shadow active:scale-95 transition-all cursor-pointer"
             >
-              <span>Explore Prostack</span>
+              <span>Explore Prostack Live</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
 
             <button
               type="button"
               onClick={openContact}
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-sans font-semibold text-sm tracking-tight backdrop-blur-sm transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-[4px] bg-white text-[#202B61] hover:bg-slate-50 border border-slate-200/90 hover:border-[#202B61]/50 font-sans font-bold text-sm tracking-tight shadow-2xs transition-all cursor-pointer"
             >
-              <span>Talk to Our Team</span>
+              <span>Talk to Our Engineering Team</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
