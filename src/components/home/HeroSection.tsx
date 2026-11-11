@@ -177,11 +177,11 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           }}
         />
 
-        {/* 3. Minimalist Architectural Light & Structure Image */}
+        {/* 3. Monumental Global Architectural Glass & Innovation Structure */}
         <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2400&auto=format&fit=crop"
-          alt="Architectural Ambient Space"
-          className="w-full h-full object-cover opacity-[0.12] mix-blend-luminosity scale-105 pointer-events-none"
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop"
+          alt="Arkanet Digital Architecture & Global Enterprise"
+          className="w-full h-full object-cover opacity-[0.18] mix-blend-luminosity scale-105 pointer-events-none"
           loading="eager"
         />
 
