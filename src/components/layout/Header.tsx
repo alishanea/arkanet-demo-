@@ -302,32 +302,32 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             </Link>
           </nav>
 
-          {/* 3. RIGHT SIDE: PROSTACK (HIGHLY HIGHLIGHTED) + APPLICATIONS BUTTON + MOBILE TOGGLE */}
+          {/* 3. RIGHT SIDE: PROSTACK (IN ITS OWN BRAND COLOR WITH NEW RIBBON) + APPLICATIONS BUTTON + MOBILE TOGGLE */}
           <div className="flex items-center justify-end flex-1 gap-2 sm:gap-2.5">
-            {/* Highlighted Flagship Product Button (Prominently Styled) */}
-            <Link
-              href="/prostack"
-              onClick={handleNavClick}
-              className={`hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 cursor-pointer select-none shadow-xs hover:shadow-md active:scale-95 group ${
-                isProstackActive
-                  ? "bg-[#202B61] text-white ring-2 ring-[#202B61] ring-offset-2"
-                  : "bg-white text-[#202B61] border-2 border-[#202B61] hover:bg-[#202B61] hover:text-white"
-              }`}
-            >
-              <img
-                src="/assets/images/prostack-icon.png"
-                alt="Prostack Icon"
-                className="w-4 h-4 object-contain group-hover:scale-110 transition-transform"
-              />
-              <span>Prostack</span>
-              <span className={`inline-block px-1.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider ml-0.5 shadow-2xs transition-colors ${
-                isProstackActive
-                  ? "bg-white text-[#202B61]"
-                  : "bg-[#202B61] text-white group-hover:bg-white group-hover:text-[#202B61]"
-              }`}>
-                New
+            {/* Prostack Button (Styled in Prostack Red with NEW Ribbon) */}
+            <div className="relative hidden sm:inline-flex items-center">
+              {/* Ribbon telling "NEW" */}
+              <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-white text-[#D61F28] border border-[#D61F28]/35 text-[8.5px] font-black uppercase tracking-wider shadow-sm flex items-center gap-0.5 pointer-events-none select-none">
+                <span className="w-1 h-1 rounded-full bg-[#D61F28] animate-pulse" />
+                NEW
               </span>
-            </Link>
+              <Link
+                href="/prostack"
+                onClick={handleNavClick}
+                className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 cursor-pointer select-none shadow-sm hover:shadow-md active:scale-95 group ${
+                  isProstackActive
+                    ? "bg-[#D61F28] text-white ring-2 ring-[#D61F28] ring-offset-2"
+                    : "bg-[#D61F28] hover:bg-[#B9151E] text-white"
+                }`}
+              >
+                <img
+                  src="/assets/images/prostack-icon.png"
+                  alt="Prostack Icon"
+                  className="w-4 h-4 rounded-xs object-contain group-hover:scale-110 transition-transform ring-1 ring-white/30"
+                />
+                <span>Prostack</span>
+              </Link>
+            </div>
 
             <Link
               href="/application"
@@ -445,20 +445,20 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/prostack"
                   onClick={handleNavClick}
-                  className="w-full flex items-center justify-between px-4 py-3 rounded-full font-bold text-sm bg-gradient-to-r from-[#202B61]/10 via-[#202B61]/15 to-[#202B61]/10 border border-[#202B61]/25 text-[#202B61] shadow-2xs"
+                  className="w-full flex items-center justify-between px-4 py-3 rounded-full font-bold text-sm bg-[#D61F28] hover:bg-[#B9151E] text-white shadow-xs transition-colors"
                 >
                   <div className="flex items-center gap-2">
                     <img
                       src="/assets/images/prostack-icon.png"
                       alt="Prostack"
-                      className="w-4 h-4 object-contain"
+                      className="w-5 h-5 rounded-xs object-contain ring-1 ring-white/30"
                     />
                     <span>Prostack Platform</span>
-                    <span className="px-1.5 py-0.5 rounded-full bg-[#202B61] text-white text-[9.5px] font-black uppercase">
-                      New
+                    <span className="px-2 py-0.5 rounded-full bg-white text-[#D61F28] text-[9.5px] font-black uppercase tracking-wider shadow-xs">
+                      NEW
                     </span>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-[#202B61]" />
+                  <ArrowUpRight className="w-4 h-4 text-white" />
                 </Link>
 
                 <Link
