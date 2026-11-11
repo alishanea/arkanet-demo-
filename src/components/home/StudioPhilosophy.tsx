@@ -28,7 +28,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
             {/* Paragraph Copy: Unified font size, solid brand navy color, balanced line wrapping */}
             <div className="max-w-xl space-y-3.5 font-sans text-sm sm:text-[15px] lg:text-base text-[#202B61]/85 leading-[1.65] font-normal text-pretty">
               <p>
-                Founded in 2023, Arkanet Technologies is a premier digital innovation and IT consulting firm dedicated to building next-generation software platforms. We specialize in transforming complex technological challenges into scalable, future-ready solutions for enterprises and ambitious brands worldwide.
+                Backed by 15+ years of technology and engineering experience, Arkanet Technologies is a premier digital innovation firm dedicated to building next-generation software platforms. We specialize in transforming complex technological challenges into scalable, future-ready solutions for enterprises and ambitious brands worldwide.
               </p>
               <p>
                 Operating at the intersection of emerging technology and business strategy, our core expertise spans Artificial Intelligence, Blockchain, AR/VR, IoT, and robust cloud infrastructure across hospitality, IT, eCommerce, and government sectors.

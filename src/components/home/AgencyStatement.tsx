@@ -113,7 +113,7 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
             The Digital Innovation Company
           </h2>
           <p className="font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal max-w-4xl">
-            Blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Founded in 2023, Arkanet Technologies specializes in transforming complex technological challenges into scalable, future-ready software platforms for enterprises and ambitious brands worldwide.
+            Blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Backed by 15+ years of technology and engineering experience, Arkanet Technologies specializes in transforming complex technological challenges into scalable, future-ready software platforms for enterprises and ambitious brands worldwide.
           </p>
         </div>
 

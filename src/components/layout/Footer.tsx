@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
               </Link>
               
               <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed font-normal max-w-sm">
-                The Digital Innovation Company blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Founded in 2023, building future-ready platforms across hospitality, IT, eCommerce, and government sectors.
+                The Digital Innovation Company blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Backed by 15+ years of engineering experience, building future-ready platforms across hospitality, IT, eCommerce, and government sectors.
               </p>
 
             </div>

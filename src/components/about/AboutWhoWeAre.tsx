@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 const STATS = [
   {
-    number: "2023",
-    label: "Year Founded",
-    detail: "Established as a next-generation digital innovation and technology consulting firm.",
+    number: "15+",
+    label: "Years of Experience",
+    detail: "Over 15 years of technology innovation, digital architecture, and scalable software solutions.",
   },
   {
     number: "Dual-Hub",
@@ -51,7 +51,7 @@ export function AboutWhoWeAre() {
               Our mission is to empower businesses and individuals with innovative solutions that drive measurable success in an ever-evolving digital landscape. We are committed to delivering excellence through creativity, technology, and unwavering dedication to our clients — staying ahead of industry trends, working collaboratively on tailor-made architectures, and building long-term relationships with ongoing support after project launch.
             </p>
             <p>
-              As part of a next-generation global technology group, our software, cloud, and artificial intelligence offerings are built on a decade-long foundation of market expertise and enterprise engagements. With our India operations centered in Kelakam, Kannur, we provide agile delivery, transparent sprint reporting, and direct engineering access that modern businesses rely on.
+              As part of a next-generation global technology group, our software, cloud, and artificial intelligence offerings are built on over 15 years of market expertise and enterprise engagements. With our India operations centered in Kelakam, Kannur, we provide agile delivery, transparent sprint reporting, and direct engineering access that modern businesses rely on.
             </p>
           </div>
         </div>

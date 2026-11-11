@@ -12,6 +12,36 @@ interface WhatsNewSectionProps {
 
 const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
+    id: "elixir-luxury-perfumery",
+    category: "Luxury E-Commerce & Shopify",
+    title: "Elixir Luxury Artistic Fragrances",
+    titleLine1: "Elixir Luxury",
+    titleLine2: "Artistic Fragrances",
+    description: "High-conversion bilingual Arabic & English Shopify Plus platform for Dubai's premier luxury perfume boutique, featuring localized UAE payments and sub-second edge speeds.",
+    outerImage: "/assets/images/elixir-hero.png",
+    innerImage: "/assets/images/elixir-showcase.png",
+    detail: {
+      client: "Elixir Beauty Dubai",
+      year: "2025",
+      services: [
+        "Shopify Plus Architecture",
+        "Bilingual Arabic (RTL) & English",
+        "UAE Payment Gateway (Tabby / Apple Pay)",
+        "Fragrance Notes Discovery Engine",
+        "High-Performance Edge Caching"
+      ],
+      overview: "Elixir (elixirbeauty.com) is Dubai's luxury fragrance house retailing elite niche perfumes including Amouage, Maison Crivelli, Nishane, and Marc-Antoine Barrois. Arkanet engineered an ultra-fast, bespoke bilingual Shopify Plus storefront with seamless local payments.",
+      challenge: "High-end luxury fragrances require an immersive, high-elegance digital showcase, lightning-fast product filtering by olfactory notes, full Arabic RTL layout support, and frictionless regional checkout with Tabby installments and Apple Pay.",
+      solution: "We designed and deployed a custom Shopify Plus architecture featuring bespoke Liquid OS 2.0 components, smooth RTL layout transitions, dynamic fragrance discovery filters, localized GCC currencies (AED, SAR, QAR, KWD), and sub-1.2s page loads.",
+      impact: [
+        "+168% Online sales conversion growth within 90 days",
+        "Sub-1.2s Page load speeds across UAE, GCC, and international traffic",
+        "Seamless bilingual Arabic (RTL) & English switching with 100% catalog parity",
+      ],
+      techStack: ["Shopify Plus", "Liquid OS 2.0", "Next.js", "Tailwind CSS", "Apple Pay / Tabby", "Cloudflare Edge"],
+    },
+  },
+  {
     id: "ai-mobility-platform",
     category: "Applied AI & Mobility",
     title: "AI Mobility & Connected Parking Intelligence",

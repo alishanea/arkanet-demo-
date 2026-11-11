@@ -304,14 +304,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
           {/* 3. RIGHT SIDE: PROSTACK (HIGHLY HIGHLIGHTED) + APPLICATIONS BUTTON + MOBILE TOGGLE */}
           <div className="flex items-center justify-end flex-1 gap-2 sm:gap-2.5">
-            {/* Highlighted Flagship Product Button */}
+            {/* Highlighted Flagship Product Button (Prominently Styled) */}
             <Link
               href="/prostack"
               onClick={handleNavClick}
-              className={`hidden md:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 cursor-pointer select-none shadow-xs hover:shadow-sm active:scale-95 group ${
+              className={`hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 cursor-pointer select-none shadow-xs hover:shadow-md active:scale-95 group ${
                 isProstackActive
                   ? "bg-[#202B61] text-white ring-2 ring-[#202B61] ring-offset-2"
-                  : "bg-gradient-to-r from-[#202B61]/8 via-[#202B61]/12 to-[#202B61]/8 hover:from-[#202B61]/15 hover:to-[#202B61]/15 text-[#202B61] border border-[#202B61]/25 hover:border-[#202B61]/45"
+                  : "bg-white text-[#202B61] border-2 border-[#202B61] hover:bg-[#202B61] hover:text-white"
               }`}
             >
               <img
@@ -320,7 +320,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 className="w-4 h-4 object-contain group-hover:scale-110 transition-transform"
               />
               <span>Prostack</span>
-              <span className="inline-block px-1.5 py-0.2 rounded-full bg-[#202B61] text-white text-[9px] font-black uppercase tracking-wider ml-0.5 shadow-2xs">
+              <span className={`inline-block px-1.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider ml-0.5 shadow-2xs transition-colors ${
+                isProstackActive
+                  ? "bg-white text-[#202B61]"
+                  : "bg-[#202B61] text-white group-hover:bg-white group-hover:text-[#202B61]"
+              }`}>
                 New
               </span>
             </Link>

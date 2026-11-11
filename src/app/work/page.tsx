@@ -29,6 +29,26 @@ const PROJECT_DETAILS_MAP: Record<string, {
   impact: string[];
   techStack: string[];
 }> = {
+  "elixir-luxury-perfumery": {
+    client: "Elixir Beauty Dubai",
+    year: "2025",
+    services: [
+      "Bespoke Shopify Plus Storefront",
+      "Bilingual Arabic (RTL) & English",
+      "UAE Payment Gateway (Tabby / Apple Pay)",
+      "Fragrance Notes Discovery Engine",
+      "Cloudflare Edge Optimization"
+    ],
+    overview: "Elixir (elixirbeauty.com) is Dubai's luxury fragrance house retailing elite niche perfumes including Amouage, Maison Crivelli, Nishane, and Marc-Antoine Barrois. Arkanet engineered an ultra-fast, bespoke bilingual Shopify Plus storefront with seamless local payments.",
+    challenge: "High-end luxury fragrances require an immersive, high-elegance digital showcase, lightning-fast product filtering by olfactory notes, full Arabic RTL layout support, and frictionless regional checkout with Tabby installments and Apple Pay.",
+    solution: "We designed and deployed a custom Shopify Plus architecture featuring bespoke Liquid OS 2.0 components, smooth RTL layout transitions, dynamic fragrance discovery filters, localized GCC currencies (AED, SAR, QAR, KWD), and sub-1.2s page loads.",
+    impact: [
+      "+168% Online sales conversion growth within 90 days",
+      "Sub-1.2s Page load speeds across UAE, GCC, and international traffic",
+      "Seamless bilingual Arabic (RTL) & English switching with 100% catalog parity",
+    ],
+    techStack: ["Shopify Plus", "Liquid OS 2.0", "Next.js", "Tailwind CSS", "Apple Pay / Tabby", "Cloudflare Edge"],
+  },
   "ai-mobility-platform": {
     client: "Dubai Smart Mobility Initiative",
     year: "2026",
@@ -256,6 +276,15 @@ const PROJECT_DETAILS_MAP: Record<string, {
 };
 
 const WORK_PROJECTS: WorkProject[] = [
+  {
+    id: "elixir-luxury-perfumery",
+    category: "Websites",
+    title: "Elixir Luxury Artistic Fragrances",
+    description: "High-conversion bilingual Arabic & English Shopify Plus flagship for Dubai's premier luxury perfume boutique, featuring Tabby, Apple Pay, and sub-second edge speeds.",
+    image: "/assets/images/elixir-hero.png",
+    year: "2025",
+    services: ["Shopify Plus", "Bilingual Arabic/RTL", "UAE Payment Gateway", "Edge Caching"],
+  },
   {
     id: "ai-mobility-platform",
     category: "AI & Automation",

@@ -53,6 +53,45 @@ interface ApplicationItem {
 
 const APPLICATIONS: ApplicationItem[] = [
   {
+    id: "elixir-luxury-perfumes",
+    name: "Elixir Luxury Perfumes",
+    category: "Shopify Stores",
+    subCategory: "Artistic & Arabic Perfumery",
+    tagline: "High-conversion bilingual Arabic & English Shopify Plus flagship for Dubai's premier luxury perfume boutique.",
+    rating: 5.0,
+    reviewsCount: "1,240 reviews",
+    platformBadge: "Shopify Plus",
+    previewImage: "/assets/images/elixir-hero.png",
+    screenshots: [
+      "/assets/images/elixir-hero.png",
+      "/assets/images/elixir-showcase.png",
+      "/assets/images/elixir-perfume.png",
+    ],
+    liveUrl: "https://www.elixirbeauty.com",
+    description:
+      "Bespoke Shopify Plus storefront engineered for Dubai's luxury fragrance house, featuring bilingual Arabic (RTL) & English, Tabby installment payments, Apple Pay, and sub-1.2s edge loads.",
+    metrics: {
+      stat1: { label: "Sales Lift", value: "+168%" },
+      stat2: { label: "Edge Page Load", value: "<1.2s" },
+      stat3: { label: "Bilingual Parity", value: "100%" },
+    },
+    highlights: [
+      "Custom Shopify Plus Liquid architecture with bilingual Arabic RTL support",
+      "Integrated regional UAE payment gateways including Apple Pay and Tabby",
+      "Dynamic fragrance notes discovery and localized GCC currencies (AED, SAR, QAR)",
+    ],
+    techStack: ["Shopify Plus", "Liquid OS 2.0", "Next.js 15", "Tailwind CSS", "Apple Pay / Tabby", "Cloudflare Edge"],
+    client: "Elixir Beauty Dubai",
+    year: "2025",
+    platforms: "Web / Mobile Safari & Chrome",
+    downloads: {
+      primaryLabel: "Visit Live Store",
+      primaryType: "shopify",
+      secondaryLabel: "Explore Case Study",
+      secondaryType: "web",
+    },
+  },
+  {
     id: "vesper-horology",
     name: "Vesper Luxury Horology",
     category: "Shopify Stores",
@@ -591,13 +630,13 @@ export default function ApplicationPage() {
           </div>
 
           {/* 3D Depth Card Carousel Stage (Expansive, filling width without empty voids) */}
-          <div className="relative w-full h-[540px] sm:h-[480px] md:h-[440px] lg:h-[460px] flex items-center justify-center">
+          <div className="relative w-full h-[560px] sm:h-[500px] md:h-[460px] lg:h-[480px] flex items-center justify-center">
             
-            {/* Prev / Next Floating Circular Arrows (Home Navy Theme) */}
+            {/* Prev / Next Floating Circular Arrows (Clean Design) */}
             <button
               type="button"
               onClick={handlePrevDeck}
-              className="absolute left-2 sm:left-6 md:left-12 lg:left-16 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#202B61] text-white hover:bg-[#151E48] flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+              className="absolute left-2 sm:left-4 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black text-white hover:bg-slate-800 flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
               aria-label="Previous case study"
             >
               <ChevronLeft className="w-5 h-5 stroke-[2.2]" />
@@ -606,7 +645,7 @@ export default function ApplicationPage() {
             <button
               type="button"
               onClick={handleNextDeck}
-              className="absolute right-2 sm:right-6 md:right-12 lg:right-16 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#202B61] text-white hover:bg-[#151E48] flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+              className="absolute right-2 sm:right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black text-white hover:bg-slate-800 flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
               aria-label="Next case study"
             >
               <ChevronRight className="w-5 h-5 stroke-[2.2]" />
@@ -634,21 +673,21 @@ export default function ApplicationPage() {
                     transform: isCenter
                       ? "translate(-50%, -50%) scale(1)"
                       : isRightPeek
-                      ? "translate(calc(-50% + clamp(160px, 26vw, 360px)), -50%) scale(0.88)"
+                      ? "translate(calc(-50% + clamp(220px, 30vw, 420px)), -50%) scale(0.90)"
                       : isLeftPeek
-                      ? "translate(calc(-50% - clamp(160px, 26vw, 360px)), -50%) scale(0.88)"
-                      : `translate(calc(-50% + ${diff * 420}px), -50%) scale(0.75)`,
+                      ? "translate(calc(-50% - clamp(220px, 30vw, 420px)), -50%) scale(0.90)"
+                      : `translate(calc(-50% + ${diff * 480}px), -50%) scale(0.75)`,
                     zIndex: isCenter ? 30 : isVisible ? 20 : 10,
-                    opacity: isCenter ? 1 : isVisible ? 0.38 : 0,
+                    opacity: isCenter ? 1 : isVisible ? 0.52 : 0,
                     pointerEvents: isVisible ? "auto" : "none",
                   }}
-                  className={`absolute left-1/2 top-1/2 w-[92%] sm:w-[800px] md:w-[920px] lg:w-[1020px] xl:w-[1080px] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
+                  className={`absolute left-1/2 top-1/2 w-[92%] sm:w-[760px] md:w-[860px] lg:w-[960px] xl:w-[1020px] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${
                     !isCenter ? "cursor-pointer select-none" : ""
                   }`}
                 >
                   <div
-                    className={`relative rounded-[28px] sm:rounded-[36px] bg-white border border-slate-200/90 p-5 sm:p-7 lg:p-8 shadow-[0_20px_60px_rgba(32,43,97,0.06)] flex flex-col md:flex-row items-center gap-6 sm:gap-8 text-left transition-all ${
-                      isCenter ? "ring-1 ring-[#202B61]/10" : ""
+                    className={`relative rounded-[28px] sm:rounded-[34px] bg-white border border-slate-200/90 p-5 sm:p-7 lg:p-8 shadow-[0_25px_70px_rgba(32,43,97,0.08)] flex flex-col md:flex-row items-center gap-6 sm:gap-8 text-left transition-all ${
+                      isCenter ? "ring-1 ring-[#202B61]/15" : ""
                     }`}
                   >
                     {/* Left Side: Generous Rounded Image Canvas */}
@@ -658,7 +697,7 @@ export default function ApplicationPage() {
                       onClick={() => {
                         if (isCenter) handleOpenAppModal(slide);
                       }}
-                      className="relative aspect-[4/3] md:aspect-square w-full md:w-[300px] lg:w-[360px] xl:w-[400px] shrink-0 rounded-[22px] sm:rounded-[26px] overflow-hidden bg-slate-900 border border-slate-200/80 cursor-pointer group shadow-xs"
+                      className="relative aspect-[4/3] md:aspect-square w-full md:w-[280px] lg:w-[340px] xl:w-[380px] shrink-0 rounded-[22px] sm:rounded-[26px] overflow-hidden bg-slate-900 border border-slate-200/80 cursor-pointer group shadow-xs"
                     >
                       <Image
                         src={slide.previewImage}
@@ -676,7 +715,7 @@ export default function ApplicationPage() {
                       {/* Clean Client Name */}
                       <div>
                         <span className="font-heading font-extrabold text-xs sm:text-sm tracking-wider uppercase text-[#202B61]/70">
-                          {slide.name.split(" ")[0]} STUDIO
+                          {slide.client || slide.name}
                         </span>
                       </div>
 
@@ -697,7 +736,7 @@ export default function ApplicationPage() {
                           onClick={() => handleOpenAppModal(slide)}
                           className="inline-flex items-center gap-1.5 font-sans font-bold text-xs sm:text-sm text-[#202B61] hover:text-[#202B61]/75 transition-colors cursor-pointer group"
                         >
-                          <span>Read Case Study</span>
+                          <span>Read More</span>
                           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                         </button>
                       </div>

@@ -210,7 +210,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Multilingual & RTL-ready builds",
         description: "Full Arabic right-to-left layout support and multi-currency internationalization built directly into the site architecture.",
-        image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],

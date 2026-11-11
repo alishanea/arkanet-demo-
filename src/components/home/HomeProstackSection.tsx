@@ -145,3 +145,4 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
     </section>
   );
 };
+
