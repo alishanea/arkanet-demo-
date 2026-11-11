@@ -84,7 +84,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           </Link>
         </div>
 
-        {/* ── 2. 4 CLEAN STATIC CARDS (HOVER EFFECT ON ARROW ONLY) ── */}
+        {/* ── 2. 4 CLEAN STATIC CARDS (RADIUS LESS THAN 5, HOVER EFFECT ON ARROW ONLY) ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 w-full">
           {CAPABILITY_CARDS.map((card) => {
             const Icon = card.icon;
@@ -92,11 +92,11 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
               <Link
                 key={card.id}
                 href={card.href}
-                className="group relative flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-[0_2px_8px_rgba(32,43,97,0.03)] cursor-pointer overflow-hidden"
+                className="group relative flex flex-col justify-between p-7 sm:p-8 rounded-[4px] bg-white border border-slate-200/90 shadow-[0_2px_8px_rgba(32,43,97,0.03)] cursor-pointer overflow-hidden"
               >
                 <div>
-                  {/* Clean Icon Container (Static, no color fill on hover) */}
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] shadow-sm mb-6">
+                  {/* Clean Icon Container (Radius less than 5) */}
+                  <div className="w-12 h-12 rounded-[4px] bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] shadow-2xs mb-6">
                     <Icon className="w-6 h-6 stroke-[1.5]" />
                   </div>
 

@@ -261,10 +261,10 @@ export default function ProstackPage() {
               return (
                 <div
                   key={cap.number}
-                  className="rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/25 hover:bg-white/[0.07] p-6 sm:p-7 flex flex-col justify-between backdrop-blur-sm transition-all duration-300 group"
+                  className="rounded-[4px] bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.09] hover:border-white/[0.22] p-6 sm:p-7 flex flex-col justify-between backdrop-blur-sm transition-all duration-300 group shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
                 >
                   <div className="space-y-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white group-hover:bg-[#D61F28] group-hover:border-[#D61F28] transition-all duration-300">
+                    <div className="w-10 h-10 rounded-[4px] bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-white group-hover:bg-[#D61F28] group-hover:border-[#D61F28] transition-all duration-300">
                       <Icon className="w-5 h-5 stroke-[1.6]" />
                     </div>
 
@@ -308,9 +308,9 @@ export default function ProstackPage() {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/25 hover:bg-white/[0.07] p-6 sm:p-7 space-y-4 backdrop-blur-sm transition-all duration-300"
+                  className="rounded-[4px] bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.09] hover:border-white/[0.22] p-6 sm:p-7 space-y-4 backdrop-blur-sm transition-all duration-300 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white">
+                  <div className="w-10 h-10 rounded-[4px] bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-white">
                     <Icon className="w-5 h-5 stroke-[1.6]" />
                   </div>
                   <h3 className="font-heading font-bold text-base sm:text-lg text-white text-balance">
@@ -350,7 +350,7 @@ export default function ProstackPage() {
               {BENEFITS.map((benefit, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-sm"
+                  className="flex items-start gap-4 p-5 rounded-[4px] bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/[0.09] backdrop-blur-sm shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
                 >
                   <CheckCircle2 className="w-5 h-5 text-[#D61F28] shrink-0 mt-0.5" />
                   <div className="space-y-1">
