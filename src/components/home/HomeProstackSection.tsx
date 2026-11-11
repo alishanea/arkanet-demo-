@@ -41,42 +41,47 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
   return (
     <section
       id="prostack"
-      className="relative w-full bg-white text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 border-t border-slate-200/80 overflow-hidden font-sans scroll-mt-24"
+      className="relative w-full bg-[#0A0E24] text-white select-none py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 overflow-hidden font-sans scroll-mt-24 border-t border-slate-800/80"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
+      {/* Subtle ambient luxury background glow */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[300px] bg-gradient-to-br from-[#202B61]/40 via-[#D61F28]/15 to-transparent blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-gradient-to-tl from-[#D61F28]/15 via-[#202B61]/30 to-transparent blur-[120px] pointer-events-none" />
+
+      <div className="relative max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-14">
         
         {/* Top Header & Intro Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end text-left">
           
           {/* Left Column: Eyebrow, Logo, Heading & Narrative */}
-          <div className="lg:col-span-7 space-y-4 text-left">
+          <div className="lg:col-span-7 space-y-5 text-left">
             {/* 1. Eyebrow */}
-            <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#202B61]/70 font-sans">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-slate-300 text-[11px] sm:text-xs font-semibold tracking-wider uppercase font-mono">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D61F28] animate-pulse" />
               OUR PRODUCT • DIGITAL COMMERCE PLATFORM
-            </p>
+            </div>
 
-            {/* 2. Product Logo Asset */}
+            {/* 2. Official Prostack Logo (Luminous on Dark Canvas) */}
             <div className="pt-1 pb-1">
               <Link href="/prostack" className="inline-block group">
                 <Image
                   src="/assets/images/prostack-logo.png"
                   alt="Prostack Logo"
-                  width={220}
-                  height={43}
-                  className="h-9 sm:h-10 w-auto object-contain group-hover:opacity-90 transition-opacity"
+                  width={240}
+                  height={47}
+                  className="h-10 sm:h-11 w-auto object-contain group-hover:opacity-95 transition-opacity drop-shadow-sm"
                   priority
                 />
               </Link>
             </div>
 
             {/* 3. Heading */}
-            <h2 className="section-h2 text-balance">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-heading font-extrabold text-white tracking-tight leading-[1.15] text-balance">
               Meet Prostack
             </h2>
 
             {/* 4. Short Description */}
-            <p className="font-sans text-sm sm:text-base text-[#202B61]/80 leading-relaxed font-normal max-w-2xl text-pretty">
-              A unified platform to build websites, manage content and run online businesses. Prostack brings website management, e-commerce, SEO and security tools together in one place.
+            <p className="font-sans text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl text-pretty">
+              A unified platform to build websites, manage content and run online businesses. Prostack brings website management, e-commerce, SEO and security tools together in one connected workspace.
             </p>
           </div>
 
@@ -84,20 +89,15 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
           <div className="lg:col-span-5 flex flex-col sm:flex-row items-start sm:items-center lg:justify-end gap-3.5 pb-1">
             {/* 6. Primary CTA */}
             <div className="relative inline-flex items-center">
-              <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-[#D61F28] text-white text-[8.5px] font-black uppercase tracking-wider shadow-xs flex items-center gap-0.5 pointer-events-none select-none">
+              <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-white text-[#D61F28] text-[8.5px] font-black uppercase tracking-wider shadow-sm flex items-center gap-0.5 pointer-events-none select-none">
                 NEW
               </span>
               <a
                 href="https://prostack.arkanet.ae/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#202B61] text-white hover:bg-[#151E48] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-xs hover:shadow-md active:scale-95 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
               >
-                <img
-                  src="/assets/images/prostack-mark-red.png"
-                  alt="Prostack Mark"
-                  className="w-4 h-4 object-contain"
-                />
                 <span>Explore Prostack</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
@@ -106,7 +106,7 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
             {/* Dedicated Details Page Link */}
             <Link
               href="/prostack"
-              className="inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/90 text-[#202B61] font-sans font-semibold text-xs sm:text-sm transition-all"
+              className="inline-flex items-center justify-center gap-1.5 px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-sans font-semibold text-xs sm:text-sm backdrop-blur-sm transition-all"
             >
               <span>View Platform Details</span>
               <ArrowRight className="w-4 h-4" />
@@ -117,7 +117,7 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
               <button
                 type="button"
                 onClick={onOpenBooking}
-                className="hidden xl:inline-flex items-center justify-center text-xs font-semibold text-[#202B61]/75 hover:text-[#202B61] px-2 py-3 transition-colors cursor-pointer"
+                className="hidden xl:inline-flex items-center justify-center text-xs font-semibold text-slate-300 hover:text-white px-2 py-3.5 transition-colors cursor-pointer"
               >
                 Talk to Our Team
               </button>
@@ -126,23 +126,23 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
 
         </div>
 
-        {/* 5. Capability Highlights Grid (5 Clean Architectural Cards) */}
+        {/* 5. Capability Highlights Grid (5 Clean Glassmorphic Luxury Cards) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 pt-2 text-left">
           {HIGHLIGHTS.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="rounded-2xl bg-white border border-slate-200/90 p-5 sm:p-6 flex flex-col justify-between hover:border-[#202B61]/35 hover:shadow-[0_8px_24px_rgba(32,43,97,0.05)] transition-all duration-200 group"
+                className="rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/25 hover:bg-white/[0.07] p-5 sm:p-6 flex flex-col justify-between backdrop-blur-sm transition-all duration-300 group"
               >
                 <div className="space-y-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-[#202B61]/5 border border-[#202B61]/10 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors duration-200">
-                    <Icon className="w-4.5 h-4.5" />
+                  <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white group-hover:bg-[#D61F28] group-hover:border-[#D61F28] transition-all duration-300">
+                    <Icon className="w-5 h-5 stroke-[1.6]" />
                   </div>
-                  <h3 className="font-heading font-bold text-sm sm:text-base text-[#202B61] leading-snug text-balance">
+                  <h3 className="font-heading font-bold text-sm sm:text-base text-white leading-snug text-balance">
                     {item.title}
                   </h3>
-                  <p className="font-sans text-xs text-[#202B61]/70 leading-relaxed text-pretty">
+                  <p className="font-sans text-xs text-slate-400 leading-relaxed text-pretty">
                     {item.description}
                   </p>
                 </div>
@@ -155,4 +155,3 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
     </section>
   );
 };
-
