@@ -33,6 +33,10 @@ const HomeProstackSection = dynamic(
   () => import("@/components/home/HomeProstackSection").then((m) => m.HomeProstackSection),
   { ssr: true }
 );
+const HomeReviewsSection = dynamic(
+  () => import("@/components/home/HomeReviewsSection").then((m) => m.HomeReviewsSection),
+  { ssr: true }
+);
 const AboutCTA = dynamic(
   () => import("@/components/about/AboutCTA").then((m) => m.AboutCTA),
   { ssr: true }
@@ -85,6 +89,9 @@ export default function Home() {
 
         {/* 4b. Prostack Flagship Product Feature */}
         <HomeProstackSection onOpenBooking={handleOpenBooking} />
+
+        {/* 4c. Client Reviews & Testimonials */}
+        <HomeReviewsSection />
 
         {/* 5. Trusted By Client Logo Stage (Client Details) */}
         <ClientLogosSection onOpenBooking={handleOpenBooking} />

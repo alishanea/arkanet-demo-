@@ -89,7 +89,7 @@ export const HomeReviewsSection: React.FC = () => {
   return (
     <section
       id="reviews"
-      className="relative w-full bg-[#EDEDF0] px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-[#E2E4E8] overflow-hidden font-sans select-none scroll-mt-24"
+      className="relative w-full bg-slate-50/70 px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 border-t border-slate-200/80 overflow-hidden font-sans select-none scroll-mt-24"
     >
       <div className="max-w-[1400px] w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
