@@ -159,12 +159,9 @@ export default function ProstackPage() {
           
           <div className="max-w-3xl space-y-6 text-left">
             {/* Eyebrow: BUILT BY ARKANET */}
-            <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-300 text-[11px] sm:text-xs font-semibold tracking-wider uppercase font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D61F28] animate-pulse" />
-              <span>BUILT BY ARKANET</span>
-              <span className="h-3 w-[1px] bg-white/20" />
-              <span className="text-slate-400">INTEGRATED DIGITAL PLATFORM</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
+              BUILT BY ARKANET • INTEGRATED DIGITAL PLATFORM
+            </p>
 
             {/* Official Prostack Logo Asset (Luminous against Dark Background) */}
             <div className="pt-2 pb-2">
@@ -190,20 +187,15 @@ export default function ProstackPage() {
 
             {/* CTA Buttons */}
             <div className="pt-4 flex flex-wrap items-center gap-4">
-              <div className="relative inline-flex items-center">
-                <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-white text-[#D61F28] text-[8.5px] font-black uppercase tracking-wider shadow-sm flex items-center gap-0.5 pointer-events-none select-none">
-                  NEW
-                </span>
-                <a
-                  href="https://prostack.arkanet.ae/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
-                >
-                  <span>Get Started / Explore Prostack</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </a>
-              </div>
+              <a
+                href="https://prostack.arkanet.ae/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
+              >
+                <span>Get Started / Explore Prostack</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
 
               <button
                 type="button"
@@ -227,7 +219,7 @@ export default function ProstackPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             
             <div className="lg:col-span-5 space-y-3">
-              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-mono">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
                 PRODUCT ARCHITECTURE
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight leading-snug text-balance">
@@ -252,7 +244,7 @@ export default function ProstackPage() {
         <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-14">
           
           <div className="max-w-2xl space-y-3">
-            <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-mono">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
               CORE CAPABILITY SUITE
             </p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight leading-snug text-balance">
@@ -272,13 +264,8 @@ export default function ProstackPage() {
                   className="rounded-2xl bg-white/[0.04] border border-white/10 hover:border-white/25 hover:bg-white/[0.07] p-6 sm:p-7 flex flex-col justify-between backdrop-blur-sm transition-all duration-300 group"
                 >
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white group-hover:bg-[#D61F28] group-hover:border-[#D61F28] transition-all duration-300">
-                        <Icon className="w-5 h-5 stroke-[1.6]" />
-                      </div>
-                      <span className="font-mono font-bold text-xs text-slate-400 tracking-wider">
-                        #{cap.number}
-                      </span>
+                    <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white group-hover:bg-[#D61F28] group-hover:border-[#D61F28] transition-all duration-300">
+                      <Icon className="w-5 h-5 stroke-[1.6]" />
                     </div>
 
                     <h3 className="font-heading font-bold text-lg text-white leading-snug text-balance">
@@ -304,7 +291,7 @@ export default function ProstackPage() {
         <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-14">
           
           <div className="max-w-2xl space-y-3">
-            <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-mono">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
               AUDIENCE &amp; TEAMS
             </p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight leading-snug text-balance">
@@ -348,7 +335,7 @@ export default function ProstackPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             
             <div className="lg:col-span-5 space-y-3">
-              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-mono">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
                 CORE ADVANTAGES
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight leading-snug text-balance">

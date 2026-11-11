@@ -55,10 +55,9 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
           {/* Left Column: Eyebrow, Logo, Heading & Narrative */}
           <div className="lg:col-span-7 space-y-5 text-left">
             {/* 1. Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-slate-300 text-[11px] sm:text-xs font-semibold tracking-wider uppercase font-mono">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D61F28] animate-pulse" />
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
               OUR PRODUCT • DIGITAL COMMERCE PLATFORM
-            </div>
+            </p>
 
             {/* 2. Official Prostack Logo (Luminous on Dark Canvas) */}
             <div className="pt-1 pb-1">
@@ -88,20 +87,15 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = ({ onOpen
           {/* Right Column: CTAs */}
           <div className="lg:col-span-5 flex flex-col sm:flex-row items-start sm:items-center lg:justify-end gap-3.5 pb-1">
             {/* 6. Primary CTA */}
-            <div className="relative inline-flex items-center">
-              <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-white text-[#D61F28] text-[8.5px] font-black uppercase tracking-wider shadow-sm flex items-center gap-0.5 pointer-events-none select-none">
-                NEW
-              </span>
-              <a
-                href="https://prostack.arkanet.ae/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
-              >
-                <span>Explore Prostack</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
+            <a
+              href="https://prostack.arkanet.ae/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
+            >
+              <span>Explore Prostack</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
 
             {/* Dedicated Details Page Link */}
             <Link
