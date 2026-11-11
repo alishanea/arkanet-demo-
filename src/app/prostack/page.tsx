@@ -144,26 +144,23 @@ export default function ProstackPage() {
   const openContact = () => setContactOpen(true);
 
   return (
-    <main className="min-h-screen bg-[#0A0E24] text-white selection:bg-[#D61F28] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#202B61] text-white selection:bg-[#D61F28] selection:text-white overflow-x-hidden font-sans">
       {/* Contact brief modal */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ══════════════════════════════════════════════════════════════════
-          SECTION 1 — HERO (LUXURIOUS DARK CANVAS)
+          SECTION 1 — HERO
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full pt-32 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 lg:pb-28 px-4 sm:px-8 lg:px-12 bg-gradient-to-b from-[#0A0E24] via-[#0E1538] to-[#0A0E24] border-b border-slate-800/80 text-left select-none overflow-hidden">
-        {/* Ambient atmospheric luxury glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[360px] bg-gradient-to-br from-[#202B61]/40 via-[#D61F28]/15 to-transparent blur-[140px] pointer-events-none" />
-
+      <section className="relative w-full pt-32 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 lg:pb-28 px-4 sm:px-8 lg:px-12 bg-[#202B61] border-b border-[#2d3a7c] text-left select-none overflow-hidden">
         <div className="relative max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
           
           <div className="max-w-3xl space-y-6 text-left">
             {/* Eyebrow: BUILT BY ARKANET */}
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400 font-sans">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-200 font-sans">
               BUILT BY ARKANET • INTEGRATED DIGITAL PLATFORM
             </p>
 
-            {/* Official Prostack Logo Asset (Luminous against Dark Background) */}
+            {/* Official Prostack Logo Asset */}
             <div className="pt-2 pb-2">
               <Image
                 src="/assets/images/prostack-logo.png"
@@ -181,7 +178,7 @@ export default function ProstackPage() {
             </h1>
 
             {/* Supporting Copy */}
-            <p className="font-sans text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed font-normal max-w-2xl text-pretty">
+            <p className="font-sans text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-normal max-w-2xl text-pretty">
               Build and manage modern business websites with an integrated platform for content, commerce, performance and security.
             </p>
 
@@ -191,7 +188,7 @@ export default function ProstackPage() {
                 href="https://prostack.arkanet.ae/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-[4px] bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-xs sm:text-sm tracking-tight shadow-md hover:shadow-lg active:scale-95 transition-all cursor-pointer"
               >
                 <span>Get Started / Explore Prostack</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -200,7 +197,7 @@ export default function ProstackPage() {
               <button
                 type="button"
                 onClick={openContact}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-sans font-semibold text-xs sm:text-sm tracking-tight backdrop-blur-sm transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[4px] bg-white text-[#202B61] hover:bg-slate-100 font-sans font-bold text-xs sm:text-sm tracking-tight shadow-sm transition-all cursor-pointer"
               >
                 <span>Talk to Our Team</span>
                 <ArrowRight className="w-4 h-4" />
@@ -214,7 +211,7 @@ export default function ProstackPage() {
       {/* ══════════════════════════════════════════════════════════════════
           SECTION 2 — PRODUCT OVERVIEW
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-18 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#0B102B] border-b border-slate-800/80 text-left select-none">
+      <section className="relative w-full py-18 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#161e47] border-b border-[#2d3a7c] text-left select-none">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             
@@ -240,7 +237,7 @@ export default function ProstackPage() {
       {/* ══════════════════════════════════════════════════════════════════
           SECTION 3 — KEY CAPABILITIES
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#0A0E24] border-b border-slate-800/80 text-left select-none scroll-mt-24" id="capabilities">
+      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#202B61] border-b border-[#2d3a7c] text-left select-none scroll-mt-24" id="capabilities">
         <div className="max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-14">
           
           <div className="max-w-2xl space-y-3">
@@ -330,7 +327,7 @@ export default function ProstackPage() {
       {/* ══════════════════════════════════════════════════════════════════
           SECTION 5 — WHY PROSTACK
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#0A0E24] border-b border-slate-800/80 text-left select-none">
+      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#161e47] border-b border-[#2d3a7c] text-left select-none">
         <div className="max-w-[1400px] w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             
@@ -372,12 +369,9 @@ export default function ProstackPage() {
       {/* ══════════════════════════════════════════════════════════════════
           SECTION 6 — FINAL CTA
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-gradient-to-b from-[#0B102B] to-[#0A0E24] text-center select-none overflow-hidden">
-        {/* Subtle radial glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-br from-[#202B61]/40 via-[#D61F28]/20 to-transparent blur-[120px] pointer-events-none" />
-
+      <section className="relative w-full py-20 sm:py-24 lg:py-28 px-4 sm:px-8 lg:px-12 bg-[#202B61] text-center select-none overflow-hidden">
         <div className="relative max-w-[840px] mx-auto space-y-6">
-          <div className="w-14 h-14 mx-auto rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center shadow-lg">
+          <div className="w-14 h-14 mx-auto rounded-[4px] bg-white/10 border border-white/15 flex items-center justify-center shadow-md">
             <Image
               src="/assets/images/prostack-icon.png"
               alt="Prostack Icon"
@@ -391,7 +385,7 @@ export default function ProstackPage() {
             Ready to build with Prostack?
           </h2>
 
-          <p className="font-sans text-base sm:text-lg text-slate-300 max-w-xl mx-auto leading-relaxed text-pretty">
+          <p className="font-sans text-base sm:text-lg text-slate-200 max-w-xl mx-auto leading-relaxed text-pretty">
             Discover a connected platform for creating, managing and growing your digital business.
           </p>
 
@@ -400,7 +394,7 @@ export default function ProstackPage() {
               href="https://prostack.arkanet.ae/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-sm tracking-tight shadow-lg hover:shadow-xl active:scale-95 transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[4px] bg-[#D61F28] text-white hover:bg-[#B9151E] font-sans font-bold text-sm tracking-tight shadow-lg hover:shadow-xl active:scale-95 transition-all cursor-pointer"
             >
               <span>Explore Prostack</span>
               <ArrowUpRight className="w-4 h-4" />
