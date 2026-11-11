@@ -65,7 +65,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
       className="relative w-full bg-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-slate-200/80 overflow-hidden font-sans scroll-mt-24"
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
-        {/* ── 1. CLEAN SECTION HEADER (NO PILLS / NO MICRO TAGS) ── */}
+        {/* ── 1. CLEAN SECTION HEADER ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div className="space-y-2.5 max-w-2xl text-left">
             <h2 className="section-h2">
@@ -84,7 +84,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           </Link>
         </div>
 
-        {/* ── 2. 4 CLEAN, SPACIOUS CAPABILITY CARDS ── */}
+        {/* ── 2. 4 CLEAN STATIC CARDS (HOVER EFFECT ON ARROW ONLY) ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 w-full">
           {CAPABILITY_CARDS.map((card) => {
             const Icon = card.icon;
@@ -92,16 +92,16 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
               <Link
                 key={card.id}
                 href={card.href}
-                className="group relative flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-white border border-slate-200/90 hover:border-[#202B61]/50 shadow-[0_2px_8px_rgba(32,43,97,0.03)] hover:shadow-[0_16px_36px_rgba(32,43,97,0.08)] hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden"
+                className="group relative flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-[0_2px_8px_rgba(32,43,97,0.03)] cursor-pointer overflow-hidden"
               >
                 <div>
-                  {/* Clean Icon Container */}
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:border-[#202B61] group-hover:text-white transition-all duration-300 shadow-sm mb-6">
+                  {/* Clean Icon Container (Static, no color fill on hover) */}
+                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] shadow-sm mb-6">
                     <Icon className="w-6 h-6 stroke-[1.5]" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading font-bold text-lg sm:text-[19px] text-[#202B61] tracking-tight leading-snug group-hover:text-[#151E48] transition-colors mb-3">
+                  <h3 className="font-heading font-bold text-lg sm:text-[19px] text-[#202B61] tracking-tight leading-snug mb-3">
                     {card.title}
                   </h3>
 
@@ -111,12 +111,12 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                   </p>
                 </div>
 
-                {/* Bottom Action */}
+                {/* Bottom Action: Hover effect on arrow only (slide right, no fill) */}
                 <div className="flex items-center justify-between pt-5 mt-6 border-t border-slate-100">
-                  <span className="text-xs sm:text-[13px] font-semibold text-[#202B61]/85 group-hover:text-[#202B61] transition-colors">
+                  <span className="text-xs sm:text-[13px] font-semibold text-[#202B61]">
                     Learn more
                   </span>
-                  <div className="w-7 h-7 rounded-full bg-slate-100 group-hover:bg-[#202B61] group-hover:text-white flex items-center justify-center text-[#202B61] transition-all duration-300 group-hover:translate-x-1 shadow-sm">
+                  <div className="w-8 h-8 rounded-full border border-slate-200/90 flex items-center justify-center text-[#202B61] group-hover:translate-x-1.5 transition-transform duration-200">
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
                   </div>
                 </div>
