@@ -43,6 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const isCapabilitiesActive = pathname.startsWith("/capabilities") || pathname.startsWith("/services");
   const isAboutActive = pathname === "/about";
   const isWorkActive = pathname === "/work" || pathname.startsWith("/work");
+  const isProstackActive = pathname === "/prostack" || pathname.startsWith("/prostack");
   const isContactActive = pathname === "/contact";
   const isApplicationActive = pathname === "/application";
 
@@ -274,6 +275,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               Works
             </Link>
 
+            {/* Prostack Flagship Product Link */}
+            <Link
+              href="/prostack"
+              onClick={handleNavClick}
+              className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
+                isProstackActive && activeMenu !== "services"
+                  ? "bg-[#202B61] text-white shadow-xs"
+                  : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
+              }`}
+            >
+              Prostack
+            </Link>
+
             {/* About Link */}
             <Link
               href="/about"
@@ -394,6 +408,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   }`}
                 >
                   Works &amp; Case Studies
+                </Link>
+                <Link
+                  href="/prostack"
+                  onClick={handleNavClick}
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
+                    isProstackActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
+                  }`}
+                >
+                  Prostack Platform
                 </Link>
                 <Link
                   href="/about"
