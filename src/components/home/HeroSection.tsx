@@ -159,10 +159,22 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       id="home"
       className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-white text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden"
     >
+      {/* ── CINEMATIC AMBIENT BACKGROUND IMAGE ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2400&auto=format&fit=crop"
+          alt="Arkanet Engineering Workspace"
+          className="w-full h-full object-cover opacity-40 scale-105"
+          loading="eager"
+        />
+        {/* Soft atmospheric gradient veil ensuring perfect contrast and readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/75 to-white pointer-events-none" />
+      </div>
+
       {/* ── MINIMALIST CANVAS FLOW (LOWER THIRD ONLY, NO FULL WAVES, NO CIRCLES) ── */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 z-0 w-full h-full pointer-events-auto"
+        className="absolute inset-0 z-[1] w-full h-full pointer-events-auto"
       />
 
       {/* ── CLEAN CENTERED EDITORIAL HEADLINE & SUBTITLE WITH GENEROUS EMPTY SPACE ── */}
@@ -172,7 +184,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           Digital Products &amp; Enterprise AI
         </h1>
 
-        <p className="hero-sub font-medium text-[#202B61]/80 leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6 text-balance drop-shadow-[0_1px_8px_rgba(32,43,97,0.04)]">
+        <p className="hero-sub font-medium text-[#202B61]/85 leading-relaxed max-w-2xl sm:max-w-3xl text-center mx-auto mt-5 sm:mt-6 text-balance drop-shadow-[0_1px_8px_rgba(32,43,97,0.04)]">
           We design and engineer high-performance web platforms, mobile apps, and automated AI systems that help ambitious businesses scale and lead their markets.
         </p>
       </div>
