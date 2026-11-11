@@ -470,14 +470,14 @@ export default function ApplicationPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#EDEDF0] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ══════════════════════════════════════════════════════════════════
           1. EXACT STUDIO HERO (MATCHING USER REFERENCE DESIGN & HOME THEME)
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-[#EDEDF0] border-b border-slate-200/90 text-left flex flex-col justify-center">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/90 text-left flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 my-auto">
           
           {/* Main Hero Header Block: Two-Column Headline & Subtitle */}
@@ -615,7 +615,7 @@ export default function ApplicationPage() {
           ══════════════════════════════════════════════════════════════════ */}
       <section
         id="showcase"
-        className="relative w-full pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-[#EDEDF0] border-b border-slate-200/90 scroll-mt-24 font-sans text-center overflow-hidden"
+        className="relative w-full pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-200/90 scroll-mt-24 font-sans text-center overflow-hidden"
       >
         <div className="max-w-[1440px] w-full mx-auto space-y-8 sm:space-y-10">
           
@@ -819,7 +819,7 @@ export default function ApplicationPage() {
       {/* ══════════════════════════════════════════════════════════════════
           3. FULL APP STORE & SHOPIFY DIRECTORY (MATCHING HOME THEME)
           ══════════════════════════════════════════════════════════════════ */}
-      <section id="directory" className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#EDEDF0] border-b border-slate-200/90 scroll-mt-24">
+      <section id="directory" className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-white border-b border-slate-200/90 scroll-mt-24">
         <div className="max-w-[1400px] mx-auto space-y-8">
 
           {/* Directory Header & Category Filter Tabs */}
@@ -1180,7 +1180,7 @@ export default function ApplicationPage() {
       <HomeReviewsSection />
 
       {/* ── 6. CLOSING CTA ── */}
-      <AboutCTA onOpenBooking={openContact} bgColor="bg-[#EDEDF0]" />
+      <AboutCTA onOpenBooking={openContact} bgColor="bg-white" />
 
       {/* ── 7. FOOTER (UNIFIED WITH CANONICAL bg-[#151E48]) ── */}
       <Footer onOpenBooking={openContact} />

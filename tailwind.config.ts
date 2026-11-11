@@ -18,7 +18,7 @@ const config: Config = {
           faint: "#8891a3",
           muted: "#aab4c8",
         },
-        subtle: "#eaeaea",
+        subtle: "#ffffff",
         borderline: "#e2e6ee",
         arkanet: "#202B61",
       },

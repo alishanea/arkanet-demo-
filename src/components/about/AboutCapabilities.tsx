@@ -3,7 +3,7 @@ import { services } from "@/lib/aboutData";
 
 export function AboutCapabilities() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#eaeaea] border-t border-slate-200/80">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto space-y-10 sm:space-y-14">
 
         <div className="max-w-3xl space-y-3">

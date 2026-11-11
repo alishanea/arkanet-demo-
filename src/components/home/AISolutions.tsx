@@ -60,7 +60,7 @@ export const AISolutions: React.FC<AISolutionsProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      <section id="ai-chatbot" className="py-16 bg-[#eaeaea]">
+      <section id="ai-chatbot" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#202B61] text-white rounded-2xl p-8 sm:p-12 shadow-xl border border-slate-200/90 relative overflow-hidden">
             <div className="max-w-3xl relative z-10">

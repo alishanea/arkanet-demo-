@@ -446,16 +446,16 @@ export default function BlogPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#eaeaea] text-[#202B61] flex flex-col justify-between selection:bg-[#202B61] selection:text-white select-none">
+    <main className="min-h-screen bg-white text-[#202B61] flex flex-col justify-between selection:bg-[#202B61] selection:text-white select-none">
       {/* STICKY CONTAINER WITH DYNAMIC PADDING EXPANSION MATCHING WORK & ABOUT MODEL */}
-      <div className="relative w-full select-none bg-[#eaeaea]">
+      <div className="relative w-full select-none bg-white">
         <div ref={spacerRef} className="relative min-h-[140vh] sm:min-h-[150vh]">
           <motion.div
             style={{ paddingLeft: outerSideMargin, paddingRight: outerSideMargin }}
-            className="sticky top-0 z-10 w-full bg-[#eaeaea] pt-0"
+            className="sticky top-0 z-10 w-full bg-white pt-0"
           >
             {/* Combined Blog Container with rounded bottom */}
-            <div className="w-full bg-[#eaeaea] text-[#202B61] rounded-t-none rounded-b-[40px] sm:rounded-b-[64px] shadow-sm border-none overflow-hidden pb-16 sm:pb-24 relative">
+            <div className="w-full bg-white text-[#202B61] rounded-t-none rounded-b-[40px] sm:rounded-b-[64px] shadow-sm border-none overflow-hidden pb-16 sm:pb-24 relative">
               {/* Hero Header matching Homepage Hero model */}
               <div className="relative w-full pt-28 lg:pt-36 pb-8 sm:pb-12 px-6 sm:px-8 lg:px-[40px] overflow-hidden select-none">
                 <div className="w-full relative z-10 text-left">
@@ -566,7 +566,7 @@ export default function BlogPage() {
       {/* Standard Site Footer */}
       <Footer
         onOpenBooking={() => setContactModalOpen(true)}
-        bgColor="bg-[#eaeaea]"
+        bgColor="bg-white"
       />
 
       {/* Article Detail Modal */}

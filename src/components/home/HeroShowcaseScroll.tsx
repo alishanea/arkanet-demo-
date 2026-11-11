@@ -57,7 +57,7 @@ export const HeroShowcaseScroll: React.FC<HeroShowcaseScrollProps> = () => {
   const backgroundColor = useTransform(
     scrollYProgress,
     [0.0, 1.0],
-    ["#eaeaea", "#eaeaea"]
+    ["#ffffff", "#ffffff"]
   );
 
   const scale = useTransform(
@@ -142,7 +142,7 @@ export const HeroShowcaseScroll: React.FC<HeroShowcaseScrollProps> = () => {
   return (
     <motion.div
       ref={containerRef}
-      style={shouldReduceMotion ? { backgroundColor: "#eaeaea" } : { backgroundColor }}
+      style={shouldReduceMotion ? { backgroundColor: "#ffffff" } : { backgroundColor }}
       className="relative w-full h-[300vh] select-none transition-colors duration-300"
       id="cinematic-showcase"
     >

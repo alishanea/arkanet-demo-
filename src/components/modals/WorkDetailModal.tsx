@@ -170,7 +170,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
               duration: 0.45,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className={`fixed bottom-0 z-50 bg-[#eaeaea] text-[#202B61] border-t border-slate-200/90 shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`fixed bottom-0 z-50 bg-white text-[#202B61] border-t border-slate-200/90 shadow-2xl flex flex-col overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled
                 ? "inset-x-0 top-0 rounded-t-none"
                 : "inset-x-0 sm:inset-x-6 xl:inset-x-[36px] top-[70px] sm:top-[100px] lg:top-[120px] rounded-t-2xl sm:rounded-t-3xl"

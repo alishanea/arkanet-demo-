@@ -170,7 +170,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
   const platformData = PLATFORMS.find((p) => p.id === selectedPlatform);
 
   return (
-    <section className="relative w-full py-16 sm:py-20 lg:py-24 bg-[#edf2f9] text-[#202B61] select-none border-t border-b border-slate-200/90 overflow-hidden px-4 sm:px-8 lg:px-12">
+    <section className="relative w-full py-16 sm:py-20 lg:py-24 bg-white text-[#202B61] select-none border-t border-b border-slate-200/90 overflow-hidden px-4 sm:px-8 lg:px-12">
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-12">
         
         {/* Section Header with Wise-style Clarity */}
@@ -328,7 +328,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
                 className="space-y-5"
               >
                 {/* 2 Big Numerical Truth Points */}
-                <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-[#edf2f9] border border-slate-200/80">
+                <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200/80">
                   <div className="space-y-1">
                     <span className="text-[11px] font-semibold text-slate-500 flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5 text-[#202B61]" />

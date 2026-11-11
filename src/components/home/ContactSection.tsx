@@ -81,7 +81,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeroHeader =
   };
 
   return (
-    <section className="relative w-full bg-[#eaeaea] text-[#202B61] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-8 lg:px-12 selection:bg-[#202B61] selection:text-white font-sans">
+    <section className="relative w-full bg-white text-[#202B61] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-8 lg:px-12 selection:bg-[#202B61] selection:text-white font-sans">
       <div className="max-w-[1320px] mx-auto space-y-10 sm:space-y-12">
         
         {/* Optional Section Header */}
@@ -338,7 +338,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeroHeader =
                       </p>
                     </div>
 
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#202B61] bg-[#eaeaea] border border-slate-200 px-2 py-0.5 rounded-md shrink-0">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#202B61] bg-white border border-slate-200 px-2 py-0.5 rounded-md shrink-0">
                       {loc.badge}
                     </span>
                   </div>
