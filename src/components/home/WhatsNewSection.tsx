@@ -113,30 +113,6 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
       techStack: ["Python", "FastAPI", "Speech-to-Text NLU", "LangChain", "WebRTC", "WhatsApp API"],
     },
   },
-  {
-    id: "price-hunting-engine",
-    category: "Data Engineering & Analytics",
-    title: "Dynamic Price Hunting & High-Scale Web Scraping Engine",
-    titleLine1: "Dynamic Price Hunting &",
-    titleLine2: "Web Scraping Engine",
-    description: "Distributed market crawler monitoring millions of product listings, competitor reviews, ratings, and delivery terms in real time.",
-    outerImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
-    detail: {
-      client: "Middle East E-Commerce Marketplace",
-      year: "2025",
-      services: ["Price Hunting Algorithm", "High-Scale Web Scraper", "Dynamic Repricing", "Market Intelligence"],
-      overview: "An automated price monitoring and competitive intelligence platform scraping competitor portals at scale to dynamically optimize retail margins.",
-      challenge: "Manual price audits across dozens of e-commerce platforms took days, leaving retailers vulnerable to undercutting and lost market share.",
-      solution: "Built a distributed crawler cluster capable of scraping over 8 million product pages daily with automatic proxy rotation, anti-bot handling, and instant repricing APIs.",
-      impact: [
-        "8.5M+ Daily product prices tracked dynamically",
-        "+22% Improvement in average retailer profit margin",
-        "Sub-minute price fluctuation alert generation",
-      ],
-      techStack: ["Python / Scrapy", "Redis Queue", "Elasticsearch", "Next.js Dashboard", "Go Workers"],
-    },
-  },
 ];
 
 export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking }) => {
