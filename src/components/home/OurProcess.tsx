@@ -169,12 +169,12 @@ export const OurProcess: React.FC<OurProcessProps> = () => {
     >
       <div className="max-w-[1400px] mx-auto space-y-8 sm:space-y-10 lg:space-y-12">
         {/* Section Heading */}
-        <div className="w-full border-b border-slate-200/80 pb-6 sm:pb-8">
+        <div className="w-full">
           <div className="w-full text-left space-y-3 max-w-4xl">
-            <h2 className="section-h2">
+            <h2 className="section-h2 text-balance">
               Our Process
             </h2>
-            <p className="section-desc max-w-3xl">
+            <p className="section-desc max-w-3xl text-pretty">
               We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
             </p>
           </div>
