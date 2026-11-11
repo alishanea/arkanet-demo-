@@ -17,7 +17,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "Elixir Luxury Artistic Fragrances",
     titleLine1: "Elixir Luxury",
     titleLine2: "Artistic Fragrances",
-    description: "High-conversion bilingual Arabic & English Shopify Plus platform for Dubai's premier luxury perfume boutique, featuring localized UAE payments and sub-second edge speeds.",
+    description: "Bilingual Shopify Plus platform for Dubai's luxury perfume boutique, featuring localized UAE payments and sub-second speeds.",
     outerImage: "/assets/images/elixir-hero.png",
     innerImage: "/assets/images/elixir-showcase.png",
     detail: {
@@ -199,8 +199,8 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   </div>
 
                   {/* Body Description: Balanced size, 16 words, perfect 3-line flow */}
-                  <div className="min-h-[4.2rem] sm:min-h-[4.5rem] flex items-start pb-1">
-                    <p className="font-sans text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#202B61]/85 leading-[1.6] font-normal text-pretty">
+                  <div className="h-[4.2rem] sm:h-[4.5rem] flex items-start pb-1">
+                    <p className="font-sans text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#202B61]/85 leading-[1.6] font-normal text-pretty line-clamp-3">
                       {project.description}
                     </p>
                   </div>
