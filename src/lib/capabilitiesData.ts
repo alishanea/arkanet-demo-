@@ -2026,7 +2026,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 3.3 WhatsApp & Social Commerce Automation
   "whatsapp-social-commerce-automation": {
     slug: "whatsapp-social-commerce-automation",
-    bgImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=2400&auto=format&fit=crop",
     badge: "WHATSAPP & SOCIAL COMMERCE",
     title: "Sell and serve where your",
     highlightText: "customers already are",
@@ -2034,9 +2034,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "Catalogue browsing, orders & payments\ndirectly inside WhatsApp chat",
     section2Subtitle: "Turn social channels into sales engines: automated catalogue browsing, order placement, payment links, and broadcast re-engagement campaigns connected to live CRM.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=1200&auto=format&fit=crop",
+      left: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=1400&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
+      right: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1400&auto=format&fit=crop",
     },
     highlights: [
       {
@@ -2423,7 +2423,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.4 ERP & Business Management Systems
   "erp-business-management": {
     slug: "erp-business-management",
-    bgImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop",
     badge: "ERP & BUSINESS MANAGEMENT",
     title: "One unified system for",
     highlightText: "your entire operation",
@@ -2431,9 +2431,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "Configured around how your business\nactually runs",
     section2Subtitle: "We build bespoke ERP systems where needed and extend established platforms like Odoo or SAP, configuring software to fit your operational reality.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop",
+      left: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1400&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+      right: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop",
     },
     highlights: [
       {
@@ -2722,7 +2722,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.1 UI/UX & Graphic Design
   "graphic-design": {
     slug: "graphic-design",
-    bgImage: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2400&auto=format&fit=crop",
     badge: "UI/UX & GRAPHIC DESIGN",
     title: "Interfaces people understand",
     highlightText: "instantly, without a manual",
@@ -2730,9 +2730,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "User research, wireframes & developer-ready\ndesign systems",
     section2Subtitle: "We craft interfaces testable against real user goals: wireframes, interactive prototypes, WCAG accessibility reviews, and developer-ready component specs.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
+      left: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1400&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      right: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1400&auto=format&fit=crop",
     },
     highlights: [
       {
