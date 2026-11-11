@@ -209,7 +209,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       },
       {
         title: "Multilingual & RTL-ready builds",
-        description: "Full Arabic right-to-left layout support and multi-currency internationalization built directly into the site architecture.",
+        description: "Full bidirectional right-to-left (RTL) layout support and multi-currency internationalization built directly into the site architecture.",
         image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
@@ -1268,7 +1268,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         icon: "Globe",
         title: "Global Shopping",
-        desc: "Fluent multi-language shopping guidance across English, Arabic, and regional dialects for all shoppers.",
+        desc: "Fluent multi-language shopping guidance across global languages and regional dialects for all shoppers.",
       }
     ],
     featureRows: [
@@ -1292,7 +1292,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       },
       {
         title: "Multilingual shopping experiences",
-        description: "Bilingual shopping in Arabic and English, tailored for GCC e-commerce growth.",
+        description: "Multilingual shopping in global languages, tailored for international e-commerce growth.",
         image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
@@ -1533,11 +1533,11 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     slug: "multilingual-ai-solutions",
     bgImage: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2000&auto=format&fit=crop",
     badge: "MULTILINGUAL AI SOLUTIONS",
-    title: "Arabic, Malayalam, & beyond,",
+    title: "Global languages & beyond,",
     highlightText: "done with true cultural fluency",
-    subtitle: "Machine translation isn't localization. We build AI systems that work correctly in languages most vendors treat as an afterthought, with proper RTL layout and cultural adaptation.",
-    section2Headline: "Genuine regional fluency,\nnot literal translation",
-    section2Subtitle: "Built for GCC-facing businesses and Indian regional market platforms, with correct font pipelines, script rendering, and culturally adapted content generation.",
+    subtitle: "Machine translation isn't localization. We build enterprise AI systems and digital platforms that operate naturally across global languages, with bidirectional RTL support and localized cultural adaptation.",
+    section2Headline: "Genuine global fluency,\nnot literal translation",
+    section2Subtitle: "Built for international enterprises and cross-border platforms, with native font pipelines, multi-script rendering, and culturally adapted content generation.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
       center: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1600&auto=format&fit=crop",
@@ -1546,13 +1546,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlights: [
       {
         icon: "AlignRight",
-        title: "Bilingual Design",
-        desc: "Native Arabic right-to-left layout engineering, bidirectional font optimization, and cultural alignment for Gulf.",
+        title: "Bidirectional Design",
+        desc: "Native right-to-left (RTL) layout engineering, bidirectional font optimization, and localized UX for global markets.",
       },
       {
         icon: "Languages",
-        title: "Regional Support",
-        desc: "Comprehensive localization and natural language processing across Hindi, Malayalam, Tamil, and Asian tongues.",
+        title: "Global Language Support",
+        desc: "Comprehensive localization, character tokenization, and natural language processing across international and regional languages.",
       },
       {
         icon: "Bot",
@@ -1567,14 +1567,14 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     ],
     featureRows: [
       {
-        title: "Arabic RTL layout & bilingual web experiences",
-        description: "Proper right-to-left design systems ensuring Arabic interfaces look native and beautiful.",
+        title: "Bidirectional RTL layout & multilingual web experiences",
+        description: "Proper right-to-left design systems ensuring multilingual interfaces look native, modern, and beautiful.",
         image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
-        title: "Malayalam & Indian regional language NLP",
-        description: "Natural language processing tailored for regional Indian languages and multi-script input.",
+        title: "Global multilingual NLP & localized language models",
+        description: "Natural language processing tailored for global languages, localized dialects, and multi-script input.",
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
@@ -1733,7 +1733,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     highlightText: "the hold music",
     subtitle: "Callers hang up on queues. They don't hang up on answers. Intelligent voice systems that answer inbound calls, understand natural speech in multiple languages, and resolve requests.",
     section2Headline: "Replace rigid press-one menus\nwith real natural conversation",
-    section2Subtitle: "Our voice AI agents understand natural speech in English, Arabic, and Malayalam, resolving routine requests outright and routing complex calls with context already gathered.",
+    section2Subtitle: "Our voice AI agents understand natural speech across multiple global languages, resolving routine requests outright and routing complex calls with context already gathered.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
       center: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1600&auto=format&fit=crop",
@@ -1748,7 +1748,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         icon: "Mic",
         title: "Multilingual Voice",
-        desc: "Accurate voice synthesis and recognition in natural English, Arabic, and regional dialects with brand tone.",
+        desc: "Accurate voice synthesis and recognition in natural English and global languages with consistent brand tone.",
       },
       {
         icon: "GitFork",
@@ -1769,8 +1769,8 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "left",
       },
       {
-        title: "Multilingual voice AI in Arabic & Malayalam",
-        description: "Fluent voice interactions tailored for GCC healthcare, logistics, and regional service desks.",
+        title: "Multilingual voice AI across global languages",
+        description: "Fluent voice interactions tailored for international enterprises, healthcare, logistics, and multi-region service desks.",
         image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },

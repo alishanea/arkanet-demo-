@@ -91,7 +91,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: "conversational-ai-voicebots",
     title: "Enterprise Conversational AI & Voicebots",
     client: "Enterprise Customer Care & Telecom",
-    result: "Bilingual Arabic/English Neural Voice & WhatsApp Agents",
+    result: "Multilingual Global Neural Voice & WhatsApp Agents",
     image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop"
   },
   {
