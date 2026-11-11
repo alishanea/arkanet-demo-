@@ -62,10 +62,9 @@ const APPLICATIONS: ApplicationItem[] = [
     reviewsCount: "860 reviews",
     platformBadge: "Shopify Plus",
     previewImage:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://vesper.demo.arkanet.com",
@@ -103,11 +102,10 @@ const APPLICATIONS: ApplicationItem[] = [
     reviewsCount: "1.2k reviews",
     platformBadge: "iOS & Android",
     previewImage:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://careflow.demo.arkanet.com",
     description:
@@ -146,7 +144,6 @@ const APPLICATIONS: ApplicationItem[] = [
     previewImage:
       "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop",
     ],
@@ -185,10 +182,10 @@ const APPLICATIONS: ApplicationItem[] = [
     reviewsCount: "1.9k reviews",
     platformBadge: "Shopify Plus",
     previewImage:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://moda.demo.arkanet.com",
     description:
@@ -225,10 +222,10 @@ const APPLICATIONS: ApplicationItem[] = [
     reviewsCount: "5.8k reviews",
     platformBadge: "iOS & Android",
     previewImage:
-      "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://parkease.demo.arkanet.com",
     description:
@@ -267,8 +264,8 @@ const APPLICATIONS: ApplicationItem[] = [
     previewImage:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://stonecraft.demo.arkanet.com",
     description:
@@ -307,7 +304,7 @@ const APPLICATIONS: ApplicationItem[] = [
     previewImage:
       "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1608248597359-577770868f05?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://aura.demo.arkanet.com",
@@ -345,10 +342,10 @@ const APPLICATIONS: ApplicationItem[] = [
     reviewsCount: "640 reviews",
     platformBadge: "Web & Cloud",
     previewImage:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1000&auto=format&fit=crop",
     ],
     liveUrl: "https://neuraldesk.demo.arkanet.com",
     description:
@@ -434,44 +431,44 @@ export default function ApplicationPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#EDEDF0] text-[#18191C] selection:bg-[#18191C] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#EDEDF0] text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
       {/* ── CONTACT MODAL ── */}
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ══════════════════════════════════════════════════════════════════
-          1. EXACT STUDIO HERO (MATCHING USER REFERENCE DESIGN & PALETTE)
+          1. EXACT STUDIO HERO (MATCHING USER REFERENCE DESIGN & HOME THEME)
           ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-[#EDEDF0] border-b border-[#E2E4E8] text-left flex flex-col justify-center">
+      <section className="relative w-full min-h-[calc(100vh-1rem)] lg:min-h-screen pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-[#EDEDF0] border-b border-slate-200/90 text-left flex flex-col justify-center">
         <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 my-auto">
           
           {/* Main Hero Header Block: Two-Column Headline & Subtitle */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2 text-left">
             <div>
-              {/* Mission Pill from Reference */}
-              <span className="inline-block px-3 py-1 rounded-full bg-rose-50 border border-rose-200/80 text-rose-600 font-bold text-[10px] sm:text-[11px] tracking-widest uppercase mb-3">
-                MISSION
-              </span>
+              {/* Home Page Theme Kicker */}
+              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#202B61]/75 font-sans mb-3">
+                Architectural Production Releases
+              </p>
 
-              <p className="font-sans text-base sm:text-lg text-[#6B7280] font-medium mb-1">
+              <p className="font-sans text-base sm:text-lg text-[#202B61]/70 font-medium mb-1 text-balance">
                 Our focus is simple
               </p>
-              <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#18191C] tracking-tight leading-[1.05]">
+              <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.05] text-balance">
                 Design to convert
               </h1>
             </div>
 
             <div className="max-w-md lg:max-w-lg lg:pb-1">
-              <p className="font-sans text-sm sm:text-[15px] text-[#6B7280] leading-relaxed font-normal">
+              <p className="font-sans text-sm sm:text-[15px] text-[#202B61]/80 leading-relaxed font-normal text-pretty">
                 We promise to deliver beyond your expectations for your business, engineering production applications that scale revenue.
               </p>
             </div>
           </div>
 
-          {/* Elevated 3-Card Bento Proof Grid (Exact Reference Replica) */}
+          {/* Elevated 3-Card Bento Proof Grid (Exact Reference Replica Harmonized with Home Theme) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6 pt-2">
             
             {/* Card 1: Verified Releases & ROI */}
-            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#E2E4E8] p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[280px] sm:min-h-[300px]">
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(32,43,97,0.03)] min-h-[280px] sm:min-h-[300px]">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-1.5 overflow-hidden py-0.5">
                   <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#059669] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
@@ -480,69 +477,69 @@ export default function ApplicationPage() {
                   <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#d97706] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
                     VH
                   </div>
-                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#2563eb] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
+                  <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#202B61] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
                     KP
                   </div>
                   <div className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#e11d48] text-white font-bold text-[10px] sm:text-[11px] ring-2 ring-white">
                     MA
                   </div>
                 </div>
-                <span className="text-xs font-bold tracking-wider uppercase text-[#6B7280]">
+                <span className="text-xs font-bold tracking-wider uppercase text-[#202B61]/70">
                   50+ GLOBAL RELEASES
                 </span>
               </div>
 
               <div className="space-y-1">
-                <span className="font-sans text-xs text-[#6B7280] font-medium block">
+                <span className="font-sans text-xs text-[#202B61]/70 font-medium block text-balance">
                   Earn back on your investment within 30 days
                 </span>
-                <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#18191C] tracking-tight leading-none">
+                <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#202B61] tracking-tight leading-none text-balance">
                   90%
                 </h3>
-                <p className="font-sans text-xs sm:text-[13px] text-[#6B7280] pt-0.5">
+                <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/70 pt-0.5 text-balance">
                   Return on investment (ROI)
                 </p>
               </div>
             </div>
 
             {/* Card 2: Transaction Volume & Availability */}
-            <div className="lg:col-span-4 rounded-[28px] bg-white border border-[#E2E4E8] p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] min-h-[280px] sm:min-h-[300px]">
+            <div className="lg:col-span-4 rounded-[28px] bg-white border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(32,43,97,0.03)] min-h-[280px] sm:min-h-[300px]">
               <div>
-                <p className="font-sans text-xs sm:text-[13px] text-[#6B7280] font-normal leading-relaxed">
+                <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/75 font-normal leading-relaxed text-pretty">
                   Through custom-tailored funnel &amp; e-commerce systems
                 </p>
               </div>
 
               <div className="space-y-3">
                 <div className="space-y-1">
-                  <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#18191C] tracking-tight leading-none">
+                  <h3 className="font-heading font-black text-5xl sm:text-6xl text-[#202B61] tracking-tight leading-none text-balance">
                     $45M<span className="text-emerald-500 font-bold">+</span>
                   </h3>
-                  <p className="font-sans text-xs sm:text-[13px] text-[#6B7280]">
+                  <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/70">
                     Revenue generated
                   </p>
                 </div>
 
                 <div className="pt-1 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  <span className="font-sans text-xs text-[#6B7280] font-medium uppercase tracking-wider text-[11px]">
+                  <span className="font-sans text-xs text-[#202B61]/70 font-medium uppercase tracking-wider text-[11px]">
                     Available for Q2
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Card 3: Matte Charcoal Dark Client Trust Card (Exact Reference Match) */}
-            <div className="lg:col-span-4 rounded-[28px] bg-[#18191C] text-white p-7 sm:p-8 flex flex-col justify-between shadow-[0_20px_45px_rgba(0,0,0,0.22)] min-h-[280px] sm:min-h-[300px]">
+            {/* Card 3: Deep Navy Client Trust Card (Matching Home Theme Canonical #151E48) */}
+            <div className="lg:col-span-4 rounded-[28px] bg-[#151E48] border border-[#253272] text-white p-7 sm:p-8 flex flex-col justify-between shadow-[0_20px_45px_rgba(21,30,72,0.18)] min-h-[280px] sm:min-h-[300px]">
               <div>
-                <p className="font-sans text-xs sm:text-[13px] text-slate-300 font-normal leading-relaxed">
+                <p className="font-sans text-xs sm:text-[13px] text-white/80 font-normal leading-relaxed text-pretty">
                   We delivered 50+ projects worldwide, helping service-based companies secure more clients.
                 </p>
               </div>
 
               <div className="pt-6 flex items-end justify-between">
                 <div>
-                  <h4 className="font-heading font-black text-5xl sm:text-6xl text-white tracking-tight leading-none">
+                  <h4 className="font-heading font-black text-5xl sm:text-6xl text-white tracking-tight leading-none text-balance">
                     4.8<span className="text-white/45 text-2xl font-light">/5</span>
                   </h4>
                   <div className="flex items-center gap-1 text-amber-400 mt-2">
@@ -555,11 +552,11 @@ export default function ApplicationPage() {
                 </div>
 
                 <div className="text-right flex flex-col items-end">
-                  <svg viewBox="0 0 64 36" fill="none" className="w-16 h-9 stroke-[#6B7280] stroke-[2.5] mb-2">
+                  <svg viewBox="0 0 64 36" fill="none" className="w-16 h-9 stroke-[#38488f] stroke-[2.5] mb-2">
                     <path d="M4 28 L20 16 L32 24 L56 6" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M42 6 H56 V20" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block leading-tight">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/60 block leading-tight">
                     TRUSTED BY
                   </span>
                   <span className="text-[11px] font-bold uppercase tracking-wider text-white block leading-tight">
@@ -579,13 +576,16 @@ export default function ApplicationPage() {
           ══════════════════════════════════════════════════════════════════ */}
       <section
         id="showcase"
-        className="relative w-full pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-[#EDEDF0] border-b border-[#E2E4E8] scroll-mt-24 font-sans text-center overflow-hidden"
+        className="relative w-full pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 bg-[#EDEDF0] border-b border-slate-200/90 scroll-mt-24 font-sans text-center overflow-hidden"
       >
         <div className="max-w-[1440px] w-full mx-auto space-y-8 sm:space-y-10">
           
           {/* Top Centered Header Block */}
           <div className="max-w-xl mx-auto space-y-2 text-center">
-            <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-5xl text-[#18191C] tracking-tight leading-tight">
+            <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#202B61]/75 font-sans">
+              Featured Work In Motion
+            </p>
+            <h2 className="section-h2 text-center text-balance">
               What We&apos;ve Built
             </h2>
           </div>
@@ -593,11 +593,11 @@ export default function ApplicationPage() {
           {/* 3D Depth Card Carousel Stage (Expansive, filling width without empty voids) */}
           <div className="relative w-full h-[540px] sm:h-[480px] md:h-[440px] lg:h-[460px] flex items-center justify-center">
             
-            {/* Prev / Next Floating Circular Arrows */}
+            {/* Prev / Next Floating Circular Arrows (Home Navy Theme) */}
             <button
               type="button"
               onClick={handlePrevDeck}
-              className="absolute left-2 sm:left-6 md:left-12 lg:left-16 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+              className="absolute left-2 sm:left-6 md:left-12 lg:left-16 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#202B61] text-white hover:bg-[#151E48] flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
               aria-label="Previous case study"
             >
               <ChevronLeft className="w-5 h-5 stroke-[2.2]" />
@@ -606,7 +606,7 @@ export default function ApplicationPage() {
             <button
               type="button"
               onClick={handleNextDeck}
-              className="absolute right-2 sm:right-6 md:right-12 lg:right-16 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#18191C] text-white hover:bg-black flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+              className="absolute right-2 sm:right-6 md:right-12 lg:right-16 top-1/2 -translate-y-1/2 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#202B61] text-white hover:bg-[#151E48] flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
               aria-label="Next case study"
             >
               <ChevronRight className="w-5 h-5 stroke-[2.2]" />
@@ -647,8 +647,8 @@ export default function ApplicationPage() {
                   }`}
                 >
                   <div
-                    className={`relative rounded-[28px] sm:rounded-[36px] bg-white border border-[#E2E4E8] p-5 sm:p-7 lg:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.06)] flex flex-col md:flex-row items-center gap-6 sm:gap-8 text-left transition-all ${
-                      isCenter ? "ring-1 ring-black/5" : ""
+                    className={`relative rounded-[28px] sm:rounded-[36px] bg-white border border-slate-200/90 p-5 sm:p-7 lg:p-8 shadow-[0_20px_60px_rgba(32,43,97,0.06)] flex flex-col md:flex-row items-center gap-6 sm:gap-8 text-left transition-all ${
+                      isCenter ? "ring-1 ring-[#202B61]/10" : ""
                     }`}
                   >
                     {/* Left Side: Generous Rounded Image Canvas */}
@@ -658,7 +658,7 @@ export default function ApplicationPage() {
                       onClick={() => {
                         if (isCenter) handleOpenAppModal(slide);
                       }}
-                      className="relative aspect-[4/3] md:aspect-square w-full md:w-[300px] lg:w-[360px] xl:w-[400px] shrink-0 rounded-[22px] sm:rounded-[26px] overflow-hidden bg-[#141518] border border-[#E5E7EB] cursor-pointer group shadow-xs"
+                      className="relative aspect-[4/3] md:aspect-square w-full md:w-[300px] lg:w-[360px] xl:w-[400px] shrink-0 rounded-[22px] sm:rounded-[26px] overflow-hidden bg-slate-900 border border-slate-200/80 cursor-pointer group shadow-xs"
                     >
                       <Image
                         src={slide.previewImage}
@@ -675,17 +675,17 @@ export default function ApplicationPage() {
                       
                       {/* Clean Client Name */}
                       <div>
-                        <span className="font-heading font-extrabold text-xs sm:text-sm tracking-wider uppercase text-[#18191C]">
+                        <span className="font-heading font-extrabold text-xs sm:text-sm tracking-wider uppercase text-[#202B61]/70">
                           {slide.name.split(" ")[0]} STUDIO
                         </span>
                       </div>
 
                       {/* Title & Description */}
                       <div>
-                        <h3 className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-[#18191C] tracking-tight leading-snug">
+                        <h3 className="font-heading font-black text-xl sm:text-2xl lg:text-3xl text-[#202B61] tracking-tight leading-snug text-balance">
                           {slide.name}
                         </h3>
-                        <p className="font-sans text-xs sm:text-sm text-[#6B7280] leading-relaxed line-clamp-2 sm:line-clamp-3 mt-1.5">
+                        <p className="font-sans text-xs sm:text-sm text-[#202B61]/80 leading-relaxed line-clamp-2 sm:line-clamp-3 mt-1.5 text-pretty">
                           {slide.description}
                         </p>
                       </div>
@@ -695,7 +695,7 @@ export default function ApplicationPage() {
                         <button
                           type="button"
                           onClick={() => handleOpenAppModal(slide)}
-                          className="inline-flex items-center gap-1.5 font-sans font-bold text-xs sm:text-sm text-[#18191C] hover:opacity-75 transition-opacity cursor-pointer group"
+                          className="inline-flex items-center gap-1.5 font-sans font-bold text-xs sm:text-sm text-[#202B61] hover:text-[#202B61]/75 transition-colors cursor-pointer group"
                         >
                           <span>Read Case Study</span>
                           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -705,26 +705,26 @@ export default function ApplicationPage() {
                       {/* 3-Column Metrics */}
                       <div className="grid grid-cols-3 gap-4 pt-4 mt-2 border-t border-slate-100">
                         <div>
-                          <div className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#18191C] tracking-tight leading-none">
+                          <div className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#202B61] tracking-tight leading-none text-balance">
                             {slide.metrics.stat1.value}
                           </div>
-                          <div className="font-sans text-[11px] sm:text-xs text-[#6B7280] mt-1.5 leading-tight line-clamp-1">
+                          <div className="font-sans text-[11px] sm:text-xs text-[#202B61]/70 mt-1.5 leading-tight line-clamp-1">
                             {slide.metrics.stat1.label}
                           </div>
                         </div>
                         <div>
-                          <div className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#18191C] tracking-tight leading-none">
+                          <div className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#202B61] tracking-tight leading-none text-balance">
                             {slide.metrics.stat2.value}
                           </div>
-                          <div className="font-sans text-[11px] sm:text-xs text-[#6B7280] mt-1.5 leading-tight line-clamp-1">
+                          <div className="font-sans text-[11px] sm:text-xs text-[#202B61]/70 mt-1.5 leading-tight line-clamp-1">
                             {slide.metrics.stat2.label}
                           </div>
                         </div>
                         <div>
-                          <div className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#18191C] tracking-tight leading-none">
+                          <div className="font-heading font-black text-lg sm:text-xl lg:text-2xl text-[#202B61] tracking-tight leading-none text-balance">
                             {slide.metrics.stat3.value}
                           </div>
-                          <div className="font-sans text-[11px] sm:text-xs text-[#6B7280] mt-1.5 leading-tight line-clamp-1">
+                          <div className="font-sans text-[11px] sm:text-xs text-[#202B61]/70 mt-1.5 leading-tight line-clamp-1">
                             {slide.metrics.stat3.label}
                           </div>
                         </div>
@@ -753,7 +753,7 @@ export default function ApplicationPage() {
                     onClick={() => setActiveDeckIdx(i)}
                     className={`transition-all duration-200 rounded-full cursor-pointer ${
                       isActive
-                        ? "w-7 h-1.5 bg-[#18191C]"
+                        ? "w-7 h-1.5 bg-[#202B61]"
                         : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}
@@ -762,11 +762,11 @@ export default function ApplicationPage() {
               })}
             </div>
 
-            {/* Clean Pill Button */}
+            {/* Clean Pill Button (Home Navy Theme) */}
             <div>
               <a
                 href="#directory"
-                className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-[#18191C] text-white hover:bg-black font-sans font-semibold text-xs sm:text-sm tracking-tight shadow-sm hover:shadow-md active:scale-95 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-[#202B61] text-white hover:bg-[#151E48] font-sans font-semibold text-xs sm:text-sm tracking-tight shadow-sm hover:shadow-md active:scale-95 transition-all cursor-pointer"
               >
                 Explore all Case Studies
               </a>
@@ -778,18 +778,18 @@ export default function ApplicationPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════
-          3. FULL APP STORE & SHOPIFY DIRECTORY (MATCHING REFERENCE DESIGN)
+          3. FULL APP STORE & SHOPIFY DIRECTORY (MATCHING HOME THEME)
           ══════════════════════════════════════════════════════════════════ */}
-      <section id="directory" className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#EDEDF0] border-b border-[#E2E4E8] scroll-mt-24">
+      <section id="directory" className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 text-left font-sans bg-[#EDEDF0] border-b border-slate-200/90 scroll-mt-24">
         <div className="max-w-[1400px] mx-auto space-y-8">
 
           {/* Directory Header & Category Filter Tabs */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-[#E2E4E8]">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-slate-200/90">
             <div className="space-y-1">
-              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#18191C] tracking-tight">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] tracking-tight text-balance">
                 All Applications &amp; Storefronts
               </h2>
-              <p className="font-sans text-xs sm:text-sm text-[#6B7280]">
+              <p className="font-sans text-xs sm:text-sm text-[#202B61]/70 text-pretty">
                 Browse our complete catalog of verified mobile releases and e-commerce platforms.
               </p>
             </div>
@@ -805,8 +805,8 @@ export default function ApplicationPage() {
                     onClick={() => setSelectedCategory(category)}
                     className={`px-4 py-2 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
                       isActive
-                        ? "bg-[#18191C] text-white shadow-xs"
-                        : "bg-white text-[#6B7280] hover:text-[#18191C] hover:bg-slate-50 border border-[#E2E4E8]"
+                        ? "bg-[#202B61] text-white shadow-xs"
+                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-50 border border-slate-200/90"
                     }`}
                   >
                     {category}
@@ -831,11 +831,11 @@ export default function ApplicationPage() {
                       handleOpenAppModal(app);
                     }
                   }}
-                  className="group rounded-[24px] bg-white border border-[#E2E4E8] shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-5 sm:p-6 hover:border-[#18191C]/40 hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#18191C]"
+                  className="group rounded-[24px] bg-white border border-slate-200/90 shadow-[0_4px_20px_rgba(32,43,97,0.03)] p-5 sm:p-6 hover:border-[#202B61]/40 hover:shadow-[0_16px_40px_rgba(32,43,97,0.08)] hover:-translate-y-1 cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
                 >
                   <div className="space-y-4">
                     {/* Clean Preview Image */}
-                    <div className="relative aspect-[16/10] w-full rounded-[16px] overflow-hidden bg-slate-100 border border-[#E2E4E8]/80">
+                    <div className="relative aspect-[16/10] w-full rounded-[16px] overflow-hidden bg-slate-100 border border-slate-200/80">
                       <Image
                         src={app.previewImage}
                         alt={app.name}
@@ -847,13 +847,13 @@ export default function ApplicationPage() {
 
                     {/* Metadata & Title */}
                     <div className="space-y-1.5 pt-1">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#6B7280] block">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]/70 block">
                         {app.category} • {app.subCategory}
                       </span>
-                      <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#18191C] leading-snug group-hover:text-black transition-colors">
+                      <h3 className="font-heading font-extrabold text-lg sm:text-xl text-[#202B61] leading-snug group-hover:text-[#202B61]/80 transition-colors text-balance">
                         {app.name}
                       </h3>
-                      <p className="font-sans text-xs sm:text-[13px] text-[#6B7280] leading-relaxed line-clamp-2">
+                      <p className="font-sans text-xs sm:text-[13px] text-[#202B61]/80 leading-relaxed line-clamp-2 text-pretty">
                         {app.tagline}
                       </p>
                     </div>
@@ -861,10 +861,10 @@ export default function ApplicationPage() {
 
                   {/* Clean Bottom Action Row */}
                   <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-                    <span className="text-[#6B7280] font-semibold text-[11px]">
+                    <span className="text-[#202B61]/70 font-semibold text-[11px]">
                       {app.platformBadge}
                     </span>
-                    <span className="inline-flex items-center gap-1 font-sans font-bold text-xs text-[#18191C] group-hover:translate-x-0.5 transition-transform">
+                    <span className="inline-flex items-center gap-1 font-sans font-bold text-xs text-[#202B61] group-hover:translate-x-0.5 transition-transform">
                       <span>View Details</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
@@ -889,14 +889,14 @@ export default function ApplicationPage() {
           onClick={() => setSelectedApp(null)}
         >
           <div
-            className="relative w-full max-w-2xl bg-white rounded-[24px] border border-[#E2E4E8] p-6 sm:p-8 space-y-6 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
+            className="relative w-full max-w-2xl bg-white rounded-[24px] border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               type="button"
               onClick={() => setSelectedApp(null)}
-              className="absolute top-5 right-5 p-2 text-slate-400 hover:text-[#18191C] transition-colors cursor-pointer rounded-full hover:bg-slate-100"
+              className="absolute top-5 right-5 p-2 text-slate-400 hover:text-[#202B61] transition-colors cursor-pointer rounded-full hover:bg-slate-100"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -905,13 +905,13 @@ export default function ApplicationPage() {
             {/* Modal Header: Clean Title & Primary Action */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pr-8">
               <div className="space-y-1 min-w-0">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#6B7280] block">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#202B61]/70 block">
                   {selectedApp.category} • {selectedApp.subCategory}
                 </span>
-                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#18191C] leading-tight">
+                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#202B61] leading-tight text-balance">
                   {selectedApp.name}
                 </h3>
-                <p className="font-sans text-xs text-[#6B7280]">
+                <p className="font-sans text-xs text-[#202B61]/70">
                   {selectedApp.client} • Released {selectedApp.year}
                 </p>
               </div>
@@ -923,7 +923,7 @@ export default function ApplicationPage() {
                   setSelectedApp(null);
                   openContact();
                 }}
-                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#18191C] text-white font-sans font-bold text-xs sm:text-sm hover:bg-black transition-all cursor-pointer shadow-xs active:scale-95"
+                className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#151E48] transition-all cursor-pointer shadow-xs active:scale-95"
               >
                 <span>Request Custom Build</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -931,25 +931,25 @@ export default function ApplicationPage() {
             </div>
 
             {/* App Store Key Metrics Bar */}
-            <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-xl bg-slate-50 border border-[#E2E4E8] text-center text-xs">
+            <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-xl bg-slate-50 border border-slate-200/90 text-center text-xs">
               <div>
-                <span className="block text-[10.5px] text-[#6B7280] uppercase tracking-wider font-semibold">
+                <span className="block text-[10.5px] text-[#202B61]/70 uppercase tracking-wider font-semibold">
                   Customer Rating
                 </span>
-                <span className="font-bold text-[#18191C] text-sm flex items-center justify-center gap-1 mt-0.5">
+                <span className="font-bold text-[#202B61] text-sm flex items-center justify-center gap-1 mt-0.5">
                   <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-500" />
                   {selectedApp.rating}
                 </span>
-                <span className="block text-[10px] text-[#6B7280] mt-0.5">
+                <span className="block text-[10px] text-[#202B61]/70 mt-0.5">
                   {selectedApp.reviewsCount}
                 </span>
               </div>
 
-              <div className="border-x border-[#E2E4E8]">
-                <span className="block text-[10.5px] text-[#6B7280] uppercase tracking-wider font-semibold">
+              <div className="border-x border-slate-200/90">
+                <span className="block text-[10.5px] text-[#202B61]/70 uppercase tracking-wider font-semibold">
                   Platform
                 </span>
-                <span className="font-bold text-[#18191C] text-sm block mt-0.5 truncate px-1">
+                <span className="font-bold text-[#202B61] text-sm block mt-0.5 truncate px-1">
                   {selectedApp.platformBadge}
                 </span>
                 <span className="block text-[10px] text-emerald-600 font-semibold mt-0.5">
@@ -958,13 +958,13 @@ export default function ApplicationPage() {
               </div>
 
               <div>
-                <span className="block text-[10.5px] text-[#6B7280] uppercase tracking-wider font-semibold">
+                <span className="block text-[10.5px] text-[#202B61]/70 uppercase tracking-wider font-semibold">
                   Architecture
                 </span>
-                <span className="font-bold text-[#18191C] text-sm block mt-0.5 truncate px-1">
+                <span className="font-bold text-[#202B61] text-sm block mt-0.5 truncate px-1">
                   {selectedApp.category}
                 </span>
-                <span className="block text-[10px] text-[#6B7280] mt-0.5">
+                <span className="block text-[10px] text-[#202B61]/70 mt-0.5">
                   Arkanet Verified
                 </span>
               </div>
@@ -972,7 +972,7 @@ export default function ApplicationPage() {
 
             {/* Download & Access Options */}
             <div className="space-y-2 pt-1">
-              <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#6B7280] block">
+              <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70 block">
                 Download &amp; Store Access Options
               </span>
 
@@ -983,26 +983,26 @@ export default function ApplicationPage() {
                     setSelectedApp(null);
                     openContact();
                   }}
-                  className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-[#E2E4E8] hover:border-[#18191C]/40 hover:bg-slate-50 transition-all cursor-pointer group"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
                 >
                   <div className="flex items-center gap-2.5">
                     {selectedApp.downloads.primaryType === "apple" ? (
-                      <AppleLogo className="w-5 h-5 text-[#18191C]" />
+                      <AppleLogo className="w-5 h-5 text-[#202B61]" />
                     ) : selectedApp.downloads.primaryType === "shopify" ? (
                       <ShopifyLogo className="w-5 h-5 text-emerald-600" />
                     ) : (
-                      <Download className="w-5 h-5 text-[#18191C]" />
+                      <Download className="w-5 h-5 text-[#202B61]" />
                     )}
                     <div className="text-left">
-                      <span className="block font-sans font-bold text-xs text-[#18191C]">
+                      <span className="block font-sans font-bold text-xs text-[#202B61]">
                         {selectedApp.downloads.primaryLabel}
                       </span>
-                      <span className="block font-sans text-[10.5px] text-[#6B7280]">
+                      <span className="block font-sans text-[10.5px] text-[#202B61]/70">
                         Official Storefront Link
                       </span>
                     </div>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#18191C] transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-[#202B61]/70 group-hover:text-[#202B61] transition-colors" />
                 </button>
 
                 {selectedApp.downloads.secondaryLabel && (
@@ -1012,24 +1012,24 @@ export default function ApplicationPage() {
                       setSelectedApp(null);
                       openContact();
                     }}
-                    className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-[#E2E4E8] hover:border-[#18191C]/40 hover:bg-slate-50 transition-all cursor-pointer group"
+                    className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
                   >
                     <div className="flex items-center gap-2.5">
                       {selectedApp.downloads.secondaryType === "android" ? (
-                        <PlayLogo className="w-5 h-5 text-[#18191C]" />
+                        <PlayLogo className="w-5 h-5 text-[#202B61]" />
                       ) : (
-                        <ExternalLink className="w-4.5 h-4.5 text-[#18191C]" />
+                        <ExternalLink className="w-4.5 h-4.5 text-[#202B61]" />
                       )}
                       <div className="text-left">
-                        <span className="block font-sans font-bold text-xs text-[#18191C]">
+                        <span className="block font-sans font-bold text-xs text-[#202B61]">
                           {selectedApp.downloads.secondaryLabel}
                         </span>
-                        <span className="block font-sans text-[10.5px] text-[#6B7280]">
+                        <span className="block font-sans text-[10.5px] text-[#202B61]/70">
                           Direct Access &amp; Demo
                         </span>
                       </div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#18191C] transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 text-[#202B61]/70 group-hover:text-[#202B61] transition-colors" />
                   </button>
                 )}
               </div>
@@ -1037,12 +1037,12 @@ export default function ApplicationPage() {
 
             {/* Screenshots Gallery with Thumbnails */}
             <div className="space-y-2 pt-1">
-              <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#6B7280] block">
+              <span className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70 block">
                 Interface Screenshots Preview
               </span>
 
               {/* Main Screenshot Preview */}
-              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-100 border border-[#E2E4E8]">
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/90">
                 <Image
                   src={selectedApp.screenshots[activeScreenshotIdx] || selectedApp.previewImage}
                   alt={selectedApp.name}
@@ -1061,8 +1061,8 @@ export default function ApplicationPage() {
                       onClick={() => setActiveScreenshotIdx(idx)}
                       className={`relative w-20 h-12 rounded-lg overflow-hidden border cursor-pointer transition-all ${
                         activeScreenshotIdx === idx
-                          ? "border-[#18191C] ring-2 ring-[#18191C]/20 scale-102"
-                          : "border-[#E2E4E8] opacity-60 hover:opacity-100"
+                          ? "border-[#202B61] ring-2 ring-[#202B61]/20 scale-102"
+                          : "border-slate-200/90 opacity-60 hover:opacity-100"
                       }`}
                     >
                       <Image src={img} alt={`Preview ${idx + 1}`} fill className="object-cover" />
@@ -1074,22 +1074,22 @@ export default function ApplicationPage() {
 
             {/* About The Application Description */}
             <div className="space-y-1.5 pt-1">
-              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#6B7280]">
+              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
                 About The Application
               </h4>
-              <p className="font-sans text-xs sm:text-sm text-slate-700 leading-relaxed">
+              <p className="font-sans text-xs sm:text-sm text-[#202B61]/80 leading-relaxed text-pretty">
                 {selectedApp.description}
               </p>
             </div>
 
             {/* Key Deliverables & Architectural Features */}
             <div className="space-y-2 pt-1 border-t border-slate-100">
-              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#6B7280]">
+              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
                 Key Features &amp; Deliverables
               </h4>
               <div className="space-y-1.5">
                 {selectedApp.highlights.map((h, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-700">
+                  <div key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-[#202B61]/85">
                     <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                     <span className="leading-snug">{h}</span>
                   </div>
@@ -1099,14 +1099,14 @@ export default function ApplicationPage() {
 
             {/* Tech Stack Chips */}
             <div className="space-y-1.5 pt-1 border-t border-slate-100">
-              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#6B7280]">
+              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#202B61]/70">
                 Engineered With
               </h4>
               <div className="flex flex-wrap items-center gap-1.5">
                 {selectedApp.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="font-sans text-[11px] font-medium text-[#18191C] bg-[#EDEDF0] border border-[#E2E4E8] px-2.5 py-0.5 rounded-[4px]"
+                    className="font-sans text-[11px] font-medium text-[#202B61] bg-white border border-slate-200/90 px-2.5 py-0.5 rounded-[4px]"
                   >
                     {tech}
                   </span>
@@ -1116,7 +1116,7 @@ export default function ApplicationPage() {
 
             {/* Modal Bottom Inquire */}
             <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-              <span className="font-sans text-[11px] text-[#6B7280]">
+              <span className="font-sans text-[11px] text-[#202B61]/70">
                 Compatibility: {selectedApp.platforms}
               </span>
               
@@ -1126,7 +1126,7 @@ export default function ApplicationPage() {
                   setSelectedApp(null);
                   openContact();
                 }}
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#18191C] text-white font-sans font-bold text-xs hover:bg-black transition-all cursor-pointer shadow-xs ml-auto"
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#151E48] transition-all cursor-pointer shadow-xs ml-auto"
               >
                 <span>Request Custom Build &amp; Source</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -1143,8 +1143,8 @@ export default function ApplicationPage() {
       {/* ── 6. CLOSING CTA ── */}
       <AboutCTA onOpenBooking={openContact} bgColor="bg-[#EDEDF0]" />
 
-      {/* ── 7. FOOTER ── */}
-      <Footer onOpenBooking={openContact} bgColor="bg-[#18191C]" />
+      {/* ── 7. FOOTER (UNIFIED WITH CANONICAL bg-[#151E48]) ── */}
+      <Footer onOpenBooking={openContact} />
     </main>
   );
 }

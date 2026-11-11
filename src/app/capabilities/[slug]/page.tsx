@@ -503,7 +503,7 @@ export default function CapabilityDetailPage() {
       <AboutCTA onOpenBooking={openContact} />
 
       {/* ── SECTION 7: FOOTER ── */}
-      <Footer onOpenBooking={openContact} bgColor="bg-[#eaeaea]" />
+      <Footer onOpenBooking={openContact} />
     </main>
   );
 }
