@@ -84,24 +84,47 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           </Link>
         </div>
 
-        {/* ── 2. 4 CLEAN STATIC CARDS (RADIUS LESS THAN 5, HOVER EFFECT ON ARROW ONLY) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 w-full">
-          {CAPABILITY_CARDS.map((card) => {
+        {/* ── 2. 4 OPEN EDITORIAL CAPABILITY COLUMNS (NO BOXES, DIVIDING LINE IN BETWEEN) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full pt-4">
+          {CAPABILITY_CARDS.map((card, idx) => {
             const Icon = card.icon;
+
+            // Responsive padding: flush on outer edges, comfortable spacing inward
+            let paddingClasses = "py-8 lg:py-2 px-0 ";
+            if (idx === 0) {
+              paddingClasses += "md:pl-0 md:pr-8 lg:pl-0 lg:pr-8";
+            } else if (idx === 1) {
+              paddingClasses += "md:pl-8 md:pr-0 lg:px-8";
+            } else if (idx === 2) {
+              paddingClasses += "md:pl-0 md:pr-8 lg:px-8";
+            } else if (idx === 3) {
+              paddingClasses += "md:pl-8 md:pr-0 lg:pl-8 lg:pr-0";
+            }
+
+            // Clean dividing line in between each column
+            let borderClasses = "";
+            if (idx !== 0) borderClasses += "border-t border-slate-200 ";
+            if (idx % 2 === 1) borderClasses += "md:border-l ";
+            if (idx >= 2) borderClasses += "md:border-t ";
+            else borderClasses += "md:border-t-0 ";
+            borderClasses += "lg:border-t-0 ";
+            if (idx !== 0) borderClasses += "lg:border-l ";
+            borderClasses += "border-slate-200";
+
             return (
               <Link
                 key={card.id}
                 href={card.href}
-                className="group relative flex flex-col justify-between p-7 sm:p-8 rounded-[4px] bg-white border border-slate-200/90 shadow-[0_2px_8px_rgba(32,43,97,0.03)] cursor-pointer overflow-hidden"
+                className={`group flex flex-col justify-between cursor-pointer transition-colors ${paddingClasses} ${borderClasses}`}
               >
                 <div>
                   {/* Clean Icon Container (Radius less than 5) */}
-                  <div className="w-12 h-12 rounded-[4px] bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] shadow-2xs mb-6">
-                    <Icon className="w-6 h-6 stroke-[1.5]" />
+                  <div className="w-11 h-11 rounded-[4px] bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61] transition-colors duration-200 mb-6">
+                    <Icon className="w-5 h-5 stroke-[1.6]" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading font-bold text-lg sm:text-[19px] text-[#202B61] tracking-tight leading-snug mb-3">
+                  <h3 className="font-heading font-bold text-lg sm:text-[19px] text-[#202B61] tracking-tight leading-snug mb-3 group-hover:text-[#202B61] transition-colors">
                     {card.title}
                   </h3>
 
@@ -111,12 +134,12 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                   </p>
                 </div>
 
-                {/* Bottom Action: Hover effect on arrow only (slide right, no fill) */}
-                <div className="flex items-center justify-between pt-5 mt-6 border-t border-slate-100">
-                  <span className="text-xs sm:text-[13px] font-semibold text-[#202B61]">
+                {/* Bottom Action: Clean link with animated arrow */}
+                <div className="flex items-center justify-between pt-6 mt-8 border-t border-slate-100">
+                  <span className="text-xs sm:text-[13px] font-semibold text-[#202B61] group-hover:text-[#202B61] transition-colors">
                     Learn more
                   </span>
-                  <div className="w-8 h-8 rounded-full border border-slate-200/90 flex items-center justify-center text-[#202B61] group-hover:translate-x-1.5 transition-transform duration-200">
+                  <div className="w-8 h-8 rounded-full border border-slate-200/90 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61] group-hover:translate-x-1 transition-all duration-200">
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
                   </div>
                 </div>
