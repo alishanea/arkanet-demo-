@@ -204,10 +204,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
         )}
       </AnimatePresence>
 
-      {/* ── SLEEK, PREMIUM FLOATING PILL NAVBAR (ORGANIC, NOT BOXY) ── */}
+      {/* ── SLEEK, PREMIUM FLOATING PILL NAVBAR (ORGANIC, NOT BOXY, NO DROP SHADOW) ── */}
       <header className={`fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto w-full pointer-events-none transition-all duration-300 ease-in-out ${isHeaderVisible || mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-28 opacity-0 pointer-events-none"}`}>
         <div
-          className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-full px-4 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between gap-4 w-full"
+          className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-none rounded-full px-4 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between gap-4 w-full"
         >
           {/* 1. BRAND LOGO & NAME (LEFT) */}
           <div className="flex items-center flex-1">
@@ -235,7 +235,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               onClick={handleHomeClick}
               className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
                 isHomeActive && activeMenu !== "services"
-                  ? "bg-[#202B61] text-white shadow-xs"
+                  ? "bg-[#202B61] text-white shadow-none"
                   : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
               }`}
             >
@@ -249,7 +249,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 onClick={toggleCapabilities}
                 className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none transition-all duration-200 ease-out ${
                   activeMenu === "services" || isCapabilitiesActive
-                    ? "bg-[#202B61] text-white shadow-xs"
+                    ? "bg-[#202B61] text-white shadow-none"
                     : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
                 }`}
               >
@@ -268,7 +268,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               onClick={handleNavClick}
               className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
                 isWorkActive && activeMenu !== "services"
-                  ? "bg-[#202B61] text-white shadow-xs"
+                  ? "bg-[#202B61] text-white shadow-none"
                   : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
               }`}
             >
@@ -281,7 +281,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               onClick={handleNavClick}
               className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
                 isAboutActive && activeMenu !== "services"
-                  ? "bg-[#202B61] text-white shadow-xs"
+                  ? "bg-[#202B61] text-white shadow-none"
                   : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
               }`}
             >
@@ -294,7 +294,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               onClick={handleNavClick}
               className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
                 isContactActive && activeMenu !== "services"
-                  ? "bg-[#202B61] text-white shadow-xs"
+                  ? "bg-[#202B61] text-white shadow-none"
                   : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
               }`}
             >
@@ -307,13 +307,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             {/* Prostack Button (Reverted full color to clean white theme, using its own red logo & NEW ribbon) */}
             <div className="relative hidden sm:inline-flex items-center">
               {/* Ribbon telling "NEW" */}
-              <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-[#D61F28] text-white text-[8.5px] font-black uppercase tracking-wider shadow-xs flex items-center gap-0.5 pointer-events-none select-none">
+              <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-[#D61F28] text-white text-[8.5px] font-black uppercase tracking-wider shadow-none flex items-center gap-0.5 pointer-events-none select-none">
                 NEW
               </span>
               <Link
                 href="/prostack"
                 onClick={handleNavClick}
-                className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 cursor-pointer select-none border shadow-2xs hover:shadow-xs active:scale-95 group ${
+                className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 cursor-pointer select-none border shadow-none active:scale-95 group ${
                   isProstackActive
                     ? "bg-[#202B61] text-white border-[#202B61]"
                     : "bg-white text-[#202B61] border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50"
@@ -331,7 +331,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             <Link
               href="/application"
               onClick={handleNavClick}
-              className={`hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 shadow-xs hover:shadow-sm active:scale-95 cursor-pointer select-none ${
+              className={`hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 shadow-none active:scale-95 cursor-pointer select-none ${
                 isApplicationActive
                   ? "bg-[#202B61] text-white ring-2 ring-[#202B61] ring-offset-2"
                   : "bg-[#202B61] hover:bg-[#202B61]/90 text-white"
@@ -391,7 +391,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             transition={{ duration: 0.2 }}
             className="fixed inset-x-0 top-[76px] z-40 px-4 md:hidden pointer-events-auto"
           >
-            <div className="bg-white/98 backdrop-blur-2xl border border-slate-200 shadow-2xl rounded-3xl p-5 space-y-4 max-h-[calc(100vh-100px)] overflow-y-auto">
+            <div className="bg-white/98 backdrop-blur-2xl border border-slate-200 shadow-none rounded-3xl p-5 space-y-4 max-h-[calc(100vh-100px)] overflow-y-auto">
               <div className="flex flex-col space-y-1">
                 <Link
                   href="/"
