@@ -304,9 +304,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
           {/* 3. RIGHT SIDE: PROSTACK (WITH OWN-COLOR LOGO & NEW RIBBON) + APPLICATIONS BUTTON + MOBILE TOGGLE */}
           <div className="flex items-center justify-end flex-1 gap-2 sm:gap-2.5">
-            {/* Prostack Button with NEW Ribbon */}
+            {/* Prostack Button with Modern Unfilled NEW Ribbon */}
             <div className="relative hidden sm:inline-flex items-center">
-              <span className="absolute -top-2.5 -right-1 z-10 px-1.5 py-0.5 rounded-full bg-[#D61F28] text-white text-[8px] font-black uppercase tracking-wider shadow-xs flex items-center gap-0.5 pointer-events-none select-none">
+              <span className="absolute -top-1.5 -right-1 z-10 inline-flex items-center px-1.5 py-[1.5px] rounded-full border border-[#D61F28] bg-white text-[#D61F28] text-[7.5px] font-bold uppercase tracking-wider leading-none shadow-2xs pointer-events-none select-none">
                 NEW
               </span>
               <Link
@@ -452,7 +452,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                       className="w-5 h-5 object-contain"
                     />
                     <span>Prostack Platform</span>
-                    <span className="px-1.5 py-0.5 rounded-full bg-[#D61F28] text-white text-[8px] font-black uppercase tracking-wider">
+                    <span className="inline-flex items-center px-1.5 py-[1.5px] rounded-full border border-[#D61F28] bg-white text-[#D61F28] text-[7.5px] font-bold uppercase tracking-wider leading-none shadow-2xs">
                       NEW
                     </span>
                   </div>
