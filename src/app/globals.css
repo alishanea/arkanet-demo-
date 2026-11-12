@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 :root {
   --font-heading: var(--font-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-prostack: 'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --brand-navy: #202B61;
 }
 
@@ -219,6 +220,23 @@
     font-variant-ligatures: none !important;
     font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0 !important;
   }
+
+  .font-prostack,
+  .font-prostack * {
+    font-family: var(--font-prostack), 'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  }
+}
+
+/* Menu bar and navigation typography using Prostack font stack */
+.menu-bar,
+.menu-bar nav,
+.menu-bar nav a,
+.menu-bar nav button,
+.menu-bar button,
+.menu-bar a,
+.mobile-menu-drawer,
+.mobile-menu-drawer * {
+  font-family: var(--font-prostack), 'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
 }
 
 /* Hide scrollbar utility */

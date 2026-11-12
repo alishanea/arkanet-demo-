@@ -153,7 +153,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
     items: { label: string; href: string; icon: React.ElementType; color: string; glow: string }[]
   ) => (
     <div className="space-y-0.5">
-      <div className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#202B61]/50 mb-2 sm:mb-3.5 px-2.5">
+      <div className="font-prostack text-[11px] font-bold tracking-[0.16em] uppercase text-[#202B61]/50 mb-2 sm:mb-3.5 px-2.5">
         {title}
       </div>
       {items.map(({ label, href, icon: Icon, color, glow }) => (
@@ -161,7 +161,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           key={label}
           href={href}
           onClick={handleNavClick}
-          className="group relative flex items-center gap-3 px-2 sm:px-2.5 py-2 rounded-xl overflow-hidden transition-colors duration-300 hover:bg-[#202B61]/5"
+          className="group relative flex items-center gap-3 px-2 sm:px-2.5 py-2 rounded-xl overflow-hidden transition-colors duration-300 hover:bg-[#202B61]/5 font-prostack"
         >
           <span className="relative flex items-center justify-center w-5 h-5 shrink-0">
             <span
@@ -175,7 +175,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             />
           </span>
 
-          <span className="relative flex-1 text-[13.5px] font-semibold text-[#202B61] group-hover:text-[#202B61] transition-all duration-300 group-hover:translate-x-0.5">
+          <span className="relative flex-1 text-[13.5px] font-medium text-[#202B61] group-hover:text-[#202B61] transition-all duration-300 group-hover:translate-x-0.5 font-prostack">
             {label}
           </span>
 
@@ -205,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
       </AnimatePresence>
 
       {/* ── SLEEK, PREMIUM FLOATING PILL NAVBAR (ORGANIC, NOT BOXY, NO DROP SHADOW) ── */}
-      <header className={`fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto w-full pointer-events-none transition-all duration-300 ease-in-out ${isHeaderVisible || mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-28 opacity-0 pointer-events-none"}`}>
+      <header className={`menu-bar fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 max-w-[1400px] mx-auto w-full pointer-events-none transition-all duration-300 ease-in-out ${isHeaderVisible || mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-28 opacity-0 pointer-events-none"}`}>
         <div
           className="pointer-events-auto bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-none rounded-full px-4 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between gap-4 w-full"
         >
@@ -233,7 +233,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             <Link
               href="/"
               onClick={handleHomeClick}
-              className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
+              className={`relative rounded-full font-prostack font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
                 isHomeActive && activeMenu !== "services"
                   ? "bg-[#202B61] text-white shadow-none"
                   : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
@@ -247,7 +247,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               <button
                 type="button"
                 onClick={toggleCapabilities}
-                className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none transition-all duration-200 ease-out ${
+                className={`relative rounded-full font-prostack font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center gap-1.5 cursor-pointer select-none transition-all duration-200 ease-out ${
                   activeMenu === "services" || isCapabilitiesActive
                     ? "bg-[#202B61] text-white shadow-none"
                     : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
@@ -266,7 +266,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             <Link
               href="/work"
               onClick={handleNavClick}
-              className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
+              className={`relative rounded-full font-prostack font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
                 isWorkActive && activeMenu !== "services"
                   ? "bg-[#202B61] text-white shadow-none"
                   : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
@@ -279,7 +279,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             <Link
               href="/about"
               onClick={handleNavClick}
-              className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
+              className={`relative rounded-full font-prostack font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
                 isAboutActive && activeMenu !== "services"
                   ? "bg-[#202B61] text-white shadow-none"
                   : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
@@ -292,7 +292,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             <Link
               href="/contact"
               onClick={handleNavClick}
-              className={`relative rounded-full font-sans font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
+              className={`relative rounded-full font-prostack font-bold text-xs lg:text-sm px-4 py-2 shrink-0 flex items-center justify-center transition-all duration-200 ease-out select-none ${
                 isContactActive && activeMenu !== "services"
                   ? "bg-[#202B61] text-white shadow-none"
                   : "text-[#202B61] hover:bg-[#202B61]/8 hover:text-[#202B61]"
@@ -306,13 +306,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           <div className="flex items-center justify-end flex-1 gap-2 sm:gap-2.5">
             {/* Prostack Button with Modern Unfilled NEW Ribbon */}
             <div className="relative hidden sm:inline-flex items-center">
-              <span className="absolute -top-1.5 -right-1 z-10 inline-flex items-center px-1.5 py-[1.5px] rounded-full border border-[#D61F28] bg-white text-[#D61F28] text-[7.5px] font-bold uppercase tracking-wider leading-none shadow-2xs pointer-events-none select-none">
+              <span className="absolute -top-1.5 -right-1 z-10 inline-flex items-center px-1.5 py-[1.5px] rounded-full border border-[#D61F28] bg-white text-[#D61F28] text-[7.5px] font-bold uppercase tracking-wider leading-none shadow-2xs pointer-events-none select-none font-prostack">
                 NEW
               </span>
               <Link
                 href="/prostack"
                 onClick={handleNavClick}
-                className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 cursor-pointer select-none border shadow-none active:scale-95 group ${
+                className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full font-prostack font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 cursor-pointer select-none border shadow-none active:scale-95 group ${
                   isProstackActive
                     ? "bg-[#202B61] text-white border-[#202B61]"
                     : "bg-white text-[#202B61] border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50"
@@ -323,14 +323,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   alt="Prostack Mark"
                   className="w-4 h-4 object-contain group-hover:scale-110 transition-transform"
                 />
-                <span>Prostack</span>
+                <span className="font-prostack font-bold">Prostack</span>
               </Link>
             </div>
 
             <Link
               href="/application"
               onClick={handleNavClick}
-              className={`hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full font-sans font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 shadow-none active:scale-95 cursor-pointer select-none ${
+              className={`hidden md:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full font-prostack font-bold text-xs lg:text-sm tracking-tight transition-all duration-200 shadow-none active:scale-95 cursor-pointer select-none ${
                 isApplicationActive
                   ? "bg-[#202B61] text-white ring-2 ring-[#202B61] ring-offset-2"
                   : "bg-[#202B61] hover:bg-[#202B61]/90 text-white"
@@ -388,14 +388,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[76px] z-40 px-4 md:hidden pointer-events-auto"
+            className="mobile-menu-drawer fixed inset-x-0 top-[76px] z-40 px-4 md:hidden pointer-events-auto font-prostack"
           >
-            <div className="bg-white/98 backdrop-blur-2xl border border-slate-200 shadow-none rounded-3xl p-5 space-y-4 max-h-[calc(100vh-100px)] overflow-y-auto">
+            <div className="bg-white/98 backdrop-blur-2xl border border-slate-200 shadow-none rounded-3xl p-5 space-y-4 max-h-[calc(100vh-100px)] overflow-y-auto font-prostack">
               <div className="flex flex-col space-y-1">
                 <Link
                   href="/"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm font-prostack ${
                     isHomeActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
@@ -404,7 +404,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/capabilities"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm font-prostack ${
                     isCapabilitiesActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
@@ -413,7 +413,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/work"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm font-prostack ${
                     isWorkActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
@@ -422,7 +422,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/about"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm font-prostack ${
                     isAboutActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
@@ -431,7 +431,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/contact"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-bold text-sm ${
+                  className={`px-4 py-2.5 rounded-xl font-bold text-sm font-prostack ${
                     isContactActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
@@ -443,7 +443,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/prostack"
                   onClick={handleNavClick}
-                  className="w-full flex items-center justify-between px-4 py-3 rounded-full font-bold text-sm bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#202B61] transition-colors"
+                  className="w-full flex items-center justify-between px-4 py-3 rounded-full font-prostack font-bold text-sm bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#202B61] transition-colors"
                 >
                   <div className="flex items-center gap-2.5">
                     <img
@@ -451,8 +451,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                       alt="Prostack Mark"
                       className="w-5 h-5 object-contain"
                     />
-                    <span>Prostack Platform</span>
-                    <span className="inline-flex items-center px-1.5 py-[1.5px] rounded-full border border-[#D61F28] bg-white text-[#D61F28] text-[7.5px] font-bold uppercase tracking-wider leading-none shadow-2xs">
+                    <span className="font-prostack font-bold">Prostack Platform</span>
+                    <span className="inline-flex items-center px-1.5 py-[1.5px] rounded-full border border-[#D61F28] bg-white text-[#D61F28] text-[7.5px] font-bold uppercase tracking-wider leading-none shadow-2xs font-prostack">
                       NEW
                     </span>
                   </div>
@@ -462,7 +462,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/application"
                   onClick={handleNavClick}
-                  className="w-full flex items-center justify-center gap-2 bg-[#202B61] text-white py-3 rounded-full font-bold text-sm shadow-md"
+                  className="w-full flex items-center justify-center gap-2 bg-[#202B61] text-white py-3 rounded-full font-bold text-sm font-prostack shadow-md"
                 >
                   <span>Application Showcase &amp; Downloads</span>
                   <ArrowUpRight className="w-4 h-4 text-white" />
