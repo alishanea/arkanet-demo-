@@ -115,7 +115,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
               <Link
                 key={card.id}
                 href={card.href}
-                className={`group flex flex-col justify-between cursor-pointer transition-colors ${paddingClasses} ${borderClasses}`}
+                className={`group flex flex-col justify-between cursor-pointer ${paddingClasses} ${borderClasses}`}
               >
                 <div>
                   {/* Clean Icon Container (Static, no color fill on hover) */}
@@ -134,9 +134,9 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                   </p>
                 </div>
 
-                {/* Bottom Action: Frameless inline "Learn more →" near each other */}
+                {/* Bottom Action: Frameless inline "Learn more →" (No color change, arrow translation only) */}
                 <div className="pt-6 mt-8 border-t border-slate-100 flex items-center">
-                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-[#202B61] group-hover:text-[#1740b3] transition-colors">
+                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-[#202B61]">
                     <span>Learn more</span>
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2] group-hover:translate-x-1.5 transition-transform duration-200" />
                   </span>
