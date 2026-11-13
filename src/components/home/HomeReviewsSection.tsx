@@ -96,8 +96,8 @@ export const HomeReviewsSection: React.FC = () => {
           
           {/* ── LEFT COLUMN: HEADING, SUBTITLE & ARROWS ── */}
           <div className="lg:col-span-4 space-y-6 text-left">
-            {/* Massive Bold Heading */}
-            <h2 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[0.98] uppercase text-balance">
+            {/* Bold Heading using Authentic Plus Jakarta Sans (Extrabold 800) */}
+            <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.05] uppercase text-balance">
               EXCELLENT
               <br />
               EVERYWHERE
@@ -108,12 +108,12 @@ export const HomeReviewsSection: React.FC = () => {
               See the stories of founders, product leaders, and enterprises worldwide choosing Arkanet.
             </p>
 
-            {/* Clean Circular Navigation Arrow Controls */}
+            {/* Clean Navigation Arrow Controls (Radius < 5px) */}
             <div className="flex items-center gap-2.5 pt-2">
               <button
                 type="button"
                 onClick={handleScrollLeft}
-                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-[4px] bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="w-5 h-5 stroke-[2]" />
@@ -122,7 +122,7 @@ export const HomeReviewsSection: React.FC = () => {
               <button
                 type="button"
                 onClick={handleScrollRight}
-                className="w-11 h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-11 h-11 rounded-[4px] bg-white hover:bg-slate-50 border border-slate-200 text-[#202B61] flex items-center justify-center transition-all cursor-pointer shadow-2xs active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                 aria-label="Next review"
               >
                 <ChevronRight className="w-5 h-5 stroke-[2]" />
@@ -145,7 +145,7 @@ export const HomeReviewsSection: React.FC = () => {
                 return (
                   <div
                     key={review.id}
-                    className={`w-[290px] sm:w-[330px] lg:w-[360px] shrink-0 rounded-2xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
+                    className={`w-[290px] sm:w-[330px] lg:w-[360px] shrink-0 rounded-[4px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                       isDark
                         ? "bg-[#151E48] text-white shadow-[0_16px_40px_rgba(21,30,72,0.25)] border border-[#253272]"
                         : "bg-white text-[#202B61] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-200/90 hover:shadow-[0_12px_36px_rgba(32,43,97,0.08)]"

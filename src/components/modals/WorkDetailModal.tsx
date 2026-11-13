@@ -60,8 +60,9 @@ export interface WorkProjectDetail {
   titleLine1?: string;
   titleLine2?: string;
   description: string;
-  outerImage: string;
-  innerImage: string;
+  outerImage?: string;
+  innerImage?: string;
+  image?: string;
   detail?: {
     client: string;
     year: string;
@@ -225,7 +226,7 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                 {/* ── 2. HERO IMAGE ── */}
                 <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/70 shadow-sm">
                   <img
-                    src={currentProject.outerImage}
+                    src={currentProject.outerImage || currentProject.image || ""}
                     alt={currentProject.title}
                     className="w-full h-full object-cover"
                   />

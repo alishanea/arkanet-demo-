@@ -68,10 +68,10 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
         {/* ── 1. CLEAN SECTION HEADER ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div className="space-y-2.5 max-w-2xl text-left">
-            <h2 className="section-h2">
+            <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] tracking-tight leading-snug">
               Full–Stack Engineering &amp; Applied AI Capabilities
             </h2>
-            <p className="section-desc max-w-2xl">
+            <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-2xl text-pretty">
               We identify where modern technology and AI create genuine value in your operation, then engineer scalable digital products built to perform.
             </p>
           </div>
@@ -84,7 +84,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
           </Link>
         </div>
 
-        {/* ── 2. 4 OPEN EDITORIAL CAPABILITY COLUMNS (NO BOXES, DIVIDING LINE IN BETWEEN) ── */}
+        {/* ── 2. 4 OPEN EDITORIAL CAPABILITY COLUMNS (OLD MODEL: NO CLOSED BOXES) ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full pt-4">
           {CAPABILITY_CARDS.map((card, idx) => {
             const Icon = card.icon;
@@ -118,7 +118,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                 className={`group flex flex-col justify-between cursor-pointer transition-colors ${paddingClasses} ${borderClasses}`}
               >
                 <div>
-                  {/* Clean Icon Container (Radius less than 5) */}
+                  {/* Clean Icon Container (Radius strictly < 5px: rounded-[4px]) */}
                   <div className="w-11 h-11 rounded-[4px] bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61] transition-colors duration-200 mb-6">
                     <Icon className="w-5 h-5 stroke-[1.6]" />
                   </div>
@@ -129,17 +129,17 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                   </h3>
 
                   {/* Description */}
-                  <p className="font-sans text-[13.5px] sm:text-[14px] text-[#202B61]/75 leading-relaxed">
+                  <p className="font-sans text-[13.5px] sm:text-[14px] text-slate-600 leading-relaxed font-normal text-pretty">
                     {card.description}
                   </p>
                 </div>
 
-                {/* Bottom Action: Clean link with animated arrow */}
+                {/* Bottom Action: Clean link with animated arrow (Radius strictly < 5px: rounded-[4px]) */}
                 <div className="flex items-center justify-between pt-6 mt-8 border-t border-slate-100">
                   <span className="text-xs sm:text-[13px] font-semibold text-[#202B61] group-hover:text-[#202B61] transition-colors">
                     Learn more
                   </span>
-                  <div className="w-8 h-8 rounded-full border border-slate-200/90 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61] group-hover:translate-x-1 transition-all duration-200">
+                  <div className="w-8 h-8 rounded-[4px] border border-slate-200/90 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61] group-hover:translate-x-1 transition-all duration-200">
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2]" />
                   </div>
                 </div>

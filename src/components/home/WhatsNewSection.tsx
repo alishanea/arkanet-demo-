@@ -14,10 +14,10 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "elixir-luxury-perfumery",
     category: "Luxury E-Commerce & Shopify",
-    title: "Elixir Luxury Artistic Fragrances",
-    titleLine1: "Elixir Luxury",
-    titleLine2: "Artistic Fragrances",
-    description: "Bilingual Shopify Plus platform for Dubai's luxury perfume boutique, featuring localized UAE payments and sub-second speeds.",
+    title: "Elixir Luxury Boutique Artistic Perfume Commerce",
+    titleLine1: "Elixir Luxury Boutique",
+    titleLine2: "Artistic Perfume Commerce",
+    description: "Bilingual Shopify Plus platform for Dubai's luxury perfume boutique, featuring localized UAE payments and sub-second\u00A0speeds.",
     outerImage: "/assets/images/elixir-hero.png",
     innerImage: "/assets/images/elixir-showcase.png",
     detail: {
@@ -44,10 +44,10 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "ai-mobility-platform",
     category: "Applied AI & Mobility",
-    title: "AI Mobility & Connected Parking Intelligence",
-    titleLine1: "AI Mobility &",
-    titleLine2: "Connected Parking",
-    description: "Connected vehicle navigation, sensor telemetry, and AI-driven automated parking space allocation for modern smart cities.",
+    title: "AI Mobility Intelligence & Connected City Parking",
+    titleLine1: "AI Mobility Intelligence",
+    titleLine2: "& Connected City Parking",
+    description: "Connected vehicle telemetry, edge computer vision, and automated real-time parking space allocation for modern\u00A0smart\u00A0cities.",
     outerImage: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -68,10 +68,10 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "healthcare-bigdata-platform",
     category: "Big Data & HealthTech",
-    title: "Healthcare Big Data & Hospital Analytics Platform",
-    titleLine1: "Healthcare Big Data &",
-    titleLine2: "Hospital Analytics",
-    description: "High-throughput data engineering pipeline and predictive analytics for hospital networks and cardiovascular clinical decision support.",
+    title: "Healthcare Big Data Lake & Hospital Clinical Analytics",
+    titleLine1: "Healthcare Big Data Lake",
+    titleLine2: "& Hospital Clinical Analytics",
+    description: "High-throughput clinical data lake unifying electronic records with predictive machine learning for early\u00A0cardiac\u00A0detection.",
     outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -92,10 +92,10 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "conversational-ai-voicebots",
     category: "Conversational AI & Avatars",
-    title: "Enterprise Conversational AI & Multilingual Voicebots",
-    titleLine1: "Conversational AI &",
-    titleLine2: "Multilingual Voicebots",
-    description: "Enterprise conversational voicebots automating customer care across web, phone, and WhatsApp across global languages.",
+    title: "Conversational AI Agents & Multilingual Voicebots",
+    titleLine1: "Conversational AI Agents",
+    titleLine2: "& Multilingual Voicebots",
+    description: "Enterprise conversational voicebots automating customer care across phone lines, web portals, and WhatsApp in\u00A0global\u00A0languages.",
     outerImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -119,8 +119,11 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
   const [selectedProject, setSelectedProject] = useState<WorkProjectDetail | null>(null);
 
   return (
-    <section id="work" className="relative w-full bg-white py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24 border-t border-slate-200/80">
-      <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
+    <section
+      id="work"
+      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center bg-white py-14 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24 border-t border-slate-200/80"
+    >
+      <div className="max-w-[1400px] w-full mx-auto my-auto space-y-10 sm:space-y-12">
         
         {/* ── 1. CLEAN EDITORIAL SECTION HEADER (NO TOP/BOTTOM DIVIDER LINES) ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 sm:pb-3">
@@ -173,7 +176,7 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                 {/* Clean Aspect Ratio Image with Balanced Proportions */}
                 <div className="relative w-full aspect-[16/10.5] rounded-xl overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0">
                   <Image
-                    src={project.outerImage}
+                    src={project.outerImage || project.image || "/assets/images/webdevelopmentone.webp"}
                     alt={project.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -190,11 +193,11 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     </p>
                   </div>
 
-                  {/* Project Headline (Harmonious 2-line baseline height) */}
-                  <div className="h-[2.85rem] sm:h-[3.1rem] lg:h-[3.35rem] flex items-start mb-2">
-                    <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] xl:text-[19px] text-[#202B61] leading-[1.26] tracking-tight">
-                      <span className="block">{project.titleLine1 || project.title}</span>
-                      <span className="block">{project.titleLine2}</span>
+                  {/* Project Headline: Rich, descriptive titles filling available space with crisp, compact spacing */}
+                  <div className="h-[2.85rem] sm:h-[3.1rem] lg:h-[3.25rem] flex items-start mb-2">
+                    <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-[#202B61] leading-[1.28] tracking-tight">
+                      <span className="block whitespace-nowrap">{project.titleLine1 || project.title}</span>
+                      <span className="block whitespace-nowrap">{project.titleLine2}</span>
                     </h3>
                   </div>
 
