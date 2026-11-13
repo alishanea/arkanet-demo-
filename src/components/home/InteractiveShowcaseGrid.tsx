@@ -134,14 +134,12 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                   </p>
                 </div>
 
-                {/* Bottom Action: Hover effect only on arrow translation (no box fill) */}
-                <div className="flex items-center justify-between pt-6 mt-8 border-t border-slate-100">
-                  <span className="text-xs sm:text-[13px] font-semibold text-[#202B61]">
-                    Learn more
-                  </span>
-                  <div className="w-8 h-8 rounded-[4px] border border-slate-200/90 flex items-center justify-center text-[#202B61] group-hover:border-[#202B61]/40 transition-colors duration-200">
+                {/* Bottom Action: Frameless inline "Learn more →" near each other */}
+                <div className="pt-6 mt-8 border-t border-slate-100 flex items-center">
+                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-[#202B61] group-hover:text-[#1740b3] transition-colors">
+                    <span>Learn more</span>
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2] group-hover:translate-x-1.5 transition-transform duration-200" />
-                  </div>
+                  </span>
                 </div>
               </Link>
             );
