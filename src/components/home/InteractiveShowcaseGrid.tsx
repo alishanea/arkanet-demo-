@@ -42,7 +42,7 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
     titleLine1: "High-Performance Web",
     titleLine2: "& Mobile Engineering",
     description:
-      "Modern Next.js web applications, client portals, and native iOS & Android applications engineered for enterprise scale, sub-second speed, and 99.9% uptime.",
+      "Modern Next.js web applications, client portals, and native iOS & Android apps engineered for enterprise scale, speed, and 99.9% uptime.",
     href: "/capabilities/website-development",
     icon: Smartphone,
   },
@@ -129,9 +129,9 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                     </h3>
                   </div>
 
-                  {/* Symmetrical Description Container */}
-                  <div className="min-h-[5rem] sm:min-h-[5.25rem] flex items-start">
-                    <p className="font-sans text-[13.5px] sm:text-[14px] text-slate-600 leading-relaxed font-normal text-pretty">
+                  {/* Symmetrical Description Container (Exact 4-line uniform height) */}
+                  <div className="h-[4.75rem] sm:h-[5.1rem] flex items-start">
+                    <p className="font-sans text-[13.5px] sm:text-[14px] text-slate-600 leading-relaxed font-normal text-pretty line-clamp-4">
                       {card.description}
                     </p>
                   </div>
