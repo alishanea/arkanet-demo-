@@ -32,7 +32,7 @@ const PILLARS: PillarItem[] = [
     icon: ShoppingBag,
     title: "Transact without limits.",
     description:
-      "Manage SKU variants, real-time multi-warehouse stock synchronization, and high-concurrency checkouts across global currencies with zero arbitrary revenue-share penalties.",
+      "Manage SKU catalogs, real-time multi-warehouse inventory sync, and high-concurrency checkouts globally with zero arbitrary revenue penalties.",
   },
   {
     icon: Zap,
@@ -85,14 +85,18 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
                 </div>
 
                 {/* Bold Title ending with a period */}
-                <h3 className="font-prostack font-bold text-lg sm:text-xl lg:text-[22px] text-[#202B61] tracking-tight leading-snug">
-                  {pillar.title}
-                </h3>
+                <div className="h-7 sm:h-8 flex items-start">
+                  <h3 className="font-prostack font-bold text-lg sm:text-xl lg:text-[22px] text-[#202B61] leading-snug">
+                    {pillar.title}
+                  </h3>
+                </div>
 
-                {/* Editorial Narrative Paragraph */}
-                <p className="font-prostack text-sm sm:text-[15px] text-slate-600 leading-relaxed font-normal text-pretty">
-                  {pillar.description}
-                </p>
+                {/* Editorial Narrative Paragraph (Exact 3-Line Height Symmetry) */}
+                <div className="h-[4.25rem] sm:h-[4.65rem] flex items-start">
+                  <p className="font-prostack text-sm sm:text-[15px] text-slate-600 leading-relaxed font-normal text-pretty line-clamp-3">
+                    {pillar.description}
+                  </p>
+                </div>
               </div>
             );
           })}
