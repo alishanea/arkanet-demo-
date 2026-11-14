@@ -40,6 +40,7 @@ const validRoutes = new Set([
   '/blog',
   '/contact',
   '/application',
+  '/prostack',
   '/sitemap.xml',
   '/robots.txt'
 ]);

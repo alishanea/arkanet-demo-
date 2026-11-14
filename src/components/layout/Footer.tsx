@@ -80,14 +80,9 @@ export const Footer: React.FC<FooterProps> = ({
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://prostack.arkanet.ae/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
-                  >
+                  <Link href="/prostack" className="hover:text-white transition-colors">
                     Prostack Platform
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/application" className="hover:text-white transition-colors">
