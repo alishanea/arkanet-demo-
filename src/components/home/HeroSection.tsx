@@ -13,19 +13,19 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       id="home"
       className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-white text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden font-sans"
     >
-      {/* ── CINEMATIC AMBIENT BACKGROUND GENERATED VIA CANVA AI ── */}
+      {/* ── CLEAN AMBIENT BACKGROUND: DIGITAL PRODUCTS & AI SERVICES ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
         <Image
-          src="/assets/images/canva-hero-bg.png"
-          alt="Arkanet Digital Architecture & Global Enterprise"
+          src="/assets/images/arkanet-services-hero.png"
+          alt="Arkanet Digital Products, Web Platforms, Mobile Apps & Enterprise AI"
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-65 sm:opacity-75 brightness-[1.03] contrast-[1.04] pointer-events-none"
+          className="object-cover opacity-75 sm:opacity-85 brightness-[1.02] contrast-[1.03] pointer-events-none"
         />
 
         {/* Ambient editorial gradient overlay ensuring crisp typography contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/50 to-white/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/45 to-white/85 pointer-events-none" />
       </div>
 
       {/* ── PURE EDITORIAL HEADLINE & SUBTITLE (ZERO MICRO-ELEMENTS, ZERO WAVES, ZERO CLUTTER) ── */}
