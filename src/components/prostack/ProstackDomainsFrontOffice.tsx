@@ -90,18 +90,8 @@ export const ProstackDomainsFrontOffice: React.FC = () => {
                 }`}
               >
                 <div className="space-y-4">
-                  {/* Card Header: Sequence Badge (01-04) + Arrow */}
-                  <div className="flex items-center justify-between select-none">
-                    <span
-                      className={`px-2.5 py-1 rounded-[3px] text-xs font-bold tracking-wider ${
-                        isDark
-                          ? "bg-white/15 text-white border border-white/20"
-                          : "bg-[#202B61]/10 text-[#202B61] border border-[#202B61]/15"
-                      }`}
-                    >
-                      {domain.num}
-                    </span>
-
+                  {/* Card Header: Arrow only (No sequence badge) */}
+                  <div className="flex items-center justify-end select-none">
                     <ArrowUpRight
                       className={`w-5 h-5 stroke-[2] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
                         isDark ? "text-white/80" : "text-[#202B61]/70"

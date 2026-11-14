@@ -5,7 +5,6 @@ import { Layers, ShoppingBag, Workflow, ShieldCheck } from "lucide-react";
 
 interface ArchitectureTier {
   id: string;
-  num?: string;
   title: string;
   description: string;
   icon: React.ComponentType<{ className?: string }>;
@@ -14,7 +13,6 @@ interface ArchitectureTier {
 const ARCHITECTURE_TIERS: ArchitectureTier[] = [
   {
     id: "presentation",
-    num: "01",
     title: "Presentation & Authoring",
     description:
       "Visual canvas assembly with full Shopify Liquid syntax compatibility, component-level draft controls, and real-time revision history.",
@@ -22,7 +20,6 @@ const ARCHITECTURE_TIERS: ArchitectureTier[] = [
   },
   {
     id: "commerce",
-    num: "02",
     title: "Unified Commerce Core",
     description:
       "Integrated product catalog matrix, multi-currency cart, multi-warehouse inventory synchronization, and zero arbitrary revenue penalties.",
@@ -30,7 +27,6 @@ const ARCHITECTURE_TIERS: ArchitectureTier[] = [
   },
   {
     id: "automation",
-    num: "03",
     title: "Automation & Data Pipelines",
     description:
       "Event-driven webhooks, automated order routing, ERP connectors, and customer intelligence pipelines that eliminate fragile third-party middleware.",
@@ -38,7 +34,6 @@ const ARCHITECTURE_TIERS: ArchitectureTier[] = [
   },
   {
     id: "edge",
-    num: "04",
     title: "Global Edge & Security",
     description:
       "300+ Edge POPs delivering sub-50ms TTFB globally, automated SSL lifecycle, enterprise RBAC governance, and continuous security audits.",
