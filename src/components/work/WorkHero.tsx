@@ -9,14 +9,14 @@ export const WorkHero: React.FC = () => {
       {/* ── CINEMATIC AMBIENT BACKGROUND ── */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
         <Image
-          src="/assets/images/mobile_showcase_bg.jpg"
-          alt="Client Work Portfolio Background"
+          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2400&auto=format&fit=crop"
+          alt="Arkanet Engineering Case Studies & Portfolio"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right opacity-45 sm:opacity-55 lg:opacity-60 brightness-[1.03] contrast-[1.03]"
+          className="object-cover object-right opacity-35 sm:opacity-45 lg:opacity-50 brightness-[1.03] contrast-[1.05]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/20 pointer-events-none" />
       </div>
 
