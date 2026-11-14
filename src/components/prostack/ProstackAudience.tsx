@@ -45,10 +45,7 @@ export const ProstackAudience: React.FC = () => {
     <section className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-slate-50/60 border-b border-slate-200/80 text-left select-none font-sans">
       <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
         {/* Section Header */}
-        <div className="max-w-2xl space-y-2 text-left">
-          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-white border border-slate-200/90 text-[#202B61] text-[11px] font-bold tracking-wider uppercase">
-            <span>Target Organizations</span>
-          </div>
+        <div className="max-w-2xl space-y-2.5 text-left">
           <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] leading-snug">
             Built for High-Growth Teams &amp; Modern Enterprises
           </h2>

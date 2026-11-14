@@ -189,10 +189,7 @@ export const ProstackDomains: React.FC = () => {
         
         {/* ── 1. SECTION HEADER ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 border-b border-slate-100">
-          <div className="space-y-2 text-left">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-slate-100 text-[#202B61] text-[11px] font-bold tracking-wider uppercase">
-              <span>Engineered Operational Core</span>
-            </div>
+          <div className="space-y-1.5 text-left">
             <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] tracking-tight leading-snug">
               Eight Engineered Operational Domains
             </h2>

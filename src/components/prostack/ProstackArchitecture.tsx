@@ -51,10 +51,7 @@ export const ProstackArchitecture: React.FC = () => {
         
         {/* ── 1. SECTION HEADER: Crisp, Clean, Minimalist ── */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2">
-          <div className="max-w-2xl space-y-2.5">
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-slate-100 text-[#202B61] text-[11px] font-bold tracking-wider uppercase">
-              <span>Platform Architecture</span>
-            </div>
+          <div className="max-w-2xl space-y-2">
             <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] leading-snug text-balance">
               Everything Connected in One Unified Operational Core
             </h2>

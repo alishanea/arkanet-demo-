@@ -52,7 +52,12 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
         
         {/* ── TOP: Prostack Brand Logo + Direct Narrative ── */}
         <div className="space-y-3.5 max-w-3xl text-left">
-          <Link href="/prostack" className="inline-block group">
+          <a
+            href="https://prostack.arkanet.ae/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block group"
+          >
             <Image
               src="/assets/images/prostack-logo-navy.png"
               alt="Prostack Logo"
@@ -61,7 +66,7 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
               className="h-7 sm:h-8 w-auto object-contain group-hover:opacity-85 transition-opacity"
               priority
             />
-          </Link>
+          </a>
 
           <p className="font-prostack text-base sm:text-lg lg:text-[18px] text-slate-600 leading-relaxed font-normal max-w-2xl text-pretty">
             A unified platform to build high-performance websites, manage headless commerce, and scale digital operations in one connected workspace without plugin chaos.
