@@ -26,19 +26,19 @@ const PILLARS: PillarItem[] = [
     icon: Layout,
     title: "Build with freedom.",
     description:
-      "Assemble rich editorial pages with drag-and-drop ease, full revision history, and Shopify-compatible Liquid themes that give your engineering team complete\u00A0code\u00A0control.",
+      "Assemble rich editorial pages with drag-and-drop ease, full revision history, and Shopify-compatible Liquid themes that give your engineering team complete code control.",
   },
   {
     icon: ShoppingBag,
     title: "Transact without limits.",
     description:
-      "Manage SKU variants, real-time multi-warehouse stock synchronization, and high-concurrency checkouts across global currencies with zero arbitrary\u00A0revenue-share\u00A0penalties.",
+      "Manage SKU variants, real-time multi-warehouse stock synchronization, and high-concurrency checkouts across global currencies with zero arbitrary revenue-share penalties.",
   },
   {
     icon: Zap,
     title: "Scale at the edge.",
     description:
-      "Achieve sub-second edge distribution, automated 95+ Core Web Vitals, dynamic SEO, and role-based security out of the box without\u00A0plugin\u00A0conflicts.",
+      "Achieve sub-second edge distribution, automated 95+ Core Web Vitals, dynamic SEO, and role-based security out of the box without plugin conflicts.",
   },
 ];
 

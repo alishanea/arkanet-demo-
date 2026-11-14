@@ -17,7 +17,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "Elixir Luxury Boutique Artistic Perfume Commerce",
     titleLine1: "Elixir Luxury Boutique",
     titleLine2: "Artistic Perfume Commerce",
-    description: "Bilingual Shopify Plus platform for Dubai's luxury perfume boutique, featuring localized UAE payments and sub-second\u00A0speeds.",
+    description: "Bilingual Shopify Plus platform for Dubai's luxury perfume boutique, featuring localized UAE payments and sub-second speeds.",
     outerImage: "/assets/images/elixir-hero.png",
     innerImage: "/assets/images/elixir-showcase.png",
     detail: {
@@ -47,7 +47,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "AI Mobility Intelligence & Connected City Parking",
     titleLine1: "AI Mobility Intelligence",
     titleLine2: "& Connected City Parking",
-    description: "Connected vehicle telemetry, edge computer vision, and automated real-time parking space allocation for modern\u00A0smart\u00A0cities.",
+    description: "Connected vehicle telemetry, edge computer vision, and automated real-time parking space allocation for modern smart cities.",
     outerImage: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -71,7 +71,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "Healthcare Big Data Lake & Hospital Clinical Analytics",
     titleLine1: "Healthcare Big Data Lake",
     titleLine2: "& Hospital Clinical Analytics",
-    description: "High-throughput clinical data lake unifying electronic records with predictive machine learning for early\u00A0cardiac\u00A0detection.",
+    description: "High-throughput clinical data lake unifying electronic records with predictive machine learning for early cardiac detection.",
     outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -95,7 +95,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "Conversational AI Agents & Multilingual Voicebots",
     titleLine1: "Conversational AI Agents",
     titleLine2: "& Multilingual Voicebots",
-    description: "Enterprise conversational voicebots automating customer care across phone lines, web portals, and WhatsApp in\u00A0global\u00A0languages.",
+    description: "Enterprise conversational voicebots automating customer care across phone lines, web portals, and WhatsApp in global languages.",
     outerImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop",
     detail: {

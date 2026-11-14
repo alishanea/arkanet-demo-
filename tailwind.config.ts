@@ -40,6 +40,14 @@ const config: Config = {
         xl: "12px",
         "2xl": "16px",
       },
+      letterSpacing: {
+        tighter: "-0.005em",
+        tight: "0em",
+        normal: "0.01em",
+        wide: "0.025em",
+        wider: "0.05em",
+        widest: "0.1em",
+      },
       animation: {
         marquee: "marquee 24s linear infinite",
         "marquee-fast": "marquee 16s linear infinite",

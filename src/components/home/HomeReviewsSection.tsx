@@ -96,8 +96,8 @@ export const HomeReviewsSection: React.FC = () => {
           
           {/* ── LEFT COLUMN: HEADING, SUBTITLE & ARROWS ── */}
           <div className="lg:col-span-4 space-y-6 text-left">
-            {/* Bold Heading using Authentic Plus Jakarta Sans (Extrabold 800) */}
-            <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.05] uppercase text-balance">
+            {/* Bold Heading using Authentic Plus Jakarta Sans (Extrabold 800) with Clean Spacing */}
+            <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-wide leading-[1.08] uppercase text-balance">
               EXCELLENT
               <br />
               EVERYWHERE
