@@ -205,12 +205,9 @@ export const ProstackDomains: React.FC = () => {
           {/* ── LEFT 50% COLUMN: Substantial Editorial Content + Arrows Directly Below ── */}
           <div className="lg:col-span-6 flex flex-col justify-between space-y-7 text-left">
             
-            {/* Top Sequence Tag */}
+            {/* Top Category Tag (No micro number) */}
             <div className="flex items-center gap-3">
               <span className="px-2.5 py-1 rounded-[3px] text-xs font-bold tracking-wider bg-[#202B61] text-white">
-                DOMAIN {currentDomain.number}
-              </span>
-              <span className="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider">
                 {currentDomain.category}
               </span>
             </div>
@@ -238,8 +235,8 @@ export const ProstackDomains: React.FC = () => {
               ))}
             </div>
 
-            {/* ── ARROWS DIRECTLY BELOW CONTENT (As requested) ── */}
-            <div className="pt-4 border-t border-slate-100 flex items-center gap-4 select-none">
+            {/* ── ARROWS DIRECTLY BELOW CONTENT (No micro numbers) ── */}
+            <div className="pt-4 border-t border-slate-100 flex items-center gap-3 select-none">
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -259,10 +256,22 @@ export const ProstackDomains: React.FC = () => {
                 </button>
               </div>
 
-              {/* Slide Counter */}
-              <span className="font-mono text-xs font-bold text-[#202B61] bg-[#F4F6FB] border border-slate-200/90 px-3 py-2 rounded-[3px]">
-                {currentDomain.number} / 08
-              </span>
+              {/* Minimal Dot Indicators */}
+              <div className="flex items-center gap-1.5 ml-2">
+                {DOMAINS.map((_, dotIdx) => (
+                  <button
+                    key={dotIdx}
+                    type="button"
+                    onClick={() => setActiveIdx(dotIdx)}
+                    aria-label={`Go to slide ${dotIdx + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-200 ${
+                      dotIdx === activeIdx
+                        ? "w-6 bg-[#202B61]"
+                        : "w-1.5 bg-slate-300 hover:bg-slate-400"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
 
           </div>
@@ -301,17 +310,6 @@ export const ProstackDomains: React.FC = () => {
                         priority={idx === activeIdx}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent pointer-events-none" />
-
-                      {/* Number Tag on Image */}
-                      <div
-                        className={`absolute top-3 left-3 px-2 py-0.5 rounded-[3px] text-[11px] font-bold ${
-                          isActive
-                            ? "bg-[#202B61] text-white border border-white/20"
-                            : "bg-slate-900/80 text-white backdrop-blur-md"
-                        }`}
-                      >
-                        {domain.number}
-                      </div>
                     </div>
 
                     {/* Bottom: Card Caption */}

@@ -28,13 +28,13 @@ export const ProstackComparison: React.FC = () => {
           {/* ── CARD 01: LEGACY FRAGMENTED STACK (Soft Ice Navy) ── */}
           <div className="rounded-[4px] p-7 sm:p-9 bg-[#F4F6FB] border border-slate-200/90 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
-              {/* Card Header */}
+              {/* Card Header (No micro number) */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-200/70">
-                <span className="px-2.5 py-1 rounded-[3px] text-xs font-bold tracking-wider bg-slate-200/80 text-slate-700">
-                  01
+                <span className="text-xs font-mono font-bold tracking-wider text-slate-500 uppercase">
+                  Legacy Plugins
                 </span>
-                <span className="text-xs font-mono font-medium text-slate-500">
-                  LEGACY PLUGINS
+                <span className="text-xs font-mono font-medium text-slate-400">
+                  Third-Party Architecture
                 </span>
               </div>
 
@@ -83,13 +83,13 @@ export const ProstackComparison: React.FC = () => {
           {/* ── CARD 02: PROSTACK UNIFIED CORE (Signature Brand Navy) ── */}
           <div className="rounded-[4px] p-7 sm:p-9 bg-[#202B61] text-white border border-[#202B61] shadow-md flex flex-col justify-between space-y-8">
             <div className="space-y-6">
-              {/* Card Header */}
+              {/* Card Header (No micro number) */}
               <div className="flex items-center justify-between pb-4 border-b border-white/15">
-                <span className="px-2.5 py-1 rounded-[3px] text-xs font-bold tracking-wider bg-white/15 text-white border border-white/20">
-                  02
+                <span className="text-xs font-mono font-bold tracking-wider text-white uppercase">
+                  Prostack Engine
                 </span>
                 <span className="text-xs font-mono font-medium text-white/70">
-                  PROSTACK ENGINE
+                  Compiled Architecture
                 </span>
               </div>
 
