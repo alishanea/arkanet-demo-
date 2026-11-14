@@ -22,9 +22,6 @@ export const WorkHero: React.FC = () => {
 
       <div className="relative z-10 max-w-[1400px] w-full mx-auto my-auto space-y-6">
         <div className="max-w-3xl space-y-5 text-left">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#202B61]/70 font-sans">
-            SELECTED CLIENT WORK
-          </p>
           <h1 className="hero-h1 font-heading font-extrabold text-[#202B61] text-4xl sm:text-6xl lg:text-[68px] tracking-tight leading-[1.05] text-balance">
             Digital Platforms Engineered for Scale
           </h1>
