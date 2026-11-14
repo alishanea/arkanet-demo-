@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { ArrowUpRight } from "lucide-react";
+import { Layers, ShoppingBag, Workflow, ShieldCheck } from "lucide-react";
 
 interface ArchitectureTier {
   id: string;
   num: string;
   title: string;
   description: string;
-  isDark?: boolean;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 const ARCHITECTURE_TIERS: ArchitectureTier[] = [
@@ -18,6 +18,7 @@ const ARCHITECTURE_TIERS: ArchitectureTier[] = [
     title: "Presentation & Authoring",
     description:
       "Visual canvas assembly with full Shopify Liquid syntax compatibility, component-level draft controls, and real-time revision history.",
+    icon: Layers,
   },
   {
     id: "commerce",
@@ -25,7 +26,7 @@ const ARCHITECTURE_TIERS: ArchitectureTier[] = [
     title: "Unified Commerce Core",
     description:
       "Integrated product catalog matrix, multi-currency cart, multi-warehouse inventory synchronization, and zero arbitrary revenue penalties.",
-    isDark: true,
+    icon: ShoppingBag,
   },
   {
     id: "automation",
@@ -33,6 +34,7 @@ const ARCHITECTURE_TIERS: ArchitectureTier[] = [
     title: "Automation & Data Pipelines",
     description:
       "Event-driven webhooks, automated order routing, ERP connectors, and customer intelligence pipelines that eliminate fragile third-party middleware.",
+    icon: Workflow,
   },
   {
     id: "edge",
@@ -40,7 +42,7 @@ const ARCHITECTURE_TIERS: ArchitectureTier[] = [
     title: "Global Edge & Security",
     description:
       "300+ Edge POPs delivering sub-50ms TTFB globally, automated SSL lifecycle, enterprise RBAC governance, and continuous security audits.",
-    isDark: true,
+    icon: ShieldCheck,
   },
 ];
 
@@ -50,9 +52,9 @@ export const ProstackArchitecture: React.FC = () => {
       <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
         
         {/* ── 1. SECTION HEADER: Crisp, Clean, Minimalist ── */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2 border-b border-slate-100">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-6 sm:pb-8 border-b border-slate-200/80">
           <div className="max-w-2xl space-y-2">
-            <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] tracking-tight leading-snug text-balance">
+            <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] leading-snug text-balance">
               Everything Connected in One Unified Operational Core
             </h2>
           </div>
@@ -64,57 +66,48 @@ export const ProstackArchitecture: React.FC = () => {
           </div>
         </div>
 
-        {/* ── 2. 4 CARDS: Architectural Precision Engineered (Radius < 5px: rounded-[4px]) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch w-full">
-          {ARCHITECTURE_TIERS.map((tier) => {
-            const isDark = tier.isDark;
+        {/* ── 2. OPEN EDITORIAL COLUMNS SEPARATED BY LINES (No closed card boxes) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-b border-slate-200/80 w-full">
+          {ARCHITECTURE_TIERS.map((tier, idx) => {
+            const Icon = tier.icon;
+
+            // Mathematical symmetry: precise line separators across 1, 2, and 4 columns
+            const borderClasses =
+              idx === 0
+                ? "border-t-0"
+                : idx === 1
+                ? "border-t border-slate-200 sm:border-t-0 sm:border-l border-slate-200"
+                : idx === 2
+                ? "border-t border-slate-200 sm:border-t lg:border-t-0 sm:border-l-0 lg:border-l border-slate-200"
+                : "border-t border-slate-200 sm:border-t lg:border-t-0 sm:border-l lg:border-l border-slate-200";
 
             return (
               <div
                 key={tier.id}
-                className={`group rounded-[4px] p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
-                  isDark
-                    ? "bg-[#202B61] text-white shadow-md border border-[#202B61]"
-                    : "bg-[#F4F6FB] text-[#202B61] border border-slate-200/90 hover:border-[#202B61]/40"
-                }`}
+                className={`group flex flex-col justify-between px-6 sm:px-7 lg:px-8 py-8 lg:py-8 ${borderClasses}`}
               >
                 <div>
-                  {/* Card Header: Sequence Badge (01/02/03/04) on left (radius 3px < 5px), Minimal Diagonal Arrow (↗) on right */}
-                  <div className="flex items-center justify-between pb-8 select-none">
-                    <span
-                      className={`px-2.5 py-1 rounded-[3px] text-xs font-bold tracking-wider ${
-                        isDark
-                          ? "bg-white/15 text-white border border-white/20"
-                          : "bg-[#202B61]/10 text-[#202B61] border border-[#202B61]/15"
-                      }`}
-                    >
+                  {/* Sequence Badge (01 / 02 / 03 / 04) & Subtle Line Icon */}
+                  <div className="flex items-center justify-between pb-3 mb-5 border-b border-slate-100">
+                    <span className="px-2.5 py-0.5 rounded-[3px] text-xs font-bold tracking-wider bg-[#202B61]/8 text-[#202B61] border border-[#202B61]/10">
                       {tier.num}
                     </span>
-
-                    <ArrowUpRight
-                      className={`w-5 h-5 stroke-[2] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
-                        isDark ? "text-white/80" : "text-[#202B61]/70"
-                      }`}
-                    />
+                    <Icon className="w-4 h-4 text-[#202B61]/60 stroke-[1.8]" />
                   </div>
 
-                  {/* Title */}
-                  <h3
-                    className={`font-heading font-extrabold text-lg sm:text-[20px] tracking-tight leading-snug mb-3.5 ${
-                      isDark ? "text-white" : "text-[#202B61]"
-                    }`}
-                  >
-                    {tier.title}
-                  </h3>
+                  {/* Symmetrical Card Heading (Uniform 2-Line Height Container) */}
+                  <div className="h-[2.85rem] sm:h-[3.25rem] flex items-start mb-3">
+                    <h3 className="font-heading font-extrabold text-lg sm:text-[19px] text-[#202B61] leading-snug">
+                      {tier.title}
+                    </h3>
+                  </div>
 
-                  {/* Narrative Description */}
-                  <p
-                    className={`font-sans text-[13.5px] sm:text-[14px] leading-relaxed font-normal ${
-                      isDark ? "text-white/80" : "text-slate-600"
-                    }`}
-                  >
-                    {tier.description}
-                  </p>
+                  {/* Symmetrical Body Copy (Uniform 4-Line Height Container) */}
+                  <div className="h-[4.75rem] sm:h-[5.25rem] flex items-start">
+                    <p className="font-sans text-[13.5px] sm:text-[14px] text-slate-600 leading-relaxed font-normal text-pretty">
+                      {tier.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             );
