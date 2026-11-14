@@ -19,7 +19,7 @@ export default function ProstackPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* Hero with Interactive Platform Console Simulator */}
-      <ProstackHero />
+      <ProstackHero onOpenBooking={openContact} />
 
       {/* 4-Tier Connected System Architecture */}
       <ProstackArchitecture />

@@ -43,12 +43,18 @@ const ARCHITECTURE_TIERS: ArchitectureTier[] = [
 
 export const ProstackArchitecture: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-14 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
+    <section
+      id="architecture"
+      className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans scroll-mt-24"
+    >
       <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
         
-        {/* ── 1. SECTION HEADER: Crisp, Clean, Minimalist (No bottom border line) ── */}
+        {/* ── 1. SECTION HEADER: Crisp, Clean, Minimalist ── */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2">
-          <div className="max-w-2xl space-y-2">
+          <div className="max-w-2xl space-y-2.5">
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-slate-100 text-[#202B61] text-[11px] font-bold tracking-wider uppercase">
+              <span>Platform Architecture</span>
+            </div>
             <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] leading-snug text-balance">
               Everything Connected in One Unified Operational Core
             </h2>

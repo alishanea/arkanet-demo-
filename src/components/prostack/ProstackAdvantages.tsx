@@ -11,9 +11,14 @@ export const ProstackAdvantages: React.FC = () => {
           
           {/* Left Column: Direct Heading & Platform Guarantee (Open Editorial, No Box) */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] leading-snug text-balance">
-              Why Organizations Migrate to Prostack
-            </h2>
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-slate-100 text-[#202B61] text-[11px] font-bold tracking-wider uppercase">
+                <span>Migration &amp; Advantages</span>
+              </div>
+              <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] leading-snug text-balance">
+                Why Organizations Migrate to Prostack
+              </h2>
+            </div>
             <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed text-pretty">
               Engineered from the ground up to solve operational friction without bloated plugins, performance regressions, or arbitrary revenue cuts.
             </p>

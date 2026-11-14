@@ -183,13 +183,16 @@ export const ProstackDomains: React.FC = () => {
   return (
     <section
       id="domains"
-      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-14 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-white text-left select-none scroll-mt-20 font-sans overflow-hidden border-b border-slate-200/80"
+      className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white text-left select-none scroll-mt-24 font-sans overflow-hidden border-b border-slate-200/80"
     >
       <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
         
         {/* ── 1. SECTION HEADER ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 border-b border-slate-100">
-          <div className="space-y-1.5 text-left">
+          <div className="space-y-2 text-left">
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-slate-100 text-[#202B61] text-[11px] font-bold tracking-wider uppercase">
+              <span>Engineered Operational Core</span>
+            </div>
             <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] tracking-tight leading-snug">
               Eight Engineered Operational Domains
             </h2>
