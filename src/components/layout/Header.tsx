@@ -43,7 +43,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const isCapabilitiesActive = pathname.startsWith("/capabilities") || pathname.startsWith("/services");
   const isAboutActive = pathname === "/about";
   const isWorkActive = pathname === "/work" || pathname.startsWith("/work");
-  const isProstackActive = pathname === "/prostack" || pathname.startsWith("/prostack");
   const isContactActive = pathname === "/contact";
   const isApplicationActive = pathname === "/application";
 
@@ -312,16 +311,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 NEW
               </span>
               <Link
-                href="/prostack"
+                href="/#prostack"
                 onClick={handleNavClick}
-                className={`prostack-btn inline-flex items-center justify-center h-8 sm:h-[34px] px-3 sm:px-3.5 rounded-full transition-all duration-200 cursor-pointer select-none border shadow-none active:scale-95 group ${
-                  isProstackActive
-                    ? "bg-[#202B61] text-white border-[#202B61]"
-                    : "bg-white border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50"
-                }`}
+                className="prostack-btn inline-flex items-center justify-center h-8 sm:h-[34px] px-3 sm:px-3.5 rounded-full transition-all duration-200 cursor-pointer select-none border border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50 bg-white shadow-none active:scale-95 group"
               >
                 <img
-                  src={isProstackActive ? "/assets/images/prostack-logo.png" : "/assets/images/prostack-logo-navy.png"}
+                  src="/assets/images/prostack-logo-navy.png"
                   alt="Prostack"
                   className="h-[13px] sm:h-[14px] w-auto object-contain group-hover:opacity-90 transition-opacity"
                 />
@@ -442,7 +437,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
               <div className="pt-2 border-t border-slate-100 space-y-2">
                 <Link
-                  href="/prostack"
+                  href="/#prostack"
                   onClick={handleNavClick}
                   className="prostack-btn w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-prostack font-extrabold text-xs bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#202B61] transition-colors"
                 >

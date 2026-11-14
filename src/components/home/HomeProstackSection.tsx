@@ -52,7 +52,12 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
         
         {/* ── TOP: Prostack Brand Logo + Direct Narrative ── */}
         <div className="space-y-3.5 max-w-3xl text-left">
-          <Link href="/prostack" className="inline-block group">
+          <a
+            href="https://prostack.arkanet.ae/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block group"
+          >
             <Image
               src="/assets/images/prostack-logo-navy.png"
               alt="Prostack Logo"
@@ -61,7 +66,7 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
               className="h-7 sm:h-8 w-auto object-contain group-hover:opacity-85 transition-opacity"
               priority
             />
-          </Link>
+          </a>
 
           <p className="font-prostack text-base sm:text-lg lg:text-[18px] text-slate-600 leading-relaxed font-normal max-w-2xl text-pretty">
             A unified platform to build high-performance websites, manage headless commerce, and scale digital operations in one connected workspace without plugin chaos.
@@ -95,13 +100,15 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
 
         {/* ── BOTTOM RIGHT: Simple Single Explore Arrow Link ── */}
         <div className="pt-4 sm:pt-6 flex justify-end">
-          <Link
-            href="/prostack"
+          <a
+            href="https://prostack.arkanet.ae/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 font-prostack text-sm sm:text-base font-semibold text-[#202B61] hover:text-[#1740b3] transition-colors"
           >
             <span>Explore Prostack</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-[#202B61] group-hover:text-[#1740b3]" />
-          </Link>
+          </a>
         </div>
 
       </div>
