@@ -51,8 +51,8 @@ export const ProstackArchitecture: React.FC = () => {
     <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-14 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans">
       <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
         
-        {/* ── 1. SECTION HEADER: Crisp, Clean, Minimalist ── */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-6 sm:pb-8 border-b border-slate-200/80">
+        {/* ── 1. SECTION HEADER: Crisp, Clean, Minimalist (No bottom border line) ── */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2">
           <div className="max-w-2xl space-y-2">
             <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] leading-snug text-balance">
               Everything Connected in One Unified Operational Core
@@ -66,12 +66,12 @@ export const ProstackArchitecture: React.FC = () => {
           </div>
         </div>
 
-        {/* ── 2. OPEN EDITORIAL COLUMNS SEPARATED BY LINES (No closed card boxes) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-b border-slate-200/80 w-full">
+        {/* ── 2. OPEN EDITORIAL COLUMNS SEPARATED BY VERTICAL LINES ONLY (No top or bottom line) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full">
           {ARCHITECTURE_TIERS.map((tier, idx) => {
             const Icon = tier.icon;
 
-            // Mathematical symmetry: precise line separators across 1, 2, and 4 columns
+            // Mathematical symmetry: vertical dividing lines between columns
             const borderClasses =
               idx === 0
                 ? "border-t-0"
@@ -84,11 +84,11 @@ export const ProstackArchitecture: React.FC = () => {
             return (
               <div
                 key={tier.id}
-                className={`group flex flex-col justify-between px-6 sm:px-7 lg:px-8 py-8 lg:py-8 ${borderClasses}`}
+                className={`group flex flex-col justify-between px-6 sm:px-7 lg:px-8 py-6 lg:py-6 ${borderClasses}`}
               >
                 <div>
-                  {/* Sequence Badge (01 / 02 / 03 / 04) & Subtle Line Icon */}
-                  <div className="flex items-center justify-between pb-3 mb-5 border-b border-slate-100">
+                  {/* Sequence Badge (01 / 02 / 03 / 04) & Subtle Line Icon (No horizontal underline) */}
+                  <div className="flex items-center justify-between mb-5">
                     <span className="px-2.5 py-0.5 rounded-[3px] text-xs font-bold tracking-wider bg-[#202B61]/8 text-[#202B61] border border-[#202B61]/10">
                       {tier.num}
                     </span>
