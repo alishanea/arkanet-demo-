@@ -23,7 +23,7 @@ export function AboutCTA({ onOpenBooking, bgColor = "bg-white" }: AboutCTAProps)
               →
             </span>
             <br />
-            <span>something engaging</span>
+            <span>something&nbsp;engaging</span>
           </h2>
         </div>
       </div>

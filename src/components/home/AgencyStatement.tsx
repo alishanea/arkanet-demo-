@@ -109,11 +109,11 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
         
         {/* ── 1. AUTHORITATIVE STATEMENT HEADLINE & DESCRIPTION (PRECISION TYPOGRAPHY) ── */}
         <div className="space-y-4 max-w-4xl text-left">
-          <h2 className="section-h2 text-white !text-white leading-[1.18] tracking-tight">
+          <h2 className="section-h2 text-white !text-white leading-[1.18]">
             The Digital Innovation Company
           </h2>
-          <p className="font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal max-w-4xl">
-            Blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Backed by 15+ years of technology and engineering experience, Arkanet Technologies specializes in transforming complex technological challenges into scalable, future-ready software platforms for enterprises and ambitious brands worldwide.
+          <p className="font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal max-w-4xl text-pretty">
+            Blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Backed by 15+ years of technology and engineering experience, Arkanet Technologies specializes in transforming complex technological challenges into scalable, future-ready software platforms for enterprises and ambitious brands&nbsp;worldwide.
           </p>
         </div>
 
@@ -131,13 +131,13 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
               </div>
 
               {/* Title (Symmetrical 2-Line Baseline Across All Columns) */}
-              <h3 className="font-heading font-bold text-xl sm:text-[22px] text-white tracking-[-0.015em] leading-[1.28]">
+              <h3 className="font-heading font-bold text-xl sm:text-[22px] text-white leading-[1.28]">
                 <span className="block">{item.titleLine1}</span>
                 <span className="block">{item.titleLine2}</span>
               </h3>
 
               {/* Description (Exact Matched Length, Perfectly Symmetrical) */}
-              <p className="font-sans font-normal text-sm sm:text-[14.5px] text-white/75 leading-[1.65] mt-2.5 text-balance">
+              <p className="font-sans font-normal text-sm sm:text-[14.5px] text-white/75 leading-[1.65] mt-2.5 text-pretty">
                 {item.desc}
               </p>
             </Link>

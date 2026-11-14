@@ -127,12 +127,12 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
         
         {/* ── 1. CLEAN EDITORIAL SECTION HEADER (NO TOP/BOTTOM DIVIDER LINES) ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 sm:pb-3">
-          <div className="space-y-2.5 max-w-2xl text-left">
+          <div className="space-y-2.5 max-w-3xl lg:max-w-4xl text-left">
             <h2 className="section-h2">
               Selected Work &amp; Case Studies
             </h2>
-            <p className="section-desc max-w-2xl">
-              Explore how we design, build, and deploy production digital systems that solve real operational friction.
+            <p className="section-desc max-w-3xl lg:max-w-4xl text-pretty">
+              Explore how we design, build, and deploy production digital systems that solve real operational&nbsp;friction.
             </p>
           </div>
           <Link

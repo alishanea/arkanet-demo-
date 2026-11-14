@@ -32,7 +32,7 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
     titleLine1: "UI/UX Product Design",
     titleLine2: "& Rapid Prototyping",
     description:
-      "Human-centric user research, high-fidelity design systems, and rapid interactive prototypes engineered to maximize conversion and user engagement.",
+      "Human-centric user research, high-fidelity design systems, and rapid interactive prototypes engineered to maximize conversion and user\u00A0engagement.",
     href: "/capabilities/graphic-design",
     icon: Layout,
   },
@@ -42,17 +42,17 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
     titleLine1: "High-Performance Web",
     titleLine2: "& Mobile Engineering",
     description:
-      "Modern Next.js web applications, client portals, and native iOS & Android apps engineered for enterprise scale, speed, and 99.9% uptime.",
+      "Modern Next.js web applications, client portals, and native iOS & Android apps engineered for enterprise scale, speed, and 99.9%\u00A0uptime.",
     href: "/capabilities/website-development",
     icon: Smartphone,
   },
   {
     id: "applied-ai",
     title: "Applied Machine Learning & AI Systems",
-    titleLine1: "Applied Machine Learning",
-    titleLine2: "& AI Systems",
+    titleLine1: "Applied Machine",
+    titleLine2: "Learning & AI Systems",
     description:
-      "Custom predictive intelligence models, fine-tuned LLMs, and real-time inference pipelines trained on private enterprise data to automate decision-making.",
+      "Custom predictive intelligence models, fine-tuned LLMs, and real-time inference pipelines trained on private enterprise data to automate decision\u00A0making.",
     href: "/capabilities/applied-ai-ml",
     icon: Cpu,
   },
@@ -62,7 +62,7 @@ const CAPABILITY_CARDS: CapabilityCard[] = [
     titleLine1: "Cloud Infrastructure",
     titleLine2: "& Enterprise Security",
     description:
-      "Resilient multi-region cloud architectures, automated CI/CD deployment pipelines, and zero-trust security postures guaranteeing high availability.",
+      "Resilient multi-region cloud architectures, automated CI/CD deployment pipelines, and zero-trust security postures guaranteeing high\u00A0availability.",
     href: "/capabilities/cloud-devops-hosting",
     icon: Cloud,
   },
@@ -113,7 +113,7 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
               <Link
                 key={card.id}
                 href={card.href}
-                className={`group flex flex-col justify-between cursor-pointer px-6 sm:px-7 lg:px-8 py-8 lg:py-6 ${borderClasses}`}
+                className={`group flex flex-col justify-between cursor-pointer px-5 sm:px-6 lg:px-5 xl:px-8 py-7 sm:py-8 lg:py-6 ${borderClasses}`}
               >
                 <div>
                   {/* Clean Icon Container (Static, no color fill on hover) */}
@@ -122,16 +122,16 @@ export const InteractiveShowcaseGrid: React.FC<InteractiveShowcaseGridProps> = (
                   </div>
 
                   {/* Symmetrical 2-Line Title Container */}
-                  <div className="h-[2.85rem] sm:h-[3.25rem] flex items-start mb-3">
-                    <h3 className="font-heading font-bold text-lg sm:text-[19px] text-[#202B61] leading-snug">
+                  <div className="min-h-[2.85rem] sm:min-h-[3.25rem] lg:min-h-[3.4rem] flex items-start mb-3.5">
+                    <h3 className="font-heading font-bold text-[17px] sm:text-lg xl:text-[19px] text-[#202B61] leading-[1.3]">
                       <span className="block">{card.titleLine1}</span>
                       <span className="block">{card.titleLine2}</span>
                     </h3>
                   </div>
 
-                  {/* Symmetrical Description Container (Exact 4-line uniform height) */}
-                  <div className="h-[4.75rem] sm:h-[5.1rem] flex items-start">
-                    <p className="font-sans text-[13.5px] sm:text-[14px] text-slate-600 leading-relaxed font-normal text-pretty line-clamp-4">
+                  {/* Symmetrical Description Container (Ample height, no ellipsis truncation) */}
+                  <div className="min-h-[5.5rem] sm:min-h-[5.85rem] flex items-start">
+                    <p className="font-sans text-[13px] sm:text-[13.5px] xl:text-[14px] text-slate-600 leading-[1.62] font-normal text-pretty">
                       {card.description}
                     </p>
                   </div>

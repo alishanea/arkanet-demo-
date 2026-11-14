@@ -174,8 +174,8 @@ export const OurProcess: React.FC<OurProcessProps> = () => {
             <h2 className="section-h2 text-balance mb-3">
               Our Process
             </h2>
-            <p className="section-desc max-w-3xl text-pretty mt-2">
-              We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your specifications.
+            <p className="section-desc max-w-4xl text-pretty mt-2">
+              We build technology partnerships designed to last, not projects designed to end at handoff. Every engagement is shaped around one principle: the right technology environment is secure, dependable, and built to your&nbsp;specifications.
             </p>
           </div>
         </div>

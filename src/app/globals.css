@@ -159,12 +159,18 @@
     font-family: var(--font-sans), 'Plus Jakarta Sans', sans-serif !important;
     font-variant-ligatures: none !important;
     font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0 !important;
-    font-size: clamp(32px, 5.2vw, 68px) !important;
+    font-size: clamp(32px, 4.3vw, 64px) !important;
     font-weight: 800 !important;
     line-height: 1.22 !important;
     letter-spacing: 0 !important;
     word-spacing: 0.05em !important;
     color: #202B61;
+    text-wrap: balance !important;
+  }
+
+  /* Universal Orphan Prevention across all viewports */
+  p, h1, h2, h3, h4, h5, h6, .section-desc, .hero-sub, .section-h2 {
+    text-wrap: pretty;
   }
 
   /* Unified Hero Subtitle */
