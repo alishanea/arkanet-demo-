@@ -32,14 +32,20 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
 
         {/* 3. Monumental Global Architectural Glass & Innovation Structure */}
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1508873696983-2df5703bc20d?q=80&w=2400&auto=format&fit=crop"
           alt="Arkanet Digital Architecture & Global Enterprise"
-          className="w-full h-full object-cover opacity-[0.18] mix-blend-luminosity scale-105 pointer-events-none"
+          className="w-full h-full object-cover opacity-[0.26] sm:opacity-[0.32] brightness-[1.02] contrast-[1.04] scale-105 pointer-events-none"
           loading="eager"
         />
 
-        {/* 4. Smooth Full-Bleed Vignette Fade to Pure White */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white pointer-events-none" />
+        {/* 4. Smooth Full-Bleed Vignette Fade to Pure White & Text Contrast Protection */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/20 to-white pointer-events-none" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 60%, transparent 100%)",
+          }}
+        />
       </div>
 
       {/* ── PURE EDITORIAL HEADLINE & SUBTITLE (ZERO MICRO-ELEMENTS, ZERO WAVES, ZERO CLUTTER) ── */}
