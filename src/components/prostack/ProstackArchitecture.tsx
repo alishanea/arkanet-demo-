@@ -5,7 +5,7 @@ import { Layers, ShoppingBag, Workflow, ShieldCheck } from "lucide-react";
 
 interface ArchitectureTier {
   id: string;
-  num: string;
+  num?: string;
   title: string;
   description: string;
   icon: React.ComponentType<{ className?: string }>;
@@ -87,12 +87,9 @@ export const ProstackArchitecture: React.FC = () => {
                 className={`group flex flex-col justify-between px-6 sm:px-7 lg:px-8 py-6 lg:py-6 ${borderClasses}`}
               >
                 <div>
-                  {/* Sequence Badge (01 / 02 / 03 / 04) & Subtle Line Icon (No horizontal underline) */}
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="px-2.5 py-0.5 rounded-[3px] text-xs font-bold tracking-wider bg-[#202B61]/8 text-[#202B61] border border-[#202B61]/10">
-                      {tier.num}
-                    </span>
-                    <Icon className="w-4 h-4 text-[#202B61]/60 stroke-[1.8]" />
+                  {/* Clean Icon Container (No number badge) */}
+                  <div className="w-11 h-11 rounded-[4px] bg-slate-50 border border-slate-200/80 flex items-center justify-center text-[#202B61] mb-6">
+                    <Icon className="w-5 h-5 stroke-[1.6]" />
                   </div>
 
                   {/* Symmetrical Card Heading (Uniform 2-Line Height Container) */}
