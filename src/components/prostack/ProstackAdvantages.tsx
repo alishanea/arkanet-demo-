@@ -5,8 +5,8 @@ import { PROSTACK_ADVANTAGES } from "@/lib/prostackData";
 
 export const ProstackAdvantages: React.FC = () => {
   return (
-    <section className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none font-sans">
-      <div className="max-w-[1400px] w-full mx-auto space-y-12">
+    <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none font-sans">
+      <div className="max-w-[1400px] w-full mx-auto my-auto space-y-10 sm:space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
           {/* Left Column: Direct Heading & Platform Guarantee (Open Editorial, No Box) */}

@@ -45,9 +45,9 @@ export const ProstackArchitecture: React.FC = () => {
   return (
     <section
       id="architecture"
-      className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans scroll-mt-24"
+      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans scroll-mt-20"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
+      <div className="max-w-[1400px] w-full mx-auto my-auto space-y-8 sm:space-y-10">
         
         {/* ── 1. SECTION HEADER: Crisp, Clean, Minimalist ── */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2">

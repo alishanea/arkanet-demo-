@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const ProstackHero: React.FC = () => {
   return (
-    <section className="relative w-full py-20 sm:py-24 lg:py-28 pt-32 sm:pt-36 lg:pt-40 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans flex flex-col justify-center">
+    <section className="relative w-full min-h-screen min-h-[100dvh] pt-24 sm:pt-28 pb-12 sm:pb-14 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans flex flex-col justify-center">
       {/* ── CINEMATIC ARCHITECTURAL BACKGROUND IMAGE ── */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
         <Image

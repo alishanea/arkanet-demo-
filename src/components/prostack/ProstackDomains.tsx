@@ -147,11 +147,11 @@ export const ProstackDomains: React.FC = () => {
   useEffect(() => {
     const updateStep = () => {
       if (window.innerWidth < 640) {
-        setCardStep(280 + 16);
+        setCardStep(270 + 16);
       } else if (window.innerWidth < 1024) {
-        setCardStep(300 + 16);
+        setCardStep(290 + 16);
       } else {
-        setCardStep(320 + 20);
+        setCardStep(310 + 20);
       }
     };
 
@@ -183,9 +183,9 @@ export const ProstackDomains: React.FC = () => {
   return (
     <section
       id="domains"
-      className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white text-left select-none scroll-mt-24 font-sans overflow-hidden border-b border-slate-200/80"
+      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-white text-left select-none scroll-mt-20 font-sans overflow-hidden border-b border-slate-200/80"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
+      <div className="max-w-[1400px] w-full mx-auto my-auto space-y-8 sm:space-y-10">
         
         {/* ── 1. SECTION HEADER ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 border-b border-slate-100">
@@ -200,21 +200,14 @@ export const ProstackDomains: React.FC = () => {
         </div>
 
         {/* ── 2. 50/50 SPLIT: LEFT CONTENT (50%) & RIGHT SLIDER (50%) ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* ── LEFT 50% COLUMN: Substantial Editorial Content + Arrows Directly Below ── */}
-          <div className="lg:col-span-6 flex flex-col justify-between space-y-7 text-left">
+          <div className="lg:col-span-6 flex flex-col justify-between space-y-6 text-left">
             
-            {/* Top Category Tag (No micro number) */}
-            <div className="flex items-center gap-3">
-              <span className="px-2.5 py-1 rounded-[3px] text-xs font-bold tracking-wider bg-[#202B61] text-white">
-                {currentDomain.category}
-              </span>
-            </div>
-
-            {/* Domain Headline & Narrative */}
-            <div className="space-y-3.5">
-              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[36px] text-[#202B61] tracking-tight leading-tight">
+            {/* Domain Headline & Narrative (No category tag badge) */}
+            <div className="space-y-3">
+              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-[#202B61] tracking-tight leading-tight">
                 {currentDomain.title}
               </h3>
 
@@ -293,7 +286,7 @@ export const ProstackDomains: React.FC = () => {
                   <div
                     key={domain.number}
                     onClick={() => setActiveIdx(idx)}
-                    className={`relative rounded-[4px] overflow-hidden transition-all duration-300 cursor-pointer shrink-0 w-[280px] sm:w-[300px] lg:w-[320px] h-[370px] sm:h-[400px] lg:h-[420px] flex flex-col justify-between ${
+                    className={`relative rounded-[4px] overflow-hidden transition-all duration-300 cursor-pointer shrink-0 w-[270px] sm:w-[290px] lg:w-[310px] h-[330px] sm:h-[350px] lg:h-[370px] flex flex-col justify-between ${
                       isActive
                         ? "bg-[#202B61] text-white border border-[#202B61] shadow-lg ring-2 ring-[#202B61]/25"
                         : "bg-[#F4F6FB] text-[#202B61] border border-slate-200/90 hover:border-[#202B61]/50 opacity-85 hover:opacity-100"

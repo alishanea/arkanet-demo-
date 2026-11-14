@@ -42,8 +42,8 @@ const AUDIENCE_CARDS: AudienceCard[] = [
 
 export const ProstackAudience: React.FC = () => {
   return (
-    <section className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-slate-50/60 border-b border-slate-200/80 text-left select-none font-sans">
-      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
+    <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-slate-50/60 border-b border-slate-200/80 text-left select-none font-sans">
+      <div className="max-w-[1400px] w-full mx-auto my-auto space-y-8 sm:space-y-10">
         {/* Section Header */}
         <div className="max-w-2xl space-y-2.5 text-left">
           <h2 className="section-h2 text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-[#202B61] leading-snug">
