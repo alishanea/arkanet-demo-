@@ -12,40 +12,18 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       id="home"
       className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-white text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden font-sans"
     >
-      {/* ── CLEAN AMBIENT BACKGROUND THEME (NO WAVES) ── */}
+      {/* ── CINEMATIC AMBIENT BACKGROUND (CONSISTENT WITH ABOUT & CONTACT HEROS) ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* 1. Atmospheric Ambient Luminous Aura (Navy, Cobalt & Subtle Warmth) */}
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-b from-[#202B61]/[0.08] via-[#3B82F6]/[0.05] to-transparent rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/3 -right-24 w-[600px] h-[600px] bg-gradient-to-br from-[#3B82F6]/[0.04] to-transparent rounded-full blur-[160px] pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-[650px] h-[550px] bg-gradient-to-tr from-[#202B61]/[0.05] via-[#D61F28]/[0.03] to-transparent rounded-full blur-[150px] pointer-events-none" />
-
-        {/* 2. Micro Dot Grid with Soft Elliptical Mask (Global Tech Studio Standard) */}
-        <div
-          className="absolute inset-0 opacity-[0.35] pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(rgba(32, 43, 97, 0.14) 1px, transparent 1px)`,
-            backgroundSize: "32px 32px",
-            maskImage: "radial-gradient(ellipse 65% 55% at 50% 50%, black 20%, transparent 80%)",
-            WebkitMaskImage: "radial-gradient(ellipse 65% 55% at 50% 50%, black 20%, transparent 80%)",
-          }}
-        />
-
-        {/* 3. Monumental Global Architectural Glass & Innovation Structure */}
+        {/* Monumental Global Architectural Glass & Innovation Structure */}
         <img
-          src="https://images.unsplash.com/photo-1508873696983-2df5703bc20d?q=80&w=2400&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop"
           alt="Arkanet Digital Architecture & Global Enterprise"
-          className="w-full h-full object-cover opacity-[0.26] sm:opacity-[0.32] brightness-[1.02] contrast-[1.04] scale-105 pointer-events-none"
+          className="w-full h-full object-cover opacity-60 sm:opacity-65 brightness-105 saturate-110 pointer-events-none"
           loading="eager"
         />
 
-        {/* 4. Smooth Full-Bleed Vignette Fade to Pure White & Text Contrast Protection */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/20 to-white pointer-events-none" />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse 55% 45% at 50% 50%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 60%, transparent 100%)",
-          }}
-        />
+        {/* Consistent full-bleed gradient overlay for high text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/55 to-white/90 pointer-events-none" />
       </div>
 
       {/* ── PURE EDITORIAL HEADLINE & SUBTITLE (ZERO MICRO-ELEMENTS, ZERO WAVES, ZERO CLUTTER) ── */}
