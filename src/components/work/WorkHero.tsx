@@ -14,10 +14,10 @@ export const WorkHero: React.FC = () => {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right opacity-25 brightness-[1.04] contrast-[1.05]"
+          className="object-cover object-right opacity-45 sm:opacity-55 lg:opacity-60 brightness-[1.03] contrast-[1.03]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/20 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-[1400px] w-full mx-auto my-auto space-y-6">

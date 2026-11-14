@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 
 interface DomainItem {
   number: string;
@@ -140,36 +140,6 @@ const DOMAINS: DomainItem[] = [
 
 export const ProstackDomains: React.FC = () => {
   const [activeIdx, setActiveIdx] = useState(1); // default to 02 (E-Commerce)
-  const [cardStep, setCardStep] = useState(340);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  // Responsive step measurement for pixel-perfect sliding on all screen widths
-  useEffect(() => {
-    const updateStep = () => {
-      if (trackRef.current && trackRef.current.children.length > 1) {
-        const first = trackRef.current.children[0] as HTMLElement;
-        const second = trackRef.current.children[1] as HTMLElement;
-        if (first && second) {
-          const step = second.offsetLeft - first.offsetLeft;
-          if (step > 0) {
-            setCardStep(step);
-            return;
-          }
-        }
-      }
-      if (window.innerWidth < 640) {
-        setCardStep(270 + 16);
-      } else if (window.innerWidth < 1024) {
-        setCardStep(290 + 16);
-      } else {
-        setCardStep(310 + 20);
-      }
-    };
-
-    updateStep();
-    window.addEventListener("resize", updateStep);
-    return () => window.removeEventListener("resize", updateStep);
-  }, []);
 
   const currentDomain = DOMAINS[activeIdx];
 
@@ -208,15 +178,18 @@ export const ProstackDomains: React.FC = () => {
               Compiled into one native architecture — zero third-party plugin chaos.
             </p>
           </div>
+          <div className="text-xs font-semibold text-[#202B61]/70 font-mono hidden sm:block">
+            DOMAIN {currentDomain.number} / 08
+          </div>
         </div>
 
-        {/* ── 2. 50/50 SPLIT: LEFT CONTENT & RIGHT SLIDER ── */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-center">
+        {/* ── 2. 2-COLUMN BALANCED SHOWCASE ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* ── LEFT COLUMN: Substantial Editorial Content + Arrows Directly Below ── */}
-          <div className="md:col-span-6 lg:col-span-5 flex flex-col justify-between space-y-6 text-left">
+          {/* ── LEFT COLUMN: Substantial Editorial Narrative & Controls ── */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6 text-left">
             
-            {/* Domain Headline & Narrative (No category tag badge) */}
+            {/* Domain Headline & Narrative */}
             <div className="space-y-3">
               <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-[#202B61] tracking-tight leading-tight">
                 {currentDomain.title}
@@ -239,8 +212,8 @@ export const ProstackDomains: React.FC = () => {
               ))}
             </div>
 
-            {/* ── ARROWS DIRECTLY BELOW CONTENT (No micro numbers) ── */}
-            <div className="pt-4 border-t border-slate-100 flex items-center gap-3 select-none">
+            {/* Navigation Buttons + Slide Dots */}
+            <div className="pt-4 border-t border-slate-100 flex items-center justify-between select-none">
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -261,14 +234,14 @@ export const ProstackDomains: React.FC = () => {
               </div>
 
               {/* Minimal Dot Indicators */}
-              <div className="flex items-center gap-1.5 ml-2">
+              <div className="flex items-center gap-1.5">
                 {DOMAINS.map((_, dotIdx) => (
                   <button
                     key={dotIdx}
                     type="button"
                     onClick={() => setActiveIdx(dotIdx)}
-                    aria-label={`Go to slide ${dotIdx + 1}`}
-                    className={`h-1.5 rounded-full transition-all duration-200 ${
+                    aria-label={`Go to domain ${dotIdx + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-200 cursor-pointer ${
                       dotIdx === activeIdx
                         ? "w-6 bg-[#202B61]"
                         : "w-1.5 bg-slate-300 hover:bg-slate-400"
@@ -280,73 +253,91 @@ export const ProstackDomains: React.FC = () => {
 
           </div>
 
-          {/* ── RIGHT COLUMN: Carousel Slider Taking Half of Screen ── */}
-          <div className="md:col-span-6 lg:col-span-7 w-full min-w-0 relative overflow-hidden py-2">
-            <div
-              ref={trackRef}
-              style={{
-                transform: `translateX(-${activeIdx * cardStep}px)`,
-                transition: "transform 500ms cubic-bezier(0.16, 1, 0.3, 1)",
-              }}
-              className="flex gap-4 sm:gap-5 items-stretch w-max"
-            >
+          {/* ── RIGHT COLUMN: Live Interactive Domain Showcase (Never runs empty) ── */}
+          <div className="lg:col-span-7 flex flex-col space-y-4">
+            
+            {/* Main Interactive Screen Frame */}
+            <div className="relative rounded-[4px] border border-slate-200/90 bg-[#F4F6FB] overflow-hidden shadow-sm flex flex-col">
+              
+              {/* Window Console Header */}
+              <div className="px-4 py-3 bg-white border-b border-slate-200/80 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                  <span className="ml-2 font-mono text-[11px] font-medium text-slate-500">
+                    prostack://domains/{currentDomain.shortTitle.toLowerCase().replace(/[^a-z0-9]/g, "-")}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="font-mono text-[11px] font-semibold text-[#202B61]">
+                    {currentDomain.metric}
+                  </span>
+                </div>
+              </div>
+
+              {/* Showcase Image Frame */}
+              <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-slate-950 overflow-hidden">
+                <Image
+                  src={currentDomain.image}
+                  alt={currentDomain.title}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 750px"
+                  className="object-cover opacity-90 transition-all duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+
+                {/* In-Frame Domain Banner */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+                  <div className="space-y-0.5">
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-white/70">
+                      OPERATIONAL SPEC
+                    </span>
+                    <h4 className="font-heading font-bold text-lg sm:text-xl text-white tracking-tight">
+                      {currentDomain.title}
+                    </h4>
+                  </div>
+                  <span className="font-mono text-xs font-bold text-emerald-400 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-[3px] border border-white/10">
+                    LIVE CORE
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Quick Domain Switcher Strip */}
+            <div className="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
               {DOMAINS.map((domain, idx) => {
                 const isActive = idx === activeIdx;
-
                 return (
-                  <div
+                  <button
                     key={domain.number}
+                    type="button"
                     onClick={() => setActiveIdx(idx)}
-                    className={`relative rounded-[4px] overflow-hidden transition-all duration-300 cursor-pointer shrink-0 w-[270px] sm:w-[290px] lg:w-[310px] h-[330px] sm:h-[350px] lg:h-[370px] flex flex-col justify-between ${
+                    className={`px-2 py-2 rounded-[3px] text-center transition-all duration-150 cursor-pointer flex flex-col items-center justify-center gap-0.5 border ${
                       isActive
-                        ? "bg-[#202B61] text-white border border-[#202B61] shadow-lg ring-2 ring-[#202B61]/25"
-                        : "bg-[#F4F6FB] text-[#202B61] border border-slate-200/90 hover:border-[#202B61]/50 opacity-85 hover:opacity-100"
+                        ? "bg-[#202B61] text-white border-[#202B61] shadow-xs"
+                        : "bg-white text-slate-600 hover:text-[#202B61] border-slate-200/80 hover:border-slate-300"
                     }`}
                   >
-                    {/* Top: Real Preview Image */}
-                    <div className="relative w-full h-[62%] bg-slate-900 overflow-hidden shrink-0">
-                      <Image
-                        src={domain.image}
-                        alt={domain.title}
-                        fill
-                        sizes="(max-width: 768px) 280px, 320px"
-                        className="object-cover transition-transform duration-700 ease-out hover:scale-105"
-                        priority={idx === activeIdx}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent pointer-events-none" />
-                    </div>
-
-                    {/* Bottom: Card Caption */}
-                    <div className="p-4 sm:p-5 h-[38%] flex flex-col justify-between">
-                      <h4
-                        className={`font-heading font-bold text-base sm:text-lg tracking-tight leading-snug line-clamp-2 ${
-                          isActive ? "text-white" : "text-[#202B61]"
-                        }`}
-                      >
-                        {domain.shortTitle}
-                      </h4>
-
-                      <div
-                        className={`pt-2 border-t flex items-center justify-between text-xs ${
-                          isActive
-                            ? "border-white/15 text-white/80"
-                            : "border-slate-200/80 text-slate-500"
-                        }`}
-                      >
-                        <span className="font-mono text-[11px] truncate max-w-[190px]">
-                          {domain.metric}
-                        </span>
-                        <ArrowRight
-                          className={`w-3.5 h-3.5 shrink-0 ${
-                            isActive ? "text-white" : "text-[#202B61]"
-                          }`}
-                        />
-                      </div>
-                    </div>
-                  </div>
+                    <span
+                      className={`font-mono text-[9px] font-bold ${
+                        isActive ? "text-white/70" : "text-slate-400"
+                      }`}
+                    >
+                      {domain.number}
+                    </span>
+                    <span className="font-sans text-[11px] font-semibold truncate w-full">
+                      {domain.shortTitle}
+                    </span>
+                  </button>
                 );
               })}
             </div>
+
           </div>
 
         </div>
