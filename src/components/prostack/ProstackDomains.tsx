@@ -146,6 +146,17 @@ export const ProstackDomains: React.FC = () => {
   // Responsive step measurement for pixel-perfect sliding on all screen widths
   useEffect(() => {
     const updateStep = () => {
+      if (trackRef.current && trackRef.current.children.length > 1) {
+        const first = trackRef.current.children[0] as HTMLElement;
+        const second = trackRef.current.children[1] as HTMLElement;
+        if (first && second) {
+          const step = second.offsetLeft - first.offsetLeft;
+          if (step > 0) {
+            setCardStep(step);
+            return;
+          }
+        }
+      }
       if (window.innerWidth < 640) {
         setCardStep(270 + 16);
       } else if (window.innerWidth < 1024) {
@@ -183,7 +194,7 @@ export const ProstackDomains: React.FC = () => {
   return (
     <section
       id="domains"
-      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-white text-left select-none scroll-mt-20 font-sans overflow-hidden border-b border-slate-200/80"
+      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-10 sm:py-12 lg:py-14 px-4 sm:px-8 lg:px-12 bg-white text-left select-none scroll-mt-20 font-sans border-b border-slate-200/80"
     >
       <div className="max-w-[1400px] w-full mx-auto my-auto space-y-8 sm:space-y-10">
         
@@ -199,11 +210,11 @@ export const ProstackDomains: React.FC = () => {
           </div>
         </div>
 
-        {/* ── 2. 50/50 SPLIT: LEFT CONTENT (50%) & RIGHT SLIDER (50%) ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* ── 2. 50/50 SPLIT: LEFT CONTENT & RIGHT SLIDER ── */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-center">
           
-          {/* ── LEFT 50% COLUMN: Substantial Editorial Content + Arrows Directly Below ── */}
-          <div className="lg:col-span-6 flex flex-col justify-between space-y-6 text-left">
+          {/* ── LEFT COLUMN: Substantial Editorial Content + Arrows Directly Below ── */}
+          <div className="md:col-span-6 lg:col-span-5 flex flex-col justify-between space-y-6 text-left">
             
             {/* Domain Headline & Narrative (No category tag badge) */}
             <div className="space-y-3">
@@ -269,8 +280,8 @@ export const ProstackDomains: React.FC = () => {
 
           </div>
 
-          {/* ── RIGHT 50% COLUMN: Carousel Slider Taking Half of Screen ── */}
-          <div className="lg:col-span-6 relative overflow-hidden py-2">
+          {/* ── RIGHT COLUMN: Carousel Slider Taking Half of Screen ── */}
+          <div className="md:col-span-6 lg:col-span-7 w-full min-w-0 relative overflow-hidden py-2">
             <div
               ref={trackRef}
               style={{
