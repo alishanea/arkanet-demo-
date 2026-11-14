@@ -9,14 +9,14 @@ export function ContactHero() {
       {/* -- CINEMATIC AMBIENT BACKGROUND -- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop"
           alt="Arkanet Global Engineering Hubs"
-          className="w-full h-full object-cover opacity-55 brightness-105 saturate-110"
+          className="w-full h-full object-cover opacity-50 brightness-105 saturate-105"
           loading="eager"
         />
 
         {/* Consistent full-bleed gradient overlay (no oval shape) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/55 to-white/85 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/90 pointer-events-none" />
       </div>
 
       {/* -- HERO CONTENT (PERFECTLY CENTERED, FITS EXACTLY IN 1 SCREEN) -- */}
