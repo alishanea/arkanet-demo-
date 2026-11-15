@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const isAboutActive = pathname === "/about";
   const isWorkActive = pathname === "/work" || pathname.startsWith("/work");
   const isContactActive = pathname === "/contact";
-  const isApplicationActive = pathname === "/application";
+  const isProductsActive = pathname.startsWith("/products") || pathname === "/application";
   const isProstackActive = pathname === "/prostack" || pathname.startsWith("/prostack");
 
   // Auto-expand mobile capabilities if user is already on a capabilities route when opening menu
@@ -334,15 +334,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
             </div>
 
             <Link
-              href="/application"
+              href="/products"
               onClick={handleNavClick}
               className={`hidden md:inline-flex items-center justify-center h-8 sm:h-[34px] px-3.5 sm:px-4 rounded-full font-prostack font-extrabold text-xs lg:text-[13.5px] tracking-normal leading-none transition-all duration-200 shadow-none active:scale-95 cursor-pointer select-none ${
-                isApplicationActive
+                isProductsActive
                   ? "bg-[#202B61] text-white ring-2 ring-[#202B61] ring-offset-2"
                   : "bg-[#202B61] hover:bg-[#202B61]/90 text-white"
               }`}
             >
-              Applications
+              Products
             </Link>
 
             {/* Mobile Hamburger Toggle */}
@@ -602,11 +602,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 </a>
 
                 <Link
-                  href="/application"
+                  href="/products"
                   onClick={handleNavClick}
                   className="w-full flex items-center justify-center gap-2 bg-[#202B61] text-white py-3 rounded-full font-extrabold text-sm font-prostack shadow-md active:scale-[0.98] transition-transform"
                 >
-                  <span>Application Showcase &amp; Downloads</span>
+                  <span>Products Catalog</span>
                   <ArrowUpRight className="w-4 h-4 text-white" />
                 </Link>
               </div>

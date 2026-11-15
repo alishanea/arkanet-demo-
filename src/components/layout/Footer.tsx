@@ -90,8 +90,18 @@ export const Footer: React.FC<FooterProps> = ({
                   </a>
                 </li>
                 <li>
-                  <Link href="/application" className="hover:text-white transition-colors">
-                    Applications &amp; Storefronts
+                  <a
+                    href="https://orbit.arkanet.ae/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Orbit by Arkanet
+                  </a>
+                </li>
+                <li>
+                  <Link href="/products" className="hover:text-white transition-colors">
+                    Products &amp; Applications
                   </Link>
                 </li>
                 <li>
