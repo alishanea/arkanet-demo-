@@ -319,9 +319,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               <span className="absolute -top-1 -right-0.5 z-10 inline-flex items-center px-1 py-[0.5px] rounded-full border border-[#D61F28] bg-white text-[#D61F28] text-[6.5px] font-bold uppercase tracking-wider leading-none shadow-2xs pointer-events-none select-none font-prostack">
                 NEW
               </span>
-              <Link
-                href="/#prostack"
-                onClick={handleNavClick}
+              <a
+                href="https://prostack.arkanet.ae/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="prostack-btn inline-flex items-center justify-center h-8 sm:h-[34px] px-3 sm:px-3.5 rounded-full transition-all duration-200 cursor-pointer select-none border border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50 bg-white shadow-none active:scale-95 group"
               >
                 <img
@@ -329,7 +330,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   alt="Prostack"
                   className="h-[13px] sm:h-[14px] w-auto object-contain group-hover:opacity-90 transition-opacity"
                 />
-              </Link>
+              </a>
             </div>
 
             <Link
@@ -580,8 +581,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               </div>
 
               <div className="pt-2 border-t border-slate-100 space-y-2 pb-2">
-                <Link
-                  href="/#prostack"
+                <a
+                  href="https://prostack.arkanet.ae/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={handleNavClick}
                   className="prostack-btn w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-prostack font-extrabold text-xs bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#202B61] transition-colors"
                 >
@@ -596,7 +599,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                     </span>
                   </div>
                   <ArrowUpRight className="w-3.5 h-3.5 text-[#202B61]" />
-                </Link>
+                </a>
 
                 <Link
                   href="/application"

@@ -10,6 +10,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/prostack",
+        destination: "https://prostack.arkanet.ae/",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

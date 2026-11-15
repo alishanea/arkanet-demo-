@@ -104,13 +104,15 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
 
         {/* ── BOTTOM RIGHT: Simple Single Explore Arrow Link ── */}
         <div className="pt-4 sm:pt-6 flex justify-end">
-          <Link
-            href="/prostack"
+          <a
+            href="https://prostack.arkanet.ae/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 font-prostack text-sm sm:text-base font-semibold text-[#202B61] hover:text-[#1740b3] transition-colors"
           >
             <span>Explore Prostack</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-[#202B61] group-hover:text-[#1740b3]" />
-          </Link>
+          </a>
         </div>
 
       </div>
