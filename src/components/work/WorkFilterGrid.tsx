@@ -47,7 +47,7 @@ export const WorkFilterGrid: React.FC = () => {
     : null;
 
   return (
-    <section id="projects" className="relative w-full py-14 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none font-sans scroll-mt-20">
+    <section id="projects" className="relative w-full pt-8 pb-14 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none font-sans scroll-mt-20">
       <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
         
         {/* ── TOP CONTROLS: Category Filter Tabs + View Mode Toggle ── */}

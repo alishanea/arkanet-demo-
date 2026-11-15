@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const WorkHero: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen min-h-[100dvh] pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans flex flex-col justify-center">
+    <section className="relative w-full sm:min-h-screen sm:min-h-[100dvh] pt-24 sm:pt-32 lg:pt-36 pb-8 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans flex flex-col justify-center">
       {/* ── CINEMATIC AMBIENT BACKGROUND: HIGH-RES ARCHITECTURAL ENGINEERING STUDIO ── */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
         <Image
@@ -21,7 +21,7 @@ export const WorkHero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/30 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] w-full mx-auto my-auto space-y-6">
+      <div className="relative z-10 max-w-[1400px] w-full mx-auto sm:my-auto space-y-6">
         <div className="max-w-3xl space-y-5 text-left">
           <h1 className="hero-h1 font-heading font-extrabold text-[#202B61] text-4xl sm:text-6xl lg:text-[68px] tracking-tight leading-[1.05] text-balance">
             Digital Platforms Engineered for Scale

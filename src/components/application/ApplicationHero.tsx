@@ -3,8 +3,8 @@ import { Star } from "lucide-react";
 
 export const ApplicationHero: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen min-h-[100dvh] pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/90 text-left flex flex-col justify-center">
-      <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 my-auto">
+    <section className="relative w-full sm:min-h-screen sm:min-h-[100dvh] pt-24 sm:pt-32 lg:pt-36 pb-8 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/90 text-left flex flex-col justify-center">
+      <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10 sm:my-auto">
         
         {/* Main Hero Header Block: Two-Column Headline & Subtitle */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 pb-2 text-left">

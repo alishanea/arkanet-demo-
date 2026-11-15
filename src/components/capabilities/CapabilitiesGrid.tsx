@@ -102,7 +102,7 @@ const PRACTICES: CapabilityPractice[] = [
 
 export const CapabilitiesGrid: React.FC = () => {
   return (
-    <section id="practices" className="relative w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none font-sans scroll-mt-20">
+    <section id="practices" className="relative w-full pt-8 pb-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none font-sans scroll-mt-20">
       <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
