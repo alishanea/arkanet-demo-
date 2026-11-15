@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Footer } from "@/components/layout/Footer";
 import { ContactFormModal } from "@/components/modals/ContactFormModal";
 import { AboutCTA } from "@/components/about/AboutCTA";
-import { ProductsHero } from "@/components/products/ProductsHero";
 import { ProductsCatalog } from "@/components/products/ProductsCatalog";
 
 export default function ProductsPage() {
@@ -12,13 +11,10 @@ export default function ProductsPage() {
   const openContact = () => setContactOpen(true);
 
   return (
-    <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans">
+    <main className="min-h-screen bg-[#F4F6FB] text-slate-800 selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans pt-16 sm:pt-20 lg:pt-24">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* Hero Section */}
-      <ProductsHero />
-
-      {/* Main Marketplace Catalog: All / Free / Premium with Live Demos & Pricing */}
+      {/* Main Marketplace Catalog: Exact Inquisico Layout */}
       <ProductsCatalog />
 
       {/* Call to Action & Footer */}
