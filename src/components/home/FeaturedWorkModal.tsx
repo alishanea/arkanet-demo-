@@ -30,7 +30,7 @@ export const FeaturedWorkModal: React.FC<FeaturedWorkModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl bg-white rounded-[4px] border border-slate-200/90 p-5 sm:p-7 space-y-6 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
+        className="relative w-full max-w-3xl bg-white rounded-[4px] border border-slate-200/90 p-4 sm:p-7 space-y-5 sm:space-y-6 shadow-2xl max-h-[92dvh] overflow-y-auto text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button with radius < 5 */}
@@ -170,13 +170,13 @@ export const FeaturedWorkModal: React.FC<FeaturedWorkModalProps> = ({
         )}
 
         {/* Modal Bottom Actions with rounded-[4px] */}
-        <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-end gap-3">
+        <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-end gap-2.5 sm:gap-3">
           {app.liveUrl && (
             <a
               href={app.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-[4px] border border-slate-200 hover:border-[#202B61] text-[#202B61] text-xs font-bold hover:bg-slate-50 transition-colors"
+              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-[4px] border border-slate-200 hover:border-[#202B61] text-[#202B61] text-xs font-bold hover:bg-slate-50 transition-colors w-full sm:w-auto"
             >
               <span>Visit Live Storefront</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -190,7 +190,7 @@ export const FeaturedWorkModal: React.FC<FeaturedWorkModalProps> = ({
                 onClose();
                 onOpenContact();
               }}
-              className="inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-[4px] bg-[#202B61] text-white hover:bg-[#151E48] text-xs font-bold shadow-xs transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-[4px] bg-[#202B61] text-white hover:bg-[#151E48] text-xs font-bold shadow-xs transition-colors cursor-pointer w-full sm:w-auto"
             >
               <span>Request Custom Build</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

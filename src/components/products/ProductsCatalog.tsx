@@ -80,12 +80,12 @@ export const ProductsCatalog: React.FC = () => {
   }, [selectedCategory, searchQuery, selectedSort, minPrice, maxPrice]);
 
   return (
-    <section id="marketplace-catalog" className="w-full py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 bg-[#F4F6FB] text-left select-none font-sans min-h-screen">
-      <div className="max-w-[1520px] w-full mx-auto space-y-6 sm:space-y-8">
+    <section id="marketplace-catalog" className="w-full py-6 sm:py-10 lg:py-14 px-3 sm:px-6 lg:px-10 bg-[#F4F6FB] text-left select-none font-sans min-h-screen">
+      <div className="max-w-[1520px] w-full mx-auto space-y-5 sm:space-y-7">
         
-        {/* ── TOP HEADLINE (MATCHING INQUISICO MARKETPLACE STYLE) ── */}
-        <div className="text-center max-w-2xl mx-auto space-y-1.5 pt-2">
-          <h1 className="font-heading font-extrabold text-[#202B61] text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight">
+        {/* ── TOP HEADLINE (EXACT INQUISICO MARKETPLACE STYLE) ── */}
+        <div className="text-center max-w-2xl mx-auto space-y-1 sm:space-y-1.5 pt-1 px-2">
+          <h1 className="font-heading font-extrabold text-[#202B61] text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tight leading-tight text-balance">
             Arkanet marketplace will help you find various applications for all your needs
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 font-medium">
@@ -94,22 +94,22 @@ export const ProductsCatalog: React.FC = () => {
         </div>
 
         {/* ── SEARCH & FILTER HERO BAR (LIGHT BLUE INQUISICO BANNER) ── */}
-        <div className="bg-[#EBF2FE] border border-[#D3E3FD] rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5">
+        <div className="bg-[#EBF2FE] border border-[#D3E3FD] rounded-2xl p-3 sm:p-5 shadow-xs space-y-3">
           
           {/* Row 1: Search Input + Search Button + Category Dropdown */}
-          <div className="flex flex-col md:flex-row items-center gap-3">
+          <div className="flex flex-col md:flex-row items-center gap-2.5 sm:gap-3">
             <div className="relative flex-1 w-full flex items-center">
-              <Search className="w-4 h-4 text-slate-400 absolute left-4 pointer-events-none" />
+              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for the app..."
-                className="w-full bg-white border border-slate-200/90 text-sm text-slate-800 placeholder-slate-400 rounded-xl pl-11 pr-24 py-2.5 outline-none focus:border-[#202B61] transition-all shadow-2xs"
+                className="w-full bg-white border border-slate-200/90 text-xs sm:text-sm text-slate-800 placeholder-slate-400 rounded-xl pl-10 pr-22 py-2.5 outline-none focus:border-[#202B61] transition-all shadow-2xs"
               />
               <button
                 type="button"
-                className="absolute right-1.5 bg-[#202B61] hover:bg-[#151E48] text-white text-xs font-bold px-4 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
+                className="absolute right-1.5 bg-[#202B61] hover:bg-[#151E48] text-white text-xs font-bold px-3 sm:px-4 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
               >
                 <Search className="w-3.5 h-3.5" />
                 <span>Search</span>
@@ -121,7 +121,7 @@ export const ProductsCatalog: React.FC = () => {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full bg-white border border-slate-200/90 text-xs sm:text-sm font-semibold text-slate-700 rounded-xl px-3.5 py-2.5 outline-none focus:border-[#202B61] transition-all shadow-2xs cursor-pointer"
+                className="w-full bg-white border border-slate-200/90 text-xs sm:text-sm font-semibold text-slate-700 rounded-xl px-3 py-2.5 outline-none focus:border-[#202B61] transition-all shadow-2xs cursor-pointer"
               >
                 {categories.map((cat) => (
                   <option key={cat} value={cat}>
@@ -133,17 +133,17 @@ export const ProductsCatalog: React.FC = () => {
           </div>
 
           {/* Row 2: Price Filter + Sort by + Clear all + Results Count */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-1 text-xs">
-            <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-1 text-xs">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {/* Price Range */}
-              <div className="flex items-center gap-1.5 text-slate-600 font-semibold">
-                <span className="uppercase text-[10px] tracking-wider text-slate-500 font-bold">PRICE:</span>
+              <div className="flex items-center gap-1 text-slate-600 font-semibold">
+                <span className="uppercase text-[9.5px] tracking-wider text-slate-500 font-bold">PRICE:</span>
                 <input
                   type="number"
                   value={minPrice}
                   onChange={(e) => setMinPrice(e.target.value)}
                   placeholder="Min"
-                  className="w-16 bg-white border border-slate-200 text-xs text-slate-800 rounded-lg px-2 py-1 outline-none focus:border-[#202B61]"
+                  className="w-14 sm:w-16 bg-white border border-slate-200 text-xs text-slate-800 rounded-lg px-2 py-1 outline-none focus:border-[#202B61]"
                 />
                 <span className="text-slate-400">-</span>
                 <input
@@ -151,17 +151,17 @@ export const ProductsCatalog: React.FC = () => {
                   value={maxPrice}
                   onChange={(e) => setMaxPrice(e.target.value)}
                   placeholder="Max"
-                  className="w-16 bg-white border border-slate-200 text-xs text-slate-800 rounded-lg px-2 py-1 outline-none focus:border-[#202B61]"
+                  className="w-14 sm:w-16 bg-white border border-slate-200 text-xs text-slate-800 rounded-lg px-2 py-1 outline-none focus:border-[#202B61]"
                 />
               </div>
 
               {/* Sort By Dropdown */}
-              <div className="flex items-center gap-1.5 text-slate-600 font-semibold">
-                <span className="uppercase text-[10px] tracking-wider text-slate-500 font-bold">SORT BY:</span>
+              <div className="flex items-center gap-1 text-slate-600 font-semibold">
+                <span className="uppercase text-[9.5px] tracking-wider text-slate-500 font-bold">SORT BY:</span>
                 <select
                   value={selectedSort}
                   onChange={(e) => setSelectedSort(e.target.value as any)}
-                  className="bg-white border border-slate-200 text-xs font-semibold text-slate-700 rounded-lg px-2.5 py-1 outline-none focus:border-[#202B61] cursor-pointer"
+                  className="bg-white border border-slate-200 text-xs font-semibold text-slate-700 rounded-lg px-2 py-1 outline-none focus:border-[#202B61] cursor-pointer"
                 >
                   <option value="relevance">Relevance</option>
                   <option value="rating">Highest Rated</option>
@@ -175,7 +175,7 @@ export const ProductsCatalog: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleClearAll}
-                  className="inline-flex items-center gap-1 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-lg transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-semibold px-2 py-1 rounded-lg transition-colors cursor-pointer"
                 >
                   <RotateCcw className="w-3 h-3 text-slate-500" />
                   <span>Clear all</span>
@@ -184,19 +184,19 @@ export const ProductsCatalog: React.FC = () => {
             </div>
 
             {/* Results Count */}
-            <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
+            <div className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-slate-500 self-end sm:self-auto">
               {filteredProducts.length} RESULTS
             </div>
           </div>
 
         </div>
 
-        {/* ── 5-COLUMN PRODUCT CARDS GRID (EXACT INQUISICO DESIGN) ── */}
+        {/* ── 5-COLUMN PRODUCT CARDS GRID (RESPONSIVE 1 -> 2 -> 3 -> 4 -> 5 COLS) ── */}
         {filteredProducts.length === 0 ? (
-          <div className="py-20 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 space-y-3">
-            <Layers className="w-10 h-10 mx-auto text-slate-300" />
-            <h3 className="font-heading font-bold text-lg text-[#202B61]">No applications found</h3>
-            <p className="text-sm text-slate-500 max-w-md mx-auto">
+          <div className="py-16 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 space-y-3">
+            <Layers className="w-9 h-9 mx-auto text-slate-300" />
+            <h3 className="font-heading font-bold text-base sm:text-lg text-[#202B61]">No applications found</h3>
+            <p className="text-xs sm:text-sm text-slate-500 max-w-md mx-auto">
               We couldn&apos;t find any applications matching your current filter criteria.
             </p>
             <button
@@ -208,7 +208,7 @@ export const ProductsCatalog: React.FC = () => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-5 items-stretch">
             {filteredProducts.map((product) => {
               const isLiked = likedApps[product.id] || false;
 
@@ -229,10 +229,10 @@ export const ProductsCatalog: React.FC = () => {
                     />
 
                     {/* Floating Price Badge (Top-Right) */}
-                    <div className="absolute top-2.5 right-2.5 z-10">
-                      <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-white/95 text-[#202B61] border border-blue-300 shadow-2xs backdrop-blur-xs">
-                        <CreditCard className="w-3 h-3 text-[#3B82F6]" />
-                        <span>{product.priceBadgeText}</span>
+                    <div className="absolute top-2.5 right-2.5 z-10 max-w-[85%]">
+                      <div className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-md text-[10px] sm:text-[11px] font-bold bg-white/95 text-[#202B61] border border-blue-300 shadow-2xs backdrop-blur-xs truncate">
+                        <CreditCard className="w-3 h-3 text-[#3B82F6] shrink-0" />
+                        <span className="truncate">{product.priceBadgeText}</span>
                       </div>
                     </div>
 
@@ -250,7 +250,7 @@ export const ProductsCatalog: React.FC = () => {
                   </div>
 
                   {/* Card Content Body */}
-                  <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-3">
+                  <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-2.5 sm:space-y-3">
                     <div className="space-y-2">
                       
                       {/* Category Colored Pills */}
@@ -266,7 +266,7 @@ export const ProductsCatalog: React.FC = () => {
                           return (
                             <span
                               key={tIdx}
-                              className={`text-[9.5px] font-black uppercase tracking-wider px-2 py-0.5 rounded ${style}`}
+                              className={`text-[9px] sm:text-[9.5px] font-black uppercase tracking-wider px-1.5 sm:px-2 py-0.5 rounded ${style}`}
                             >
                               {tag}
                             </span>
@@ -276,7 +276,7 @@ export const ProductsCatalog: React.FC = () => {
 
                       {/* Title & Star Rating */}
                       <div className="flex items-start justify-between gap-1.5 pt-0.5">
-                        <h3 className="font-heading font-extrabold text-base text-slate-900 group-hover:text-[#202B61] transition-colors leading-snug line-clamp-1">
+                        <h3 className="font-heading font-extrabold text-sm sm:text-base text-slate-900 group-hover:text-[#202B61] transition-colors leading-snug line-clamp-1">
                           {product.name}
                         </h3>
                         <div className="flex items-center text-amber-500 shrink-0 text-xs font-bold">
@@ -286,25 +286,25 @@ export const ProductsCatalog: React.FC = () => {
                       </div>
 
                       {/* Description (2 Lines) */}
-                      <p className="font-sans text-[11.5px] text-slate-500 leading-relaxed font-normal line-clamp-2">
+                      <p className="font-sans text-[11px] sm:text-[11.5px] text-slate-500 leading-relaxed font-normal line-clamp-2">
                         {product.description}
                       </p>
 
                       {/* Developer Avatar & Name */}
-                      <div className="flex items-center gap-1.5 pt-1">
+                      <div className="flex items-center gap-1.5 pt-0.5">
                         <img
                           src={product.developer.avatar}
                           alt={product.developer.name}
-                          className="w-5 h-5 rounded-full object-cover border border-slate-200"
+                          className="w-4 h-4 sm:w-5 sm:h-5 rounded-full object-cover border border-slate-200 shrink-0"
                         />
-                        <span className="text-[11px] text-slate-600 font-medium line-clamp-1">
+                        <span className="text-[10.5px] sm:text-[11px] text-slate-600 font-medium line-clamp-1">
                           {product.developer.name}
                         </span>
                       </div>
                     </div>
 
                     {/* Bottom Action Button: View details */}
-                    <div className="pt-2">
+                    <div className="pt-1.5 sm:pt-2">
                       <button
                         type="button"
                         onClick={(e) => {

@@ -64,34 +64,34 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 15 }}
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-4xl max-h-[92vh] bg-white rounded-3xl border border-slate-200/90 shadow-2xl z-50 overflow-hidden flex flex-col text-left text-slate-800"
+          className="relative w-full max-w-4xl max-h-[92dvh] bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-2xl z-50 overflow-hidden flex flex-col text-left text-slate-800"
         >
           {/* Header Bar */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200/80 bg-slate-50/80">
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200/90 flex items-center justify-center p-2 shadow-2xs shrink-0">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-200/80 bg-slate-50/80 shrink-0">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 flex items-center justify-center p-1.5 sm:p-2 shadow-2xs shrink-0">
                 <img
                   src={product.logo}
                   alt={product.name}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="font-heading font-black text-lg sm:text-xl text-[#202B61] leading-tight">
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                  <h3 className="font-heading font-black text-base sm:text-xl text-[#202B61] leading-tight truncate">
                     {product.name}
                   </h3>
-                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#202B61]/10 text-[#202B61] border border-[#202B61]/20">
+                  <span className="text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-0.5 rounded-full bg-[#202B61]/10 text-[#202B61] border border-[#202B61]/20">
                     {product.priceBadgeText}
                   </span>
                 </div>
-                <div className="flex items-center gap-2 pt-0.5 text-xs text-slate-500">
-                  <span className="font-semibold text-slate-700">{product.developer.name}</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 pt-0.5 text-[11px] sm:text-xs text-slate-500 truncate">
+                  <span className="font-semibold text-slate-700 truncate">{product.developer.name}</span>
                   <span>•</span>
                   <span>{product.category}</span>
                   <span>•</span>
-                  <div className="flex items-center text-amber-500 font-bold">
-                    <Star className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400 mr-0.5" />
+                  <div className="flex items-center text-amber-500 font-bold shrink-0">
+                    <Star className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-amber-400 stroke-amber-400 mr-0.5" />
                     <span>{product.rating}</span>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="p-2 rounded-xl text-slate-400 hover:text-[#202B61] hover:bg-slate-200/60 transition-colors cursor-pointer"
+              className="p-1.5 sm:p-2 rounded-xl text-slate-400 hover:text-[#202B61] hover:bg-slate-200/60 transition-colors cursor-pointer shrink-0 ml-2"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -109,7 +109,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           </div>
 
           {/* Body Content */}
-          <div className="flex-1 overflow-y-auto p-5 sm:p-7 space-y-6">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-7 space-y-5 sm:space-y-6">
             
             {/* Screenshots Gallery */}
             <div className="space-y-3">
@@ -163,13 +163,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2.5">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-2.5 w-full sm:w-auto">
                 {product.liveUrl && (
                   <a
                     href={product.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#202B61] text-[#202B61] bg-white hover:bg-slate-50 font-heading font-bold text-xs sm:text-sm transition-colors shadow-2xs"
+                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#202B61] text-[#202B61] bg-white hover:bg-slate-50 font-heading font-bold text-xs sm:text-sm transition-colors shadow-2xs w-full sm:w-auto text-center"
                   >
                     <span>Launch Live Demo</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -180,7 +180,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   href={product.purchaseUrl || product.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#202B61] hover:bg-[#151E48] text-white font-heading font-bold text-xs sm:text-sm shadow-sm transition-all"
+                  className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#202B61] hover:bg-[#151E48] text-white font-heading font-bold text-xs sm:text-sm shadow-sm transition-all w-full sm:w-auto text-center"
                 >
                   <span>{product.pricingType === "free" ? "Get Started Free" : "Purchase & Deploy"}</span>
                   <ArrowUpRight className="w-4 h-4" />
