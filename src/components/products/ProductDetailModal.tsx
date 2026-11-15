@@ -114,7 +114,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
           {/* Body Content */}
           <div className="flex-1 overflow-y-auto p-4 sm:p-7 space-y-5 sm:space-y-6">
-            
+
             {/* Screenshots Gallery */}
             <div className="space-y-3">
               <div className="relative w-full aspect-[16/9] rounded-[4px] overflow-hidden bg-slate-900 border border-slate-200 shadow-md">

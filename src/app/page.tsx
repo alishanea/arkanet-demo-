@@ -25,8 +25,8 @@ const ClientLogosSection = dynamic(
   () => import("@/components/home/ClientLogosSection").then((m) => m.ClientLogosSection),
   { ssr: true }
 );
-const HomeFeaturedWorkCarousel = dynamic(
-  () => import("@/components/home/HomeFeaturedWorkCarousel").then((m) => m.HomeFeaturedWorkCarousel),
+const WhatsNewSection = dynamic(
+  () => import("@/components/home/WhatsNewSection").then((m) => m.WhatsNewSection),
   { ssr: true }
 );
 const HomeProstackSection = dynamic(
@@ -80,8 +80,8 @@ export default function Home() {
         {/* 3. Engineering Process */}
         <OurProcess onOpenBooking={handleOpenBooking} />
 
-        {/* 4. Featured Work In Motion (What We've Built) */}
-        <HomeFeaturedWorkCarousel onOpenBooking={handleOpenBooking} />
+        {/* 4. Selected Work & Case Studies (Work and Projects) */}
+        <WhatsNewSection onOpenBooking={handleOpenBooking} />
 
         {/* 4b. Prostack Flagship Product Feature */}
         <HomeProstackSection onOpenBooking={handleOpenBooking} />
