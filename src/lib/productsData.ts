@@ -45,11 +45,11 @@ export const PRODUCTS_DATA: ProductItem[] = [
     rating: 5.0,
     reviewsCount: "2,480+ enterprises",
     logo: "/assets/images/prostack-logo-navy.png",
-    previewImage: "/assets/images/prostack-showcase-banner.jpg",
+    previewImage: "/assets/images/prostack-preview-hd.jpg",
     screenshots: [
+      "/assets/images/prostack-hd.png",
+      "/assets/images/prostack-preview-hd.jpg",
       "/assets/images/prostack-showcase-banner.jpg",
-      "/assets/images/products-showcase-ui.jpg",
-      "/assets/images/prostack-hero-bg.jpg",
     ],
     features: [
       "Liquid OS 2.0 Theme Engine with drag-and-drop page assembly",
@@ -83,11 +83,11 @@ export const PRODUCTS_DATA: ProductItem[] = [
     rating: 4.9,
     reviewsCount: "1,890+ teams",
     logo: "/assets/images/arkanet-icon-clean.png",
-    previewImage: "/assets/images/orbit-showcase-banner.jpg",
+    previewImage: "/assets/images/orbit-preview-hd.jpg",
     screenshots: [
+      "/assets/images/orbit-hd.png",
+      "/assets/images/orbit-preview-hd.jpg",
       "/assets/images/orbit-showcase-banner.jpg",
-      "/assets/images/orbit-tasks-banner.jpg",
-      "/assets/images/orbit-dashboard-mockup.jpg",
       "/assets/images/products-showcase-ui.jpg",
     ],
     features: [

@@ -46,8 +46,8 @@ export const ProductsCatalog: React.FC = () => {
     <section id="products-catalog" className="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 bg-[#F8FAFC]/70 border-b border-slate-200/80 text-left select-none font-sans">
       <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
         
-        {/* ── TOP CONTROLS: TABS + SEARCH ── */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 p-4 sm:p-6 shadow-sm">
+        {/* ── TOP CONTROLS: TABS + SEARCH (Radius < 5) ── */}
+        <div className="bg-white rounded-[4px] border border-slate-200/90 p-4 sm:p-6 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             
             {/* Pricing Segment Tabs (All Products / Free Products / Premium Products) */}
@@ -63,7 +63,7 @@ export const ProductsCatalog: React.FC = () => {
                     key={tab.key}
                     type="button"
                     onClick={() => setActiveTab(tab.key as PricingTab)}
-                    className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 cursor-pointer select-none outline-none ${
+                    className={`px-5 py-2.5 rounded-[4px] text-sm font-bold transition-all duration-200 cursor-pointer select-none outline-none ${
                       isActive
                         ? "bg-[#202B61] text-white shadow-sm"
                         : "bg-slate-50 text-[#202B61]/80 hover:bg-slate-100 hover:text-[#202B61] border border-slate-200/80"
@@ -75,7 +75,7 @@ export const ProductsCatalog: React.FC = () => {
               })}
             </div>
 
-            {/* Clean Search Input */}
+            {/* Clean Search Input with radius < 5 */}
             <div className="relative w-full sm:w-80 md:w-96">
               <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
@@ -83,13 +83,13 @@ export const ProductsCatalog: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search products..."
-                className="w-full bg-slate-50/70 border border-slate-200 hover:border-slate-300 focus:border-[#202B61] focus:bg-white text-sm text-[#202B61] placeholder-slate-400 rounded-xl pl-10 pr-9 py-2.5 transition-colors outline-none"
+                className="w-full bg-slate-50/70 border border-slate-200 hover:border-slate-300 focus:border-[#202B61] focus:bg-white text-sm text-[#202B61] placeholder-slate-400 rounded-[4px] pl-10 pr-9 py-2.5 transition-colors outline-none"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#202B61] p-1 cursor-pointer"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#202B61] p-1 cursor-pointer rounded-[4px]"
                   aria-label="Clear search"
                 >
                   <X className="w-3.5 h-3.5" />
@@ -100,9 +100,9 @@ export const ProductsCatalog: React.FC = () => {
           </div>
         </div>
 
-        {/* ── PRODUCT CARDS GRID ── */}
+        {/* ── PRODUCT CARDS GRID (Radius < 5) ── */}
         {filteredProducts.length === 0 ? (
-          <div className="py-20 text-center bg-white rounded-3xl border border-slate-200 text-slate-500 space-y-3">
+          <div className="py-20 text-center bg-white rounded-[4px] border border-slate-200 text-slate-500 space-y-3">
             <Layers className="w-10 h-10 mx-auto text-slate-300" />
             <h3 className="font-heading font-bold text-lg text-[#202B61]">No products found</h3>
             <p className="text-sm text-slate-500 max-w-md mx-auto">
@@ -114,7 +114,7 @@ export const ProductsCatalog: React.FC = () => {
                 setActiveTab("all");
                 setSearchQuery("");
               }}
-              className="px-4 py-2 rounded-xl bg-[#202B61] text-white text-xs font-bold"
+              className="px-4 py-2 rounded-[4px] bg-[#202B61] text-white text-xs font-bold"
             >
               Reset Filters
             </button>
@@ -127,7 +127,7 @@ export const ProductsCatalog: React.FC = () => {
               return (
                 <div
                   key={product.id}
-                  className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 hover:border-[#202B61]/40 transition-all duration-300 overflow-hidden shadow-xs hover:shadow-md text-left"
+                  className="group relative flex flex-col justify-between rounded-[4px] bg-white border border-slate-200/90 hover:border-[#202B61]/40 transition-all duration-300 overflow-hidden shadow-xs hover:shadow-md text-left"
                 >
                   {/* Top: Image Thumbnail + Clean Price Badge */}
                   <div className="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-100 shrink-0">
@@ -139,10 +139,10 @@ export const ProductsCatalog: React.FC = () => {
                       className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
 
-                    {/* Clean Price Badge in Top Right */}
+                    {/* Clean Price Badge in Top Right with radius < 5 */}
                     <div className="absolute top-3.5 right-3.5 z-10">
                       <div
-                        className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold shadow-sm backdrop-blur-md ${
+                        className={`inline-flex items-center px-3 py-1 rounded-[4px] text-xs font-extrabold shadow-sm backdrop-blur-md ${
                           isFree
                             ? "bg-emerald-600/95 text-white border border-emerald-400"
                             : "bg-[#202B61]/95 text-white border border-[#3B82F6]/50"
@@ -172,8 +172,8 @@ export const ProductsCatalog: React.FC = () => {
                           </p>
                         </div>
 
-                        {/* Product Logo Thumbnail */}
-                        <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200/90 flex items-center justify-center p-1.5 shrink-0 shadow-2xs">
+                        {/* Product Logo Thumbnail with radius < 5 */}
+                        <div className="w-10 h-10 rounded-[4px] bg-slate-50 border border-slate-200/90 flex items-center justify-center p-1.5 shrink-0 shadow-2xs">
                           <img
                             src={product.logo}
                             alt={product.name}
@@ -198,14 +198,14 @@ export const ProductsCatalog: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Bottom Action Buttons: Live Demo + Purchase / Get Started */}
+                    {/* Bottom Action Buttons with radius < 5: Live Demo + Purchase / Get Started */}
                     <div className="pt-4 border-t border-slate-100 flex items-center gap-2">
                       {product.liveUrl && (
                         <a
                           href={product.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl border border-slate-200/90 hover:border-[#202B61] text-[#202B61] font-heading font-bold text-xs bg-slate-50/60 hover:bg-slate-100 transition-colors"
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-[4px] border border-slate-200/90 hover:border-[#202B61] text-[#202B61] font-heading font-bold text-xs bg-slate-50/60 hover:bg-slate-100 transition-colors"
                           title={`Open ${product.name} Live Demo`}
                         >
                           <span>Live Demo</span>
@@ -216,7 +216,7 @@ export const ProductsCatalog: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setSelectedProduct(product)}
-                        className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#202B61] hover:bg-[#151E48] text-white font-heading font-bold text-xs shadow-xs transition-colors cursor-pointer"
+                        className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-[4px] bg-[#202B61] hover:bg-[#151E48] text-white font-heading font-bold text-xs shadow-xs transition-colors cursor-pointer"
                       >
                         <span>{isFree ? "Get Started" : "Purchase"}</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
