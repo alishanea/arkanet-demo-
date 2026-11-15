@@ -194,15 +194,15 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                   </div>
 
                   {/* Project Headline: Rich, descriptive titles filling available space with crisp, compact spacing */}
-                  <div className="h-[2.85rem] sm:h-[3.1rem] lg:h-[3.25rem] flex items-start mb-2">
+                  <div className="min-h-[2.85rem] sm:h-[3.1rem] lg:h-[3.25rem] flex items-start mb-2">
                     <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-[#202B61] leading-[1.28] tracking-tight">
-                      <span className="block whitespace-nowrap">{project.titleLine1 || project.title}</span>
-                      <span className="block whitespace-nowrap">{project.titleLine2}</span>
+                      <span className="block whitespace-normal sm:whitespace-nowrap">{project.titleLine1 || project.title}</span>
+                      <span className="block whitespace-normal sm:whitespace-nowrap">{project.titleLine2}</span>
                     </h3>
                   </div>
 
                   {/* Body Description: Balanced size, 16 words, perfect 3-line flow */}
-                  <div className="h-[4.2rem] sm:h-[4.5rem] flex items-start pb-1">
+                  <div className="min-h-[4.2rem] sm:h-[4.5rem] flex items-start pb-1">
                     <p className="font-sans text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#202B61]/85 leading-[1.6] font-normal text-pretty line-clamp-3">
                       {project.description}
                     </p>

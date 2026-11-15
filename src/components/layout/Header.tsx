@@ -36,6 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileCapabilitiesOpen, setMobileCapabilitiesOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -46,6 +47,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
   const isContactActive = pathname === "/contact";
   const isApplicationActive = pathname === "/application";
   const isProstackActive = pathname === "/prostack" || pathname.startsWith("/prostack");
+
+  // Auto-expand mobile capabilities if user is already on a capabilities route when opening menu
+  useEffect(() => {
+    if (mobileMenuOpen && isCapabilitiesActive) {
+      setMobileCapabilitiesOpen(true);
+    }
+  }, [mobileMenuOpen, isCapabilitiesActive]);
 
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -377,40 +385,175 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
         />
       </header>
 
+      {/* ── MOBILE MENU DRAWER BACKDROP ── */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-30 bg-[#202B61]/25 backdrop-blur-[2px] md:hidden cursor-pointer pointer-events-auto"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
       {/* ── MOBILE MENU DRAWER ── */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="mobile-menu-drawer fixed inset-x-0 top-[76px] z-40 px-4 md:hidden pointer-events-auto font-prostack"
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="mobile-menu-drawer fixed inset-x-0 top-[64px] sm:top-[74px] z-40 px-3 sm:px-4 md:hidden pointer-events-auto font-prostack"
           >
-            <div className="bg-white/98 backdrop-blur-2xl border border-slate-200 shadow-none rounded-3xl p-5 space-y-4 max-h-[calc(100vh-100px)] overflow-y-auto font-prostack">
+            <div className="bg-white/98 backdrop-blur-2xl border border-slate-200/90 shadow-2xl rounded-2xl sm:rounded-3xl p-4 sm:p-5 space-y-3 sm:space-y-4 max-h-[calc(100dvh-80px)] overflow-y-auto overscroll-contain font-prostack">
               <div className="flex flex-col space-y-1">
                 <Link
                   href="/"
-                  onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-extrabold text-sm font-prostack ${
+                  onClick={handleHomeClick}
+                  className={`px-3.5 py-2.5 rounded-xl font-extrabold text-sm font-prostack transition-colors ${
                     isHomeActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
                   Home
                 </Link>
-                <Link
-                  href="/capabilities"
-                  onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-extrabold text-sm font-prostack ${
-                    isCapabilitiesActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
-                  }`}
-                >
-                  Capabilities &amp; Services
-                </Link>
+
+                {/* Capabilities Expandable Section with Full Sub Capabilities */}
+                <div className="rounded-xl overflow-hidden transition-colors border border-slate-200/80 bg-slate-50/50">
+                  <div className="flex items-center justify-between">
+                    <button
+                      type="button"
+                      onClick={() => setMobileCapabilitiesOpen(!mobileCapabilitiesOpen)}
+                      className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-extrabold text-sm font-prostack transition-colors select-none cursor-pointer ${
+                        isCapabilitiesActive
+                          ? "bg-[#202B61] text-white"
+                          : "text-[#202B61] hover:bg-[#202B61]/5"
+                      }`}
+                    >
+                      <span>Capabilities &amp; Services</span>
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-300 ${
+                          mobileCapabilitiesOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
+
+                  {/* Sub Capabilities List */}
+                  <AnimatePresence>
+                    {mobileCapabilitiesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="overflow-hidden bg-white border-t border-slate-100"
+                      >
+                        <div className="pt-2.5 pb-2.5 px-2 space-y-3.5">
+                          {/* Direct All Capabilities Link */}
+                          <Link
+                            href="/capabilities"
+                            onClick={handleNavClick}
+                            className="flex items-center justify-between px-3 py-2 rounded-lg bg-[#202B61]/5 hover:bg-[#202B61]/10 text-xs font-bold text-[#202B61] transition-colors"
+                          >
+                            <span>Explore All Disciplines Overview</span>
+                            <ArrowUpRight className="w-3.5 h-3.5 text-[#202B61]" />
+                          </Link>
+
+                          {/* 1. Engineering Pillar */}
+                          <div className="space-y-1">
+                            <div className="text-[10px] font-bold uppercase tracking-wider text-[#202B61]/60 px-2.5 py-0.5">
+                              Engineering
+                            </div>
+                            <div className="space-y-0.5">
+                              {engineeringItems.map(({ label, href, icon: Icon }) => (
+                                <Link
+                                  key={label}
+                                  href={href}
+                                  onClick={handleNavClick}
+                                  className="flex items-center justify-between px-2.5 py-2 rounded-lg hover:bg-slate-100/80 transition-colors group active:bg-slate-100"
+                                >
+                                  <div className="flex items-center gap-2.5 min-w-0">
+                                    <div className="w-6 h-6 rounded-md bg-[#202B61]/5 flex items-center justify-center text-[#202B61] shrink-0">
+                                      <Icon className="w-3.5 h-3.5" />
+                                    </div>
+                                    <span className="text-xs font-semibold text-[#202B61] truncate">
+                                      {label}
+                                    </span>
+                                  </div>
+                                  <ArrowUpRight className="w-3 h-3 text-[#202B61]/40 group-hover:text-[#202B61] transition-colors shrink-0" />
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* 2. Artificial Intelligence Pillar */}
+                          <div className="space-y-1">
+                            <div className="text-[10px] font-bold uppercase tracking-wider text-[#202B61]/60 px-2.5 py-0.5">
+                              Artificial Intelligence
+                            </div>
+                            <div className="space-y-0.5">
+                              {aiItems.map(({ label, href, icon: Icon }) => (
+                                <Link
+                                  key={label}
+                                  href={href}
+                                  onClick={handleNavClick}
+                                  className="flex items-center justify-between px-2.5 py-2 rounded-lg hover:bg-slate-100/80 transition-colors group active:bg-slate-100"
+                                >
+                                  <div className="flex items-center gap-2.5 min-w-0">
+                                    <div className="w-6 h-6 rounded-md bg-[#202B61]/5 flex items-center justify-center text-[#202B61] shrink-0">
+                                      <Icon className="w-3.5 h-3.5" />
+                                    </div>
+                                    <span className="text-xs font-semibold text-[#202B61] truncate">
+                                      {label}
+                                    </span>
+                                  </div>
+                                  <ArrowUpRight className="w-3 h-3 text-[#202B61]/40 group-hover:text-[#202B61] transition-colors shrink-0" />
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* 3. Design & Growth Pillar */}
+                          <div className="space-y-1">
+                            <div className="text-[10px] font-bold uppercase tracking-wider text-[#202B61]/60 px-2.5 py-0.5">
+                              Design &amp; Growth
+                            </div>
+                            <div className="space-y-0.5">
+                              {designItems.map(({ label, href, icon: Icon }) => (
+                                <Link
+                                  key={label}
+                                  href={href}
+                                  onClick={handleNavClick}
+                                  className="flex items-center justify-between px-2.5 py-2 rounded-lg hover:bg-slate-100/80 transition-colors group active:bg-slate-100"
+                                >
+                                  <div className="flex items-center gap-2.5 min-w-0">
+                                    <div className="w-6 h-6 rounded-md bg-[#202B61]/5 flex items-center justify-center text-[#202B61] shrink-0">
+                                      <Icon className="w-3.5 h-3.5" />
+                                    </div>
+                                    <span className="text-xs font-semibold text-[#202B61] truncate">
+                                      {label}
+                                    </span>
+                                  </div>
+                                  <ArrowUpRight className="w-3 h-3 text-[#202B61]/40 group-hover:text-[#202B61] transition-colors shrink-0" />
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 <Link
                   href="/work"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-extrabold text-sm font-prostack ${
+                  className={`px-3.5 py-2.5 rounded-xl font-extrabold text-sm font-prostack transition-colors ${
                     isWorkActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
@@ -419,7 +562,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/about"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-extrabold text-sm font-prostack ${
+                  className={`px-3.5 py-2.5 rounded-xl font-extrabold text-sm font-prostack transition-colors ${
                     isAboutActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
@@ -428,7 +571,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/contact"
                   onClick={handleNavClick}
-                  className={`px-4 py-2.5 rounded-xl font-extrabold text-sm font-prostack ${
+                  className={`px-3.5 py-2.5 rounded-xl font-extrabold text-sm font-prostack transition-colors ${
                     isContactActive ? "bg-[#202B61] text-white" : "text-[#202B61] hover:bg-[#202B61]/5"
                   }`}
                 >
@@ -436,7 +579,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 </Link>
               </div>
 
-              <div className="pt-2 border-t border-slate-100 space-y-2">
+              <div className="pt-2 border-t border-slate-100 space-y-2 pb-2">
                 <Link
                   href="/#prostack"
                   onClick={handleNavClick}
@@ -458,7 +601,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 <Link
                   href="/application"
                   onClick={handleNavClick}
-                  className="w-full flex items-center justify-center gap-2 bg-[#202B61] text-white py-3 rounded-full font-extrabold text-sm font-prostack shadow-md"
+                  className="w-full flex items-center justify-center gap-2 bg-[#202B61] text-white py-3 rounded-full font-extrabold text-sm font-prostack shadow-md active:scale-[0.98] transition-transform"
                 >
                   <span>Application Showcase &amp; Downloads</span>
                   <ArrowUpRight className="w-4 h-4 text-white" />
