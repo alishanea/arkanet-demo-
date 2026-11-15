@@ -82,20 +82,25 @@ export const ProductsCatalog: React.FC = () => {
   return (
     <section id="marketplace-catalog" className="w-full py-6 sm:py-10 lg:py-14 px-3 sm:px-6 lg:px-10 bg-[#F4F6FB] text-left select-none font-sans min-h-screen">
       <div className="max-w-[1520px] w-full mx-auto space-y-5 sm:space-y-7">
-        
-        {/* ── TOP HEADLINE (EXACT INQUISICO MARKETPLACE STYLE) ── */}
-        <div className="text-center max-w-2xl mx-auto space-y-1 sm:space-y-1.5 pt-1 px-2">
-          <h1 className="font-heading font-extrabold text-[#202B61] text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tight leading-tight text-balance">
-            Arkanet marketplace will help you find various applications for all your needs
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-500 font-medium">
-            Browse official platforms, open-source utilities, and partner enterprise applications.
-          </p>
+
+        {/* ── ONE-LINER HEADER: DIRECTLY SHOW PRODUCTS ── */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200/80 pb-4 text-left">
+          <div>
+            <h1 className="font-heading font-extrabold text-[#202B61] text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight">
+              Our Products
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
+              Explore proprietary platforms, team collaboration suites, and enterprise applications engineered by Arkanet.
+            </p>
+          </div>
+          <div className="text-xs font-semibold text-slate-400 shrink-0">
+            {filteredProducts.length} Applications Available
+          </div>
         </div>
 
         {/* ── SEARCH & FILTER HERO BAR (LIGHT BLUE INQUISICO BANNER) ── */}
         <div className="bg-[#EBF2FE] border border-[#D3E3FD] rounded-2xl p-3 sm:p-5 shadow-xs space-y-3">
-          
+
           {/* Row 1: Search Input + Search Button + Category Dropdown */}
           <div className="flex flex-col md:flex-row items-center gap-2.5 sm:gap-3">
             <div className="relative flex-1 w-full flex items-center">
@@ -240,9 +245,8 @@ export const ProductsCatalog: React.FC = () => {
                     <button
                       type="button"
                       onClick={(e) => toggleLike(product.id, e)}
-                      className={`absolute bottom-2.5 right-2.5 z-10 w-6 h-6 rounded-full bg-white/95 border border-slate-200 flex items-center justify-center transition-transform hover:scale-110 shadow-2xs cursor-pointer ${
-                        isLiked ? "text-rose-500" : "text-slate-400 hover:text-rose-500"
-                      }`}
+                      className={`absolute bottom-2.5 right-2.5 z-10 w-6 h-6 rounded-full bg-white/95 border border-slate-200 flex items-center justify-center transition-transform hover:scale-110 shadow-2xs cursor-pointer ${isLiked ? "text-rose-500" : "text-slate-400 hover:text-rose-500"
+                        }`}
                       aria-label="Save to favorites"
                     >
                       <Heart className={`w-3.5 h-3.5 ${isLiked ? "fill-rose-500" : ""}`} />
@@ -252,7 +256,7 @@ export const ProductsCatalog: React.FC = () => {
                   {/* Card Content Body */}
                   <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-2.5 sm:space-y-3">
                     <div className="space-y-2">
-                      
+
                       {/* Category Colored Pills */}
                       <div className="flex flex-wrap items-center gap-1">
                         {product.tags.slice(0, 3).map((tag, tIdx) => {
