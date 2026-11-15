@@ -606,7 +606,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                   onClick={handleNavClick}
                   className="w-full flex items-center justify-center gap-2 bg-[#202B61] text-white py-3 rounded-full font-extrabold text-sm font-prostack shadow-md active:scale-[0.98] transition-transform"
                 >
-                  <span>Products Catalog</span>
+                  <span>Products</span>
                   <ArrowUpRight className="w-4 h-4 text-white" />
                 </Link>
               </div>
