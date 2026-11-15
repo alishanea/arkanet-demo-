@@ -46,7 +46,7 @@ export const ApplicationGrid: React.FC<ApplicationGridProps> = ({ onSelectApp })
                   key={category}
                   type="button"
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
+                  className={`px-4 py-2 rounded-[4px] text-xs font-semibold tracking-tight transition-all duration-200 cursor-pointer select-none ${
                     isActive
                       ? "bg-[#202B61] text-white shadow-xs"
                       : "bg-white text-[#202B61]/75 hover:text-[#202B61] hover:bg-slate-50 border border-slate-200/90"
@@ -74,11 +74,11 @@ export const ApplicationGrid: React.FC<ApplicationGridProps> = ({ onSelectApp })
                     onSelectApp(app);
                   }
                 }}
-                className="group rounded-[24px] bg-white border border-slate-200/90 shadow-[0_4px_20px_rgba(32,43,97,0.03)] p-5 sm:p-6 hover:border-[#202B61]/40 hover:shadow-[0_16px_40px_rgba(32,43,97,0.08)] hover:-translate-y-1 cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                className="group rounded-[4px] bg-white border border-slate-200/90 shadow-[0_4px_20px_rgba(32,43,97,0.03)] p-5 sm:p-6 hover:border-[#202B61]/40 hover:shadow-[0_16px_40px_rgba(32,43,97,0.08)] hover:-translate-y-1 cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
               >
                 <div className="space-y-4">
                   {/* Clean Preview Image */}
-                  <div className="relative aspect-[16/10] w-full rounded-[16px] overflow-hidden bg-slate-100 border border-slate-200/80">
+                  <div className="relative aspect-[16/10] w-full rounded-[4px] overflow-hidden bg-slate-100 border border-slate-200/80">
                     <Image
                       src={app.previewImage}
                       alt={app.name}

@@ -9,13 +9,20 @@ import { FeaturedWorkModal } from "@/components/home/FeaturedWorkModal";
 
 interface HomeFeaturedWorkCarouselProps {
   onOpenBooking?: () => void;
+  selectedApp?: ApplicationItem | null;
+  onSelectApp?: (app: ApplicationItem | null) => void;
 }
 
 export const HomeFeaturedWorkCarousel: React.FC<HomeFeaturedWorkCarouselProps> = ({
   onOpenBooking,
+  selectedApp: externalSelectedApp,
+  onSelectApp: externalOnSelectApp,
 }) => {
   const [activeDeckIdx, setActiveDeckIdx] = useState(0);
-  const [selectedApp, setSelectedApp] = useState<ApplicationItem | null>(null);
+  const [localSelectedApp, setLocalSelectedApp] = useState<ApplicationItem | null>(null);
+
+  const activeApp = externalSelectedApp !== undefined ? externalSelectedApp : localSelectedApp;
+  const handleSelectApp = externalOnSelectApp || setLocalSelectedApp;
 
   // Touch swipe support for mobile
   const touchStartX = useRef<number | null>(null);
@@ -140,7 +147,7 @@ export const HomeFeaturedWorkCarousel: React.FC<HomeFeaturedWorkCarouselProps> =
                     role="button"
                     tabIndex={0}
                     onClick={() => {
-                      if (isCenter) setSelectedApp(slide);
+                      if (isCenter) handleSelectApp(slide);
                     }}
                     className="relative aspect-[16/10] sm:aspect-square w-full md:w-[260px] lg:w-[320px] xl:w-[360px] shrink-0 rounded-[4px] overflow-hidden bg-slate-100 border border-slate-200/80 cursor-pointer group shadow-2xs"
                   >
@@ -174,7 +181,7 @@ export const HomeFeaturedWorkCarousel: React.FC<HomeFeaturedWorkCarouselProps> =
                     <div className="pt-0.5">
                       <button
                         type="button"
-                        onClick={() => setSelectedApp(slide)}
+                        onClick={() => handleSelectApp(slide)}
                         className="inline-flex items-center gap-1.5 font-sans font-bold text-xs sm:text-sm text-[#202B61] hover:text-[#1740b3] transition-colors cursor-pointer group"
                       >
                         <span>Read More</span>
@@ -277,8 +284,8 @@ export const HomeFeaturedWorkCarousel: React.FC<HomeFeaturedWorkCarouselProps> =
 
       {/* Interactive Detail Modal with Screenshots Gallery and radius < 5 */}
       <FeaturedWorkModal
-        app={selectedApp}
-        onClose={() => setSelectedApp(null)}
+        app={activeApp}
+        onClose={() => handleSelectApp(null)}
         onOpenContact={onOpenBooking}
       />
     </section>
