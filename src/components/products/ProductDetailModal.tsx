@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, CheckCircle2, ArrowUpRight, ExternalLink, Star } from "lucide-react";
+import { X, CheckCircle2, ArrowUpRight, ExternalLink } from "lucide-react";
 import { ProductItem } from "@/lib/productsData";
 
 interface ProductDetailModalProps {
@@ -82,7 +82,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   </span>
                 </div>
                 <p className="text-xs text-slate-500 font-medium">
-                  {product.category} • {product.reviewsCount}
+                  {product.category}
                 </p>
               </div>
             </div>

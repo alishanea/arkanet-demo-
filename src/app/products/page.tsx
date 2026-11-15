@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Footer } from "@/components/layout/Footer";
 import { ContactFormModal } from "@/components/modals/ContactFormModal";
 import { AboutCTA } from "@/components/about/AboutCTA";
-import { HomeReviewsSection } from "@/components/home/HomeReviewsSection";
 import { ProductsHero } from "@/components/products/ProductsHero";
 import { ProductsCatalog } from "@/components/products/ProductsCatalog";
 
@@ -21,9 +20,6 @@ export default function ProductsPage() {
 
       {/* Main Marketplace Catalog: All / Free / Premium with Live Demos & Pricing */}
       <ProductsCatalog />
-
-      {/* Reviews & Social Proof */}
-      <HomeReviewsSection />
 
       {/* Call to Action & Footer */}
       <AboutCTA onOpenBooking={openContact} bgColor="bg-white" />
