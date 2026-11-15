@@ -7,7 +7,7 @@ const PILLARS = [
   {
     icon: Layers,
     title: "Dual-Hub Innovation Synergy",
-    desc: "Strategic headquarters in Kelakam paired with Dubai corporate office, bridging regional engineering talent with demanding global enterprise technology standards.",
+    desc: "Strategic engineering center in Kelakam paired with Dubai corporate office, bridging regional engineering talent with demanding global enterprise technology standards.",
   },
   {
     icon: Cpu,

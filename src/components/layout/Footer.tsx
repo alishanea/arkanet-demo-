@@ -108,9 +108,9 @@ export const Footer: React.FC<FooterProps> = ({
                 Offices
               </h4>
               
-              {/* India HQ */}
+              {/* India Office */}
               <div className="space-y-1 text-xs sm:text-sm text-slate-300">
-                <span className="font-bold text-white block">India Office (HQ)</span>
+                <span className="font-bold text-white block">India Office</span>
                 <p className="leading-relaxed">
                   Room No. 227K, Benny Complex,<br />
                   Kelakam, Kannur Dt, Kerala 670674
@@ -181,7 +181,7 @@ export const Footer: React.FC<FooterProps> = ({
                   sales@arkanet.ae (UAE)
                 </a>
                 <a href="mailto:info@arkanet.in" className="text-xs font-semibold text-slate-300 hover:text-white hover:underline block transition-colors">
-                  info@arkanet.in (HQ)
+                  info@arkanet.in (India)
                 </a>
               </div>
             </div>

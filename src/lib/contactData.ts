@@ -14,7 +14,7 @@ export interface OfficeLocation {
 export const OFFICE_LOCATIONS: OfficeLocation[] = [
   {
     city: "Kerala",
-    country: "India (HQ)",
+    country: "India",
     entity: "Arkanet Technologies",
     address: "Room No: 227K, Benny complex, Kelakam, Kannur. Kerala 670674, India",
     poBox: null,

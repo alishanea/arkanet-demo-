@@ -29,7 +29,7 @@ const OFFICE_LOCATIONS = [
   {
     city: "Kerala",
     country: "India",
-    badge: "Headquarters",
+    badge: "India Office",
     entity: "Arkanet Technologies",
     address: "Room No: 227K, Benny complex, Kelakam, Kannur. Kerala 670674, India",
     poBox: null,

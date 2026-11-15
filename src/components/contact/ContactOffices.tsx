@@ -9,7 +9,7 @@ export const ContactOffices: React.FC = () => {
         {/* Section Header */}
         <div className="w-full text-left space-y-2 max-w-3xl">
           <p className="font-sans text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#202B61]/70">
-            Global Headquarters &amp; Operations
+            Global Offices &amp; Operations
           </p>
           <h2 className="section-h2 leading-tight tracking-tight">
             Our Physical Presence
