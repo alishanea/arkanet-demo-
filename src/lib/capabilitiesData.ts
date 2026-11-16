@@ -1833,7 +1833,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Multi-branch inventory & warehouse control",
         description: "Real-time inventory tracking across multiple warehouses with barcode scanning, reorder triggers, and stock transfer logs.",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
@@ -1845,7 +1845,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Sales CRM & customer account management",
         description: "Centralized sales CRM unifying lead funnels, quotation generation, automated contracts, and customer account records.",
-        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
