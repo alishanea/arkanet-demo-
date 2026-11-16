@@ -218,18 +218,6 @@ export const ProductsCatalog: React.FC = () => {
                     <p className="font-sans text-xs text-slate-500 line-clamp-2 leading-relaxed">
                       {product.description}
                     </p>
-
-                    {/* Developer / Verified Pod */}
-                    <div className="flex items-center gap-2 pt-2 border-t border-slate-100">
-                      <img
-                        src={product.developer.avatar}
-                        alt={product.developer.name}
-                        className="w-5 h-5 rounded-[4px] object-cover shrink-0 border border-slate-200"
-                      />
-                      <span className="text-[11px] font-medium text-slate-600 truncate">
-                        {product.developer.name}
-                      </span>
-                    </div>
                   </div>
 
                   {/* Single Clean "View details" Action Button */}

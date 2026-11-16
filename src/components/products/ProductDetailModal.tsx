@@ -109,9 +109,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5 sm:gap-2 pt-0.5 text-[11px] sm:text-xs text-slate-500 truncate">
-                  <span className="font-semibold text-slate-700 truncate">{product.developer.name}</span>
-                  <span>•</span>
-                  <span>{product.category}</span>
+                  <span className="font-semibold text-slate-700 truncate">{product.category}</span>
                   <span>•</span>
                   <div className="flex items-center text-amber-500 font-bold shrink-0">
                     <Star className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-amber-400 stroke-amber-400 mr-0.5" />
