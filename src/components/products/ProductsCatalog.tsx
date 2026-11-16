@@ -84,7 +84,7 @@ export const ProductsCatalog: React.FC = () => {
       <div className="max-w-[1440px] w-full mx-auto space-y-8 sm:space-y-10">
 
         {/* ── 1. CLEAN APP STORE HEADER ── */}
-        <div className="space-y-2 max-w-2xl text-left border-b border-slate-200/90 pb-6">
+        <div className="space-y-2 max-w-2xl text-left">
           <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#202B61]/70 font-sans">
             Arkanet App Store &amp; Platform Repository
           </p>
