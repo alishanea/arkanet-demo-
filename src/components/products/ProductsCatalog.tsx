@@ -113,20 +113,18 @@ export const ProductsCatalog: React.FC = () => {
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveCategory(tab.id)}
-                className={`p-4 sm:p-5 rounded-[4px] border text-left transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? "bg-[#202B61] text-white border-[#202B61] shadow-md ring-1 ring-[#202B61]"
-                    : "bg-white text-slate-700 border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50/80"
-                }`}
+                className={`p-4 sm:p-5 rounded-[4px] border text-left transition-all duration-200 cursor-pointer ${isActive
+                  ? "bg-[#202B61] text-white border-[#202B61] shadow-md ring-1 ring-[#202B61]"
+                  : "bg-white text-slate-700 border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50/80"
+                  }`}
               >
                 <div className="flex items-center justify-between gap-2">
                   <span className={`font-heading font-extrabold text-base sm:text-lg ${isActive ? "text-white" : "text-[#202B61]"}`}>
                     {tab.title}
                   </span>
                   <span
-                    className={`text-xs font-bold px-2 py-0.5 rounded-[4px] ${
-                      isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
-                    }`}
+                    className={`text-xs font-bold px-2 py-0.5 rounded-[4px] ${isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
+                      }`}
                   >
                     {tab.count}
                   </span>
@@ -169,11 +167,10 @@ export const ProductsCatalog: React.FC = () => {
                     </div>
 
                     <span
-                      className={`font-heading font-bold text-[11px] px-2.5 py-0.5 rounded-[4px] ${
-                        isFree
-                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                          : "bg-[#202B61]/5 text-[#202B61] border border-[#202B61]/15"
-                      }`}
+                      className={`font-heading font-bold text-[11px] px-2.5 py-0.5 rounded-[4px] ${isFree
+                        ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                        : "bg-[#202B61]/5 text-[#202B61] border border-[#202B61]/15"
+                        }`}
                     >
                       {isFree ? "Free Product" : `Paid (${product.priceLabel}${product.billingPeriod || ""})`}
                     </span>
