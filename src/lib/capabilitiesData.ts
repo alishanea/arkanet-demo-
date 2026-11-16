@@ -1534,25 +1534,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "WhatsApp Business API & green tick setup",
         description: "Official Meta API integration allowing high-volume message throughput and multi-agent customer support.",
-        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1616469829941-c7200edec809?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "In-chat product catalogues & payment links",
         description: "Interactive product carousels and instant payment gateway links right inside chat conversations.",
-        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Automated order confirmation & delivery updates",
         description: "Triggering automated shipping alerts, tracking links, and feedback requests when orders update in your ERP.",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1526367790999-0150786686a2?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Instagram DM & broadcast marketing",
         description: "Converting Instagram comments into private DM sales conversations and sending targeted broadcast offers.",
-        image: "https://images.unsplash.com/photo-1526406915894-7bcd65f60845?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1560,7 +1560,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "CHAT COMMERCE",
       title: "WhatsApp & Social Commerce Automation Engine",
       description: "Automated commerce on WhatsApp API, Instagram, and Facebook: catalogue browsing, order placement, and payments.",
-      image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's automate your WhatsApp commerce →",
   },
@@ -2192,7 +2192,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Paid search & social performance ads",
         description: "Precision PPC campaigns on Google Search, LinkedIn Ads, Meta, and TikTok optimized for customer acquisition cost.",
-        image: "/assets/images/capabilities/digital-marketing-3d-ads.png",
+        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
