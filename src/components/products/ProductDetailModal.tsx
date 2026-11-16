@@ -14,6 +14,9 @@ import {
   Zap,
   Globe,
   Layers,
+  FlaskConical,
+  ShoppingCart,
+  CreditCard,
 } from "lucide-react";
 import { ProductItem } from "@/lib/productsData";
 
@@ -152,42 +155,138 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               )}
             </div>
 
-            {/* Quick Action Bar inside Modal */}
-            <div className="p-4 rounded-[4px] bg-[#EBF2FE]/60 border border-[#D3E3FD] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#202B61]/80 block">
-                  Pricing &amp; Availability
-                </span>
-                <div className="text-lg font-black text-[#202B61]">
-                  {product.priceBadgeText}
-                  <span className="text-xs font-normal text-slate-600 ml-2">
-                    {product.freeTrial || "Production tier"}
-                  </span>
-                </div>
-              </div>
+            {/* ── DEDICATED TEST & BUY SECTIONS (AS REQUESTED: TEST DETAILS & BUY DETAILS) ── */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* 1. TEST TYPE DETAILS CARD */}
+              <div className="p-4 sm:p-5 rounded-[4px] bg-slate-50 border border-slate-200/90 flex flex-col justify-between space-y-4">
+                <div className="space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-[4px] bg-blue-100/70 border border-blue-200 flex items-center justify-center text-[#202B61]">
+                        <FlaskConical className="w-4 h-4" />
+                      </div>
+                      <span className="font-heading font-extrabold text-sm sm:text-base text-[#202B61]">
+                        Test Drive &amp; Live Demo
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-[4px] bg-blue-50 text-blue-700 border border-blue-200">
+                      FREE TEST
+                    </span>
+                  </div>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-2.5 w-full sm:w-auto">
-                {product.liveUrl && (
-                  <a
-                    href={product.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-[4px] border border-[#202B61] text-[#202B61] bg-white hover:bg-slate-50 font-heading font-bold text-xs sm:text-sm transition-colors shadow-2xs w-full sm:w-auto text-center"
-                  >
-                    <span>Launch Live Demo</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                )}
+                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                    Experience {product.name} in a live interactive sandbox environment with full UI workflows before making any commitment.
+                  </p>
+
+                  <ul className="space-y-1.5 text-xs text-slate-700 font-sans pt-1">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                      <span>Instant cloud sandbox with zero installation</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                      <span>Pre-loaded with sample data &amp; interactive controls</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                      <span>No credit card or registration needed to test</span>
+                    </li>
+                  </ul>
+                </div>
 
                 <a
-                  href={product.purchaseUrl || product.liveUrl}
+                  href={product.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-[4px] bg-[#202B61] hover:bg-[#151E48] text-white font-heading font-bold text-xs sm:text-sm shadow-sm transition-all w-full sm:w-auto text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[4px] border border-[#202B61] text-[#202B61] bg-white hover:bg-slate-100 font-heading font-bold text-xs sm:text-sm transition-all shadow-2xs text-center cursor-pointer"
                 >
-                  <span>{product.pricingType === "free" ? "Get Started Free" : "Purchase & Deploy"}</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <span>Test Live Demo</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
+              </div>
+
+              {/* 2. BUY TYPE DETAILS CARD */}
+              <div className="p-4 sm:p-5 rounded-[4px] bg-[#EBF2FE]/60 border border-[#D3E3FD] flex flex-col justify-between space-y-4">
+                <div className="space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-[4px] bg-[#202B61] text-white flex items-center justify-center">
+                        <ShoppingCart className="w-4 h-4" />
+                      </div>
+                      <span className="font-heading font-extrabold text-sm sm:text-base text-[#202B61]">
+                        {product.pricingType === "free" ? "Free Download & License" : "Buy License & Deploy"}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-[4px] bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      {product.pricingType === "free" ? "FREE PACKAGE" : "PRODUCTION"}
+                    </span>
+                  </div>
+
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-heading font-black text-xl text-[#202B61]">
+                      {product.priceBadgeText}
+                    </span>
+                    <span className="text-[11px] text-slate-500 font-medium">
+                      {product.freeTrial || "Production tier"}
+                    </span>
+                  </div>
+
+                  <ul className="space-y-1.5 text-xs text-slate-700 font-sans pt-1">
+                    {product.pricingType === "free" ? (
+                      <>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          <span>100% Free for personal and commercial projects</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          <span>Direct download package &amp; npm / brew CLI access</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          <span>Open-source repository &amp; community support</span>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          <span>Commercial production license &amp; API keys</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          <span>99.99% Uptime SLA with 24/7 priority engineer support</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          <span>14-day risk-free money-back guarantee</span>
+                        </li>
+                      </>
+                    )}
+                  </ul>
+                </div>
+
+                {product.pricingType === "free" ? (
+                  <a
+                    href={product.downloadUrl || product.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[4px] bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs sm:text-sm transition-all shadow-xs text-center cursor-pointer"
+                  >
+                    <span>Download Free Package</span>
+                    <Download className="w-4 h-4" />
+                  </a>
+                ) : (
+                  <a
+                    href={product.purchaseUrl || product.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[4px] bg-[#202B61] hover:bg-[#151E48] text-white font-heading font-bold text-xs sm:text-sm transition-all shadow-xs text-center cursor-pointer"
+                  >
+                    <span>Buy License &amp; Deploy</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                )}
               </div>
             </div>
 
@@ -255,9 +354,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 href={product.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[4px] bg-[#202B61] hover:bg-[#151E48] text-white font-bold text-xs shadow-xs transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] border border-[#202B61] text-[#202B61] bg-white hover:bg-slate-100 font-bold text-xs shadow-2xs transition-colors"
               >
-                <span>Live Demo</span>
+                <span>Test Live Demo</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
 
@@ -278,7 +377,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[4px] bg-[#202B61] hover:bg-[#151E48] text-white font-bold text-xs shadow-xs transition-colors"
                 >
-                  <span>Purchase &amp; Deploy</span>
+                  <span>Buy &amp; Deploy</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               )}
