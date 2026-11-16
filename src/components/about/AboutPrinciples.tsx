@@ -7,7 +7,7 @@ const PILLARS = [
   {
     icon: Layers,
     title: "Dual-Hub Innovation Synergy",
-    desc: "Global headquarters in Business Bay, Dubai registered under UAE regulations, paired with our specialized engineering development hub in Kerala, delivering world-class technology solutions.",
+    desc: "Dubai-based technology leadership paired with our specialized engineering development hub in Kerala, delivering world-class technology solutions.",
   },
   {
     icon: Cpu,

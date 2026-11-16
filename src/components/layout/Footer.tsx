@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
               </Link>
               
               <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed font-normal max-w-sm">
-                Headquartered and registered in Business Bay, Dubai, UAE, Arkanet Technologies blends AI, Cloud, IoT, and high-performance software engineering with a dedicated development center in Kerala, India. Backed by 15+ years of enterprise engineering excellence.
+                A Dubai-based digital innovation company blending AI, Cloud, IoT, and high-performance software engineering with our dedicated development center in Kerala, India. Backed by 15+ years of enterprise engineering excellence.
               </p>
 
               {/* Simple Prostack Button */}
