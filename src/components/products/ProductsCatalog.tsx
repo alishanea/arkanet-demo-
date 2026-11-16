@@ -80,11 +80,11 @@ export const ProductsCatalog: React.FC = () => {
   }, [activeCategory, searchQuery]);
 
   return (
-    <section id="products-catalog" className="w-full py-6 sm:py-8 lg:py-10 px-4 sm:px-8 lg:px-12 bg-white text-left font-sans select-none">
-      <div className="max-w-[1440px] w-full mx-auto space-y-6 sm:space-y-8">
+    <section id="products-catalog" className="w-full pt-2 sm:pt-4 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white text-left font-sans select-none">
+      <div className="max-w-[1440px] w-full mx-auto space-y-5 sm:space-y-6">
 
-        {/* ── MODERN FLOATING PILL / CAPSULE DOCK (MATCHING HEADER NAVBAR SHAPE) ── */}
-        <div className="relative sm:sticky sm:top-24 z-30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] transition-all">
+        {/* ── MODERN CAPSULE DOCK SITUATED CLEANLY ABOVE THE PRODUCTS ── */}
+        <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white border border-slate-200/90 shadow-[0_4px_20px_-2px_rgba(32,43,97,0.06)] transition-all">
           {/* Clean Segmented Dock */}
           <div className="inline-flex items-center gap-1 p-1 rounded-full bg-slate-100/70 border border-slate-200/50 overflow-x-auto scrollbar-none shrink-0">
             {TABS.map((tab) => {
