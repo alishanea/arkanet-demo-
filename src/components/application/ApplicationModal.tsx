@@ -46,14 +46,14 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-white rounded-[24px] border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
+        className="relative w-full max-w-2xl bg-white rounded-[4px] border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-2xl max-h-[92vh] overflow-y-auto text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 text-slate-400 hover:text-[#202B61] transition-colors cursor-pointer rounded-full hover:bg-slate-100"
+          className="absolute top-5 right-5 p-2 text-slate-400 hover:text-[#202B61] transition-colors cursor-pointer rounded-[4px] hover:bg-slate-100"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -79,7 +79,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
               onClose();
               onOpenContact();
             }}
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#151E48] transition-all cursor-pointer shadow-xs active:scale-95"
+            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-[4px] bg-[#202B61] text-white font-sans font-bold text-xs sm:text-sm hover:bg-[#151E48] transition-all cursor-pointer shadow-xs active:scale-95"
           >
             <span>Request Custom Build</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -87,7 +87,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
         </div>
 
         {/* Key Metrics Bar */}
-        <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-xl bg-slate-50 border border-slate-200/90 text-center text-xs">
+        <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-[4px] bg-slate-50 border border-slate-200/90 text-center text-xs">
           <div>
             <span className="block text-[10.5px] text-[#202B61]/70 uppercase tracking-wider font-semibold">
               Customer Rating
@@ -139,7 +139,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                 onClose();
                 onOpenContact();
               }}
-              className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
+              className="flex items-center justify-between p-3.5 rounded-[4px] bg-white border border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
             >
               <div className="flex items-center gap-2.5">
                 {app.downloads.primaryType === "apple" ? (
@@ -168,7 +168,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   onClose();
                   onOpenContact();
                 }}
-                className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
+                className="flex items-center justify-between p-3.5 rounded-[4px] bg-white border border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50 transition-all cursor-pointer group"
               >
                 <div className="flex items-center gap-2.5">
                   {app.downloads.secondaryType === "android" ? (
@@ -197,7 +197,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
             Interface Screenshots Preview
           </span>
 
-          <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/90">
+          <div className="relative aspect-[16/9] w-full rounded-[4px] overflow-hidden bg-slate-100 border border-slate-200/90">
             <Image
               src={app.screenshots[activeScreenshotIdx] || app.previewImage}
               alt={app.name}
@@ -213,7 +213,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
                   key={idx}
                   type="button"
                   onClick={() => setActiveScreenshotIdx(idx)}
-                  className={`relative w-20 h-12 rounded-lg overflow-hidden border cursor-pointer transition-all ${
+                  className={`relative w-20 h-12 rounded-[4px] overflow-hidden border cursor-pointer transition-all ${
                     activeScreenshotIdx === idx
                       ? "border-[#202B61] ring-2 ring-[#202B61]/20 scale-102"
                       : "border-slate-200/90 opacity-60 hover:opacity-100"
@@ -280,7 +280,7 @@ export const ApplicationModal: React.FC<ApplicationModalProps> = ({
               onClose();
               onOpenContact();
             }}
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#151E48] transition-all cursor-pointer shadow-xs ml-auto"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[4px] bg-[#202B61] text-white font-sans font-bold text-xs hover:bg-[#151E48] transition-all cursor-pointer shadow-xs ml-auto"
           >
             <span>Request Custom Build &amp; Source</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

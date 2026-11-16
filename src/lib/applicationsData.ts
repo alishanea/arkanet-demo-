@@ -43,10 +43,9 @@ export const APPLICATIONS: ApplicationItem[] = [
     platformBadge: "Commerce Engine",
     previewImage: "/assets/images/prostack-preview-hd.jpg",
     screenshots: [
+      "/assets/images/prostack-hd.png",
       "/assets/images/prostack-preview-hd.jpg",
-      "/assets/images/prostack-overview-wide.png",
-      "/assets/images/prostack-overview-close.png",
-      "/assets/images/prostack-features-full.png",
+      "/assets/images/prostack-showcase-banner.jpg",
     ],
     liveUrl: "https://prostack.arkanet.ae/",
     description:
@@ -84,12 +83,11 @@ export const APPLICATIONS: ApplicationItem[] = [
     platformBadge: "Workspace Suite",
     previewImage: "/assets/images/orbit-preview-hd.jpg",
     screenshots: [
+      "/assets/images/orbit-hd.png",
       "/assets/images/orbit-preview-hd.jpg",
-      "/assets/images/orbit-workspace-messages.png",
-      "/assets/images/orbit-mail-outlook.png",
-      "/assets/images/orbit-tasks-group.png",
-      "/assets/images/orbit-task-details.png",
-      "/assets/images/orbit-reviews-approval.png",
+      "/assets/images/orbit-showcase-banner.jpg",
+      "/assets/images/orbit-tasks-banner.jpg",
+      "/assets/images/orbit-dashboard-mockup.jpg",
     ],
     liveUrl: "https://orbit.arkanet.ae/",
     description:

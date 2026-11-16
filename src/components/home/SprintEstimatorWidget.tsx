@@ -176,7 +176,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
         {/* Section Header with Wise-style Clarity */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/90 pb-6 sm:pb-8">
           <div className="space-y-2 text-left max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-bold uppercase tracking-wider">
               <Zap className="w-3.5 h-3.5 text-emerald-600 fill-emerald-600" />
               <span>Interactive Architecture Planner</span>
             </div>
@@ -203,12 +203,12 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
           <div className="lg:col-span-6 space-y-6">
             
             {/* Step 1: Select Platform */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-6 space-y-3.5 shadow-none">
+            <div className="bg-white rounded-[4px] border border-slate-200/90 p-5 sm:p-6 space-y-3.5 shadow-none">
               <div className="flex items-center justify-between">
                 <span className="font-sans text-xs font-bold uppercase tracking-wider text-slate-500">
                   1. Choose Architecture Domain
                 </span>
-                <span className="text-[11px] font-semibold text-[#202B61] bg-slate-100 px-2 py-0.5 rounded">
+                <span className="text-[11px] font-semibold text-[#202B61] bg-slate-100 px-2 py-0.5 rounded-[4px]">
                   Required
                 </span>
               </div>
@@ -222,7 +222,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
                       key={platform.id}
                       type="button"
                       onClick={() => setSelectedPlatform(platform.id)}
-                      className={`p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer flex items-center justify-between group ${
+                      className={`p-3.5 rounded-[4px] border text-left transition-all duration-200 cursor-pointer flex items-center justify-between group ${
                         isSelected
                           ? "bg-[#202B61] text-white border-[#202B61]"
                           : "bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80 hover:border-slate-300"
@@ -240,12 +240,12 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
             </div>
 
             {/* Step 2: Select Scope & Tier */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-6 space-y-3.5 shadow-none">
+            <div className="bg-white rounded-[4px] border border-slate-200/90 p-5 sm:p-6 space-y-3.5 shadow-none">
               <div className="flex items-center justify-between">
                 <span className="font-sans text-xs font-bold uppercase tracking-wider text-slate-500">
                   2. Select Project Scope &amp; Scale
                 </span>
-                <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60">
+                <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-[4px] border border-emerald-200/60">
                   Flexible
                 </span>
               </div>
@@ -258,7 +258,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
                       key={scope.id}
                       type="button"
                       onClick={() => setSelectedScope(scope.id)}
-                      className={`w-full p-4 rounded-xl border text-left transition-all duration-200 cursor-pointer flex items-center justify-between ${
+                      className={`w-full p-4 rounded-[4px] border text-left transition-all duration-200 cursor-pointer flex items-center justify-between ${
                         isSelected
                           ? "bg-[#202B61] text-white border-[#202B61]"
                           : "bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80 hover:border-slate-300"
@@ -269,7 +269,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
                           <span className={`text-xs sm:text-sm font-bold ${isSelected ? "text-white" : "text-slate-900"}`}>
                             {scope.name}
                           </span>
-                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-[4px] ${
                             isSelected ? "bg-emerald-400/20 text-emerald-300 border border-emerald-400/30" : "bg-slate-200/70 text-slate-600"
                           }`}>
                             {scope.badge}
@@ -296,7 +296,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
           </div>
 
           {/* RIGHT COLUMN: WISE-STYLE REAL-TIME SPECIFICATION CARD (Span 6) */}
-          <div className="lg:col-span-6 bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-none">
+          <div className="lg:col-span-6 bg-white rounded-[4px] border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-none">
             
             {/* Header of the Spec Card */}
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
@@ -310,7 +310,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
               </div>
               <div className="text-right">
                 <span className="text-[10px] uppercase font-bold text-slate-400 block">Delivery SLA</span>
-                <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-[4px] border border-emerald-200">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                   {currentSpec.sla}
                 </span>
@@ -328,7 +328,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
                 className="space-y-5"
               >
                 {/* 2 Big Numerical Truth Points */}
-                <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+                <div className="grid grid-cols-2 gap-3 p-4 rounded-[4px] bg-slate-50 border border-slate-200/80">
                   <div className="space-y-1">
                     <span className="text-[11px] font-semibold text-slate-500 flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5 text-[#202B61]" />
@@ -355,7 +355,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
                     <Users className="w-3.5 h-3.5 text-slate-500" />
                     Dedicated Engineering Pod
                   </span>
-                  <p className="text-xs sm:text-sm font-semibold text-slate-800 bg-slate-50 px-3 py-2 rounded-lg border border-slate-200/70">
+                  <p className="text-xs sm:text-sm font-semibold text-slate-800 bg-slate-50 px-3 py-2 rounded-[4px] border border-slate-200/70">
                     {currentSpec.team}
                   </p>
                 </div>
@@ -369,7 +369,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
                     {currentSpec.stack.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-2.5 py-1 rounded-md text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200/80 font-mono"
+                        className="px-2.5 py-1 rounded-[4px] text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200/80 font-mono"
                       >
                         {tech}
                       </span>
@@ -395,7 +395,7 @@ export const SprintEstimatorWidget: React.FC<SprintEstimatorWidgetProps> = ({ on
               <button
                 type="button"
                 onClick={onOpenBooking}
-                className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 bg-[#202B61] hover:bg-[#161e47] text-white font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all cursor-pointer shadow-sm hover:shadow-md"
+                className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 bg-[#202B61] hover:bg-[#161e47] text-white font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-[4px] transition-all cursor-pointer shadow-sm hover:shadow-md"
               >
                 <span>Request Architecture Scoping Call</span>
                 <ArrowRight className="w-4 h-4 text-emerald-400" />

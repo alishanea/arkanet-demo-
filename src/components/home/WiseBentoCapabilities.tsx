@@ -30,7 +30,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
         {/* Header with Segmented Intent Switcher (Wise-Style) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200/80 pb-6 sm:pb-8 text-left">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#202B61]/5 border border-[#202B61]/15 text-[#202B61] text-[11px] font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#202B61]/5 border border-[#202B61]/15 text-[#202B61] text-[11px] font-bold uppercase tracking-wider">
               <Globe2 className="w-3.5 h-3.5 text-[#202B61]" />
               <span>Full-Stack Engineering &amp; AI Capabilities</span>
             </div>
@@ -44,11 +44,11 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
           </div>
 
           {/* Segmented Audience Filter (Wise Personal vs Business Pattern) */}
-          <div className="flex items-center gap-1.5 p-1.5 rounded-xl bg-white border border-slate-200/90 shrink-0 self-start md:self-end">
+          <div className="flex items-center gap-1.5 p-1.5 rounded-[4px] bg-white border border-slate-200/90 shrink-0 self-start md:self-end">
             <button
               type="button"
               onClick={() => setActiveTab("all")}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-[4px] text-xs font-bold transition-all cursor-pointer ${
                 activeTab === "all"
                   ? "bg-[#202B61] text-white shadow-xs"
                   : "text-[#202B61]/80 hover:text-[#202B61]"
@@ -59,7 +59,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
             <button
               type="button"
               onClick={() => setActiveTab("startups")}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-[4px] text-xs font-bold transition-all cursor-pointer ${
                 activeTab === "startups"
                   ? "bg-[#202B61] text-white shadow-xs"
                   : "text-[#202B61]/80 hover:text-[#202B61]"
@@ -70,7 +70,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
             <button
               type="button"
               onClick={() => setActiveTab("enterprise")}
-              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-[4px] text-xs font-bold transition-all cursor-pointer ${
                 activeTab === "enterprise"
                   ? "bg-[#202B61] text-white shadow-xs"
                   : "text-[#202B61]/80 hover:text-[#202B61]"
@@ -87,15 +87,15 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
           {/* CARD 1: Web & SaaS Platforms (Span 7) */}
           <Link
             href="/capabilities/website-development"
-            className="lg:col-span-7 group relative rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer overflow-hidden shadow-none"
+            className="lg:col-span-7 group relative rounded-[4px] bg-white border border-slate-200/90 hover:border-slate-300 p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer overflow-hidden shadow-none"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors">
+                <div className="w-10 h-10 rounded-[4px] bg-slate-100 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors">
                   <Layers className="w-5 h-5" />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/80">
+                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-[4px] border border-emerald-200/80">
                     0.38s LCP · 100% Core Web Vitals
                   </span>
                   <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] group-hover:scale-125 transition-transform" />
@@ -113,7 +113,7 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
             </div>
 
             {/* Micro-UI Code Visual */}
-            <div className="rounded-xl bg-[#0d1326] p-4 text-xs font-mono text-slate-300 space-y-2 border border-slate-800">
+            <div className="rounded-[4px] bg-[#0d1326] p-4 text-xs font-mono text-slate-300 space-y-2 border border-slate-800">
               <div className="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800 pb-2">
                 <div className="flex items-center gap-1.5">
                   <Terminal className="w-3.5 h-3.5 text-emerald-400" />
@@ -131,15 +131,15 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
           {/* CARD 2: Native Mobile Ecosystems (Span 5) */}
           <Link
             href="/capabilities/mobile-app-development"
-            className="lg:col-span-5 group relative rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer overflow-hidden shadow-none"
+            className="lg:col-span-5 group relative rounded-[4px] bg-white border border-slate-200/90 hover:border-slate-300 p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer overflow-hidden shadow-none"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors">
+                <div className="w-10 h-10 rounded-[4px] bg-slate-100 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors">
                   <Smartphone className="w-5 h-5" />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-bold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200/80">
+                  <span className="text-[11px] font-bold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-[4px] border border-slate-200/80">
                     60 FPS Native
                   </span>
                   <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] group-hover:scale-125 transition-transform" />
@@ -157,13 +157,13 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
             </div>
 
             {/* Micro-UI Mobile Sync Card */}
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <div className="p-3.5 rounded-[4px] bg-slate-50 border border-slate-200/80 space-y-2">
               <div className="flex items-center justify-between text-xs">
                 <span className="font-semibold text-slate-800 flex items-center gap-1.5">
                   <Activity className="w-3.5 h-3.5 text-emerald-500" />
                   Real-Time Offline Data Sync
                 </span>
-                <span className="text-[10px] font-bold text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">
+                <span className="text-[10px] font-bold text-slate-500 bg-white px-2 py-0.5 rounded-[4px] border border-slate-200">
                   SQLite
                 </span>
               </div>
@@ -176,15 +176,15 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
           {/* CARD 3: Applied AI & Automation (Span 5) */}
           <Link
             href="/capabilities/applied-ai-ml"
-            className="lg:col-span-5 group relative rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer overflow-hidden shadow-none"
+            className="lg:col-span-5 group relative rounded-[4px] bg-white border border-slate-200/90 hover:border-slate-300 p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer overflow-hidden shadow-none"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors">
+                <div className="w-10 h-10 rounded-[4px] bg-slate-100 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors">
                   <Cpu className="w-5 h-5" />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/80">
+                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-[4px] border border-emerald-200/80">
                     &lt; 120ms RAG Search
                   </span>
                   <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] group-hover:scale-125 transition-transform" />
@@ -202,22 +202,22 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
             </div>
 
             {/* Micro-UI AI Pipeline Visual */}
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <div className="p-3.5 rounded-[4px] bg-slate-50 border border-slate-200/80 space-y-2">
               <div className="flex items-center justify-between text-xs">
                 <span className="font-semibold text-slate-800 flex items-center gap-1.5">
                   <Zap className="w-3.5 h-3.5 text-amber-500" />
                   RAG Pipeline Architecture
                 </span>
-                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded-[4px]">
                   Private VPC
                 </span>
               </div>
               <div className="flex items-center gap-1 text-[11px] text-slate-600 font-mono overflow-x-auto">
-                <span className="bg-white px-2 py-0.5 rounded border border-slate-200">Doc Chunk</span>
+                <span className="bg-white px-2 py-0.5 rounded-[4px] border border-slate-200">Doc Chunk</span>
                 <span>→</span>
-                <span className="bg-white px-2 py-0.5 rounded border border-slate-200">Vector Embed</span>
+                <span className="bg-white px-2 py-0.5 rounded-[4px] border border-slate-200">Vector Embed</span>
                 <span>→</span>
-                <span className="bg-white px-2 py-0.5 rounded border border-slate-200">Cited LLM</span>
+                <span className="bg-white px-2 py-0.5 rounded-[4px] border border-slate-200">Cited LLM</span>
               </div>
             </div>
           </Link>
@@ -225,15 +225,15 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
           {/* CARD 4: Cloud Infrastructure & 99.99% SLAs (Span 7) */}
           <Link
             href="/capabilities/cloud-devops-hosting"
-            className="lg:col-span-7 group relative rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer overflow-hidden shadow-none"
+            className="lg:col-span-7 group relative rounded-[4px] bg-white border border-slate-200/90 hover:border-slate-300 p-6 sm:p-8 flex flex-col justify-between space-y-6 transition-all duration-300 cursor-pointer overflow-hidden shadow-none"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors">
+                <div className="w-10 h-10 rounded-[4px] bg-slate-100 flex items-center justify-center text-[#202B61] group-hover:bg-[#202B61] group-hover:text-white transition-colors">
                   <Cloud className="w-5 h-5" />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/80">
+                  <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-[4px] border border-emerald-200/80">
                     99.99% Strict SLA
                   </span>
                   <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#202B61] group-hover:scale-125 transition-transform" />
@@ -251,26 +251,26 @@ export const WiseBentoCapabilities: React.FC<WiseBentoCapabilitiesProps> = ({ on
             </div>
 
             {/* Micro-UI Cloud Health Bar */}
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <div className="p-3.5 rounded-[4px] bg-slate-50 border border-slate-200/80 space-y-2">
               <div className="flex items-center justify-between text-xs">
                 <span className="font-semibold text-slate-800 flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#202B61]" />
                   Multi-Region Infrastructure Health
                 </span>
-                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60">
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-[4px] border border-emerald-200/60">
                   All Systems Operational
                 </span>
               </div>
               <div className="grid grid-cols-3 gap-2 text-[11px] pt-1">
-                <div className="bg-white p-2 rounded border border-slate-200 text-center">
+                <div className="bg-white p-2 rounded-[4px] border border-slate-200 text-center">
                   <span className="text-slate-400 block text-[9px]">AWS DUBAI (ME-CENTRAL-1)</span>
                   <span className="font-bold text-slate-800">12ms latency</span>
                 </div>
-                <div className="bg-white p-2 rounded border border-slate-200 text-center">
+                <div className="bg-white p-2 rounded-[4px] border border-slate-200 text-center">
                   <span className="text-slate-400 block text-[9px]">AWS MUMBAI (AP-SOUTH-1)</span>
                   <span className="font-bold text-slate-800">18ms latency</span>
                 </div>
-                <div className="bg-white p-2 rounded border border-slate-200 text-center">
+                <div className="bg-white p-2 rounded-[4px] border border-slate-200 text-center">
                   <span className="text-slate-400 block text-[9px]">FAILOVER AUTOMATION</span>
                   <span className="font-bold text-emerald-600">Active-Active</span>
                 </div>

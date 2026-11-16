@@ -112,7 +112,7 @@ const ShowcaseCard: React.FC<{ project: ShowcaseProject }> = ({ project }) => {
       <Link href={project.href} className="block w-full text-left cursor-pointer">
         {/* Visual Image Container */}
         <div
-          className={`relative w-full ${project.heightClass} rounded-[14px] sm:rounded-[16px] overflow-hidden bg-slate-200/80 shadow-xs group-hover:shadow-md transition-all duration-500`}
+          className={`relative w-full ${project.heightClass} rounded-[4px] overflow-hidden bg-slate-200/80 shadow-xs group-hover:shadow-md transition-all duration-500`}
         >
           <img
             src={project.image}

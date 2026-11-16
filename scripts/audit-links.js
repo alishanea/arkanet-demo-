@@ -39,6 +39,7 @@ const validRoutes = new Set([
   '/insights',
   '/blog',
   '/contact',
+  '/products',
   '/application',
   '/prostack',
   '/sitemap.xml',
