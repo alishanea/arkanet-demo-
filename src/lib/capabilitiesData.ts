@@ -156,25 +156,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Websites built for performance & speed",
         description: "High-speed corporate sites and campaign landing pages engineered with sub-second Edge delivery, Core Web Vitals optimization, and clean semantic code.",
-        image: "/assets/images/capabilities/agile-kanban-board-todo.png",
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Web applications & customer dashboards",
         description: "Interactive web applications built on React and Next.js, featuring real-time data visualization, user authentication, and smooth micro-animations.",
-        image: "/assets/images/capabilities/agile-sprint-roadmap-board.png",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "CMS builds with editor-friendly models",
         description: "Custom content management systems enabling marketing teams to create, edit, and publish content quickly without developer intervention.",
-        image: "/assets/images/capabilities/remote-team-video-applause.png",
+        image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Multilingual & RTL-ready builds",
         description: "Full bidirectional right-to-left (RTL) layout support and multi-currency internationalization built directly into the site architecture.",
-        image: "/assets/images/capabilities/developer-dual-monitors.png",
+        image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -234,7 +234,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Offline-first sync & background tasks",
         description: "Built for real-world connectivity. Local data caching, background syncing, and offline queueing so field teams and mobile users never lose data.",
-        image: "/assets/images/capabilities/mobile-minimal-calc-app.png",
+        image: "https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
@@ -246,7 +246,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Store submission & post-launch CI/CD",
         description: "Full Apple App Store and Google Play Store submission management, release pipelines, crash reporting, and analytics tracking.",
-        image: "/assets/images/capabilities/qr-code-contactless-scan.png",
+        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -254,7 +254,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "MOBILE ENGINE",
       title: "One Codebase, Two App Stores, Zero Compromise",
       description: "Cross-platform and native mobile apps with offline capability, push notifications, and payments handled as standard.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build your mobile app →",
   },
@@ -522,19 +522,19 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Vendor & Partner Ecosystem Portals",
         description: "Collaborative portals for suppliers and partners to manage inventory claims, submit compliance docs, and track payouts.",
-        image: "/assets/images/capabilities/healthcare-clinical-tablet.png",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Employee & Operations Portals",
         description: "Internal team portals streamlining HR requests, expense approvals, document repositories, and operational workflows.",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Audit Logging & Compliance Dashboards",
         description: "SOC2/GDPR compliance-ready audit trails, granular permissions, and automated activity log reporting.",
-        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/cloud-security-hologram-shield.png",
         imagePosition: "right",
       },
     ],
@@ -852,7 +852,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Rather than reciting generic FAQ text, our AI agents execute actions inside your CRM, ERP, and databases with built-in guardrails and human escalation paths.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
-      center: "/assets/images/capabilities/ai-robot-assistant-hologram.png",
+      center: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -887,7 +887,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Action-oriented autonomous agents",
         description: "AI assistants with function-calling capabilities that interact directly with your APIs to complete tasks, book schedules, and process requests.",
-        image: "/assets/images/capabilities/remote-team-video-meeting.png",
+        image: "/assets/images/capabilities/ai-robot-assistant-hologram.png",
         imagePosition: "right",
       },
       {
@@ -907,7 +907,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "AI AGENT ENGINE",
       title: "LLM Agents Grounded in Your Systems",
       description: "LLM-powered assistants connected to your live business systems that check inventory, book appointments, or raise tickets.",
-      image: "https://images.unsplash.com/photo-1618172193763-c511deb635ca?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/ai-brain-chip.png",
     },
     finalCtaText: "Let's deploy your AI agents →",
   },
@@ -1905,19 +1905,19 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Leave management & shift rostering",
         description: "Flexible shift allocation, employee self-service leave requests, approval flows, and automated overtime rules.",
-        image: "/assets/images/capabilities/biometric-facial-recognition.png",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "WPS payroll integration & reporting",
         description: "Automated WPS file creation and statutory payroll calculations matching exact gate attendance logs.",
-        image: "/assets/images/capabilities/biometric-iris-scanner.png",
+        image: "/assets/images/capabilities/business-analytics-reports.png",
         imagePosition: "left",
       },
       {
         title: "Visitor & contractor check-in management",
         description: "Digital visitor logging, badge printing, host notifications, and contractor site access management.",
-        image: "/assets/images/capabilities/business-analytics-reports.png",
+        image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1925,7 +1925,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "WORKFORCE PLATFORM",
       title: "Integrated HR & Physical Access Control",
       description: "Workforce systems connecting physical access control and biometric attendance directly to HR records and payroll.",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/biometric-facial-recognition.png",
     },
     finalCtaText: "Let's connect your HR & attendance system →",
   },
@@ -1971,19 +1971,19 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "AI CCTV footfall & queue length analytics",
         description: "Converting existing store security cameras into real-time operational analytics engines.",
-        image: "/assets/images/capabilities/qr-code-restaurant-menu.png",
+        image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Shelf-gap & planogram stock-out detection",
         description: "Visual AI monitoring that alerts inventory teams the second popular items run empty on shelves.",
-        image: "/assets/images/capabilities/qr-code-contactless-scan.png",
+        image: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Self-service information & wayfinding kiosks",
         description: "Interactive touchscreen kiosks guiding mall visitors to store locations and promotional deals.",
-        image: "/assets/images/capabilities/biometric-facial-recognition.png",
+        image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
@@ -1997,7 +1997,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "RETAIL AI ENGINE",
       title: "Intelligent Retail & Mall Automation",
       description: "Connected systems for hypermarkets and malls combining AI video analytics, kiosks, and real-time floor ops.",
-      image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's automate your retail operations →",
   },
@@ -2270,7 +2270,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "High-intent content & keyword strategy",
         description: "Creating authoritative content hubs targeting high-value commercial search terms.",
-        image: "/assets/images/capabilities/crypto-trader-neon-charts.png",
+        image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
@@ -2282,7 +2282,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Authority building & monthly ranking reports",
         description: "White-hat link building and monthly keyword ranking reports showing clear organic growth.",
-        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
