@@ -83,10 +83,10 @@ export const ProductsCatalog: React.FC = () => {
     <section id="products-catalog" className="w-full py-6 sm:py-8 lg:py-10 px-4 sm:px-8 lg:px-12 bg-white text-left font-sans select-none">
       <div className="max-w-[1440px] w-full mx-auto space-y-6 sm:space-y-8">
 
-        {/* ── MODERN FLOATING FILTER & SEARCH ISLAND (RADIUS < 5, NO MICRO-BOX CLUTTER) ── */}
-        <div className="relative sm:sticky sm:top-24 z-30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 p-2 sm:p-2.5 rounded-[4px] bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] transition-all">
+        {/* ── MODERN FLOATING PILL / CAPSULE DOCK (MATCHING HEADER NAVBAR SHAPE) ── */}
+        <div className="relative sm:sticky sm:top-24 z-30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] transition-all">
           {/* Clean Segmented Dock */}
-          <div className="inline-flex items-center gap-1 p-1 rounded-[4px] bg-slate-100/70 border border-slate-200/50 overflow-x-auto scrollbar-none shrink-0">
+          <div className="inline-flex items-center gap-1 p-1 rounded-full bg-slate-100/70 border border-slate-200/50 overflow-x-auto scrollbar-none shrink-0">
             {TABS.map((tab) => {
               const isActive = activeCategory === tab.id;
               const IconComponent = tab.icon;
@@ -95,7 +95,7 @@ export const ProductsCatalog: React.FC = () => {
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCategory(tab.id)}
-                  className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-[3px] text-xs sm:text-sm font-heading font-semibold transition-all duration-150 cursor-pointer whitespace-nowrap ${
+                  className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-heading font-semibold transition-all duration-150 cursor-pointer whitespace-nowrap ${
                     isActive
                       ? "bg-[#202B61] text-white shadow-xs"
                       : "text-slate-600 hover:text-[#202B61] hover:bg-white/60"
@@ -131,13 +131,13 @@ export const ProductsCatalog: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search products, tools & stacks..."
-              className="w-full bg-slate-50/60 hover:bg-white focus:bg-white border border-slate-200/80 hover:border-slate-300 focus:border-[#202B61] focus:ring-2 focus:ring-[#202B61]/10 text-xs sm:text-sm text-[#202B61] placeholder-slate-400 rounded-[4px] pl-9 pr-8 py-2 transition-all outline-none"
+              className="w-full bg-slate-50/60 hover:bg-white focus:bg-white border border-slate-200/80 hover:border-slate-300 focus:border-[#202B61] focus:ring-2 focus:ring-[#202B61]/10 text-xs sm:text-sm text-[#202B61] placeholder-slate-400 rounded-full pl-9 pr-8 py-2 transition-all outline-none"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#202B61] p-1 cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#202B61] p-1 cursor-pointer"
                 aria-label="Clear search"
               >
                 <X className="w-3.5 h-3.5" />
