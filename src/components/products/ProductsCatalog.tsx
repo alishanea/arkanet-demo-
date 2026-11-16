@@ -83,10 +83,10 @@ export const ProductsCatalog: React.FC = () => {
     <section id="products-catalog" className="w-full py-6 sm:py-8 lg:py-10 px-4 sm:px-8 lg:px-12 bg-white text-left font-sans select-none">
       <div className="max-w-[1440px] w-full mx-auto space-y-6 sm:space-y-8">
 
-        {/* ── MODERN FILTER & SEARCH TOOLBAR (RADIUS < 5) ── */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 p-2 sm:p-2.5 rounded-[4px] bg-slate-50 border border-slate-200/90 shadow-2xs">
-          {/* Segmented Filter Pills */}
-          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
+        {/* ── MODERN FLOATING FILTER & SEARCH ISLAND (RADIUS < 5, NO MICRO-BOX CLUTTER) ── */}
+        <div className="relative sm:sticky sm:top-24 z-30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 p-2 sm:p-2.5 rounded-[4px] bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] transition-all">
+          {/* Clean Segmented Dock */}
+          <div className="inline-flex items-center gap-1 p-1 rounded-[4px] bg-slate-100/70 border border-slate-200/50 overflow-x-auto scrollbar-none shrink-0">
             {TABS.map((tab) => {
               const isActive = activeCategory === tab.id;
               const IconComponent = tab.icon;
@@ -95,10 +95,10 @@ export const ProductsCatalog: React.FC = () => {
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCategory(tab.id)}
-                  className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-[4px] text-xs sm:text-sm font-heading font-bold transition-all duration-150 cursor-pointer whitespace-nowrap shrink-0 ${
+                  className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-[3px] text-xs sm:text-sm font-heading font-semibold transition-all duration-150 cursor-pointer whitespace-nowrap ${
                     isActive
-                      ? "bg-[#202B61] text-white shadow-xs ring-1 ring-[#202B61]"
-                      : "bg-white text-slate-700 border border-slate-200/80 hover:border-[#202B61]/40 hover:text-[#202B61] hover:bg-slate-50"
+                      ? "bg-[#202B61] text-white shadow-xs"
+                      : "text-slate-600 hover:text-[#202B61] hover:bg-white/60"
                   }`}
                 >
                   <IconComponent className={`w-3.5 sm:w-4 h-3.5 sm:h-4 ${
@@ -112,10 +112,8 @@ export const ProductsCatalog: React.FC = () => {
                   }`} />
                   <span>{tab.title}</span>
                   <span
-                    className={`ml-0.5 text-[11px] font-bold px-1.5 py-0.2 rounded-[2px] ${
-                      isActive
-                        ? "bg-white/20 text-white"
-                        : "bg-slate-100 text-slate-600"
+                    className={`text-[11px] font-mono font-medium ${
+                      isActive ? "text-white/70" : "text-slate-400"
                     }`}
                   >
                     {tab.count}
@@ -125,15 +123,15 @@ export const ProductsCatalog: React.FC = () => {
             })}
           </div>
 
-          {/* Quick Search */}
-          <div className="relative w-full lg:w-80 shrink-0">
+          {/* Minimalist Floating Search Input */}
+          <div className="relative w-full sm:w-72 lg:w-80 shrink-0">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search products, tools & stacks..."
-              className="w-full bg-white border border-slate-200 hover:border-slate-300 focus:border-[#202B61] text-xs sm:text-sm text-[#202B61] placeholder-slate-400 rounded-[4px] pl-9 pr-8 py-2 transition-colors outline-none shadow-2xs"
+              className="w-full bg-slate-50/60 hover:bg-white focus:bg-white border border-slate-200/80 hover:border-slate-300 focus:border-[#202B61] focus:ring-2 focus:ring-[#202B61]/10 text-xs sm:text-sm text-[#202B61] placeholder-slate-400 rounded-[4px] pl-9 pr-8 py-2 transition-all outline-none"
             />
             {searchQuery && (
               <button
