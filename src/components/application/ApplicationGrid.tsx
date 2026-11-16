@@ -74,11 +74,11 @@ export const ApplicationGrid: React.FC<ApplicationGridProps> = ({ onSelectApp })
                     onSelectApp(app);
                   }
                 }}
-                className="group rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_20px_rgba(32,43,97,0.03)] p-4 sm:p-4.5 hover:border-[#202B61]/40 hover:shadow-[0_12px_32px_rgba(32,43,97,0.08)] hover:-translate-y-0.5 cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                className="group rounded-[4px] bg-white border border-slate-200/90 shadow-[0_4px_20px_rgba(32,43,97,0.03)] p-4 sm:p-4.5 hover:border-[#202B61]/40 hover:shadow-[0_12px_32px_rgba(32,43,97,0.08)] hover:-translate-y-0.5 cursor-pointer transition-all duration-300 flex flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
               >
                 <div className="space-y-3.5">
                   {/* Clean Preview Image */}
-                  <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
+                  <div className="relative aspect-[16/10] w-full rounded-[4px] overflow-hidden bg-slate-100 border border-slate-200/80">
                     <Image
                       src={app.previewImage}
                       alt={app.name}
