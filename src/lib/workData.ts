@@ -350,7 +350,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     category: "AI & Automation",
     title: "Conversational AI & Multilingual Voicebots",
     description: "Enterprise conversational voicebots automating customer care across web, phone, and WhatsApp across global languages.",
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=1600&auto=format&fit=crop",
     year: "2026",
     services: ["Conversational AI", "Voicebot Development", "Global Multilingual NLU"],
   },

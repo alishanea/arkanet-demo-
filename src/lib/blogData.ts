@@ -241,7 +241,7 @@ export const articlesData: Article[] = [
       "What separates modern LLM-based assistants from rigid FAQ bots, and how businesses can deploy them on websites, WhatsApp, and internal helpdesks.",
     author: "Vivek Nair",
     date: "8 July 2026",
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
     avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop",
     content: {
       intro: [
