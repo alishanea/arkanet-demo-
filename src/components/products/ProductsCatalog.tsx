@@ -83,28 +83,66 @@ export const ProductsCatalog: React.FC = () => {
       <div className="max-w-[1440px] w-full mx-auto space-y-8 sm:space-y-10">
 
         {/* ── 1. CLEAN APP STORE HEADER ── */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200/90 pb-6 text-left">
-          <div className="space-y-2 max-w-2xl">
-            <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#202B61]/70 font-sans">
-              Arkanet App Store &amp; Platform Repository
-            </p>
-            <h1 className="font-heading font-extrabold text-[#202B61] text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
-              Our Products
-            </h1>
-            <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-pretty">
-              Official applications, cloud platforms, and developer utilities engineered by Arkanet. Select any product to inspect screenshots and full capabilities.
-            </p>
+        <div className="space-y-2 max-w-2xl text-left border-b border-slate-200/90 pb-6">
+          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#202B61]/70 font-sans">
+            Arkanet App Store &amp; Platform Repository
+          </p>
+          <h1 className="font-heading font-extrabold text-[#202B61] text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
+            Our Products
+          </h1>
+          <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-pretty">
+            Official applications, cloud platforms, and developer utilities engineered by Arkanet. Select any product to inspect screenshots, test live demos, and review deployment details.
+          </p>
+        </div>
+
+        {/* ── 2. SLEEK MODERN FILTER & SEARCH TOOLBAR (RADIUS < 5) ── */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 p-2 sm:p-2.5 rounded-[4px] bg-slate-50 border border-slate-200/90 shadow-2xs">
+          {/* Segmented Filter Pills */}
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
+            {TABS.map((tab) => {
+              const isActive = activeCategory === tab.id;
+              const IconComponent = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveCategory(tab.id)}
+                  className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-[4px] text-xs sm:text-sm font-heading font-bold transition-all duration-150 cursor-pointer whitespace-nowrap shrink-0 ${isActive
+                    ? "bg-[#202B61] text-white shadow-xs ring-1 ring-[#202B61]"
+                    : "bg-white text-slate-700 border border-slate-200/80 hover:border-[#202B61]/40 hover:text-[#202B61] hover:bg-slate-50"
+                    }`}
+                >
+                  <IconComponent className={`w-3.5 sm:w-4 h-3.5 sm:h-4 ${isActive
+                    ? "text-white"
+                    : tab.accentColor === "emerald"
+                      ? "text-emerald-600"
+                      : tab.accentColor === "amber"
+                        ? "text-amber-600"
+                        : "text-[#202B61]"
+                    }`} />
+                  <span>{tab.title}</span>
+                  <span
+                    className={`ml-0.5 text-[11px] font-bold px-1.5 py-0.2 rounded-[2px] ${isActive
+                      ? "bg-white/20 text-white"
+                      : "bg-slate-100 text-slate-600"
+                      }`}
+                  >
+                    {tab.count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
-          {/* Quick Search */}
-          <div className="relative w-full md:w-80 shrink-0">
+          {/* Quick Search Bar */}
+          <div className="relative w-full lg:w-80 shrink-0">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search products &amp; tools..."
-              className="w-full bg-slate-50 border border-slate-200 hover:border-slate-300 focus:border-[#202B61] focus:bg-white text-xs sm:text-sm text-[#202B61] placeholder-slate-400 rounded-[4px] pl-9 pr-8 py-2.5 transition-colors outline-none"
+              placeholder="Search products, tools &amp; stacks..."
+              className="w-full bg-white border border-slate-200 hover:border-slate-300 focus:border-[#202B61] text-xs sm:text-sm text-[#202B61] placeholder-slate-400 rounded-[4px] pl-9 pr-8 py-2 sm:py-2.5 transition-colors outline-none shadow-2xs"
             />
             {searchQuery && (
               <button
@@ -117,103 +155,6 @@ export const ProductsCatalog: React.FC = () => {
               </button>
             )}
           </div>
-        </div>
-
-        {/* ── 2. BEAUTIFIED PRODUCT CATEGORY TABS (RADIUS < 5) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-5">
-          {TABS.map((tab) => {
-            const isActive = activeCategory === tab.id;
-            const IconComponent = tab.icon;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveCategory(tab.id)}
-                className={`group relative p-4 sm:p-5 rounded-[4px] border text-left transition-all duration-200 cursor-pointer overflow-hidden ${isActive
-                  ? "bg-gradient-to-br from-[#202B61] via-[#1A2454] to-[#12193D] text-white border-[#202B61] shadow-[0_10px_25px_rgba(32,43,97,0.18)] ring-1 ring-[#202B61]"
-                  : "bg-white text-slate-700 border-slate-200/90 hover:border-[#202B61]/50 hover:shadow-md hover:bg-slate-50/70"
-                  }`}
-              >
-                {/* Top Subtle Active Accent Bar */}
-                {isActive && (
-                  <div
-                    className={`absolute top-0 left-0 right-0 h-[3px] ${tab.accentColor === "emerald"
-                      ? "bg-emerald-400"
-                      : tab.accentColor === "amber"
-                        ? "bg-amber-400"
-                        : "bg-sky-400"
-                      }`}
-                  />
-                )}
-
-                {/* Top Row: Icon + Badge + Count */}
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div
-                      className={`w-9 h-9 rounded-[4px] flex items-center justify-center transition-all ${isActive
-                        ? "bg-white/12 text-white border border-white/20 shadow-xs"
-                        : tab.accentColor === "emerald"
-                          ? "bg-emerald-50 text-emerald-600 border border-emerald-100 group-hover:scale-105"
-                          : tab.accentColor === "amber"
-                            ? "bg-amber-50 text-amber-600 border border-amber-100 group-hover:scale-105"
-                            : "bg-slate-100 text-[#202B61] border border-slate-200/80 group-hover:scale-105"
-                        }`}
-                    >
-                      <IconComponent className="w-4 h-4" />
-                    </div>
-
-                    <span
-                      className={`text-[10px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-[4px] ${isActive
-                        ? "bg-white/10 text-white/90 border border-white/15"
-                        : "bg-slate-100 text-slate-500 border border-slate-200/60"
-                        }`}
-                    >
-                      {tab.badge}
-                    </span>
-                  </div>
-
-                  {/* Count Pill */}
-                  <span
-                    className={`font-heading font-black text-xs px-2.5 py-1 rounded-[4px] border transition-all ${isActive
-                      ? "bg-white/20 text-white border-white/30 shadow-xs"
-                      : "bg-slate-50 text-slate-700 border-slate-200 group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61]"
-                      }`}
-                  >
-                    {tab.count}
-                  </span>
-                </div>
-
-                {/* Title & Subtitle */}
-                <div>
-                  <h3
-                    className={`font-heading font-extrabold text-base sm:text-lg leading-snug transition-colors ${isActive ? "text-white" : "text-[#202B61] group-hover:text-[#151E48]"
-                      }`}
-                  >
-                    {tab.title}
-                  </h3>
-                  <p
-                    className={`font-sans text-xs sm:text-[13px] mt-1.5 leading-relaxed font-normal transition-colors ${isActive ? "text-slate-200" : "text-slate-500"
-                      }`}
-                  >
-                    {tab.subtitle}
-                  </p>
-                </div>
-
-                {/* Bottom subtle indicator line */}
-                <div className="mt-3.5 pt-2.5 border-t border-current/10 flex items-center justify-between text-[11px] font-semibold">
-                  <span className={isActive ? "text-slate-300" : "text-slate-400"}>
-                    {isActive ? "Currently viewing" : "Click to filter"}
-                  </span>
-                  <span
-                    className={`transition-transform duration-200 ${isActive ? "translate-x-0 text-white" : "text-slate-400 group-hover:translate-x-1 group-hover:text-[#202B61]"
-                      }`}
-                  >
-                    →
-                  </span>
-                </div>
-              </button>
-            );
-          })}
         </div>
 
         {/* ── 3. PRODUCT CARDS (BASED ON REFERENCE: IMAGE BANNER, FLOATING PRICE, TAGS, RATING, ONE VIEW DETAILS BUTTON) ── */}
