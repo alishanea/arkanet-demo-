@@ -80,23 +80,10 @@ export const ProductsCatalog: React.FC = () => {
   }, [activeCategory, searchQuery]);
 
   return (
-    <section id="products-catalog" className="w-full py-8 sm:py-12 lg:py-16 px-4 sm:px-8 lg:px-12 bg-white text-left font-sans select-none">
-      <div className="max-w-[1440px] w-full mx-auto space-y-8 sm:space-y-10">
+    <section id="products-catalog" className="w-full py-6 sm:py-8 lg:py-10 px-4 sm:px-8 lg:px-12 bg-white text-left font-sans select-none">
+      <div className="max-w-[1440px] w-full mx-auto space-y-6 sm:space-y-8">
 
-        {/* ── 1. CLEAN APP STORE HEADER ── */}
-        <div className="space-y-2 max-w-2xl text-left">
-          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#202B61]/70 font-sans">
-            Arkanet App Store &amp; Platform Repository
-          </p>
-          <h1 className="font-heading font-extrabold text-[#202B61] text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
-            Our Products
-          </h1>
-          <p className="font-sans text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-pretty">
-            Official applications, cloud platforms, and developer utilities engineered by Arkanet. Select any product to inspect screenshots, test live demos, and review deployment details.
-          </p>
-        </div>
-
-        {/* ── 2. SLEEK MODERN FILTER & SEARCH TOOLBAR (RADIUS < 5) ── */}
+        {/* ── MODERN FILTER & SEARCH TOOLBAR (RADIUS < 5) ── */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 p-2 sm:p-2.5 rounded-[4px] bg-slate-50 border border-slate-200/90 shadow-2xs">
           {/* Segmented Filter Pills */}
           <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
