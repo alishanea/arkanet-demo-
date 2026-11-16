@@ -121,9 +121,9 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
   return (
     <section
       id="work"
-      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center bg-white py-14 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24 border-t border-slate-200/80"
+      className="relative w-full bg-white py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24 border-t border-slate-200/80"
     >
-      <div className="max-w-[1400px] w-full mx-auto my-auto space-y-10 sm:space-y-12">
+      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
         
         {/* ── 1. CLEAN EDITORIAL SECTION HEADER (NO TOP/BOTTOM DIVIDER LINES) ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 sm:pb-3">

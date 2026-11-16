@@ -46,12 +46,12 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
   return (
     <section
       id="prostack"
-      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center bg-white text-[#202B61] select-none py-14 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12 font-prostack scroll-mt-24 border-t border-slate-200/80"
+      className="relative w-full bg-white text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 font-prostack scroll-mt-24 border-t border-slate-200/80"
     >
-      <div className="relative max-w-[1400px] w-full mx-auto my-auto space-y-12 sm:space-y-14 text-left">
+      <div className="relative max-w-[1400px] w-full mx-auto space-y-12 sm:space-y-14 text-left">
         
         {/* ── TOP: Prostack Brand Logo + Direct Narrative ── */}
-        <div className="space-y-3.5 max-w-3xl text-left">
+        <div className="space-y-4 max-w-3xl text-left">
           <a
             href="https://prostack.arkanet.ae/"
             target="_blank"
@@ -61,39 +61,39 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
             <Image
               src="/assets/images/prostack-logo-navy.png"
               alt="Prostack Logo"
-              width={200}
-              height={38}
-              className="h-7 sm:h-8 w-auto object-contain group-hover:opacity-85 transition-opacity"
+              width={220}
+              height={42}
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain group-hover:opacity-85 transition-opacity"
               priority
             />
           </a>
 
-          <p className="font-prostack text-base sm:text-lg lg:text-[18px] text-slate-600 leading-relaxed font-normal max-w-2xl text-pretty">
+          <p className="font-prostack text-lg sm:text-xl lg:text-[21px] text-slate-700 leading-relaxed font-normal max-w-3xl text-pretty">
             A unified platform to build high-performance websites, manage headless commerce, and scale digital operations in one connected workspace without plugin chaos.
           </p>
         </div>
 
-        {/* ── 3 CLEAN OPEN EDITORIAL COLUMNS (OLD MODEL) ── */}
+        {/* ── 3 CLEAN OPEN EDITORIAL COLUMNS (PROPORTIONAL BODY TEXT & TITLES) ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 text-left pt-2">
           {PILLARS.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
-              <div key={idx} className="space-y-3.5">
+              <div key={idx} className="space-y-4">
                 {/* Clean Line Icon */}
                 <div className="text-[#202B61]">
-                  <Icon className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.4]" />
+                  <Icon className="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.4]" />
                 </div>
 
                 {/* Bold Title ending with a period */}
-                <div className="min-h-[1.75rem] sm:h-8 flex items-start">
-                  <h3 className="font-prostack font-bold text-lg sm:text-xl lg:text-[22px] text-[#202B61] leading-snug">
+                <div>
+                  <h3 className="font-prostack font-bold text-xl sm:text-2xl lg:text-[23px] text-[#202B61] leading-snug">
                     {pillar.title}
                   </h3>
                 </div>
 
-                {/* Editorial Narrative Paragraph (Exact 3-Line Height Symmetry) */}
-                <div className="min-h-[4.25rem] sm:h-[4.65rem] flex items-start">
-                  <p className="font-prostack text-sm sm:text-[15px] text-slate-600 leading-relaxed font-normal text-pretty line-clamp-4 sm:line-clamp-3">
+                {/* Editorial Narrative Paragraph (Larger Legible Body) */}
+                <div>
+                  <p className="font-prostack text-base sm:text-[16.5px] text-slate-600 leading-relaxed font-normal text-pretty">
                     {pillar.description}
                   </p>
                 </div>
@@ -108,10 +108,10 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
             href="https://prostack.arkanet.ae/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 font-prostack text-sm sm:text-base font-semibold text-[#202B61] hover:text-[#1740b3] transition-colors"
+            className="group inline-flex items-center gap-2.5 font-prostack text-base sm:text-lg font-bold text-[#202B61] hover:text-[#1740b3] transition-colors"
           >
             <span>Explore Prostack</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-[#202B61] group-hover:text-[#1740b3]" />
+            <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-1.5 transition-transform text-[#202B61] group-hover:text-[#1740b3]" />
           </a>
         </div>
 

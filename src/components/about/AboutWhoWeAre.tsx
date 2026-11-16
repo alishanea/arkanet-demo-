@@ -6,9 +6,9 @@ export function AboutWhoWeAre() {
   return (
     <section
       id="about-story"
-      className="w-full min-h-screen min-h-[100dvh] flex flex-col justify-center py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white text-[#202B61] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans scroll-mt-28 sm:scroll-mt-36"
+      className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white text-[#202B61] border-b border-slate-200/80 text-left select-none overflow-hidden font-sans scroll-mt-28 sm:scroll-mt-36"
     >
-      <div className="max-w-[1400px] w-full mx-auto my-auto">
+      <div className="max-w-[1400px] w-full mx-auto">
         {/* Top 2-Column Split: Headline + Narrative */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 xl:gap-20 items-start">
           {/* Left Column: Headline + Core Intro */}
