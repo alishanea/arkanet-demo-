@@ -7,7 +7,7 @@ const PILLARS = [
   {
     icon: Layers,
     title: "Dual-Hub Innovation Synergy",
-    desc: "Strategic engineering center in Kelakam paired with Dubai corporate office, bridging regional engineering talent with demanding global enterprise technology standards.",
+    desc: "Global headquarters in Business Bay, Dubai registered under UAE regulations, paired with our specialized engineering development hub in Kerala, delivering world-class technology solutions.",
   },
   {
     icon: Cpu,

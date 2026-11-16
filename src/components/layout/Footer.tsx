@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
               </Link>
               
               <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed font-normal max-w-sm">
-                The Digital Innovation Company blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Backed by 15+ years of engineering experience, building future-ready platforms across hospitality, IT, eCommerce, and government sectors.
+                Headquartered and registered in Business Bay, Dubai, UAE, Arkanet Technologies blends AI, Cloud, IoT, and high-performance software engineering with a dedicated development center in Kerala, India. Backed by 15+ years of enterprise engineering excellence.
               </p>
 
               {/* Simple Prostack Button */}
@@ -108,33 +108,20 @@ export const Footer: React.FC<FooterProps> = ({
               </ul>
             </div>
 
-            {/* Column 3: Dubai & India Offices (Span 3) */}
+            {/* Column 3: Dubai HQ & India Development Center (Span 3) */}
             <div className="lg:col-span-3 space-y-4">
               <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-white">
                 Offices
               </h4>
 
-              {/* India Office */}
+              {/* UAE Global Headquarters */}
               <div className="space-y-1 text-xs sm:text-sm text-slate-300">
-                <span className="font-bold text-white block">India Office</span>
-                <p className="leading-relaxed">
-                  Room No. 227K, Benny Complex,<br />
-                  Kelakam, Kannur Dt, Kerala 670674
-                </p>
-                <div className="space-y-0.5 pt-0.5">
-                  <a href="tel:+919074104372" className="text-slate-300 hover:text-white block font-semibold transition-colors">
-                    +91 90741 04372
-                  </a>
-                  <a href="mailto:info@arkanet.in" className="text-xs font-semibold text-slate-200 hover:text-white hover:underline block pt-0.5 transition-colors">
-                    info@arkanet.in
-                  </a>
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-white block">Global Headquarters</span>
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded-[4px] bg-white/10 text-slate-200 border border-white/10">Dubai, UAE</span>
                 </div>
-              </div>
-
-              {/* UAE */}
-              <div className="space-y-1 text-xs sm:text-sm text-slate-300 pt-1">
-                <span className="font-bold text-white block">UAE Office</span>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-xs sm:text-sm text-slate-300">
+                  Arkanet Technologies LLC<br />
                   Suite 308, Capital Golden Tower,<br />
                   Business Bay, Dubai, UAE
                 </p>
@@ -147,6 +134,26 @@ export const Footer: React.FC<FooterProps> = ({
                   </a>
                   <a href="mailto:sales@arkanet.ae" className="text-xs font-semibold text-slate-200 hover:text-white hover:underline block pt-0.5 transition-colors">
                     sales@arkanet.ae
+                  </a>
+                </div>
+              </div>
+
+              {/* India Development Center */}
+              <div className="space-y-1 text-xs sm:text-sm text-slate-300 pt-2 border-t border-white/10">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-white block">Development Center</span>
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded-[4px] bg-white/10 text-slate-200 border border-white/10">India</span>
+                </div>
+                <p className="leading-relaxed text-xs sm:text-sm text-slate-300">
+                  Room No. 227K, Benny Complex,<br />
+                  Kelakam, Kannur Dt, Kerala 670674
+                </p>
+                <div className="space-y-0.5 pt-0.5">
+                  <a href="tel:+919074104372" className="text-slate-300 hover:text-white block font-semibold transition-colors">
+                    +91 90741 04372
+                  </a>
+                  <a href="mailto:info@arkanet.in" className="text-xs font-semibold text-slate-200 hover:text-white hover:underline block pt-0.5 transition-colors">
+                    info@arkanet.in
                   </a>
                 </div>
               </div>

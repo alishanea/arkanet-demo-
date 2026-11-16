@@ -27,9 +27,22 @@ const SERVICES_LIST = [
 
 const OFFICE_LOCATIONS = [
   {
+    city: "Dubai",
+    country: "United Arab Emirates",
+    badge: "Global Headquarters",
+    entity: "Arkanet Technologies LLC (Registered in Dubai, UAE)",
+    address: "Suite 308, Capital Golden Tower, Business Bay, Dubai, UAE",
+    poBox: "P.O. Box: 393317",
+    phone: "+971 50 933 8430",
+    phoneHref: "tel:+971509338430",
+    email: "sales@arkanet.ae",
+    emailHref: "mailto:sales@arkanet.ae",
+    hours: "Sun – Thu: 9:00 AM – 6:00 PM GST"
+  },
+  {
     city: "Kerala",
     country: "India",
-    badge: "India Office",
+    badge: "India Development Center",
     entity: "Arkanet Technologies",
     address: "Room No: 227K, Benny complex, Kelakam, Kannur. Kerala 670674, India",
     poBox: null,
@@ -38,19 +51,6 @@ const OFFICE_LOCATIONS = [
     email: "info@arkanet.in",
     emailHref: "mailto:info@arkanet.in",
     hours: "Mon – Sat: 9:00 AM – 6:30 PM IST"
-  },
-  {
-    city: "Dubai",
-    country: "United Arab Emirates",
-    badge: "UAE Office",
-    entity: "Arkanet Technologies LLC",
-    address: "Suite 308, Capital Golden Tower, Business Bay, Dubai, UAE",
-    poBox: "P.O. Box: 393317",
-    phone: "+971 50 933 8430",
-    phoneHref: "tel:+971509338430",
-    email: "sales@arkanet.ae",
-    emailHref: "mailto:sales@arkanet.ae",
-    hours: "Sun – Thu: 9:00 AM – 6:00 PM GST"
   }
 ];
 
@@ -322,7 +322,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeroHeader =
               {OFFICE_LOCATIONS.map((loc) => (
                 <div
                   key={loc.city}
-                  className="rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 space-y-3.5 shadow-sm text-left transition-all hover:border-slate-300"
+                  className="rounded-[4px] border border-slate-200/90 bg-white p-5 sm:p-6 space-y-3.5 shadow-none text-left transition-all hover:border-slate-300"
                 >
                   {/* Location Header */}
                   <div className="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
@@ -338,7 +338,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeroHeader =
                       </p>
                     </div>
 
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#202B61] bg-white border border-slate-200 px-2 py-0.5 rounded-md shrink-0">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#202B61] bg-white border border-slate-200 px-2 py-0.5 rounded-[4px] shrink-0">
                       {loc.badge}
                     </span>
                   </div>
