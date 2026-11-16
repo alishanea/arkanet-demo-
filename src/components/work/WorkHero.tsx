@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const WorkHero: React.FC = () => {
   return (
-    <section className="relative w-full sm:min-h-screen sm:min-h-[100dvh] pt-24 sm:pt-32 lg:pt-36 pb-8 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none overflow-hidden font-sans flex flex-col justify-center">
+    <section className="relative w-full sm:min-h-screen sm:min-h-[100dvh] pt-24 sm:pt-32 lg:pt-36 pb-8 sm:pb-16 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-center select-none overflow-hidden font-sans flex flex-col justify-center items-center">
       {/* ── CINEMATIC AMBIENT BACKGROUND: HIGH-RES ARCHITECTURAL ENGINEERING STUDIO ── */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
         <Image
@@ -15,22 +15,22 @@ export const WorkHero: React.FC = () => {
           priority
           quality={95}
           sizes="100vw"
-          className="object-cover object-center sm:object-right-top opacity-60 sm:opacity-70 brightness-[1.03] contrast-[1.05] saturate-[1.06]"
+          className="object-cover object-center opacity-50 sm:opacity-60 brightness-[1.03] contrast-[1.05] saturate-[1.06]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 sm:via-white/70 to-white/40 sm:to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-white/70 sm:bg-white/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] w-full mx-auto sm:my-auto space-y-6">
-        <div className="max-w-3xl space-y-5 text-left">
+      <div className="relative z-10 max-w-[1400px] w-full mx-auto sm:my-auto space-y-6 flex flex-col items-center">
+        <div className="max-w-3xl space-y-5 text-center flex flex-col items-center mx-auto">
           <h1 className="hero-h1 font-heading font-extrabold text-[#202B61] text-4xl sm:text-6xl lg:text-[68px] tracking-tight leading-[1.05] text-balance">
             Digital Platforms Engineered for Scale
           </h1>
-          <p className="font-sans text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed font-normal max-w-2xl text-pretty pt-1">
+          <p className="font-sans text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed font-normal max-w-2xl text-pretty pt-1 mx-auto">
             Explore our portfolio of production websites, native mobile applications, applied AI architectures, and enterprise cloud solutions deployed for industry leaders.
           </p>
 
-          <div className="pt-4 flex items-center gap-4">
+          <div className="pt-4 flex items-center justify-center gap-4">
             <a
               href="#projects"
               className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#202B61] text-white font-heading font-bold text-sm tracking-wide shadow-md hover:bg-[#151E48] hover:shadow-lg transition-all duration-200"
