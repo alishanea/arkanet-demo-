@@ -1496,7 +1496,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 3.3 WhatsApp & Social Commerce Automation
   "whatsapp-social-commerce-automation": {
     slug: "whatsapp-social-commerce-automation",
-    bgImage: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=2400&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2400&auto=format&fit=crop",
     badge: "WHATSAPP & SOCIAL COMMERCE",
     title: "Sell and serve where your",
     highlightText: "customers already are",
@@ -1540,7 +1540,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "In-chat product catalogues & payment links",
         description: "Interactive product carousels and instant payment gateway links right inside chat conversations.",
-        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
