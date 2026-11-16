@@ -29,14 +29,6 @@ export interface CapabilityDetail {
     image: string;
     imagePosition: "left" | "right";
   }[];
-  testimonials: {
-    quote: string;
-    author: string;
-    role: string;
-    image: string;
-    bgColor: string;
-    textColor: string;
-  }[];
   techShowcase: {
     badge: string;
     title: string;
@@ -45,8 +37,6 @@ export interface CapabilityDetail {
   };
   finalCtaText: string;
 }
-
-const PLACEHOLDER_TESTIMONIAL_NOTE = "[Awaiting approved client quote]";
 
 export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // ═══════════════════════════════════════════════════════════════
@@ -116,33 +106,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "PRODUCTION SOFTWARE",
       title: "Bespoke Systems Engineered for Real Scale",
       description: "Custom enterprise software built to run your business today and scale effortlessly for the load you'll have in three years.",
@@ -214,33 +178,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "PRODUCTION WEB PLATFORMS",
       title: "Fast, Accessible Websites That Convert",
       description: "From corporate sites to complex web applications, we build responsive, SEO-ready experiences that load fast on real-world connections.",
@@ -312,33 +250,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "MOBILE ENGINE",
       title: "One Codebase, Two App Stores, Zero Compromise",
       description: "Cross-platform and native mobile apps with offline capability, push notifications, and payments handled as standard.",
@@ -410,33 +322,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "SAAS PLATFORM",
       title: "Scalable Multi-Tenant SaaS Architecture",
       description: "Built from first customer to thousandth on the same solid architecture, with tenant isolation and billing solved upfront.",
@@ -508,33 +394,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "E-COMMERCE ENGINE",
       title: "Storefronts Engineered to Convert & Scale",
       description: "Commerce platforms covering catalogue architecture, checkout performance, payment gateways, and post-purchase flows.",
@@ -606,33 +466,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "MARKETPLACE ENGINE",
       title: "Scalable Two-Sided Marketplace Architecture",
       description: "Marketplaces, directories, and multi-vendor platforms handling onboarding, commission split payouts, and fast discovery.",
@@ -704,33 +538,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "ENTERPRISE PORTAL",
       title: "Secure, Scalable Portal Architecture",
       description: "Built to handle real concurrent users and sensitive data from day one, with security hardening and monitoring out of the box.",
@@ -802,33 +610,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "API ENGINE",
       title: "Connected Systems Architecture",
       description: "We connect ERPs, CRMs, logistics tools, and internal databases into a coherent flow, eliminating duplicate data entry.",
@@ -900,33 +682,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "CLOUD ENGINE",
       title: "Infrastructure Built to Stay Live Under Load",
       description: "Cloud architecture, CI/CD deployment pipelines, monitoring, and disaster recovery strategies in place from day one.",
@@ -998,33 +754,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "MODERNIZATION ENGINE",
       title: "Bring Legacy Systems Into the Modern Era",
       description: "We modernize aging applications without stopping the business, assessing what to refactor or replace in seamless phases.",
@@ -1101,33 +831,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "PRODUCTION ML",
       title: "Applied Machine Learning That Delivers Outcomes",
       description: "We deploy machine learning and language models against specific business problems with measurable outcomes, not demos.",
@@ -1199,33 +903,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "AI AGENT ENGINE",
       title: "LLM Agents Grounded in Your Systems",
       description: "LLM-powered assistants connected to your live business systems that check inventory, book appointments, or raise tickets.",
@@ -1297,33 +975,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "COMMERCE AI",
       title: "AI Personal Shoppers for E-Commerce",
       description: "Embedded AI assistants that understand your catalogue and guide shoppers to the right purchase in real time.",
@@ -1395,33 +1047,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "SUPPORT AI",
       title: "Hybrid AI Support Desk Infrastructure",
       description: "AI resolves routine queries instantly and hands off to human agents with full conversation context.",
@@ -1493,33 +1119,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "DOCUMENT AI",
       title: "Automated Document Processing & Reporting",
       description: "Extract structured data from invoices and contracts, or generate pixel-perfect proposals automatically from live data.",
@@ -1591,33 +1191,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "MULTILINGUAL AI",
       title: "Regional AI Solutions Built for Genuine Fluency",
       description: "AI systems built with proper right-to-left layout, correct script rendering, and cultural adaptation.",
@@ -1689,33 +1263,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "DATA PIPELINES",
       title: "Data Engineering & Analytics Architecture",
       description: "We build pipelines and warehouses that consolidate data from every system into a single trustworthy source.",
@@ -1787,33 +1335,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "VOICE AI ENGINE",
       title: "Intelligent Multilingual Voice AI Systems",
       description: "Intelligent voice systems that answer calls, understand natural speech, and route everything with context gathered.",
@@ -1890,33 +1412,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "WORKFLOW ENGINE",
       title: "Automation Built Around Your Actual Workflow",
       description: "Not off-the-shelf recipes, automations mapped to how your team genuinely works, then built to fit.",
@@ -1988,33 +1484,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "INTEGRATION ENGINE",
       title: "Workflow & Integration Automation",
       description: "We wire your existing applications together so information moves automatically between all your business platforms.",
@@ -2086,33 +1556,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "CHAT COMMERCE",
       title: "WhatsApp & Social Commerce Automation Engine",
       description: "Automated commerce on WhatsApp API, Instagram, and Facebook: catalogue browsing, order placement, and payments.",
@@ -2189,33 +1633,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "EDTECH PLATFORM",
       title: "Complete Learning Management Architecture",
       description: "Complete learning platforms combining course delivery, live virtual classrooms, assessment, and certification.",
@@ -2287,33 +1705,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "WEBRTC ENGINE",
       title: "Self-Hosted WebRTC Video Platforms",
       description: "White-label video conferencing built on WebRTC carrying your branding, access rules, and data residency.",
@@ -2385,33 +1777,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "EVENT PLATFORM",
       title: "End-to-End Event Ticketing & Gate Infrastructure",
       description: "End-to-end event platforms covering registration, ticket sales, QR check-in, and on-site self-service kiosks.",
@@ -2483,33 +1849,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "ERP ENGINE",
       title: "Integrated Business Management Systems",
       description: "Integrated ERP covering accounting, inventory, procurement, and reporting, configured around your business.",
@@ -2581,33 +1921,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "WORKFORCE PLATFORM",
       title: "Integrated HR & Physical Access Control",
       description: "Workforce systems connecting physical access control and biometric attendance directly to HR records and payroll.",
@@ -2679,33 +1993,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "RETAIL AI ENGINE",
       title: "Intelligent Retail & Mall Automation",
       description: "Connected systems for hypermarkets and malls combining AI video analytics, kiosks, and real-time floor ops.",
@@ -2782,33 +2070,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "DESIGN SYSTEM",
       title: "Interfaces People Understand Instantly",
       description: "We design digital products from research through to production-ready design systems that engineering can build directly.",
@@ -2880,33 +2142,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "BRAND SYSTEM",
       title: "A Complete Brand Identity System",
       description: "Guidelines and visual assets built to outlast a single campaign, so every piece of marketing looks like it belongs to the same company.",
@@ -2978,33 +2214,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "REVENUE MARKETING",
       title: "Marketing Tied to Revenue, Not Vanity Metrics",
       description: "Every campaign measured against qualified leads and sales pipeline, reported transparently every month.",
@@ -3076,33 +2286,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "SEO ENGINE",
       title: "Compounding Organic Search Visibility",
       description: "Technical SEO, content strategy, and authority building to grow organic visibility and cut acquisition costs.",
@@ -3179,33 +2363,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "PRODUCT ADVISORY",
       title: "Get the Plan Right Before You Build",
       description: "We help you decide what to build, in what order, and whether it's worth building at all.",
@@ -3277,33 +2435,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
         imagePosition: "right",
       },
     ],
-    testimonials: [
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-white",
-        textColor: "text-[#202B61]",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#6c6ce5]",
-        textColor: "text-white",
-      },
-      {
-        quote: PLACEHOLDER_TESTIMONIAL_NOTE,
-        author: "[Client Name]",
-        role: "[Role, Company]",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-        bgColor: "bg-[#202B61]",
-        textColor: "text-white",
-      },
-    ],
-    techShowcase: {
+        techShowcase: {
       badge: "SUPPORT RETAINER",
       title: "SLA-Backed Support & Maintenance",
       description: "Launch day is the beginning of software's life. We support systems we built and systems we inherit.",
