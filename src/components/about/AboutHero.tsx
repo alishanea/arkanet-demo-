@@ -9,7 +9,7 @@ export function AboutHero() {
       {/* Cinematic Ambient Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2400&q=85"
+          src="/assets/images/capabilities/engineering-office-workstations.png"
           alt="Arkanet Team & Engineering Workspace"
           className="w-full h-full object-cover opacity-50 brightness-105 saturate-110"
           loading="eager"

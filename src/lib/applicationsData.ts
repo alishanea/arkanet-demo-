@@ -207,8 +207,9 @@ export const APPLICATIONS: ApplicationItem[] = [
     reviewsCount: "1.2k reviews",
     platformBadge: "iOS & Android",
     previewImage:
-      "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1200&auto=format&fit=crop",
+      "/assets/images/capabilities/healthcare-clinical-tablet.png",
     screenshots: [
+      "/assets/images/capabilities/healthcare-clinical-tablet.png",
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1000&auto=format&fit=crop",
     ],
@@ -447,10 +448,11 @@ export const APPLICATIONS: ApplicationItem[] = [
     reviewsCount: "640 reviews",
     platformBadge: "Web & Cloud",
     previewImage:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+      "/assets/images/capabilities/ai-robot-assistant-hologram.png",
     screenshots: [
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
+      "/assets/images/capabilities/ai-robot-assistant-hologram.png",
+      "/assets/images/capabilities/ai-brain-chip.png",
+      "/assets/images/capabilities/ai-neural-network-mesh.png",
     ],
     liveUrl: "https://neuraldesk.demo.arkanet.com",
     description:
