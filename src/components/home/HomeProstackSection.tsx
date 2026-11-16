@@ -26,19 +26,19 @@ const PILLARS: PillarItem[] = [
     icon: Layout,
     title: "Build with freedom.",
     description:
-      "Assemble rich editorial pages with drag-and-drop ease, full revision history, and Shopify-compatible Liquid themes that give your engineering team complete code\u00A0control.",
+      "Assemble rich editorial pages with modular drag-and-drop ease, full revision history, and Shopify-compatible Liquid themes that give your engineering team complete code autonomy, Git workflows, and rapid deployment velocity across every digital storefront.",
   },
   {
     icon: ShoppingBag,
     title: "Transact without limits.",
     description:
-      "Manage SKU catalogs, real-time multi-warehouse inventory sync, and high-concurrency checkouts globally with zero arbitrary revenue\u00A0penalties.",
+      "Manage expansive product catalogs, live multi-warehouse inventory synchronization, and high-concurrency global checkouts with localized multi-currency processing, automated regional tax compliance, and modern resilient cloud architecture with zero arbitrary revenue or platform transaction penalties.",
   },
   {
     icon: Zap,
     title: "Scale at the edge.",
     description:
-      "Achieve sub-second edge distribution, automated 95+ Core Web Vitals, dynamic SEO, and role-based security out of the box without plugin\u00A0conflicts.",
+      "Deliver blazing sub-second international content distribution, automated 95+ Core Web Vitals performance, automated dynamic search indexation, and granular role-based access security out of the box with zero third-party plugin conflicts or fragile dependencies.",
   },
 ];
 
@@ -73,29 +73,31 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
           </p>
         </div>
 
-        {/* ── 3 CLEAN OPEN EDITORIAL COLUMNS (STANDARDIZED BODY TEXT & TITLES) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 text-left">
+        {/* ── 3 CLEAN OPEN EDITORIAL COLUMNS (EXACT 4-LINE BALANCED FLOW & EQUAL WORD COUNT) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 text-left pt-2">
           {PILLARS.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
-              <div key={idx} className="space-y-3">
-                {/* Clean Line Icon */}
-                <div className="text-[#202B61]">
-                  <Icon className="w-8 h-8 stroke-[1.5]" />
-                </div>
-
-                {/* Bold Title ending with a period */}
+              <div key={idx} className="flex flex-col justify-between">
                 <div>
-                  <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61] leading-snug">
-                    {pillar.title}
-                  </h3>
-                </div>
+                  {/* Clean Line Icon */}
+                  <div className="text-[#202B61] mb-4 sm:mb-5">
+                    <Icon className="w-8 h-8 stroke-[1.5]" />
+                  </div>
 
-                {/* Editorial Narrative Paragraph */}
-                <div>
-                  <p className="font-sans text-xs sm:text-sm text-slate-600 leading-relaxed font-normal text-pretty">
-                    {pillar.description}
-                  </p>
+                  {/* Bold Title ending with a period */}
+                  <div>
+                    <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61] leading-snug">
+                      {pillar.title}
+                    </h3>
+                  </div>
+
+                  {/* Editorial Narrative Paragraph: Balanced 4 lines with increased breathing room */}
+                  <div className="mt-4 sm:mt-4.5 min-h-[5.5rem] sm:min-h-[5.85rem] flex items-start">
+                    <p className="font-sans text-[13.5px] sm:text-[14px] xl:text-[14.5px] text-slate-600 leading-[1.65] font-normal text-pretty">
+                      {pillar.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             );
@@ -103,7 +105,7 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
         </div>
 
         {/* ── BOTTOM RIGHT: Simple Single Explore Arrow Link ── */}
-        <div className="pt-2 flex justify-end">
+        <div className="pt-4 sm:pt-6 flex justify-end">
           <a
             href="https://prostack.arkanet.ae/"
             target="_blank"
