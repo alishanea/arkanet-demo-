@@ -162,7 +162,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Web applications & customer dashboards",
         description: "Interactive web applications built on React and Next.js, featuring real-time data visualization, user authentication, and smooth micro-animations.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/dual-screen-code-dashboard.png",
         imagePosition: "right",
       },
       {
@@ -174,7 +174,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Multilingual & RTL-ready builds",
         description: "Full bidirectional right-to-left (RTL) layout support and multi-currency internationalization built directly into the site architecture.",
-        image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/work-multidevice-hero.png",
         imagePosition: "right",
       },
     ],
@@ -1534,13 +1534,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "WhatsApp Business API & green tick setup",
         description: "Official Meta API integration allowing high-volume message throughput and multi-agent customer support.",
-        image: "https://images.unsplash.com/photo-1616469829941-c7200edec809?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/chatgpt-mobile-screen.png",
         imagePosition: "left",
       },
       {
         title: "In-chat product catalogues & payment links",
         description: "Interactive product carousels and instant payment gateway links right inside chat conversations.",
-        image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/mobile-food-feed-ui.png",
         imagePosition: "right",
       },
       {
