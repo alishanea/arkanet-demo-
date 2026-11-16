@@ -13,7 +13,6 @@ export const WorkHero: React.FC = () => {
           alt="Arkanet Digital Platforms & Multi-Device Engineering Portfolio"
           fill
           priority
-          quality={95}
           sizes="100vw"
           className="object-cover object-center opacity-50 sm:opacity-60 brightness-[1.03] contrast-[1.05] saturate-[1.06]"
         />

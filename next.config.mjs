@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   outputFileTracingRoot: path.resolve(__dirname),
   images: {
+    qualities: [75, 90, 95],
     remotePatterns: [
       {
         protocol: "https",
