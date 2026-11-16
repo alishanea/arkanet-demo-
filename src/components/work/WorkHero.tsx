@@ -28,15 +28,6 @@ export const WorkHero: React.FC = () => {
           <p className="font-sans text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed font-normal max-w-2xl text-pretty pt-1 mx-auto">
             Explore our portfolio of production websites, native mobile applications, applied AI architectures, and enterprise cloud solutions deployed for industry leaders.
           </p>
-
-          <div className="pt-4 flex items-center justify-center gap-4">
-            <a
-              href="#projects"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#202B61] text-white font-heading font-bold text-sm tracking-wide shadow-md hover:bg-[#151E48] hover:shadow-lg transition-all duration-200"
-            >
-              View Projects
-            </a>
-          </div>
         </div>
       </div>
     </section>
