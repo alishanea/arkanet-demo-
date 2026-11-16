@@ -7,9 +7,9 @@ export interface ProductItem {
   pricingType: ProductPricingType;
   priceLabel: string;
   billingPeriod?: string;
-  priceBadgeText: string; // e.g. "$100/yr or $11/mo"
+  priceBadgeText: string;
   freeTrial?: string;
-  category: "E-Commerce" | "Team Workspace" | "Applied AI" | "Developer Tools" | "Security & Cloud" | "Analytics" | "CRM & SaaS";
+  category: "E-Commerce" | "Team Workspace" | "Applied AI" | "Developer Tools" | "Security & Cloud" | "Analytics";
   tags: string[];
   tagline: string;
   description: string;
@@ -25,8 +25,8 @@ export interface ProductItem {
   features: string[];
   liveUrl: string;
   purchaseUrl?: string;
+  downloadUrl?: string;
   docsUrl?: string;
-  demoVideoUrl?: string;
   techStack: string[];
   stats?: {
     stat1: { label: string; value: string };
@@ -45,14 +45,14 @@ export const PRODUCTS_DATA: ProductItem[] = [
     priceBadgeText: "$990/yr or $99/mo",
     freeTrial: "14-Day Free Trial",
     category: "E-Commerce",
-    tags: ["E-COMMERCE", "HEADLESS CMS", "INFRASTRUCTURE"],
+    tags: ["COMMERCE", "HEADLESS CMS", "INFRASTRUCTURE"],
     tagline: "Digital Commerce & Headless Web Operating Platform",
-    description: "A unified platform to build high-performance websites, manage headless commerce, and scale digital operations in one connected workspace without plugin chaos.",
+    description: "A unified platform to build high-performance websites, manage headless commerce, and scale digital operations in one connected workspace with full Liquid code autonomy.",
     rating: 5.0,
-    reviewsCount: "2,480+ enterprises",
+    reviewsCount: "2,480+ active stores",
     developer: {
-      name: "Prostack Core Team",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
+      name: "Arkanet Software Team",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
     },
     logo: "/assets/images/prostack-logo-navy.png",
     previewImage: "/assets/images/prostack-preview-hd.jpg",
@@ -60,14 +60,14 @@ export const PRODUCTS_DATA: ProductItem[] = [
       "/assets/images/prostack-hd.png",
       "/assets/images/prostack-preview-hd.jpg",
       "/assets/images/prostack-showcase-banner.jpg",
+      "/assets/images/prostack-features-full.png",
     ],
     features: [
-      "Liquid OS 2.0 Theme Engine with drag-and-drop page assembly",
-      "Multi-warehouse SKU sync, inventory allocations, and catalog management",
-      "High-concurrency global checkout with GCC payment gateways (Tabby, Apple Pay)",
-      "Automated 95+ Core Web Vitals with sub-second Cloudflare edge distribution",
-      "Zero arbitrary revenue transaction fees or fragile third-party plugin conflicts",
-      "Unified REST, GraphQL and event-driven webhook developer APIs"
+      "Liquid OS 2.0 theme engine with modular drag-and-drop page assembly",
+      "Multi-store localized inventory, tax, and automated GCC currency checkout",
+      "Sub-second Cloudflare edge page delivery with automated 95+ Core Web Vitals",
+      "Zero arbitrary transaction fees or fragile third-party plugin conflicts",
+      "Unified REST, GraphQL and webhook developer APIs for ERP integrations",
     ],
     liveUrl: "https://prostack.arkanet.ae/",
     purchaseUrl: "https://prostack.arkanet.ae/",
@@ -75,345 +75,326 @@ export const PRODUCTS_DATA: ProductItem[] = [
     techStack: ["Next.js 15", "Liquid OS 2.0", "Cloudflare Edge", "GraphQL", "Tailwind CSS"],
     stats: {
       stat1: { label: "Edge Speed", value: "< 420ms" },
-      stat2: { label: "Uptime SLA", value: "99.99%" }
-    }
+      stat2: { label: "Uptime SLA", value: "99.99%" },
+    },
   },
   {
     id: "orbit",
     name: "Orbit by Arkanet",
-    badge: "NEW RELEASE",
+    badge: "POPULAR SUITE",
     pricingType: "premium",
     priceLabel: "$12",
     billingPeriod: "/user/mo",
-    priceBadgeText: "$120/yr or $12/mo",
+    priceBadgeText: "$120/yr or $12/user/mo",
     freeTrial: "Free Starter Tier Available",
     category: "Team Workspace",
-    tags: ["CRM", "ANALYTICS", "BUSINESS"],
+    tags: ["COLLABORATION", "MESSAGING", "TASK MANAGEMENT"],
     tagline: "Unified Team Workspace & Project Collaboration Suite",
-    description: "The all-in-one unified workspace bringing team messaging, Microsoft Outlook mail sync, grouped sprint task boards, review workflows, and client approval rooms together.",
+    description: "The connected workspace designed to eliminate tool sprawl. Orbit centralizes corporate messaging, Microsoft Outlook mail sync, sprint task boards, review workflows, and client approval rooms into one cohesive interface.",
     rating: 4.9,
     reviewsCount: "1,890+ teams",
     developer: {
-      name: "Orbit Team",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+      name: "Arkanet Enterprise Pod",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
     },
     logo: "/assets/images/arkanet-icon-clean.png",
     previewImage: "/assets/images/orbit-preview-hd.jpg",
     screenshots: [
       "/assets/images/orbit-hd.png",
       "/assets/images/orbit-preview-hd.jpg",
-      "/assets/images/orbit-showcase-banner.jpg",
-      "/assets/images/products-showcase-ui.jpg",
+      "/assets/images/orbit-workspace-messages.png",
+      "/assets/images/orbit-mail-outlook.png",
+      "/assets/images/orbit-tasks-group.png",
+      "/assets/images/orbit-reviews-approval.png",
     ],
     features: [
-      "Real-time team communication channels, direct messaging & threaded discussions",
-      "Native Microsoft Outlook & Exchange bi-directional mail integration",
-      "Grouped Kanban task boards, custom workflows & sprint planning",
-      "Task detail inspect view with multi-stage review workflows & status tracking",
+      "Real-time team messaging channels, direct messages & threaded discussions",
+      "Native Microsoft Outlook 365 and Exchange bi-directional mail integration",
+      "Grouped Kanban task boards with customizable sprint workflows",
       "Client approval workspaces for frictionless deliverable sign-offs",
-      "End-to-end audit logging, file attachments & permission role matrices"
+      "End-to-end audit logging, file encryption & role-based access matrices",
     ],
     liveUrl: "https://orbit.arkanet.ae/",
     purchaseUrl: "https://orbit.arkanet.ae/",
     docsUrl: "https://orbit.arkanet.ae/",
     techStack: ["React 19", "TypeScript", "WebSockets", "Outlook API", "Tailwind CSS"],
     stats: {
-      stat1: { label: "Team Productivity", value: "+46%" },
-      stat2: { label: "Task Turnaround", value: "2.4x" }
-    }
+      stat1: { label: "Team Velocity", value: "+46%" },
+      stat2: { label: "Context Switching", value: "0" },
+    },
   },
   {
-    id: "wordpress-enterprise",
-    name: "Wordpress Cloud",
+    id: "neuraldesk-ai",
+    name: "NeuralDesk AI",
+    badge: "ENTERPRISE AI",
     pricingType: "premium",
-    priceLabel: "$11",
+    priceLabel: "$149",
     billingPeriod: "/mo",
-    priceBadgeText: "$100/yr or $11/mo",
-    freeTrial: "Free Migration Included",
-    category: "Developer Tools",
-    tags: ["SECURITY", "INFRASTRUCTURE SOFTWARE"],
-    tagline: "Optimized Enterprise Headless WordPress Engine",
-    description: "Physiological respiration involves the mechanisms that ensure high-speed cached WordPress rendering with enterprise isolation and automated security patching.",
+    priceBadgeText: "$1,490/yr or $149/mo",
+    freeTrial: "30-Day Guided Pilot",
+    category: "Applied AI",
+    tags: ["ENTERPRISE AI", "KNOWLEDGE BASE", "RAG"],
+    tagline: "Private Enterprise Knowledge Engine & Document Intelligence",
+    description: "Self-hosted generative intelligence platform indexing corporate PDF manuals, ERP databases, and contracts with strict zero data leakage and role-based access control.",
     rating: 4.9,
-    reviewsCount: "12.4k installs",
+    reviewsCount: "480+ organizations",
     developer: {
-      name: "CoolAppsDev",
-      avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200&auto=format&fit=crop"
+      name: "Arkanet AI Research Labs",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
     },
     logo: "/assets/images/arkanet-icon.png",
-    previewImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
+    previewImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop",
     ],
     features: [
-      "Automatic Redis object cache & global Cloudflare edge synchronization",
-      "Headless GraphQL endpoint ready for Next.js and mobile app consumption",
-      "One-click staging sandbox and automated SSL certificate provisioning"
-    ],
-    liveUrl: "https://prostack.arkanet.ae/",
-    purchaseUrl: "https://prostack.arkanet.ae/",
-    techStack: ["PHP 8.3", "MySQL", "Redis", "Cloudflare", "GraphQL"],
-    stats: {
-      stat1: { label: "Speed Gain", value: "4.8x" },
-      stat2: { label: "Cache Hit Rate", value: "99.4%" }
-    }
-  },
-  {
-    id: "clickup-sync",
-    name: "ClickUp Integration",
-    pricingType: "premium",
-    priceLabel: "$10",
-    billingPeriod: "/mo",
-    priceBadgeText: "$88/yr or $10/mo",
-    freeTrial: "14-Day Trial",
-    category: "CRM & SaaS",
-    tags: ["SECURITY", "ANALYTICS", "CRM", "BUSINESS"],
-    tagline: "Bi-Directional Task & Sprint Synchronization Engine",
-    description: "The mechanisms that ensure that the composition of functional sprint backlogs and CRM leads sync seamlessly between ClickUp, Orbit, and Slack.",
-    rating: 4.8,
-    reviewsCount: "4,320 teams",
-    developer: {
-      name: "CatanaCorp",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
-    },
-    logo: "/assets/images/arkanet-icon-clean.png",
-    previewImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop"
-    ],
-    features: [
-      "Instant webhook listener capturing task updates and status transitions",
-      "Automated time tracking rollups and developer velocity reporting",
-      "Zero API quota overflow with intelligent request rate batching"
+      "Semantic hybrid vector search across multi-format documents (PDF, Excel, SQL)",
+      "Instant citations linking every answer to exact highlighted source paragraphs",
+      "Granular departmental access controls ensuring confidential data boundaries",
+      "Deployable inside private corporate VPCs or on-premises Kubernetes clusters",
     ],
     liveUrl: "https://orbit.arkanet.ae/",
     purchaseUrl: "https://orbit.arkanet.ae/",
-    techStack: ["TypeScript", "ClickUp API v2", "Node.js", "Redis"],
+    techStack: ["Python", "FastAPI", "pgvector", "LangChain", "Docker", "Next.js"],
     stats: {
-      stat1: { label: "Sync Latency", value: "< 200ms" },
-      stat2: { label: "Time Saved", value: "8hrs/wk" }
-    }
-  },
-  {
-    id: "trufflehog-oss",
-    name: "TruffleHog OSS",
-    pricingType: "free",
-    priceLabel: "Free",
-    billingPeriod: "Open Source",
-    priceBadgeText: "$90/yr or $11/mo",
-    freeTrial: "Free Forever",
-    category: "Security & Cloud",
-    tags: ["ANALYTICS", "BUSINESS", "SECURITY"],
-    tagline: "Automated Git Secret & Credential Leak Scanner",
-    description: "Plaire n'est pas pour moi un puissant appui. Parvenue a un certain pretre intrigant et qui inspects commit histories for live verified cloud secrets.",
-    rating: 4.8,
-    reviewsCount: "8,900+ stars",
-    developer: {
-      name: "Amelini Cooper",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
+      stat1: { label: "Citation Accuracy", value: "99.8%" },
+      stat2: { label: "Ticket Deflection", value: "-84%" },
     },
-    logo: "/assets/images/arkanet-icon-dark.png",
-    previewImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop"
-    ],
-    features: [
-      "Scans 800+ credential formats with active cryptographic verification",
-      "Integrates directly into GitHub Actions, GitLab CI, and Bitbucket",
-      "Historical commit back-scanning with zero false-alarm noise"
-    ],
-    liveUrl: "https://github.com",
-    purchaseUrl: "https://github.com",
-    techStack: ["Go", "Docker", "Git", "Cryptographic Verifiers"],
-    stats: {
-      stat1: { label: "Accuracy", value: "99.8%" },
-      stat2: { label: "Scan Speed", value: "10k commits/s" }
-    }
   },
   {
-    id: "syncdepot",
-    name: "SyncDepot",
+    id: "arkcloud-gateway",
+    name: "ArkCloud Zero-Trust Gateway",
+    badge: "SECURITY",
     pricingType: "premium",
-    priceLabel: "$11",
+    priceLabel: "$49",
     billingPeriod: "/mo",
-    priceBadgeText: "$90/yr or $11/mo",
-    freeTrial: "30-Day Free Trial",
-    category: "CRM & SaaS",
-    tags: ["CRM", "BUSINESS", "INFRASTRUCTURE"],
-    tagline: "Cloud Asset & Document Distribution Storage",
-    description: "It consisted of a Physical space is often conceived in three linear dimensions, although high-throughput enterprise file distribution operates globally.",
-    rating: 5.0,
-    reviewsCount: "640 enterprises",
-    developer: {
-      name: "Developer John",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
-    },
-    logo: "/assets/images/arkanet-icon-clean.png",
-    previewImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop"
-    ],
-    features: [
-      "Multi-region S3 object replication with zero egress latency",
-      "Role-based expirable download links and DRM watermarking",
-      "Automated image & video compression pipelines upon upload"
-    ],
-    liveUrl: "https://prostack.arkanet.ae/",
-    purchaseUrl: "https://prostack.arkanet.ae/",
-    techStack: ["AWS S3", "Cloudflare", "TypeScript", "Node.js"],
-    stats: {
-      stat1: { label: "Download Speed", value: "< 80ms" },
-      stat2: { label: "Reliability", value: "99.999%" }
-    }
-  },
-  {
-    id: "metrical-analytics",
-    name: "Metrical",
-    badge: "ENTERPRISE",
-    pricingType: "premium",
-    priceLabel: "$15",
-    billingPeriod: "/mo",
-    priceBadgeText: "$126/yr or $15/mo",
-    freeTrial: "30-Day Guided Trial",
-    category: "Analytics",
-    tags: ["ANALYTICS", "INFRASTRUCTURE SOFTWARE"],
-    tagline: "High-Throughput Streaming Analytics & Supply BI",
-    description: "The long barrow was built on land previously inhabited in the Mesolithic period. It consisted of a sub-50ms query lake powering commerce analytics.",
-    rating: 4.6,
-    reviewsCount: "190+ enterprises",
-    developer: {
-      name: "Robert Fox",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
-    },
-    logo: "/assets/images/arkanet-icon-dark.png",
-    previewImage: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop"
-    ],
-    features: [
-      "Real-time Kafka and ClickHouse streaming pipelines handling 100k+ events/sec",
-      "Visual query builder with instant export to executive PDF and Excel reports",
-      "Role-based security masks for sensitive financial and PII fields"
-    ],
-    liveUrl: "https://prostack.arkanet.ae/",
-    purchaseUrl: "https://prostack.arkanet.ae/",
-    techStack: ["ClickHouse", "Kafka", "Next.js", "Python"],
-    stats: {
-      stat1: { label: "Throughput", value: "100k evt/s" },
-      stat2: { label: "Query Speed", value: "< 50ms" }
-    }
-  },
-  {
-    id: "bansir-cloud",
-    name: "Bansir Cloud",
-    pricingType: "premium",
-    priceLabel: "$12",
-    billingPeriod: "/mo",
-    priceBadgeText: "$134/yr or $12/mo",
+    priceBadgeText: "$490/yr or $49/mo",
     freeTrial: "14-Day Free Trial",
     category: "Security & Cloud",
-    tags: ["SECURITY", "CRM", "BUSINESS"],
-    tagline: "Automated Multi-Cloud Infrastructure & Cluster Provisioning",
-    description: "Enterprise multi-cloud Kubernetes orchestration tool delivering automated zero-downtime rollouts, ingress load balancing, and regional failover.",
-    rating: 4.9,
-    reviewsCount: "820 DevOps teams",
+    tags: ["ZERO TRUST", "API GATEWAY", "INFRASTRUCTURE"],
+    tagline: "High-Throughput Edge API Gateway & Zero-Trust Access Proxy",
+    description: "Enterprise multi-cloud ingress controller and identity-aware proxy providing automated mutual TLS, DDoS mitigation, rate limiting, and zero-trust employee authentication.",
+    rating: 4.8,
+    reviewsCount: "740 engineering teams",
     developer: {
-      name: "Bansir Core",
-      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop"
+      name: "Arkanet Cloud Ops",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+    },
+    logo: "/assets/images/arkanet-icon-dark.png",
+    previewImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop",
+    screenshots: [
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop",
+    ],
+    features: [
+      "Automated SSL termination, certificate rotations, and DDoS mitigation",
+      "Role-based Single Sign-On (SSO) with Okta, Google Workspace, and Azure AD",
+      "Distributed rate limiting and token bucket protection across global edge nodes",
+      "Real-time audit log streaming to Datadog, Splunk, and AWS CloudWatch",
+    ],
+    liveUrl: "https://prostack.arkanet.ae/",
+    purchaseUrl: "https://prostack.arkanet.ae/",
+    techStack: ["Go", "Envoy", "eBPF", "Kubernetes", "Prometheus"],
+    stats: {
+      stat1: { label: "Latency Added", value: "< 1.4ms" },
+      stat2: { label: "Uptime SLA", value: "99.999%" },
+    },
+  },
+  {
+    id: "devstream-cicd",
+    name: "DevStream CI/CD",
+    badge: "DEV TOOLS",
+    pricingType: "premium",
+    priceLabel: "$29",
+    billingPeriod: "/mo",
+    priceBadgeText: "$290/yr or $29/mo",
+    freeTrial: "Free for Small Projects",
+    category: "Developer Tools",
+    tags: ["CI/CD", "AUTOMATION", "GITOPS"],
+    tagline: "Automated Build, Containerization & Edge Deployment Pipeline",
+    description: "Fast, reproducible developer pipelines with pre-configured Docker build caching, multi-environment preview staging, and one-click rollback capabilities.",
+    rating: 4.9,
+    reviewsCount: "1,120 developers",
+    developer: {
+      name: "Arkanet Tooling Pod",
+      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop",
     },
     logo: "/assets/images/arkanet-icon-clean.png",
     previewImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
     ],
     features: [
-      "Automated Terraform and Pulumi cloud cluster deployment",
-      "Automated SSL termination, DDOS mitigation, and global DNS routing",
-      "Live container metric telemetry and predictive auto-scaling triggers"
+      "Sub-2-minute container builds with smart layer caching and dependency hashing",
+      "Ephemeral pull-request preview environments generated on every commit",
+      "Zero-downtime blue/green deployments with automatic health-check rollbacks",
+      "Seamless integrations with GitHub, GitLab, Docker Hub, and AWS ECR",
     ],
-    liveUrl: "https://orbit.arkanet.ae/",
-    purchaseUrl: "https://orbit.arkanet.ae/",
-    techStack: ["Kubernetes", "Terraform", "Go", "Prometheus"],
+    liveUrl: "https://prostack.arkanet.ae/",
+    purchaseUrl: "https://prostack.arkanet.ae/",
+    techStack: ["Rust", "Docker", "Kubernetes", "Webhooks", "GitHub API"],
     stats: {
-      stat1: { label: "Deploy Time", value: "< 4 mins" },
-      stat2: { label: "Uptime SLA", value: "99.99%" }
-    }
+      stat1: { label: "Build Speed Gain", value: "3.8x" },
+      stat2: { label: "Deploy Time", value: "< 90s" },
+    },
   },
   {
-    id: "taskify-workflow",
-    name: "Taskify Workflow",
+    id: "arkmetrics-studio",
+    name: "ArkMetrics Studio",
+    badge: "ANALYTICS",
     pricingType: "premium",
-    priceLabel: "$11.5",
+    priceLabel: "$39",
     billingPeriod: "/mo",
-    priceBadgeText: "$96/yr or $11.5/mo",
-    freeTrial: "Free Starter Plan",
-    category: "Team Workspace",
-    tags: ["SECURITY", "ANALYTICS", "CRM", "BUSINESS"],
-    tagline: "Automated Sprint & Approval Workflow Board",
-    description: "Drag-and-drop collaborative workspace with built-in client review cycles, time-tracking telemetry, and automated calendar sync.",
+    priceBadgeText: "$390/yr or $39/mo",
+    freeTrial: "14-Day Free Trial",
+    category: "Analytics",
+    tags: ["ANALYTICS", "STREAMING", "TELEMETRY"],
+    tagline: "Real-Time Application Telemetry & Commerce Analytics",
+    description: "Sub-50ms streaming business telemetry platform tracking user funnels, revenue conversions, server response times, and edge error rates in one dashboard.",
     rating: 4.8,
-    reviewsCount: "1,420 companies",
+    reviewsCount: "620 enterprises",
     developer: {
-      name: "Taskify Labs",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
+      name: "Arkanet Data Engine Pod",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
     },
     logo: "/assets/images/arkanet-icon.png",
-    previewImage: "/assets/images/orbit-dashboard-mockup.jpg",
+    previewImage: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "/assets/images/orbit-dashboard-mockup.jpg",
-      "/assets/images/orbit-tasks-banner.jpg"
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
     ],
     features: [
-      "Kanban boards with automated conditional WIP limits",
-      "Interactive client deliverable approvals with cryptographic audit logs",
-      "Seamless bi-directional sync with Google Calendar and Apple iCal"
+      "Real-time event streaming pipeline processing up to 100,000 events/sec",
+      "No-code visual query builder with instant export to executive PDF dashboards",
+      "Automated alerting via Slack, WhatsApp, and PagerDuty on conversion drops",
+      "Privacy-first GDPR & CCPA compliance with automatic IP anonymization",
     ],
-    liveUrl: "https://orbit.arkanet.ae/",
-    purchaseUrl: "https://orbit.arkanet.ae/",
-    techStack: ["React 19", "Node.js", "PostgreSQL", "WebSockets"],
+    liveUrl: "https://prostack.arkanet.ae/",
+    purchaseUrl: "https://prostack.arkanet.ae/",
+    techStack: ["ClickHouse", "Kafka", "TypeScript", "Next.js", "Tailwind CSS"],
     stats: {
-      stat1: { label: "Cycle Speed", value: "+34%" },
-      stat2: { label: "Sign-off Time", value: "< 2hrs" }
-    }
+      stat1: { label: "Query Speed", value: "< 45ms" },
+      stat2: { label: "Throughput", value: "100k evt/s" },
+    },
   },
   {
-    id: "elixir-commerce-engine",
-    name: "Elixir Boutique Engine",
-    badge: "BESTSELLER",
-    pricingType: "premium",
-    priceLabel: "$129",
-    billingPeriod: "/mo",
-    priceBadgeText: "$126/yr or $15/mo",
-    freeTrial: "Live Demo Available",
-    category: "E-Commerce",
-    tags: ["ANALYTICS", "BUSINESS", "INFRASTRUCTURE SOFTWARE"],
-    tagline: "Bespoke 3D WebGL & Shopify Plus Storefront Engine",
-    description: "High-conversion flagship storefront platform engineered for luxury retail, featuring interactive 60fps WebGL product customizers and GCC checkouts.",
-    rating: 5.0,
-    reviewsCount: "320+ luxury brands",
+    id: "ark-validator-cli",
+    name: "ArkValidator CLI",
+    badge: "FREE & OPEN SOURCE",
+    pricingType: "free",
+    priceLabel: "Free",
+    billingPeriod: "Open Source",
+    priceBadgeText: "Free Forever",
+    freeTrial: "Free Download",
+    category: "Developer Tools",
+    tags: ["OPEN SOURCE", "CLI", "CORE WEB VITALS", "SEO"],
+    tagline: "Automated Core Web Vitals, SEO & Accessibility Audit CLI",
+    description: "Lightweight command-line utility for engineers to audit web performance, accessibility contrast, broken links, and SEO tags locally and in CI/CD pipelines.",
+    rating: 4.9,
+    reviewsCount: "14.2k downloads",
     developer: {
-      name: "Elixir Boutique Labs",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+      name: "Arkanet Open Source Pod",
+      avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200&auto=format&fit=crop",
     },
-    logo: "/assets/images/elixir-logo.png",
-    previewImage: "/assets/images/elixir-hero.png",
+    logo: "/assets/images/arkanet-icon-dark.png",
+    previewImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop",
     screenshots: [
-      "/assets/images/elixir-hero.png",
-      "/assets/images/elixir-showcase.png",
-      "/assets/images/elixir-perfume.png"
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop",
     ],
     features: [
-      "Interactive 60fps WebGL 3D model customizer and texture visualizer",
-      "Full Arabic (RTL) layout switching with zero layout shifts",
-      "Integrated Tabby installments, Apple Pay, and local GCC payment switches"
+      "One-command terminal audit: npx @arkanet/validator https://yoursite.com",
+      "Calculates accurate LCP, CLS, INP, and TTFB scores against Google thresholds",
+      "Detects accessibility WCAG 2.1 AA violations and missing ARIA attributes",
+      "Generates lightweight markdown and JSON reports for GitHub Actions CI/CD",
     ],
-    liveUrl: "https://www.elixirbeauty.com",
-    purchaseUrl: "https://www.elixirbeauty.com",
-    techStack: ["Shopify Plus", "Next.js", "Three.js / WebGL", "Tailwind CSS"],
+    liveUrl: "https://github.com",
+    downloadUrl: "https://github.com",
+    purchaseUrl: "https://github.com",
+    docsUrl: "https://github.com",
+    techStack: ["Node.js", "TypeScript", "Puppeteer", "Lighthouse Core"],
     stats: {
-      stat1: { label: "Sales Lift", value: "+168%" },
-      stat2: { label: "Load Time", value: "1.1s" }
-    }
-  }
+      stat1: { label: "Audit Time", value: "< 12s" },
+      stat2: { label: "Check Rules", value: "120+" },
+    },
+  },
+  {
+    id: "liquid-devtools",
+    name: "Liquid Theme DevTools",
+    badge: "FREE EXTENSION",
+    pricingType: "free",
+    priceLabel: "Free",
+    billingPeriod: "Open Source",
+    priceBadgeText: "Free Forever",
+    freeTrial: "Free Download",
+    category: "Developer Tools",
+    tags: ["BROWSER EXTENSION", "SHOPIFY", "LIQUID", "DEV TOOLS"],
+    tagline: "Browser Inspector & Live Reloader for Shopify & Liquid Developers",
+    description: "Official browser extension that inspects Liquid schema tags, highlights nested section variables, and enables instant hot-module reload for local Shopify and Prostack themes.",
+    rating: 5.0,
+    reviewsCount: "8,900+ developers",
+    developer: {
+      name: "Arkanet Tooling Pod",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
+    },
+    logo: "/assets/images/prostack-logo-navy.png",
+    previewImage: "/assets/images/prostack-showcase-banner.jpg",
+    screenshots: [
+      "/assets/images/prostack-showcase-banner.jpg",
+      "/assets/images/prostack-preview-hd.jpg",
+    ],
+    features: [
+      "Inspect nested Liquid templates, section drops, and schema settings live in browser",
+      "Instant WebSocket hot-reload without clearing browser cookies or session state",
+      "Detects rendering bottlenecks and un-cached Liquid collection loops",
+      "Available for Google Chrome, Brave, and Microsoft Edge",
+    ],
+    liveUrl: "https://prostack.arkanet.ae/",
+    downloadUrl: "https://prostack.arkanet.ae/",
+    purchaseUrl: "https://prostack.arkanet.ae/",
+    docsUrl: "https://prostack.arkanet.ae/",
+    techStack: ["TypeScript", "Chrome Extensions API", "Liquid Syntax Parser"],
+    stats: {
+      stat1: { label: "Reload Speed", value: "< 150ms" },
+      stat2: { label: "Active Devs", value: "8.9k+" },
+    },
+  },
+  {
+    id: "gitaudit-scanner",
+    name: "GitAudit Secret Scanner",
+    badge: "FREE SECURITY UTILITY",
+    pricingType: "free",
+    priceLabel: "Free",
+    billingPeriod: "Open Source",
+    priceBadgeText: "Free Forever",
+    freeTrial: "Free Download",
+    category: "Security & Cloud",
+    tags: ["SECURITY", "GIT", "OPEN SOURCE", "DEV TOOLS"],
+    tagline: "High-Speed Git Secret & Private Credential Leak Scanner",
+    description: "Fast cryptographic CLI tool that prevents private keys, AWS tokens, database passwords, and API secrets from ever entering your git commits or remote repositories.",
+    rating: 4.9,
+    reviewsCount: "6,400+ stars",
+    developer: {
+      name: "Arkanet Security Engineering",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+    },
+    logo: "/assets/images/arkanet-icon-clean.png",
+    previewImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+    screenshots: [
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+    ],
+    features: [
+      "Scans 600+ token formats with active cryptographic checksum verification",
+      "Pre-commit hook installation with zero false-alarm development interruptions",
+      "Deep historical git commit back-scanning across all branches and tags",
+      "Zero telemetry collection, runs entirely offline on developer machines",
+    ],
+    liveUrl: "https://github.com",
+    downloadUrl: "https://github.com",
+    purchaseUrl: "https://github.com",
+    docsUrl: "https://github.com",
+    techStack: ["Go", "Git Hooks", "Docker", "Regex AST Engine"],
+    stats: {
+      stat1: { label: "Scan Speed", value: "12k commits/s" },
+      stat2: { label: "Accuracy", value: "99.9%" },
+    },
+  },
 ];

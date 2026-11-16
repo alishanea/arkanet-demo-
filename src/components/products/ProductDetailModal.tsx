@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   ArrowUpRight,
   ExternalLink,
+  Download,
   Star,
   ShieldCheck,
   Zap,
@@ -81,11 +82,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <h3 className="font-heading font-black text-base sm:text-xl text-[#202B61] leading-tight truncate">
                     {product.name}
                   </h3>
-                  <span className={`text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-0.5 rounded-[4px] ${
-                    product.pricingType === "free"
-                      ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                      : "bg-[#202B61]/10 text-[#202B61] border border-[#202B61]/20"
-                  }`}>
+                  <span className={`text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-0.5 rounded-[4px] ${product.pricingType === "free"
+                    ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                    : "bg-[#202B61]/10 text-[#202B61] border border-[#202B61]/20"
+                    }`}>
                     {product.pricingType === "free" ? "Free Product" : `Paid (${product.priceBadgeText})`}
                   </span>
                 </div>
@@ -135,11 +135,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       key={idx}
                       type="button"
                       onClick={() => setActiveImageIdx(idx)}
-                      className={`relative w-20 sm:w-24 aspect-[16/9] rounded-[4px] overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${
-                        activeImageIdx === idx
-                          ? "border-[#202B61] ring-2 ring-[#202B61]/20 scale-102"
-                          : "border-slate-200 opacity-60 hover:opacity-100"
-                      }`}
+                      className={`relative w-20 sm:w-24 aspect-[16/9] rounded-[4px] overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${activeImageIdx === idx
+                        ? "border-[#202B61] ring-2 ring-[#202B61]/20 scale-102"
+                        : "border-slate-200 opacity-60 hover:opacity-100"
+                        }`}
                     >
                       <Image
                         src={img}
@@ -262,15 +261,27 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
 
-              <a
-                href={product.purchaseUrl || product.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[4px] bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-colors"
-              >
-                <span>{product.pricingType === "free" ? "Get Started" : "Purchase"}</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              {product.pricingType === "free" ? (
+                <a
+                  href={product.downloadUrl || product.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[4px] bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-colors"
+                >
+                  <span>Download Free</span>
+                  <Download className="w-3.5 h-3.5" />
+                </a>
+              ) : (
+                <a
+                  href={product.purchaseUrl || product.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[4px] bg-[#202B61] hover:bg-[#151E48] text-white font-bold text-xs shadow-xs transition-colors"
+                >
+                  <span>Purchase &amp; Deploy</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              )}
             </div>
           </div>
         </motion.div>

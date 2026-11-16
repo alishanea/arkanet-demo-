@@ -14,7 +14,7 @@ export default function ProductsPage() {
     <main className="min-h-screen bg-white text-[#202B61] selection:bg-[#202B61] selection:text-white overflow-x-hidden font-sans pt-16 sm:pt-20 lg:pt-24">
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      {/* ── DEDICATED PRODUCTS CATALOG (ALL / FREE / PREMIUM TABS + COMPLETE CARD ACTIONS) ── */}
+      {/* ── ARKANET PRODUCTS & APP STORE CATALOG ── */}
       <ProductsCatalog />
 
       {/* ── CLOSING CTA & FOOTER ── */}

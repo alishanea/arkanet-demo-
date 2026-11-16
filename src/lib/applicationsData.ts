@@ -477,9 +477,7 @@ export const APPLICATIONS: ApplicationItem[] = [
   },
 ];
 
-export const FEATURED_SLIDES = APPLICATIONS.filter(
-  (app) => app.id !== "prostack" && app.id !== "orbit"
-).slice(0, 5);
+export const FEATURED_SLIDES = APPLICATIONS.slice(0, 5);
 
 export const APPLICATION_CATEGORIES: ApplicationCategory[] = [
   "All",
