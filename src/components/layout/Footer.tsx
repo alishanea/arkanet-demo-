@@ -46,66 +46,30 @@ export const Footer: React.FC<FooterProps> = ({
                 The Digital Innovation Company blending AI, Blockchain, IoT, AR/VR, and 3D metaverse solutions. Backed by 15+ years of engineering experience, building future-ready platforms across hospitality, IT, eCommerce, and government sectors.
               </p>
 
-              {/* Prostack Callout Card in Brand Column */}
-              <div className="p-3.5 rounded-[4px] bg-[#1a2559] border border-[#28387a] space-y-1.5 max-w-sm">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="font-heading font-extrabold text-xs text-white tracking-wide">
-                      Prostack Platform
-                    </span>
-                    <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-[2px] bg-red-500/20 text-red-300 border border-red-500/30">
-                      FLAGSHIP
-                    </span>
-                  </div>
-                </div>
-                <p className="text-[11px] text-slate-300 leading-snug">
-                  High-performance digital commerce and headless CMS platform with Shopify-compatible Liquid syntax.
-                </p>
+              {/* Simple Prostack Button */}
+              <div className="pt-1">
                 <a
                   href="https://prostack.arkanet.ae/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] font-bold text-sky-300 hover:text-white transition-colors pt-0.5"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[4px] bg-white/10 hover:bg-white/20 border border-white/15 text-white text-xs font-heading font-semibold transition-all group"
                 >
-                  <span>Visit prostack.arkanet.ae</span>
-                  <ArrowUpRight className="w-3 h-3" />
+                  <img
+                    src="/assets/images/prostack-logo-navy.png"
+                    alt="Prostack"
+                    className="h-3 w-auto object-contain brightness-0 invert opacity-90"
+                  />
+                  <ArrowUpRight className="w-3 h-3 text-sky-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
               </div>
             </div>
 
-            {/* Column 2: Capabilities & Products (Span 3) */}
+            {/* Column 2: Capabilities (Span 3) */}
             <div className="lg:col-span-3 space-y-3">
               <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-white">
-                Capabilities &amp; Products
+                Capabilities
               </h4>
               <ul className="space-y-2 text-xs sm:text-sm font-medium text-slate-300">
-                <li>
-                  <a
-                    href="https://prostack.arkanet.ae/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-sky-300 font-bold transition-colors inline-flex items-center gap-1"
-                  >
-                    <span>Prostack Platform</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://orbit.arkanet.ae/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors inline-flex items-center gap-1"
-                  >
-                    <span>Orbit Workspace</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-                </li>
-                <li>
-                  <Link href="/products" className="hover:text-white transition-colors">
-                    Products Store &amp; Catalog
-                  </Link>
-                </li>
                 <li>
                   <Link href="/capabilities/website-development" className="hover:text-white transition-colors">
                     Web &amp; SaaS Platforms
@@ -124,6 +88,11 @@ export const Footer: React.FC<FooterProps> = ({
                 <li>
                   <Link href="/capabilities/cloud-devops-hosting" className="hover:text-white transition-colors">
                     Cloud &amp; DevOps Engineering
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/products" className="hover:text-white transition-colors">
+                    Products &amp; Tools
                   </Link>
                 </li>
                 <li>
@@ -225,50 +194,6 @@ export const Footer: React.FC<FooterProps> = ({
 
           </div>
         )}
-
-        {/* ── PROSTACK PLATFORM SPOTLIGHT BANNER IN FOOTER ── */}
-        <div className="rounded-[4px] bg-[#1c2761] border border-[#2b3c8f] p-5 sm:p-6 mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 text-left">
-          <div className="flex items-start sm:items-center gap-4">
-            <div className="w-12 h-12 rounded-[4px] bg-white p-2 flex items-center justify-center shrink-0 shadow-sm">
-              <img
-                src="/assets/images/prostack-logo-navy.png"
-                alt="Prostack by Arkanet"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="space-y-1">
-              <div className="flex flex-wrap items-center gap-2">
-                <h4 className="font-heading font-extrabold text-base sm:text-lg text-white">
-                  Prostack by Arkanet
-                </h4>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-[2px] bg-red-500/20 text-red-300 border border-red-500/30">
-                  FLAGSHIP PLATFORM
-                </span>
-              </div>
-              <p className="text-xs sm:text-[13px] text-slate-300 max-w-2xl leading-relaxed">
-                Unified digital commerce platform to build websites, manage headless content, and run online businesses. Features Shopify-compatible Liquid syntax, multi-domain orchestration, and sub-second edge response.
-              </p>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 text-[11px] font-semibold text-slate-300">
-                <span>✓ Drag-and-Drop Visual Canvas</span>
-                <span>✓ 100% Code Control in Liquid</span>
-                <span>✓ Sub-second Edge Speed (&lt; 420ms)</span>
-                <span>✓ Zero Arbitrary Revenue Fees</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2.5 shrink-0 w-full sm:w-auto">
-            <a
-              href="https://prostack.arkanet.ae/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-[4px] bg-white hover:bg-slate-100 text-[#151E48] font-heading font-bold text-xs sm:text-sm transition-all shadow-sm w-full sm:w-auto text-center"
-            >
-              <span>Explore Prostack</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
 
         {/* Hairline Divider */}
         <div className="w-full border-t border-[#253272] my-4" />
