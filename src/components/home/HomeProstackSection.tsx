@@ -26,19 +26,19 @@ const PILLARS: PillarItem[] = [
     icon: Layout,
     title: "Build with freedom.",
     description:
-      "Assemble rich editorial pages with modular drag-and-drop ease, full revision history, and Shopify-compatible Liquid themes that give your engineering team complete code autonomy, Git workflows, and rapid deployment velocity across every digital storefront.",
+      "Assemble modern editorial pages with drag-and-drop ease, revision history, and Shopify-compatible Liquid themes that grant your engineering team code autonomy and rapid deployment.",
   },
   {
     icon: ShoppingBag,
     title: "Transact without limits.",
     description:
-      "Manage expansive product catalogs, live multi-warehouse inventory synchronization, and high-concurrency global checkouts with localized multi-currency processing, automated regional tax compliance, and modern resilient cloud architecture with zero arbitrary revenue or platform transaction penalties.",
+      "Manage expansive product catalogs, live warehouse inventory sync, and high-concurrency global checkouts with multi-currency processing, clear tax compliance, and zero arbitrary revenue penalties.",
   },
   {
     icon: Zap,
     title: "Scale at the edge.",
     description:
-      "Deliver blazing sub-second international content distribution, automated 95+ Core Web Vitals performance, automated dynamic search indexation, and granular role-based access security out of the box with zero third-party plugin conflicts or fragile dependencies.",
+      "Deliver fast sub-second content distribution, automated 95+ Core Web Vitals speed, automated dynamic search indexation, and robust role-based security without third-party plugin conflicts.",
   },
 ];
 
@@ -93,8 +93,8 @@ export const HomeProstackSection: React.FC<HomeProstackSectionProps> = () => {
                   </div>
 
                   {/* Editorial Narrative Paragraph: Balanced 4 lines with increased breathing room */}
-                  <div className="mt-4 sm:mt-4.5 min-h-[5.5rem] sm:min-h-[5.85rem] flex items-start">
-                    <p className="font-sans text-[13.5px] sm:text-[14px] xl:text-[14.5px] text-slate-600 leading-[1.65] font-normal text-pretty">
+                  <div className="mt-4 sm:mt-5 min-h-[5.5rem] sm:min-h-[5.85rem] flex items-start">
+                    <p className="font-sans text-[13.5px] sm:text-[14px] xl:text-[14.5px] text-slate-600 leading-[1.65] font-normal text-pretty line-clamp-4">
                       {pillar.description}
                     </p>
                   </div>
