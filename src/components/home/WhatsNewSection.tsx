@@ -121,9 +121,9 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
   return (
     <section
       id="work"
-      className="relative w-full bg-white py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24 border-t border-slate-200/80"
+      className="relative w-full bg-white py-12 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-12 select-none font-sans scroll-mt-24 border-t border-slate-200/80"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12">
+      <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
         
         {/* ── 1. CLEAN EDITORIAL SECTION HEADER (NO TOP/BOTTOM DIVIDER LINES) ── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 sm:pb-3">
@@ -171,10 +171,10 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     setSelectedProject(project);
                   }
                 }}
-                className="group flex flex-col justify-between h-full w-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-xl transition-transform duration-200"
+                className="group flex flex-col justify-between h-full w-full cursor-pointer text-left outline-none focus-visible:ring-2 focus-visible:ring-[#202B61] focus-visible:ring-offset-4 rounded-[4px] transition-transform duration-200"
               >
                 {/* Clean Aspect Ratio Image with Balanced Proportions */}
-                <div className="relative w-full aspect-[16/10.5] rounded-xl overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0">
+                <div className="relative w-full aspect-[16/10.5] rounded-[4px] overflow-hidden bg-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] shrink-0">
                   <Image
                     src={project.outerImage || project.image || "/assets/images/webdevelopmentone.webp"}
                     alt={project.title}

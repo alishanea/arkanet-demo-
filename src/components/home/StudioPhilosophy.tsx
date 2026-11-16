@@ -12,7 +12,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
   return (
     <section
       id="about"
-      className="relative w-full bg-white text-[#202B61] select-none px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 overflow-hidden font-sans scroll-mt-24"
+      className="relative w-full bg-white text-[#202B61] select-none px-4 sm:px-8 lg:px-12 py-12 sm:py-14 lg:py-16 overflow-hidden font-sans scroll-mt-24"
     >
       <div className="max-w-[1400px] w-full mx-auto">
         
@@ -49,7 +49,7 @@ export const StudioPhilosophy: React.FC<StudioPhilosophyProps> = () => {
 
           {/* Right Column: Clean Image with Symmetrical Radius & Aspect Ratio */}
           <div className="lg:col-span-6 w-full flex justify-end">
-            <div className="relative aspect-[16/10.5] w-full rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-sm">
+            <div className="relative aspect-[16/10.5] w-full rounded-[4px] overflow-hidden border border-slate-200/80 bg-white shadow-sm">
               <img
                 src="https://images.pexels.com/photos/3182834/pexels-photo-3182834.jpeg"
                 alt="People in creative office workspace"

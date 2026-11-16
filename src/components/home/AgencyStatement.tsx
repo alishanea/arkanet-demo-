@@ -103,9 +103,9 @@ export const AgencyStatement: React.FC<AgencyStatementProps> = ({ onOpenBooking 
   return (
     <section
       id="what-is-arkanet"
-      className="relative w-full bg-[#151E48] text-white px-4 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24 select-none border-t border-b border-[#253272] font-sans antialiased overflow-hidden scroll-mt-24"
+      className="relative w-full bg-[#151E48] text-white px-4 sm:px-8 lg:px-12 py-12 sm:py-14 lg:py-16 select-none border-t border-b border-[#253272] font-sans antialiased overflow-hidden scroll-mt-24"
     >
-      <div className="max-w-[1400px] w-full mx-auto space-y-10 sm:space-y-12 lg:space-y-14">
+      <div className="max-w-[1400px] w-full mx-auto space-y-8 sm:space-y-10">
         
         {/* ── 1. AUTHORITATIVE STATEMENT HEADLINE & DESCRIPTION (PRECISION TYPOGRAPHY) ── */}
         <div className="space-y-4 max-w-4xl text-left">

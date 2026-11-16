@@ -10,7 +10,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section
       id="home"
-      className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-white text-[#202B61] select-none py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 overflow-hidden font-sans"
+      className="relative w-full h-[100vh] h-[100dvh] flex flex-col justify-center items-center bg-white text-[#202B61] select-none py-12 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-12 overflow-hidden font-sans"
     >
       {/* ── CINEMATIC AMBIENT BACKGROUND (ARCHITECTURAL GLASS & INNOVATION STRUCTURE) ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
