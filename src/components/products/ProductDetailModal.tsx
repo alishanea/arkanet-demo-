@@ -45,31 +45,47 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     };
   }, [product]);
 
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
   if (!product) return null;
 
   const images = product.screenshots?.length ? product.screenshots : [product.previewImage];
+  const safeImageIdx = activeImageIdx >= images.length ? 0 : activeImageIdx;
+  const currentImage = images[safeImageIdx] || product.previewImage || "/assets/images/prostack-preview-hd.jpg";
 
   return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-8 font-sans">
-        {/* Backdrop */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          onClick={onClose}
-          className="fixed inset-0 bg-[#202B61]/60 backdrop-blur-xs cursor-pointer z-40"
-        />
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-8 font-sans"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      {/* Backdrop */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        onClick={onClose}
+        className="fixed inset-0 bg-[#202B61]/60 backdrop-blur-sm cursor-pointer z-40"
+      />
 
-        {/* Modal Window */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 15 }}
-          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-4xl max-h-[92dvh] bg-white rounded-[4px] border border-slate-200/90 shadow-2xl z-50 overflow-hidden flex flex-col text-left text-slate-800"
-        >
+      {/* Modal Window */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96, y: 15 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.96, y: 15 }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-4xl max-h-[92dvh] bg-white rounded-[4px] border border-slate-200/90 shadow-2xl z-50 overflow-hidden flex flex-col text-left text-slate-800"
+      >
           {/* Header Bar */}
           <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-200/80 bg-slate-50/80 shrink-0">
             <div className="flex items-center gap-3">
@@ -122,8 +138,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             <div className="space-y-3">
               <div className="relative w-full aspect-[16/9] rounded-[4px] overflow-hidden bg-slate-900 border border-slate-200 shadow-md">
                 <Image
-                  src={images[activeImageIdx]}
-                  alt={`${product.name} screenshot ${activeImageIdx + 1}`}
+                  src={currentImage}
+                  alt={`${product.name} screenshot ${safeImageIdx + 1}`}
                   fill
                   className="object-cover object-top"
                   priority
@@ -138,7 +154,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       key={idx}
                       type="button"
                       onClick={() => setActiveImageIdx(idx)}
-                      className={`relative w-20 sm:w-24 aspect-[16/9] rounded-[4px] overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${activeImageIdx === idx
+                      className={`relative w-20 sm:w-24 aspect-[16/9] rounded-[4px] overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${safeImageIdx === idx
                         ? "border-[#202B61] ring-2 ring-[#202B61]/20 scale-102"
                         : "border-slate-200 opacity-60 hover:opacity-100"
                         }`}
@@ -385,6 +401,5 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           </div>
         </motion.div>
       </div>
-    </AnimatePresence>
   );
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import { AnimatePresence } from "framer-motion";
 import {
   ArrowUpRight,
   Search,
@@ -259,13 +260,39 @@ export const ProductsCatalog: React.FC = () => {
           })}
         </div>
 
+        {/* Empty State when no products match filters or search */}
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-16 px-4 rounded-[4px] border border-dashed border-slate-200 bg-slate-50/50 space-y-3">
+            <p className="font-heading font-bold text-base text-[#202B61]">
+              No products found
+            </p>
+            <p className="font-sans text-xs text-slate-500 max-w-sm mx-auto">
+              No applications or developer tools match &ldquo;{searchQuery}&rdquo;. Try clearing your search query or selecting another category.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery("");
+                setActiveCategory("all");
+              }}
+              className="px-4 py-2 rounded-[4px] bg-[#202B61] text-white font-heading font-bold text-xs hover:bg-[#151E48] transition-colors cursor-pointer"
+            >
+              Reset Filters
+            </button>
+          </div>
+        )}
+
       </div>
 
       {/* ── 4. FULL PRODUCT DETAILS MODAL (SCREENSHOTS GALLERY + SPECS + LIVE DEMO + DOWNLOAD/PURCHASE) ── */}
-      <ProductDetailModal
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-      />
+      <AnimatePresence>
+        {selectedProduct && (
+          <ProductDetailModal
+            product={selectedProduct}
+            onClose={() => setSelectedProduct(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };

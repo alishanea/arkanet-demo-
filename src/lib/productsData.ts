@@ -60,7 +60,6 @@ export const PRODUCTS_DATA: ProductItem[] = [
       "/assets/images/prostack-hd.png",
       "/assets/images/prostack-preview-hd.jpg",
       "/assets/images/prostack-showcase-banner.jpg",
-      "/assets/images/prostack-features-full.png",
     ],
     features: [
       "Liquid OS 2.0 theme engine with modular drag-and-drop page assembly",
@@ -102,10 +101,9 @@ export const PRODUCTS_DATA: ProductItem[] = [
     screenshots: [
       "/assets/images/orbit-hd.png",
       "/assets/images/orbit-preview-hd.jpg",
-      "/assets/images/orbit-workspace-messages.png",
-      "/assets/images/orbit-mail-outlook.png",
-      "/assets/images/orbit-tasks-group.png",
-      "/assets/images/orbit-reviews-approval.png",
+      "/assets/images/orbit-showcase-banner.jpg",
+      "/assets/images/orbit-tasks-banner.jpg",
+      "/assets/images/orbit-dashboard-mockup.jpg",
     ],
     features: [
       "Real-time team messaging channels, direct messages & threaded discussions",
