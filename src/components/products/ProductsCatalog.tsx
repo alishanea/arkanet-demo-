@@ -9,6 +9,9 @@ import {
   CreditCard,
   Bookmark,
   ExternalLink,
+  Layers,
+  Gift,
+  Crown,
 } from "lucide-react";
 import { PRODUCTS_DATA, ProductItem } from "@/lib/productsData";
 import { ProductDetailModal } from "@/components/products/ProductDetailModal";
@@ -20,25 +23,34 @@ export const ProductsCatalog: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
 
-  // 3 Tabs strictly matching user specifications
+  // 3 Beautified Tabs with icons, badges and active accent themes
   const TABS = [
     {
       id: "all" as PricingCategory,
       title: "All Products",
-      subtitle: "Browse all Arkanet products",
+      badge: "FULL SUITE",
+      subtitle: "Browse all Arkanet products & platforms",
       count: PRODUCTS_DATA.length,
+      icon: Layers,
+      accentColor: "sky",
     },
     {
       id: "free" as PricingCategory,
       title: "Free Products",
+      badge: "OPEN ACCESS",
       subtitle: "Applications available at no cost",
       count: PRODUCTS_DATA.filter((p) => p.pricingType === "free").length,
+      icon: Gift,
+      accentColor: "emerald",
     },
     {
       id: "premium" as PricingCategory,
       title: "Premium Products",
-      subtitle: "Paid applications with subscription or one-time purchase options",
+      badge: "PAID / ENTERPRISE",
+      subtitle: "Paid apps with subscription or one-time options",
       count: PRODUCTS_DATA.filter((p) => p.pricingType === "premium").length,
+      icon: Crown,
+      accentColor: "amber",
     },
   ];
 
@@ -107,34 +119,98 @@ export const ProductsCatalog: React.FC = () => {
           </div>
         </div>
 
-        {/* ── 2. THREE SPECIFIED PRODUCT TABS (RADIUS < 5) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        {/* ── 2. BEAUTIFIED PRODUCT CATEGORY TABS (RADIUS < 5) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-5">
           {TABS.map((tab) => {
             const isActive = activeCategory === tab.id;
+            const IconComponent = tab.icon;
             return (
               <button
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveCategory(tab.id)}
-                className={`p-4 sm:p-5 rounded-[4px] border text-left transition-all duration-200 cursor-pointer ${isActive
-                  ? "bg-[#202B61] text-white border-[#202B61] shadow-md ring-1 ring-[#202B61]"
-                  : "bg-white text-slate-700 border-slate-200/90 hover:border-[#202B61]/40 hover:bg-slate-50/80"
+                className={`group relative p-4 sm:p-5 rounded-[4px] border text-left transition-all duration-200 cursor-pointer overflow-hidden ${isActive
+                  ? "bg-gradient-to-br from-[#202B61] via-[#1A2454] to-[#12193D] text-white border-[#202B61] shadow-[0_10px_25px_rgba(32,43,97,0.18)] ring-1 ring-[#202B61]"
+                  : "bg-white text-slate-700 border-slate-200/90 hover:border-[#202B61]/50 hover:shadow-md hover:bg-slate-50/70"
                   }`}
               >
-                <div className="flex items-center justify-between gap-2">
-                  <span className={`font-heading font-extrabold text-base sm:text-lg ${isActive ? "text-white" : "text-[#202B61]"}`}>
-                    {tab.title}
-                  </span>
+                {/* Top Subtle Active Accent Bar */}
+                {isActive && (
+                  <div
+                    className={`absolute top-0 left-0 right-0 h-[3px] ${tab.accentColor === "emerald"
+                      ? "bg-emerald-400"
+                      : tab.accentColor === "amber"
+                        ? "bg-amber-400"
+                        : "bg-sky-400"
+                      }`}
+                  />
+                )}
+
+                {/* Top Row: Icon + Badge + Count */}
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-2.5">
+                    <div
+                      className={`w-9 h-9 rounded-[4px] flex items-center justify-center transition-all ${isActive
+                        ? "bg-white/12 text-white border border-white/20 shadow-xs"
+                        : tab.accentColor === "emerald"
+                          ? "bg-emerald-50 text-emerald-600 border border-emerald-100 group-hover:scale-105"
+                          : tab.accentColor === "amber"
+                            ? "bg-amber-50 text-amber-600 border border-amber-100 group-hover:scale-105"
+                            : "bg-slate-100 text-[#202B61] border border-slate-200/80 group-hover:scale-105"
+                        }`}
+                    >
+                      <IconComponent className="w-4 h-4" />
+                    </div>
+
+                    <span
+                      className={`text-[10px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-[4px] ${isActive
+                        ? "bg-white/10 text-white/90 border border-white/15"
+                        : "bg-slate-100 text-slate-500 border border-slate-200/60"
+                        }`}
+                    >
+                      {tab.badge}
+                    </span>
+                  </div>
+
+                  {/* Count Pill */}
                   <span
-                    className={`text-xs font-bold px-2 py-0.5 rounded-[4px] ${isActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"
+                    className={`font-heading font-black text-xs px-2.5 py-1 rounded-[4px] border transition-all ${isActive
+                      ? "bg-white/20 text-white border-white/30 shadow-xs"
+                      : "bg-slate-50 text-slate-700 border-slate-200 group-hover:bg-[#202B61] group-hover:text-white group-hover:border-[#202B61]"
                       }`}
                   >
                     {tab.count}
                   </span>
                 </div>
-                <p className={`font-sans text-xs sm:text-[13px] mt-1.5 leading-snug ${isActive ? "text-white/80" : "text-slate-500"}`}>
-                  {tab.subtitle}
-                </p>
+
+                {/* Title & Subtitle */}
+                <div>
+                  <h3
+                    className={`font-heading font-extrabold text-base sm:text-lg leading-snug transition-colors ${isActive ? "text-white" : "text-[#202B61] group-hover:text-[#151E48]"
+                      }`}
+                  >
+                    {tab.title}
+                  </h3>
+                  <p
+                    className={`font-sans text-xs sm:text-[13px] mt-1.5 leading-relaxed font-normal transition-colors ${isActive ? "text-slate-200" : "text-slate-500"
+                      }`}
+                  >
+                    {tab.subtitle}
+                  </p>
+                </div>
+
+                {/* Bottom subtle indicator line */}
+                <div className="mt-3.5 pt-2.5 border-t border-current/10 flex items-center justify-between text-[11px] font-semibold">
+                  <span className={isActive ? "text-slate-300" : "text-slate-400"}>
+                    {isActive ? "Currently viewing" : "Click to filter"}
+                  </span>
+                  <span
+                    className={`transition-transform duration-200 ${isActive ? "translate-x-0 text-white" : "text-slate-400 group-hover:translate-x-1 group-hover:text-[#202B61]"
+                      }`}
+                  >
+                    →
+                  </span>
+                </div>
               </button>
             );
           })}
