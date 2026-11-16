@@ -133,7 +133,7 @@ const DOMAINS: DomainItem[] = [
       "Bidirectional ERP & CRM Data Synchronization",
       "Complete REST & GraphQL Developer Endpoints",
     ],
-    image: "/assets/images/webdevelopmentone.jpg",
+    image: "/assets/images/webdevelopmentthree.webp",
     metric: "REST, GraphQL & Webhooks",
   },
 ];

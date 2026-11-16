@@ -58,19 +58,19 @@ export const testimonials = [
     quote: "It was one of the most extraordinary experiences we have had in 24 years of business. Why? Because you challenged us and helped us articulate something very special.",
     author: "Prof. Dan Haagman",
     company: "Chaleit",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80",
   },
   {
     quote: "It's their ability to interrogate and solve their client's problems that makes them exceptional. I've worked with some great digital agencies over the years, but Arkanet delivered the best results.",
     author: "Dan Stinton",
     company: "Seven West Media",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&q=80",
   },
   {
     quote: "The team at Arkanet are true professionals, masters in their field, with meticulous attention to detail. We would recommend them to anyone!",
     author: "Vanessa Katsanevakis",
     company: "Sussex Taps",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
   },
 ];
 

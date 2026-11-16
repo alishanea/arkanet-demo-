@@ -84,12 +84,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         exit={{ opacity: 0, scale: 0.96, y: 15 }}
         transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-4xl max-h-[92dvh] bg-white rounded-[4px] border border-slate-200/90 shadow-2xl z-50 overflow-hidden flex flex-col text-left text-slate-800"
+        className="relative w-full max-w-4xl max-h-[92dvh] bg-white rounded-2xl border border-slate-200/90 shadow-2xl z-50 overflow-hidden flex flex-col text-left text-slate-800"
       >
           {/* Header Bar */}
           <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-200/80 bg-slate-50/80 shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-[4px] bg-white border border-slate-200/90 flex items-center justify-center p-1.5 sm:p-2 shadow-2xs shrink-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white border border-slate-200/90 flex items-center justify-center p-1.5 sm:p-2 shadow-2xs shrink-0">
                 <img
                   src={product.logo}
                   alt={product.name}
@@ -101,7 +101,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <h3 className="font-heading font-black text-base sm:text-xl text-[#202B61] leading-tight truncate">
                     {product.name}
                   </h3>
-                  <span className={`text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-0.5 rounded-[4px] ${product.pricingType === "free"
+                  <span className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-md ${product.pricingType === "free"
                     ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
                     : "bg-[#202B61]/10 text-[#202B61] border border-[#202B61]/20"
                     }`}>
@@ -122,7 +122,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="p-1.5 sm:p-2 rounded-[4px] text-slate-400 hover:text-[#202B61] hover:bg-slate-200/60 transition-colors cursor-pointer shrink-0 ml-2"
+              className="p-1.5 sm:p-2 rounded-lg text-slate-400 hover:text-[#202B61] hover:bg-slate-200/60 transition-colors cursor-pointer shrink-0 ml-2"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -134,7 +134,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
             {/* Screenshots Gallery */}
             <div className="space-y-3">
-              <div className="relative w-full aspect-[16/9] rounded-[4px] overflow-hidden bg-slate-900 border border-slate-200 shadow-md">
+              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-slate-900 border border-slate-200 shadow-md">
                 <Image
                   src={currentImage}
                   alt={`${product.name} screenshot ${safeImageIdx + 1}`}
@@ -152,7 +152,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       key={idx}
                       type="button"
                       onClick={() => setActiveImageIdx(idx)}
-                      className={`relative w-20 sm:w-24 aspect-[16/9] rounded-[4px] overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${safeImageIdx === idx
+                      className={`relative w-20 sm:w-24 aspect-[16/9] rounded-lg overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${safeImageIdx === idx
                         ? "border-[#202B61] ring-2 ring-[#202B61]/20 scale-102"
                         : "border-slate-200 opacity-60 hover:opacity-100"
                         }`}
@@ -172,18 +172,18 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             {/* ── DEDICATED TEST & BUY SECTIONS (AS REQUESTED: TEST DETAILS & BUY DETAILS) ── */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* 1. TEST TYPE DETAILS CARD */}
-              <div className="p-4 sm:p-5 rounded-[4px] bg-slate-50 border border-slate-200/90 flex flex-col justify-between space-y-4">
+              <div className="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200/90 flex flex-col justify-between space-y-4">
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-[4px] bg-blue-100/70 border border-blue-200 flex items-center justify-center text-[#202B61]">
+                      <div className="w-7 h-7 rounded-lg bg-blue-100/70 border border-blue-200 flex items-center justify-center text-[#202B61]">
                         <FlaskConical className="w-4 h-4" />
                       </div>
                       <span className="font-heading font-extrabold text-sm sm:text-base text-[#202B61]">
                         Test Drive &amp; Live Demo
                       </span>
                     </div>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-[4px] bg-blue-50 text-blue-700 border border-blue-200">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 border border-blue-200">
                       FREE TEST
                     </span>
                   </div>
@@ -212,7 +212,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   href={product.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[4px] border border-[#202B61] text-[#202B61] bg-white hover:bg-slate-100 font-heading font-bold text-xs sm:text-sm transition-all shadow-2xs text-center cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#202B61] text-[#202B61] bg-white hover:bg-slate-100 font-heading font-bold text-xs sm:text-sm transition-all shadow-2xs text-center cursor-pointer"
                 >
                   <span>Test Live Demo</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -220,18 +220,18 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </div>
 
               {/* 2. BUY TYPE DETAILS CARD */}
-              <div className="p-4 sm:p-5 rounded-[4px] bg-[#EBF2FE]/60 border border-[#D3E3FD] flex flex-col justify-between space-y-4">
+              <div className="p-4 sm:p-5 rounded-xl bg-[#EBF2FE]/60 border border-[#D3E3FD] flex flex-col justify-between space-y-4">
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-[4px] bg-[#202B61] text-white flex items-center justify-center">
+                      <div className="w-7 h-7 rounded-lg bg-[#202B61] text-white flex items-center justify-center">
                         <ShoppingCart className="w-4 h-4" />
                       </div>
                       <span className="font-heading font-extrabold text-sm sm:text-base text-[#202B61]">
                         {product.pricingType === "free" ? "Free Download & License" : "Buy License & Deploy"}
                       </span>
                     </div>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-[4px] bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200">
                       {product.pricingType === "free" ? "FREE PACKAGE" : "PRODUCTION"}
                     </span>
                   </div>
@@ -285,7 +285,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     href={product.downloadUrl || product.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[4px] bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs sm:text-sm transition-all shadow-xs text-center cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs sm:text-sm transition-all shadow-xs text-center cursor-pointer"
                   >
                     <span>Download Free Package</span>
                     <Download className="w-4 h-4" />
@@ -295,7 +295,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     href={product.purchaseUrl || product.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-[4px] bg-[#202B61] hover:bg-[#151E48] text-white font-heading font-bold text-xs sm:text-sm transition-all shadow-xs text-center cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#202B61] hover:bg-[#151E48] text-white font-heading font-bold text-xs sm:text-sm transition-all shadow-xs text-center cursor-pointer"
                   >
                     <span>Buy License &amp; Deploy</span>
                     <ArrowUpRight className="w-4 h-4" />
@@ -321,7 +321,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </h5>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-700">
                 {product.features.map((feature, fIdx) => (
-                  <div key={fIdx} className="flex items-start gap-2.5 p-3 rounded-[4px] bg-slate-50 border border-slate-100">
+                  <div key={fIdx} className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                     <span className="leading-snug">{feature}</span>
                   </div>
@@ -338,7 +338,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {product.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 rounded-[4px] bg-slate-100 text-xs font-semibold text-slate-700 border border-slate-200"
+                    className="px-3 py-1 rounded-lg bg-slate-100 text-xs font-semibold text-slate-700 border border-slate-200"
                   >
                     {tech}
                   </span>
@@ -359,7 +359,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 rounded-[4px] border border-slate-200 text-slate-700 font-bold text-xs hover:bg-slate-100 transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-xl border border-slate-200 text-slate-700 font-bold text-xs hover:bg-slate-100 transition-colors cursor-pointer"
               >
                 Close
               </button>
@@ -368,7 +368,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 href={product.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-[4px] border border-[#202B61] text-[#202B61] bg-white hover:bg-slate-100 font-bold text-xs shadow-2xs transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[#202B61] text-[#202B61] bg-white hover:bg-slate-100 font-bold text-xs shadow-2xs transition-colors"
               >
                 <span>Test Live Demo</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -379,7 +379,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   href={product.downloadUrl || product.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[4px] bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-colors"
+                  className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-colors"
                 >
                   <span>Download Free</span>
                   <Download className="w-3.5 h-3.5" />
@@ -389,7 +389,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   href={product.purchaseUrl || product.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-5 py-2 rounded-[4px] bg-[#202B61] hover:bg-[#151E48] text-white font-bold text-xs shadow-xs transition-colors"
+                  className="inline-flex items-center gap-1.5 px-5 py-2 rounded-xl bg-[#202B61] hover:bg-[#151E48] text-white font-bold text-xs shadow-xs transition-colors"
                 >
                   <span>Buy &amp; Deploy</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />

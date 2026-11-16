@@ -254,7 +254,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "MOBILE ENGINE",
       title: "One Codebase, Two App Stores, Zero Compromise",
       description: "Cross-platform and native mobile apps with offline capability, push notifications, and payments handled as standard.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build your mobile app →",
   },
@@ -262,7 +262,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.4 SaaS Product Development
   "saas-product-development": {
     slug: "saas-product-development",
-    bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2000&auto=format&fit=crop",
     badge: "SAAS PRODUCT DEVELOPMENT",
     title: "Multi-tenant platforms",
     highlightText: "built to scale",
@@ -326,7 +326,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "SAAS PLATFORM",
       title: "Scalable Multi-Tenant SaaS Architecture",
       description: "Built from first customer to thousandth on the same solid architecture, with tenant isolation and billing solved upfront.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build your SaaS platform →",
   },
@@ -334,7 +334,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.5 E-Commerce & Shopify Development
   "ecommerce-shopify-development": {
     slug: "ecommerce-shopify-development",
-    bgImage: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop",
     badge: "E-COMMERCE & SHOPIFY DEVELOPMENT",
     title: "Storefronts engineered",
     highlightText: "to generate revenue",
@@ -372,7 +372,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Custom Shopify Liquid & Headless storefronts",
         description: "Tailored Shopify Plus themes and Next.js Hydrogen storefronts designed for extreme speed and high mobile conversion rates.",
-        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
@@ -406,7 +406,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.6 Marketplace & Directory Platforms
   "marketplace-directory-platforms": {
     slug: "marketplace-directory-platforms",
-    bgImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2000&auto=format&fit=crop",
     badge: "MARKETPLACE PLATFORMS",
     title: "Two-sided marketplaces,",
     highlightText: "built for high volume",
@@ -462,7 +462,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Dispute resolution & review moderation",
         description: "Built-in buyer/seller messaging, review verification algorithms, escrow holds, and admin dispute handling workflows.",
-        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -470,7 +470,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "MARKETPLACE ENGINE",
       title: "Scalable Two-Sided Marketplace Architecture",
       description: "Marketplaces, directories, and multi-vendor platforms handling onboarding, commission split payouts, and fast discovery.",
-      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build your marketplace platform →",
   },
@@ -478,7 +478,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.7 Custom Portals
   "custom-portals": {
     slug: "custom-portals",
-    bgImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=2000&auto=format&fit=crop",
     badge: "ENTERPRISE PORTALS",
     title: "Give every stakeholder",
     highlightText: "their own front door",
@@ -516,7 +516,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Customer & Client Portals",
         description: "Self-service portals enabling clients to track project statuses, view invoices, download deliverables, and communicate securely.",
-        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
@@ -534,7 +534,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Audit Logging & Compliance Dashboards",
         description: "SOC2/GDPR compliance-ready audit trails, granular permissions, and automated activity log reporting.",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -542,7 +542,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "ENTERPRISE PORTAL",
       title: "Secure, Scalable Portal Architecture",
       description: "Built to handle real concurrent users and sensitive data from day one, with security hardening and monitoring out of the box.",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build your enterprise portal →",
   },
@@ -550,7 +550,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.8 API & Systems Integration
   "api-systems-integration": {
     slug: "api-systems-integration",
-    bgImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop",
     badge: "API & SYSTEMS INTEGRATION",
     title: "Make your software systems",
     highlightText: "talk to each other",
@@ -588,25 +588,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "ERP, CRM & Finance System Integrations",
         description: "Seamless integration between core enterprise platforms, updating accounting, inventory, and customer records instantly.",
-        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Webhook & Event Pipeline Architecture",
         description: "Real-time event processing pipelines that trigger multi-system updates the moment a customer action occurs.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Legacy System Middleware Bridges",
         description: "Custom API layers wrapping legacy database servers, making old software accessible to modern mobile and web apps.",
-        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Data Synchronization & Reconciliation",
         description: "Automated verification routines ensuring all integrated systems maintain identical data without manual auditing.",
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -614,7 +614,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "API ENGINE",
       title: "Connected Systems Architecture",
       description: "We connect ERPs, CRMs, logistics tools, and internal databases into a coherent flow, eliminating duplicate data entry.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's connect your systems →",
   },
@@ -622,7 +622,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.9 Cloud, DevOps & Hosting
   "cloud-devops-hosting": {
     slug: "cloud-devops-hosting",
-    bgImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1520869562399-e772f130f72e?q=80&w=2000&auto=format&fit=crop",
     badge: "CLOUD & DEVOPS ENGINEERING",
     title: "Infrastructure that stays up,",
     highlightText: "whatever the traffic",
@@ -672,13 +672,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Real-time monitoring & log aggregation",
         description: "Centralized logging, APM telemetry tracking, and automated alerts catching performance bottlenecks before users do.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1597852074816-d933c4d2b978?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Security hardening & cost optimization",
         description: "Comprehensive cloud security audits, DDoS mitigation, compliance hardening, and infrastructure cost optimization.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551808525-51a94da548ce?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -686,7 +686,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "CLOUD ENGINE",
       title: "Infrastructure Built to Stay Live Under Load",
       description: "Cloud architecture, CI/CD deployment pipelines, monitoring, and disaster recovery strategies in place from day one.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's harden your cloud infrastructure →",
   },
@@ -694,7 +694,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.10 Legacy Modernization
   "legacy-modernization": {
     slug: "legacy-modernization",
-    bgImage: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=2000&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop",
     badge: "LEGACY MODERNIZATION",
     title: "Bring old systems",
     highlightText: "into the modern era",
@@ -744,7 +744,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "API wrappers over legacy databases",
         description: "Building modern REST/GraphQL API layers over legacy SQL/Oracle databases without requiring full core rewrites.",
-        image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
@@ -758,7 +758,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "MODERNIZATION ENGINE",
       title: "Bring Legacy Systems Into the Modern Era",
       description: "We modernize aging applications without stopping the business, assessing what to refactor or replace in seamless phases.",
-      image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's modernize your legacy software →",
   },
@@ -780,7 +780,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "We identify where AI creates genuine value in your operation, then build and deploy models for forecasting, classification, recommendation, and anomaly detection.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -821,13 +821,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Computer vision & document OCR",
         description: "High-accuracy visual classification and automated OCR document extraction processing invoices, IDs, and forms.",
-        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Production MLOps & model retraining",
         description: "Robust MLOps infrastructure ensuring your models stay accurate over time with automated drift alerts and continuous retraining.",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1526406915894-7bcd65f60845?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -835,7 +835,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "PRODUCTION ML",
       title: "Applied Machine Learning That Delivers Outcomes",
       description: "We deploy machine learning and language models against specific business problems with measurable outcomes, not demos.",
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's scope your AI model →",
   },
@@ -893,13 +893,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "WhatsApp, Web & Omnichannel deployment",
         description: "Omnichannel AI agents that maintain full conversation history whether a customer chats on your website or WhatsApp.",
-        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Analytics, guardrails & continuous tuning",
         description: "Comprehensive conversation analytics dashboards, sentiment tracking, and prompt optimization tooling.",
-        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -907,7 +907,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "AI AGENT ENGINE",
       title: "LLM Agents Grounded in Your Systems",
       description: "LLM-powered assistants connected to your live business systems that check inventory, book appointments, or raise tickets.",
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1618172193763-c511deb635ca?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's deploy your AI agents →",
   },
@@ -924,7 +924,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Our AI commerce assistants handle sizing questions, product comparisons, compatibility objections, and cross-selling in the exact moment queries arise.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -965,13 +965,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Cart recovery & intelligent upsells",
         description: "AI shopper prompts that re-engage hesitant buyers before they drop off, boosting conversion rate.",
-        image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Multilingual shopping experiences",
         description: "Multilingual shopping in global languages, tailored for international e-commerce growth.",
-        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -979,7 +979,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "COMMERCE AI",
       title: "AI Personal Shoppers for E-Commerce",
       description: "Embedded AI assistants that understand your catalogue and guide shoppers to the right purchase in real time.",
-      image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's add AI to your online store →",
   },
@@ -996,7 +996,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Agents get AI-drafted replies and instant internal knowledge retrieval, making every human interaction faster and better informed.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -1031,19 +1031,19 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Seamless human handoff with full context",
         description: "Human agents receive a concise AI summary of the issue the second they take over a ticket.",
-        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "AI Copilot for human agents",
         description: "Drafting suggested responses, searching knowledge bases, and auto-filling resolution codes.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Unified omnichannel inbox",
         description: "Managing tickets across Web chat, WhatsApp Business, email, and social media from a single queue.",
-        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1051,7 +1051,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "SUPPORT AI",
       title: "Hybrid AI Support Desk Infrastructure",
       description: "AI resolves routine queries instantly and hands off to human agents with full conversation context.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's scale your support desk →",
   },
@@ -1068,7 +1068,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Two directions, one capability: automated OCR data extraction from scanned contracts and forms, plus automated generation of brand-consistent PDF proposals.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -1097,25 +1097,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Automated invoice & contract data extraction",
         description: "Intelligent document processing pipelines converting PDF invoices and contracts into structured database JSON.",
-        image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Dynamic PDF proposal & report generation",
         description: "Generates custom typeset PDF quotes, proposals, and certificates automatically from your CRM input.",
-        image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "OCR for scanned & handwritten forms",
         description: "Advanced OCR pipelines processing historical physical paperwork, legal records, and handwritten forms.",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Scheduled multi-language reporting",
         description: "Automated scheduled reporting pipelines producing branded multilingual PDFs in seconds.",
-        image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1123,7 +1123,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "DOCUMENT AI",
       title: "Automated Document Processing & Reporting",
       description: "Extract structured data from invoices and contracts, or generate pixel-perfect proposals automatically from live data.",
-      image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's automate your document workflow →",
   },
@@ -1140,7 +1140,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Built for international enterprises and cross-border platforms, with native font pipelines, multi-script rendering, and culturally adapted content generation.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -1169,25 +1169,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Bidirectional RTL layout & multilingual web experiences",
         description: "Proper right-to-left design systems ensuring multilingual interfaces look native, modern, and beautiful.",
-        image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Global multilingual NLP & localized language models",
         description: "Natural language processing tailored for global languages, localized dialects, and multi-script input.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Multilingual voice & chatbot agents",
         description: "Voice and text AI agents that switch languages fluidly based on user speech input.",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Embedded font & script rendering pipelines",
         description: "Specialized font engineering preventing script distortion or rendering glitches across devices.",
-        image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1195,7 +1195,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "MULTILINGUAL AI",
       title: "Regional AI Solutions Built for Genuine Fluency",
       description: "AI systems built with proper right-to-left layout, correct script rendering, and cultural adaptation.",
-      image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build your multilingual AI solution →",
   },
@@ -1212,7 +1212,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "The only thing worse than no data is data you can't trust. We build systems with quality checks and governance built in, so your reports work from a single source of truth.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -1241,19 +1241,19 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "ETL & ELT data pipeline engineering",
         description: "Automated data ingestion pipelines that extract data from all your SaaS tools and consolidate it securely.",
-        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Data warehouse & lakehouse architecture",
         description: "Structuring BigQuery, Snowflake, or PostgreSQL warehouses for lightning-fast analytical queries.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Data cleansing & quality monitoring",
         description: "Automated deduplication, data cleaning, and anomaly detection ensuring high data integrity.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
@@ -1267,7 +1267,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "DATA PIPELINES",
       title: "Data Engineering & Analytics Architecture",
       description: "We build pipelines and warehouses that consolidate data from every system into a single trustworthy source.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let me clean up your data architecture →",
   },
@@ -1284,7 +1284,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Our voice AI agents understand natural speech across multiple global languages, resolving routine requests outright and routing complex calls with context already gathered.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -1313,25 +1313,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Conversational IVR with natural speech recognition",
         description: "Inbound call processing that lets callers speak naturally and receive immediate automated assistance.",
-        image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Multilingual voice AI across global languages",
         description: "Fluent voice interactions tailored for international enterprises, healthcare, logistics, and multi-region service desks.",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Intelligent routing & callback scheduling",
         description: "Zero hold times: automated callback scheduling when queue volumes spike during peak hours.",
-        image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "CRM integration & call transcription",
         description: "Transcribes phone conversations, extracts key action items, and syncs summaries to customer records.",
-        image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1339,7 +1339,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "VOICE AI ENGINE",
       title: "Intelligent Multilingual Voice AI Systems",
       description: "Intelligent voice systems that answer calls, understand natural speech, and route everything with context gathered.",
-      image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's automate your phone support →",
   },
@@ -1390,25 +1390,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Workflow mapping before any build",
         description: "We document the actual process, every handoff, every spreadsheet someone maintains by hand, so the automation replaces the real workflow.",
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Built into the tools you already use",
         description: "Automations that live inside your existing CRM, email, or internal systems, instead of forcing your team onto a new platform.",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Freeing your team for real work",
         description: "The goal isn't fewer people, it's less time spent on copy-paste tasks and more time on decisions that actually move the business.",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Long-term partnership & support",
         description: "As your business grows, so do your workflows. We stay on to extend the automation as new needs come up.",
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1416,7 +1416,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "WORKFLOW ENGINE",
       title: "Automation Built Around Your Actual Workflow",
       description: "Not off-the-shelf recipes, automations mapped to how your team genuinely works, then built to fit.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's find out what's eating your team's time →",
   },
@@ -1433,7 +1433,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "A new lead in your CRM triggers the onboarding sequence, updates the finance system, and notifies the account manager automatically with full monitoring.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -1462,25 +1462,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Cross-application automated handoffs",
         description: "Connecting your sales, operations, and accounting software into automated trigger pipelines.",
-        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "CRM, ERP & accounting integration",
         description: "Eliminating manual data transfer between customer records, invoice creation, and inventory updates.",
-        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Custom automation logic beyond no-code limits",
         description: "When Zapier or Make hit complexity limits, we build custom Python/Node.js micro-services.",
-        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Failure alerting & retry mechanisms",
         description: "Resilient integration architecture ensuring no lead or transaction is ever lost due to API downtime.",
-        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1488,7 +1488,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "INTEGRATION ENGINE",
       title: "Workflow & Integration Automation",
       description: "We wire your existing applications together so information moves automatically between all your business platforms.",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's connect your SaaS tools →",
   },
@@ -1505,7 +1505,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Turn social channels into sales engines: automated catalogue browsing, order placement, payment links, and broadcast re-engagement campaigns connected to live CRM.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=1400&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1400&auto=format&fit=crop",
     },
     highlights: [
@@ -1540,7 +1540,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "In-chat product catalogues & payment links",
         description: "Interactive product carousels and instant payment gateway links right inside chat conversations.",
-        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
@@ -1552,7 +1552,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Instagram DM & broadcast marketing",
         description: "Converting Instagram comments into private DM sales conversations and sending targeted broadcast offers.",
-        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1526406915894-7bcd65f60845?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1560,7 +1560,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "CHAT COMMERCE",
       title: "WhatsApp & Social Commerce Automation Engine",
       description: "Automated commerce on WhatsApp API, Instagram, and Facebook: catalogue browsing, order placement, and payments.",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's automate your WhatsApp commerce →",
   },
@@ -1582,8 +1582,8 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Engineered for training institutes, universities, coaching centres, and corporate teams needing attendance tracking, proctored exams, grading, and parent portals.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1200&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1600&auto=format&fit=crop",
+      right: "https://images.unsplash.com/photo-1571260899385-2c8c4bc6ec5a?q=80&w=1600&auto=format&fit=crop",
     },
     highlights: [
       {
@@ -1611,25 +1611,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Course authoring & video delivery",
         description: "Structured lesson modules, video streaming with adaptive bitrate, and interactive quiz checkpoints.",
-        image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Live interactive virtual classrooms",
         description: "High-definition live video classes with breakout rooms, digital whiteboards, and auto-archived recordings.",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Assignments, quizzes & automated grading",
         description: "Comprehensive testing engine supporting multiple choice, essay submissions, and automated gradebook sync.",
-        image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Fee collection & parent portals",
         description: "Integrated online tuition fee collection, attendance notifications, and parent monitoring portals.",
-        image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1637,7 +1637,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "EDTECH PLATFORM",
       title: "Complete Learning Management Architecture",
       description: "Complete learning platforms combining course delivery, live virtual classrooms, assessment, and certification.",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build your learning platform →",
   },
@@ -1654,7 +1654,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Embed custom WebRTC video conferencing directly into your SaaS product, telehealth portal, or public institution with full data residency control.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -1683,25 +1683,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Branded WebRTC video rooms",
         description: "Custom video rooms embedded inside your web app or client portal without external third-party branding.",
-        image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Screen sharing, recording & breakout rooms",
         description: "Feature-rich WebRTC infrastructure supporting interactive whiteboards, cloud recordings, and sub-group breakouts.",
-        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Self-hosted deployment & data residency",
         description: "Full server control ensuring sensitive telehealth or corporate video streams stay strictly within your private cloud.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1571260899385-2c8c4bc6ec5a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Webinar mode with audience controls",
         description: "Large-scale broadcast webinar streams with presenter controls, polls, hand-raising, and live chat.",
-        image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1709,7 +1709,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "WEBRTC ENGINE",
       title: "Self-Hosted WebRTC Video Platforms",
       description: "White-label video conferencing built on WebRTC carrying your branding, access rules, and data residency.",
-      image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build your video conferencing platform →",
   },
@@ -1726,8 +1726,8 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Engineered for conference organizers, expos, concerts, and stadium events needing reliable offline QR scanning, badge printing, and exhibitor tools.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
+      right: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1600&auto=format&fit=crop",
     },
     highlights: [
       {
@@ -1755,25 +1755,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Tiered ticket sales & payment gateways",
         description: "Branded event registration portals with instant ticket sales, seat allocation, and promo code support.",
-        image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Fast QR & NFC gate check-in scanner app",
         description: "Mobile check-in scanner apps processing over 30 scans per minute per gate with offline backup.",
-        image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Self-service badge printing kiosks",
         description: "Integration with thermal badge printers for automated attendee check-in and custom badge printing.",
-        image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Exhibitor lead retrieval & analytics",
         description: "Empowering event exhibitors to scan attendee badges for instant lead capture and follow-up.",
-        image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1781,7 +1781,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "EVENT PLATFORM",
       title: "End-to-End Event Ticketing & Gate Infrastructure",
       description: "End-to-end event platforms covering registration, ticket sales, QR check-in, and on-site self-service kiosks.",
-      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's power your event ticketing →",
   },
@@ -1798,7 +1798,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "We build bespoke ERP systems where needed and extend established platforms like Odoo or SAP, configuring software to fit your operational reality.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1400&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop",
     },
     highlights: [
@@ -1833,7 +1833,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Multi-branch inventory & warehouse control",
         description: "Real-time inventory tracking across multiple warehouses with barcode scanning, reorder triggers, and stock transfer logs.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
@@ -1845,7 +1845,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Sales CRM & customer account management",
         description: "Centralized sales CRM unifying lead funnels, quotation generation, automated contracts, and customer account records.",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1853,7 +1853,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "ERP ENGINE",
       title: "Integrated Business Management Systems",
       description: "Integrated ERP covering accounting, inventory, procurement, and reporting, configured around your business.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build your ERP system →",
   },
@@ -1870,7 +1870,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Built for factories, hospitals, campuses, and multi-site offices needing biometric, RFID, and face-recognition attendance integrated directly into statutory payroll.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -1899,25 +1899,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Biometric & RFID attendance hardware sync",
         description: "Real-time attendance capture connecting door turnstiles and biometric terminals directly to HR database logs.",
-        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Leave management & shift rostering",
         description: "Flexible shift allocation, employee self-service leave requests, approval flows, and automated overtime rules.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "WPS payroll integration & reporting",
         description: "Automated WPS file creation and statutory payroll calculations matching exact gate attendance logs.",
-        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Visitor & contractor check-in management",
         description: "Digital visitor logging, badge printing, host notifications, and contractor site access management.",
-        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1925,7 +1925,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "WORKFORCE PLATFORM",
       title: "Integrated HR & Physical Access Control",
       description: "Workforce systems connecting physical access control and biometric attendance directly to HR records and payroll.",
-      image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's connect your HR & attendance system →",
   },
@@ -1942,7 +1942,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Surface footfall, queue spikes, empty shelves, and safety events as they happen rather than waiting for next week's manual reports.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -1971,25 +1971,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "AI CCTV footfall & queue length analytics",
         description: "Converting existing store security cameras into real-time operational analytics engines.",
-        image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Shelf-gap & planogram stock-out detection",
         description: "Visual AI monitoring that alerts inventory teams the second popular items run empty on shelves.",
-        image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Self-service information & wayfinding kiosks",
         description: "Interactive touchscreen kiosks guiding mall visitors to store locations and promotional deals.",
-        image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Tenant & promotion management portals",
         description: "Centralized dashboards for mall operators to manage tenant leases, footfall reporting, and campaign displays.",
-        image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -1997,7 +1997,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "RETAIL AI ENGINE",
       title: "Intelligent Retail & Mall Automation",
       description: "Connected systems for hypermarkets and malls combining AI video analytics, kiosks, and real-time floor ops.",
-      image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's automate your retail operations →",
   },
@@ -2010,7 +2010,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.1 UI/UX & Graphic Design
   "graphic-design": {
     slug: "graphic-design",
-    bgImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2400&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2400&auto=format&fit=crop",
     badge: "UI/UX & GRAPHIC DESIGN",
     title: "Interfaces people understand",
     highlightText: "instantly, without a manual",
@@ -2018,8 +2018,8 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Headline: "User research, wireframes & developer-ready\ndesign systems",
     section2Subtitle: "We craft interfaces testable against real user goals: wireframes, interactive prototypes, WCAG accessibility reviews, and developer-ready component specs.",
     heroImages: {
-      left: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1400&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+      left: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?q=80&w=1400&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1581291518655-9523c932694b?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1400&auto=format&fit=crop",
     },
     highlights: [
@@ -2066,7 +2066,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Developer-ready specs & WCAG reviews",
         description: "Pixel-perfect handoffs with strict spacing rules, responsive breakpoints, micro-animations, and WCAG accessibility.",
-        image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -2074,7 +2074,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "DESIGN SYSTEM",
       title: "Interfaces People Understand Instantly",
       description: "We design digital products from research through to production-ready design systems that engineering can build directly.",
-      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's design your product interface →",
   },
@@ -2091,7 +2091,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "We produce the real collateral your team needs to use day to day: pitch decks, social media templates, marketing collateral, packaging, and digital guidelines.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -2120,25 +2120,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Logo design & visual identity systems",
         description: "Crafting iconic brand logos and cohesive visual language systems tailored to your industry scale.",
-        image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Brand guidelines & asset libraries",
         description: "Detailed brand guidelines ensuring brand consistency across web, print, mobile, and advertising.",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1581291518655-9523c932694b?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Marketing decks & investor collateral",
         description: "High-impact presentation decks and sales collateral that convey enterprise credibility.",
-        image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Packaging & environmental design",
         description: "Physical packaging design, retail signage, and event booth visual assets.",
-        image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -2146,7 +2146,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "BRAND SYSTEM",
       title: "A Complete Brand Identity System",
       description: "Guidelines and visual assets built to outlast a single campaign, so every piece of marketing looks like it belongs to the same company.",
-      image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1534972195531-a756b1126f24?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's build a brand that holds up →",
   },
@@ -2192,25 +2192,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Paid search & social performance ads",
         description: "Precision PPC campaigns on Google Search, LinkedIn Ads, Meta, and TikTok optimized for customer acquisition cost.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Landing page conversion rate tuning",
         description: "A/B testing landing pages, copy tuning, and user friction removal to double lead conversion rates.",
-        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Email marketing & lifecycle automation",
         description: "Automated email nurture sequences, lead scoring, re-engagement flows, and newsletter campaigns.",
-        image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Attribution setup & performance analytics",
         description: "GA4, server-side tracking, and multi-touch attribution models showing exact ROAS.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -2218,7 +2218,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "REVENUE MARKETING",
       title: "Marketing Tied to Revenue, Not Vanity Metrics",
       description: "Every campaign measured against qualified leads and sales pipeline, reported transparently every month.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's get you more qualified leads →",
   },
@@ -2235,8 +2235,8 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "We pair technical site architecture fixes and high-intent keyword strategy with performance paid search when speed matters more than waiting for organic growth.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1600&auto=format&fit=crop",
-      right: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+      right: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1600&auto=format&fit=crop",
     },
     highlights: [
       {
@@ -2264,25 +2264,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Technical SEO audits & site speed fixes",
         description: "Eliminating technical errors, optimizing JavaScript rendering, and achieving top Core Web Vitals scores.",
-        image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "High-intent content & keyword strategy",
         description: "Creating authoritative content hubs targeting high-value commercial search terms.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Local & multi-region international SEO",
         description: "Optimizing Google Business profiles and multi-language hreflang structures for regional search dominance.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Authority building & monthly ranking reports",
         description: "White-hat link building and monthly keyword ranking reports showing clear organic growth.",
-        image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -2290,7 +2290,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "SEO ENGINE",
       title: "Compounding Organic Search Visibility",
       description: "Technical SEO, content strategy, and authority building to grow organic visibility and cut acquisition costs.",
-      image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's boost your search rankings →",
   },
@@ -2312,7 +2312,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "Useful before a project starts, and equally useful when one has stalled. We provide architecture assessments, MVP scoping, vendor evaluation, and cost estimates.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -2341,25 +2341,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Discovery workshops & requirements definition",
         description: "Turning vague product ideas into technical specs and actionable user stories.",
-        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Technical feasibility & architecture assessment",
         description: "Assessing system architecture options to prevent costly rework down the line.",
-        image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "MVP scoping & phased release planning",
         description: "Prioritizing high-impact features for launch v1 while mapping clear v2/v3 expansion roadmaps.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Vendor evaluation & cost estimation",
         description: "Unbiased technical advisory, team scoping, and cost/timeline risk assessment.",
-        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -2367,7 +2367,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "PRODUCT ADVISORY",
       title: "Get the Plan Right Before You Build",
       description: "We help you decide what to build, in what order, and whether it's worth building at all.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's scope your product strategy →",
   },
@@ -2384,7 +2384,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
     section2Subtitle: "We keep your applications online, secure, and updated with defined response times, regular health reports, and incremental feature enhancements.",
     heroImages: {
       left: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop",
-      center: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+      center: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1600&auto=format&fit=crop",
       right: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
     },
     highlights: [
@@ -2413,25 +2413,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "24/7 uptime monitoring & alerting",
         description: "Continuous infrastructure monitoring ensuring 99.9% uptime with automated error logging.",
-        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Security patching & framework updates",
         description: "Routine dependency updates, security vulnerability patching, and database maintenance.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
       {
         title: "Bug fixes & incremental feature enhancements",
         description: "Monthly allocated engineering sprints for continuous product improvements and UI refinements.",
-        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "left",
       },
       {
         title: "Regular health reports & SLA guarantees",
         description: "Monthly system health reports, performance metrics, and guaranteed response SLAs.",
-        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
         imagePosition: "right",
       },
     ],
@@ -2439,7 +2439,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "SUPPORT RETAINER",
       title: "SLA-Backed Support & Maintenance",
       description: "Launch day is the beginning of software's life. We support systems we built and systems we inherit.",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=1600&auto=format&fit=crop",
     },
     finalCtaText: "Let's secure your maintenance retainer →",
   },

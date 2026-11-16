@@ -146,7 +146,7 @@ export const ProductsCatalog: React.FC = () => {
           </div>
         </div>
 
-        {/* ── 3-COLUMN PRODUCT CARDS WITH SCREENSHOT PREVIEW & FULL ACTIONS (RADIUS < 5) ── */}
+        {/* ── 3-COLUMN PRODUCT CARDS WITH SCREENSHOT PREVIEW & FULL ACTIONS (ROUNDED CARD & ACTION) ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {filteredProducts.map((product) => {
             const isFree = product.pricingType === "free";
@@ -162,7 +162,7 @@ export const ProductsCatalog: React.FC = () => {
                     setSelectedProduct(product);
                   }
                 }}
-                className="group flex flex-col justify-between rounded-[4px] bg-white border border-slate-200/90 hover:border-[#202B61] hover:shadow-[0_12px_32px_rgba(32,43,97,0.08)] transition-all duration-200 text-left cursor-pointer overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
+                className="group flex flex-col justify-between rounded-2xl bg-white border border-slate-200/90 hover:border-[#202B61] hover:shadow-[0_12px_32px_rgba(32,43,97,0.08)] transition-all duration-200 text-left cursor-pointer overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-[#202B61]"
               >
                 {/* Image Banner Container with Clean Aspect Ratio */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900 border-b border-slate-200/80">
@@ -174,13 +174,13 @@ export const ProductsCatalog: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
 
                   {/* Price Badge on Top Right */}
-                  <div className="absolute top-2.5 right-2.5 bg-white/95 backdrop-blur-xs border border-slate-200/90 text-[#202B61] font-heading font-bold text-[11px] px-2.5 py-1 rounded-[4px] shadow-xs flex items-center gap-1.5">
+                  <div className="absolute top-2.5 right-2.5 bg-white/95 backdrop-blur-xs border border-slate-200/90 text-[#202B61] font-heading font-bold text-[11px] px-2.5 py-1 rounded-lg shadow-xs flex items-center gap-1.5">
                     <CreditCard className="w-3 h-3 text-[#202B61]" />
                     <span>{product.priceBadgeText}</span>
                   </div>
 
                   {/* Bookmark Button on Bottom Right */}
-                  <div className="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-[4px] bg-white/90 backdrop-blur-xs border border-slate-200/80 shadow-xs flex items-center justify-center text-slate-400 group-hover:text-[#202B61] transition-colors">
+                  <div className="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-lg bg-white/90 backdrop-blur-xs border border-slate-200/80 shadow-xs flex items-center justify-center text-slate-400 group-hover:text-[#202B61] transition-colors">
                     <Bookmark className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -193,12 +193,12 @@ export const ProductsCatalog: React.FC = () => {
                       {product.tags.slice(0, 2).map((tag, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-2 py-0.5 rounded-[4px] text-[10px] font-extrabold uppercase tracking-wide bg-slate-100 text-[#202B61] border border-slate-200/60"
+                          className="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wide bg-slate-100 text-[#202B61] border border-slate-200/60"
                         >
                           {tag}
                         </span>
                       ))}
-                      <span className="px-2 py-0.5 rounded-[4px] text-[10px] font-bold uppercase tracking-wide bg-blue-50 text-blue-700 border border-blue-100">
+                      <span className="px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wide bg-blue-50 text-blue-700 border border-blue-100">
                         {product.category}
                       </span>
                     </div>
@@ -227,7 +227,7 @@ export const ProductsCatalog: React.FC = () => {
                       e.stopPropagation();
                       setSelectedProduct(product);
                     }}
-                    className="w-full mt-4 py-2.5 rounded-[4px] border border-slate-200 hover:border-[#202B61] hover:bg-slate-50 text-xs font-bold text-[#202B61] text-center transition-all duration-150 shadow-2xs cursor-pointer group-hover:border-[#202B61]"
+                    className="w-full mt-4 py-2.5 rounded-xl border border-slate-200 hover:border-[#202B61] hover:bg-slate-50 text-xs font-bold text-[#202B61] text-center transition-all duration-150 shadow-2xs cursor-pointer group-hover:border-[#202B61]"
                   >
                     View details
                   </button>
@@ -239,7 +239,7 @@ export const ProductsCatalog: React.FC = () => {
 
         {/* Empty State when no products match filters or search */}
         {filteredProducts.length === 0 && (
-          <div className="text-center py-16 px-4 rounded-[4px] border border-dashed border-slate-200 bg-slate-50/50 space-y-3">
+          <div className="text-center py-16 px-4 rounded-2xl border border-dashed border-slate-200 bg-slate-50/50 space-y-3">
             <p className="font-heading font-bold text-base text-[#202B61]">
               No products found
             </p>
@@ -252,7 +252,7 @@ export const ProductsCatalog: React.FC = () => {
                 setSearchQuery("");
                 setActiveCategory("all");
               }}
-              className="px-4 py-2 rounded-[4px] bg-[#202B61] text-white font-heading font-bold text-xs hover:bg-[#151E48] transition-colors cursor-pointer"
+              className="px-4 py-2 rounded-xl bg-[#202B61] text-white font-heading font-bold text-xs hover:bg-[#151E48] transition-colors cursor-pointer"
             >
               Reset Filters
             </button>
