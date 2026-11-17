@@ -1540,7 +1540,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "In-chat product catalogues & payment links",
         description: "Interactive product carousels and instant payment gateway links right inside chat conversations.",
-        image: "/assets/images/capabilities/mobile-food-feed-ui.png",
+        image: "/assets/images/capabilities/whatsapp-in-chat-catalog-payment.png",
         imagePosition: "right",
       },
       {
