@@ -23,8 +23,10 @@ export default function CapabilityDetailPage() {
   // Fallback to website-development if slug not found
   const data = CAPABILITIES_DATA[slug] || CAPABILITIES_DATA["website-development"];
 
-  // Dedicated, content-connected background image for each capability
-  const heroBg = data.bgImage || data.heroImages?.center;
+  // Dedicated, premium studio hardware showcase matching the reference design across all capability pages
+  const heroBg = slug === "mobile-app-development" || slug === "whatsapp-social-commerce-automation"
+    ? "/assets/images/mobile_showcase_bg.jpg"
+    : "/assets/images/web_showcase_bg.jpg";
 
   const metrics = PRACTICE_METRICS[slug] || DEFAULT_METRICS;
   const techChips = PRACTICE_TECH[slug] || DEFAULT_TECH;
@@ -65,8 +67,8 @@ export default function CapabilityDetailPage() {
 
         {/* Foreground Content: Title + Subtitle + Switcher positioned comfortably on the left */}
         <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto max-w-5xl lg:max-w-6xl">
-          {/* Static Height Text Container: Guarantees button row never shifts vertically across practice tabs */}
-          <div className="space-y-4 sm:space-y-5 flex flex-col justify-start min-h-[220px] sm:min-h-[250px] lg:min-h-[280px] xl:min-h-[290px]">
+          {/* Static Height Text Container: Matches reference design and guarantees button row never shifts vertically across practice tabs */}
+          <div className="space-y-4 sm:space-y-5 flex flex-col justify-start min-h-[180px] sm:min-h-[195px] lg:min-h-[210px] xl:min-h-[220px]">
             <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-[52px] xl:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
               {data.title} <br />
               <span className="text-[#202B61]">{data.highlightText}</span>
