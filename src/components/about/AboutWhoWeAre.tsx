@@ -42,7 +42,7 @@ export function AboutWhoWeAre() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal">
             <div>
               <p>
-                Headquartered in Business Bay, Dubai, Arkanet Technologies is a premier enterprise digital innovation and technology group. Combining high-touch technology governance with deep engineering expertise, we turn strategic business vision into scalable digital systems. From bespoke web and mobile platforms to applied AI pipelines, we deliver end-to-end enterprise software solutions.
+                Arkanet Technologies is a Dubai-based enterprise digital innovation and technology company. Combining high-touch technology governance with deep engineering expertise, we turn strategic business vision into scalable digital systems. From bespoke web and mobile platforms to applied AI pipelines, we deliver end-to-end enterprise software solutions.
               </p>
             </div>
 
