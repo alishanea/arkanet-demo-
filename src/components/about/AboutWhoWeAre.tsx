@@ -33,26 +33,24 @@ export function AboutWhoWeAre() {
       className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-[#151E48] text-white border-t border-[#253272] border-b border-[#253272] text-left select-none overflow-hidden font-sans scroll-mt-28 sm:scroll-mt-36"
     >
       <div className="max-w-[1400px] mx-auto space-y-12 sm:space-y-14">
-        {/* Top 2-Column Split: Headline + Narrative */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
-          {/* Left Column: Headline + Core Intro */}
-          <div className="lg:col-span-5 space-y-5">
-            <h2 className="section-h2 text-white !text-white leading-[1.22] tracking-tight">
-              A passionate team of tech enthusiasts, creatives, and problem solvers
-            </h2>
-            <p className="font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal">
-              Headquartered in Business Bay, Dubai, Arkanet Technologies is a premier enterprise digital innovation and technology group. Combining high-touch technology governance with deep engineering expertise, we turn strategic business vision into scalable digital systems. From bespoke web and mobile platforms to applied AI pipelines, we deliver end-to-end enterprise software solutions.
-            </p>
-          </div>
+        {/* Headline + Perfectly Aligned 2-Column Body Narrative */}
+        <div className="space-y-6 sm:space-y-8">
+          <h2 className="section-h2 text-white !text-white leading-[1.22] tracking-tight max-w-4xl">
+            A passionate team of tech enthusiasts, creatives, and problem solvers
+          </h2>
 
-          {/* Right Story Paragraphs: Unified size, line-height & color */}
-          <div className="lg:col-span-7 space-y-4 font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal lg:pt-1">
-            <p>
-              Our mission is to empower businesses and individuals with innovative solutions that drive measurable success in an ever-evolving digital landscape. We are committed to delivering excellence through creativity, technology, and unwavering dedication to our clients — staying ahead of industry trends, working collaboratively on tailor-made architectures, and building long-term relationships with ongoing support after project launch.
-            </p>
-            <p>
-              As part of a next-generation global technology group, our software, cloud, and artificial intelligence offerings are built on over 15 years of market expertise and enterprise engagements. With our corporate headquarters in Dubai (UAE) and dedicated engineering centers, we provide agile delivery, transparent sprint reporting, and direct engineering access that modern businesses rely on.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal">
+            <div>
+              <p>
+                Headquartered in Business Bay, Dubai, Arkanet Technologies is a premier enterprise digital innovation and technology group. Combining high-touch technology governance with deep engineering expertise, we turn strategic business vision into scalable digital systems. From bespoke web and mobile platforms to applied AI pipelines, we deliver end-to-end enterprise software solutions.
+              </p>
+            </div>
+
+            <div>
+              <p>
+                Our mission is to empower businesses with innovative digital solutions that drive measurable success. Built on over 15 years of market expertise and dedicated engineering centers, our unified in-house team provides agile delivery, transparent sprint reporting, and ongoing support to ensure your technology scales seamlessly from day one.
+              </p>
+            </div>
           </div>
         </div>
 
