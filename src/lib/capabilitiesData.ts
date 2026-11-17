@@ -156,7 +156,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Websites built for performance & speed",
         description: "High-speed corporate sites and campaign landing pages engineered with sub-second Edge delivery, Core Web Vitals optimization, and clean semantic code.",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/responsive-web-design-multidevice.png",
         imagePosition: "left",
       },
       {
@@ -168,7 +168,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "CMS builds with editor-friendly models",
         description: "Custom content management systems enabling marketing teams to create, edit, and publish content quickly without developer intervention.",
-        image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/ui-ux-wireframe-prototyping.png",
         imagePosition: "left",
       },
       {
@@ -312,7 +312,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "White-label & custom domains",
         description: "Custom domain mapping, SSL provisioning, and custom branding allowing your enterprise customers to white-label your SaaS.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/cloud-telemetry-data-pipeline.png",
         imagePosition: "left",
       },
       {
@@ -588,7 +588,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "ERP, CRM & Finance System Integrations",
         description: "Seamless integration between core enterprise platforms, updating accounting, inventory, and customer records instantly.",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/hybrid-ai-human-handshake-globe.png",
         imagePosition: "left",
       },
       {
@@ -660,13 +660,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Multi-cloud architecture & provisioning",
         description: "Cloud infrastructure setup tailored for performance and cost efficiency across AWS, Google Cloud, and Azure environments.",
-        image: "/assets/images/capabilities/cloud-datacenter-aisle.png",
+        image: "/assets/images/capabilities/cloud-infrastructure-glowing-mesh.png",
         imagePosition: "left",
       },
       {
         title: "Automated CI/CD & container deployments",
         description: "Docker containerization, Kubernetes orchestration, and automated CI/CD pipelines deploying production updates safely.",
-        image: "/assets/images/capabilities/datacenter-lab-engineer.png",
+        image: "/assets/images/capabilities/kubernetes-modular-cloud-containers.png",
         imagePosition: "right",
       },
       {
@@ -686,7 +686,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "CLOUD ENGINE",
       title: "Infrastructure Built to Stay Live Under Load",
       description: "Cloud architecture, CI/CD deployment pipelines, monitoring, and disaster recovery strategies in place from day one.",
-        image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/cybersecurity-operations-wall.png",
     },
     finalCtaText: "Let's harden your cloud infrastructure →",
   },
@@ -893,7 +893,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "WhatsApp, Web & Omnichannel deployment",
         description: "Omnichannel AI agents that maintain full conversation history whether a customer chats on your website or WhatsApp.",
-        image: "/assets/images/capabilities/ai-neural-network-mesh.png",
+        image: "/assets/images/capabilities/ar-mobile-hologram-lens.png",
         imagePosition: "left",
       },
       {
@@ -1037,7 +1037,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "AI Copilot for human agents",
         description: "Drafting suggested responses, searching knowledge bases, and auto-filling resolution codes.",
-        image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/ai-chatbot-mobile-dialog.png",
         imagePosition: "left",
       },
       {
@@ -1051,7 +1051,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "SUPPORT AI",
       title: "Hybrid AI Support Desk Infrastructure",
       description: "AI resolves routine queries instantly and hands off to human agents with full conversation context.",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/noc-command-center-analysts.png",
     },
     finalCtaText: "Let's scale your support desk →",
   },
@@ -1313,19 +1313,19 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Conversational IVR with natural speech recognition",
         description: "Inbound call processing that lets callers speak naturally and receive immediate automated assistance.",
-        image: "https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/speak-now-conversational-ivr.png",
         imagePosition: "left",
       },
       {
         title: "Multilingual voice AI across global languages",
         description: "Fluent voice interactions tailored for international enterprises, healthcare, logistics, and multi-region service desks.",
-        image: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/voice-ai-speech-waveforms.png",
         imagePosition: "right",
       },
       {
         title: "Intelligent routing & callback scheduling",
         description: "Zero hold times: automated callback scheduling when queue volumes spike during peak hours.",
-        image: "https://images.unsplash.com/photo-1534972195531-a756b1126f24?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/dark-mode-voice-waveform-mic.png",
         imagePosition: "left",
       },
       {
@@ -1339,7 +1339,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "VOICE AI ENGINE",
       title: "Intelligent Multilingual Voice AI Systems",
       description: "Intelligent voice systems that answer calls, understand natural speech, and route everything with context gathered.",
-      image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/voice-assistant-ribbon-microphone.png",
     },
     finalCtaText: "Let's automate your phone support →",
   },
@@ -2264,13 +2264,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Technical SEO audits & site speed fixes",
         description: "Eliminating technical errors, optimizing JavaScript rendering, and achieving top Core Web Vitals scores.",
-        image: "/assets/images/capabilities/seo-audit-magnifying-glass.png",
+        image: "/assets/images/capabilities/technical-seo-crawl-audit-laptop.png",
         imagePosition: "left",
       },
       {
         title: "High-intent content & keyword strategy",
         description: "Creating authoritative content hubs targeting high-value commercial search terms.",
-        image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/holographic-seo-funnel-analytics.png",
         imagePosition: "right",
       },
       {
@@ -2282,7 +2282,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Authority building & monthly ranking reports",
         description: "White-hat link building and monthly keyword ranking reports showing clear organic growth.",
-        image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/enterprise-seo-audit-hud.png",
         imagePosition: "right",
       },
     ],
@@ -2290,7 +2290,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "SEO ENGINE",
       title: "Compounding Organic Search Visibility",
       description: "Technical SEO, content strategy, and authority building to grow organic visibility and cut acquisition costs.",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/executive-touchscreen-global-metrics.png",
     },
     finalCtaText: "Let's boost your search rankings →",
   },
