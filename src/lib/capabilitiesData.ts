@@ -168,13 +168,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "CMS builds with editor-friendly models",
         description: "Custom content management systems enabling marketing teams to create, edit, and publish content quickly without developer intervention.",
-        image: "/assets/images/capabilities/prostack-cms-editor-dashboard.png",
+        image: "/assets/images/capabilities/cms-editor-laptop-builder.png",
         imagePosition: "left",
       },
       {
         title: "Multilingual & RTL-ready builds",
         description: "Full bidirectional right-to-left (RTL) layout support and multi-currency internationalization built directly into the site architecture.",
-        image: "/assets/images/sillage-showcase.png",
+        image: "/assets/images/capabilities/multilingual-rtl-laptop-showcase.png",
         imagePosition: "right",
       },
     ],
