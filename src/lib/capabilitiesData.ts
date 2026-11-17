@@ -46,7 +46,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.1 Custom Software Engineering
   "custom-software-engineering": {
     slug: "custom-software-engineering",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/webdevelopmenttwo.jpg",
     badge: "CUSTOM SOFTWARE ENGINEERING",
     title: "Software built around your business,",
     highlightText: "not the other way around",
@@ -190,7 +190,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.3 Mobile App Development
   "mobile-app-development": {
     slug: "mobile-app-development",
-    bgImage: "/assets/images/mobile_showcase_bg.jpg",
+    bgImage: "/assets/images/App-development-three.webp",
     badge: "MOBILE APP DEVELOPMENT",
     title: "Apps people actually",
     highlightText: "keep on their phones",
@@ -262,7 +262,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.4 SaaS Product Development
   "saas-product-development": {
     slug: "saas-product-development",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/prostack-hero-bg.jpg",
     badge: "SAAS PRODUCT DEVELOPMENT",
     title: "Multi-tenant platforms",
     highlightText: "built to scale",
@@ -334,7 +334,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.5 E-Commerce & Shopify Development
   "ecommerce-shopify-development": {
     slug: "ecommerce-shopify-development",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/crypto-trader-neon-charts.png",
     badge: "E-COMMERCE & SHOPIFY DEVELOPMENT",
     title: "Storefronts engineered",
     highlightText: "to generate revenue",
@@ -406,7 +406,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.6 Marketplace & Directory Platforms
   "marketplace-directory-platforms": {
     slug: "marketplace-directory-platforms",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/enterprise-command-center.png",
     badge: "MARKETPLACE PLATFORMS",
     title: "Two-sided marketplaces,",
     highlightText: "built for high volume",
@@ -478,7 +478,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.7 Custom Portals
   "custom-portals": {
     slug: "custom-portals",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/enterprise-holographic-flow.png",
     badge: "ENTERPRISE PORTALS",
     title: "Give every stakeholder",
     highlightText: "their own front door",
@@ -550,7 +550,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.8 API & Systems Integration
   "api-systems-integration": {
     slug: "api-systems-integration",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/systems-integration-gears.png",
     badge: "API & SYSTEMS INTEGRATION",
     title: "Make your software systems",
     highlightText: "talk to each other",
@@ -622,7 +622,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.9 Cloud, DevOps & Hosting
   "cloud-devops-hosting": {
     slug: "cloud-devops-hosting",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/soc-monitoring-video-wall.png",
     badge: "CLOUD & DEVOPS ENGINEERING",
     title: "Infrastructure that stays up,",
     highlightText: "whatever the traffic",
@@ -694,7 +694,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.10 Legacy Modernization
   "legacy-modernization": {
     slug: "legacy-modernization",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/scada-industrial-iot-twin.png",
     badge: "LEGACY MODERNIZATION",
     title: "Bring old systems",
     highlightText: "into the modern era",
@@ -771,10 +771,10 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.1 Applied AI & ML
   "applied-ai-ml": {
     slug: "applied-ai-ml",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/ai-chat-bots.jpg",
     badge: "APPLIED AI & ML",
-    title: "Custom models, built & evaluated",
-    highlightText: "against your actual business metric",
+    title: "Custom AI models built",
+    highlightText: "for your business metrics",
     subtitle: "Not generic \"we do AI\", real engineering across the full stack a production system needs, from raw data through to the interface people actually use.",
     section2Headline: "AI that earns its keep\nin production",
     section2Subtitle: "We identify where AI creates genuine value in your operation, then build and deploy models for forecasting, classification, recommendation, and anomaly detection.",
@@ -843,7 +843,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.2 Conversational AI & Agents
   "ai-chatbot-automation": {
     slug: "ai-chatbot-automation",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/ai-chat-bots.jpg",
     badge: "CONVERSATIONAL AI & AGENTS",
     title: "Agents that act,",
     highlightText: "not just answer",
@@ -915,7 +915,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.3 AI Commerce Assistants
   "ai-commerce-assistants": {
     slug: "ai-commerce-assistants",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/chatgpt-mobile-screen.png",
     badge: "AI COMMERCE ASSISTANTS",
     title: "A personal shopper on",
     highlightText: "every single product page",
@@ -987,7 +987,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.4 Hybrid AI Support Desk
   "hybrid-ai-support-desk": {
     slug: "hybrid-ai-support-desk",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/noc-support-specialist-headset.png",
     badge: "HYBRID AI SUPPORT DESK",
     title: "AI handles volume",
     highlightText: "Humans handle nuance",
@@ -1059,7 +1059,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.5 Document Intelligence & Automated Reporting
   "document-intelligence": {
     slug: "document-intelligence",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/business-analytics-reports.png",
     badge: "DOCUMENT INTELLIGENCE",
     title: "Turn documents into data,",
     highlightText: "and data into documents",
@@ -1131,10 +1131,10 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.6 Multilingual AI Solutions
   "multilingual-ai-solutions": {
     slug: "multilingual-ai-solutions",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/ai-neural-network-mesh.png",
     badge: "MULTILINGUAL AI SOLUTIONS",
-    title: "Global languages & beyond,",
-    highlightText: "done with true cultural fluency",
+    title: "Multilingual AI solutions,",
+    highlightText: "with true cultural fluency",
     subtitle: "Machine translation isn't localization. We build enterprise AI systems and digital platforms that operate naturally across global languages, with bidirectional RTL support and localized cultural adaptation.",
     section2Headline: "Genuine global fluency,\nnot literal translation",
     section2Subtitle: "Built for international enterprises and cross-border platforms, with native font pipelines, multi-script rendering, and culturally adapted content generation.",
@@ -1203,7 +1203,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.7 Data Engineering
   "data-engineering": {
     slug: "data-engineering",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/datacenter-lab-engineer.png",
     badge: "DATA ENGINEERING & DATA SCIENCE",
     title: "Turn messy data into",
     highlightText: "answers you can trust",
@@ -1275,7 +1275,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.8 Voice AI & IVR Systems
   "voice-ai-ivr-systems": {
     slug: "voice-ai-ivr-systems",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/performance-waveform-latency.png",
     badge: "VOICE AI & IVR SYSTEMS",
     title: "Phone support without",
     highlightText: "the hold music",
@@ -1352,7 +1352,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 3.1 Business Process Automation
   "business-automation": {
     slug: "business-automation",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/scada-industrial-iot-twin.png",
     badge: "BUSINESS AUTOMATION",
     title: "We map the manual work",
     highlightText: "Then we make it disappear",
@@ -1424,7 +1424,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 3.2 Workflow & Integration Automation
   "workflow-integration-automation": {
     slug: "workflow-integration-automation",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/rpa-robotic-automation-nodes.png",
     badge: "WORKFLOW AUTOMATION",
     title: "Connect your SaaS tools",
     highlightText: "into one seamless flow",
@@ -1573,7 +1573,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.1 Learning Management & Live Classrooms
   "learning-management-systems": {
     slug: "learning-management-systems",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/agile-kanban-board-todo.png",
     badge: "LEARNING MANAGEMENT SYSTEMS",
     title: "Teach, assess, and certify",
     highlightText: "in one complete platform",
@@ -1645,9 +1645,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.2 Video Conferencing & Meeting Platforms
   "video-conferencing-platforms": {
     slug: "video-conferencing-platforms",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/remote-team-video-meeting.png",
     badge: "VIDEO CONFERENCING PLATFORMS",
-    title: "Your own branded meeting rooms,",
+    title: "Branded meeting rooms,",
     highlightText: "on your own infrastructure",
     subtitle: "Not every organisation wants its conversations on somebody else's servers. White-label and self-hosted video conferencing built on proven WebRTC infrastructure.",
     section2Headline: "Compliance, data residency & zero\nper-seat licensing fees",
@@ -1717,7 +1717,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.3 Event Management & Ticketing
   "event-management-ticketing": {
     slug: "event-management-ticketing",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/qr-code-contactless-scan.png",
     badge: "EVENT TICKETING PLATFORMS",
     title: "From registration,",
     highlightText: "straight to the entrance gate",
@@ -1789,7 +1789,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.4 ERP & Business Management Systems
   "erp-business-management": {
     slug: "erp-business-management",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/fintech-trading-screens.png",
     badge: "ERP & BUSINESS MANAGEMENT",
     title: "One unified system for",
     highlightText: "your entire operation",
@@ -1861,10 +1861,10 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.5 HR, Attendance & Access Control
   "hr-attendance-access-control": {
     slug: "hr-attendance-access-control",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/biometric-iris-scanner.png",
     badge: "HR & ACCESS CONTROL",
-    title: "Attendance data is only useful",
-    highlightText: "if payroll can read it",
+    title: "Attendance data connected",
+    highlightText: "directly to your payroll",
     subtitle: "Workforce systems connecting physical access control and biometric attendance directly to HR records, leave management, and automated payroll calculations.",
     section2Headline: "Hardware and software integrated\nso gate and salary sheet agree",
     section2Subtitle: "Built for factories, hospitals, campuses, and multi-site offices needing biometric, RFID, and face-recognition attendance integrated directly into statutory payroll.",
@@ -1933,9 +1933,9 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.6 Retail & Mall Automation
   "retail-mall-automation": {
     slug: "retail-mall-automation",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/qr-code-restaurant-menu.png",
     badge: "RETAIL & MALL AUTOMATION",
-    title: "Thousands of store decisions,",
+    title: "Retail store decisions,",
     highlightText: "made automatically",
     subtitle: "A hypermarket generates thousands of small decisions a day. Connected systems combining AI video analytics, self-service kiosks, and real-time floor operations management.",
     section2Headline: "Live footfall analytics, queue alerts\nand automated stock detection",
@@ -2010,10 +2010,10 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.1 UI/UX & Graphic Design
   "graphic-design": {
     slug: "graphic-design",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/work-hero-studio.jpg",
     badge: "UI/UX & GRAPHIC DESIGN",
-    title: "Interfaces people understand",
-    highlightText: "instantly, without a manual",
+    title: "Interfaces designed to be",
+    highlightText: "understood instantly",
     subtitle: "Good engineering deserves to be seen. If users need a manual, the design failed. We design digital products from user research through to production-ready design systems.",
     section2Headline: "User research, wireframes & developer-ready\ndesign systems",
     section2Subtitle: "We craft interfaces testable against real user goals: wireframes, interactive prototypes, WCAG accessibility reviews, and developer-ready component specs.",
@@ -2082,7 +2082,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.2 Brand Identity & Creative
   "brand-identity-creative": {
     slug: "brand-identity-creative",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/design-studio-photoshop.png",
     badge: "BRAND IDENTITY & CREATIVE",
     title: "Credibility is visual",
     highlightText: "long before it's verbal",
@@ -2154,7 +2154,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.3 Digital Marketing
   "digital-marketing": {
     slug: "digital-marketing",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/digital-marketing-one.jpg",
     badge: "DIGITAL MARKETING",
     title: "Marketing that grows",
     highlightText: "your revenue, not your reports",
@@ -2226,7 +2226,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.4 SEO & Performance Marketing
   "seo-performance-marketing": {
     slug: "seo-performance-marketing",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/data-analyst-screens.png",
     badge: "SEO & PERFORMANCE MARKETING",
     title: "Be found online when",
     highlightText: "it matters most",
@@ -2303,10 +2303,10 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 6.1 Product Strategy & Consulting
   "product-strategy-consulting": {
     slug: "product-strategy-consulting",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/agile-sprint-roadmap-board.png",
     badge: "PRODUCT STRATEGY & CONSULTING",
-    title: "Get the plan right",
-    highlightText: "before you write a line of code",
+    title: "Get the roadmap right",
+    highlightText: "before writing any code",
     subtitle: "The most expensive code is the code that shouldn't have been written. We help you decide what to build, in what order, and whether it's worth building through discovery workshops.",
     section2Headline: "Scope the problem before\nproposing a solution",
     section2Subtitle: "Useful before a project starts, and equally useful when one has stalled. We provide architecture assessments, MVP scoping, vendor evaluation, and cost estimates.",
@@ -2375,7 +2375,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 6.2 Maintenance & Support Retainers
   "maintenance-support-retainers": {
     slug: "maintenance-support-retainers",
-    bgImage: "/assets/images/web_showcase_bg.jpg",
+    bgImage: "/assets/images/capabilities/engineering-office-workstations.png",
     badge: "MAINTENANCE & SUPPORT RETAINERS",
     title: "Someone on call",
     highlightText: "when it matters most",
