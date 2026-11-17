@@ -23,10 +23,8 @@ export default function CapabilityDetailPage() {
   // Fallback to website-development if slug not found
   const data = CAPABILITIES_DATA[slug] || CAPABILITIES_DATA["website-development"];
 
-  // Dedicated, premium studio hardware showcase matching the reference design across all capability pages
-  const heroBg = slug === "mobile-app-development" || slug === "whatsapp-social-commerce-automation"
-    ? "/assets/images/mobile_showcase_bg.jpg"
-    : "/assets/images/web_showcase_bg.jpg";
+  // Dedicated, content-connected background image for each capability
+  const heroBg = data.bgImage || data.heroImages?.center;
 
   const metrics = PRACTICE_METRICS[slug] || DEFAULT_METRICS;
   const techChips = PRACTICE_TECH[slug] || DEFAULT_TECH;
@@ -65,27 +63,27 @@ export default function CapabilityDetailPage() {
           <div className="absolute inset-0 bg-white/75 sm:bg-white/60 lg:hidden pointer-events-none z-[1]" />
         </div>
 
-        {/* Foreground Content: Clean Left-Aligned within the 1400px Container (No Dead Left Whitespace) */}
+        {/* Foreground Content: Fill the screen width, Left Aligned to 1400px Grid (Flush with Logo) */}
         <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto text-left">
-          {/* Text block constrained to left column so it doesn't overlap background graphic */}
+          {/* Headline & Subtitle constrained to left column so right side hardware mockup shines */}
           <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl text-left">
-            {/* Locked Height Text Container: Exactly 2 lines title + subtitle, locking button row at exact vertical position */}
-            <div className="space-y-4 sm:space-y-5 flex flex-col justify-start min-h-[170px] sm:min-h-[190px] lg:h-[200px] xl:h-[210px]">
-              <h1 className="hero-h1 font-heading font-extrabold text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] text-[#202B61] tracking-tight leading-[1.1] max-w-3xl">
-                <span className="block">{data.title}</span>
-                <span className="block text-[#202B61]">{data.highlightText}</span>
+            {/* Static Height Container: Guarantees button row never shifts vertically across practice tabs */}
+            <div className="space-y-4 sm:space-y-5 flex flex-col justify-start min-h-[180px] sm:min-h-[200px] lg:min-h-[220px]">
+              <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-[52px] xl:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
+                {data.title} <br />
+                <span className="text-[#202B61]">{data.highlightText}</span>
               </h1>
 
               {data.subtitle && (
-                <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-2xl lg:max-w-3xl line-clamp-2">
+                <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-2xl lg:max-w-3xl">
                   {data.subtitle}
                 </p>
               )}
             </div>
           </div>
 
-          {/* Quick Capability Practice Switcher: Locked at fixed vertical position, unconstrained horizontally so all 9 buttons fit cleanly without clipping */}
-          <div className="pt-3 sm:pt-4 lg:pt-5 overflow-x-auto no-scrollbar w-full max-w-full">
+          {/* Quick Capability Practice Switcher: Left aligned, full container width so all 9 buttons fit without clipping */}
+          <div className="pt-4 sm:pt-5 lg:pt-6 overflow-x-auto no-scrollbar w-full max-w-full">
             <div className="flex items-center flex-nowrap gap-1.5 sm:gap-2 xl:gap-2.5 w-max">
               {[
                 { name: "Web & SaaS", slug: "website-development" },
@@ -103,7 +101,7 @@ export default function CapabilityDetailPage() {
                   <Link
                     key={cap.slug}
                     href={`/capabilities/${cap.slug}`}
-                    className={`shrink-0 whitespace-nowrap px-2 sm:px-2.5 xl:px-3 py-1.5 rounded-[4px] shadow-none text-[10.5px] sm:text-[11px] xl:text-xs font-semibold uppercase tracking-wide transition-all duration-200 ${
+                    className={`shrink-0 whitespace-nowrap px-2.5 sm:px-2.5 xl:px-3 py-1.5 rounded-[4px] shadow-none text-[11px] sm:text-[11.5px] xl:text-xs font-semibold uppercase tracking-wide transition-all duration-200 ${
                       isActive
                         ? "bg-[#202B61] text-white border border-[#202B61]"
                         : "bg-white text-[#202B61]/75 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
