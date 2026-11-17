@@ -34,7 +34,7 @@ export default function CapabilityDetailPage() {
       <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
       {/* ── SECTION 1: HERO SECTION WITH DEDICATED CONTENT-CONNECTED BACKGROUND (OLD CONNECTED DESIGN) ── */}
-      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-white text-[#202B61] pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left">
+      <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-white text-[#202B61] pt-28 sm:pt-32 lg:pt-36 pb-24 sm:pb-28 lg:pb-32 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 text-left">
         {/* Dedicated Content-Connected Background Showcase Image */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[62%] xl:w-[56%] z-0 overflow-hidden pointer-events-none select-none">
           <AnimatePresence mode="wait">
@@ -63,23 +63,23 @@ export default function CapabilityDetailPage() {
           <div className="absolute inset-0 bg-white/75 sm:bg-white/60 lg:hidden pointer-events-none z-[1]" />
         </div>
 
-        {/* Foreground Content: Unified connected block, centered vertically in the 1-page screen */}
-        <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto space-y-6 sm:space-y-8">
-          <div className="space-y-5 w-full max-w-5xl lg:max-w-6xl">
-            <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
-              {data.title} <br />
-              <span className="text-[#202B61]">{data.highlightText}</span>
-            </h1>
+        {/* Foreground Content: Title + Subtitle centered vertically in the hero stage */}
+        <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto space-y-5 w-full max-w-5xl lg:max-w-6xl">
+          <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
+            {data.title} <br />
+            <span className="text-[#202B61]">{data.highlightText}</span>
+          </h1>
 
-            {data.subtitle && (
-              <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-3xl">
-                {data.subtitle}
-              </p>
-            )}
-          </div>
+          {data.subtitle && (
+            <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-3xl">
+              {data.subtitle}
+            </p>
+          )}
+        </div>
 
-          {/* Quick Capability Practice Switcher: Connected directly below subtitle with NO separate section and NO separation line */}
-          <div className="w-full overflow-x-auto no-scrollbar pt-1 -mx-1 px-1">
+        {/* Quick Capability Practice Switcher: Locked at a single fixed position at the bottom across all pages */}
+        <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-0 right-0 z-10 px-4 sm:px-8 lg:px-12 pointer-events-auto">
+          <div className="max-w-[1400px] mx-auto w-full overflow-x-auto no-scrollbar -mx-1 px-1">
             <div className="flex items-center flex-nowrap gap-1.5 sm:gap-2 xl:gap-2.5 w-max lg:w-auto">
               {[
                 { name: "Web & SaaS", slug: "website-development" },
