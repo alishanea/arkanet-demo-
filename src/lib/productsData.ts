@@ -337,11 +337,12 @@ export const PRODUCTS_DATA: ProductItem[] = [
       name: "Arkanet Tooling Pod",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
     },
-    logo: "/assets/images/prostack-logo-navy.png",
-    previewImage: "/assets/images/prostack-showcase-banner.jpg",
+    logo: "/assets/images/arkanet-icon-clean.png",
+    previewImage: "/assets/images/products/liquid-devtools-preview.png",
     screenshots: [
-      "/assets/images/prostack-showcase-banner.jpg",
-      "/assets/images/prostack-preview-hd.jpg",
+      "/assets/images/products/liquid-devtools-preview.png",
+      "/assets/images/products/liquid-devtools-schema-hud.png",
+      "/assets/images/products/liquid-devtools-inspector.png",
     ],
     features: [
       "Inspect nested Liquid templates, section drops, and schema settings live in browser",
