@@ -138,30 +138,6 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
       techStack: ["Apache Spark", "Kafka", "Python", "PostgreSQL", "Next.js", "Docker"],
     },
   },
-  {
-    id: "conversational-ai-voicebots",
-    category: "Conversational AI & Avatars",
-    title: "Conversational AI Agents & Multilingual Voicebots",
-    titleLine1: "Conversational AI Agents",
-    titleLine2: "& Multilingual Voicebots",
-    description: "Enterprise conversational voicebots automating customer care across phone lines, web portals, and WhatsApp in global languages.",
-    outerImage: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?q=80&w=1200&auto=format&fit=crop",
-    innerImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop",
-    detail: {
-      client: "Enterprise Customer Care & Telecom",
-      year: "2026",
-      services: ["Conversational AI", "Voicebot Development", "Global Multilingual NLU", "Omnichannel Integration"],
-      overview: "An enterprise-grade conversational AI suite engineered to handle high-concurrency customer enquiries across phone lines, web chat, and WhatsApp Business API.",
-      challenge: "Peak season support queues overwhelmed human support desks, resulting in 15+ minute wait times and inconsistent multilingual customer service.",
-      solution: "Trained and deployed neural voicebots and generative chat assistants with real-time speech recognition, automated ticket resolution, and seamless human agent handoffs.",
-      impact: [
-        "86% First-contact automated resolution rate",
-        "Sub-1.2s Average neural voice response latency",
-        "Fluid real-time switching across multiple global languages",
-      ],
-      techStack: ["Python", "FastAPI", "Speech-to-Text NLU", "LangChain", "WebRTC", "WhatsApp API"],
-    },
-  },
 ];
 
 export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking }) => {
