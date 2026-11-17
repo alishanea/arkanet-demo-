@@ -17,7 +17,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "SIGNATURE by Sillage d'Orient — Haute Parfumerie Flagship",
     titleLine1: "SIGNATURE by Sillage d'Orient",
     titleLine2: "Haute Parfumerie Digital Flagship",
-    description: "Bespoke digital flagship for French Haute Parfumerie house Sillage d'Orient, featuring olfactory discovery, localized GCC payments, and sub-second speeds.",
+    description: "Bespoke digital flagship for French Haute Parfumerie house Sillage d'Orient, featuring olfactory discovery, localized GCC payments, and sub-second edge performance.",
     outerImage: "/assets/images/works/sillage-campaign-hero.png",
     innerImage: "/assets/images/works/sillage-showcase.png",
     liveUrl: "https://sillagedorient.com/",
@@ -54,7 +54,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "Elixir Beauty — Dubai Luxury Artistic Fragrances",
     titleLine1: "Elixir Beauty",
     titleLine2: "Artistic Fragrance Boutique & E-Commerce",
-    description: "Bespoke digital flagship for Dubai's premier luxury perfume boutique ('Where Scent Meets Art'), featuring curated flacons, instant gift wrapping, Tabby installments, and sub-second edge loads.",
+    description: "Bespoke digital flagship for Dubai's premier luxury perfume boutique ('Where Scent Meets Art'), featuring curated niche flacons, instant gift wrapping, and seamless Tabby payments.",
     outerImage: "/assets/images/works/elixir-campaign-hero.png",
     innerImage: "/assets/images/works/elixir-showcase.png",
     gallery: [
@@ -96,7 +96,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "AI Mobility Intelligence & Connected City Parking",
     titleLine1: "AI Mobility Intelligence",
     titleLine2: "& Connected City Parking",
-    description: "Connected vehicle telemetry, edge computer vision, and automated real-time parking space allocation for modern smart cities.",
+    description: "Connected vehicle telemetry, edge computer vision, and automated real-time parking allocation engineered to eliminate congestion and urban transit friction across modern smart cities.",
     outerImage: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -120,7 +120,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
     title: "Healthcare Big Data Lake & Hospital Clinical Analytics",
     titleLine1: "Healthcare Big Data Lake",
     titleLine2: "& Hospital Clinical Analytics",
-    description: "High-throughput clinical data lake unifying electronic records with predictive machine learning for early cardiac detection.",
+    description: "High-throughput clinical data lake unifying electronic health records with predictive machine learning pipelines for early cardiovascular risk detection and accelerated treatment.",
     outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -226,9 +226,9 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     </h3>
                   </div>
 
-                  {/* Body Description: Balanced size, 16 words, perfect 3-line flow */}
-                  <div className="min-h-[4.2rem] sm:h-[4.5rem] flex items-start pb-1">
-                    <p className="font-sans text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#202B61]/85 leading-[1.6] font-normal text-pretty line-clamp-3">
+                  {/* Body Description: Complete 4-line flow */}
+                  <div className="min-h-[5.4rem] sm:min-h-[5.6rem] lg:min-h-[5.8rem] flex items-start pb-1">
+                    <p className="font-sans text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#202B61]/85 leading-[1.58] font-normal text-pretty line-clamp-4">
                       {project.description}
                     </p>
                   </div>
