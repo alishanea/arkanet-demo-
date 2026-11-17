@@ -1845,7 +1845,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Sales CRM & customer account management",
         description: "Centralized sales CRM unifying lead funnels, quotation generation, automated contracts, and customer account records.",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/enterprise-command-center.png",
         imagePosition: "right",
       },
     ],

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
-import { X, ArrowRight } from "lucide-react";
+import { X, ArrowRight, ExternalLink } from "lucide-react";
 
 function MagneticCloseButton({ onClick }: { onClick: () => void }) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -63,6 +63,7 @@ export interface WorkProjectDetail {
   outerImage?: string;
   innerImage?: string;
   image?: string;
+  liveUrl?: string;
   detail?: {
     client: string;
     year: string;
@@ -72,6 +73,7 @@ export interface WorkProjectDetail {
     solution: string;
     impact: string[];
     techStack: string[];
+    liveUrl?: string;
   };
 }
 
@@ -211,15 +213,28 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                     {currentProject.description}
                   </p>
 
-                  {/* Client Info Pill */}
-                  <div className="flex items-center gap-3 pt-2 p-3 rounded-xl bg-[#f8fafc] border border-slate-200/80 max-w-md">
-                    <div className="w-9 h-9 rounded-lg bg-[#202B61] text-white flex items-center justify-center font-heading font-bold text-xs shrink-0 shadow-2xs">
-                      {details.client.charAt(0)}
+                  {/* Client Info Pill & Visit Website Button */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+                    <div className="flex items-center gap-3 p-3 rounded-xl bg-[#f8fafc] border border-slate-200/80 max-w-md flex-1">
+                      <div className="w-9 h-9 rounded-lg bg-[#202B61] text-white flex items-center justify-center font-heading font-bold text-xs shrink-0 shadow-2xs">
+                        {details.client.charAt(0)}
+                      </div>
+                      <div className="text-xs sm:text-sm">
+                        <p className="font-bold text-[#202B61]">{details.client}</p>
+                        <p className="text-slate-500 font-sans text-xs">{details.services.join(" • ")}</p>
+                      </div>
                     </div>
-                    <div className="text-xs sm:text-sm">
-                      <p className="font-bold text-[#202B61]">{details.client}</p>
-                      <p className="text-slate-500 font-sans text-xs">{details.services.join(" • ")}</p>
-                    </div>
+                    {(details.liveUrl || currentProject.liveUrl) && (
+                      <a
+                        href={details.liveUrl || currentProject.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#202B61] hover:bg-[#18214d] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm shrink-0"
+                      >
+                        <span>Visit Live Site</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -264,6 +279,17 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                     </p>
                   </div>
                 </div>
+
+                {/* ── SECONDARY SHOWCASE GALLERY (IF AVAILABLE) ── */}
+                {currentProject.innerImage && currentProject.innerImage !== (currentProject.outerImage || currentProject.image) && (
+                  <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/70 shadow-sm">
+                    <img
+                      src={currentProject.innerImage}
+                      alt={`${currentProject.title} In-Depth Showcase`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
 
                 {/* ── 4. KEY BUSINESS IMPACT CARD ── */}
                 <div className="bg-white rounded-2xl border border-slate-200/90 p-7 sm:p-10 lg:p-12 shadow-2xs space-y-8">

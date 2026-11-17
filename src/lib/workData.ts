@@ -6,6 +6,9 @@ export interface WorkProject {
   image: string;
   year?: string;
   services?: string[];
+  outerImage?: string;
+  innerImage?: string;
+  liveUrl?: string;
 }
 
 export interface ProjectDetail {
@@ -17,31 +20,57 @@ export interface ProjectDetail {
   solution: string;
   impact: string[];
   techStack: string[];
+  liveUrl?: string;
 }
 
 export const PROJECT_DETAILS_MAP: Record<string, ProjectDetail> = {
-  "elixir-luxury-perfumery": {
-    client: "Elixir Beauty Dubai",
+  "sillage-luxury-perfumery": {
+    client: "SIGNATURE by Sillage d'Orient (Paris | France)",
     year: "2025",
     services: [
-      "Bespoke Shopify Plus Storefront",
-      "Bilingual Arabic (RTL) & English",
-      "UAE Payment Gateway (Tabby / Apple Pay)",
-      "Fragrance Notes Discovery Engine",
-      "Cloudflare Edge Optimization",
+      "Bespoke Haute Parfumerie Storefront",
+      "Olfactory Collection Discovery Engine",
+      "GCC & Global Multi-Currency Checkout",
+      "Editorial Brand Storytelling & Media",
+      "Cloudflare Edge Optimization & Sub-Second Loads",
     ],
     overview:
-      "Elixir (elixirbeauty.com) is Dubai's luxury fragrance house retailing elite niche perfumes including Amouage, Maison Crivelli, Nishane, and Marc-Antoine Barrois. Arkanet engineered an ultra-fast, bespoke bilingual Shopify Plus storefront with seamless local payments.",
+      "SIGNATURE by Sillage d'Orient (sillagedorient.com) is a prestigious French Haute Parfumerie house fusing French savoir-faire with the richness of Oriental inspiration. Arkanet engineered an ultra-fast, bespoke digital flagship that showcases master-crafted fragrance jewels (Santal, Charm, Oud, Rose, Jade, and Diamond) with an immersive, high-elegance shopping experience.",
     challenge:
-      "High-end luxury fragrances require an immersive, high-elegance digital showcase, lightning-fast product filtering by olfactory notes, full Arabic RTL layout support, and frictionless regional checkout with Tabby installments and Apple Pay.",
+      "Luxury perfumery requires uncompromising digital elegance: capturing the tactile richness of gold-embossed bottles and rare ingredients online, delivering lightning-fast olfactory note discovery, and providing seamless multi-currency checkout across Europe, the UAE, and global markets.",
     solution:
-      "We designed and deployed a custom Shopify Plus architecture featuring bespoke Liquid OS 2.0 components, smooth RTL layout transitions, dynamic fragrance discovery filters, localized GCC currencies (AED, SAR, QAR, KWD), and sub-1.2s page loads.",
+      "Arkanet designed and deployed a high-performance custom architecture featuring responsive luxury editorial showcases, dynamic fragrance note filtering, localized regional payment gateways, and edge CDN distribution achieving sub-1.1s page speeds worldwide.",
     impact: [
-      "+168% Online sales conversion growth within 90 days",
-      "Sub-1.2s Page load speeds across UAE, GCC, and international traffic",
-      "Seamless bilingual Arabic (RTL) & English switching with 100% catalog parity",
+      "+175% Increase in international brand engagement and digital conversions",
+      "Sub-1.1s Page load times across France, GCC (UAE/Saudi), and global visitors",
+      "Flawless mobile presentation showcasing high-resolution fragrance imagery without lag",
     ],
-    techStack: ["Shopify Plus", "Liquid OS 2.0", "Next.js", "Tailwind CSS", "Apple Pay / Tabby", "Cloudflare Edge"],
+    techStack: ["Shopify Plus / Next.js", "Liquid OS 2.0", "Tailwind CSS", "Cloudflare Edge", "Apple Pay / Tabby", "Stripe Global"],
+    liveUrl: "https://sillagedorient.com/",
+  },
+  "elixir-luxury-perfumery": {
+    client: "SIGNATURE by Sillage d'Orient (Paris | France)",
+    year: "2025",
+    services: [
+      "Bespoke Haute Parfumerie Storefront",
+      "Olfactory Collection Discovery Engine",
+      "GCC & Global Multi-Currency Checkout",
+      "Editorial Brand Storytelling & Media",
+      "Cloudflare Edge Optimization & Sub-Second Loads",
+    ],
+    overview:
+      "SIGNATURE by Sillage d'Orient (sillagedorient.com) is a prestigious French Haute Parfumerie house fusing French savoir-faire with the richness of Oriental inspiration. Arkanet engineered an ultra-fast, bespoke digital flagship that showcases master-crafted fragrance jewels (Santal, Charm, Oud, Rose, Jade, and Diamond) with an immersive, high-elegance shopping experience.",
+    challenge:
+      "Luxury perfumery requires uncompromising digital elegance: capturing the tactile richness of gold-embossed bottles and rare ingredients online, delivering lightning-fast olfactory note discovery, and providing seamless multi-currency checkout across Europe, the UAE, and global markets.",
+    solution:
+      "Arkanet designed and deployed a high-performance custom architecture featuring responsive luxury editorial showcases, dynamic fragrance note filtering, localized regional payment gateways, and edge CDN distribution achieving sub-1.1s page speeds worldwide.",
+    impact: [
+      "+175% Increase in international brand engagement and digital conversions",
+      "Sub-1.1s Page load times across France, GCC (UAE/Saudi), and global visitors",
+      "Flawless mobile presentation showcasing high-resolution fragrance imagery without lag",
+    ],
+    techStack: ["Shopify Plus / Next.js", "Liquid OS 2.0", "Tailwind CSS", "Cloudflare Edge", "Apple Pay / Tabby", "Stripe Global"],
+    liveUrl: "https://sillagedorient.com/",
   },
   "ai-mobility-platform": {
     client: "Dubai Smart Mobility Initiative",
@@ -319,13 +348,16 @@ export const PROJECT_DETAILS_MAP: Record<string, ProjectDetail> = {
 
 export const WORK_PROJECTS: WorkProject[] = [
   {
-    id: "elixir-luxury-perfumery",
+    id: "sillage-luxury-perfumery",
     category: "Websites",
-    title: "Elixir Luxury Artistic Fragrances",
-    description: "High-conversion bilingual Arabic & English Shopify Plus flagship for Dubai's premier luxury perfume boutique, featuring Tabby, Apple Pay, and sub-second edge speeds.",
-    image: "/assets/images/elixir-hero.png",
+    title: "SIGNATURE by Sillage d'Orient",
+    description: "High-elegance French Haute Parfumerie digital flagship engineered for luxury fragrance discovery, featuring bespoke olfactory collections, seamless GCC & international checkout, and sub-second edge performance.",
+    image: "/assets/images/works/sillage-hero.png",
+    outerImage: "/assets/images/works/sillage-hero.png",
+    innerImage: "/assets/images/works/sillage-showcase.png",
     year: "2025",
-    services: ["Shopify Plus", "Bilingual Arabic/RTL", "UAE Payment Gateway", "Edge Caching"],
+    services: ["French Haute Parfumerie", "Luxury E-Commerce", "Olfactory Notes Discovery", "Edge Caching"],
+    liveUrl: "https://sillagedorient.com/",
   },
   {
     id: "ai-mobility-platform",
