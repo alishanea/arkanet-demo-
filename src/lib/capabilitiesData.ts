@@ -46,7 +46,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.1 Custom Software Engineering
   "custom-software-engineering": {
     slug: "custom-software-engineering",
-    bgImage: "/assets/images/webdevelopmenttwo.jpg",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "CUSTOM SOFTWARE ENGINEERING",
     title: "Software built around your business,",
     highlightText: "not the other way around",
@@ -190,7 +190,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.3 Mobile App Development
   "mobile-app-development": {
     slug: "mobile-app-development",
-    bgImage: "/assets/images/App-development-three.webp",
+    bgImage: "/assets/images/mobile_showcase_bg.jpg",
     badge: "MOBILE APP DEVELOPMENT",
     title: "Apps people actually",
     highlightText: "keep on their phones",
@@ -262,7 +262,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.4 SaaS Product Development
   "saas-product-development": {
     slug: "saas-product-development",
-    bgImage: "/assets/images/prostack-hero-bg.jpg",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "SAAS PRODUCT DEVELOPMENT",
     title: "Multi-tenant platforms",
     highlightText: "built to scale",
@@ -334,7 +334,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.5 E-Commerce & Shopify Development
   "ecommerce-shopify-development": {
     slug: "ecommerce-shopify-development",
-    bgImage: "/assets/images/capabilities/crypto-trader-neon-charts.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "E-COMMERCE & SHOPIFY DEVELOPMENT",
     title: "Storefronts engineered",
     highlightText: "to generate revenue",
@@ -406,7 +406,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.6 Marketplace & Directory Platforms
   "marketplace-directory-platforms": {
     slug: "marketplace-directory-platforms",
-    bgImage: "/assets/images/capabilities/enterprise-command-center.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "MARKETPLACE PLATFORMS",
     title: "Two-sided marketplaces,",
     highlightText: "built for high volume",
@@ -478,7 +478,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.7 Custom Portals
   "custom-portals": {
     slug: "custom-portals",
-    bgImage: "/assets/images/capabilities/enterprise-holographic-flow.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "ENTERPRISE PORTALS",
     title: "Give every stakeholder",
     highlightText: "their own front door",
@@ -550,7 +550,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.8 API & Systems Integration
   "api-systems-integration": {
     slug: "api-systems-integration",
-    bgImage: "/assets/images/capabilities/systems-integration-gears.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "API & SYSTEMS INTEGRATION",
     title: "Make your software systems",
     highlightText: "talk to each other",
@@ -622,7 +622,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.9 Cloud, DevOps & Hosting
   "cloud-devops-hosting": {
     slug: "cloud-devops-hosting",
-    bgImage: "/assets/images/capabilities/soc-monitoring-video-wall.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "CLOUD & DEVOPS ENGINEERING",
     title: "Infrastructure that stays up,",
     highlightText: "whatever the traffic",
@@ -694,7 +694,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 1.10 Legacy Modernization
   "legacy-modernization": {
     slug: "legacy-modernization",
-    bgImage: "/assets/images/capabilities/scada-industrial-iot-twin.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "LEGACY MODERNIZATION",
     title: "Bring old systems",
     highlightText: "into the modern era",
@@ -771,7 +771,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.1 Applied AI & ML
   "applied-ai-ml": {
     slug: "applied-ai-ml",
-    bgImage: "/assets/images/ai-chat-bots.jpg",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "APPLIED AI & ML",
     title: "Custom models, built & evaluated",
     highlightText: "against your actual business metric",
@@ -843,7 +843,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.2 Conversational AI & Agents
   "ai-chatbot-automation": {
     slug: "ai-chatbot-automation",
-    bgImage: "/assets/images/ai-chat-bots.jpg",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "CONVERSATIONAL AI & AGENTS",
     title: "Agents that act,",
     highlightText: "not just answer",
@@ -915,7 +915,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.3 AI Commerce Assistants
   "ai-commerce-assistants": {
     slug: "ai-commerce-assistants",
-    bgImage: "/assets/images/capabilities/chatgpt-mobile-screen.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "AI COMMERCE ASSISTANTS",
     title: "A personal shopper on",
     highlightText: "every single product page",
@@ -987,7 +987,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.4 Hybrid AI Support Desk
   "hybrid-ai-support-desk": {
     slug: "hybrid-ai-support-desk",
-    bgImage: "/assets/images/capabilities/noc-support-specialist-headset.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "HYBRID AI SUPPORT DESK",
     title: "AI handles volume",
     highlightText: "Humans handle nuance",
@@ -1059,7 +1059,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.5 Document Intelligence & Automated Reporting
   "document-intelligence": {
     slug: "document-intelligence",
-    bgImage: "/assets/images/capabilities/business-analytics-reports.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "DOCUMENT INTELLIGENCE",
     title: "Turn documents into data,",
     highlightText: "and data into documents",
@@ -1131,7 +1131,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.6 Multilingual AI Solutions
   "multilingual-ai-solutions": {
     slug: "multilingual-ai-solutions",
-    bgImage: "/assets/images/capabilities/ai-neural-network-mesh.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "MULTILINGUAL AI SOLUTIONS",
     title: "Global languages & beyond,",
     highlightText: "done with true cultural fluency",
@@ -1203,7 +1203,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.7 Data Engineering
   "data-engineering": {
     slug: "data-engineering",
-    bgImage: "/assets/images/capabilities/datacenter-lab-engineer.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "DATA ENGINEERING & DATA SCIENCE",
     title: "Turn messy data into",
     highlightText: "answers you can trust",
@@ -1275,7 +1275,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.8 Voice AI & IVR Systems
   "voice-ai-ivr-systems": {
     slug: "voice-ai-ivr-systems",
-    bgImage: "/assets/images/capabilities/performance-waveform-latency.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "VOICE AI & IVR SYSTEMS",
     title: "Phone support without",
     highlightText: "the hold music",
@@ -1352,7 +1352,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 3.1 Business Process Automation
   "business-automation": {
     slug: "business-automation",
-    bgImage: "/assets/images/capabilities/scada-industrial-iot-twin.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "BUSINESS AUTOMATION",
     title: "We map the manual work",
     highlightText: "Then we make it disappear",
@@ -1424,7 +1424,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 3.2 Workflow & Integration Automation
   "workflow-integration-automation": {
     slug: "workflow-integration-automation",
-    bgImage: "/assets/images/capabilities/rpa-robotic-automation-nodes.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "WORKFLOW AUTOMATION",
     title: "Connect your SaaS tools",
     highlightText: "into one seamless flow",
@@ -1573,7 +1573,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.1 Learning Management & Live Classrooms
   "learning-management-systems": {
     slug: "learning-management-systems",
-    bgImage: "/assets/images/capabilities/agile-kanban-board-todo.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "LEARNING MANAGEMENT SYSTEMS",
     title: "Teach, assess, and certify",
     highlightText: "in one complete platform",
@@ -1645,7 +1645,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.2 Video Conferencing & Meeting Platforms
   "video-conferencing-platforms": {
     slug: "video-conferencing-platforms",
-    bgImage: "/assets/images/capabilities/remote-team-video-meeting.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "VIDEO CONFERENCING PLATFORMS",
     title: "Your own branded meeting rooms,",
     highlightText: "on your own infrastructure",
@@ -1717,7 +1717,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.3 Event Management & Ticketing
   "event-management-ticketing": {
     slug: "event-management-ticketing",
-    bgImage: "/assets/images/capabilities/qr-code-contactless-scan.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "EVENT TICKETING PLATFORMS",
     title: "From registration,",
     highlightText: "straight to the entrance gate",
@@ -1789,7 +1789,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.4 ERP & Business Management Systems
   "erp-business-management": {
     slug: "erp-business-management",
-    bgImage: "/assets/images/capabilities/fintech-trading-screens.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "ERP & BUSINESS MANAGEMENT",
     title: "One unified system for",
     highlightText: "your entire operation",
@@ -1833,7 +1833,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Multi-branch inventory & warehouse control",
         description: "Real-time inventory tracking across multiple warehouses with barcode scanning, reorder triggers, and stock transfer logs.",
-        image: "/assets/images/capabilities/warehouse-tablet-inventory-scanner-hd.png",
+        image: "/assets/images/capabilities/automated-warehouse-erp-system.png",
         imagePosition: "right",
       },
       {
@@ -1853,7 +1853,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "ERP ENGINE",
       title: "Integrated Business Management Systems",
       description: "Integrated ERP covering accounting, inventory, procurement, and reporting, configured around your business.",
-      image: "/assets/images/capabilities/holographic-erp-analytics-dashboard.png",
+      image: "/assets/images/capabilities/erp-inventory-automation-dashboard.png",
     },
     finalCtaText: "Let's build your ERP system →",
   },
@@ -1861,7 +1861,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.5 HR, Attendance & Access Control
   "hr-attendance-access-control": {
     slug: "hr-attendance-access-control",
-    bgImage: "/assets/images/capabilities/biometric-iris-scanner.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "HR & ACCESS CONTROL",
     title: "Attendance data is only useful",
     highlightText: "if payroll can read it",
@@ -1933,7 +1933,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 4.6 Retail & Mall Automation
   "retail-mall-automation": {
     slug: "retail-mall-automation",
-    bgImage: "/assets/images/capabilities/qr-code-restaurant-menu.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "RETAIL & MALL AUTOMATION",
     title: "Thousands of store decisions,",
     highlightText: "made automatically",
@@ -2010,7 +2010,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.1 UI/UX & Graphic Design
   "graphic-design": {
     slug: "graphic-design",
-    bgImage: "/assets/images/work-hero-studio.jpg",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "UI/UX & GRAPHIC DESIGN",
     title: "Interfaces people understand",
     highlightText: "instantly, without a manual",
@@ -2082,7 +2082,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.2 Brand Identity & Creative
   "brand-identity-creative": {
     slug: "brand-identity-creative",
-    bgImage: "/assets/images/capabilities/design-studio-photoshop.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "BRAND IDENTITY & CREATIVE",
     title: "Credibility is visual",
     highlightText: "long before it's verbal",
@@ -2154,7 +2154,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.3 Digital Marketing
   "digital-marketing": {
     slug: "digital-marketing",
-    bgImage: "/assets/images/digital-marketing-one.jpg",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "DIGITAL MARKETING",
     title: "Marketing that grows",
     highlightText: "your revenue, not your reports",
@@ -2226,7 +2226,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 5.4 SEO & Performance Marketing
   "seo-performance-marketing": {
     slug: "seo-performance-marketing",
-    bgImage: "/assets/images/capabilities/data-analyst-screens.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "SEO & PERFORMANCE MARKETING",
     title: "Be found online when",
     highlightText: "it matters most",
@@ -2303,7 +2303,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 6.1 Product Strategy & Consulting
   "product-strategy-consulting": {
     slug: "product-strategy-consulting",
-    bgImage: "/assets/images/capabilities/agile-sprint-roadmap-board.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "PRODUCT STRATEGY & CONSULTING",
     title: "Get the plan right",
     highlightText: "before you write a line of code",
@@ -2375,7 +2375,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 6.2 Maintenance & Support Retainers
   "maintenance-support-retainers": {
     slug: "maintenance-support-retainers",
-    bgImage: "/assets/images/capabilities/engineering-office-workstations.png",
+    bgImage: "/assets/images/web_showcase_bg.jpg",
     badge: "MAINTENANCE & SUPPORT RETAINERS",
     title: "Someone on call",
     highlightText: "when it matters most",

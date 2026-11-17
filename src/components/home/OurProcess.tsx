@@ -59,7 +59,7 @@ const PROCESS_STEPS: ProcessStep[] = [
     key: "sustain",
     stepNumber: "04",
     title: "Sustain",
-    body: "Delivery marks the beginning of the partnership through continuous monitoring, proactive maintenance, and ongoing optimization.",
+    body: "Delivery begins the partnership through continuous monitoring, proactive maintenance, and ongoing optimization.",
     image:
       "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=900&auto=format&fit=crop",
     deliverables: [
@@ -116,7 +116,7 @@ const ProcessCard: React.FC<{ step: ProcessStep; index: number; total: number }>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#202B61] tracking-tight">
               {step.title}
             </h3>
-            <p className="section-desc max-w-xl">
+            <p className="section-desc max-w-xl lg:max-w-2xl">
               {step.body}
             </p>
           </div>

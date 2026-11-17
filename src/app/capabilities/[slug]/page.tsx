@@ -65,51 +65,53 @@ export default function CapabilityDetailPage() {
           <div className="absolute inset-0 bg-white/75 sm:bg-white/60 lg:hidden pointer-events-none z-[1]" />
         </div>
 
-        {/* Foreground Content: Title + Subtitle + Switcher positioned comfortably on the left */}
-        <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto max-w-5xl lg:max-w-6xl">
-          {/* Static Height Text Container: Matches reference design and guarantees button row never shifts vertically across practice tabs */}
-          <div className="space-y-4 sm:space-y-5 flex flex-col justify-start min-h-[180px] sm:min-h-[195px] lg:min-h-[210px] xl:min-h-[220px]">
-            <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-[52px] xl:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
-              {data.title} <br />
-              <span className="text-[#202B61]">{data.highlightText}</span>
-            </h1>
+        {/* Foreground Content: Clean Left-Aligned within the 1400px Container (No Dead Left Whitespace) */}
+        <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto text-left">
+          <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl text-left">
+            {/* Static Height Text Container: Matches reference design and guarantees button row never shifts vertically across practice tabs */}
+            <div className="space-y-4 sm:space-y-5 flex flex-col justify-start min-h-[180px] sm:min-h-[195px] lg:min-h-[210px] xl:min-h-[220px]">
+              <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-[52px] xl:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
+                {data.title} <br />
+                <span className="text-[#202B61]">{data.highlightText}</span>
+              </h1>
 
-            {data.subtitle && (
-              <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-3xl">
-                {data.subtitle}
-              </p>
-            )}
-          </div>
+              {data.subtitle && (
+                <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-2xl lg:max-w-3xl">
+                  {data.subtitle}
+                </p>
+              )}
+            </div>
 
-          {/* Quick Capability Practice Switcher: Locked at a fixed, comfortable vertical position directly below the content */}
-          <div className="pt-3 sm:pt-4 lg:pt-5 overflow-x-auto no-scrollbar -mx-1 px-1">
-            <div className="flex items-center flex-nowrap gap-1.5 sm:gap-2 xl:gap-2.5 w-max lg:w-auto">
-              {[
-                { name: "Web & SaaS", slug: "website-development" },
-                { name: "Mobile Apps", slug: "mobile-app-development" },
-                { name: "Applied AI", slug: "applied-ai-ml" },
-                { name: "Cloud & DevOps", slug: "cloud-devops-hosting" },
-                { name: "UI/UX Design", slug: "graphic-design" },
-                { name: "Marketing", slug: "digital-marketing" },
-                { name: "Automation", slug: "business-automation" },
-                { name: "WhatsApp", slug: "whatsapp-social-commerce-automation" },
-                { name: "ERP Systems", slug: "erp-business-management" },
-              ].map((cap) => {
-                const isActive = slug === cap.slug;
-                return (
-                  <Link
-                    key={cap.slug}
-                    href={`/capabilities/${cap.slug}`}
-                    className={`shrink-0 whitespace-nowrap px-2.5 sm:px-2.5 xl:px-3 py-1.5 rounded-[4px] shadow-none text-[11px] sm:text-[11.5px] xl:text-xs font-semibold uppercase tracking-wide transition-all duration-200 ${
-                      isActive
-                        ? "bg-[#202B61] text-white border border-[#202B61]"
-                        : "bg-white text-[#202B61]/75 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
-                    }`}
-                  >
-                    {cap.name}
-                  </Link>
-                );
-              })}
+            {/* Quick Capability Practice Switcher: Locked at a fixed, comfortable vertical position directly below the content */}
+            <div className="pt-3 sm:pt-4 lg:pt-5 overflow-x-auto no-scrollbar -mx-1 px-1">
+              <div className="flex items-center flex-nowrap gap-1.5 sm:gap-2 xl:gap-2.5 w-max">
+                {[
+                  { name: "Web & SaaS", slug: "website-development" },
+                  { name: "Mobile Apps", slug: "mobile-app-development" },
+                  { name: "Applied AI", slug: "applied-ai-ml" },
+                  { name: "Cloud & DevOps", slug: "cloud-devops-hosting" },
+                  { name: "UI/UX Design", slug: "graphic-design" },
+                  { name: "Marketing", slug: "digital-marketing" },
+                  { name: "Automation", slug: "business-automation" },
+                  { name: "WhatsApp", slug: "whatsapp-social-commerce-automation" },
+                  { name: "ERP Systems", slug: "erp-business-management" },
+                ].map((cap) => {
+                  const isActive = slug === cap.slug;
+                  return (
+                    <Link
+                      key={cap.slug}
+                      href={`/capabilities/${cap.slug}`}
+                      className={`shrink-0 whitespace-nowrap px-2.5 sm:px-2.5 xl:px-3 py-1.5 rounded-[4px] shadow-none text-[11px] sm:text-[11.5px] xl:text-xs font-semibold uppercase tracking-wide transition-all duration-200 ${
+                        isActive
+                          ? "bg-[#202B61] text-white border border-[#202B61]"
+                          : "bg-white text-[#202B61]/75 hover:text-[#202B61] border border-slate-200/90 hover:border-slate-300"
+                      }`}
+                    >
+                      {cap.name}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
