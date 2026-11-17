@@ -41,7 +41,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
       ],
       techStack: ["Shopify Plus / Next.js", "Liquid OS 2.0", "Tailwind CSS", "Cloudflare Edge", "Apple Pay / Tabby", "Stripe Global"],
       gallery: [
-        "/assets/images/works/sillage-hero.png",
+        "/assets/images/works/sillage-campaign-hero.png",
         "/assets/images/works/sillage-showcase.png",
         "/assets/images/works/sillage-collection.png",
       ],
