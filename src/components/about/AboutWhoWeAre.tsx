@@ -10,9 +10,9 @@ const STATS = [
     detail: "Over 15 years of technology innovation, digital architecture, and scalable software solutions.",
   },
   {
-    number: "Dual-Hub",
-    label: "Dubai HQ & Global Delivery",
-    detail: "Headquartered in Business Bay, Dubai, anchoring enterprise strategy and regional governance.",
+    number: "Dubai",
+    label: "Global Headquarters",
+    detail: "Headquartered in Business Bay, Dubai, delivering enterprise digital systems across the UAE and globally.",
   },
   {
     number: "100%",
