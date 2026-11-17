@@ -1853,7 +1853,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "ERP ENGINE",
       title: "Integrated Business Management Systems",
       description: "Integrated ERP covering accounting, inventory, procurement, and reporting, configured around your business.",
-      image: "/assets/images/capabilities/erp-inventory-automation-dashboard.png",
+      image: "/assets/images/capabilities/integrated-enterprise-erp-ecosystem.jpg",
     },
     finalCtaText: "Let's build your ERP system →",
   },
