@@ -162,7 +162,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Web applications & customer dashboards",
         description: "Interactive web applications built on React and Next.js, featuring real-time data visualization, user authentication, and smooth micro-animations.",
-        image: "/assets/images/capabilities/dual-screen-code-dashboard.png",
+        image: "/assets/images/capabilities/web-app-react-dashboard.png",
         imagePosition: "right",
       },
       {
