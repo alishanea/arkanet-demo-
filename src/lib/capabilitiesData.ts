@@ -372,13 +372,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Custom Shopify Liquid & Headless storefronts",
         description: "Tailored Shopify Plus themes and Next.js Hydrogen storefronts designed for extreme speed and high mobile conversion rates.",
-        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/shopify-headless-storefront-hero.png",
         imagePosition: "left",
       },
       {
         title: "Product catalogue & inventory architecture",
         description: "Scalable variant structures, complex matrix bundling, dynamic pricing rules, and real-time multi-warehouse stock management.",
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/ecommerce-catalog-inventory-ar.png",
         imagePosition: "right",
       },
       {
@@ -390,7 +390,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Platform migration with zero SEO loss",
         description: "Expert migration from WooCommerce or legacy engines to Shopify Plus with full SEO redirect mapping and zero downtime.",
-        image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/platform-seo-migration-hud.png",
         imagePosition: "right",
       },
     ],
@@ -398,7 +398,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "E-COMMERCE ENGINE",
       title: "Storefronts Engineered to Convert & Scale",
       description: "Commerce platforms covering catalogue architecture, checkout performance, payment gateways, and post-purchase flows.",
-      image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/works/elixir-showcase.png",
     },
     finalCtaText: "Let's engineer your e-commerce store →",
   },
