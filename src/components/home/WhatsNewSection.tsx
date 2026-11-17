@@ -13,11 +13,11 @@ interface WhatsNewSectionProps {
 const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "sillage-luxury-perfumery",
-    category: "Haute Parfumerie & Luxury Commerce",
-    title: "SIGNATURE by Sillage d'Orient — Haute Parfumerie Flagship",
-    titleLine1: "SIGNATURE by Sillage d'Orient",
-    titleLine2: "Haute Parfumerie Digital Flagship",
-    description: "Bespoke digital flagship for French Haute Parfumerie house Sillage d'Orient, featuring olfactory discovery, localized GCC payments, and sub-second edge performance.",
+    category: "Haute Parfumerie",
+    title: "SIGNATURE by Sillage d'Orient",
+    titleLine1: "SIGNATURE",
+    titleLine2: "by Sillage d'Orient",
+    description: "French Haute Parfumerie digital flagship with bespoke olfactory collections and localized GCC checkout.",
     outerImage: "/assets/images/works/sillage-campaign-hero.png",
     innerImage: "/assets/images/works/sillage-showcase.png",
     liveUrl: "https://sillagedorient.com/",
@@ -50,11 +50,11 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "elixir-luxury-perfumery",
-    category: "Niche Beauty & Omnichannel Platform",
+    category: "Luxury Fragrances",
     title: "Elixir Beauty — Dubai Luxury Artistic Fragrances",
     titleLine1: "Elixir Beauty",
-    titleLine2: "Artistic Fragrance Boutique & E-Commerce",
-    description: "Bespoke digital flagship for Dubai's premier luxury perfume boutique ('Where Scent Meets Art'), featuring curated niche flacons, instant gift wrapping, and seamless Tabby payments.",
+    titleLine2: "Artistic Perfumery",
+    description: "Dubai luxury artistic fragrance boutique featuring curated niche flacons and instant Tabby payments.",
     outerImage: "/assets/images/works/elixir-campaign-hero.png",
     innerImage: "/assets/images/works/elixir-showcase.png",
     gallery: [
@@ -92,11 +92,11 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "ai-mobility-platform",
-    category: "Applied AI & Smart Mobility",
-    title: "AI Mobility Intelligence & Connected City Parking",
-    titleLine1: "AI Mobility Intelligence",
-    titleLine2: "& Connected City Parking",
-    description: "Connected vehicle telemetry, edge computer vision, and automated real-time parking allocation engineered to eliminate congestion and urban transit friction across modern smart cities.",
+    category: "AI Mobility",
+    title: "AI Mobility & Smart Parking",
+    titleLine1: "AI Mobility",
+    titleLine2: "& Smart Parking",
+    description: "Real-time vehicle telemetry and edge computer vision for automated smart parking allocation.",
     outerImage: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -116,11 +116,11 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "healthcare-bigdata-platform",
-    category: "Enterprise Data & HealthTech",
+    category: "Clinical Analytics",
     title: "Healthcare Big Data Lake & Hospital Clinical Analytics",
-    titleLine1: "Healthcare Big Data Lake",
-    titleLine2: "& Hospital Clinical Analytics",
-    description: "High-throughput clinical data lake unifying electronic health records with predictive machine learning pipelines for early cardiovascular risk detection and accelerated treatment.",
+    titleLine1: "Healthcare Data Lake",
+    titleLine2: "& Clinical Analytics",
+    description: "Unified clinical data lake and predictive machine learning models for early cardiac detection.",
     outerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
     innerImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop",
     detail: {
@@ -218,17 +218,17 @@ export const WhatsNewSection: React.FC<WhatsNewSectionProps> = ({ onOpenBooking 
                     </p>
                   </div>
 
-                  {/* Project Headline: Rich, descriptive titles filling available space with crisp, compact spacing */}
+                  {/* Project Headline: Crisp essential title */}
                   <div className="min-h-[2.85rem] sm:h-[3.1rem] lg:h-[3.25rem] flex items-start mb-2">
                     <h3 className="font-heading font-bold text-base sm:text-[17px] lg:text-[18px] text-[#202B61] leading-[1.28] tracking-tight">
-                      <span className="block whitespace-normal sm:whitespace-nowrap">{project.titleLine1 || project.title}</span>
-                      <span className="block whitespace-normal sm:whitespace-nowrap">{project.titleLine2}</span>
+                      <span className="block truncate">{project.titleLine1 || project.title}</span>
+                      <span className="block truncate">{project.titleLine2}</span>
                     </h3>
                   </div>
 
-                  {/* Body Description: Complete 4-line flow */}
-                  <div className="min-h-[5.4rem] sm:min-h-[5.6rem] lg:min-h-[5.8rem] flex items-start pb-1">
-                    <p className="font-sans text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#202B61]/85 leading-[1.58] font-normal text-pretty line-clamp-4">
+                  {/* Body Description: Clean, essential data */}
+                  <div className="min-h-[3.8rem] sm:min-h-[4rem] flex items-start pb-1">
+                    <p className="font-sans text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#202B61]/80 leading-[1.6] font-normal text-pretty line-clamp-3">
                       {project.description}
                     </p>
                   </div>
