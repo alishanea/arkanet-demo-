@@ -13,12 +13,12 @@ interface WhatsNewSectionProps {
 const FEATURED_PROJECTS: WorkProjectDetail[] = [
   {
     id: "sillage-luxury-perfumery",
-    category: "Luxury E-Commerce & Haute Parfumerie",
+    category: "Haute Parfumerie & Luxury Commerce",
     title: "SIGNATURE by Sillage d'Orient — Haute Parfumerie Flagship",
     titleLine1: "SIGNATURE by Sillage d'Orient",
-    titleLine2: "Haute Parfumerie Flagship",
+    titleLine2: "Haute Parfumerie Digital Flagship",
     description: "Bespoke digital flagship for French Haute Parfumerie house Sillage d'Orient, featuring olfactory discovery, localized GCC payments, and sub-second speeds.",
-    outerImage: "/assets/images/works/sillage-hero.png",
+    outerImage: "/assets/images/works/sillage-campaign-hero.png",
     innerImage: "/assets/images/works/sillage-showcase.png",
     liveUrl: "https://sillagedorient.com/",
     detail: {
@@ -50,12 +50,12 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "elixir-luxury-perfumery",
-    category: "Luxury E-Commerce & Perfumery",
+    category: "Niche Beauty & Omnichannel Platform",
     title: "Elixir Beauty — Dubai Luxury Artistic Fragrances",
     titleLine1: "Elixir Beauty",
-    titleLine2: "Dubai Luxury Artistic Fragrances",
+    titleLine2: "Artistic Fragrance Boutique & E-Commerce",
     description: "Bespoke digital flagship for Dubai's premier luxury perfume boutique ('Where Scent Meets Art'), featuring curated flacons, instant gift wrapping, Tabby installments, and sub-second edge loads.",
-    outerImage: "/assets/images/works/elixir-hero.png",
+    outerImage: "/assets/images/works/elixir-campaign-hero.png",
     innerImage: "/assets/images/works/elixir-showcase.png",
     gallery: [
       "/assets/images/works/elixir-hero.png",
@@ -92,7 +92,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "ai-mobility-platform",
-    category: "Applied AI & Mobility",
+    category: "Applied AI & Smart Mobility",
     title: "AI Mobility Intelligence & Connected City Parking",
     titleLine1: "AI Mobility Intelligence",
     titleLine2: "& Connected City Parking",
@@ -116,7 +116,7 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
   },
   {
     id: "healthcare-bigdata-platform",
-    category: "Big Data & HealthTech",
+    category: "Enterprise Data & HealthTech",
     title: "Healthcare Big Data Lake & Hospital Clinical Analytics",
     titleLine1: "Healthcare Big Data Lake",
     titleLine2: "& Hospital Clinical Analytics",
