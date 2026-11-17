@@ -319,7 +319,7 @@ export default function CapabilityDetailPage() {
               </div>
 
               {/* Right Image with Hover Effect & Radius < 5 */}
-              <div className="group relative aspect-[4/3] rounded-[4px] overflow-hidden border border-slate-200 bg-slate-100 shadow-none">
+              <div className="group relative aspect-[16/10] rounded-[4px] overflow-hidden border border-slate-200 bg-slate-100 shadow-none">
                 <img
                   src={data.techShowcase?.image || data.heroImages.center}
                   alt={data.techShowcase?.title || "Tech Architecture"}

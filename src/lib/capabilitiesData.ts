@@ -390,7 +390,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Platform migration with zero SEO loss",
         description: "Expert migration from WooCommerce or legacy engines to Shopify Plus with full SEO redirect mapping and zero downtime.",
-        image: "/assets/images/capabilities/platform-seo-migration-hud.png",
+        image: "/assets/images/capabilities/platform-seo-migration-analytics.png",
         imagePosition: "right",
       },
     ],
