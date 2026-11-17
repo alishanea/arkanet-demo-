@@ -65,17 +65,17 @@ export default function CapabilityDetailPage() {
 
         {/* Foreground Content: Fill the screen width, Left Aligned to 1400px Grid (Flush with Logo) */}
         <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto text-left">
-          {/* Headline & Subtitle constrained to left column so right side hardware mockup shines */}
-          <div className="max-w-2xl lg:max-w-3xl xl:max-w-4xl text-left">
+          {/* Headline & Subtitle: Sized and formatted to guarantee clean 2-line rendering matching reference design */}
+          <div className="max-w-3xl lg:max-w-4xl xl:max-w-5xl text-left">
             {/* Static Height Container: Guarantees button row never shifts vertically across practice tabs */}
-            <div className="space-y-4 sm:space-y-5 flex flex-col justify-start min-h-[180px] sm:min-h-[200px] lg:min-h-[220px]">
-              <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-[52px] xl:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
-                {data.title} <br />
-                <span className="text-[#202B61]">{data.highlightText}</span>
+            <div className="space-y-4 sm:space-y-5 flex flex-col justify-start min-h-[170px] sm:min-h-[190px] lg:min-h-[210px]">
+              <h1 className="hero-h1 font-heading font-extrabold text-3xl sm:text-4xl lg:text-[44px] xl:text-[52px] text-[#202B61] tracking-tight leading-[1.12]">
+                <span className="block lg:whitespace-nowrap">{data.title}</span>
+                <span className="block text-[#202B61] lg:whitespace-nowrap">{data.highlightText}</span>
               </h1>
 
               {data.subtitle && (
-                <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-2xl lg:max-w-3xl">
+                <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-2xl lg:max-w-3xl line-clamp-2">
                   {data.subtitle}
                 </p>
               )}
