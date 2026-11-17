@@ -14,7 +14,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "The team at Arkanet are true professionals, masters in their field, with meticulous attention to detail.",
+      "The team at Arkanet are true professionals, masters in their field, with meticulous attention to detail and zero technical compromises.",
     author: "Vanessa Katsanevakis",
     role: "Director",
     company: "Sussex Taps",
@@ -91,8 +91,26 @@ export function AboutTestimonials() {
   const testimonial = testimonials[active];
 
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none font-sans">
-      <div className="max-w-[1400px] mx-auto">
+    <section 
+      id="feedback"
+      className="w-full py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-12 bg-white border-b border-slate-200/80 text-left select-none font-sans scroll-mt-24"
+    >
+      <div className="max-w-[1400px] mx-auto space-y-10 sm:space-y-12">
+        
+        {/* Section Heading */}
+        <div className="max-w-3xl space-y-3 text-left">
+          <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.25em] text-[#202B61]/70 font-sans">
+            Client Feedback &amp; Reviews
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#202B61] tracking-tight">
+            What Our Clients Say
+          </h2>
+          <p className="font-sans text-base sm:text-lg text-[#202B61]/80 leading-relaxed font-normal text-pretty">
+            Real feedback from executive leaders, product directors, and founders who trust Arkanet with their mission-critical digital systems.
+          </p>
+        </div>
+
+        {/* Testimonial Feature Card */}
         <div className="relative w-full bg-[#151E48] text-white rounded-2xl p-8 sm:p-12 lg:p-16 border border-[#253272] shadow-sm flex flex-col justify-between min-h-[360px] sm:min-h-[380px]">
           
           {/* Top Quote Content */}
@@ -162,7 +180,11 @@ export function AboutTestimonials() {
           )}
 
         </div>
+
       </div>
     </section>
   );
 }
+
+// Named alias for convenience
+export const AboutFeedback = AboutTestimonials;
