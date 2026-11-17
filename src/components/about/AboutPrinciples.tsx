@@ -6,8 +6,8 @@ import { Shield, Cpu, Zap, Layers } from "lucide-react";
 const PILLARS = [
   {
     icon: Layers,
-    title: "Engineering Discipline & High Availability",
-    desc: "Strict code reviews, automated CI/CD validation, zero technical shortcuts, and WCAG AA accessibility standards engineered for 99.9% enterprise uptime.",
+    title: "Dual-Hub Innovation Synergy",
+    desc: "Strategic headquarters in Kelakam paired with Dubai corporate office, bridging regional engineering talent with demanding global enterprise technology standards.",
   },
   {
     icon: Cpu,

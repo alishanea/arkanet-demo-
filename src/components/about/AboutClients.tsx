@@ -34,59 +34,51 @@ const CLIENT_LOGOS: ClientLogo[] = [
 ];
 
 export function AboutClients() {
-  // Duplicate array once for seamless infinite loop
+  // Duplicate array once for seamless -50% infinite trailing train loop
   const trailingLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
   return (
     <section
       id="clients"
-      className="relative w-full bg-white text-[#202B61] select-none py-16 sm:py-20 lg:py-24 border-b border-slate-200/80 overflow-hidden font-sans scroll-mt-24"
+      className="relative w-full bg-white text-[#202B61] select-none py-10 sm:py-12 lg:py-14 border-b border-slate-200/80 overflow-hidden font-sans scroll-mt-24"
     >
-      <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-8 lg:px-12 space-y-10 sm:space-y-12">
-        
-        {/* Section Header */}
-        <div className="max-w-3xl space-y-3 text-left">
-          <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.25em] text-[#202B61]/70 font-sans">
-            Trusted Partnerships
-          </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#202B61] tracking-tight">
+      <div className="w-full">
+        {/* Subtle Section Label */}
+        <div className="text-center mb-6 sm:mb-8">
+          <p className="text-xs sm:text-[13px] font-bold uppercase tracking-[0.28em] text-[#202B61] font-sans leading-none">
             Our Clients
-          </h2>
-          <p className="font-sans text-base sm:text-lg text-[#202B61]/80 leading-relaxed font-normal text-pretty">
-            Trusted by leading enterprises, government partners, and ambitious brands across the UAE, GCC, and global markets.
           </p>
         </div>
 
-        {/* Trailing Marquee Container with Soft Fade Edges */}
-        <div className="relative w-full overflow-hidden flex items-center group pt-4">
-          {/* Left Gradient Fade Mask */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 lg:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        {/* Trailing Marquee Container with Soft Fade Edges (Continuous Seamless Movement, No Boxes) */}
+        <div className="relative w-full overflow-hidden flex items-center group">
+          {/* Left Trailing Gradient Fade Mask */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
 
-          {/* Continuous Trailing Track */}
+          {/* Continuous Trailing Track (Simply Move) */}
           <div
             className="flex shrink-0 items-center animate-marquee group-hover:[animation-play-state:paused]"
-            style={{ animationDuration: "55s" }}
+            style={{ animationDuration: "60s" }}
           >
             {trailingLogos.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
-                className="mx-6 sm:mx-8 lg:mx-10 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
+                className="mx-5 sm:mx-7 lg:mx-9 shrink-0 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-105"
                 title={logo.alt}
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  loading="lazy"
-                  className="h-10 sm:h-12 lg:h-14 max-h-14 max-w-[180px] sm:max-w-[220px] w-auto object-contain opacity-75 hover:opacity-100 transition-all duration-300"
+                  loading="eager"
+                  className="h-10 sm:h-12 lg:h-14 max-h-14 max-w-[180px] sm:max-w-[220px] w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}
           </div>
 
-          {/* Right Gradient Fade Mask */}
-          <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 lg:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          {/* Right Trailing Gradient Fade Mask */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 lg:w-60 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
         </div>
-
       </div>
     </section>
   );
