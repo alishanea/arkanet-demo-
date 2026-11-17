@@ -660,7 +660,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Multi-cloud architecture & provisioning",
         description: "Cloud infrastructure setup tailored for performance and cost efficiency across AWS, Google Cloud, and Azure environments.",
-        image: "/assets/images/capabilities/cloud-infrastructure-glowing-mesh.png",
+        image: "/assets/images/capabilities/multi-cloud-topology-dell-ultrawide.png",
         imagePosition: "left",
       },
       {
@@ -1833,7 +1833,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Multi-branch inventory & warehouse control",
         description: "Real-time inventory tracking across multiple warehouses with barcode scanning, reorder triggers, and stock transfer logs.",
-        image: "/assets/images/capabilities/automated-highbay-warehouse-logistics.png",
+        image: "/assets/images/capabilities/warehouse-tablet-inventory-scanner-hd.png",
         imagePosition: "right",
       },
       {
@@ -1845,7 +1845,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Sales CRM & customer account management",
         description: "Centralized sales CRM unifying lead funnels, quotation generation, automated contracts, and customer account records.",
-        image: "/assets/images/capabilities/b2b-sales-crm-network-hub.png",
+        image: "/assets/images/capabilities/b2b-sales-crm-deal-desk.png",
         imagePosition: "right",
       },
     ],
@@ -2192,7 +2192,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Paid search & social performance ads",
         description: "Precision PPC campaigns on Google Search, LinkedIn Ads, Meta, and TikTok optimized for customer acquisition cost.",
-        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/ad-analytics-dashboard-macbook.png",
         imagePosition: "left",
       },
       {
