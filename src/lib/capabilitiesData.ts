@@ -378,7 +378,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Product catalogue & inventory architecture",
         description: "Scalable variant structures, complex matrix bundling, dynamic pricing rules, and real-time multi-warehouse stock management.",
-        image: "/assets/images/capabilities/ecommerce-catalog-inventory-ar.png",
+        image: "/assets/images/capabilities/ecommerce-catalog-matrix-inventory.jpg",
         imagePosition: "right",
       },
       {
