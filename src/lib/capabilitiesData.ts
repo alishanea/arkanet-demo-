@@ -522,7 +522,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Vendor & Partner Ecosystem Portals",
         description: "Collaborative portals for suppliers and partners to manage inventory claims, submit compliance docs, and track payouts.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/multi-device-global-operations-desk.png",
         imagePosition: "right",
       },
       {
@@ -1546,7 +1546,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Automated order confirmation & delivery updates",
         description: "Triggering automated shipping alerts, tracking links, and feedback requests when orders update in your ERP.",
-        image: "https://images.unsplash.com/photo-1526367790999-0150786686a2?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/warehouse-robotics-fulfillment.png",
         imagePosition: "left",
       },
       {
@@ -1827,25 +1827,25 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Accounting & VAT-compliant invoicing",
         description: "Automated billing pipelines tailored for UAE/GCC VAT regulations, multi-currency invoicing, and regional tax compliance.",
-        image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/vat-accounting-financial-audit.png",
         imagePosition: "left",
       },
       {
         title: "Multi-branch inventory & warehouse control",
         description: "Real-time inventory tracking across multiple warehouses with barcode scanning, reorder triggers, and stock transfer logs.",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/automated-highbay-warehouse-logistics.png",
         imagePosition: "right",
       },
       {
         title: "Procurement & vendor approval workflows",
         description: "Comprehensive procurement workflows with vendor scorecards, automated purchase orders, and multi-tier approval rules.",
-        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/procurement-contract-approval-review.png",
         imagePosition: "left",
       },
       {
         title: "Sales CRM & customer account management",
         description: "Centralized sales CRM unifying lead funnels, quotation generation, automated contracts, and customer account records.",
-        image: "/assets/images/capabilities/enterprise-command-center.png",
+        image: "/assets/images/capabilities/b2b-sales-crm-network-hub.png",
         imagePosition: "right",
       },
     ],
@@ -1853,7 +1853,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "ERP ENGINE",
       title: "Integrated Business Management Systems",
       description: "Integrated ERP covering accounting, inventory, procurement, and reporting, configured around your business.",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/holographic-erp-analytics-dashboard.png",
     },
     finalCtaText: "Let's build your ERP system →",
   },
@@ -2210,7 +2210,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Attribution setup & performance analytics",
         description: "GA4, server-side tracking, and multi-touch attribution models showing exact ROAS.",
-        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/mobile-desktop-synchronized-analytics.png",
         imagePosition: "right",
       },
     ],
@@ -2218,7 +2218,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "REVENUE MARKETING",
       title: "Marketing Tied to Revenue, Not Vanity Metrics",
       description: "Every campaign measured against qualified leads and sales pipeline, reported transparently every month.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/executive-strategy-financial-review.png",
     },
     finalCtaText: "Let's get you more qualified leads →",
   },
