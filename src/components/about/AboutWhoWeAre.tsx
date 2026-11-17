@@ -11,8 +11,8 @@ const STATS = [
   },
   {
     number: "Dual-Hub",
-    label: "Kerala HQ & Dubai Presence",
-    detail: "Bridging regional insights with global enterprise technological standards.",
+    label: "Dubai HQ & Global Delivery",
+    detail: "Headquartered in Business Bay, Dubai, anchoring enterprise strategy and regional governance.",
   },
   {
     number: "100%",
@@ -41,7 +41,7 @@ export function AboutWhoWeAre() {
               A passionate team of tech enthusiasts, creatives, and problem solvers
             </h2>
             <p className="font-sans text-sm sm:text-[15px] lg:text-base text-slate-200 leading-[1.65] font-normal">
-              Based in Kannur, Kerala with global presence in Business Bay, Dubai, Arkanet Technologies combines diverse backgrounds and deep engineering expertise to create a powerhouse of digital talent. From web development wizards to AI and digital marketing mavens, we have the skills to turn your vision into a digital masterpiece.
+              Headquartered in Business Bay, Dubai, Arkanet Technologies is a premier enterprise digital innovation and technology group. Combining high-touch technology governance with deep engineering expertise, we turn strategic business vision into scalable digital systems. From bespoke web and mobile platforms to applied AI pipelines, we deliver end-to-end enterprise software solutions.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export function AboutWhoWeAre() {
               Our mission is to empower businesses and individuals with innovative solutions that drive measurable success in an ever-evolving digital landscape. We are committed to delivering excellence through creativity, technology, and unwavering dedication to our clients — staying ahead of industry trends, working collaboratively on tailor-made architectures, and building long-term relationships with ongoing support after project launch.
             </p>
             <p>
-              As part of a next-generation global technology group, our software, cloud, and artificial intelligence offerings are built on over 15 years of market expertise and enterprise engagements. With our India operations centered in Kelakam, Kannur, we provide agile delivery, transparent sprint reporting, and direct engineering access that modern businesses rely on.
+              As part of a next-generation global technology group, our software, cloud, and artificial intelligence offerings are built on over 15 years of market expertise and enterprise engagements. With our corporate headquarters in Dubai (UAE) and dedicated engineering centers, we provide agile delivery, transparent sprint reporting, and direct engineering access that modern businesses rely on.
             </p>
           </div>
         </div>
