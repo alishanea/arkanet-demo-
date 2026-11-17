@@ -312,7 +312,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "White-label & custom domains",
         description: "Custom domain mapping, SSL provisioning, and custom branding allowing your enterprise customers to white-label your SaaS.",
-        image: "/assets/images/capabilities/cloud-telemetry-data-pipeline.png",
+        image: "/assets/images/capabilities/white-label-cloud-domain-ssl.png",
         imagePosition: "left",
       },
       {
