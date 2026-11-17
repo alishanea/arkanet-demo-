@@ -8,6 +8,7 @@ export interface WorkProject {
   services?: string[];
   outerImage?: string;
   innerImage?: string;
+  gallery?: string[];
   liveUrl?: string;
 }
 
@@ -20,6 +21,7 @@ export interface ProjectDetail {
   solution: string;
   impact: string[];
   techStack: string[];
+  gallery?: string[];
   liveUrl?: string;
 }
 
@@ -46,31 +48,43 @@ export const PROJECT_DETAILS_MAP: Record<string, ProjectDetail> = {
       "Flawless mobile presentation showcasing high-resolution fragrance imagery without lag",
     ],
     techStack: ["Shopify Plus / Next.js", "Liquid OS 2.0", "Tailwind CSS", "Cloudflare Edge", "Apple Pay / Tabby", "Stripe Global"],
+    gallery: [
+      "/assets/images/works/sillage-hero.png",
+      "/assets/images/works/sillage-showcase.png",
+      "/assets/images/works/sillage-collection.png",
+    ],
     liveUrl: "https://sillagedorient.com/",
   },
   "elixir-luxury-perfumery": {
-    client: "SIGNATURE by Sillage d'Orient (Paris | France)",
+    client: "Elixir Beauty (Dubai | UAE)",
     year: "2025",
     services: [
-      "Bespoke Haute Parfumerie Storefront",
-      "Olfactory Collection Discovery Engine",
-      "GCC & Global Multi-Currency Checkout",
-      "Editorial Brand Storytelling & Media",
-      "Cloudflare Edge Optimization & Sub-Second Loads",
+      "Haute Parfumerie & Niche Fragrance Storefront",
+      "Olfactory Brand Discovery Engine (Roja, Amouage, Nishane)",
+      "UAE Instant Delivery & Luxury Gift Wrapping System",
+      "Frictionless GCC Checkout (Apple Pay & Tabby Installments)",
+      "Sub-Second Edge Infrastructure & Cloudflare CDN",
     ],
     overview:
-      "SIGNATURE by Sillage d'Orient (sillagedorient.com) is a prestigious French Haute Parfumerie house fusing French savoir-faire with the richness of Oriental inspiration. Arkanet engineered an ultra-fast, bespoke digital flagship that showcases master-crafted fragrance jewels (Santal, Charm, Oud, Rose, Jade, and Diamond) with an immersive, high-elegance shopping experience.",
+      "Elixir Beauty (elixirbeauty.com) is Dubai's distinguished luxury artistic perfumery boutique ('Where Scent Meets Art'). Curating the world's most coveted niche flacons—including Roja Parfums, Amouage, Nishane, Rosendo Mateu, HFC Paris, Ormonde Jayne, and Vilhelm Parfumerie—Elixir partnered with Arkanet to craft an opulent, high-velocity digital flagship that matches the prestige of Dubai's luxury boutiques.",
     challenge:
-      "Luxury perfumery requires uncompromising digital elegance: capturing the tactile richness of gold-embossed bottles and rare ingredients online, delivering lightning-fast olfactory note discovery, and providing seamless multi-currency checkout across Europe, the UAE, and global markets.",
+      "Niche perfume buyers expect sensory sophistication and immediate trust: ultra-high-definition presentation of rare flacons, effortless filtering across unisex, men, and women categories, instant gift wrapping requests, and friction-free payment options across the UAE and GCC without any layout shift or delay.",
     solution:
-      "Arkanet designed and deployed a high-performance custom architecture featuring responsive luxury editorial showcases, dynamic fragrance note filtering, localized regional payment gateways, and edge CDN distribution achieving sub-1.1s page speeds worldwide.",
+      "Arkanet engineered a high-performance luxury Shopify Plus / Next.js architecture featuring editorial visual storytelling, real-time stock sync with retail boutiques, localized GCC checkout with Tabby and Apple Pay, and sub-second edge delivery ensuring instantaneous page loads across mobile Safari and desktop.",
     impact: [
-      "+175% Increase in international brand engagement and digital conversions",
-      "Sub-1.1s Page load times across France, GCC (UAE/Saudi), and global visitors",
-      "Flawless mobile presentation showcasing high-resolution fragrance imagery without lag",
+      "+210% Surge in digital luxury sales and average order value across the UAE",
+      "0.82s Global LCP with 100% Core Web Vitals across mobile devices",
+      "99.4% Customer checkout satisfaction rate with instant Apple Pay and Tabby integration",
     ],
-    techStack: ["Shopify Plus / Next.js", "Liquid OS 2.0", "Tailwind CSS", "Cloudflare Edge", "Apple Pay / Tabby", "Stripe Global"],
-    liveUrl: "https://sillagedorient.com/",
+    techStack: ["Shopify Plus", "Liquid OS 2.0", "Next.js", "Tailwind CSS", "Apple Pay / Tabby", "Cloudflare Edge"],
+    gallery: [
+      "/assets/images/works/elixir-hero.png",
+      "/assets/images/works/elixir-showcase.png",
+      "/assets/images/works/elixir-collection.png",
+      "/assets/images/works/elixir-bestsellers.png",
+      "/assets/images/works/elixir-curation.png",
+    ],
+    liveUrl: "https://www.elixirbeauty.com/?srsltid=AYCX9vJt79xLSRhIDFqkx_cpvEVMb0Kcp-2lh2IRvVhLiVQAvbi8fwh_",
   },
   "ai-mobility-platform": {
     client: "Dubai Smart Mobility Initiative",
@@ -355,9 +369,33 @@ export const WORK_PROJECTS: WorkProject[] = [
     image: "/assets/images/works/sillage-hero.png",
     outerImage: "/assets/images/works/sillage-hero.png",
     innerImage: "/assets/images/works/sillage-showcase.png",
+    gallery: [
+      "/assets/images/works/sillage-hero.png",
+      "/assets/images/works/sillage-showcase.png",
+      "/assets/images/works/sillage-collection.png",
+    ],
     year: "2025",
     services: ["French Haute Parfumerie", "Luxury E-Commerce", "Olfactory Notes Discovery", "Edge Caching"],
     liveUrl: "https://sillagedorient.com/",
+  },
+  {
+    id: "elixir-luxury-perfumery",
+    category: "Websites",
+    title: "Elixir Beauty — Luxury Artistic Fragrances",
+    description: "Dubai's premier luxury fragrance boutique digital flagship ('Where Scent Meets Art'), showcasing curated artistic flacons (Roja Parfums, Amouage, Nishane, Rosendo Mateu), personalized gift-wrapping, UAE instant delivery, and seamless Tabby / Apple Pay checkout.",
+    image: "/assets/images/works/elixir-hero.png",
+    outerImage: "/assets/images/works/elixir-hero.png",
+    innerImage: "/assets/images/works/elixir-showcase.png",
+    gallery: [
+      "/assets/images/works/elixir-hero.png",
+      "/assets/images/works/elixir-showcase.png",
+      "/assets/images/works/elixir-collection.png",
+      "/assets/images/works/elixir-bestsellers.png",
+      "/assets/images/works/elixir-curation.png",
+    ],
+    year: "2025",
+    services: ["Luxury E-Commerce", "Niche Fragrance Discovery", "UAE Delivery & Tabby", "Shopify Plus / Next.js"],
+    liveUrl: "https://www.elixirbeauty.com/?srsltid=AYCX9vJt79xLSRhIDFqkx_cpvEVMb0Kcp-2lh2IRvVhLiVQAvbi8fwh_",
   },
   {
     id: "ai-mobility-platform",

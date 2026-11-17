@@ -63,6 +63,7 @@ export interface WorkProjectDetail {
   outerImage?: string;
   innerImage?: string;
   image?: string;
+  gallery?: string[];
   liveUrl?: string;
   detail?: {
     client: string;
@@ -73,6 +74,7 @@ export interface WorkProjectDetail {
     solution: string;
     impact: string[];
     techStack: string[];
+    gallery?: string[];
     liveUrl?: string;
   };
 }
@@ -280,16 +282,59 @@ export const WorkDetailModal: React.FC<WorkDetailModalProps> = ({
                   </div>
                 </div>
 
-                {/* ── SECONDARY SHOWCASE GALLERY (IF AVAILABLE) ── */}
-                {currentProject.innerImage && currentProject.innerImage !== (currentProject.outerImage || currentProject.image) && (
-                  <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/70 shadow-sm">
-                    <img
-                      src={currentProject.innerImage}
-                      alt={`${currentProject.title} In-Depth Showcase`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
+                {/* ── FLAGSHIP LIVE GALLERY / SHOWCASE VIEWS ── */}
+                {(() => {
+                  const gallery = currentProject.gallery || details.gallery;
+                  const heroSrc = currentProject.outerImage || currentProject.image;
+                  
+                  if (gallery && gallery.length > 0) {
+                    const extraScreenshots = gallery.filter((src) => src !== heroSrc);
+                    if (extraScreenshots.length > 0) {
+                      return (
+                        <div className="space-y-4 pt-1">
+                          <div className="flex items-center justify-between">
+                            <h3 className="font-heading font-bold text-lg sm:text-xl text-[#202B61]">
+                              Live Flagship Experience &amp; Architecture
+                            </h3>
+                            <span className="text-xs font-semibold text-slate-500 font-sans">
+                              {extraScreenshots.length} Live Showcases
+                            </span>
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                            {extraScreenshots.map((imgSrc, idx) => (
+                              <div
+                                key={idx}
+                                className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 shadow-sm group"
+                              >
+                                <img
+                                  src={imgSrc}
+                                  alt={`${currentProject.title} showcase view ${idx + 1}`}
+                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                                  loading="lazy"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    }
+                  }
+
+                  // Fallback to single innerImage if no gallery specified
+                  if (currentProject.innerImage && currentProject.innerImage !== heroSrc) {
+                    return (
+                      <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/70 shadow-sm">
+                        <img
+                          src={currentProject.innerImage}
+                          alt={`${currentProject.title} In-Depth Showcase`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    );
+                  }
+
+                  return null;
+                })()}
 
                 {/* ── 4. KEY BUSINESS IMPACT CARD ── */}
                 <div className="bg-white rounded-2xl border border-slate-200/90 p-7 sm:p-10 lg:p-12 shadow-2xs space-y-8">

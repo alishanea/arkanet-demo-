@@ -127,13 +127,15 @@ export const APPLICATIONS: ApplicationItem[] = [
     rating: 5.0,
     reviewsCount: "1,240 reviews",
     platformBadge: "Shopify Plus",
-    previewImage: "/assets/images/elixir-hero.png",
+    previewImage: "/assets/images/works/elixir-hero.png",
     screenshots: [
-      "/assets/images/elixir-hero.png",
-      "/assets/images/elixir-showcase.png",
-      "/assets/images/elixir-perfume.png",
+      "/assets/images/works/elixir-hero.png",
+      "/assets/images/works/elixir-showcase.png",
+      "/assets/images/works/elixir-collection.png",
+      "/assets/images/works/elixir-bestsellers.png",
+      "/assets/images/works/elixir-curation.png",
     ],
-    liveUrl: "https://www.elixirbeauty.com",
+    liveUrl: "https://www.elixirbeauty.com/?srsltid=AYCX9vJt79xLSRhIDFqkx_cpvEVMb0Kcp-2lh2IRvVhLiVQAvbi8fwh_",
     description:
       "Bespoke Shopify Plus storefront engineered for Dubai's luxury fragrance house, featuring bilingual Arabic (RTL) & English, Tabby installment payments, Apple Pay, and sub-1.2s edge loads.",
     metrics: {

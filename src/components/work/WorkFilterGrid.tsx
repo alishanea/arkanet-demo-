@@ -27,6 +27,7 @@ export const WorkFilterGrid: React.FC = () => {
         aspectY: 10,
         outerImage: selectedProject.outerImage || selectedProject.image,
         innerImage: selectedProject.innerImage || selectedProject.image,
+        gallery: selectedProject.gallery || PROJECT_DETAILS_MAP[selectedProject.id]?.gallery,
         liveUrl: selectedProject.liveUrl || PROJECT_DETAILS_MAP[selectedProject.id]?.liveUrl,
         detail: PROJECT_DETAILS_MAP[selectedProject.id] || {
           client: selectedProject.title,

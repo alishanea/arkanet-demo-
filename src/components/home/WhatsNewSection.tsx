@@ -40,7 +40,54 @@ const FEATURED_PROJECTS: WorkProjectDetail[] = [
         "Flawless mobile presentation showcasing high-resolution fragrance imagery without lag",
       ],
       techStack: ["Shopify Plus / Next.js", "Liquid OS 2.0", "Tailwind CSS", "Cloudflare Edge", "Apple Pay / Tabby", "Stripe Global"],
+      gallery: [
+        "/assets/images/works/sillage-hero.png",
+        "/assets/images/works/sillage-showcase.png",
+        "/assets/images/works/sillage-collection.png",
+      ],
       liveUrl: "https://sillagedorient.com/",
+    },
+  },
+  {
+    id: "elixir-luxury-perfumery",
+    category: "Luxury E-Commerce & Perfumery",
+    title: "Elixir Beauty — Dubai Luxury Artistic Fragrances",
+    titleLine1: "Elixir Beauty",
+    titleLine2: "Dubai Luxury Artistic Fragrances",
+    description: "Bespoke digital flagship for Dubai's premier luxury perfume boutique ('Where Scent Meets Art'), featuring curated flacons, instant gift wrapping, Tabby installments, and sub-second edge loads.",
+    outerImage: "/assets/images/works/elixir-hero.png",
+    innerImage: "/assets/images/works/elixir-showcase.png",
+    gallery: [
+      "/assets/images/works/elixir-hero.png",
+      "/assets/images/works/elixir-showcase.png",
+      "/assets/images/works/elixir-collection.png",
+      "/assets/images/works/elixir-bestsellers.png",
+      "/assets/images/works/elixir-curation.png",
+    ],
+    liveUrl: "https://www.elixirbeauty.com/?srsltid=AYCX9vJt79xLSRhIDFqkx_cpvEVMb0Kcp-2lh2IRvVhLiVQAvbi8fwh_",
+    detail: {
+      client: "Elixir Beauty (Dubai | UAE)",
+      year: "2025",
+      services: [
+        "Haute Parfumerie & Niche Fragrance Storefront",
+        "Olfactory Brand Discovery Engine (Roja, Amouage, Nishane)",
+        "UAE Instant Delivery & Luxury Gift Wrapping System",
+        "Frictionless GCC Checkout (Apple Pay & Tabby Installments)",
+        "Sub-Second Edge Infrastructure & Cloudflare CDN",
+      ],
+      overview:
+        "Elixir Beauty (elixirbeauty.com) is Dubai's distinguished luxury artistic perfumery boutique ('Where Scent Meets Art'). Curating the world's most coveted niche flacons—including Roja Parfums, Amouage, Nishane, Rosendo Mateu, HFC Paris, Ormonde Jayne, and Vilhelm Parfumerie—Elixir partnered with Arkanet to craft an opulent, high-velocity digital flagship that matches the prestige of Dubai's luxury boutiques.",
+      challenge:
+        "Niche perfume buyers expect sensory sophistication and immediate trust: ultra-high-definition presentation of rare flacons, effortless filtering across unisex, men, and women categories, instant gift wrapping requests, and friction-free payment options across the UAE and GCC without any layout shift or delay.",
+      solution:
+        "Arkanet engineered a high-performance luxury Shopify Plus / Next.js architecture featuring editorial visual storytelling, real-time stock sync with retail boutiques, localized GCC checkout with Tabby and Apple Pay, and sub-second edge delivery ensuring instantaneous page loads across mobile Safari and desktop.",
+      impact: [
+        "+210% Surge in digital luxury sales and average order value across the UAE",
+        "0.82s Global LCP with 100% Core Web Vitals across mobile devices",
+        "99.4% Customer checkout satisfaction rate with instant Apple Pay and Tabby integration",
+      ],
+      techStack: ["Shopify Plus", "Liquid OS 2.0", "Next.js", "Tailwind CSS", "Apple Pay / Tabby", "Cloudflare Edge"],
+      liveUrl: "https://www.elixirbeauty.com/?srsltid=AYCX9vJt79xLSRhIDFqkx_cpvEVMb0Kcp-2lh2IRvVhLiVQAvbi8fwh_",
     },
   },
   {
