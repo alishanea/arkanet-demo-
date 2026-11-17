@@ -1462,7 +1462,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Cross-application automated handoffs",
         description: "Connecting your sales, operations, and accounting software into automated trigger pipelines.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/automation-rules-compliance-cards.png",
         imagePosition: "left",
       },
       {
@@ -1534,7 +1534,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "WhatsApp Business API & green tick setup",
         description: "Official Meta API integration allowing high-volume message throughput and multi-agent customer support.",
-        image: "/assets/images/capabilities/chatgpt-mobile-screen.png",
+        image: "/assets/images/capabilities/whatsapp-api-verification-flow.png",
         imagePosition: "left",
       },
       {
@@ -1560,7 +1560,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "CHAT COMMERCE",
       title: "WhatsApp & Social Commerce Automation Engine",
       description: "Automated commerce on WhatsApp API, Instagram, and Facebook: catalogue browsing, order placement, and payments.",
-      image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/workflow-automation-hologram-laptop.png",
     },
     finalCtaText: "Let's automate your WhatsApp commerce →",
   },
