@@ -21,8 +21,8 @@ export function AboutHero() {
       <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center flex flex-col items-center justify-center">
         <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6">
           <h1 className="hero-h1 text-[#202B61] text-center">
-            The Digital Innovation<br />
-            Company
+            Architects of Modern<br />
+            Digital Infrastructure
           </h1>
 
           <p className="hero-sub font-medium text-[#202B61] leading-[1.65] max-w-2xl sm:max-w-3xl text-center mx-auto text-pretty">
