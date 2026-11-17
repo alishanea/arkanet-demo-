@@ -63,23 +63,24 @@ export default function CapabilityDetailPage() {
           <div className="absolute inset-0 bg-white/75 sm:bg-white/60 lg:hidden pointer-events-none z-[1]" />
         </div>
 
-        {/* Foreground Content: Title + Subtitle centered vertically in the hero stage */}
-        <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto space-y-5 w-full max-w-5xl lg:max-w-6xl">
-          <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
-            {data.title} <br />
-            <span className="text-[#202B61]">{data.highlightText}</span>
-          </h1>
+        {/* Foreground Content: Title + Subtitle + Switcher positioned comfortably on the left */}
+        <div className="relative z-10 max-w-[1400px] mx-auto w-full my-auto max-w-5xl lg:max-w-6xl">
+          {/* Static Height Text Container: Guarantees button row never shifts vertically across practice tabs */}
+          <div className="space-y-4 sm:space-y-5 flex flex-col justify-start min-h-[220px] sm:min-h-[250px] lg:min-h-[280px] xl:min-h-[290px]">
+            <h1 className="hero-h1 font-heading font-extrabold text-4xl sm:text-5xl lg:text-[52px] xl:text-6xl text-[#202B61] tracking-tight leading-[1.08]">
+              {data.title} <br />
+              <span className="text-[#202B61]">{data.highlightText}</span>
+            </h1>
 
-          {data.subtitle && (
-            <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-3xl">
-              {data.subtitle}
-            </p>
-          )}
-        </div>
+            {data.subtitle && (
+              <p className="hero-sub font-sans font-medium text-[#202B61] leading-relaxed max-w-3xl">
+                {data.subtitle}
+              </p>
+            )}
+          </div>
 
-        {/* Quick Capability Practice Switcher: Locked at a single fixed position at the bottom across all pages */}
-        <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-0 right-0 z-10 px-4 sm:px-8 lg:px-12 pointer-events-auto">
-          <div className="max-w-[1400px] mx-auto w-full overflow-x-auto no-scrollbar -mx-1 px-1">
+          {/* Quick Capability Practice Switcher: Locked at a fixed, comfortable vertical position directly below the content */}
+          <div className="pt-3 sm:pt-4 lg:pt-5 overflow-x-auto no-scrollbar -mx-1 px-1">
             <div className="flex items-center flex-nowrap gap-1.5 sm:gap-2 xl:gap-2.5 w-max lg:w-auto">
               {[
                 { name: "Web & SaaS", slug: "website-development" },
