@@ -398,7 +398,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "E-COMMERCE ENGINE",
       title: "Storefronts Engineered to Convert & Scale",
       description: "Commerce platforms covering catalogue architecture, checkout performance, payment gateways, and post-purchase flows.",
-      image: "/assets/images/works/elixir-showcase.png",
+      image: "/assets/images/capabilities/ecommerce-storefront-laptop-showcase.jpg",
     },
     finalCtaText: "Let's engineer your e-commerce store →",
   },
