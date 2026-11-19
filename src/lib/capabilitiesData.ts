@@ -2218,7 +2218,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "REVENUE MARKETING",
       title: "Marketing Tied to Revenue, Not Vanity Metrics",
       description: "Every campaign measured against qualified leads and sales pipeline, reported transparently every month.",
-      image: "/assets/images/capabilities/executive-strategy-financial-review.png",
+      image: "/assets/images/capabilities/revenue-marketing-attribution-dashboard.jpg",
     },
     finalCtaText: "Let's get you more qualified leads →",
   },
