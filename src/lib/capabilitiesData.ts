@@ -771,7 +771,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
   // 2.1 Applied AI & ML
   "applied-ai-ml": {
     slug: "applied-ai-ml",
-    bgImage: "/assets/images/ai-chat-bots.jpg",
+    bgImage: "/assets/images/capabilities/applied-ai-ml-hero-bg.jpg",
     badge: "APPLIED AI & ML",
     title: "Custom models, built & evaluated",
     highlightText: "against your actual business metric",
