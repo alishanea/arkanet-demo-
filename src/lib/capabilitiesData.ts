@@ -1152,7 +1152,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         icon: "Languages",
         title: "Global Language Support",
-        desc: "Comprehensive localization, character tokenization, and natural language processing across international and regional languages.",
+        desc: "Comprehensive localization, character tokenization, and natural language processing across global languages.",
       },
       {
         icon: "Bot",
