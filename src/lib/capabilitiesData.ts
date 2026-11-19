@@ -1267,7 +1267,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "DATA PIPELINES",
       title: "Data Engineering & Analytics Architecture",
       description: "We build pipelines and warehouses that consolidate data from every system into a single trustworthy source.",
-        image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/data-engineering-analytics-pipeline.jpg",
     },
     finalCtaText: "Let me clean up your data architecture →",
   },
