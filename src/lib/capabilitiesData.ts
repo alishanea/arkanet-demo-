@@ -827,7 +827,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Production MLOps & model retraining",
         description: "Robust MLOps infrastructure ensuring your models stay accurate over time with automated drift alerts and continuous retraining.",
-        image: "/assets/images/capabilities/chatgpt-mobile-screen.png",
+        image: "/assets/images/capabilities/production-mlops-model-retraining-pipeline.jpg",
         imagePosition: "right",
       },
     ],
