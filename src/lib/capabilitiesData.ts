@@ -542,7 +542,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "ENTERPRISE PORTAL",
       title: "Secure, Scalable Portal Architecture",
       description: "Built to handle real concurrent users and sensitive data from day one, with security hardening and monitoring out of the box.",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/secure-enterprise-portal-architecture.jpg",
     },
     finalCtaText: "Let's build your enterprise portal →",
   },
