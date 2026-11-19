@@ -1181,7 +1181,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Multilingual voice & chatbot agents",
         description: "Voice and text AI agents that switch languages fluidly based on user speech input.",
-        image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/multilingual-ai-voice-agent.jpg",
         imagePosition: "left",
       },
       {
@@ -1195,7 +1195,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "MULTILINGUAL AI",
       title: "Regional AI Solutions Built for Genuine Fluency",
       description: "AI systems built with proper right-to-left layout, correct script rendering, and cultural adaptation.",
-      image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/regional-ai-fluency-showcase.jpg",
     },
     finalCtaText: "Let's build your multilingual AI solution →",
   },
