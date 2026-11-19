@@ -326,7 +326,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       badge: "SAAS PLATFORM",
       title: "Scalable Multi-Tenant SaaS Architecture",
       description: "Built from first customer to thousandth on the same solid architecture, with tenant isolation and billing solved upfront.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop",
+      image: "/assets/images/capabilities/scalable-multitenant-saas-architecture.jpg",
     },
     finalCtaText: "Let's build your SaaS platform →",
   },
@@ -2048,7 +2048,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "User research & journey mapping",
         description: "Understanding user behavior through persona creation, stakeholder interview insights, and customer clickpath mapping.",
-        image: "/assets/images/capabilities/creative-design-team.png",
+        image: "/assets/images/capabilities/ux-user-research-journey-mapping.jpg",
         imagePosition: "left",
       },
       {
