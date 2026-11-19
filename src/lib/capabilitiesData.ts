@@ -1169,13 +1169,13 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Bidirectional RTL layout & multilingual web experiences",
         description: "Proper right-to-left design systems ensuring multilingual interfaces look native, modern, and beautiful.",
-        image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/rtl-bidirectional-web-design-system.jpg",
         imagePosition: "left",
       },
       {
         title: "Global multilingual NLP & localized language models",
         description: "Natural language processing tailored for global languages, localized dialects, and multi-script input.",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop",
+        image: "/assets/images/capabilities/multilingual-nlp-language-models.jpg",
         imagePosition: "right",
       },
       {
