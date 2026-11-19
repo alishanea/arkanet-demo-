@@ -306,7 +306,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Subscription billing & usage metering",
         description: "Automated subscription lifecycle management, usage-based pricing models, upgraded seats, and prorated billing.",
-        image: "/assets/images/capabilities/saas-dark-dashboard-laptop.png",
+        image: "/assets/images/capabilities/saas-subscription-billing-metering.jpg",
         imagePosition: "right",
       },
       {
