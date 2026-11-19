@@ -899,7 +899,7 @@ export const CAPABILITIES_DATA: Record<string, CapabilityDetail> = {
       {
         title: "Analytics, guardrails & continuous tuning",
         description: "Comprehensive conversation analytics dashboards, sentiment tracking, and prompt optimization tooling.",
-        image: "/assets/images/capabilities/saas-dark-dashboard-laptop.png",
+        image: "/assets/images/capabilities/ai-conversation-analytics-guardrails.jpg",
         imagePosition: "right",
       },
     ],
